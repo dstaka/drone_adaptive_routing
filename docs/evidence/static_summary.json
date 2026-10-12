@@ -1,0 +1,42 @@
+{
+  "split": "static",
+  "common_scenarios": 100,
+  "per_seed": [
+    {
+      "seed": 42,
+      "episodes": 100,
+      "cost_mean": 28.713001349267856,
+      "delta_fixed_mean": -6.122047148297189,
+      "delta_greedy_mean": 0.16117759896088077,
+      "exact_ratio_mean": 1.039844235908866,
+      "completion_ratio": 1.0,
+      "invalid_actions": 0,
+      "decision_change_rate": null
+    },
+    {
+      "seed": 43,
+      "episodes": 100,
+      "cost_mean": 28.966150997193093,
+      "delta_fixed_mean": -5.868897500371949,
+      "delta_greedy_mean": 0.41432724688612005,
+      "exact_ratio_mean": 1.0501221610243547,
+      "completion_ratio": 1.0,
+      "invalid_actions": 0,
+      "decision_change_rate": null
+    },
+    {
+      "seed": 44,
+      "episodes": 100,
+      "cost_mean": 28.472246031935423,
+      "delta_fixed_mean": -6.362802465629618,
+      "delta_greedy_mean": -0.07957771837154802,
+      "exact_ratio_mean": 1.0317091304461192,
+      "completion_ratio": 1.0,
+      "invalid_actions": 0,
+      "decision_change_rate": null
+    }
+  ],
+  "across_seed_cost_mean": 28.717132792798793,
+  "across_seed_cost_std": 0.24697840046405273,
+  "note": "Shared scenarios are correlated; aggregate standard deviation is over seed means."
+}

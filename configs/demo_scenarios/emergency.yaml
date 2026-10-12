@@ -1,0 +1,50 @@
+scenario_id: emergency
+split: demo
+seed: 40001
+coords:
+- - 0.0
+  - 0.0
+  - 1.0
+- - 0.6
+  - 0.0
+  - 1.0
+- - -0.2999999999999999
+  - 0.5196152422706632
+  - 1.0
+- - -0.30000000000000027
+  - -0.519615242270663
+  - 1.0
+priorities:
+- 2.0
+- 1.0
+- 2.0
+multipliers:
+- - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+- - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+- - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+- - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+service_duration_s:
+- 0.5
+- 0.5
+- 0.5
+alpha: 1.0
+beta: 1.0
+nominal_speed_mps: 1.0
+return_to_base: false
+event:
+  kind: priority
+  after: 1
+  checkpoint: 1
+  value: 5

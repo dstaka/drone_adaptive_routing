@@ -1,0 +1,14 @@
+# Copy to ignored execution.yaml and replace all paths with discovered artifacts.
+flight_checkpoint: null
+flight_checkpoint_hash: null
+flight_cfg: null
+flight_cfg_hash: null
+hover_source: null
+hover_source_hash: null
+planner_python: null
+routing_model: null
+routing_model_hash: null
+scenario_files: []
+flight_eval_config: configs/flight_eval.yaml
+budget_ledger: outputs/gpu_ledger.json
+gpu_budget_s: 28800

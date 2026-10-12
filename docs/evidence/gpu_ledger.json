@@ -1,0 +1,173 @@
+{
+  "used_s": 1233.7003595418064,
+  "jobs": [
+    {
+      "run_id": "smoke",
+      "command": [
+        "../.venv-flight/bin/python",
+        "-u",
+        "hover_train.py",
+        "-e",
+        "smoke_20261013",
+        "-b",
+        "32",
+        "--max-iterations",
+        "2"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791825185.3512862,
+      "timeout_s": 900.0,
+      "pid": 2062,
+      "exit_code": 0,
+      "elapsed_s": 119.20687893498689,
+      "finished_epoch": 1791825304.5584445
+    },
+    {
+      "run_id": "camera_smoke",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/reproduce_baseline.py",
+        "--config",
+        "configs/execution_smoke.yaml",
+        "--out",
+        "outputs/baseline/smoke",
+        "--steps",
+        "400"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791825530.7971828,
+      "timeout_s": 900.0,
+      "pid": 2555,
+      "exit_code": 0,
+      "elapsed_s": 118.63175239902921,
+      "finished_epoch": 1791825649.429238
+    },
+    {
+      "run_id": "notebook_training",
+      "command": [
+        "../.venv-flight/bin/python",
+        "-u",
+        "hover_train.py",
+        "-e",
+        "notebook_20261013",
+        "-b",
+        "256",
+        "--max-iterations",
+        "301"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791825743.3567913,
+      "timeout_s": 1800.0,
+      "pid": 3117,
+      "exit_code": 0,
+      "elapsed_s": 273.8277441819664,
+      "finished_epoch": 1791826017.1848745
+    },
+    {
+      "run_id": "trained_replay",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/reproduce_baseline.py",
+        "--config",
+        "configs/execution_trained.yaml",
+        "--out",
+        "outputs/baseline/trained",
+        "--steps",
+        "400"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791826022.2305546,
+      "timeout_s": 900.0,
+      "pid": 3430,
+      "exit_code": 0,
+      "elapsed_s": 14.845455230912194,
+      "finished_epoch": 1791826037.0763595
+    },
+    {
+      "run_id": "external_trials",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/eval_flight.py",
+        "--config",
+        "configs/flight_eval.yaml",
+        "--execution",
+        "configs/execution_trained.yaml",
+        "--mode",
+        "sequential-targets",
+        "--out",
+        "outputs/evaluation/flight"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791826124.3952773,
+      "timeout_s": 1800.0,
+      "pid": 3797,
+      "exit_code": 0,
+      "elapsed_s": 208.32361290697008,
+      "finished_epoch": 1791826332.7192342
+    },
+    {
+      "run_id": "gpu_contracts",
+      "command": [
+        ".venv-flight/bin/python",
+        "-m",
+        "pytest",
+        "-m",
+        "gpu",
+        "-q"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791826527.2251778,
+      "timeout_s": 900.0,
+      "pid": 5218,
+      "exit_code": 0,
+      "elapsed_s": 88.85881838703062,
+      "finished_epoch": 1791826616.0843728
+    },
+    {
+      "run_id": "final_missions",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/run_demo_scenarios.py",
+        "--config",
+        "configs/execution.yaml",
+        "--mode",
+        "genesis",
+        "--record",
+        "--trials",
+        "3",
+        "--out",
+        "outputs/genesis"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791826717.030461,
+      "timeout_s": 3600.0,
+      "pid": 5664,
+      "exit_code": 0,
+      "elapsed_s": 230.63647913897876,
+      "finished_epoch": 1791826947.6673207
+    },
+    {
+      "run_id": "final_review_validation",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/final_gpu_validation.py",
+        "--config",
+        "configs/execution.yaml",
+        "--out",
+        "outputs/final_review_validation"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1791828265.348936,
+      "timeout_s": 1800.0,
+      "pid": 9105,
+      "exit_code": 0,
+      "elapsed_s": 179.36961836193223,
+      "finished_epoch": 1791828444.7189488
+    }
+  ]
+}

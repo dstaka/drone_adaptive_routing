@@ -1,0 +1,112 @@
+{
+  "schema": {
+    "id": "routing-v1-65",
+    "dtype": "float32",
+    "size": 65,
+    "fields": {
+      "current_onehot": [
+        0,
+        4
+      ],
+      "visited": [
+        4,
+        7
+      ],
+      "coords": [
+        7,
+        19
+      ],
+      "distance_matrix": [
+        19,
+        35
+      ],
+      "priorities": [
+        35,
+        38
+      ],
+      "edge_costs": [
+        38,
+        54
+      ],
+      "service": [
+        54,
+        57
+      ],
+      "elapsed": [
+        57,
+        58
+      ],
+      "completed": [
+        58,
+        59
+      ],
+      "constants": [
+        59,
+        65
+      ]
+    },
+    "normalization": {
+      "coordinates_m": 2.0,
+      "distance_m": 4.0,
+      "priority": 5.0,
+      "edge_cost": 20.0,
+      "service_s": 1.0,
+      "time_s": 30.0,
+      "count": 3.0,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "speed_mps": 1.0
+    }
+  },
+  "models": [
+    {
+      "seed": 42,
+      "path": "outputs/routing_boundary/seed_42.zip",
+      "sha256": "4f2d79598c102cda325bed4b4702ac94d5ca95ac43a0ad0c17ff9d35f84c7131",
+      "validation": {
+        "mean_cost": 29.56833041262812,
+        "invalid_actions": 0,
+        "decision_changes": 8,
+        "event_cases": 66,
+        "episodes": 100
+      }
+    },
+    {
+      "seed": 43,
+      "path": "outputs/routing_boundary/seed_43.zip",
+      "sha256": "56f6206c2a2447f7fb03b86cfccb295b16797b398aa535077bb77f682d6eb58f",
+      "validation": {
+        "mean_cost": 29.601378073224378,
+        "invalid_actions": 0,
+        "decision_changes": 12,
+        "event_cases": 66,
+        "episodes": 100
+      }
+    },
+    {
+      "seed": 44,
+      "path": "outputs/routing_boundary/seed_44.zip",
+      "sha256": "89107bd5f54c23b3799e8a0230fa848226cfa5ffb60772afbeec7f2c489a5c20",
+      "validation": {
+        "mean_cost": 29.74557232523223,
+        "invalid_actions": 0,
+        "decision_changes": 9,
+        "event_cases": 66,
+        "episodes": 100
+      }
+    }
+  ],
+  "selected": {
+    "seed": 43,
+    "path": "outputs/routing_boundary/seed_43.zip",
+    "sha256": "56f6206c2a2447f7fb03b86cfccb295b16797b398aa535077bb77f682d6eb58f",
+    "validation": {
+      "mean_cost": 29.601378073224378,
+      "invalid_actions": 0,
+      "decision_changes": 12,
+      "event_cases": 66,
+      "episodes": 100
+    }
+  },
+  "selection_rationale": "Validation invalid actions, event changes, then mean objective cost; no held-out results used."
+}

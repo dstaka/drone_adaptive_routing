@@ -1,0 +1,30 @@
+[
+  {
+    "package": "torch",
+    "version": "2.14.0+cu132",
+    "index": "https://download.pytorch.org/whl/cu132/torch/",
+    "wheel_url": "https://download-r2.pytorch.org/whl/cu132/torch-2.14.0%2Bcu132-cp312-cp312-manylinux_2_28_x86_64.whl#sha256=0b059371a41b7c868589b00ff60a9f72118bc9b3c0bf12e820c06eb2a3aab55b",
+    "verified_via": "official wheel index, cp312 Linux x86_64"
+  },
+  {
+    "package": "torchvision",
+    "version": "0.29.0+cu132",
+    "index": "https://download.pytorch.org/whl/cu132/torchvision/",
+    "wheel_url": "https://download-r2.pytorch.org/whl/cu132/torchvision-0.29.0%2Bcu132-cp312-cp312-manylinux_2_28_x86_64.whl#sha256=83604d31632237ea148eccefeda97065705f972464e84d0c86cd10e3b95fd24b",
+    "verified_via": "official wheel index, cp312 Linux x86_64"
+  },
+  {
+    "package": "torchcodec",
+    "version": "0.16.0+cu132",
+    "index": "https://download.pytorch.org/whl/cu132/torchcodec/",
+    "wheel_url": "https://download.pytorch.org/whl/cu132/torchcodec-0.16.0%2Bcu132-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl#sha256=39919f91e411c273776c1fbfcd5fb2e3b39dcdd1702e979fe7d2f12de52fdffb",
+    "verified_via": "official wheel index, cp312 Linux x86_64"
+  },
+  {
+    "package": "torch",
+    "version": "2.2.2+cpu",
+    "index": "https://download.pytorch.org/whl/cpu/torch/",
+    "wheel_url": "https://download-r2.pytorch.org/whl/cpu/torch-2.2.2%2Bcpu-cp312-cp312-linux_x86_64.whl#sha256=431a747b5a880cf8e1fb6d58db6bfafa6768cbec76517d046854537c03323edf",
+    "verified_via": "official wheel index, cp312 Linux x86_64"
+  }
+]

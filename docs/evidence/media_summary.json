@@ -1,0 +1,328 @@
+{
+  "status": "PASS",
+  "media": [
+    {
+      "path": "outputs/final_review_validation/genesis/cost_shift_seed_1/raw.mp4",
+      "sha256": "a7f5b40dfa93f6e0477ca1878a8643deef645ce42ac9515a24e513b912942519",
+      "bytes": 61460,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "317"
+          }
+        ],
+        "format": {
+          "duration": "6.340000"
+        },
+        "run_id": "cost_shift_seed_1"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/cost_shift_seed_2/raw.mp4",
+      "sha256": "a7f5b40dfa93f6e0477ca1878a8643deef645ce42ac9515a24e513b912942519",
+      "bytes": 61460,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "317"
+          }
+        ],
+        "format": {
+          "duration": "6.340000"
+        },
+        "run_id": "cost_shift_seed_2"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/cost_shift_seed_3/raw.mp4",
+      "sha256": "a7f5b40dfa93f6e0477ca1878a8643deef645ce42ac9515a24e513b912942519",
+      "bytes": 61460,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "317"
+          }
+        ],
+        "format": {
+          "duration": "6.340000"
+        },
+        "run_id": "cost_shift_seed_3"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/emergency_seed_1/raw.mp4",
+      "sha256": "a7f5b40dfa93f6e0477ca1878a8643deef645ce42ac9515a24e513b912942519",
+      "bytes": 61460,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "317"
+          }
+        ],
+        "format": {
+          "duration": "6.340000"
+        },
+        "run_id": "emergency_seed_1"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/emergency_seed_2/raw.mp4",
+      "sha256": "a7f5b40dfa93f6e0477ca1878a8643deef645ce42ac9515a24e513b912942519",
+      "bytes": 61460,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "317"
+          }
+        ],
+        "format": {
+          "duration": "6.340000"
+        },
+        "run_id": "emergency_seed_2"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/emergency_seed_3/raw.mp4",
+      "sha256": "a7f5b40dfa93f6e0477ca1878a8643deef645ce42ac9515a24e513b912942519",
+      "bytes": 61460,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "317"
+          }
+        ],
+        "format": {
+          "duration": "6.340000"
+        },
+        "run_id": "emergency_seed_3"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/normal_seed_1/raw.mp4",
+      "sha256": "1d3ea80132370f67bfab051c66f9cb483061afa076b12af8e7dd2a4b280868f3",
+      "bytes": 58954,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "304"
+          }
+        ],
+        "format": {
+          "duration": "6.080000"
+        },
+        "run_id": "normal_seed_1"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/normal_seed_2/raw.mp4",
+      "sha256": "1d3ea80132370f67bfab051c66f9cb483061afa076b12af8e7dd2a4b280868f3",
+      "bytes": 58954,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "304"
+          }
+        ],
+        "format": {
+          "duration": "6.080000"
+        },
+        "run_id": "normal_seed_2"
+      }
+    },
+    {
+      "path": "outputs/final_review_validation/genesis/normal_seed_3/raw.mp4",
+      "sha256": "1d3ea80132370f67bfab051c66f9cb483061afa076b12af8e7dd2a4b280868f3",
+      "bytes": 58954,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 480,
+            "avg_frame_rate": "50/1",
+            "nb_read_frames": "304"
+          }
+        ],
+        "format": {
+          "duration": "6.080000"
+        },
+        "run_id": "normal_seed_3"
+      }
+    },
+    {
+      "path": "outputs/videos/submission.mp4",
+      "sha256": "6b59b875decffa08c93d5a1032fc94792e623fdca02eaef340e21f1cdcc8a6a3",
+      "bytes": 1527853,
+      "full_decode": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "avg_frame_rate": "30/1",
+            "nb_read_frames": "3600"
+          }
+        ],
+        "format": {
+          "duration": "120.000000"
+        }
+      }
+    }
+  ],
+  "exact_capture_hud_mapping_count": 3060,
+  "represented_boundaries": [
+    {
+      "run_id": "normal_seed_1",
+      "event_seq": 6,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 2.09,
+      "presentation_s": 19.633333333333333
+    },
+    {
+      "run_id": "normal_seed_1",
+      "event_seq": 10,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 3.54,
+      "presentation_s": 27.8
+    },
+    {
+      "run_id": "normal_seed_1",
+      "event_seq": 15,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 6.05,
+      "presentation_s": 41.9
+    },
+    {
+      "run_id": "normal_seed_1",
+      "event_seq": 16,
+      "type": "MISSION_FINISHED",
+      "source_sim_s": 6.05,
+      "presentation_s": 41.9
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "event_seq": 6,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 2.09,
+      "presentation_s": 53.2
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "event_seq": 7,
+      "type": "PRIORITY_UPDATED",
+      "source_sim_s": 2.09,
+      "presentation_s": 53.2
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "event_seq": 12,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 4.59,
+      "presentation_s": 66.66666666666667
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "event_seq": 16,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 6.3,
+      "presentation_s": 75.9
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "event_seq": 17,
+      "type": "MISSION_FINISHED",
+      "source_sim_s": 6.3,
+      "presentation_s": 75.9
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "event_seq": 6,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 2.09,
+      "presentation_s": 87.2
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "event_seq": 7,
+      "type": "COST_UPDATED",
+      "source_sim_s": 2.09,
+      "presentation_s": 87.2
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "event_seq": 12,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 4.59,
+      "presentation_s": 100.66666666666667
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "event_seq": 16,
+      "type": "WAYPOINT_REACHED",
+      "source_sim_s": 6.3,
+      "presentation_s": 109.9
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "event_seq": 17,
+      "type": "MISSION_FINISHED",
+      "source_sim_s": 6.3,
+      "presentation_s": 109.9
+    }
+  ],
+  "visual_qa_samples": 23,
+  "pdf_pages_visually_inspected": 3,
+  "note": "Every media size/hash was compared against the remote probe/decode result after transfer."
+}

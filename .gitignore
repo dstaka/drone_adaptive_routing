@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Operator references, private deployment configuration and generated evidence.
+RL_drone_hovering.ipynb
+configs/execution*.yaml
+!configs/execution.example.yaml
+.venv-routing/
+.venv-flight/
+outputs/
+artifacts/delivery_receipt.json
+*.pt
+*.zip
+*.mp4
+*.pkl
+*.tar.gz
+
+.venv-routing311/

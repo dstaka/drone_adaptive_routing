@@ -1,0 +1,236 @@
+{
+  "attempts": [
+    {
+      "run_id": "cost_shift_seed_1",
+      "scenario_id": "cost_shift",
+      "execution_seed": 1,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.3,
+      "measured_distance_m": 3.9864845241067086,
+      "analytical_cost": 15.874613391789284,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "cost_shift_seed_2",
+      "scenario_id": "cost_shift",
+      "execution_seed": 2,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.3,
+      "measured_distance_m": 3.9864845241067086,
+      "analytical_cost": 15.874613391789284,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "cost_shift_seed_3",
+      "scenario_id": "cost_shift",
+      "execution_seed": 3,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.3,
+      "measured_distance_m": 3.9864845241067086,
+      "analytical_cost": 15.874613391789284,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "scenario_id": "emergency",
+      "execution_seed": 1,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.3,
+      "measured_distance_m": 3.9864845241067086,
+      "analytical_cost": 26.43153532995459,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "scenario_id": "emergency",
+      "execution_seed": 2,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.3,
+      "measured_distance_m": 3.9864845241067086,
+      "analytical_cost": 26.43153532995459,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "scenario_id": "emergency",
+      "execution_seed": 3,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.3,
+      "measured_distance_m": 3.9864845241067086,
+      "analytical_cost": 26.43153532995459,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "normal_seed_1",
+      "scenario_id": "normal",
+      "execution_seed": 1,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "C",
+        "B"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.05,
+      "measured_distance_m": 3.7183744836284705,
+      "analytical_cost": 14.335382907247958,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "normal_seed_2",
+      "scenario_id": "normal",
+      "execution_seed": 2,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "C",
+        "B"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.05,
+      "measured_distance_m": 3.7183744836284705,
+      "analytical_cost": 14.335382907247958,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    },
+    {
+      "run_id": "normal_seed_3",
+      "scenario_id": "normal",
+      "execution_seed": 3,
+      "status": "SUCCEEDED",
+      "completed_order": [
+        "A",
+        "C",
+        "B"
+      ],
+      "physical_completion_rate": 1.0,
+      "measured_duration_s": 6.05,
+      "measured_distance_m": 3.7183744836284705,
+      "analytical_cost": 14.335382907247958,
+      "reset_samples": 0,
+      "done_samples": 0,
+      "safety_failure_samples": 0,
+      "timeout_count": 0,
+      "termination_cause": null
+    }
+  ],
+  "all_attempts_retained": true,
+  "successful_attempts": 9,
+  "per_scenario": {
+    "normal": {
+      "attempts": 3,
+      "successes": 3,
+      "measured_duration_s": {
+        "mean": 6.05,
+        "sample_sd": 0.0
+      },
+      "measured_distance_m": {
+        "mean": 3.718374483628471,
+        "sample_sd": 5.438959822042073e-16
+      },
+      "analytical_cost": {
+        "mean": 14.335382907247956,
+        "sample_sd": 2.175583928816829e-15
+      }
+    },
+    "emergency": {
+      "attempts": 3,
+      "successes": 3,
+      "measured_duration_s": {
+        "mean": 6.3,
+        "sample_sd": 0.0
+      },
+      "measured_distance_m": {
+        "mean": 3.9864845241067086,
+        "sample_sd": 0.0
+      },
+      "analytical_cost": {
+        "mean": 26.43153532995459,
+        "sample_sd": 0.0
+      }
+    },
+    "cost_shift": {
+      "attempts": 3,
+      "successes": 3,
+      "measured_duration_s": {
+        "mean": 6.3,
+        "sample_sd": 0.0
+      },
+      "measured_distance_m": {
+        "mean": 3.9864845241067086,
+        "sample_sd": 0.0
+      },
+      "analytical_cost": {
+        "mean": 15.874613391789284,
+        "sample_sd": 0.0
+      }
+    }
+  }
+}

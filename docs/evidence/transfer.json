@@ -1,0 +1,7 @@
+{
+  "remote_archive_sha256": "b1f7699ba4ad1c6a7c14f67732084459afecda55406ca165c082a227249b6662",
+  "verified_files": 90,
+  "runtime_source_archive_sha256": "77054a510282d33815c4f238e5b7e97371b28d7dd7c4747f3d71d8e7e0a40db2",
+  "verified_source_files": 69,
+  "verification": "Local extracted byte sizes and SHA-256 all matched remote inventory."
+}

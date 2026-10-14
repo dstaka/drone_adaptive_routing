@@ -14,6 +14,27 @@ SCHEMA = {'id': 'routing-v1-65', 'dtype': 'float32', 'size': 65,
                             'count': 3., 'alpha': 1., 'beta': 1., 'speed_mps': 1.}}
 
 
+
+def schema_for(scenario):
+    """Generate offsets and a fixed per-model normalization/identity contract."""
+    n = scenario.num_checkpoints
+    widths = [('current_onehot', n + 1), ('visited', n), ('coords', 3 * (n + 1)),
+              ('distance_matrix', (n + 1) ** 2), ('priorities', n),
+              ('edge_costs', (n + 1) ** 2), ('service', n), ('elapsed', 1),
+              ('completed', 1), ('constants', 6)]
+    fields, offset = {}, 0
+    for name, width in widths:
+        fields[name] = [offset, offset + width]
+        offset += width
+    return {'id': f'routing-v2-n{n}-{offset}', 'dtype': 'float32', 'size': offset,
+            'num_checkpoints': n, 'checkpoint_ids': scenario.checkpoint_ids.copy(),
+            'fields': fields, 'normalization': {**SCHEMA['normalization'], 'count': float(n),
+                'time_s': max(30., 8. * n)},
+            'objective': {'alpha': scenario.alpha, 'beta': scenario.beta,
+                          'nominal_speed_mps': scenario.nominal_speed_mps,
+                          'return_to_base': scenario.return_to_base}}
+
+
 def leg_cost(scenario, current, target, elapsed):
     distance = float(np.linalg.norm(np.asarray(scenario.coords[current]) - scenario.coords[target]))
     priority = float(scenario.priorities[target - 1])
@@ -31,7 +52,7 @@ class RoutingState:
     def __init__(self, scenario):
         self.scenario = Scenario.from_dict(scenario.to_dict())
         self.current = 0
-        self.visited = np.zeros(3, dtype=bool)
+        self.visited = np.zeros(scenario.num_checkpoints, dtype=bool)
         self.elapsed = self.cost = self.penalty = self.distance = 0.
         self.invalid_count = 0
         self.events = []
@@ -49,12 +70,12 @@ class RoutingState:
         return ~self.visited.copy()
 
     def departure(self, action):
-        if self.terminal or action not in range(3) or self.visited[action]:
+        if self.terminal or type(action) not in (int, np.int64, np.int32) or action not in range(self.scenario.num_checkpoints) or self.visited[action]:
             raise ValueError('Ineligible action')
         return leg_cost(self.scenario, self.current, action + 1, self.elapsed)
 
     def complete(self, action, snapshot):
-        if self.visited[action] or snapshot['from'] != self.current or snapshot['to'] != action + 1:
+        if self.terminal or action not in range(self.scenario.num_checkpoints) or self.visited[action] or snapshot['from'] != self.current or snapshot['to'] != action + 1:
             raise ValueError('Departure snapshot does not match the current leg')
         self.visited[action] = True
         self.current = action + 1
@@ -84,34 +105,39 @@ class RoutingState:
             target = int(rng.choice(eligible))
             event['value'] = int(rng.integers(1, 6))
             if event['kind'] == 'priority':
-                event['checkpoint'] = target
+                event['checkpoint'] = self.scenario.checkpoint_ids[target]
             else:
-                event['edges'] = [[self.current, target + 1]]
+                event['edges'] = [[(['S'] + self.scenario.checkpoint_ids)[self.current], self.scenario.checkpoint_ids[target]]]
         record = copy.deepcopy(event)
         record.update(boundary=int(self.visited.sum()), skipped=False,
                       pre_state=self.observation().tolist())
         if event['kind'] == 'priority':
-            j = event['checkpoint']
+            j = self.scenario.node_indices[event['checkpoint']] - 1
+            record['checkpoint_id'] = event['checkpoint']
+            record['checkpoint'] = j
             record['old'] = self.scenario.priorities[j]
             if self.visited[j]:
                 record['skipped'] = True
             else:
                 self.scenario.priorities[j] = event['value']
         else:
-            record['old'] = [self.scenario.multipliers[i][j] for i, j in event['edges']]
-            for i, j in event['edges']:
+            edges = [[self.scenario.node_indices[i], self.scenario.node_indices[j]] for i, j in event['edges']]
+            record['old'] = [self.scenario.multipliers[i][j] for i, j in edges]
+            for i, j in edges:
                 self.scenario.multipliers[i][j] = event['value']
         record['post_state'] = self.observation().tolist()
         self.events.append(record)
         return record
 
-    def observation(self):
+    def observation(self, legacy=False):
         s = self.scenario
         coords = np.asarray(s.coords)
         distances = np.linalg.norm(coords[:, None] - coords[None, :], axis=-1)
-        return np.concatenate([np.eye(4)[self.current], self.visited, coords.ravel() / 2,
+        n = s.num_checkpoints
+        time_scale = 30. if legacy else schema_for(s)['normalization']['time_s']
+        return np.concatenate([np.eye(n + 1)[self.current], self.visited, coords.ravel() / 2,
                                distances.ravel() / 4, np.asarray(s.priorities) / 5,
                                (distances * np.asarray(s.multipliers)).ravel() / 20,
-                               s.service_duration_s, [self.elapsed / 30, self.visited.sum() / 3],
+                               s.service_duration_s, [self.elapsed / time_scale, self.visited.sum() / n],
                                [s.alpha, s.beta, s.nominal_speed_mps, float(s.return_to_base),
                                 float(np.asarray(s.service_duration_s).sum()), 1.]]).astype(np.float32)

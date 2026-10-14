@@ -42,8 +42,10 @@ def write_json(path, value):
     temp.replace(path)
 
 
-def run_job(command, output, ledger, timeout_s, grace_s=.5):
+def run_job(command, output, ledger, timeout_s, grace_s=.5, budget_s=BUDGET_S):
     output, ledger = Path(output), Path(ledger)
+    if not math.isfinite(budget_s) or budget_s <= 0:
+        raise ValueError('budget_s must be positive and finite')
     if not math.isfinite(timeout_s) or timeout_s <= 0 or not math.isfinite(grace_s) or grace_s <= 0:
         raise ValueError('timeout_s must be positive')
     ledger.parent.mkdir(parents=True, exist_ok=True)
@@ -51,13 +53,13 @@ def run_job(command, output, ledger, timeout_s, grace_s=.5):
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError as exc:
-            raise RuntimeError('Another GPU job owns the budget ledger') from exc
+            raise RuntimeError('Another job owns the budget ledger') from exc
         data = json.loads(ledger.read_text()) if ledger.exists() else {'used_s': 0., 'jobs': []}
         if data.get('active_job'):
-            raise RuntimeError('Unreconciled active GPU job; inspect it before resuming')
-        remaining = BUDGET_S - data['used_s']
+            raise RuntimeError('Unreconciled active job; inspect it before resuming')
+        remaining = budget_s - data['used_s']
         if remaining <= grace_s:
-            raise RuntimeError('GPU budget exhausted')
+            raise RuntimeError('Execution budget exhausted')
         output.mkdir(parents=True, exist_ok=False)
         deadline = min(float(timeout_s), remaining - grace_s)
         started = time.time()
@@ -116,13 +118,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', required=True)
     parser.add_argument('--ledger', required=True)
+    parser.add_argument('--budget-s', type=float, default=BUDGET_S)
     parser.add_argument('--timeout', type=float, required=True)
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if not args.command:
         parser.error('Specify an executable after --')
     result = run_job(args.command[1:] if args.command[0] == '--' else args.command,
-                     args.out, args.ledger, args.timeout, grace_s=20)
+                     args.out, args.ledger, args.timeout, grace_s=20, budget_s=args.budget_s)
     print(json.dumps(result))
     raise SystemExit(0 if result['status'] == 'SUCCEEDED' else 1)
 

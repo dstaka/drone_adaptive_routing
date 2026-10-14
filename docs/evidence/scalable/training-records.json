@@ -1,0 +1,451 @@
+{
+  "experiments": [
+    {
+      "method": "mlp",
+      "path": "outputs/training/seed_42_run/training.json",
+      "record": {
+        "seed": 42,
+        "num_checkpoints": 10,
+        "static_steps_actual": 500224,
+        "total_steps_actual": 1000448,
+        "requested_static": 500000,
+        "requested_events": 500000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 1037.6016337526962,
+        "sha256": "8b650c2e6c3edddc53c8eddc8efcb855d44547497cc52f92ebb3a06fe530c311",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "net_arch": [
+          256,
+          256
+        ],
+        "device": "cpu"
+      }
+    },
+    {
+      "method": "candidate",
+      "path": "candidate-src/outputs/training/seed_42_run/training.json",
+      "record": {
+        "seed": 42,
+        "num_checkpoints": 10,
+        "static_steps_actual": 100352,
+        "total_steps_actual": 200704,
+        "requested_static": 100000,
+        "requested_events": 100000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 349.3746481416747,
+        "sha256": "4966db572ab79d5216f23832d6054ba08e455568a1615774e83c41abdde41188",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0001,
+        "net_arch": [
+          128,
+          128
+        ],
+        "policy_arch": "candidate",
+        "candidate_architecture": {
+          "relations": [
+            4,
+            32,
+            32
+          ],
+          "nodes": [
+            44,
+            64,
+            64
+          ],
+          "score": [
+            128,
+            64,
+            1
+          ],
+          "critic": [
+            64,
+            64,
+            1
+          ]
+        },
+        "warmstart": {
+          "cases": 12000,
+          "num_checkpoints": 10,
+          "split": "training",
+          "scenario_seeds": [
+            0,
+            9999
+          ],
+          "sha256": "f36263a9f2d8e80904422f9a348c6e5a86953a510721626860ff3f15abfe60e7",
+          "manifest_sha256": "b6b6b9486b31860d33a451c36585cf3b4c6001922586a6faba8fae52129e8ba1",
+          "elapsed_s": 84.19219179498032,
+          "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+          "epochs": 30,
+          "training_elapsed_s": 25.13892724411562,
+          "directory": "outputs/training/teacher",
+          "final_batch_loss": 0.5074488520622253
+        },
+        "device": "cpu"
+      }
+    },
+    {
+      "method": "candidate",
+      "path": "candidate-src/outputs/training/seed_43_run/training.json",
+      "record": {
+        "seed": 43,
+        "num_checkpoints": 10,
+        "static_steps_actual": 100352,
+        "total_steps_actual": 200704,
+        "requested_static": 100000,
+        "requested_events": 100000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 346.47342230239883,
+        "sha256": "ec8e6bc7bf6b7b099e99b220564ae8e00136131d60e2de0f26c9d3410d0bc394",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0001,
+        "net_arch": [
+          128,
+          128
+        ],
+        "policy_arch": "candidate",
+        "candidate_architecture": {
+          "relations": [
+            4,
+            32,
+            32
+          ],
+          "nodes": [
+            44,
+            64,
+            64
+          ],
+          "score": [
+            128,
+            64,
+            1
+          ],
+          "critic": [
+            64,
+            64,
+            1
+          ]
+        },
+        "warmstart": {
+          "cases": 12000,
+          "num_checkpoints": 10,
+          "split": "training",
+          "scenario_seeds": [
+            0,
+            9999
+          ],
+          "sha256": "f36263a9f2d8e80904422f9a348c6e5a86953a510721626860ff3f15abfe60e7",
+          "manifest_sha256": "b6b6b9486b31860d33a451c36585cf3b4c6001922586a6faba8fae52129e8ba1",
+          "elapsed_s": 84.19219179498032,
+          "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+          "epochs": 30,
+          "training_elapsed_s": 25.1351448581554,
+          "directory": "outputs/training/teacher",
+          "final_batch_loss": 0.5106641054153442
+        },
+        "device": "cpu"
+      }
+    },
+    {
+      "method": "candidate",
+      "path": "candidate-src/outputs/training/seed_44_run/training.json",
+      "record": {
+        "seed": 44,
+        "num_checkpoints": 10,
+        "static_steps_actual": 100352,
+        "total_steps_actual": 200704,
+        "requested_static": 100000,
+        "requested_events": 100000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 347.15136489644647,
+        "sha256": "e21d6102e5ebaefe1761310de3fb0231c4592421a849ac2421822de1a1fcea12",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0001,
+        "net_arch": [
+          128,
+          128
+        ],
+        "policy_arch": "candidate",
+        "candidate_architecture": {
+          "relations": [
+            4,
+            32,
+            32
+          ],
+          "nodes": [
+            44,
+            64,
+            64
+          ],
+          "score": [
+            128,
+            64,
+            1
+          ],
+          "critic": [
+            64,
+            64,
+            1
+          ]
+        },
+        "warmstart": {
+          "cases": 12000,
+          "num_checkpoints": 10,
+          "split": "training",
+          "scenario_seeds": [
+            0,
+            9999
+          ],
+          "sha256": "f36263a9f2d8e80904422f9a348c6e5a86953a510721626860ff3f15abfe60e7",
+          "manifest_sha256": "b6b6b9486b31860d33a451c36585cf3b4c6001922586a6faba8fae52129e8ba1",
+          "elapsed_s": 84.19219179498032,
+          "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+          "epochs": 30,
+          "training_elapsed_s": 25.676552928052843,
+          "directory": "outputs/training/teacher",
+          "final_batch_loss": 0.40158671140670776
+        },
+        "device": "cpu"
+      }
+    },
+    {
+      "method": "normalized_candidate",
+      "path": "normalized-src/outputs/training/seed_42_run/training.json",
+      "record": {
+        "seed": 42,
+        "num_checkpoints": 10,
+        "static_steps_actual": 50176,
+        "total_steps_actual": 100352,
+        "requested_static": 50000,
+        "requested_events": 50000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 193.39361390471458,
+        "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "net_arch": [
+          128,
+          128
+        ],
+        "policy_arch": "candidate",
+        "optimizer_reward_scale": 0.01,
+        "candidate_architecture": {
+          "relations": [
+            4,
+            32,
+            32
+          ],
+          "nodes": [
+            44,
+            64,
+            64
+          ],
+          "score": [
+            128,
+            64,
+            1
+          ],
+          "critic": [
+            64,
+            64,
+            1
+          ]
+        },
+        "warmstart": {
+          "cases": 12000,
+          "num_checkpoints": 10,
+          "split": "training",
+          "scenario_seeds": [
+            0,
+            9999
+          ],
+          "sha256": "f36263a9f2d8e80904422f9a348c6e5a86953a510721626860ff3f15abfe60e7",
+          "manifest_sha256": "461e3c1c68dfb83e9e6b74d60843ba680be6dfcb638644b40f9aafc51d6a23a6",
+          "elapsed_s": 82.95089089684188,
+          "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+          "epochs": 30,
+          "training_elapsed_s": 24.020586849655956,
+          "directory": "outputs/training/teacher",
+          "final_batch_loss": 0.5074488520622253
+        },
+        "device": "cpu"
+      }
+    },
+    {
+      "method": "normalized_candidate",
+      "path": "normalized-src/outputs/training/seed_43_run/training.json",
+      "record": {
+        "seed": 43,
+        "num_checkpoints": 10,
+        "static_steps_actual": 50176,
+        "total_steps_actual": 100352,
+        "requested_static": 50000,
+        "requested_events": 50000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 193.81558135570958,
+        "sha256": "bfecbb8d56f7c4cdb953a5a4a12df2d93030d4fb8bcd93ebd4012cf180dfbf1d",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "net_arch": [
+          128,
+          128
+        ],
+        "policy_arch": "candidate",
+        "optimizer_reward_scale": 0.01,
+        "candidate_architecture": {
+          "relations": [
+            4,
+            32,
+            32
+          ],
+          "nodes": [
+            44,
+            64,
+            64
+          ],
+          "score": [
+            128,
+            64,
+            1
+          ],
+          "critic": [
+            64,
+            64,
+            1
+          ]
+        },
+        "warmstart": {
+          "cases": 12000,
+          "num_checkpoints": 10,
+          "split": "training",
+          "scenario_seeds": [
+            0,
+            9999
+          ],
+          "sha256": "f36263a9f2d8e80904422f9a348c6e5a86953a510721626860ff3f15abfe60e7",
+          "manifest_sha256": "461e3c1c68dfb83e9e6b74d60843ba680be6dfcb638644b40f9aafc51d6a23a6",
+          "elapsed_s": 82.95089089684188,
+          "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+          "epochs": 30,
+          "training_elapsed_s": 23.82952693058178,
+          "directory": "outputs/training/teacher",
+          "final_batch_loss": 0.5106641054153442
+        },
+        "device": "cpu"
+      }
+    },
+    {
+      "method": "normalized_candidate",
+      "path": "normalized-src/outputs/training/seed_44_run/training.json",
+      "record": {
+        "seed": 44,
+        "num_checkpoints": 10,
+        "static_steps_actual": 50176,
+        "total_steps_actual": 100352,
+        "requested_static": 50000,
+        "requested_events": 50000,
+        "event_mixture": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "elapsed_s": 195.05694990511984,
+        "sha256": "a3e6e0f3e759544c5af4779e2da2608fb63eaf1a3032930b36c5efb35da1c13b",
+        "gamma": 1.0,
+        "n_steps": 512,
+        "batch_size": 128,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "net_arch": [
+          128,
+          128
+        ],
+        "policy_arch": "candidate",
+        "optimizer_reward_scale": 0.01,
+        "candidate_architecture": {
+          "relations": [
+            4,
+            32,
+            32
+          ],
+          "nodes": [
+            44,
+            64,
+            64
+          ],
+          "score": [
+            128,
+            64,
+            1
+          ],
+          "critic": [
+            64,
+            64,
+            1
+          ]
+        },
+        "warmstart": {
+          "cases": 12000,
+          "num_checkpoints": 10,
+          "split": "training",
+          "scenario_seeds": [
+            0,
+            9999
+          ],
+          "sha256": "f36263a9f2d8e80904422f9a348c6e5a86953a510721626860ff3f15abfe60e7",
+          "manifest_sha256": "461e3c1c68dfb83e9e6b74d60843ba680be6dfcb638644b40f9aafc51d6a23a6",
+          "elapsed_s": 82.95089089684188,
+          "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+          "epochs": 30,
+          "training_elapsed_s": 24.79834364913404,
+          "directory": "outputs/training/teacher",
+          "final_batch_loss": 0.40158671140670776
+        },
+        "device": "cpu"
+      }
+    }
+  ],
+  "mlp_incomplete_seed_43_logs_retained": true
+}

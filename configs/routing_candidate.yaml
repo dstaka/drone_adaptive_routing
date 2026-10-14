@@ -1,0 +1,14 @@
+# Training-only oracle initialization followed by CPU MaskablePPO on all seeds.
+num_checkpoints: 10
+policy_arch: candidate
+warmstart_cases: 12000
+warmstart_epochs: 30
+parallel_seeds: 3
+static_steps: 100000
+event_steps: 100000
+max_actual_steps: 200704
+n_steps: 512
+batch_size: 128
+n_epochs: 5
+learning_rate: 0.0001
+validation_episodes: 100

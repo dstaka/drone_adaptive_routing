@@ -1,5 +1,7 @@
 # 適応型ドローン巡回点検
 
+Current CPU routing implementation: see [scalable routing](docs/scalable-routing.md), the [approved specification](specs/2026-10-14-scalable-adaptive-routing/spec.md), and the [session handoff](docs/scalable-routing-handoff.md). New training defaults to ten destinations. The original three-point flight/video results below remain historical; ten-point physical integration and video are pending follow-up PRs.
+
 A・B・Cの3地点を、学習済みのルーティング方策と飛行方策で巡回する課題です。優先度または論理移動コストの変化を、実際の到達・滞在完了後に受け取り、次の未訪問地点を再選択します。Genesisの実物理を使い、巡回・カメラ映像・テレメトリ・イベントを同じ実行で記録します。
 
 上位はCPUのMaskablePPO、下位はGenesis/RSL-RLのPPOです。2つの方策を別々に学習しています。障害物認識、バッテリー推定、センサによる設備点検、実機安全性は対象に含みません。
@@ -43,7 +45,7 @@ python3.11 -m venv .venv-routing311
 source .venv-routing311/bin/activate
 python -m pip install -r requirements/routing-local.lock.txt
 python -m pip install -e '.[routing,dev,report,video]' --no-deps
-export MPLCONFIGDIR=/tmp/patrol_mpl
+export MPLCONFIGDIR=outputs/patrol_mpl
 python -m pytest -m 'not gpu' -q
 python -m ruff check src scripts tests
 ```
@@ -64,12 +66,12 @@ python scripts/save_scenario_manifests.py --out outputs/scenario_manifests_new
 
 接続先や秘密鍵はリポジトリに含めません。承認済みSSH方法と作業ディレクトリを使ってください。既存環境をまず読み取り確認し、飛行環境を保存します。Linux CUDAロックをMacにインストールしてはいけません。
 
-今回の新規サーバには元の学習済みモデルがなかったため、公式v1.4.3ソースから再学習しました。元の `/venv/main` は変更せず、作業ディレクトリの `.venv-flight` にGenesis 1.4.3を準備しています。[ベースライン](docs/proven-baseline.md)と[互換性](docs/compatibility.md)に、新規実行とノートブック保存結果を区別して記録しました。
+今回の新規サーバには元の学習済みモデルがなかったため、公式v1.4.3ソースから再学習しました。元の環境は変更せず、作業ディレクトリの `.venv-flight` にGenesis 1.4.3を準備しています。[ベースライン](docs/proven-baseline.md)と[互換性](docs/compatibility.md)に、新規実行とノートブック保存結果を区別して記録しました。
 
 ```bash
 # まず承認済みリモート作業ディレクトリで実行。
 export PYTHONPATH="$PWD/src"
-python scripts/transfer.py --out /tmp/patrol_source_new.tar.gz
+python scripts/transfer.py --out outputs/patrol_source_new.tar.gz
 # 接続設定は外部のSSH aliasを使用してscpし、新規作業ディレクトリに展開。
 
 # 自分の管理する学習ログから、番号の最大のチェックポイントを明示的に固定。

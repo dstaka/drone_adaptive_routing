@@ -8,11 +8,13 @@ import subprocess
 import sys
 import time
 import numpy as np
-from .objective import SCHEMA
+from .objective import SCHEMA, schema_for
 
 
 class PlannerClient:
-    def __init__(self, command, policy_hash, timeout=10):
+    def __init__(self, command, policy_hash, timeout=10, schema=None):
+        self.schema = schema or SCHEMA
+        self.n = self.schema.get('num_checkpoints', 3)
         self.process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                         stderr=sys.stderr)
         self.policy_hash, self.timeout = policy_hash, timeout
@@ -34,8 +36,15 @@ class PlannerClient:
         self.process.stdout.close()
 
     def request(self, features, mask):
+        features_array, mask_array = np.asarray(features), np.asarray(mask)
+        if (features_array.shape != (self.schema['size'],) or mask_array.shape != (self.n,) or
+                not np.isfinite(features_array).all() or mask_array.dtype != np.dtype(bool)):
+            raise ValueError('Invalid IPC dimensions or values; retrain for the required contract')
+        if not mask_array.any():
+            raise RuntimeError('No terminal policy query is allowed')
         self.request_id += 1
-        q = {'request_id': self.request_id, 'schema': SCHEMA['id'], 'features': list(features),
+        q = {'request_id': self.request_id, 'schema': self.schema['id'], 'num_checkpoints': self.n,
+             'checkpoint_ids': self.schema.get('checkpoint_ids', ['A', 'B', 'C']), 'features': list(features),
              'mask': list(map(bool, mask)), 'policy_hash': self.policy_hash}
         try:
             self.process.stdin.write((json.dumps(q, allow_nan=False) + '\n').encode())
@@ -61,32 +70,48 @@ class PlannerClient:
             r = json.loads(line)
         except (json.JSONDecodeError, UnicodeDecodeError) as exc:
             raise RuntimeError('Malformed planner response') from exc
-        if r.get('request_id') != self.request_id:
+        if type(r.get('request_id')) is not int or r['request_id'] != self.request_id:
             raise RuntimeError('Planner request ID mismatch')
         if r.get('status') != 'OK' or r.get('policy_hash') != self.policy_hash:
             raise RuntimeError('Planner failed or policy hash mismatch')
         action = r.get('action')
-        if type(action) is not int or action not in range(3) or not mask[action]:
+        if type(action) is not int or action not in range(self.n) or not mask[action]:
             raise RuntimeError('Planner invalid action')
         return action
 
     def predict(self, state):
-        return self.request(state.observation().tolist(), state.mask().tolist())
+        if (state.scenario.num_checkpoints != self.n or
+                (self.schema != SCHEMA and schema_for(state.scenario) != self.schema) or
+                (self.schema == SCHEMA and (state.scenario.checkpoint_ids != ['A', 'B', 'C'] or
+                 state.scenario.alpha != 1. or state.scenario.beta != 1. or
+                 state.scenario.nominal_speed_mps != 1. or state.scenario.return_to_base))):
+            raise ValueError('Planner/scenario mismatch; retrain for this contract')
+        return self.request(state.observation(legacy=self.schema == SCHEMA).tolist(), state.mask().tolist())
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--model', required=True)
     p.add_argument('--hash', required=True)
+    p.add_argument('--validate-scenario')
     a = p.parse_args()
     from .routing_agent import RoutingAgent
     agent = RoutingAgent(a.model, a.hash)
+    if a.validate_scenario:
+        from .scenario import Scenario
+        from .util import load_config
+        scenario = Scenario.from_dict(load_config(a.validate_scenario))
+        agent.validate_scenario(scenario)
+        print(json.dumps({'status': 'OK', 'schema': agent.schema, 'policy_hash': agent.hash}))
+        return
     for line in sys.stdin:
         request = json.loads(line)
         result = {'request_id': request.get('request_id'), 'policy_hash': agent.hash}
         try:
-            if request['schema'] != SCHEMA['id'] or request['policy_hash'] != agent.hash:
+            if request['schema'] != agent.schema['id'] or request['policy_hash'] != agent.hash:
                 raise ValueError('Protocol schema/policy mismatch')
+            if request.get('num_checkpoints') != agent.num_checkpoints or request.get('checkpoint_ids') != agent.schema.get('checkpoint_ids', ['A', 'B', 'C']):
+                raise ValueError('Protocol dimensions/ID ordering mismatch; retrain for this contract')
             features = np.asarray(request['features'], dtype=np.float32)
             action = agent.predict_features(features, request['mask'])
             result.update(status='OK', action=action)

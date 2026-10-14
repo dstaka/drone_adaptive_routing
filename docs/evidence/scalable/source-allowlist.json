@@ -1,0 +1,327 @@
+[
+  {
+    "path": "configs/demo_scenarios/cost_shift.yaml",
+    "sha256": "33aaa9ec353192d8347c3d1a271bdcd9bd55303357a000840be2a2d250228560",
+    "size": 557
+  },
+  {
+    "path": "configs/demo_scenarios/emergency.yaml",
+    "sha256": "a84e748ab759005d547bcf0dcf35aeab70e2c23390f493bad5f3f9ece63473fa",
+    "size": 551
+  },
+  {
+    "path": "configs/demo_scenarios/normal.yaml",
+    "sha256": "db7e3637eb8a312c1eb1e274470bbc4661f99876c930c4c6b1ce84c976dee222",
+    "size": 498
+  },
+  {
+    "path": "configs/execution.example.yaml",
+    "sha256": "a5f138a969dacfbdd8a73cfbc93b077b7f6645bd63e84e23949ec972fcec36ba",
+    "size": 406
+  },
+  {
+    "path": "configs/flight_eval.yaml",
+    "sha256": "8391f51fef9a6992e1af0b98b575c8685f76e597125dfb702e9b4437dfaef8b0",
+    "size": 197
+  },
+  {
+    "path": "configs/flight_train.yaml",
+    "sha256": "94e591945721a6555844ac8433e4d47bbb59a8026fbffaf08269a3e5409ef7cc",
+    "size": 57
+  },
+  {
+    "path": "configs/routing_candidate.yaml",
+    "sha256": "b003cf86f2e25b4ea115cd73d1e89de9bd312fa86924f037a1d8c1d25b060944",
+    "size": 339
+  },
+  {
+    "path": "configs/routing_candidate_scaled.yaml",
+    "sha256": "6434ef20406fac4705968cfb766255900bc4485943eb01c8592c512cadef3611",
+    "size": 353
+  },
+  {
+    "path": "configs/routing_scalable.yaml",
+    "sha256": "ca325d57116855ba3bd98bae65d4d62e8a08a1fead1476410dbf937ce39e4870",
+    "size": 272
+  },
+  {
+    "path": "configs/routing_train.yaml",
+    "sha256": "5c6b53a453fcec80634adab987d2ccc70c91eaaedd3d091c6f1e64c072678463",
+    "size": 157
+  },
+  {
+    "path": "configs/video.yaml",
+    "sha256": "7270cdcb32e058dea3f9f20c3fad4f8300c862463011db26d8f286d84929024a",
+    "size": 65
+  },
+  {
+    "path": "scripts/build_report.py",
+    "sha256": "88e8d0f52e2f6f02762f7f7052f1feb62a745c168baadc5741811e7c15ba7838",
+    "size": 3183
+  },
+  {
+    "path": "scripts/build_video.py",
+    "sha256": "6a129e61fb1e68552adf72fcf5808bd8e5905304f6ac48a74ea642ff9a956554",
+    "size": 619
+  },
+  {
+    "path": "scripts/check_media.py",
+    "sha256": "ed96ae87b8d9ce74b04c1c854ce476fbcd9c5e9b8906f1b5c2f599c75dd865be",
+    "size": 5384
+  },
+  {
+    "path": "scripts/create_manifest.py",
+    "sha256": "1f95308ac6008cdb5317db833febd6a6ee66819d0324481ad07a49d5a71a2bcc",
+    "size": 3479
+  },
+  {
+    "path": "scripts/doctor.py",
+    "sha256": "e5555a078a09cd90ec80e60914c14afcc05a722bbdb1053e79eb3d2eebfa9590",
+    "size": 2605
+  },
+  {
+    "path": "scripts/eval_flight.py",
+    "sha256": "0d10c5c6fccdaf89a6f7d1635fa98ea2869440cdcb3d81a15463b4bb5d672ac1",
+    "size": 4197
+  },
+  {
+    "path": "scripts/eval_routing.py",
+    "sha256": "04f87268c316d9f056d900aea22e4f3cf7e3903e2851690e605542e367c33916",
+    "size": 651
+  },
+  {
+    "path": "scripts/final_gpu_validation.py",
+    "sha256": "d942e24c83b9ce519f0c4c3404d17298209c38588e800b5e209ecfaa97246967",
+    "size": 937
+  },
+  {
+    "path": "scripts/freeze_routing_models.py",
+    "sha256": "446c39f83df20fd3cc1ce9ceecb1e330b41d1d8756278ab8f2e5319da36cac13",
+    "size": 575
+  },
+  {
+    "path": "scripts/plot_results.py",
+    "sha256": "c776d39dc8849e1ce2e0fcd71af8d22694337af68c9617516312160521a887ad",
+    "size": 4379
+  },
+  {
+    "path": "scripts/replay_decisions.py",
+    "sha256": "6237632a77c8af377eacac9427a056fe27d02bac94fcc9fdcdc780aa98c9da43",
+    "size": 2200
+  },
+  {
+    "path": "scripts/reproduce_baseline.py",
+    "sha256": "fa83cc99aa03dd0f7f7edc519c9d088a8102e0df49b86ed368f89ab80bd8d664",
+    "size": 2090
+  },
+  {
+    "path": "scripts/run_demo_scenarios.py",
+    "sha256": "1298c7af4d353062a33ccbacd0cf0e05b95da687536d1658ba27dbfcaf177fc1",
+    "size": 5468
+  },
+  {
+    "path": "scripts/save_scenario_manifests.py",
+    "sha256": "c7908df518af29d2ab044bf9d53f16b26314e6161c01977eb17f4cde76e15d79",
+    "size": 1440
+  },
+  {
+    "path": "scripts/select_demo_scenarios.py",
+    "sha256": "52c9c5edcdfd22795843c3e7fbd91a3f3e7e5446fa760531a9de12a8b2436527",
+    "size": 6154
+  },
+  {
+    "path": "scripts/train_flight.py",
+    "sha256": "44a94a73813beb432e8a1c7785dbfd2a0b36cca877a866a5edd7b9d2a1c8ac85",
+    "size": 1337
+  },
+  {
+    "path": "scripts/train_routing.py",
+    "sha256": "cb8a750bf071fc49ac6c5d6e6080e387662fd4922ce2dd7ef1a08332a1978227",
+    "size": 943
+  },
+  {
+    "path": "scripts/transfer.py",
+    "sha256": "590ef33a77157fb90988ab3cce5ebc9737f8f1ab88c8e99125a7d8e633bee783",
+    "size": 1562
+  },
+  {
+    "path": "scripts/verify_analytical_costs.py",
+    "sha256": "bf564a6da9504acf73f19dff591cec749ee465e4cbc4366681cd39634da9991e",
+    "size": 3597
+  },
+  {
+    "path": "scripts/verify_delivery.py",
+    "sha256": "87caac85b2d2ef15d971f85316053d3f8b8ca0ed5589341518d72b6d95c07f0e",
+    "size": 643
+  },
+  {
+    "path": "src/adaptive_drone_patrol/__init__.py",
+    "sha256": "2e63fc4fa9212281057d78b54c6d794d0759b8b1342f3560135a423c3105f35e",
+    "size": 77
+  },
+  {
+    "path": "src/adaptive_drone_patrol/analytical.py",
+    "sha256": "7da47128920b601bb4537478defe2038cfe39873f8df9b7cd9f1591d6030f9be",
+    "size": 9842
+  },
+  {
+    "path": "src/adaptive_drone_patrol/baselines.py",
+    "sha256": "7705ba23aa1eac233643bd8ef45f5aa39594d1017e551ef995763208b8347ccf",
+    "size": 4217
+  },
+  {
+    "path": "src/adaptive_drone_patrol/benchmark.py",
+    "sha256": "e22c03f6bbe0038c82c4f3fcaa10821ed60b685677ce968702fcc1f3ed4257cb",
+    "size": 7773
+  },
+  {
+    "path": "src/adaptive_drone_patrol/evidence.py",
+    "sha256": "8685e0997f3c4bd993871bb5c65d5a40f4761a5e2fe41cc6a99f34d545c24225",
+    "size": 10339
+  },
+  {
+    "path": "src/adaptive_drone_patrol/flight_agent.py",
+    "sha256": "ff2b42a98cb9d6c070cb95d4dc40ab9da62b6cf26a107b5489a3f3ef8a33b396",
+    "size": 3203
+  },
+  {
+    "path": "src/adaptive_drone_patrol/jobs.py",
+    "sha256": "047a63bb0df16039c6ed58f3c95833493358817565542498e0bd55ce576ed0a3",
+    "size": 5427
+  },
+  {
+    "path": "src/adaptive_drone_patrol/mission.py",
+    "sha256": "921ed75699ba1e386607ddb134762d7f32b8e87bca92f5288fc0a6eab7249dd7",
+    "size": 10792
+  },
+  {
+    "path": "src/adaptive_drone_patrol/objective.py",
+    "sha256": "d7a099c5acca9e8766c01ae61cd5e5c7108719c5c2a2f9bab63b25fde6702f96",
+    "size": 7231
+  },
+  {
+    "path": "src/adaptive_drone_patrol/patrol_runner.py",
+    "sha256": "94130ff85c957876398f77e1342757657919c5f615ae5bea471e92a217bb6835",
+    "size": 1841
+  },
+  {
+    "path": "src/adaptive_drone_patrol/planner_ipc.py",
+    "sha256": "ca4278a9037e8acf183c265b02d5508bfa6d110bd369f1afba541941848dcd1e",
+    "size": 5837
+  },
+  {
+    "path": "src/adaptive_drone_patrol/recorder.py",
+    "sha256": "5266a35716989257475bca312d4dfe1b7a064090791f6cbfb02ea4670b0f9d68",
+    "size": 1967
+  },
+  {
+    "path": "src/adaptive_drone_patrol/routing_agent.py",
+    "sha256": "32694b8e9e57cec05e7f958bf5d1eec7de1c437b9942bdce165e81c9f845e396",
+    "size": 13152
+  },
+  {
+    "path": "src/adaptive_drone_patrol/routing_env.py",
+    "sha256": "cd831fc2ba3917900a4376279604954bdb6494e76e281ea761313e177ee348b5",
+    "size": 2567
+  },
+  {
+    "path": "src/adaptive_drone_patrol/routing_policy.py",
+    "sha256": "dbaf0614ea7333ac7b660a7855d3c6fba336f6e0d6edf98da4d3e3bb3ce034a4",
+    "size": 3675
+  },
+  {
+    "path": "src/adaptive_drone_patrol/routing_teacher.py",
+    "sha256": "cffbd1ea398fa91d324d1930a1ab476665b85e5687f69e919f5da9f20d50ca91",
+    "size": 4639
+  },
+  {
+    "path": "src/adaptive_drone_patrol/scenario.py",
+    "sha256": "9a43725d73795dbd2f573e098a533314865007a37a820618ed250d19c92caa33",
+    "size": 7885
+  },
+  {
+    "path": "src/adaptive_drone_patrol/target_adapter.py",
+    "sha256": "a38f961014d1119ef4aa12a3766b0257d5dd3bbdb9cc999a37f75f861f7d4cc7",
+    "size": 3748
+  },
+  {
+    "path": "src/adaptive_drone_patrol/util.py",
+    "sha256": "24f228460404f0a19b87a25f2a15f7f29fbb1743c39ee30eec0b8019b40301d4",
+    "size": 765
+  },
+  {
+    "path": "src/adaptive_drone_patrol/video.py",
+    "sha256": "02a8af88d1282df950967980ce5aebb761b7eafd04a4690b608e091ae4ef791d",
+    "size": 11633
+  },
+  {
+    "path": "tests/conftest.py",
+    "sha256": "03e886f1ce4efbfa96c1b2db062ce7a815413e9b229136ef75b91161bd558fa1",
+    "size": 295
+  },
+  {
+    "path": "tests/test_agent.py",
+    "sha256": "b851593a6170f6959f41bb0145e60a0cbac3a3c8e9065fd39b84e572fd2cef8f",
+    "size": 9474
+  },
+  {
+    "path": "tests/test_analytical.py",
+    "sha256": "fb6bc71d52fc455a68e84f5ed3385ce3c29ac34bf596b404bdabf48324c4e508",
+    "size": 5991
+  },
+  {
+    "path": "tests/test_evidence.py",
+    "sha256": "a23ec87a62631f0c6d49106fb258d4a0772d0be07c8531773a0b52fae73356db",
+    "size": 1759
+  },
+  {
+    "path": "tests/test_gpu.py",
+    "sha256": "237edb2cf2596c75b7739838b2d588d63244ae14293153a66461fc91a795a92c",
+    "size": 1406
+  },
+  {
+    "path": "tests/test_ipc.py",
+    "sha256": "bdce8a4a232f939fe862a4faaefdcb80e4e25b7660d348063784dc89094b58c9",
+    "size": 1628
+  },
+  {
+    "path": "tests/test_jobs.py",
+    "sha256": "d9421a2c12968be8897519de6bd615c2b52ab223e5595c8f0f7793b8cbd723c5",
+    "size": 1678
+  },
+  {
+    "path": "tests/test_patrol.py",
+    "sha256": "6b3515fb3b34f7e03e0ffbaea86a7336739524b8222965542765f3c390b7383b",
+    "size": 3591
+  },
+  {
+    "path": "tests/test_review_regressions.py",
+    "sha256": "7fa982d0f67b4a4823697e2bfa785c28a5ad2cabe100c4ed33916a090e30c9c2",
+    "size": 9375
+  },
+  {
+    "path": "tests/test_routing.py",
+    "sha256": "cba9021c652aced8fcea03269c2ed925c441622074486585b733ba24010dbbb8",
+    "size": 4188
+  },
+  {
+    "path": "tests/test_scalable.py",
+    "sha256": "301de301a0d523d9e557d13dcf6bdc14e4a8e0cbd83bcdbcfc329e757c504e5d",
+    "size": 5671
+  },
+  {
+    "path": "pyproject.toml",
+    "sha256": "905a184d217614ce9ca0e2c80a2536a25342f7d8750efcb3ba9fe81ab7bc2598",
+    "size": 885
+  },
+  {
+    "path": "AGENTS.md",
+    "sha256": "2788435918bcb60eb85b7c4b8ebe4ca23dc968ee18a685df1b2ad504da195b20",
+    "size": 1164
+  },
+  {
+    "path": "specs/2026-10-14-scalable-adaptive-routing/spec.md",
+    "sha256": "39f6ccdbdac600b26cca9616fce4a0d70264c1c4bd14acc7c4aaa9c6fdaed8ca",
+    "size": 23472
+  }
+]

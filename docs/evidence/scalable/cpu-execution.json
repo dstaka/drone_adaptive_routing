@@ -1,0 +1,130 @@
+{
+  "budget_s": 14400,
+  "used_s": 2004.196180806961,
+  "gpu_work_s": 0,
+  "stages": [
+    {
+      "name": "mlp_stopped",
+      "elapsed_s": 1192.084205839783,
+      "jobs": [
+        {
+          "run_id": "job-train",
+          "command": [
+            "bash",
+            "train-stage.sh"
+          ],
+          "status": "FAILED",
+          "started_epoch": 1791996042.4619644,
+          "timeout_s": 10000.0,
+          "pid": 2888,
+          "exit_code": -1,
+          "error": "Supervisor interrupted by signal 15",
+          "elapsed_s": 1192.084205839783,
+          "finished_epoch": 1791997234.5465236
+        }
+      ],
+      "artifact_path": "outputs/scalable_20261015/outputs"
+    },
+    {
+      "name": "candidate",
+      "elapsed_s": 454.00820642290637,
+      "jobs": [
+        {
+          "run_id": "job-train",
+          "command": [
+            "bash",
+            "../candidate-stage.sh"
+          ],
+          "status": "SUCCEEDED",
+          "started_epoch": 1791996668.0766113,
+          "timeout_s": 4200.0,
+          "pid": 3122,
+          "exit_code": 0,
+          "elapsed_s": 454.00820642290637,
+          "finished_epoch": 1791997122.0851865
+        }
+      ],
+      "artifact_path": "outputs/scalable_20261015/candidate-src/outputs"
+    },
+    {
+      "name": "normalized_candidate",
+      "elapsed_s": 299.31441920343786,
+      "jobs": [
+        {
+          "run_id": "job-train",
+          "command": [
+            "bash",
+            "../normalized-stage.sh"
+          ],
+          "status": "SUCCEEDED",
+          "started_epoch": 1791997198.7545772,
+          "timeout_s": 2200.0,
+          "pid": 3333,
+          "exit_code": 0,
+          "elapsed_s": 299.31441920343786,
+          "finished_epoch": 1791997498.0692928
+        }
+      ],
+      "artifact_path": "outputs/scalable_20261015/normalized-src/outputs"
+    },
+    {
+      "name": "evaluation_initial",
+      "elapsed_s": 37.081383985932916,
+      "jobs": [
+        {
+          "run_id": "job-evaluate",
+          "command": [
+            "bash",
+            "../final-stage.sh"
+          ],
+          "status": "FAILED",
+          "started_epoch": 1791997606.1483526,
+          "timeout_s": 1600.0,
+          "pid": 3493,
+          "exit_code": 1,
+          "elapsed_s": 37.081383985932916,
+          "finished_epoch": 1791997643.230084
+        }
+      ],
+      "artifact_path": "outputs/scalable_20261015/final-src/outputs"
+    },
+    {
+      "name": "replay_corrected",
+      "elapsed_s": 21.707965354900807,
+      "jobs": [
+        {
+          "run_id": "job-replay",
+          "command": [
+            "bash",
+            "../scalable-replay-stage.sh"
+          ],
+          "status": "FAILED",
+          "started_epoch": 1791997845.1254766,
+          "timeout_s": 1000.0,
+          "pid": 3604,
+          "exit_code": 127,
+          "elapsed_s": 0.004548095166683197,
+          "finished_epoch": 1791997845.130378
+        },
+        {
+          "run_id": "job-replay-retry",
+          "command": [
+            "bash",
+            "../scalable-replay-stage.sh"
+          ],
+          "status": "SUCCEEDED",
+          "started_epoch": 1791997949.3524604,
+          "timeout_s": 1000.0,
+          "pid": 3634,
+          "exit_code": 0,
+          "elapsed_s": 21.703417259734124,
+          "finished_epoch": 1791997971.056286
+        }
+      ],
+      "artifact_path": "outputs/scalable_20261015/replay-src/outputs"
+    }
+  ],
+  "note": "Sum of supervised wall times, including intentional MLP early stop, initial replay roundoff failure and transfer-order retry. Concurrent seed times are reported separately in training records. No GPU work.",
+  "remaining_s": 12395.803819193039,
+  "path_base": "repository_root"
+}

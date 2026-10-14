@@ -31,3 +31,7 @@
 - 「安定飛行」は各地点の位置・速度・連続滞在条件と、事前に固定した3シード×3シナリオの完走で検証します。
 
 最終完成は3 PRすべての受入条件を満たした時点です。PR 1のCPU結果だけでは実飛行の成功を、PR 2の録画だけでは完成動画の1倍速を主張しません。実装時の接続情報・残りGPU予算は別途確認し、以前の実行許可や8時間枠を新たな予算として読み替えません。
+
+## 2026-10-15 implementation session
+
+The approved [scalable adaptive routing specification](2026-10-14-scalable-adaptive-routing/spec.md) is implemented in the repository root. See the [CPU workflow](../docs/scalable-routing.md), [implementation plan](../docs/superpowers/plans/2026-10-15-scalable-adaptive-routing.md), and [measured handoff](../docs/scalable-routing-handoff.md). Physical integration and video remain separate follow-up specifications. The operator requested one local commit and a prepared PR description without push.

@@ -3,6 +3,7 @@
 import csv
 import json
 import math
+import numpy as np
 from pathlib import Path
 from .util import sha256
 
@@ -95,8 +96,8 @@ def validate_run(path, require_media=False):
     reached = [e['target_id'] for e in events if e['type'] == 'WAYPOINT_REACHED']
     if reached != summary['completed_order'] or len(set(reached)) != len(reached):
         raise ValueError('Completed visits do not match physical service events')
-    if summary['status'] == 'SUCCEEDED' and set(reached) != {'A', 'B', 'C'}:
-        raise ValueError('Successful mission lacks three physical service events')
+    if summary['status'] == 'SUCCEEDED' and set(reached) != set(summary.get('checkpoint_ids', ['A', 'B', 'C'])):
+        raise ValueError('Successful mission lacks configured physical service events')
     if not events or events[-1]['type'] not in ['MISSION_FINISHED', 'MISSION_FAILED']:
         raise ValueError('Missing terminal mission event')
     for e in events:
@@ -118,6 +119,14 @@ def validate_run(path, require_media=False):
     steps = [int(r['simulation_step']) for r in rows]
     if steps != list(range(1, len(rows) + 1)):
         raise ValueError('Missing/nonmonotonic simulation steps')
+    for row in rows:
+        xyz = np.array([float(row[k]) for k in ['x', 'y', 'z']])
+        target = np.array([float(row[k]) for k in ['target_x', 'target_y', 'target_z']])
+        vel = np.array([float(row[k]) for k in ['vx', 'vy', 'vz']])
+        if (not np.isfinite([*xyz, *target, *vel]).all()
+                or abs(np.linalg.norm(xyz-target)-float(row['distance_to_goal_m'])) > 1e-7
+                or abs(np.linalg.norm(vel)-float(row['speed_mps'])) > 1e-7):
+            raise ValueError('Physical telemetry pose/speed mismatch')
     telemetry = dict(zip(steps, rows))
     if not (path / 'decisions.jsonl').is_file():
         raise ValueError('Missing decision references')
@@ -132,7 +141,7 @@ def validate_run(path, require_media=False):
                 or not decision['mask'][decision['selected_action']]):
             raise ValueError('Invalid decision reference or masked action')
     if summary['status'] == 'SUCCEEDED':
-        if summary['completed_count'] != 3 or summary['intended_order'] != reached:
+        if summary['completed_count'] != len(summary.get('checkpoint_ids', ['A', 'B', 'C'])) or summary['intended_order'] != reached:
             raise ValueError('Inconsistent successful visit count/order')
         if any(r[k] != 'False' for r in rows for k in ['done', 'reset', 'safety_failure']):
             raise ValueError('Successful flight includes a termination/safety failure')
@@ -157,9 +166,21 @@ def validate_run(path, require_media=False):
         if not frames:
             raise ValueError('Empty frame map')
         for i, frame in enumerate(frames):
-            if int(frame['frame_index']) != i or int(frame['simulation_step']) not in telemetry:
+            frame_step = int(frame['simulation_step'])
+            if int(frame['frame_index']) != i:
                 raise ValueError('Frame reference cannot resolve to same-run telemetry')
-            sample = telemetry[int(frame['simulation_step'])]
-            if sample['frame_index'] != str(i) or float(sample['sim_time_s']) != float(frame['sim_time_s']):
+            if frame_step == 0 and (path / 'initial_state.json').is_file():
+                sample_time = 0.
+            elif frame_step in telemetry:
+                sample_time = float(telemetry[frame_step]['sim_time_s'])
+            else:
+                raise ValueError('Frame reference cannot resolve to same-run telemetry')
+            if sample_time != float(frame['sim_time_s']):
+                raise ValueError('Frame/telemetry timing mismatch')
+            if frame.get('event_seq'):
+                seq = int(frame['event_seq'])
+                if seq < 1 or seq > len(events) or events[seq-1]['simulation_step'] > frame_step:
+                    raise ValueError('Frame/event boundary mismatch')
+            elif telemetry[frame_step]['frame_index'] != str(i):
                 raise ValueError('Frame/telemetry timing mismatch')
     return summary

@@ -1,0 +1,1021 @@
+{
+  "python": "3.12.14",
+  "lock_sha256": "a6985bdf3307ab18cdf5a32b715093d6f607ee005ebdf8f3527030971fc0553c",
+  "status": "PASS",
+  "packages": [
+    {
+      "name": "absl-py",
+      "expected": "2.5.1",
+      "actual": "2.5.1",
+      "match": true
+    },
+    {
+      "name": "annotated-types",
+      "expected": "0.8.0",
+      "actual": "0.8.0",
+      "match": true
+    },
+    {
+      "name": "anyio",
+      "expected": "4.15.1",
+      "actual": "4.15.1",
+      "match": true
+    },
+    {
+      "name": "asttokens",
+      "expected": "3.0.2",
+      "actual": "3.0.2",
+      "match": true
+    },
+    {
+      "name": "av",
+      "expected": "19.0.1",
+      "actual": "19.0.1",
+      "match": true
+    },
+    {
+      "name": "certifi",
+      "expected": "2026.7.22",
+      "actual": "2026.7.22",
+      "match": true
+    },
+    {
+      "name": "cffi",
+      "expected": "2.1.1",
+      "actual": "2.1.1",
+      "match": true
+    },
+    {
+      "name": "click",
+      "expected": "8.5.0",
+      "actual": "8.5.0",
+      "match": true
+    },
+    {
+      "name": "cloudpickle",
+      "expected": "3.1.2",
+      "actual": "3.1.2",
+      "match": true
+    },
+    {
+      "name": "coacd",
+      "expected": "1.0.14",
+      "actual": "1.0.14",
+      "match": true
+    },
+    {
+      "name": "colorama",
+      "expected": "0.4.6",
+      "actual": "0.4.6",
+      "match": true
+    },
+    {
+      "name": "comm",
+      "expected": "0.2.3",
+      "actual": "0.2.3",
+      "match": true
+    },
+    {
+      "name": "contourpy",
+      "expected": "1.4.0",
+      "actual": "1.4.0",
+      "match": true
+    },
+    {
+      "name": "cuda-bindings",
+      "expected": "13.3.1",
+      "actual": "13.3.1",
+      "match": true
+    },
+    {
+      "name": "cuda-pathfinder",
+      "expected": "1.8.1",
+      "actual": "1.8.1",
+      "match": true
+    },
+    {
+      "name": "cuda-toolkit",
+      "expected": "13.2.1",
+      "actual": "13.2.1",
+      "match": true
+    },
+    {
+      "name": "cycler",
+      "expected": "0.12.1",
+      "actual": "0.12.1",
+      "match": true
+    },
+    {
+      "name": "dataclasses-json",
+      "expected": "0.6.7",
+      "actual": "0.6.7",
+      "match": true
+    },
+    {
+      "name": "debugpy",
+      "expected": "1.8.21",
+      "actual": "1.8.21",
+      "match": true
+    },
+    {
+      "name": "decorator",
+      "expected": "5.3.1",
+      "actual": "5.3.1",
+      "match": true
+    },
+    {
+      "name": "Deprecated",
+      "expected": "3.0.0",
+      "actual": "3.0.0",
+      "match": true
+    },
+    {
+      "name": "dill",
+      "expected": "0.4.1",
+      "actual": "0.4.1",
+      "match": true
+    },
+    {
+      "name": "DracoPy",
+      "expected": "2.2.0",
+      "actual": "2.2.0",
+      "match": true
+    },
+    {
+      "name": "etils",
+      "expected": "1.14.0",
+      "actual": "1.14.0",
+      "match": true
+    },
+    {
+      "name": "executing",
+      "expected": "2.2.1",
+      "actual": "2.2.1",
+      "match": true
+    },
+    {
+      "name": "fast_simplification",
+      "expected": "0.2.0",
+      "actual": "0.2.0",
+      "match": true
+    },
+    {
+      "name": "filelock",
+      "expected": "3.32.5",
+      "actual": "3.32.5",
+      "match": true
+    },
+    {
+      "name": "fonttools",
+      "expected": "4.66.1",
+      "actual": "4.66.1",
+      "match": true
+    },
+    {
+      "name": "freetype-py",
+      "expected": "2.5.1",
+      "actual": "2.5.1",
+      "match": true
+    },
+    {
+      "name": "frozendict",
+      "expected": "2.4.7",
+      "actual": "2.4.7",
+      "match": true
+    },
+    {
+      "name": "fsspec",
+      "expected": "2026.9.0",
+      "actual": "2026.9.0",
+      "match": true
+    },
+    {
+      "name": "genesis-world",
+      "expected": "1.4.3",
+      "actual": "1.4.3",
+      "match": true
+    },
+    {
+      "name": "gitdb",
+      "expected": "4.0.12",
+      "actual": "4.0.12",
+      "match": true
+    },
+    {
+      "name": "GitPython",
+      "expected": "3.2.0",
+      "actual": "3.2.0",
+      "match": true
+    },
+    {
+      "name": "glfw",
+      "expected": "2.10.2",
+      "actual": "2.10.2",
+      "match": true
+    },
+    {
+      "name": "grpcio",
+      "expected": "1.84.0",
+      "actual": "1.84.0",
+      "match": true
+    },
+    {
+      "name": "gs-madrona",
+      "expected": "0.0.10",
+      "actual": "0.0.10",
+      "match": true
+    },
+    {
+      "name": "h11",
+      "expected": "0.16.0",
+      "actual": "0.16.0",
+      "match": true
+    },
+    {
+      "name": "hf-xet",
+      "expected": "1.6.0",
+      "actual": "1.6.0",
+      "match": true
+    },
+    {
+      "name": "httpcore",
+      "expected": "1.0.9",
+      "actual": "1.0.9",
+      "match": true
+    },
+    {
+      "name": "httpx",
+      "expected": "0.28.1",
+      "actual": "0.28.1",
+      "match": true
+    },
+    {
+      "name": "huggingface_hub",
+      "expected": "1.30.0",
+      "actual": "1.30.0",
+      "match": true
+    },
+    {
+      "name": "idna",
+      "expected": "3.19",
+      "actual": "3.19",
+      "match": true
+    },
+    {
+      "name": "ImageIO",
+      "expected": "2.38.1",
+      "actual": "2.38.1",
+      "match": true
+    },
+    {
+      "name": "imageio-ffmpeg",
+      "expected": "0.6.0",
+      "actual": "0.6.0",
+      "match": true
+    },
+    {
+      "name": "importlib_metadata",
+      "expected": "9.0.1",
+      "actual": "9.0.1",
+      "match": true
+    },
+    {
+      "name": "iniconfig",
+      "expected": "2.3.1",
+      "actual": "2.3.1",
+      "match": true
+    },
+    {
+      "name": "ipykernel",
+      "expected": "7.3.0",
+      "actual": "7.3.0",
+      "match": true
+    },
+    {
+      "name": "ipython",
+      "expected": "9.17.1",
+      "actual": "9.17.1",
+      "match": true
+    },
+    {
+      "name": "ipython_pygments_lexers",
+      "expected": "1.1.1",
+      "actual": "1.1.1",
+      "match": true
+    },
+    {
+      "name": "ipywidgets",
+      "expected": "8.1.9",
+      "actual": "8.1.9",
+      "match": true
+    },
+    {
+      "name": "jedi",
+      "expected": "0.20.0",
+      "actual": "0.20.0",
+      "match": true
+    },
+    {
+      "name": "Jinja2",
+      "expected": "3.1.6",
+      "actual": "3.1.6",
+      "match": true
+    },
+    {
+      "name": "jupyter_client",
+      "expected": "8.10.0",
+      "actual": "8.10.0",
+      "match": true
+    },
+    {
+      "name": "jupyter_core",
+      "expected": "5.9.1",
+      "actual": "5.9.1",
+      "match": true
+    },
+    {
+      "name": "jupyterlab_widgets",
+      "expected": "3.0.17",
+      "actual": "3.0.17",
+      "match": true
+    },
+    {
+      "name": "kiwisolver",
+      "expected": "1.5.1",
+      "actual": "1.5.1",
+      "match": true
+    },
+    {
+      "name": "lazy-loader",
+      "expected": "0.6",
+      "actual": "0.6",
+      "match": true
+    },
+    {
+      "name": "libigl",
+      "expected": "2.6.3",
+      "actual": "2.6.3",
+      "match": true
+    },
+    {
+      "name": "llvmlite",
+      "expected": "0.50.0",
+      "actual": "0.50.0",
+      "match": true
+    },
+    {
+      "name": "Markdown",
+      "expected": "3.11",
+      "actual": "3.11",
+      "match": true
+    },
+    {
+      "name": "markdown-it-py",
+      "expected": "4.2.0",
+      "actual": "4.2.0",
+      "match": true
+    },
+    {
+      "name": "MarkupSafe",
+      "expected": "3.0.3",
+      "actual": "3.0.3",
+      "match": true
+    },
+    {
+      "name": "marshmallow",
+      "expected": "3.26.2",
+      "actual": "3.26.2",
+      "match": true
+    },
+    {
+      "name": "matplotlib",
+      "expected": "3.11.2",
+      "actual": "3.11.2",
+      "match": true
+    },
+    {
+      "name": "matplotlib-inline",
+      "expected": "0.2.2",
+      "actual": "0.2.2",
+      "match": true
+    },
+    {
+      "name": "mdurl",
+      "expected": "0.1.2",
+      "actual": "0.1.2",
+      "match": true
+    },
+    {
+      "name": "ml_dtypes",
+      "expected": "0.6.0",
+      "actual": "0.6.0",
+      "match": true
+    },
+    {
+      "name": "moviepy",
+      "expected": "2.2.1",
+      "actual": "2.2.1",
+      "match": true
+    },
+    {
+      "name": "mpmath",
+      "expected": "1.3.0",
+      "actual": "1.3.0",
+      "match": true
+    },
+    {
+      "name": "mujoco",
+      "expected": "3.15.0",
+      "actual": "3.15.0",
+      "match": true
+    },
+    {
+      "name": "mypy_extensions",
+      "expected": "1.1.0",
+      "actual": "1.1.0",
+      "match": true
+    },
+    {
+      "name": "nest-asyncio2",
+      "expected": "1.7.2",
+      "actual": "1.7.2",
+      "match": true
+    },
+    {
+      "name": "networkx",
+      "expected": "3.7",
+      "actual": "3.7",
+      "match": true
+    },
+    {
+      "name": "numba",
+      "expected": "0.68.0",
+      "actual": "0.68.0",
+      "match": true
+    },
+    {
+      "name": "numpy",
+      "expected": "2.5.3",
+      "actual": "2.5.3",
+      "match": true
+    },
+    {
+      "name": "nvidia-cublas",
+      "expected": "13.4.0.1",
+      "actual": "13.4.0.1",
+      "match": true
+    },
+    {
+      "name": "nvidia-cuda-cupti",
+      "expected": "13.2.75",
+      "actual": "13.2.75",
+      "match": true
+    },
+    {
+      "name": "nvidia-cuda-nvrtc",
+      "expected": "13.2.78",
+      "actual": "13.2.78",
+      "match": true
+    },
+    {
+      "name": "nvidia-cuda-nvrtc-cu12",
+      "expected": "12.9.86",
+      "actual": "12.9.86",
+      "match": true
+    },
+    {
+      "name": "nvidia-cuda-runtime",
+      "expected": "13.2.75",
+      "actual": "13.2.75",
+      "match": true
+    },
+    {
+      "name": "nvidia-cudnn-cu13",
+      "expected": "9.24.0.43",
+      "actual": "9.24.0.43",
+      "match": true
+    },
+    {
+      "name": "nvidia-cufft",
+      "expected": "12.2.0.46",
+      "actual": "12.2.0.46",
+      "match": true
+    },
+    {
+      "name": "nvidia-cufile",
+      "expected": "1.17.1.22",
+      "actual": "1.17.1.22",
+      "match": true
+    },
+    {
+      "name": "nvidia-curand",
+      "expected": "10.4.2.55",
+      "actual": "10.4.2.55",
+      "match": true
+    },
+    {
+      "name": "nvidia-cusolver",
+      "expected": "12.2.0.1",
+      "actual": "12.2.0.1",
+      "match": true
+    },
+    {
+      "name": "nvidia-cusparse",
+      "expected": "12.7.10.1",
+      "actual": "12.7.10.1",
+      "match": true
+    },
+    {
+      "name": "nvidia-cusparselt-cu13",
+      "expected": "0.8.1",
+      "actual": "0.8.1",
+      "match": true
+    },
+    {
+      "name": "nvidia-nccl-cu13",
+      "expected": "2.30.7",
+      "actual": "2.30.7",
+      "match": true
+    },
+    {
+      "name": "nvidia-nvjitlink",
+      "expected": "13.3.33",
+      "actual": "13.3.33",
+      "match": true
+    },
+    {
+      "name": "nvidia-nvjitlink-cu12",
+      "expected": "12.9.86",
+      "actual": "12.9.86",
+      "match": true
+    },
+    {
+      "name": "nvidia-nvshmem-cu13",
+      "expected": "3.4.5",
+      "actual": "3.4.5",
+      "match": true
+    },
+    {
+      "name": "nvidia-nvtx",
+      "expected": "13.2.75",
+      "actual": "13.2.75",
+      "match": true
+    },
+    {
+      "name": "onnx",
+      "expected": "1.23.2",
+      "actual": "1.23.2",
+      "match": true
+    },
+    {
+      "name": "onnx-ir",
+      "expected": "1.0.0",
+      "actual": "1.0.0",
+      "match": true
+    },
+    {
+      "name": "onnxscript",
+      "expected": "0.7.2",
+      "actual": "0.7.2",
+      "match": true
+    },
+    {
+      "name": "opencv-python",
+      "expected": "5.0.0.93",
+      "actual": "5.0.0.93",
+      "match": true
+    },
+    {
+      "name": "OpenEXR",
+      "expected": "3.5.2",
+      "actual": "3.5.2",
+      "match": true
+    },
+    {
+      "name": "orjson",
+      "expected": "3.13.0",
+      "actual": "3.13.0",
+      "match": true
+    },
+    {
+      "name": "packaging",
+      "expected": "26.3",
+      "actual": "26.3",
+      "match": true
+    },
+    {
+      "name": "parso",
+      "expected": "0.8.7",
+      "actual": "0.8.7",
+      "match": true
+    },
+    {
+      "name": "pexpect",
+      "expected": "4.9.0",
+      "actual": "4.9.0",
+      "match": true
+    },
+    {
+      "name": "pillow",
+      "expected": "11.3.0",
+      "actual": "11.3.0",
+      "match": true
+    },
+    {
+      "name": "platformdirs",
+      "expected": "4.11.7",
+      "actual": "4.11.7",
+      "match": true
+    },
+    {
+      "name": "plotly",
+      "expected": "5.24.1",
+      "actual": "5.24.1",
+      "match": true
+    },
+    {
+      "name": "pluggy",
+      "expected": "1.6.0",
+      "actual": "1.6.0",
+      "match": true
+    },
+    {
+      "name": "proglog",
+      "expected": "0.1.12",
+      "actual": "0.1.12",
+      "match": true
+    },
+    {
+      "name": "prompt_toolkit",
+      "expected": "3.0.53",
+      "actual": "3.0.53",
+      "match": true
+    },
+    {
+      "name": "protobuf",
+      "expected": "7.36.2",
+      "actual": "7.36.2",
+      "match": true
+    },
+    {
+      "name": "psutil",
+      "expected": "7.2.2",
+      "actual": "7.2.2",
+      "match": true
+    },
+    {
+      "name": "ptyprocess",
+      "expected": "0.7.0",
+      "actual": "0.7.0",
+      "match": true
+    },
+    {
+      "name": "pure_eval",
+      "expected": "0.2.3",
+      "actual": "0.2.3",
+      "match": true
+    },
+    {
+      "name": "py-cpuinfo",
+      "expected": "9.0.0",
+      "actual": "9.0.0",
+      "match": true
+    },
+    {
+      "name": "pycollada",
+      "expected": "0.9.3",
+      "actual": "0.9.3",
+      "match": true
+    },
+    {
+      "name": "pycparser",
+      "expected": "3.11",
+      "actual": "3.11",
+      "match": true
+    },
+    {
+      "name": "pydantic",
+      "expected": "2.14.1",
+      "actual": "2.14.1",
+      "match": true
+    },
+    {
+      "name": "pydantic_core",
+      "expected": "2.50.1",
+      "actual": "2.50.1",
+      "match": true
+    },
+    {
+      "name": "PyGEL3D",
+      "expected": "0.8.2",
+      "actual": "0.8.2",
+      "match": true
+    },
+    {
+      "name": "pyglet",
+      "expected": "2.1.19",
+      "actual": "2.1.19",
+      "match": true
+    },
+    {
+      "name": "pygltflib",
+      "expected": "1.16.0",
+      "actual": "1.16.0",
+      "match": true
+    },
+    {
+      "name": "Pygments",
+      "expected": "2.21.0",
+      "actual": "2.21.0",
+      "match": true
+    },
+    {
+      "name": "pymeshlab",
+      "expected": "2025.7.post1",
+      "actual": "2025.7.post1",
+      "match": true
+    },
+    {
+      "name": "PyOpenGL",
+      "expected": "3.1.10",
+      "actual": "3.1.10",
+      "match": true
+    },
+    {
+      "name": "pyparsing",
+      "expected": "3.3.3",
+      "actual": "3.3.3",
+      "match": true
+    },
+    {
+      "name": "pysplashsurf",
+      "expected": "0.14.1.0",
+      "actual": "0.14.1.0",
+      "match": true
+    },
+    {
+      "name": "pytest",
+      "expected": "8.4.2",
+      "actual": "8.4.2",
+      "match": true
+    },
+    {
+      "name": "python-dateutil",
+      "expected": "2.9.0.post0",
+      "actual": "2.9.0.post0",
+      "match": true
+    },
+    {
+      "name": "python-dotenv",
+      "expected": "1.2.4",
+      "actual": "1.2.4",
+      "match": true
+    },
+    {
+      "name": "pyvers",
+      "expected": "0.2.3",
+      "actual": "0.2.3",
+      "match": true
+    },
+    {
+      "name": "PyYAML",
+      "expected": "6.0.3",
+      "actual": "6.0.3",
+      "match": true
+    },
+    {
+      "name": "pyzmq",
+      "expected": "27.2.0",
+      "actual": "27.2.0",
+      "match": true
+    },
+    {
+      "name": "quadrants",
+      "expected": "1.3.3",
+      "actual": "1.3.3",
+      "match": true
+    },
+    {
+      "name": "rich",
+      "expected": "15.0.0",
+      "actual": "15.0.0",
+      "match": true
+    },
+    {
+      "name": "rsl-rl-lib",
+      "expected": "5.5.1",
+      "actual": "5.5.1",
+      "match": true
+    },
+    {
+      "name": "rtree",
+      "expected": "1.4.1",
+      "actual": "1.4.1",
+      "match": true
+    },
+    {
+      "name": "scikit-image",
+      "expected": "0.26.0",
+      "actual": "0.26.0",
+      "match": true
+    },
+    {
+      "name": "scipy",
+      "expected": "1.18.1",
+      "actual": "1.18.1",
+      "match": true
+    },
+    {
+      "name": "setuptools",
+      "expected": "84.0.0",
+      "actual": "84.0.0",
+      "match": true
+    },
+    {
+      "name": "six",
+      "expected": "1.17.0",
+      "actual": "1.17.0",
+      "match": true
+    },
+    {
+      "name": "smmap",
+      "expected": "5.0.3",
+      "actual": "5.0.3",
+      "match": true
+    },
+    {
+      "name": "stack-data",
+      "expected": "0.6.3",
+      "actual": "0.6.3",
+      "match": true
+    },
+    {
+      "name": "sympy",
+      "expected": "1.14.0",
+      "actual": "1.14.0",
+      "match": true
+    },
+    {
+      "name": "tenacity",
+      "expected": "9.2.1",
+      "actual": "9.2.1",
+      "match": true
+    },
+    {
+      "name": "tensorboard",
+      "expected": "2.21.0",
+      "actual": "2.21.0",
+      "match": true
+    },
+    {
+      "name": "tensorboard-data-server",
+      "expected": "0.7.2",
+      "actual": "0.7.2",
+      "match": true
+    },
+    {
+      "name": "tensordict",
+      "expected": "0.14.3",
+      "actual": "0.14.3",
+      "match": true
+    },
+    {
+      "name": "tetgen",
+      "expected": "0.8.2",
+      "actual": "0.8.2",
+      "match": true
+    },
+    {
+      "name": "tifffile",
+      "expected": "2026.9.20",
+      "actual": "2026.9.20",
+      "match": true
+    },
+    {
+      "name": "torch",
+      "expected": "2.14.0+cu132",
+      "actual": "2.14.0+cu132",
+      "match": true
+    },
+    {
+      "name": "torchcodec",
+      "expected": "0.16.0+cu132",
+      "actual": "0.16.0+cu132",
+      "match": true
+    },
+    {
+      "name": "torchvision",
+      "expected": "0.29.0+cu132",
+      "actual": "0.29.0+cu132",
+      "match": true
+    },
+    {
+      "name": "tornado",
+      "expected": "6.5.8",
+      "actual": "6.5.8",
+      "match": true
+    },
+    {
+      "name": "tqdm",
+      "expected": "4.70.1",
+      "actual": "4.70.1",
+      "match": true
+    },
+    {
+      "name": "traitlets",
+      "expected": "5.16.1",
+      "actual": "5.16.1",
+      "match": true
+    },
+    {
+      "name": "trimesh",
+      "expected": "5.1.1",
+      "actual": "5.1.1",
+      "match": true
+    },
+    {
+      "name": "triton",
+      "expected": "3.8.0",
+      "actual": "3.8.0",
+      "match": true
+    },
+    {
+      "name": "typing-inspect",
+      "expected": "0.9.0",
+      "actual": "0.9.0",
+      "match": true
+    },
+    {
+      "name": "typing-inspection",
+      "expected": "0.4.4",
+      "actual": "0.4.4",
+      "match": true
+    },
+    {
+      "name": "typing_extensions",
+      "expected": "4.16.0",
+      "actual": "4.16.0",
+      "match": true
+    },
+    {
+      "name": "vtk",
+      "expected": "9.7.1",
+      "actual": "9.7.1",
+      "match": true
+    },
+    {
+      "name": "wcwidth",
+      "expected": "0.8.3",
+      "actual": "0.8.3",
+      "match": true
+    },
+    {
+      "name": "websockets",
+      "expected": "17.2",
+      "actual": "17.2",
+      "match": true
+    },
+    {
+      "name": "Werkzeug",
+      "expected": "3.1.9",
+      "actual": "3.1.9",
+      "match": true
+    },
+    {
+      "name": "wheel",
+      "expected": "0.48.0",
+      "actual": "0.48.0",
+      "match": true
+    },
+    {
+      "name": "widgetsnbextension",
+      "expected": "4.0.16",
+      "actual": "4.0.16",
+      "match": true
+    },
+    {
+      "name": "wrapt",
+      "expected": "2.5.0",
+      "actual": "2.5.0",
+      "match": true
+    },
+    {
+      "name": "xacro",
+      "expected": "2.1.1",
+      "actual": "2.1.1",
+      "match": true
+    },
+    {
+      "name": "z3-solver",
+      "expected": "4.15.4.0",
+      "actual": "4.15.4.0",
+      "match": true
+    },
+    {
+      "name": "zipp",
+      "expected": "4.1.1",
+      "actual": "4.1.1",
+      "match": true
+    }
+  ]
+}

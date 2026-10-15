@@ -4,6 +4,7 @@ import argparse
 import json
 import subprocess
 import sys
+from pathlib import Path
 from adaptive_drone_patrol.util import load_config, unique_dir, json_write, sha256
 from adaptive_drone_patrol.scenario import Scenario
 
@@ -28,23 +29,44 @@ def main():
             raise ValueError('Routing preflight failed; retrain for the required contract: ' + checked.stderr)
         contract = json.loads(checked.stdout)['schema']
         s = Scenario.from_dict(load_config(a.scenario))
-        if s.num_checkpoints != 3:
-            raise ValueError('Ten-point physical integration is pending PR 2; use analytical replay for this PR')
+        from adaptive_drone_patrol.scene import scene_manifest
+        s.validate_physical()
+        cfg['scene_manifest'] = scene_manifest(s)
         from adaptive_drone_patrol.flight_agent import FlightSession
         from adaptive_drone_patrol.mission import execute_mission
         from adaptive_drone_patrol.planner_ipc import PlannerClient
         s = Scenario.from_dict(load_config(a.scenario))
+        limits = load_config(cfg['flight_eval_config'])
+        from adaptive_drone_patrol.patrol_runner import ArrivalGate
+        import math
+        import numpy as np
+        from adaptive_drone_patrol.analytical import content_hash
+        ArrivalGate(.01, radius=limits['arrival_radius_m'], max_speed=limits['arrival_speed_mps'],
+                    hold_s=limits['arrival_hold_s'], service_s=limits['inspection_dwell_s'],
+                    floor=limits['floor_m'], max_tilt_deg=limits['max_tilt_deg'])
+        if any(not math.isfinite(limits[key]) or limits[key] <= 0
+               for key in ['max_leg_s', 'max_mission_s', 'max_wall_s']):
+            raise ValueError('Mission timeouts must be positive and finite before physics starts')
         flight = FlightSession(cfg, a.seed, camera=a.record)
+        if not np.allclose(flight.sample()['xyz'], s.coords[0], atol=1e-6):
+            raise ValueError('Scenario base differs from frozen physical initialization')
         command = [cfg['planner_python'], '-u', '-m', 'adaptive_drone_patrol.planner_ipc',
                    '--model', cfg['routing_model'], '--hash', cfg['routing_model_hash']]
+        source_root = Path(__file__).resolve().parents[1]
+        source_hash = content_hash({str(path.relative_to(source_root)): sha256(path)
+                         for folder in ['src', 'scripts'] for path in sorted((source_root/folder).rglob('*'))
+                         if path.is_file() and not path.name.startswith('._') and path.suffix in ['.py', '.sh'] and '__pycache__' not in str(path)})
         with PlannerClient(command, cfg['routing_model_hash'], schema=contract) as planner:
             result = execute_mission(flight, planner, s, a.out,
                        {'flight_checkpoint_hash': cfg['flight_checkpoint_hash'],
                         'routing_model_hash': cfg['routing_model_hash'], 'flight_config_hash': cfg['flight_cfg_hash'],
-                        'execution_seed': a.seed, 'hover_source_hash': cfg['hover_source_hash'],
+                        'execution_seed': a.seed, 'evidence_kind': 'physical',
+                        'scenario_hash': sha256(a.scenario), 'observation_schema': contract,
+                        'scene_manifest_hash': content_hash(cfg['scene_manifest']),
+                        'execution_source_hash': source_hash, 'arrival_settings': limits, 'hover_source_hash': cfg['hover_source_hash'],
                         'flight_acceptance_config_hash': sha256(cfg['flight_eval_config']),
                         'source_revision': cfg.get('source_revision', 'uncommitted-reviewed-source'),
-                        'environment_reference': cfg.get('environment_reference', 'requirements/flight-linux.lock.txt')}, record=a.record, limits=load_config(cfg['flight_eval_config']))
+                        'environment_reference': cfg.get('environment_reference', 'requirements/flight-linux.lock.txt')}, record=a.record, limits=limits)
         print(json.dumps(result), flush=True)
         raise SystemExit(0 if result['status'] == 'SUCCEEDED' else 2)
     if a.trials <= 0:
@@ -83,8 +105,7 @@ def main():
                 print(json.dumps({'run_id': dest.name, 'status': result['status'],
                                   'completed_count': result.get('completed_count')}), flush=True)
             json_write(out / 'all_attempts.json', results)
-    if a.mode == 'genesis' and any(not any(r['status'] == 'SUCCEEDED' and r['scenario_id'] == s
-                                         for r in results) for s in ['normal', 'emergency', 'cost_shift']):
+    if a.mode == 'genesis' and any(r['status'] != 'SUCCEEDED' for r in results):
         raise SystemExit(2)
 
 

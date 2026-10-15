@@ -1,5 +1,5 @@
 {
-  "used_s": 1233.7003595418064,
+  "used_s": 2803.57274048205,
   "jobs": [
     {
       "run_id": "smoke",
@@ -168,6 +168,220 @@
       "exit_code": 0,
       "elapsed_s": 179.36961836193223,
       "finished_epoch": 1791828444.7189488
+    },
+    {
+      "run_id": "baseline",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/reproduce_baseline.py",
+        "--config",
+        "configs/execution_visible.yaml",
+        "--out",
+        "outputs/visible/baseline",
+        "--steps",
+        "200"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792077097.5376875,
+      "timeout_s": 900.0,
+      "pid": 2304,
+      "exit_code": 0,
+      "elapsed_s": 152.69020023941994,
+      "finished_epoch": 1792077250.2286735
+    },
+    {
+      "run_id": "probe_markers",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_visible.yaml",
+        "--out",
+        "outputs/visible/probe_markers"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792077314.6110246,
+      "timeout_s": 1200.0,
+      "pid": 2662,
+      "exit_code": 2,
+      "elapsed_s": 88.26890729740262,
+      "finished_epoch": 1792077402.880809
+    },
+    {
+      "run_id": "probe_markers_v2",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_visible.yaml",
+        "--out",
+        "outputs/visible/probe_markers_v2"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792077447.6523826,
+      "timeout_s": 1200.0,
+      "pid": 2914,
+      "exit_code": 2,
+      "elapsed_s": 14.70257049612701,
+      "finished_epoch": 1792077462.355814
+    },
+    {
+      "run_id": "probe_no_markers",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_visible.yaml",
+        "--out",
+        "outputs/visible/probe_no_markers",
+        "--without-markers"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792077529.222602,
+      "timeout_s": 1200.0,
+      "pid": 3126,
+      "exit_code": 2,
+      "elapsed_s": 13.946260331198573,
+      "finished_epoch": 1792077543.1694098
+    },
+    {
+      "run_id": "finetune_v1",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/finetune_visible_flight.py",
+        "--config",
+        "configs/execution_visible.yaml",
+        "--out",
+        "outputs/visible/finetune_v1",
+        "--iterations",
+        "1001",
+        "--num-envs",
+        "256"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792077621.566836,
+      "timeout_s": 2400.0,
+      "pid": 3337,
+      "exit_code": 0,
+      "elapsed_s": 722.8737206291407,
+      "finished_epoch": 1792078344.441111
+    },
+    {
+      "run_id": "probe_finetuned",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_visible_finetuned.yaml",
+        "--out",
+        "outputs/visible/probe_finetuned"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792079905.5933485,
+      "timeout_s": 1200.0,
+      "pid": 3650,
+      "exit_code": 0,
+      "elapsed_s": 20.228574372828007,
+      "finished_epoch": 1792079925.8228347
+    },
+    {
+      "run_id": "probe_finetuned_no_markers",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_visible_finetuned.yaml",
+        "--out",
+        "outputs/visible/probe_finetuned_no_markers",
+        "--without-markers"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792079951.6750708,
+      "timeout_s": 1200.0,
+      "pid": 3838,
+      "exit_code": 0,
+      "elapsed_s": 19.656949186697602,
+      "finished_epoch": 1792079971.3325872
+    },
+    {
+      "run_id": "development_normal",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/run_demo_scenarios.py",
+        "--config",
+        "configs/execution_visible_finetuned.yaml",
+        "--mode",
+        "genesis",
+        "--worker",
+        "--record",
+        "--scenario",
+        "configs/demo_scenarios_scalable/normal.yaml",
+        "--seed",
+        "11",
+        "--out",
+        "outputs/visible/development_normal"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792080035.5114386,
+      "timeout_s": 1200.0,
+      "pid": 4038,
+      "exit_code": 1,
+      "elapsed_s": 21.469470776617527,
+      "finished_epoch": 1792080056.9815192
+    },
+    {
+      "run_id": "development_normal_v2",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/run_demo_scenarios.py",
+        "--config",
+        "configs/execution_visible_finetuned.yaml",
+        "--mode",
+        "genesis",
+        "--worker",
+        "--record",
+        "--scenario",
+        "configs/demo_scenarios_scalable/normal.yaml",
+        "--seed",
+        "11",
+        "--out",
+        "outputs/visible/development_normal_v2"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792080132.7788358,
+      "timeout_s": 1200.0,
+      "pid": 4340,
+      "exit_code": 0,
+      "elapsed_s": 31.27143257111311,
+      "finished_epoch": 1792080164.0508842
+    },
+    {
+      "run_id": "frozen_acceptance_v1",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/final_gpu_validation.py",
+        "--config",
+        "configs/execution_visible_frozen.yaml",
+        "--out",
+        "outputs/visible/acceptance_v1"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792080333.048892,
+      "timeout_s": 5400.0,
+      "pid": 4843,
+      "exit_code": 0,
+      "elapsed_s": 484.7642950396985,
+      "finished_epoch": 1792080817.8138053
     }
   ]
 }

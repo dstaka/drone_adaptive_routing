@@ -12,13 +12,13 @@ class FrameRecorder:
         self.interval = max(1, round(1 / (dt * fps)))
         self.fps = 1 / (dt * self.interval)
         self.frames = open(frames_path, 'w', newline='')
-        self.writer = csv.DictWriter(self.frames, fieldnames=['frame_index', 'pts_s', 'simulation_step', 'sim_time_s'])
+        self.writer = csv.DictWriter(self.frames, fieldnames=['frame_index', 'pts_s', 'simulation_step', 'sim_time_s', 'event_seq'])
         self.writer.writeheader()
         self.proc = None
         self.path = str(path)
         self.index = 0
 
-    def capture(self, step, force=False):
+    def capture(self, step, force=False, event_seq=None):
         if step % self.interval and not force:
             return None
         rgb = np.asarray(self.cam.render()[0])
@@ -35,7 +35,7 @@ class FrameRecorder:
         self.proc.stdin.write(np.ascontiguousarray(rgb).tobytes())
         index = self.index
         self.writer.writerow({'frame_index': index, 'pts_s': index / self.fps,
-                              'simulation_step': step, 'sim_time_s': step * self.dt})
+                              'simulation_step': step, 'sim_time_s': step * self.dt, 'event_seq': event_seq})
         self.frames.flush()
         self.index += 1
         return index

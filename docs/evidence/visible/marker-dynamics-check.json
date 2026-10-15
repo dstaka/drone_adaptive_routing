@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "samples": 1508,
+  "maximum_absolute_difference": 0.0,
+  "compared": [
+    "xyz",
+    "velocity",
+    "quaternion_wxyz",
+    "actions"
+  ]
+}

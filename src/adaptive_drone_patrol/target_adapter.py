@@ -16,16 +16,31 @@ def validate_target(world_xyz, bounds):
     return a
 
 
-def load_hover_class(source, expected_hash=None, external=True):
+def prepare_hover_source(text, persistent_scene=False):
+    """Apply explicit integration hooks without modifying the pinned source file."""
+    if text.count('GUI=True,') != 1:
+        raise ValueError('Expected exactly one notebook camera GUI setting')
+    text = text.replace('GUI=True,', 'GUI=False,', 1)
+    if persistent_scene:
+        anchor = '        self.scene.build(n_envs=num_envs)'
+        if text.count(anchor) != 1:
+            raise ValueError('Expected exactly one pinned scene build hook')
+        text = text.replace(anchor, '        install_scene(self)\n' + anchor, 1)
+    return text
+
+
+def load_hover_class(source, expected_hash=None, external=True, scene=None):
     source = Path(source)
     if expected_hash and sha256(source) != expected_hash:
         raise ValueError('Pinned HoverEnv source hash mismatch')
     text = source.read_text()
-    if text.count('GUI=True,') != 1:
-        raise ValueError('Expected exactly one notebook camera GUI setting')
+    text = prepare_hover_source(text, scene is not None)
     spec = importlib.util.spec_from_file_location('pinned_hover_env', source)
     module = importlib.util.module_from_spec(spec)
-    exec(compile(text.replace('GUI=True,', 'GUI=False,', 1), str(source), 'exec'), module.__dict__)
+    if scene is not None:
+        from .scene import install_scene
+        module.install_scene = lambda env: install_scene(env, scene)
+    exec(compile(text, str(source), 'exec'), module.__dict__)
     base = module.HoverEnv
     if not external:
         return base

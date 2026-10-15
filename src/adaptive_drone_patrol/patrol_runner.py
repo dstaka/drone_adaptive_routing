@@ -43,3 +43,14 @@ class ArrivalGate:
         if self.steps == self.service_steps:
             events.append('WAYPOINT_REACHED')
         return events
+
+
+def quaternion_tilt_degrees(quaternion):
+    """Return maximum absolute roll/pitch from the actual world-frame quaternion."""
+    q = np.asarray(quaternion, dtype=float)
+    if q.shape != (4,) or not np.isfinite(q).all() or np.linalg.norm(q) < 1e-12:
+        raise RuntimeError('Invalid physical orientation')
+    w,x,y,z = q / np.linalg.norm(q)
+    roll = math.atan2(2*(w*x+y*z),1-2*(x*x+y*y))
+    pitch = math.asin(float(np.clip(2*(w*y-z*x),-1,1)))
+    return math.degrees(max(abs(roll),abs(pitch)))

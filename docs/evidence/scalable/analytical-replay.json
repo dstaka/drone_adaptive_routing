@@ -1,0 +1,579 @@
+{
+  "schema_version": 2,
+  "evidence_kind": "analytical",
+  "runs": [
+    {
+      "run_id": "analytical-40004-normal",
+      "evidence_kind": "analytical",
+      "scenario_id": "normal",
+      "policy_hash": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+      "decisions": [
+        {
+          "decision_id": "decision-0",
+          "boundary_id": "analytical-40004-normal:decision-0",
+          "boundary_hash": "5b9ccc28b7dda39b182bdf29223a28e0f1d772e8e8e766c0b9eb8aa81ed192c5",
+          "action": 1,
+          "checkpoint_id": "B"
+        },
+        {
+          "decision_id": "decision-1",
+          "boundary_id": "analytical-40004-normal:decision-1",
+          "boundary_hash": "c1b0598902379e24ee70d641c1e6b1fc12c4e88081497e5175eb4885c8447c48",
+          "action": 0,
+          "checkpoint_id": "A"
+        },
+        {
+          "decision_id": "decision-2",
+          "boundary_id": "analytical-40004-normal:decision-2",
+          "boundary_hash": "4bb386bbb11594ca0ddddd04559620935bb3b00a4c7db311d6c488984985bf72",
+          "action": 4,
+          "checkpoint_id": "E"
+        },
+        {
+          "decision_id": "decision-3",
+          "boundary_id": "analytical-40004-normal:decision-3",
+          "boundary_hash": "e9f6a8d686815f69e70f39d8079d5c827864c415ebda17937f4af483dfbb4256",
+          "action": 6,
+          "checkpoint_id": "G"
+        },
+        {
+          "decision_id": "decision-4",
+          "boundary_id": "analytical-40004-normal:decision-4",
+          "boundary_hash": "56578f13b7737ada9459719b4fab1e6df2d9e756790303582741495061cbddbf",
+          "action": 7,
+          "checkpoint_id": "H"
+        },
+        {
+          "decision_id": "decision-5",
+          "boundary_id": "analytical-40004-normal:decision-5",
+          "boundary_hash": "c876eb1bb18f23e55d1553dc7d53f532eb5f52ea5e82ecc311f998ef876c4cc0",
+          "action": 8,
+          "checkpoint_id": "I"
+        },
+        {
+          "decision_id": "decision-6",
+          "boundary_id": "analytical-40004-normal:decision-6",
+          "boundary_hash": "67ddcbad832187db3eb1dd5e6967e6a51d932a80a895bb89f1888923380530cf",
+          "action": 9,
+          "checkpoint_id": "J"
+        },
+        {
+          "decision_id": "decision-7",
+          "boundary_id": "analytical-40004-normal:decision-7",
+          "boundary_hash": "d681a6c9334ddb7c0b191851ed5b6958a564ff36d0a9560fc1d379e87c58e161",
+          "action": 5,
+          "checkpoint_id": "F"
+        },
+        {
+          "decision_id": "decision-8",
+          "boundary_id": "analytical-40004-normal:decision-8",
+          "boundary_hash": "c400698efd020fb70404d39ef7aeb7eaa612417ff2975524bc315483c01c33bf",
+          "action": 3,
+          "checkpoint_id": "D"
+        },
+        {
+          "decision_id": "decision-9",
+          "boundary_id": "analytical-40004-normal:decision-9",
+          "boundary_hash": "360056d9c888f59e77cea3f1fccdc266f95edbba0dcd08b26e26ef305c0da21e",
+          "action": 2,
+          "checkpoint_id": "C"
+        }
+      ],
+      "cost": 157.8555838846611,
+      "legs": [
+        {
+          "from": 0,
+          "to": 2,
+          "distance_m": 0.6708203932499369,
+          "priority": 2.9489807588915595,
+          "multiplier": 1.0,
+          "completion_time_s": 1.170820393249937,
+          "travel_cost": 0.6708203932499369,
+          "completion_penalty": 3.4527268118119134,
+          "cost": 4.1235472050618505
+        },
+        {
+          "from": 2,
+          "to": 1,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.268133619946023,
+          "multiplier": 1.0,
+          "completion_time_s": 2.270820393249937,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 5.150524078789232,
+          "cost": 5.7505240787892316
+        },
+        {
+          "from": 1,
+          "to": 5,
+          "distance_m": 0.6,
+          "priority": 2.1201560883465813,
+          "multiplier": 1.0,
+          "completion_time_s": 3.370820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 7.1466653794716715,
+          "cost": 7.746665379471671
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "distance_m": 0.6,
+          "priority": 2.5605384253786747,
+          "multiplier": 1.0,
+          "completion_time_s": 4.470820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 11.447707409883062,
+          "cost": 12.047707409883062
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.693373135600983,
+          "multiplier": 1.0,
+          "completion_time_s": 5.570820393249937,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 15.004297990437484,
+          "cost": 15.604297990437484
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "distance_m": 0.6,
+          "priority": 2.2315055187372086,
+          "multiplier": 1.0,
+          "completion_time_s": 6.670820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 14.88597252204195,
+          "cost": 15.48597252204195
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.554158233798211,
+          "multiplier": 1.0,
+          "completion_time_s": 7.770820393249936,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 19.847904890786378,
+          "cost": 20.44790489078638
+        },
+        {
+          "from": 10,
+          "to": 6,
+          "distance_m": 0.6,
+          "priority": 2.2424860955702473,
+          "multiplier": 1.0,
+          "completion_time_s": 8.870820393249936,
+          "travel_cost": 0.6,
+          "completion_penalty": 19.892691388163975,
+          "cost": 20.492691388163976
+        },
+        {
+          "from": 6,
+          "to": 4,
+          "distance_m": 0.6,
+          "priority": 2.557292690322676,
+          "multiplier": 1.0,
+          "completion_time_s": 9.970820393249936,
+          "travel_cost": 0.6,
+          "completion_penalty": 25.49830610817833,
+          "cost": 26.09830610817833
+        },
+        {
+          "from": 4,
+          "to": 3,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.660865759307971,
+          "multiplier": 1.0,
+          "completion_time_s": 11.070820393249935,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 29.45796691184716,
+          "cost": 30.05796691184716
+        }
+      ]
+    },
+    {
+      "run_id": "analytical-40004-emergency",
+      "evidence_kind": "analytical",
+      "scenario_id": "emergency",
+      "policy_hash": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+      "decisions": [
+        {
+          "decision_id": "decision-0",
+          "boundary_id": "analytical-40004-emergency:decision-0",
+          "boundary_hash": "7ac2524e03e9307adae76236c7f082bc5213aa5688df22455c8dda4c3195a0fa",
+          "action": 1,
+          "checkpoint_id": "B"
+        },
+        {
+          "decision_id": "decision-1",
+          "boundary_id": "analytical-40004-emergency:decision-1",
+          "boundary_hash": "faba248713d12a891498e6167bba5b7ca6274ff0dccb1e406acbb854934d980a",
+          "action": 2,
+          "checkpoint_id": "C"
+        },
+        {
+          "decision_id": "decision-2",
+          "boundary_id": "analytical-40004-emergency:decision-2",
+          "boundary_hash": "c80b19ddabf95b3a4815c204785392c511e501a57ffbe262bb043279f69bc1a0",
+          "action": 3,
+          "checkpoint_id": "D"
+        },
+        {
+          "decision_id": "decision-3",
+          "boundary_id": "analytical-40004-emergency:decision-3",
+          "boundary_hash": "dcaa8d5f0384ff59f1dbc334dcb6070c97cb0bd32cb3646d3d3c8538e787b38a",
+          "action": 5,
+          "checkpoint_id": "F"
+        },
+        {
+          "decision_id": "decision-4",
+          "boundary_id": "analytical-40004-emergency:decision-4",
+          "boundary_hash": "b5b46bd3549b7ca593fa6808bd9a8812b0683cb654fc5ec35a5f7e16f9fb807d",
+          "action": 9,
+          "checkpoint_id": "J"
+        },
+        {
+          "decision_id": "decision-5",
+          "boundary_id": "analytical-40004-emergency:decision-5",
+          "boundary_hash": "6f0938410e652675433f4ad580b1db7a228e62e73801565bba4ccdc546035cb7",
+          "action": 8,
+          "checkpoint_id": "I"
+        },
+        {
+          "decision_id": "decision-6",
+          "boundary_id": "analytical-40004-emergency:decision-6",
+          "boundary_hash": "2e2e41a378735628802e1d1cca059d5d047261929495133ca66bf780a5c0d37f",
+          "action": 7,
+          "checkpoint_id": "H"
+        },
+        {
+          "decision_id": "decision-7",
+          "boundary_id": "analytical-40004-emergency:decision-7",
+          "boundary_hash": "951c71502df8503a6c0e6dd0d4198c76498eca5552d7fe4c77beb70c2a349f2e",
+          "action": 6,
+          "checkpoint_id": "G"
+        },
+        {
+          "decision_id": "decision-8",
+          "boundary_id": "analytical-40004-emergency:decision-8",
+          "boundary_hash": "9d88851d6528c86a2d4fee05b0a1202720cc9195808c59050b1f90978242a835",
+          "action": 4,
+          "checkpoint_id": "E"
+        },
+        {
+          "decision_id": "decision-9",
+          "boundary_id": "analytical-40004-emergency:decision-9",
+          "boundary_hash": "85c8f4e4d18b4ff05bb1d083fa83689a395b45bb8bcecebb00a2c67b57964015",
+          "action": 0,
+          "checkpoint_id": "A"
+        }
+      ],
+      "cost": 158.53189625666957,
+      "legs": [
+        {
+          "from": 0,
+          "to": 2,
+          "distance_m": 0.6708203932499369,
+          "priority": 2.9489807588915595,
+          "multiplier": 1.0,
+          "completion_time_s": 1.170820393249937,
+          "travel_cost": 0.6708203932499369,
+          "completion_penalty": 3.4527268118119134,
+          "cost": 4.1235472050618505
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "distance_m": 0.6,
+          "priority": 5.0,
+          "multiplier": 1.0,
+          "completion_time_s": 2.270820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 11.354101966249686,
+          "cost": 11.954101966249686
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.557292690322676,
+          "multiplier": 1.0,
+          "completion_time_s": 3.370820393249937,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 8.620174352048672,
+          "cost": 9.220174352048671
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "distance_m": 0.6,
+          "priority": 2.2424860955702473,
+          "multiplier": 1.0,
+          "completion_time_s": 4.470820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 10.025752567654889,
+          "cost": 10.625752567654889
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "distance_m": 0.6,
+          "priority": 2.554158233798211,
+          "multiplier": 1.0,
+          "completion_time_s": 5.570820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 14.228756776430314,
+          "cost": 14.828756776430314
+        },
+        {
+          "from": 10,
+          "to": 9,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.2315055187372086,
+          "multiplier": 1.0,
+          "completion_time_s": 6.670820393249937,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 14.88597252204195,
+          "cost": 15.48597252204195
+        },
+        {
+          "from": 9,
+          "to": 8,
+          "distance_m": 0.6,
+          "priority": 2.693373135600983,
+          "multiplier": 1.0,
+          "completion_time_s": 7.770820393249936,
+          "travel_cost": 0.6,
+          "completion_penalty": 20.929718888759645,
+          "cost": 21.529718888759646
+        },
+        {
+          "from": 8,
+          "to": 7,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.5605384253786747,
+          "multiplier": 1.0,
+          "completion_time_s": 8.870820393249936,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 22.714076481549228,
+          "cost": 23.31407648154923
+        },
+        {
+          "from": 7,
+          "to": 5,
+          "distance_m": 0.6,
+          "priority": 2.1201560883465813,
+          "multiplier": 1.0,
+          "completion_time_s": 9.970820393249936,
+          "travel_cost": 0.6,
+          "completion_penalty": 21.139695562559105,
+          "cost": 21.739695562559106
+        },
+        {
+          "from": 5,
+          "to": 1,
+          "distance_m": 0.6,
+          "priority": 2.268133619946023,
+          "multiplier": 1.0,
+          "completion_time_s": 11.070820393249935,
+          "travel_cost": 0.6,
+          "completion_penalty": 25.11009993431423,
+          "cost": 25.710099934314233
+        }
+      ]
+    },
+    {
+      "run_id": "analytical-40004-cost_shift",
+      "evidence_kind": "analytical",
+      "scenario_id": "cost_shift",
+      "policy_hash": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+      "decisions": [
+        {
+          "decision_id": "decision-0",
+          "boundary_id": "analytical-40004-cost_shift:decision-0",
+          "boundary_hash": "08ac5ae3fd9c04de38d4a45fba7c5477f87781c52840d66d97366f5e8b94551f",
+          "action": 1,
+          "checkpoint_id": "B"
+        },
+        {
+          "decision_id": "decision-1",
+          "boundary_id": "analytical-40004-cost_shift:decision-1",
+          "boundary_hash": "b8ff7799370de7508d6e34bbe93f62efecdb70f4bacd84ae27a636c510637953",
+          "action": 2,
+          "checkpoint_id": "C"
+        },
+        {
+          "decision_id": "decision-2",
+          "boundary_id": "analytical-40004-cost_shift:decision-2",
+          "boundary_hash": "c7e0113e1b1910481b897e8d30b4d85c973368f3a4bcca426f2e23f4c65b3ffd",
+          "action": 3,
+          "checkpoint_id": "D"
+        },
+        {
+          "decision_id": "decision-3",
+          "boundary_id": "analytical-40004-cost_shift:decision-3",
+          "boundary_hash": "967f3f706e4445defdcd72a0167197eaecc685d275e9427d2d80e56f4346ee05",
+          "action": 5,
+          "checkpoint_id": "F"
+        },
+        {
+          "decision_id": "decision-4",
+          "boundary_id": "analytical-40004-cost_shift:decision-4",
+          "boundary_hash": "684b0a2adc34fa1343541f6cb60a8ebfab43acc51edb1c3b1d0d3e560d5d4be7",
+          "action": 9,
+          "checkpoint_id": "J"
+        },
+        {
+          "decision_id": "decision-5",
+          "boundary_id": "analytical-40004-cost_shift:decision-5",
+          "boundary_hash": "b9d5caa9415112c26b5b89af950f1eba59dcf83c4844109672c6f1f3ea447320",
+          "action": 8,
+          "checkpoint_id": "I"
+        },
+        {
+          "decision_id": "decision-6",
+          "boundary_id": "analytical-40004-cost_shift:decision-6",
+          "boundary_hash": "1b2ccc09df6cbdad2b4c94aa0feb2d2b0c19c69111c5c739497f077d2a6c2ddb",
+          "action": 7,
+          "checkpoint_id": "H"
+        },
+        {
+          "decision_id": "decision-7",
+          "boundary_id": "analytical-40004-cost_shift:decision-7",
+          "boundary_hash": "89aa0111744c1471f23090a4a9f419b19c98ab0937b63c5d5bd8e84878220d94",
+          "action": 6,
+          "checkpoint_id": "G"
+        },
+        {
+          "decision_id": "decision-8",
+          "boundary_id": "analytical-40004-cost_shift:decision-8",
+          "boundary_hash": "6fd075e893e07728f45ff09426200fa4873731ae925857e2199ccbe3655e21fb",
+          "action": 4,
+          "checkpoint_id": "E"
+        },
+        {
+          "decision_id": "decision-9",
+          "boundary_id": "analytical-40004-cost_shift:decision-9",
+          "boundary_hash": "dfdacba7821948c9743169d9808d6be1c49255477cf9fadfd4575a4ec0d34425",
+          "action": 0,
+          "checkpoint_id": "A"
+        }
+      ],
+      "cost": 153.22014252035692,
+      "legs": [
+        {
+          "from": 0,
+          "to": 2,
+          "distance_m": 0.6708203932499369,
+          "priority": 2.9489807588915595,
+          "multiplier": 1.0,
+          "completion_time_s": 1.170820393249937,
+          "travel_cost": 0.6708203932499369,
+          "completion_penalty": 3.4527268118119134,
+          "cost": 4.1235472050618505
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "distance_m": 0.6,
+          "priority": 2.660865759307971,
+          "multiplier": 1.0,
+          "completion_time_s": 2.270820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 6.042348229937019,
+          "cost": 6.642348229937019
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.557292690322676,
+          "multiplier": 1.0,
+          "completion_time_s": 3.370820393249937,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 8.620174352048672,
+          "cost": 9.220174352048671
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "distance_m": 0.6,
+          "priority": 2.2424860955702473,
+          "multiplier": 1.0,
+          "completion_time_s": 4.470820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 10.025752567654889,
+          "cost": 10.625752567654889
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "distance_m": 0.6,
+          "priority": 2.554158233798211,
+          "multiplier": 1.0,
+          "completion_time_s": 5.570820393249937,
+          "travel_cost": 0.6,
+          "completion_penalty": 14.228756776430314,
+          "cost": 14.828756776430314
+        },
+        {
+          "from": 10,
+          "to": 9,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.2315055187372086,
+          "multiplier": 1.0,
+          "completion_time_s": 6.670820393249937,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 14.88597252204195,
+          "cost": 15.48597252204195
+        },
+        {
+          "from": 9,
+          "to": 8,
+          "distance_m": 0.6,
+          "priority": 2.693373135600983,
+          "multiplier": 1.0,
+          "completion_time_s": 7.770820393249936,
+          "travel_cost": 0.6,
+          "completion_penalty": 20.929718888759645,
+          "cost": 21.529718888759646
+        },
+        {
+          "from": 8,
+          "to": 7,
+          "distance_m": 0.6000000000000001,
+          "priority": 2.5605384253786747,
+          "multiplier": 1.0,
+          "completion_time_s": 8.870820393249936,
+          "travel_cost": 0.6000000000000001,
+          "completion_penalty": 22.714076481549228,
+          "cost": 23.31407648154923
+        },
+        {
+          "from": 7,
+          "to": 5,
+          "distance_m": 0.6,
+          "priority": 2.1201560883465813,
+          "multiplier": 1.0,
+          "completion_time_s": 9.970820393249936,
+          "travel_cost": 0.6,
+          "completion_penalty": 21.139695562559105,
+          "cost": 21.739695562559106
+        },
+        {
+          "from": 5,
+          "to": 1,
+          "distance_m": 0.6,
+          "priority": 2.268133619946023,
+          "multiplier": 1.0,
+          "completion_time_s": 11.070820393249935,
+          "travel_cost": 0.6,
+          "completion_penalty": 25.11009993431423,
+          "cost": 25.710099934314233
+        }
+      ]
+    }
+  ]
+}

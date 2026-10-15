@@ -1,0 +1,232 @@
+{
+  "schema": {
+    "id": "routing-v2-n10-324",
+    "dtype": "float32",
+    "size": 324,
+    "num_checkpoints": 10,
+    "checkpoint_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "fields": {
+      "current_onehot": [
+        0,
+        11
+      ],
+      "visited": [
+        11,
+        21
+      ],
+      "coords": [
+        21,
+        54
+      ],
+      "distance_matrix": [
+        54,
+        175
+      ],
+      "priorities": [
+        175,
+        185
+      ],
+      "edge_costs": [
+        185,
+        306
+      ],
+      "service": [
+        306,
+        316
+      ],
+      "elapsed": [
+        316,
+        317
+      ],
+      "completed": [
+        317,
+        318
+      ],
+      "constants": [
+        318,
+        324
+      ]
+    },
+    "normalization": {
+      "coordinates_m": 2.0,
+      "distance_m": 4.0,
+      "priority": 5.0,
+      "edge_cost": 20.0,
+      "service_s": 1.0,
+      "time_s": 80.0,
+      "count": 10.0,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "speed_mps": 1.0
+    },
+    "objective": {
+      "alpha": 1.0,
+      "beta": 1.0,
+      "nominal_speed_mps": 1.0,
+      "return_to_base": false
+    }
+  },
+  "models": [
+    {
+      "seed": 42,
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_42.zip",
+      "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+      "validation": {
+        "mean_cost": 166.28106163935277,
+        "invalid_actions": 0,
+        "decision_changes": 5,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+    },
+    {
+      "seed": 43,
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_43.zip",
+      "sha256": "bfecbb8d56f7c4cdb953a5a4a12df2d93030d4fb8bcd93ebd4012cf180dfbf1d",
+      "validation": {
+        "mean_cost": 166.844177530977,
+        "invalid_actions": 0,
+        "decision_changes": 4,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+    },
+    {
+      "seed": 44,
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_44.zip",
+      "sha256": "a3e6e0f3e759544c5af4779e2da2608fb63eaf1a3032930b36c5efb35da1c13b",
+      "validation": {
+        "mean_cost": 166.64426693227946,
+        "invalid_actions": 0,
+        "decision_changes": 4,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+    }
+  ],
+  "selected": {
+    "seed": 42,
+    "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_42.zip",
+    "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+    "validation": {
+      "mean_cost": 166.28106163935277,
+      "invalid_actions": 0,
+      "decision_changes": 5,
+      "event_cases": 64,
+      "episodes": 100
+    },
+    "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+  },
+  "all_trials": [
+    {
+      "seed": 42,
+      "path": "outputs/scalable_20261015/outputs/training/seed_42.zip",
+      "sha256": "8b650c2e6c3edddc53c8eddc8efcb855d44547497cc52f92ebb3a06fe530c311",
+      "validation": {
+        "mean_cost": 213.3156403976205,
+        "invalid_actions": 0,
+        "decision_changes": 9,
+        "event_cases": 65,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/outputs/training/models.partial.json"
+    },
+    {
+      "seed": 42,
+      "path": "outputs/scalable_20261015/candidate-src/outputs/training/seed_42.zip",
+      "sha256": "4966db572ab79d5216f23832d6054ba08e455568a1615774e83c41abdde41188",
+      "validation": {
+        "mean_cost": 176.16361706465557,
+        "invalid_actions": 0,
+        "decision_changes": 3,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/candidate-src/outputs/training/models.json"
+    },
+    {
+      "seed": 43,
+      "path": "outputs/scalable_20261015/candidate-src/outputs/training/seed_43.zip",
+      "sha256": "ec8e6bc7bf6b7b099e99b220564ae8e00136131d60e2de0f26c9d3410d0bc394",
+      "validation": {
+        "mean_cost": 231.6809089683299,
+        "invalid_actions": 0,
+        "decision_changes": 2,
+        "event_cases": 63,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/candidate-src/outputs/training/models.json"
+    },
+    {
+      "seed": 44,
+      "path": "outputs/scalable_20261015/candidate-src/outputs/training/seed_44.zip",
+      "sha256": "e21d6102e5ebaefe1761310de3fb0231c4592421a849ac2421822de1a1fcea12",
+      "validation": {
+        "mean_cost": 173.6256158238629,
+        "invalid_actions": 0,
+        "decision_changes": 2,
+        "event_cases": 63,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/candidate-src/outputs/training/models.json"
+    },
+    {
+      "seed": 42,
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_42.zip",
+      "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+      "validation": {
+        "mean_cost": 166.28106163935277,
+        "invalid_actions": 0,
+        "decision_changes": 5,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+    },
+    {
+      "seed": 43,
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_43.zip",
+      "sha256": "bfecbb8d56f7c4cdb953a5a4a12df2d93030d4fb8bcd93ebd4012cf180dfbf1d",
+      "validation": {
+        "mean_cost": 166.844177530977,
+        "invalid_actions": 0,
+        "decision_changes": 4,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+    },
+    {
+      "seed": 44,
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_44.zip",
+      "sha256": "a3e6e0f3e759544c5af4779e2da2608fb63eaf1a3032930b36c5efb35da1c13b",
+      "validation": {
+        "mean_cost": 166.64426693227946,
+        "invalid_actions": 0,
+        "decision_changes": 4,
+        "event_cases": 64,
+        "episodes": 100
+      },
+      "source_manifest": "outputs/scalable_20261015/normalized-src/outputs/training/models.json"
+    }
+  ],
+  "frozen_utc": "2026-10-14T17:07:00.286106+00:00",
+  "heldout_opened": false,
+  "selection_rationale": "One winner per training seed and global winner by validation invalid count, mean objective cost, event changes, seed and path. Frozen before held-out evaluation; all trials retained.",
+  "path_base": "repository_root",
+  "provenance_note": "Public references are repository-relative. Recorded hashes refer to unchanged original execution artifacts, which remain outside Git."
+}

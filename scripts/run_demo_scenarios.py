@@ -21,6 +21,15 @@ def main():
     a = p.parse_args()
     cfg = load_config(a.config)
     if a.worker:
+        command = [cfg['planner_python'], '-u', '-m', 'adaptive_drone_patrol.planner_ipc',
+                   '--model', cfg['routing_model'], '--hash', cfg['routing_model_hash']]
+        checked = subprocess.run(command + ['--validate-scenario', a.scenario], capture_output=True, text=True)
+        if checked.returncode:
+            raise ValueError('Routing preflight failed; retrain for the required contract: ' + checked.stderr)
+        contract = json.loads(checked.stdout)['schema']
+        s = Scenario.from_dict(load_config(a.scenario))
+        if s.num_checkpoints != 3:
+            raise ValueError('Ten-point physical integration is pending PR 2; use analytical replay for this PR')
         from adaptive_drone_patrol.flight_agent import FlightSession
         from adaptive_drone_patrol.mission import execute_mission
         from adaptive_drone_patrol.planner_ipc import PlannerClient
@@ -28,7 +37,7 @@ def main():
         flight = FlightSession(cfg, a.seed, camera=a.record)
         command = [cfg['planner_python'], '-u', '-m', 'adaptive_drone_patrol.planner_ipc',
                    '--model', cfg['routing_model'], '--hash', cfg['routing_model_hash']]
-        with PlannerClient(command, cfg['routing_model_hash']) as planner:
+        with PlannerClient(command, cfg['routing_model_hash'], schema=contract) as planner:
             result = execute_mission(flight, planner, s, a.out,
                        {'flight_checkpoint_hash': cfg['flight_checkpoint_hash'],
                         'routing_model_hash': cfg['routing_model_hash'], 'flight_config_hash': cfg['flight_cfg_hash'],
@@ -52,7 +61,7 @@ def main():
                 agent = RoutingAgent(cfg['routing_model'], cfg['routing_model_hash'])
                 dest.mkdir()
                 result = evaluate_scenario(scenario, agent.predict)
-                result.update(status='PLANNING_ONLY', physical_completion=None)
+                result.update(status='PLANNING_ONLY', evidence_kind='analytical', physical_completion=None)
                 json_write(dest / 'planning.json', result)
                 results.append(result)
             else:

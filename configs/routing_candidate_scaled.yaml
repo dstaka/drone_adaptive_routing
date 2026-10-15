@@ -1,0 +1,15 @@
+# A fixed positive optimizer reward scale preserves the objective's optimum.
+num_checkpoints: 10
+policy_arch: candidate
+reward_scale: 0.01
+warmstart_cases: 12000
+warmstart_epochs: 30
+parallel_seeds: 3
+static_steps: 50000
+event_steps: 50000
+max_actual_steps: 100352
+n_steps: 512
+batch_size: 128
+n_epochs: 5
+learning_rate: 0.0003
+validation_episodes: 100

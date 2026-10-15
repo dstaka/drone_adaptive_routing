@@ -3,18 +3,20 @@
 import gymnasium as gym
 import numpy as np
 from .scenario import generate_scenario
-from .objective import RoutingState, SCHEMA
+from .objective import RoutingState, schema_for
 
 
 class RoutingEnv(gym.Env):
     metadata = {'render_modes': []}
 
-    def __init__(self, scenario=None, event_mixture=False, max_steps=None):
+    def __init__(self, scenario=None, event_mixture=False, max_steps=None, num_checkpoints=10):
         self.fixed = scenario
         self.event_mixture = event_mixture
         self.max_steps = max_steps
-        self.action_space = gym.spaces.Discrete(3)
-        self.observation_space = gym.spaces.Box(-np.inf, np.inf, (SCHEMA['size'],), np.float32)
+        self.num_checkpoints = scenario.num_checkpoints if scenario else num_checkpoints
+        contract = scenario or generate_scenario(0, 'training', num_checkpoints=self.num_checkpoints)
+        self.action_space = gym.spaces.Discrete(self.num_checkpoints)
+        self.observation_space = gym.spaces.Box(-np.inf, np.inf, (schema_for(contract)['size'],), np.float32)
         self.state = None
         self.steps = 0
         self.finished = False
@@ -24,7 +26,7 @@ class RoutingEnv(gym.Env):
         self.steps, self.finished = 0, False
         kind = self.np_random.choice(['static', 'priority', 'cost'], p=[.5, .25, .25]) \
             if self.event_mixture else 'static'
-        scenario = self.fixed or generate_scenario(int(self.np_random.integers(10000)), 'training', kind)
+        scenario = self.fixed or generate_scenario(int(self.np_random.integers(10000)), 'training', kind, self.num_checkpoints)
         self.state = RoutingState(scenario)
         return self.state.observation(), {}
 
@@ -34,9 +36,9 @@ class RoutingEnv(gym.Env):
     def step(self, action):
         if self.finished:
             raise RuntimeError('Cannot step a terminal or truncated environment; reset first')
-        action = int(action)
+        valid_type = isinstance(action, (int, np.integer)) and not isinstance(action, (bool, np.bool_))
         self.steps += 1
-        if action not in range(3) or self.state.visited[action]:
+        if not valid_type or action not in range(self.num_checkpoints) or self.state.visited[action]:
             self.state.invalid_count += 1
             truncated = self.state.invalid_count >= 3 or bool(self.max_steps and self.steps >= self.max_steps)
             self.finished = truncated

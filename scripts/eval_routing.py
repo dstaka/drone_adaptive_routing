@@ -9,9 +9,10 @@ def main():
     p.add_argument('--models', required=True)
     p.add_argument('--split', choices=['static', 'dynamic'], required=True)
     p.add_argument('--episodes', type=int, required=True)
+    p.add_argument('--num-checkpoints', type=int)
     p.add_argument('--out', required=True)
     a = p.parse_args()
-    benchmark(a.models, a.split, a.episodes, a.out)
+    benchmark(a.models, a.split, a.episodes, a.out, a.num_checkpoints)
 
 
 if __name__ == '__main__':

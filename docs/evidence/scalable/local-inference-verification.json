@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "models_loaded": 3,
+  "policy_hash": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+  "decisions_and_full_suffixes_verified": 30,
+  "local_models_manifest": "outputs/scalable_20261015/final-src/outputs/frozen/models.local.json",
+  "local_models_manifest_sha256": "9bf7df1cafc46222f37e4fdabe0ab0ab61e4f07b9b8b306eaa4e1c7a32e2b519",
+  "source_manifest_sha256": "b7a16c8dab78f864d50f1bbab11d1fa1c37ebc617fc2ea503c80fd329038f75c",
+  "method": "Transferred frozen model bytes reproduce every analytical decision and complete suffix locally.",
+  "path_base": "repository_root",
+  "provenance_note": "Public references are repository-relative. Recorded hashes refer to unchanged original execution artifacts, which remain outside Git."
+}

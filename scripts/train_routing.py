@@ -9,9 +9,14 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config', required=True)
     p.add_argument('--seeds', nargs='+', type=int, default=[42, 43, 44])
+    p.add_argument('--num-checkpoints', type=int)
     p.add_argument('--out', required=True)
     a = p.parse_args()
-    train(load_config(a.config), a.seeds, a.out)
+    config = load_config(a.config)
+    if a.num_checkpoints is not None and 'num_checkpoints' in config and config['num_checkpoints'] != a.num_checkpoints:
+        p.error('CLI and configuration num_checkpoints disagree')
+    config['num_checkpoints'] = a.num_checkpoints if a.num_checkpoints is not None else config.get('num_checkpoints', 10)
+    train(config, a.seeds, a.out)
 
 
 if __name__ == '__main__':

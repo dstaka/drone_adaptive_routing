@@ -35,3 +35,7 @@
 ## 2026-10-15 implementation session
 
 The approved [scalable adaptive routing specification](2026-10-14-scalable-adaptive-routing/spec.md) is implemented in the repository root. See the [CPU workflow](../docs/scalable-routing.md), [implementation plan](../docs/superpowers/plans/2026-10-15-scalable-adaptive-routing.md), and [measured handoff](../docs/scalable-routing-handoff.md). Physical integration and video remain separate follow-up specifications. The operator requested one local commit and a prepared PR description without push.
+
+## 2026-10-15–16 visible flight implementation session
+
+[安定飛行と全目的地の常時表示](2026-10-14-visible-multigoal-flight/spec.md)は承認済み仕様として、このPRでルートの物理実行へ統合します。[実装計画](../docs/superpowers/plans/2026-10-15-visible-multigoal-flight.md)と[実測・再実行の引き継ぎ](../docs/visible-flight-handoff.md)を参照してください。CPUロジック検証、開発飛行、固定9試行の受入結果を分けて記録し、最終編集・リタイミングは後続PRに残します。

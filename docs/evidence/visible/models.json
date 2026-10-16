@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "routing": {
+    "path": "outputs/visible_20261015/remote/outputs/scalable_20261015/normalized-src/outputs/training/seed_42.zip",
+    "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a"
+  },
+  "flight": {
+    "path": "outputs/visible_20261015/remote/outputs/visible/finetune_v1/model_1300.pt",
+    "sha256": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f"
+  },
+  "flight_config": {
+    "path": "outputs/visible_20261015/remote/outputs/visible/finetune_v1/cfgs.pkl",
+    "sha256": "25720a5b59b1edd769ed36ecc29be16febde3ad6088dcc6bdd878f71d2f8fff1"
+  }
+}

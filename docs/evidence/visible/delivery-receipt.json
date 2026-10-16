@@ -1,0 +1,10 @@
+{
+  "archive_bytes": 60684795,
+  "archive_sha256": "d6cba7b79cfeb60cdb9c29b7f94889fb69d6c650f974508dba4317a332d9a88f",
+  "files": 465,
+  "total_file_bytes": 91402466,
+  "status": "PASS",
+  "files_verified": 465,
+  "all_sizes_sha256_match": true,
+  "artifact_root": "outputs/visible_20261015/remote"
+}

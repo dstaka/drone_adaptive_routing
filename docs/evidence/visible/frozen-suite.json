@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "execution_seeds": [
+    1,
+    2,
+    3
+  ],
+  "scenarios": {
+    "normal": "b99a344a4016e7e2b36c83242fba0b22f6ce95e5530f07b201fc355154442dee",
+    "emergency": "b1e8f35fc51365245301162ed5ddc7bd9cf9d49de41afe1270a196d4a9b310a5",
+    "cost_shift": "8c97f363634d2e03ae18031638cd8f22ab6f5136464df77968537be72967c64c"
+  },
+  "routing_model_hash": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+  "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+  "flight_config_hash": "25720a5b59b1edd769ed36ecc29be16febde3ad6088dcc6bdd878f71d2f8fff1",
+  "arrival_settings": {
+    "arrival_radius_m": 0.2,
+    "arrival_speed_mps": 0.3,
+    "arrival_hold_s": 0.2,
+    "inspection_dwell_s": 0.5,
+    "max_leg_s": 30.0,
+    "max_mission_s": 120.0,
+    "max_wall_s": 600.0,
+    "intro_s": 2.0,
+    "floor_m": 0.1,
+    "max_tilt_deg": 60.0
+  },
+  "source_archive_sha256": "568f622d9d4c79a9ea798a5401571a2fd48a381c231e05e2baa1731f0b940d9e",
+  "camera_and_scene": {
+    "schema_version": 1,
+    "checkpoint_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "camera": {
+      "res": [
+        1280,
+        720
+      ],
+      "pos": [
+        0.0,
+        -0.65,
+        4.296972903345546
+      ],
+      "lookat": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov": 40.0,
+      "margin_m": 0.6
+    },
+    "rendering_method": "neutral fixed Genesis landmarks with world-anchored priority badges",
+    "priority_range": [
+      1,
+      5
+    ],
+    "palette": [
+      "#fee5d9",
+      "#fcae91",
+      "#fb6a4a",
+      "#de2d26",
+      "#a50f15"
+    ],
+    "fraction_mapping": "linear RGB, round half up",
+    "state_symbols": {
+      "selected": "double ring / \u9078\u629e\u4e2d",
+      "visited": "check / \u8a2a\u554f\u6e08\u307f",
+      "alert": "!"
+    },
+    "label_format": "ID | \u512a\u5148\u5ea6 value",
+    "marker_radius_m": 0.045,
+    "event_mapping": "Apply events with simulation_step <= captured frame step, in event_seq order",
+    "markers": [
+      {
+        "id": "A",
+        "world_xyz": [
+          -0.9,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.268133619946023
+      },
+      {
+        "id": "B",
+        "world_xyz": [
+          -0.3,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.9489807588915595
+      },
+      {
+        "id": "C",
+        "world_xyz": [
+          0.3,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.660865759307971
+      },
+      {
+        "id": "D",
+        "world_xyz": [
+          0.9,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.557292690322676
+      },
+      {
+        "id": "E",
+        "world_xyz": [
+          -0.9,
+          0.0,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.1201560883465813
+      },
+      {
+        "id": "F",
+        "world_xyz": [
+          0.9,
+          0.0,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.2424860955702473
+      },
+      {
+        "id": "G",
+        "world_xyz": [
+          -0.9,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.5605384253786747
+      },
+      {
+        "id": "H",
+        "world_xyz": [
+          -0.3,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.693373135600983
+      },
+      {
+        "id": "I",
+        "world_xyz": [
+          0.3,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.2315055187372086
+      },
+      {
+        "id": "J",
+        "world_xyz": [
+          0.9,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 2.554158233798211
+      }
+    ]
+  }
+}

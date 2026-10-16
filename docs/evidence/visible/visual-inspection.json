@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "evidence_kind": "physical",
+  "inspected_execution_seed": 1,
+  "scenarios": [
+    "normal",
+    "emergency",
+    "cost_shift"
+  ],
+  "inspection_scope": [
+    "initial real frame",
+    "all 10 target selections",
+    "priority/cost event boundary",
+    "final real frame",
+    "L/H same-frame pose distances",
+    "priority grayscale numeric readability"
+  ],
+  "rendering": "Neutral native Genesis landmarks; world-projected badges; genuine unannotated same-frame vehicle crop",
+  "observed": [
+    "All A-J markers persist",
+    "Numeric priorities and separate state symbols readable",
+    "Only C priority changes at emergency event",
+    "Directed B-to-A cost arrow and old/new multiplier readable",
+    "Overview remains visible beside vehicle detail"
+  ],
+  "raw_visibility_summary": "visibility.json",
+  "annotated_media_summary": "media-check.json"
+}

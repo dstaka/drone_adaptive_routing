@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "physical",
+  "runs": [
+    {
+      "frames_audited": 879,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 455,
+        "C": 427,
+        "D": 404,
+        "E": 427,
+        "F": 345,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "cost_shift_seed_1",
+      "critical_frame_indices": [
+        0,
+        101,
+        200,
+        274,
+        348,
+        416,
+        500,
+        573,
+        644,
+        719,
+        789,
+        878
+      ]
+    },
+    {
+      "frames_audited": 879,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 455,
+        "C": 427,
+        "D": 404,
+        "E": 427,
+        "F": 345,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "cost_shift_seed_2"
+    },
+    {
+      "frames_audited": 879,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 455,
+        "C": 427,
+        "D": 404,
+        "E": 427,
+        "F": 345,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "cost_shift_seed_3"
+    },
+    {
+      "frames_audited": 879,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 455,
+        "C": 427,
+        "D": 404,
+        "E": 427,
+        "F": 345,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "emergency_seed_1",
+      "critical_frame_indices": [
+        0,
+        101,
+        200,
+        274,
+        348,
+        416,
+        500,
+        573,
+        644,
+        719,
+        789,
+        878
+      ]
+    },
+    {
+      "frames_audited": 879,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 455,
+        "C": 427,
+        "D": 404,
+        "E": 427,
+        "F": 345,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "emergency_seed_2"
+    },
+    {
+      "frames_audited": 879,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 455,
+        "C": 427,
+        "D": 404,
+        "E": 427,
+        "F": 345,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "emergency_seed_3"
+    },
+    {
+      "frames_audited": 907,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 451,
+        "C": 427,
+        "D": 404,
+        "E": 428,
+        "F": 343,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "normal_seed_1",
+      "critical_frame_indices": [
+        0,
+        101,
+        200,
+        274,
+        371,
+        462,
+        539,
+        610,
+        689,
+        758,
+        828,
+        906
+      ]
+    },
+    {
+      "frames_audited": 907,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 451,
+        "C": 427,
+        "D": 404,
+        "E": 428,
+        "F": 343,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "normal_seed_2"
+    },
+    {
+      "frames_audited": 907,
+      "minimum_neutral_landmark_pixels": {
+        "A": 502,
+        "B": 451,
+        "C": 427,
+        "D": 404,
+        "E": 428,
+        "F": 343,
+        "G": 371,
+        "H": 333,
+        "I": 314,
+        "J": 290
+      },
+      "pixel_gate_failures": [],
+      "method": "Neutral landmark patch contrast is a supplementary screen-space check; inspect retained real frames.",
+      "drone_outside_frame_samples": 0,
+      "run_id": "normal_seed_3"
+    }
+  ]
+}

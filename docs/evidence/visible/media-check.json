@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "run_id": "normal_seed_1",
+      "frames": 907,
+      "status": "PASS"
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "frames": 879,
+      "status": "PASS"
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "frames": 879,
+      "status": "PASS"
+    }
+  ],
+  "total_frames": 2665,
+  "timing_edits": false,
+  "priority_event_sync": "PASS",
+  "same_frame_detail": "PASS"
+}

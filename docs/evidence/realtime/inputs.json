@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "merged_base": "974274d",
+  "merged_visible_commit": "91cf9858d12540052ac2ad46572b1c54f5ec02bf",
+  "input_artifact_root": "outputs/visible_20261015/remote",
+  "delivery_files_verified": 465,
+  "archive_sha256": "d6cba7b79cfeb60cdb9c29b7f94889fb69d6c650f974508dba4317a332d9a88f",
+  "models": [
+    {
+      "path": "outputs/visible_20261015/remote/outputs/visible/finetune_v1/model_1300.pt",
+      "sha256": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f"
+    },
+    {
+      "path": "outputs/visible_20261015/remote/outputs/visible/finetune_v1/cfgs.pkl",
+      "sha256": "25720a5b59b1edd769ed36ecc29be16febde3ad6088dcc6bdd878f71d2f8fff1"
+    },
+    {
+      "path": "outputs/visible_20261015/remote/outputs/scalable_20261015/normalized-src/outputs/training/seed_42.zip",
+      "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a"
+    }
+  ],
+  "gpu_used_s": 2803.57274048205,
+  "gpu_added_s": 0,
+  "gpu_remaining_s": 25996.42725951795,
+  "local_python": "3.11.14",
+  "new_server": null,
+  "ffprobe_sha256": "f7928a29c68c15cad6ef95b759d40477e3c97a3e74ff8ca69412d09f5889e9f6",
+  "ffprobe_source": "https://evermeet.cx/ffmpeg/ffprobe-7.1.1.zip",
+  "note": "Existing local CPU environment retained; Linux flight and CPU locks unchanged.",
+  "fonts": [
+    {
+      "path": "outputs/assets/NotoSansJP.ttf",
+      "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f"
+    },
+    {
+      "path": "outputs/assets/NotoSansJP-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    }
+  ],
+  "spec_original_sha256": "ab4b2f4bfae12eefe832a2c658d8b059068d1dddbf5101e4e42d6cab39ae9f82",
+  "approved_spec_sha256": "8c9ee25fdc4fe94f24bed7731d75a4b74e7cc79c219bfdcc7f17ed81bfcb3ea5"
+}

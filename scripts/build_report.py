@@ -59,7 +59,7 @@ def main():
     def footer(canvas, doc):
         canvas.setFont('NotoJP', 8)
         canvas.setFillColor(colors.HexColor('#657c89'))
-        canvas.drawString(36, 24, 'Adaptive Drone Inspection | 2026-10-13 | 実行結果に基づく報告')
+        canvas.drawString(36, 24, 'Adaptive Drone Inspection | 2026-10-16 | 10地点・1倍速の実測報告')
         canvas.drawRightString(A4[0] - 36, 24, str(doc.page))
     doc = SimpleDocTemplate(str(out), pagesize=A4, rightMargin=36, leftMargin=36,
                             topMargin=36, bottomMargin=42, title='適応型ドローン巡回点検', author='dstaka')

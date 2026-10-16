@@ -1,0 +1,1601 @@
+{
+  "schema_version": 2,
+  "status": "PASS",
+  "raw": [
+    {
+      "run_id": "normal_seed_1",
+      "status": "PASS",
+      "frames": 896,
+      "physical_end_s": 17.82,
+      "encoded_duration_s": 17.83,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 7.983072916666667,
+      "original_end_drift_s": 0.3000000000000007,
+      "full_decode": "PASS"
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "status": "PASS",
+      "frames": 868,
+      "physical_end_s": 17.23,
+      "encoded_duration_s": 17.24,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 6.803385416666667,
+      "original_end_drift_s": 0.3299999999999983,
+      "full_decode": "PASS"
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "status": "PASS",
+      "frames": 868,
+      "physical_end_s": 17.23,
+      "encoded_duration_s": 17.24,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 6.803385416666667,
+      "original_end_drift_s": 0.3299999999999983,
+      "full_decode": "PASS"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "outputs/realtime_20261016_v2/demo_full.mp4",
+      "status": "PASS",
+      "sha256": "581a6c0f42f08c5f9feccbc9c7ad3dc1604a7092ef138f5c44533ba27b6fa784",
+      "bytes": 4770491,
+      "duration_s": 96.3,
+      "fps": 30,
+      "decoded_frames": 2889,
+      "flight_frames": 1569,
+      "flight_fraction": 0.5430944963655244,
+      "max_hud_luma_mae": 3.711346252368321,
+      "max_card_luma_mae": 1.8789111277538537,
+      "max_motion_pixel_mae": 3.8637111111111113,
+      "segments": [
+        {
+          "run_id": "normal_seed_1",
+          "actual_encoded_span_s": 17.833333,
+          "physical_span_s": 17.82,
+          "span_error_s": 0.013332999999999373,
+          "max_source_quantization_s": 0.019999999999999574,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 9.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 10.966667,
+              "alignment_error_s": 0.006666999999998424
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 10.966667,
+              "alignment_error_s": 0.006666999999998424
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 12,
+              "physical_s": 5.42,
+              "encoded_pts_s": 12.433333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 12.433333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 7.33,
+              "encoded_pts_s": 14.333333,
+              "alignment_error_s": 0.0033329999999995863
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 7.33,
+              "encoded_pts_s": 14.333333,
+              "alignment_error_s": 0.0033329999999995863
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 22,
+              "physical_s": 9.11,
+              "encoded_pts_s": 16.133333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 23,
+              "physical_s": 9.11,
+              "encoded_pts_s": 16.133333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 26,
+              "physical_s": 10.61,
+              "encoded_pts_s": 17.633333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 27,
+              "physical_s": 10.61,
+              "encoded_pts_s": 17.633333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 30,
+              "physical_s": 12.0,
+              "encoded_pts_s": 19.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 31,
+              "physical_s": 12.0,
+              "encoded_pts_s": 19.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 34,
+              "physical_s": 13.56,
+              "encoded_pts_s": 20.566667,
+              "alignment_error_s": 0.006666999999996648
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 35,
+              "physical_s": 13.56,
+              "encoded_pts_s": 20.566667,
+              "alignment_error_s": 0.006666999999996648
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 38,
+              "physical_s": 14.92,
+              "encoded_pts_s": 21.933333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 39,
+              "physical_s": 14.92,
+              "encoded_pts_s": 21.933333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 42,
+              "physical_s": 16.29,
+              "encoded_pts_s": 23.3,
+              "alignment_error_s": 0.010000000000001563
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 43,
+              "physical_s": 16.29,
+              "encoded_pts_s": 23.3,
+              "alignment_error_s": 0.010000000000001563
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.82,
+              "encoded_pts_s": 24.8,
+              "alignment_error_s": -0.019999999999999574
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.82,
+              "encoded_pts_s": 24.8,
+              "alignment_error_s": -0.019999999999999574
+            }
+          ],
+          "endpoint_source_frame": 906,
+          "dt_s": 0.009999999999999998
+        },
+        {
+          "run_id": "emergency_seed_1",
+          "actual_encoded_span_s": 17.233334,
+          "physical_span_s": 17.23,
+          "span_error_s": 0.003333999999998838,
+          "max_source_quantization_s": 0.03000000000000469,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 34.833333,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 36.8,
+              "alignment_error_s": 0.006666999999993095
+            },
+            {
+              "type": "PRIORITY_UPDATED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 36.8,
+              "alignment_error_s": 0.006666999999993095
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 10,
+              "physical_s": 3.96,
+              "encoded_pts_s": 36.8,
+              "alignment_error_s": 0.006666999999993095
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 38.266667,
+              "alignment_error_s": 0.013333999999993296
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 14,
+              "physical_s": 5.42,
+              "encoded_pts_s": 38.266667,
+              "alignment_error_s": 0.013333999999993296
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 6.88,
+              "encoded_pts_s": 39.733333,
+              "alignment_error_s": 0.01999999999999602
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 6.88,
+              "encoded_pts_s": 39.733333,
+              "alignment_error_s": 0.01999999999999602
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 21,
+              "physical_s": 8.21,
+              "encoded_pts_s": 41.066667,
+              "alignment_error_s": 0.02333399999999841
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 22,
+              "physical_s": 8.21,
+              "encoded_pts_s": 41.066667,
+              "alignment_error_s": 0.02333399999999841
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 25,
+              "physical_s": 9.85,
+              "encoded_pts_s": 42.7,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 26,
+              "physical_s": 9.85,
+              "encoded_pts_s": 42.7,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 29,
+              "physical_s": 11.27,
+              "encoded_pts_s": 44.133333,
+              "alignment_error_s": 0.02999999999999403
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 30,
+              "physical_s": 11.27,
+              "encoded_pts_s": 44.133333,
+              "alignment_error_s": 0.02999999999999403
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 33,
+              "physical_s": 12.65,
+              "encoded_pts_s": 45.5,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 34,
+              "physical_s": 12.65,
+              "encoded_pts_s": 45.5,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 37,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 46.966667,
+              "alignment_error_s": 0.013334000000000401
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 38,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 46.966667,
+              "alignment_error_s": 0.013334000000000401
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 41,
+              "physical_s": 15.49,
+              "encoded_pts_s": 48.333333,
+              "alignment_error_s": 0.00999999999999801
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 42,
+              "physical_s": 15.49,
+              "encoded_pts_s": 48.333333,
+              "alignment_error_s": 0.00999999999999801
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.23,
+              "encoded_pts_s": 50.033333,
+              "alignment_error_s": -0.030000000000001137
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.23,
+              "encoded_pts_s": 50.033333,
+              "alignment_error_s": -0.030000000000001137
+            }
+          ],
+          "endpoint_source_frame": 878,
+          "dt_s": 0.009999999999999998
+        },
+        {
+          "run_id": "cost_shift_seed_1",
+          "actual_encoded_span_s": 17.233333000000002,
+          "physical_span_s": 17.23,
+          "span_error_s": 0.0033330000000013627,
+          "max_source_quantization_s": 0.029999999999997584,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 74.066667,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 76.033333,
+              "alignment_error_s": 0.006666000000009831
+            },
+            {
+              "type": "COST_UPDATED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 76.033333,
+              "alignment_error_s": 0.006666000000009831
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 10,
+              "physical_s": 3.96,
+              "encoded_pts_s": 76.033333,
+              "alignment_error_s": 0.006666000000009831
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 77.5,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 14,
+              "physical_s": 5.42,
+              "encoded_pts_s": 77.5,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 6.88,
+              "encoded_pts_s": 78.966667,
+              "alignment_error_s": 0.020000000000010232
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 6.88,
+              "encoded_pts_s": 78.966667,
+              "alignment_error_s": 0.020000000000010232
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 21,
+              "physical_s": 8.21,
+              "encoded_pts_s": 80.3,
+              "alignment_error_s": 0.02333299999999383
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 22,
+              "physical_s": 8.21,
+              "encoded_pts_s": 80.3,
+              "alignment_error_s": 0.02333299999999383
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 25,
+              "physical_s": 9.85,
+              "encoded_pts_s": 81.933333,
+              "alignment_error_s": 0.016666000000014947
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 26,
+              "physical_s": 9.85,
+              "encoded_pts_s": 81.933333,
+              "alignment_error_s": 0.016666000000014947
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 29,
+              "physical_s": 11.27,
+              "encoded_pts_s": 83.366667,
+              "alignment_error_s": 0.030000000000015348
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 30,
+              "physical_s": 11.27,
+              "encoded_pts_s": 83.366667,
+              "alignment_error_s": 0.030000000000015348
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 33,
+              "physical_s": 12.65,
+              "encoded_pts_s": 84.733333,
+              "alignment_error_s": 0.016666000000000736
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 34,
+              "physical_s": 12.65,
+              "encoded_pts_s": 84.733333,
+              "alignment_error_s": 0.016666000000000736
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 37,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 86.2,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 38,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 86.2,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 41,
+              "physical_s": 15.49,
+              "encoded_pts_s": 87.566667,
+              "alignment_error_s": 0.010000000000005116
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 42,
+              "physical_s": 15.49,
+              "encoded_pts_s": 87.566667,
+              "alignment_error_s": 0.010000000000005116
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.23,
+              "encoded_pts_s": 89.266667,
+              "alignment_error_s": -0.030000000000001137
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.23,
+              "encoded_pts_s": 89.266667,
+              "alignment_error_s": -0.030000000000001137
+            }
+          ],
+          "endpoint_source_frame": 878,
+          "dt_s": 0.009999999999999998
+        }
+      ],
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_cost_shift.mp4",
+      "status": "PASS",
+      "sha256": "777970bf36d113995129afae610d90f3182d994132ef65a20c4e1da475bb54c8",
+      "bytes": 1249502,
+      "duration_s": 17.233333,
+      "fps": 30,
+      "decoded_frames": 517,
+      "flight_frames": 517,
+      "flight_fraction": 1.0,
+      "max_hud_luma_mae": 3.5533854035619554,
+      "max_card_luma_mae": 0,
+      "max_motion_pixel_mae": 3.8735333333333335,
+      "segments": [
+        {
+          "run_id": "cost_shift_seed_1",
+          "actual_encoded_span_s": 17.233333333333334,
+          "physical_span_s": 17.23,
+          "span_error_s": 0.0033333333333338544,
+          "max_source_quantization_s": 0.030000000000001137,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 2.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "COST_UPDATED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 10,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 5.433333,
+              "alignment_error_s": 0.013333000000000261
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 14,
+              "physical_s": 5.42,
+              "encoded_pts_s": 5.433333,
+              "alignment_error_s": 0.013333000000000261
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 6.88,
+              "encoded_pts_s": 6.9,
+              "alignment_error_s": 0.020000000000000462
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 6.88,
+              "encoded_pts_s": 6.9,
+              "alignment_error_s": 0.020000000000000462
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 21,
+              "physical_s": 8.21,
+              "encoded_pts_s": 8.233333,
+              "alignment_error_s": 0.02333299999999916
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 22,
+              "physical_s": 8.21,
+              "encoded_pts_s": 8.233333,
+              "alignment_error_s": 0.02333299999999916
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 25,
+              "physical_s": 9.85,
+              "encoded_pts_s": 9.866667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 26,
+              "physical_s": 9.85,
+              "encoded_pts_s": 9.866667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 29,
+              "physical_s": 11.27,
+              "encoded_pts_s": 11.3,
+              "alignment_error_s": 0.030000000000001137
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 30,
+              "physical_s": 11.27,
+              "encoded_pts_s": 11.3,
+              "alignment_error_s": 0.030000000000001137
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 33,
+              "physical_s": 12.65,
+              "encoded_pts_s": 12.666667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 34,
+              "physical_s": 12.65,
+              "encoded_pts_s": 12.666667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 37,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 14.133333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 38,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 14.133333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 41,
+              "physical_s": 15.49,
+              "encoded_pts_s": 15.5,
+              "alignment_error_s": 0.009999999999999787
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 42,
+              "physical_s": 15.49,
+              "encoded_pts_s": 15.5,
+              "alignment_error_s": 0.009999999999999787
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.23,
+              "encoded_pts_s": 17.2,
+              "alignment_error_s": -0.030000000000001137
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.23,
+              "encoded_pts_s": 17.2,
+              "alignment_error_s": -0.030000000000001137
+            }
+          ],
+          "endpoint_source_frame": 878,
+          "dt_s": 0.009999999999999998
+        }
+      ],
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_emergency.mp4",
+      "status": "PASS",
+      "sha256": "ad6fcac3add2cb04dbec3da1f93317ae53bc68ef962898faac6edc8f0684b698",
+      "bytes": 1248128,
+      "duration_s": 17.233333,
+      "fps": 30,
+      "decoded_frames": 517,
+      "flight_frames": 517,
+      "flight_fraction": 1.0,
+      "max_hud_luma_mae": 3.5533854035619554,
+      "max_card_luma_mae": 0,
+      "max_motion_pixel_mae": 3.8735333333333335,
+      "segments": [
+        {
+          "run_id": "emergency_seed_1",
+          "actual_encoded_span_s": 17.233333333333334,
+          "physical_span_s": 17.23,
+          "span_error_s": 0.0033333333333338544,
+          "max_source_quantization_s": 0.030000000000001137,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 2.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "PRIORITY_UPDATED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 10,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 5.433333,
+              "alignment_error_s": 0.013333000000000261
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 14,
+              "physical_s": 5.42,
+              "encoded_pts_s": 5.433333,
+              "alignment_error_s": 0.013333000000000261
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 6.88,
+              "encoded_pts_s": 6.9,
+              "alignment_error_s": 0.020000000000000462
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 6.88,
+              "encoded_pts_s": 6.9,
+              "alignment_error_s": 0.020000000000000462
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 21,
+              "physical_s": 8.21,
+              "encoded_pts_s": 8.233333,
+              "alignment_error_s": 0.02333299999999916
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 22,
+              "physical_s": 8.21,
+              "encoded_pts_s": 8.233333,
+              "alignment_error_s": 0.02333299999999916
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 25,
+              "physical_s": 9.85,
+              "encoded_pts_s": 9.866667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 26,
+              "physical_s": 9.85,
+              "encoded_pts_s": 9.866667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 29,
+              "physical_s": 11.27,
+              "encoded_pts_s": 11.3,
+              "alignment_error_s": 0.030000000000001137
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 30,
+              "physical_s": 11.27,
+              "encoded_pts_s": 11.3,
+              "alignment_error_s": 0.030000000000001137
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 33,
+              "physical_s": 12.65,
+              "encoded_pts_s": 12.666667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 34,
+              "physical_s": 12.65,
+              "encoded_pts_s": 12.666667,
+              "alignment_error_s": 0.016666999999999987
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 37,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 14.133333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 38,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 14.133333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 41,
+              "physical_s": 15.49,
+              "encoded_pts_s": 15.5,
+              "alignment_error_s": 0.009999999999999787
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 42,
+              "physical_s": 15.49,
+              "encoded_pts_s": 15.5,
+              "alignment_error_s": 0.009999999999999787
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.23,
+              "encoded_pts_s": 17.2,
+              "alignment_error_s": -0.030000000000001137
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.23,
+              "encoded_pts_s": 17.2,
+              "alignment_error_s": -0.030000000000001137
+            }
+          ],
+          "endpoint_source_frame": 878,
+          "dt_s": 0.009999999999999998
+        }
+      ],
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_normal.mp4",
+      "status": "PASS",
+      "sha256": "0d21f4faef889942fd33a1a58ddaef10d5ea639d34423d2b438945a36adcb906",
+      "bytes": 1249439,
+      "duration_s": 17.833333,
+      "fps": 30,
+      "decoded_frames": 535,
+      "flight_frames": 535,
+      "flight_fraction": 1.0,
+      "max_hud_luma_mae": 3.5814372868510795,
+      "max_card_luma_mae": 0,
+      "max_motion_pixel_mae": 3.776611111111111,
+      "segments": [
+        {
+          "run_id": "normal_seed_1",
+          "actual_encoded_span_s": 17.833333333333336,
+          "physical_span_s": 17.82,
+          "span_error_s": 0.013333333333335418,
+          "max_source_quantization_s": 0.019999999999999574,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 2.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 3.966667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 12,
+              "physical_s": 5.42,
+              "encoded_pts_s": 5.433333,
+              "alignment_error_s": 0.013333000000000261
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 5.433333,
+              "alignment_error_s": 0.013333000000000261
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 7.33,
+              "encoded_pts_s": 7.333333,
+              "alignment_error_s": 0.0033329999999995863
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 7.33,
+              "encoded_pts_s": 7.333333,
+              "alignment_error_s": 0.0033329999999995863
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 22,
+              "physical_s": 9.11,
+              "encoded_pts_s": 9.133333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 23,
+              "physical_s": 9.11,
+              "encoded_pts_s": 9.133333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 26,
+              "physical_s": 10.61,
+              "encoded_pts_s": 10.633333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 27,
+              "physical_s": 10.61,
+              "encoded_pts_s": 10.633333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 30,
+              "physical_s": 12.0,
+              "encoded_pts_s": 12.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 31,
+              "physical_s": 12.0,
+              "encoded_pts_s": 12.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 34,
+              "physical_s": 13.56,
+              "encoded_pts_s": 13.566667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 35,
+              "physical_s": 13.56,
+              "encoded_pts_s": 13.566667,
+              "alignment_error_s": 0.0066670000000002005
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 38,
+              "physical_s": 14.92,
+              "encoded_pts_s": 14.933333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 39,
+              "physical_s": 14.92,
+              "encoded_pts_s": 14.933333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 42,
+              "physical_s": 16.29,
+              "encoded_pts_s": 16.3,
+              "alignment_error_s": 0.010000000000001563
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 43,
+              "physical_s": 16.29,
+              "encoded_pts_s": 16.3,
+              "alignment_error_s": 0.010000000000001563
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.82,
+              "encoded_pts_s": 17.8,
+              "alignment_error_s": -0.019999999999999574
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.82,
+              "encoded_pts_s": 17.8,
+              "alignment_error_s": -0.019999999999999574
+            }
+          ],
+          "endpoint_source_frame": 906,
+          "dt_s": 0.009999999999999998
+        }
+      ],
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/submission.mp4",
+      "status": "PASS",
+      "sha256": "581a6c0f42f08c5f9feccbc9c7ad3dc1604a7092ef138f5c44533ba27b6fa784",
+      "bytes": 4770491,
+      "duration_s": 96.3,
+      "fps": 30,
+      "decoded_frames": 2889,
+      "flight_frames": 1569,
+      "flight_fraction": 0.5430944963655244,
+      "max_hud_luma_mae": 3.711346252368321,
+      "max_card_luma_mae": 1.8789111277538537,
+      "max_motion_pixel_mae": 3.8637111111111113,
+      "segments": [
+        {
+          "run_id": "normal_seed_1",
+          "actual_encoded_span_s": 17.833333,
+          "physical_span_s": 17.82,
+          "span_error_s": 0.013332999999999373,
+          "max_source_quantization_s": 0.019999999999999574,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 9.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 10.966667,
+              "alignment_error_s": 0.006666999999998424
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 10.966667,
+              "alignment_error_s": 0.006666999999998424
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 12,
+              "physical_s": 5.42,
+              "encoded_pts_s": 12.433333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 12.433333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 7.33,
+              "encoded_pts_s": 14.333333,
+              "alignment_error_s": 0.0033329999999995863
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 7.33,
+              "encoded_pts_s": 14.333333,
+              "alignment_error_s": 0.0033329999999995863
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 22,
+              "physical_s": 9.11,
+              "encoded_pts_s": 16.133333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 23,
+              "physical_s": 9.11,
+              "encoded_pts_s": 16.133333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 26,
+              "physical_s": 10.61,
+              "encoded_pts_s": 17.633333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 27,
+              "physical_s": 10.61,
+              "encoded_pts_s": 17.633333,
+              "alignment_error_s": 0.023333000000000936
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 30,
+              "physical_s": 12.0,
+              "encoded_pts_s": 19.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 31,
+              "physical_s": 12.0,
+              "encoded_pts_s": 19.0,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 34,
+              "physical_s": 13.56,
+              "encoded_pts_s": 20.566667,
+              "alignment_error_s": 0.006666999999996648
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 35,
+              "physical_s": 13.56,
+              "encoded_pts_s": 20.566667,
+              "alignment_error_s": 0.006666999999996648
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 38,
+              "physical_s": 14.92,
+              "encoded_pts_s": 21.933333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 39,
+              "physical_s": 14.92,
+              "encoded_pts_s": 21.933333,
+              "alignment_error_s": 0.013332999999999373
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 42,
+              "physical_s": 16.29,
+              "encoded_pts_s": 23.3,
+              "alignment_error_s": 0.010000000000001563
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 43,
+              "physical_s": 16.29,
+              "encoded_pts_s": 23.3,
+              "alignment_error_s": 0.010000000000001563
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.82,
+              "encoded_pts_s": 24.8,
+              "alignment_error_s": -0.019999999999999574
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.82,
+              "encoded_pts_s": 24.8,
+              "alignment_error_s": -0.019999999999999574
+            }
+          ],
+          "endpoint_source_frame": 906,
+          "dt_s": 0.009999999999999998
+        },
+        {
+          "run_id": "emergency_seed_1",
+          "actual_encoded_span_s": 17.233334,
+          "physical_span_s": 17.23,
+          "span_error_s": 0.003333999999998838,
+          "max_source_quantization_s": 0.03000000000000469,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 34.833333,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 36.8,
+              "alignment_error_s": 0.006666999999993095
+            },
+            {
+              "type": "PRIORITY_UPDATED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 36.8,
+              "alignment_error_s": 0.006666999999993095
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 10,
+              "physical_s": 3.96,
+              "encoded_pts_s": 36.8,
+              "alignment_error_s": 0.006666999999993095
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 38.266667,
+              "alignment_error_s": 0.013333999999993296
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 14,
+              "physical_s": 5.42,
+              "encoded_pts_s": 38.266667,
+              "alignment_error_s": 0.013333999999993296
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 6.88,
+              "encoded_pts_s": 39.733333,
+              "alignment_error_s": 0.01999999999999602
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 6.88,
+              "encoded_pts_s": 39.733333,
+              "alignment_error_s": 0.01999999999999602
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 21,
+              "physical_s": 8.21,
+              "encoded_pts_s": 41.066667,
+              "alignment_error_s": 0.02333399999999841
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 22,
+              "physical_s": 8.21,
+              "encoded_pts_s": 41.066667,
+              "alignment_error_s": 0.02333399999999841
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 25,
+              "physical_s": 9.85,
+              "encoded_pts_s": 42.7,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 26,
+              "physical_s": 9.85,
+              "encoded_pts_s": 42.7,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 29,
+              "physical_s": 11.27,
+              "encoded_pts_s": 44.133333,
+              "alignment_error_s": 0.02999999999999403
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 30,
+              "physical_s": 11.27,
+              "encoded_pts_s": 44.133333,
+              "alignment_error_s": 0.02999999999999403
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 33,
+              "physical_s": 12.65,
+              "encoded_pts_s": 45.5,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 34,
+              "physical_s": 12.65,
+              "encoded_pts_s": 45.5,
+              "alignment_error_s": 0.01666699999999821
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 37,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 46.966667,
+              "alignment_error_s": 0.013334000000000401
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 38,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 46.966667,
+              "alignment_error_s": 0.013334000000000401
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 41,
+              "physical_s": 15.49,
+              "encoded_pts_s": 48.333333,
+              "alignment_error_s": 0.00999999999999801
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 42,
+              "physical_s": 15.49,
+              "encoded_pts_s": 48.333333,
+              "alignment_error_s": 0.00999999999999801
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.23,
+              "encoded_pts_s": 50.033333,
+              "alignment_error_s": -0.030000000000001137
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.23,
+              "encoded_pts_s": 50.033333,
+              "alignment_error_s": -0.030000000000001137
+            }
+          ],
+          "endpoint_source_frame": 878,
+          "dt_s": 0.009999999999999998
+        },
+        {
+          "run_id": "cost_shift_seed_1",
+          "actual_encoded_span_s": 17.233333000000002,
+          "physical_span_s": 17.23,
+          "span_error_s": 0.0033330000000013627,
+          "max_source_quantization_s": 0.029999999999997584,
+          "events": [
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 4,
+              "physical_s": 2.0,
+              "encoded_pts_s": 74.066667,
+              "alignment_error_s": 0.0
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 8,
+              "physical_s": 3.96,
+              "encoded_pts_s": 76.033333,
+              "alignment_error_s": 0.006666000000009831
+            },
+            {
+              "type": "COST_UPDATED",
+              "event_seq": 9,
+              "physical_s": 3.96,
+              "encoded_pts_s": 76.033333,
+              "alignment_error_s": 0.006666000000009831
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 10,
+              "physical_s": 3.96,
+              "encoded_pts_s": 76.033333,
+              "alignment_error_s": 0.006666000000009831
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 13,
+              "physical_s": 5.42,
+              "encoded_pts_s": 77.5,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 14,
+              "physical_s": 5.42,
+              "encoded_pts_s": 77.5,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 17,
+              "physical_s": 6.88,
+              "encoded_pts_s": 78.966667,
+              "alignment_error_s": 0.020000000000010232
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 18,
+              "physical_s": 6.88,
+              "encoded_pts_s": 78.966667,
+              "alignment_error_s": 0.020000000000010232
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 21,
+              "physical_s": 8.21,
+              "encoded_pts_s": 80.3,
+              "alignment_error_s": 0.02333299999999383
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 22,
+              "physical_s": 8.21,
+              "encoded_pts_s": 80.3,
+              "alignment_error_s": 0.02333299999999383
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 25,
+              "physical_s": 9.85,
+              "encoded_pts_s": 81.933333,
+              "alignment_error_s": 0.016666000000014947
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 26,
+              "physical_s": 9.85,
+              "encoded_pts_s": 81.933333,
+              "alignment_error_s": 0.016666000000014947
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 29,
+              "physical_s": 11.27,
+              "encoded_pts_s": 83.366667,
+              "alignment_error_s": 0.030000000000015348
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 30,
+              "physical_s": 11.27,
+              "encoded_pts_s": 83.366667,
+              "alignment_error_s": 0.030000000000015348
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 33,
+              "physical_s": 12.65,
+              "encoded_pts_s": 84.733333,
+              "alignment_error_s": 0.016666000000000736
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 34,
+              "physical_s": 12.65,
+              "encoded_pts_s": 84.733333,
+              "alignment_error_s": 0.016666000000000736
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 37,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 86.2,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 38,
+              "physical_s": 14.120000000000001,
+              "encoded_pts_s": 86.2,
+              "alignment_error_s": 0.013333000000002926
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 41,
+              "physical_s": 15.49,
+              "encoded_pts_s": 87.566667,
+              "alignment_error_s": 0.010000000000005116
+            },
+            {
+              "type": "TARGET_SELECTED",
+              "event_seq": 42,
+              "physical_s": 15.49,
+              "encoded_pts_s": 87.566667,
+              "alignment_error_s": 0.010000000000005116
+            },
+            {
+              "type": "WAYPOINT_REACHED",
+              "event_seq": 46,
+              "physical_s": 17.23,
+              "encoded_pts_s": 89.266667,
+              "alignment_error_s": -0.030000000000001137
+            },
+            {
+              "type": "MISSION_FINISHED",
+              "event_seq": 47,
+              "physical_s": 17.23,
+              "encoded_pts_s": 89.266667,
+              "alignment_error_s": -0.030000000000001137
+            }
+          ],
+          "endpoint_source_frame": 878,
+          "dt_s": 0.009999999999999998
+        }
+      ],
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    }
+  ],
+  "trials": {
+    "attempted": 9,
+    "succeeded": 9,
+    "inspections": 90
+  },
+  "checker_method": "Original physics steps + actual encoded PTS + every flight frame pixel provenance, visible Japanese HUD and original drone crop; independent cost replay and exact re-solve."
+}

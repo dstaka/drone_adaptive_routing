@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "automated_media": "PASS",
+  "frame_review": "PASS",
+  "report_review": "PASS",
+  "continuous_playback_review": "PASS",
+  "spec_acceptance": "PASS",
+  "remaining": [],
+  "gpu_used_s": 2803.57274048205,
+  "gpu_added_s": 0,
+  "gpu_remaining_s": 25996.42725951795,
+  "new_server_directories": [],
+  "transfer": "No new external server transfer; inherited 465/465 input hashes verified."
+}

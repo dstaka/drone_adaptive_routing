@@ -1,3 +1,7 @@
-duration_s: 120
+# Version 2: natural flight duration; caps never derive a playback rate.
+schema_version: 2
 fps: 30
+playback_rate: 1.0
+submission_max_s: 120
 font_path: outputs/assets/NotoSansJP.ttf
+# Noto Sans JP / SIL OFL 1.1; license: outputs/assets/NotoSansJP-OFL.txt

@@ -1,0 +1,181 @@
+{
+  "schema_version": 2,
+  "status": "PASS",
+  "delivery_root": "outputs/realtime_20261016_v2",
+  "manifest_path": "outputs/realtime_20261016_v2/manifest.json",
+  "manifest_sha256": "8b27ada809361cc05a0b879c9042cee6dd48611336e1cf9bec43d3feaa2fa117",
+  "files_verified": 93,
+  "artifacts": [
+    {
+      "path": "outputs/realtime_20261016_v2/demo_full.manifest.json",
+      "bytes": 795,
+      "sha256": "2a8bcc4516fa2d5c262f48c27813ff345ae819c62cd6fbf67250ad45072dff57"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/demo_full.mp4",
+      "bytes": 4770491,
+      "sha256": "581a6c0f42f08c5f9feccbc9c7ad3dc1604a7092ef138f5c44533ba27b6fa784"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/demo_full.timeline.json",
+      "bytes": 73934,
+      "sha256": "223a461a9b6b5e6b6565aa39806ab69e6ac04f76bc72ad50524c73a603e7d67f"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_cost_shift.manifest.json",
+      "bytes": 817,
+      "sha256": "0d376b5ecb412114f5d1927493e1275c230c30fc7d5a983d347d213f2e36e4f1"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_cost_shift.mp4",
+      "bytes": 1249502,
+      "sha256": "777970bf36d113995129afae610d90f3182d994132ef65a20c4e1da475bb54c8"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_cost_shift.timeline.json",
+      "bytes": 1087,
+      "sha256": "a93a089965cefc8b80339adb6d0b4da50686db73322fc14b4b0bbe688d059efd"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_emergency.manifest.json",
+      "bytes": 813,
+      "sha256": "bf4ef50e2af68c6fd8f4c69d40b2509cc2bf4d08640445da8b19da8af3b01c48"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_emergency.mp4",
+      "bytes": 1248128,
+      "sha256": "ad6fcac3add2cb04dbec3da1f93317ae53bc68ef962898faac6edc8f0684b698"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_emergency.timeline.json",
+      "bytes": 1085,
+      "sha256": "9454830c19b96b01bd6bc6155e6873d0150068acd85af06afbbd2d232da098c2"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_normal.manifest.json",
+      "bytes": 801,
+      "sha256": "e10dc42bc32317c65daf050a8c96987c1973a080916b796b8da362e2daedcdc0"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_normal.mp4",
+      "bytes": 1249439,
+      "sha256": "0d21f4faef889942fd33a1a58ddaef10d5ea639d34423d2b438945a36adcb906"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/full_normal.timeline.json",
+      "bytes": 1079,
+      "sha256": "8922f42d4168b85a89d77414d2d695a0b3c7ec670f4a4ec87508a423c1fd24c1"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/cost_shift_seed_1/frames.csv",
+      "bytes": 26021,
+      "sha256": "988ddd2d00a66f83076bcd7ce43180f451c5a01e6f332201ea95a782188fe48b"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/cost_shift_seed_1/raw.manifest.json",
+      "bytes": 853,
+      "sha256": "c485123cb4187ba4c1cbc2041e1b931c12ab4899b2d8bb75645834669229e063"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/cost_shift_seed_1/raw.mp4",
+      "bytes": 285379,
+      "sha256": "54482d2fe2143dde01cc72b2c85192787d6b4c3769042f7a410d0dc7eae8870c"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/cost_shift_seed_1/raw.timeline.json",
+      "bytes": 650,
+      "sha256": "1a421155afc5cf34f2eb36d3a5543849dd3ff0f2789c1112eddd96223a6873e8"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/emergency_seed_1/frames.csv",
+      "bytes": 26021,
+      "sha256": "988ddd2d00a66f83076bcd7ce43180f451c5a01e6f332201ea95a782188fe48b"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/emergency_seed_1/raw.manifest.json",
+      "bytes": 849,
+      "sha256": "3ceee6a12c03d596a6878630c96164d81efac41dd4305c3153ba7d4bd5ca885f"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/emergency_seed_1/raw.mp4",
+      "bytes": 285379,
+      "sha256": "54482d2fe2143dde01cc72b2c85192787d6b4c3769042f7a410d0dc7eae8870c"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/emergency_seed_1/raw.timeline.json",
+      "bytes": 648,
+      "sha256": "404914b52de3fd71364287ee8427b6355c1657777290dce4384480d5989a9e9c"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/normal_seed_1/frames.csv",
+      "bytes": 26927,
+      "sha256": "4baf72b108984c03d52e36cc87a394b26228c45db98466718d7b19b0fea1cced"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/normal_seed_1/raw.manifest.json",
+      "bytes": 837,
+      "sha256": "306a65d55ee0122ab042143b556a4235e9e8b6794dfc9ef758aacb21bd0fad67"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/normal_seed_1/raw.mp4",
+      "bytes": 286577,
+      "sha256": "24dc5c74322e0b83871948ca3b5aa0661e2e50a32906c959821a89224cd1d5b3"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/raw/normal_seed_1/raw.timeline.json",
+      "bytes": 642,
+      "sha256": "90795c19d12599f2323e1f98d57bda52d2cb2d6af850f207a5f15d4d9eecc6ea"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/report/report.pdf",
+      "bytes": 231056,
+      "sha256": "d8206998a199486bc0ebf222c39ce51eb7df9192ccbf52f326cc049cf59c1ff9"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/sources/cost_shift_seed_1/frames.csv",
+      "bytes": 21345,
+      "sha256": "48aa5c7bcba533944f20604f9d9fd3fa5e816ef025bd052add4a711e0ef7b38a"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/sources/cost_shift_seed_1/raw.mp4",
+      "bytes": 263567,
+      "sha256": "296a3d72bbee9cf569d861511465d9aac3877f5ab0efc6e71295d7b81d1edfeb"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/sources/emergency_seed_1/frames.csv",
+      "bytes": 21345,
+      "sha256": "48aa5c7bcba533944f20604f9d9fd3fa5e816ef025bd052add4a711e0ef7b38a"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/sources/emergency_seed_1/raw.mp4",
+      "bytes": 263567,
+      "sha256": "296a3d72bbee9cf569d861511465d9aac3877f5ab0efc6e71295d7b81d1edfeb"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/sources/normal_seed_1/frames.csv",
+      "bytes": 22074,
+      "sha256": "6c949d54bc4f8dc22a168a626a724c828b03e2cccf5c7b5b97234e341f95fbac"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/sources/normal_seed_1/raw.mp4",
+      "bytes": 263135,
+      "sha256": "09132e0fad046038872b8960109c8d8136cbfdb2fa09391164d2e34f7585ceb6"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/submission.manifest.json",
+      "bytes": 799,
+      "sha256": "422122d22329ec66a79676647b6120a298b863da15e082622b8396b2b1ebd8a1"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/submission.mp4",
+      "bytes": 4770491,
+      "sha256": "581a6c0f42f08c5f9feccbc9c7ad3dc1604a7092ef138f5c44533ba27b6fa784"
+    },
+    {
+      "path": "outputs/realtime_20261016_v2/submission.timeline.json",
+      "bytes": 73940,
+      "sha256": "f77ca672e251c8ef0a2f6bae4add93c8c77258919ff61967159f5c50b5cf7286"
+    }
+  ],
+  "note": "Repository-relative references; media are outside Git. Hash integrity is separate from pending continuous human playback."
+}

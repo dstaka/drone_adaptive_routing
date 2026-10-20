@@ -1,0 +1,28 @@
+{
+  "python": "3.11.14",
+  "execution": "existing local CPU environment; no dependency versions changed",
+  "packages": {
+    "numpy": "1.26.4",
+    "Pillow": "12.3.0",
+    "reportlab": "4.4.4",
+    "fonttools": "4.66.1",
+    "imageio-ffmpeg": "0.6.0",
+    "pytest": "8.4.2",
+    "ruff": "0.13.2",
+    "torch": "2.2.2",
+    "stable-baselines3": "2.4.1",
+    "sb3-contrib": "2.4.0"
+  },
+  "ffmpeg": "ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers",
+  "ffprobe": "ffprobe version 7.1.1-tessus  https://evermeet.cx/ffmpeg/  Copyright (c) 2007-2025 the FFmpeg developers",
+  "preserved_locks": [
+    {
+      "path": "requirements/flight-linux.lock.txt",
+      "sha256": "a6985bdf3307ab18cdf5a32b715093d6f607ee005ebdf8f3527030971fc0553c"
+    },
+    {
+      "path": "requirements/routing-scalable-linux.lock.txt",
+      "sha256": "444ca81d097c906ec6b884ecd7086f6c759903a43dcc43141eaeb4889512a4fc"
+    }
+  ]
+}

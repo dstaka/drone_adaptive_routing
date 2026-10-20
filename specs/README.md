@@ -4,7 +4,9 @@
 
 ## 2026-10-14: 適応型Drone巡回デモの改善案
 
-目的は、**環境変化に応じて同じAI Policyが巡回順序を変更し、Droneが全地点まで安定して飛行すること**です。今回の成果物は仕様書であり、実装・再学習・GPU実行はまだ行っていません。
+以下は2026-10-14時点の分割計画です。最新の実装記録は末尾に記載します。
+
+目的は、**環境変化に応じて同じAI Policyが巡回順序を変更し、Droneが全地点まで安定して飛行すること**です。当日の成果物は仕様書で、各実装は後続セッションで実施しました。
 
 参照元は [既存の仕様書](../adaptive_drone_patrol_20261013/spec.md) と、その配下の現行実装です。ルートの [初期仕様書](../spec.md) および参照元は変更しません。新仕様は英語、利用者向けの説明・動画字幕は日本語を維持します。
 
@@ -39,3 +41,7 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-15–16 visible flight implementation session
 
 [安定飛行と全目的地の常時表示](2026-10-14-visible-multigoal-flight/spec.md)は承認済み仕様として、このPRでルートの物理実行へ統合します。[実装計画](../docs/superpowers/plans/2026-10-15-visible-multigoal-flight.md)と[実測・再実行の引き継ぎ](../docs/visible-flight-handoff.md)を参照してください。CPUロジック検証、開発飛行、固定9試行の受入結果を分けて記録し、最終編集・リタイミングは後続PRに残します。
+
+## 2026-10-16 realtime video implementation session
+
+[1倍速動画と統合デモ成果物](2026-10-14-realtime-demo-video/spec.md)を承認済み仕様としてルートへ実装しました。[実装計画](../docs/superpowers/plans/2026-10-16-realtime-demo-video.md)、[入力・出力・再実行・検証記録](../docs/realtime-video-handoff.md)、[英文PR description](../docs/realtime-video-pr-description.md)を参照してください。全3シナリオの自然尺動画、96.30秒の提出用、元撮影からの独立PTS・画素照合と日本語PDFを生成しました。2026年10月17日のユーザーによる目視OKを反映し、残っていた人手確認を完了、仕様受入をPASSとして記録しました。改善案は別spec／PRで扱います。

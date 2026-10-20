@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "cpu_tests": 142,
+  "gpu_tests_deselected": 1,
+  "new_video_tests": 19,
+  "test_command": ".venv-routing311/bin/python -m pytest -m 'not gpu' -q",
+  "ruff": "PASS",
+  "git_diff_check": "PASS",
+  "normalized_raw_frames": 2632,
+  "edited_frames_decoded": 7347,
+  "max_event_alignment_error_s": 0.030000000000015348,
+  "manifest_files_verified": 93,
+  "source_delivery_verified": 465,
+  "source_delivery_mismatches": 0,
+  "privacy": "No private user/host paths, connection details or secrets in public task files; JPEG comments/EXIF absent; PDF author dstaka, no custom metadata.",
+  "continuous_human_playback": "PASS: operator reported visual approval on 2026-10-17; agent continuous playback was not performed.",
+  "acceptance_refresh": {
+    "date": "2026-10-17",
+    "scope": "Operator approval, documentation, PDF and delivery metadata only; code and videos unchanged.",
+    "pdf_review": "PASS; pages 1 and 2 pixel-identical to previous render, page 3 visually reviewed.",
+    "test_provenance": "142 CPU tests and Ruff were run for the implementation on 2026-10-16; no code or test changes in this acceptance refresh."
+  }
+}

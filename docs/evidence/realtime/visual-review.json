@@ -1,0 +1,58 @@
+{
+  "schema_version": 2,
+  "frame_review": "PASS",
+  "report_review": "PASS",
+  "continuous_playback_review": "PASS",
+  "frames_extracted": 52,
+  "frame_index": "outputs/realtime_20261016_v2/visual_qa/index.json",
+  "viewed": [
+    "First frame, every target/inspection boundary and final frame for all three flights (individual frames and contact sheets).",
+    "Frames before/at/after both updates; C priority changes to 5, B->A cost multiplier changes 1 to 5.",
+    "Encoded L/H comparison card, both event comparison cards, completion and intro/credits layouts.",
+    "All three regenerated PDF pages rendered with bundled Poppler at 1200 pixels."
+  ],
+  "findings": [
+    "All A-J labels and fixed priority palette/values remain legible at the full output size.",
+    "Current target ring, visited check and priority are separate; current pose comes from telemetry.",
+    "Exact remaining comparisons are static cards bound to cost_shift_seed_1/decision-1 at 3.96s.",
+    "Native Genesis plane is 1280x720 in a 1920x1080 canvas; inset uses the same unannotated frame.",
+    "The preserved camera/geometry can overlap vehicle and neutral landmark near arrivals; rotor detail remains visible in the inset.",
+    "Final v2 goal-switch frames show pose-to-current-target distance, including 2.00s B=0.738m and 3.96s C=0.611m; v1 mismatch is rejected by the checker."
+  ],
+  "report": "outputs/realtime_20261016_v2/report/report.pdf",
+  "report_pages": 3,
+  "acceptance_note": "Automated media and static reviews passed separately. Operator visual approval closes the remaining human review item on 2026-10-17.",
+  "operator_response_ja": "目視して動画はOKでした。改善案を思いつきましたが、それは別のspec/PRで対応します。",
+  "review_history": [
+    {
+      "date": "2026-10-16",
+      "continuous_playback_review": "NOT_REVIEWED_OPERATOR_CONFIRMED",
+      "operator_response_ja": "未確認のまま記録する",
+      "agent_playback_limitation": "Localhost video page responded HTTP 200 to local curl, but in-app browser timed out. Direct local file URL was rejected by browser security policy; no bypass attempted."
+    }
+  ],
+  "operator_review_date": "2026-10-17",
+  "continuous_review_provenance": "Operator reported visual approval in this session; the agent did not perform continuous playback. The report does not assert a player, interval or playback setting beyond the operator statement.",
+  "improvements_scope": "Separate specification and PR; no improvements are implemented in this delivery.",
+  "original_manual_review_request": {
+    "clips": [
+      "outputs/realtime_20261016_v2/full_emergency.mp4",
+      "outputs/realtime_20261016_v2/full_cost_shift.mp4"
+    ],
+    "start_s": 1.96,
+    "end_s": 6.0,
+    "playback_rate": 1,
+    "instruction_ja": "ローカル動画プレイヤーで1.96〜6.00秒を1倍速で連続再生し、更新と地点Cの実点検までを確認してください。"
+  },
+  "report_revision_review": {
+    "date": "2026-10-17",
+    "result": "PASS",
+    "pages": 3,
+    "unchanged_rendered_pages": [
+      1,
+      2
+    ],
+    "changed_page_visually_reviewed": 3,
+    "pdf_sha256": "d8206998a199486bc0ebf222c39ce51eb7df9192ccbf52f326cc049cf59c1ff9"
+  }
+}

@@ -49,3 +49,7 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-20 integer priorities implementation session
 
 [1〜100の整数重要度](2026-10-17-integer-priorities/spec.md)を独立した変更として実装しました。[実装計画](../docs/superpowers/plans/2026-10-20-integer-priorities.md)と[整数重要度の引き継ぎ](../docs/integer-priorities-handoff.md)を参照してください。既存配置を維持し、新profileのモデル・データ・9物理試行・1倍速動画を別出力先へ保存しました。全7受入条件を満たし、人手確認・PDF確認も完了しています。分散配置と吊り荷は今回のcommitの対象外です。
+
+## 2026-10-20 dispersed destination implementation session
+
+[分散3次元目的地配置](2026-10-17-dispersed-destination-layout/spec.md)を整数重要度PRのマージ後から実装しました。[実装計画](../docs/superpowers/plans/2026-10-20-dispersed-destination-layout.md)と[新規測定・失敗・再実行の引き継ぎ](../docs/dispersed-destination-layout-handoff.md)を参照してください。配置承認、追加学習、9物理試行90点検、全5動画11,361フレームの独立照合、最終動画の人手確認とPDF確認を完了し、全7受入条件を満たしました。他の未追跡specは今回のcommitへ含めません。

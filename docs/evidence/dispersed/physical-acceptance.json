@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "physical",
+  "missions_attempted": 9,
+  "missions_succeeded": 9,
+  "inspections_completed": 90,
+  "by_scenario": {
+    "normal": {
+      "succeeded": 3,
+      "attempted": 3
+    },
+    "emergency": {
+      "succeeded": 3,
+      "attempted": 3
+    },
+    "cost_shift": {
+      "succeeded": 3,
+      "attempted": 3
+    }
+  },
+  "policy_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "explanations_sha256": "de6e56e2778c6419fe8a95ae78f6ea75fed60573a9cb760d214c2acd13982a1e",
+  "status": "PASS",
+  "qualifying_LH_decision_count": 27
+}

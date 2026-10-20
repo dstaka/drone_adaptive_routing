@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "date": "2026-10-20",
+  "scope": "Final CRF1 full three flights and both continuous 1x event intervals",
+  "intervals_s": {
+    "emergency": [
+      2.72,
+      10.42
+    ],
+    "cost_shift": [
+      2.72,
+      12.41
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_normal.mp4",
+      "bytes": 6217241,
+      "sha256": "5bb811fbd0343a8facdac1455c6d292f111635cac2fa5e5fb933719b3c99b9fc",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_emergency.mp4",
+      "bytes": 6724718,
+      "sha256": "41632fea035cc1e43426a5cf4bab3e27847d2eb6795ab87b6048dd9096d0197d",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_cost_shift.mp4",
+      "bytes": 6021062,
+      "sha256": "5bd2c8072566400c070763d2d8a7d8b048d27267c62ecbfe410572c5073caa56",
+      "same_timeline_and_mapping_as_initial": true
+    }
+  ],
+  "response": "最終3本と両区間を1倍速で確認し、問題なし",
+  "reviewer": "user"
+}

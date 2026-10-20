@@ -1,0 +1,16 @@
+{
+  "status": "FAIL",
+  "stage": "independent encoded-media verification",
+  "output": "outputs/dispersed_20261020_v1/delivery/demo_full.mp4",
+  "frame": 210,
+  "source": "normal_seed_1/frame0",
+  "glyph": "z=1.148m",
+  "observed_luma_mae": 4.194,
+  "unchanged_limit": 4,
+  "root_cause": "H.264 CRF18 compression error; unencoded glyph comparison is exactly zero",
+  "remedy": "Use CRF0 for full-size height badges; preserve YUV420, content, timing and all checker limits",
+  "new_output": "outputs/dispersed_20261020_v1/delivery_v2",
+  "physical_reruns": 0,
+  "failed_media_retained": true,
+  "final_remedy": "CRF1/YUV420 H.264 High after CRF0/8/6/1 diagnostics; all independent thresholds unchanged"
+}

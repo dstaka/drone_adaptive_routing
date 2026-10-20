@@ -191,9 +191,36 @@ class Renderer:
             xy, str(value), font=self.fonts[size], fill=fill, stroke_width=stroke, stroke_fill="#102333"
         )
 
+    def dispersed_badges(self, draw, record, state):
+        """Keep ID, integer weight and actual height together in full-size badges."""
+        schema=record['scenario'].get('schema_version',2)
+        maximum=100 if schema==3 else 5
+        for j, (marker, rect) in enumerate(zip(record["scene"]["markers"], record["scene"]["badge_rects"])):
+            x, y = project(marker["world_xyz"], record["scene"]["camera"])
+            a, b, c, d = [int(v) for v in rect]
+            color = priority_color(state["priorities"][j], maximum)
+            ink = marker_style(state["priorities"][j], priority_max=maximum)["ink"]
+            draw.line([(x + 20, y + 145), ((a + c) / 2 + 20, (b + d) / 2 + 145)], fill="#d5e4ec", width=2)
+            draw.rectangle((a + 20, b + 145, c + 20, d + 145), fill=color, outline="white", width=2)
+            self.text(draw, (a + 28, b + 148), f"{marker['id']}  {priority_text(state['priorities'][j],schema)}", 23, fill=ink)
+            self.text(draw, (a + 28, b + 175), f"z={marker['world_xyz'][2]:.3f}m", 20, fill=ink)
+            status = (
+                "AIの選択"
+                if marker["id"] == state["selected"]
+                else "✓ 点検済み"
+                if marker["id"] in state["visited"]
+                else "未点検"
+            )
+            self.text(draw, (a + 28, b + 201), status, 20, fill=ink)
+
     def legend(self, draw, y=995, schema_version=2):
-        self.text(draw, (25, y), "重要度：1（低）〜100（高）" if schema_version == 3 else "優先度：1（低）〜5（高）", 25)
-        for index, i in enumerate([1,25,50,75,100] if schema_version == 3 else range(1,6)):
+        self.text(
+            draw,
+            (25, y),
+            "重要度：1（低）〜100（高）" if schema_version == 3 else "優先度：1（低）〜5（高）",
+            25,
+        )
+        for index, i in enumerate([1, 25, 50, 75, 100] if schema_version == 3 else range(1, 6)):
             x = 395 + index * 105
             draw.rectangle((x, y, x + 46, y + 32), fill=priority_color(i, 100 if schema_version == 3 else 5))
             self.text(draw, (x + 55, y), i, 25)
@@ -321,7 +348,10 @@ class Renderer:
             draw.ellipse((x - 17, y - 17, x + 17, y + 17), outline=color, width=6)
             if marker["id"] == state["selected"]:
                 draw.ellipse((x - 25, y - 25, x + 25, y + 25), outline="#00e5ff", width=4)
-                self.text(draw, (x - 53, y - 63), "AIの選択", 20, fill="#00e5ff", stroke=1)
+                if not record['scene'].get('badge_rects'):
+                    self.text(draw, (x - 53, y - 63), "AIの選択", 20, fill="#00e5ff", stroke=1)
+            if record['scene'].get('badge_rects'):
+                continue
             label = f"{marker['id']}  {priority_text(state['priorities'][j], record['scenario'].get('schema_version', 2))}"
             w = draw.textlength(label, font=self.fonts[23]) + 18
             draw.rectangle((x - w / 2, y + 23, x + w / 2, y + 56), fill=color, outline="white", width=1)
@@ -338,7 +368,10 @@ class Renderer:
             ),
             None,
         )
-        if feature:
+        if record['scene'].get('badge_rects'):
+            self.dispersed_badges(draw,record,state)
+            self.text(draw,(25,112),'斜め上方からの3D投影／z＝地面からの実高度 [m]／引出線＝実地点',20,fill='#86dbe6')
+        if feature and not record['scene'].get('badge_rects'):
             for role, name in [("L", feature["selected_L"]), ("H", feature["selected_H"])]:
                 x, y = project(record["scenario"]["coords"][ids.index(name) + 1], record["scene"]["camera"])
                 self.text(
@@ -375,7 +408,7 @@ class Renderer:
             draw.rectangle((x, y + 5, x + 26, y + 30), fill=priority_color(state["priorities"][j], 100 if record["scenario"].get("schema_version") == 3 else 5))
             self.text(draw, (x + 37, y), f"{name}  優先度 {priority_text(state['priorities'][j], record['scenario'].get('schema_version', 2))}", 23)
         point = project(pose, record["scene"]["camera"])
-        detail = same_frame_detail(camera, point).resize((200, 150))
+        detail = same_frame_detail(camera, point, record['scene'].get('detail_crop_size_px',(96,72))).resize((200, 150))
         image.paste(detail, (1070, 180))
         draw.rectangle((1069, 179, 1271, 331), outline="#86dbe6", width=2)
         self.text(draw, (1050, 145), "同じ実フレームの機体拡大", 20)
@@ -402,13 +435,14 @@ class Renderer:
         coords = np.asarray(record["scenario"]["coords"])
         lo = coords[:, :2].min(axis=0) - 0.2
         hi = coords[:, :2].max(axis=0) + 0.2
+        dispersed = bool(record['scene'].get('badge_rects'))
 
         def xy(p):
             ratio = (np.asarray(p)[:2] - lo) / (hi - lo)
-            return 1375 + ratio[0] * 470, 650 - ratio[1] * 220
+            return 1375 + ratio[0] * 470, (548-ratio[1]*110) if dispersed else (650-ratio[1]*220)
 
         draw.rectangle((1335, 392, 1895, 708), fill="#1c3547")
-        self.text(draw, (1345, 396), "全地点マップ（m）／線：実飛行", 23)
+        self.text(draw, (1345, 396), "XY全地点マップ（m）／線：実飛行" if dispersed else "全地点マップ（m）／線：実飛行", 23)
         trajectory = [
             xy([float(r["x"]), float(r["y"])])
             for r in record["telemetry"]
@@ -433,3 +467,18 @@ class Renderer:
                 dashed_arrow(draw, xy(coords[ai]), xy(coords[bi]), "#ffdc91")
         x, y = xy(pose)
         draw.ellipse((x - 5, y - 5, x + 5, y + 5), fill="white")
+        if dispersed:
+            self.text(draw,(1345,580),'XZ補助投影：横x／地面からの実高度z [m]',20)
+            for z in [1,2,3]:
+                yy=696-(z-1)*40
+                draw.line([(1385,yy),(1870,yy)],fill='#476170',width=1)
+                self.text(draw,(1345,yy-12),str(z),20)
+            for j,p in enumerate(coords[1:]):
+                xx=1390+(p[0]-lo[0])/(hi[0]-lo[0])*465
+                yy=696-(p[2]-1)*40
+                draw.ellipse((xx-5,yy-5,xx+5,yy+5),fill=priority_color(state['priorities'][j],100 if record['scenario'].get('schema_version')==3 else 5),outline='white')
+                if j in [int(np.argmin(coords[1:,2])),int(np.argmax(coords[1:,2]))]:
+                    self.text(draw,(xx+7,yy-20),ids[j],20)
+            xx=1390+(pose[0]-lo[0])/(hi[0]-lo[0])*465
+            yy=696-(pose[2]-1)*40
+            draw.ellipse((xx-4,yy-4,xx+4,yy+4),fill='#00e5ff')

@@ -1,0 +1,26 @@
+[
+  {
+    "pixel_format": "yuv420p",
+    "crf": 18,
+    "status": "FAIL",
+    "error": "Encoded visible text differs: 'z=1.102m', MAE=4.027"
+  },
+  {
+    "pixel_format": "yuv420p",
+    "crf": 0,
+    "status": "PASS",
+    "mae": 3.4693020310633207
+  },
+  {
+    "pixel_format": "yuv444p",
+    "crf": 18,
+    "status": "PASS",
+    "mae": 3.081627399442453
+  },
+  {
+    "pixel_format": "yuv444p",
+    "crf": 0,
+    "status": "PASS",
+    "mae": 0.6521280503144653
+  }
+]

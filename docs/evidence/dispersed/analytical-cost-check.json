@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "evidence_kind": "analytical",
+  "policy_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "decisions_verified": 30,
+  "orders_verified": 225,
+  "maximum_absolute_component_error": 1.8189894035458565e-12,
+  "explanations_sha256": "431f84120aeaf1841b67d86ce6797ce69c133083f81f9267b44cef2ee2e17593",
+  "method": "Independent standard-library Euclidean/directed/absolute-completion-time replay."
+}

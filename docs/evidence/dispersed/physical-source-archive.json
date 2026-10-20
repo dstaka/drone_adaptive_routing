@@ -1,0 +1,6 @@
+{
+  "path": "outputs/dispersed_20261020_v1/private/probe-v4.tar.gz",
+  "bytes": 385515,
+  "sha256": "f6ef595afd939233177e056dc53befa9ccd2e78ad8cad4bfd33580e21dd11cef",
+  "scope": "Exact frozen execution source payload; private configuration/logs are not committed"
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "generator": "numpy-PCG64-SeedSequence(seed,300,attempt)-uniform-xyz-v1",
+  "seed": 51000,
+  "priority_seed": 40029,
+  "priorities": [
+    81,
+    42,
+    43,
+    64,
+    23,
+    84,
+    6,
+    98,
+    22,
+    56
+  ],
+  "selected_attempt": 3353,
+  "coords": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      -2.2574846772991513,
+      1.7335248129420815,
+      1.1016990644152351
+    ],
+    [
+      -2.68314398310277,
+      0.0440949448056831,
+      1.269620714931024
+    ],
+    [
+      1.7241406728049702,
+      0.6239499920354985,
+      1.7586228792407594
+    ],
+    [
+      -1.720730862092656,
+      -1.677042794662317,
+      2.7925100266436123
+    ],
+    [
+      -2.5969325368060674,
+      -1.2096210510295147,
+      1.3948581598205274
+    ],
+    [
+      -0.3282430937268912,
+      1.1881130985360875,
+      1.148211960076331
+    ],
+    [
+      -0.30323481702556077,
+      -1.6269570511921856,
+      2.911967352347588
+    ],
+    [
+      1.1703085519575023,
+      1.6670503818462155,
+      2.895834649862201
+    ],
+    [
+      2.3774328937869775,
+      1.052893998417688,
+      1.0844227584485355
+    ],
+    [
+      0.9181566059655957,
+      0.5654514730586941,
+      2.067850223042957
+    ]
+  ],
+  "checks": {
+    "passed": true,
+    "rejection_reasons": [],
+    "spans_m": [
+      5.060576876889748,
+      3.4105676076043983,
+      1.8275445938990527
+    ],
+    "height_min_max_m": [
+      1.0844227584485355,
+      2.911967352347588
+    ],
+    "height_band_counts": [
+      5,
+      2,
+      3
+    ],
+    "min_separation_m": 0.86524790833401,
+    "min_base_distance_m": 1.2415003216278646,
+    "convex_hull_xy_m2": 12.274250240683042
+  },
+  "coordinate_sha256": "21dd7cf41bf12c592ccdb4bf9c8817352feeafb9597103a3ba626e51a6d910e0",
+  "nominal_horizontal_area_ratio": 9,
+  "nominal_bounds_m": [
+    [
+      -2.7,
+      2.7
+    ],
+    [
+      -1.8,
+      1.8
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "policy_sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "configuration_sha256": "647f71b844f18b337a9abcc2ae88c180b7f39f0ffc43acef93aaccd8fc2b84a3",
+  "scenario_hashes": {
+    "normal": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa",
+    "emergency": "7f0629c872837ebf3f53afdd572d07e89832a8c13afd74325d89d3af28889c5d",
+    "cost_shift": "3a408c294b308def450a953e763f9ecca1c50782a0feca0439826a28391128ff"
+  },
+  "declared_cost_edge": [
+    "F",
+    "A"
+  ],
+  "cost_change": [
+    1,
+    5
+  ],
+  "operator_review": {
+    "status": "APPROVED",
+    "date": "2026-10-20",
+    "response": "この配置を承認する",
+    "scope": "spatial layout only; final physical/video review remains pending",
+    "preview": "outputs/dispersed_20261020_v1/layout-preview-v2.png"
+  },
+  "acceptance_frozen": false,
+  "selection_split": "demo; no held-out outcomes read",
+  "checkpoint_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+  ],
+  "rejection_reason_counts": {
+    "spans": 3305,
+    "separation": 1374,
+    "x_band": 326,
+    "y_band": 693,
+    "height_thirds": 182,
+    "base_overlap": 16,
+    "C emergency response gate": 20,
+    "directed cost response gate": 17
+  },
+  "full_attempt_log": "outputs/dispersed_20261020_v1/demo_v2/layout.json",
+  "failed_camera_search": "outputs/dispersed_20261020_v1/demo/failed_selection.json"
+}

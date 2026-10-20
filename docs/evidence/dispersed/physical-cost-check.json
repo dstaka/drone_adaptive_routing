@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "evidence_kind": "physical",
+  "decisions_verified": 90,
+  "complete_orders_verified": 675,
+  "maximum_absolute_component_error": 1.8189894035458565e-12,
+  "explanations_sha256": "de6e56e2778c6419fe8a95ae78f6ea75fed60573a9cb760d214c2acd13982a1e",
+  "method": "Independent standard-library Euclidean/directed/absolute-completion-time component replay, actual new physical boundaries."
+}

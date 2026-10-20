@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "spans_m": [
+    5.060576876889748,
+    3.4105676076043983,
+    1.8275445938990527
+  ],
+  "height_band_counts": [
+    5,
+    2,
+    3
+  ],
+  "min_separation_m": 0.86524790833401,
+  "min_base_distance_m": 1.2415003216278646,
+  "coordinate_sha256": "21dd7cf41bf12c592ccdb4bf9c8817352feeafb9597103a3ba626e51a6d910e0",
+  "method": "Independent standard-library finite/bounds/sliding-triple/height-third/3D-distance check",
+  "scope": "Geometry only; no flight, projected visibility or human approval claim"
+}

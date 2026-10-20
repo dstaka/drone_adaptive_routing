@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "normal",
+    "crf": 1,
+    "mae": 3.5661666268418952,
+    "status": "PASS"
+  },
+  {
+    "kind": "emergency",
+    "crf": 1,
+    "mae": 3.5673939466348066,
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,497 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "base_revision": "92a2a4d87cb9e3f6768e698f71e98a33e18c45db",
+  "coordinate_sha256": "21dd7cf41bf12c592ccdb4bf9c8817352feeafb9597103a3ba626e51a6d910e0",
+  "operator_spatial_review": {
+    "status": "APPROVED",
+    "date": "2026-10-20",
+    "response": "この配置を承認する",
+    "scope": "spatial layout only; final physical/video review remains pending",
+    "preview": "outputs/dispersed_20261020_v1/layout-preview-v2.png"
+  },
+  "model_hashes": {
+    "flight_checkpoint_hash": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+    "flight_cfg_hash": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55",
+    "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+    "hover_source_hash": "c2230130b9748b69416a18edad8491579e68c67882c8a6b6ab3662c5bbf76703"
+  },
+  "scene": {
+    "schema_version": 2,
+    "checkpoint_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "camera": {
+      "res": [
+        1280,
+        720
+      ],
+      "pos": [
+        3.507125963048772,
+        2.1413323178433785,
+        11.019061546540293
+      ],
+      "lookat": [
+        -0.1528555446578963,
+        0.028241009139882256,
+        1.955983676173794
+      ],
+      "up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fov": 40.0,
+      "margin_m": 0.6
+    },
+    "rendering_method": "neutral fixed Genesis landmarks with world-anchored priority badges",
+    "priority_range": [
+      1,
+      100
+    ],
+    "palette": [
+      "#fee5d9",
+      "#fcae91",
+      "#fb6a4a",
+      "#de2d26",
+      "#a50f15"
+    ],
+    "fraction_mapping": "linear RGB, round half up",
+    "state_symbols": {
+      "selected": "double ring / 選択中",
+      "visited": "check / 訪問済み",
+      "alert": "!"
+    },
+    "label_format": "ID | 優先度 value",
+    "marker_radius_m": 0.045,
+    "event_mapping": "Apply events with simulation_step <= captured frame step, in event_seq order",
+    "markers": [
+      {
+        "id": "A",
+        "world_xyz": [
+          -2.2574846772991513,
+          1.7335248129420815,
+          1.1016990644152351
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 81
+      },
+      {
+        "id": "B",
+        "world_xyz": [
+          -2.68314398310277,
+          0.0440949448056831,
+          1.269620714931024
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 42
+      },
+      {
+        "id": "C",
+        "world_xyz": [
+          1.7241406728049702,
+          0.6239499920354985,
+          1.7586228792407594
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 43
+      },
+      {
+        "id": "D",
+        "world_xyz": [
+          -1.720730862092656,
+          -1.677042794662317,
+          2.7925100266436123
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 64
+      },
+      {
+        "id": "E",
+        "world_xyz": [
+          -2.5969325368060674,
+          -1.2096210510295147,
+          1.3948581598205274
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 23
+      },
+      {
+        "id": "F",
+        "world_xyz": [
+          -0.3282430937268912,
+          1.1881130985360875,
+          1.148211960076331
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 84
+      },
+      {
+        "id": "G",
+        "world_xyz": [
+          -0.30323481702556077,
+          -1.6269570511921856,
+          2.911967352347588
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 6
+      },
+      {
+        "id": "H",
+        "world_xyz": [
+          1.1703085519575023,
+          1.6670503818462155,
+          2.895834649862201
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 98
+      },
+      {
+        "id": "I",
+        "world_xyz": [
+          2.3774328937869775,
+          1.052893998417688,
+          1.0844227584485355
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 22
+      },
+      {
+        "id": "J",
+        "world_xyz": [
+          0.9181566059655957,
+          0.5654514730586941,
+          2.067850223042957
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 56
+      }
+    ],
+    "priority_profile": "integer-100-v1",
+    "palette_version": "integer100-linear-RGB-v1",
+    "value_colors": {
+      "1": "#fee5d9",
+      "2": "#fee3d6",
+      "3": "#fee1d3",
+      "4": "#feded0",
+      "5": "#fedccd",
+      "6": "#fedaca",
+      "7": "#fed8c8",
+      "8": "#fdd5c5",
+      "9": "#fdd3c2",
+      "10": "#fdd1bf",
+      "11": "#fdcfbc",
+      "12": "#fdcdb9",
+      "13": "#fdcab6",
+      "14": "#fdc8b3",
+      "15": "#fdc6b0",
+      "16": "#fdc4ad",
+      "17": "#fdc1aa",
+      "18": "#fdbfa8",
+      "19": "#fdbda5",
+      "20": "#fcbba2",
+      "21": "#fcb99f",
+      "22": "#fcb69c",
+      "23": "#fcb499",
+      "24": "#fcb296",
+      "25": "#fcb093",
+      "26": "#fcad90",
+      "27": "#fcab8d",
+      "28": "#fca88b",
+      "29": "#fca588",
+      "30": "#fca285",
+      "31": "#fca082",
+      "32": "#fc9d7f",
+      "33": "#fc9a7c",
+      "34": "#fc9779",
+      "35": "#fc9576",
+      "36": "#fc9274",
+      "37": "#fc8f71",
+      "38": "#fc8c6e",
+      "39": "#fb8a6b",
+      "40": "#fb8768",
+      "41": "#fb8465",
+      "42": "#fb8162",
+      "43": "#fb7f60",
+      "44": "#fb7c5d",
+      "45": "#fb795a",
+      "46": "#fb7657",
+      "47": "#fb7454",
+      "48": "#fb7151",
+      "49": "#fb6e4e",
+      "50": "#fb6b4b",
+      "51": "#fa6949",
+      "52": "#f96648",
+      "53": "#f86446",
+      "54": "#f76145",
+      "55": "#f65f43",
+      "56": "#f55c42",
+      "57": "#f35a41",
+      "58": "#f2583f",
+      "59": "#f1553e",
+      "60": "#f0533c",
+      "61": "#ef503b",
+      "62": "#ee4e39",
+      "63": "#ec4b38",
+      "64": "#eb4936",
+      "65": "#ea4635",
+      "66": "#e94433",
+      "67": "#e84132",
+      "68": "#e63f31",
+      "69": "#e53c2f",
+      "70": "#e43a2e",
+      "71": "#e3372c",
+      "72": "#e2352b",
+      "73": "#e13329",
+      "74": "#df3028",
+      "75": "#de2e26",
+      "76": "#dc2c25",
+      "77": "#da2b25",
+      "78": "#d82a24",
+      "79": "#d52823",
+      "80": "#d32723",
+      "81": "#d12622",
+      "82": "#ce2521",
+      "83": "#cc2421",
+      "84": "#ca2220",
+      "85": "#c8211f",
+      "86": "#c5201f",
+      "87": "#c31f1e",
+      "88": "#c11e1d",
+      "89": "#be1c1d",
+      "90": "#bc1b1c",
+      "91": "#ba1a1b",
+      "92": "#b7191a",
+      "93": "#b5171a",
+      "94": "#b31619",
+      "95": "#b11518",
+      "96": "#ae1418",
+      "97": "#ac1317",
+      "98": "#aa1116",
+      "99": "#a71016",
+      "100": "#a50f15"
+    },
+    "height_display": "absolute metres above ground",
+    "complementary_projection": "XZ with labelled absolute heights",
+    "detail_crop_size_px": [
+      48,
+      36
+    ],
+    "camera_contract": "dispersed-oblique-v1",
+    "badge_rects": [
+      [
+        793.667949595963,
+        344.1809371587285,
+        933.667949595963,
+        429.1809371587285
+      ],
+      [
+        679.5666829311376,
+        245.31892641424847,
+        819.5666829311376,
+        330.3189264142485
+      ],
+      [
+        425.3717041488097,
+        510.8951640377611,
+        565.3717041488097,
+        595.8951640377611
+      ],
+      [
+        402.6531743867308,
+        88.91454238727721,
+        542.6531743867308,
+        173.9145423872772
+      ],
+      [
+        702.7206614435268,
+        54.88171762347619,
+        842.7206614435268,
+        139.8817176234762
+      ],
+      [
+        792.3826635962137,
+        458.36811497350834,
+        932.3826635962137,
+        543.3681149735083
+      ],
+      [
+        429.1545204674676,
+        258.08770215860017,
+        569.1545204674676,
+        343.08770215860017
+      ],
+      [
+        660.0981802468856,
+        554.5744993633658,
+        800.0981802468856,
+        639.5744993633658
+      ],
+      [
+        431.26918064296603,
+        606.9827057123248,
+        571.269180642966,
+        691.9827057123248
+      ],
+      [
+        562.6007804658497,
+        354.1730994185932,
+        702.6007804658497,
+        439.1730994185932
+      ]
+    ]
+  },
+  "scene_sha256": "f26648052c9f6ca1de01a7be5ffee94461d667c1f7919cb26064188d8b2b7fce",
+  "limits": {
+    "arrival_radius_m": 0.2,
+    "arrival_speed_mps": 0.3,
+    "arrival_hold_s": 0.2,
+    "inspection_dwell_s": 0.5,
+    "max_leg_s": 30.0,
+    "max_mission_s": 120.0,
+    "max_wall_s": 600.0,
+    "intro_s": 2.0,
+    "floor_m": 0.1,
+    "max_tilt_deg": 60.0
+  },
+  "flight_acceptance_config_sha256": "1f519d2d0e2d037d50fe11e3d0e105635915edc9e3767557787fa0863dc14d60",
+  "scenario_hashes": {
+    "normal": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa",
+    "emergency": "7f0629c872837ebf3f53afdd572d07e89832a8c13afd74325d89d3af28889c5d",
+    "cost_shift": "3a408c294b308def450a953e763f9ecca1c50782a0feca0439826a28391128ff"
+  },
+  "cost_edge": [
+    "F",
+    "A"
+  ],
+  "cost_change": [
+    1,
+    5
+  ],
+  "fixed_execution_seeds": [
+    1,
+    2,
+    3
+  ],
+  "missions": 9,
+  "inspections": 90,
+  "source_hash": "52c2c2e8b410db1fa83878acba0c13d19bb228825551fb4130db73cf53af3794",
+  "sources": {
+    "src/adaptive_drone_patrol/__init__.py": "2e63fc4fa9212281057d78b54c6d794d0759b8b1342f3560135a423c3105f35e",
+    "src/adaptive_drone_patrol/analytical.py": "06c61de18f8d53450b8ae0207feed1b54784ceaf7308880497becf4777896c47",
+    "src/adaptive_drone_patrol/annotations.py": "99435ff7e5e99d07a88e21e05476cf06220a1a6f44a7afe96b63e8752a26dc2a",
+    "src/adaptive_drone_patrol/baselines.py": "ddcc02f33c755177bca60851556ebd8ce13d4d1fff7d2cea0f7e5f161e7d9ba1",
+    "src/adaptive_drone_patrol/benchmark.py": "a69a9fe08ef699b7ca237f5c5b39f7ecb9db89f809b2a00638a09769e0a03041",
+    "src/adaptive_drone_patrol/dispersed_layout.py": "7f2a149915f0042a1c734f1fdead683b21c3429654d50707f532920687a91a6b",
+    "src/adaptive_drone_patrol/evidence.py": "07cd06689e2fba1c92edafaade4a56ca76c5bb9f09b3d9b72eb2c595df1b8b11",
+    "src/adaptive_drone_patrol/flight_agent.py": "b9376a8e63cd465cf34293043f4938755ea6b01de41ac805011dfcf1e4c7eff2",
+    "src/adaptive_drone_patrol/flight_training.py": "cf34069b240b43a73130336262ba7f33db6cc9ddbfabe82315e71ed415686d20",
+    "src/adaptive_drone_patrol/jobs.py": "047a63bb0df16039c6ed58f3c95833493358817565542498e0bd55ce576ed0a3",
+    "src/adaptive_drone_patrol/mission.py": "4036167d38e942ab8cf4391f81e4b47b2bc2dc1432ba3035fb8c285649d5623b",
+    "src/adaptive_drone_patrol/objective.py": "85d7ede3919547e19cb2d87483bda67e4fced1c1eea08238f628e8c8ef8d4f8d",
+    "src/adaptive_drone_patrol/patrol_runner.py": "09abd1be7039a24a4423ff04c3b22123aa03a09603333c47bfb4f483e1851691",
+    "src/adaptive_drone_patrol/physical_evidence.py": "e3f4d6808078c4b83e8a4dd3919c23b0e34547e8a05752bced6ca31dc72601a8",
+    "src/adaptive_drone_patrol/planner_ipc.py": "ca4278a9037e8acf183c265b02d5508bfa6d110bd369f1afba541941848dcd1e",
+    "src/adaptive_drone_patrol/recorder.py": "71bbffe36341a73d790ae4c0a72c48c40b117d88dc32f2769dcdd9ccb731620d",
+    "src/adaptive_drone_patrol/routing_agent.py": "b6ccfee5dca8eca1d31f2931f7ec276836ac32c471e65aeb1fcb8c9fe05de258",
+    "src/adaptive_drone_patrol/routing_env.py": "b4e101f40eae4699024a264d29743543d313248d4948b05fd058d66f07745fca",
+    "src/adaptive_drone_patrol/routing_policy.py": "dbaf0614ea7333ac7b660a7855d3c6fba336f6e0d6edf98da4d3e3bb3ce034a4",
+    "src/adaptive_drone_patrol/routing_teacher.py": "e1ee888abcc52d423d50d92c864b7e7367e87df99327aa2445e2c1963717b708",
+    "src/adaptive_drone_patrol/scenario.py": "027073fb293d59844548ceee2b00704a4781e8f5fe98e24f0c83e332d8a3870e",
+    "src/adaptive_drone_patrol/scene.py": "fbdd58f874d5faab54d588e12c5ceb79701f6056825bf2633645887ce2ced89d",
+    "src/adaptive_drone_patrol/target_adapter.py": "cf4caa38fb62c327b7f328f1bf41fb28cf027ee7401a9e58c7d9c2ae0158e316",
+    "src/adaptive_drone_patrol/transition_check.py": "0043d5b0823bbb3dd9fdbaf22a689d18f7a61693a34fab6e8a05ded8f9930d3f",
+    "src/adaptive_drone_patrol/util.py": "24f228460404f0a19b87a25f2a15f7f29fbb1743c39ee30eec0b8019b40301d4",
+    "src/adaptive_drone_patrol/video.py": "4c045a1602f2a89c622c54d19843d68e0f447301b2b35c78b822dcdf20d2a46a",
+    "src/adaptive_drone_patrol/video_check.py": "5c05f9f994357ca9afb2f62363c28e40e292d0573bae4d8c0ceb8664604a0578",
+    "src/adaptive_drone_patrol/video_delivery.py": "c1724ea4eb74001630a62265a1c83d70e1f7ffd873bcf7f441ef380ad9ae9239",
+    "src/adaptive_drone_patrol/video_render.py": "1eedf9886a6344faf5e304010bf111337668e215003ffd77b4fb72685365cf16",
+    "src/adaptive_drone_patrol/video_timing.py": "e9bc39bd7fac4d453b2634d69c8c8a677b2f73aa500283a6a31c83ba8e526cc6",
+    "scripts/build_report.py": "9cf755c5eab12ba1038a0ec879aa6663e1bb06894c9d441a7ff738a1585c20c1",
+    "scripts/build_video.py": "0651e51a5d1a4c4a537e0376bded0db3a0b6b1be75430d120e8e81e9b6562880",
+    "scripts/check_media.py": "ed96ae87b8d9ce74b04c1c854ce476fbcd9c5e9b8906f1b5c2f599c75dd865be",
+    "scripts/check_realtime_media.py": "8ab9be65775d4162972318fc9cf66924e8051dd56857bc2b6fea0dc427b2720a",
+    "scripts/create_manifest.py": "1f95308ac6008cdb5317db833febd6a6ee66819d0324481ad07a49d5a71a2bcc",
+    "scripts/doctor.py": "e5555a078a09cd90ec80e60914c14afcc05a722bbdb1053e79eb3d2eebfa9590",
+    "scripts/eval_flight.py": "0d10c5c6fccdaf89a6f7d1635fa98ea2869440cdcb3d81a15463b4bb5d672ac1",
+    "scripts/eval_routing.py": "04f87268c316d9f056d900aea22e4f3cf7e3903e2851690e605542e367c33916",
+    "scripts/evaluate_dispersed_routing.py": "19e915e1815c643144c9ecccec0f42d92c110c5476d84a11448b6b1fc7a6b472",
+    "scripts/final_gpu_validation.py": "d942e24c83b9ce519f0c4c3404d17298209c38588e800b5e209ecfaa97246967",
+    "scripts/finalize_realtime_delivery.py": "0de0891307aace6035dea3d2f3915a8751d698f66b951fe5dd03440af5f93e6d",
+    "scripts/finetune_visible_flight.py": "98dbad11961cd8bb8f3b33bd0d03c867e67d37ccce52330f6478edc9926ebbfc",
+    "scripts/freeze_dispersed_suite.py": "dda4b7f2452e91164da90e621182634281ad51c050653173f94497fce7203e01",
+    "scripts/freeze_routing_models.py": "446c39f83df20fd3cc1ce9ceecb1e330b41d1d8756278ab8f2e5319da36cac13",
+    "scripts/inspect_realtime_frames.py": "414ffea0109b0ddeea4b1f5fdc1fa7d10e3970c17af62b09da99ce036aa1a815",
+    "scripts/inspect_visible_frames.py": "75d40d9997b222928b57bb930d1bf6f71c5b9edde3c3e932b1159265c60a3aea",
+    "scripts/plot_results.py": "c776d39dc8849e1ce2e0fcd71af8d22694337af68c9617516312160521a887ad",
+    "scripts/preview_dispersed_layout.py": "d0e988c1c28cbb02730223335eca2b772ac52682a235c5b346bb6b566689c8b0",
+    "scripts/probe_dispersed_flight.py": "df8b8f90a42d32305730bda70b7f5a137ed5f42562becee910555dc6e24a57f1",
+    "scripts/probe_visible_flight.py": "422d35c022c9fd997235f7f79b0ed5d56a9805c53bfde517db406d56ca6e4b0e",
+    "scripts/replay_decisions.py": "6237632a77c8af377eacac9427a056fe27d02bac94fcc9fdcdc780aa98c9da43",
+    "scripts/reproduce_baseline.py": "fa83cc99aa03dd0f7f7edc519c9d088a8102e0df49b86ed368f89ab80bd8d664",
+    "scripts/run_demo_scenarios.py": "79e7d114dec11f02fa23387119ecd1f2a0c43158e14bfa20cb19a86430520562",
+    "scripts/run_remote_job.sh": "b0a71ee637b2dc91fc075e06714e5ad95f956af7b3045d81b0984b8e6d040460",
+    "scripts/save_scenario_manifests.py": "498d24d437c8f33c5a3c64fe756208f8b1ef0f4ee0d834b63b95a0947e4461f6",
+    "scripts/select_demo_scenarios.py": "73eea25a5167e7732cb7e9f8dcc2e3ef327e97ad3440fa95328920c52b8218e6",
+    "scripts/select_dispersed_layout.py": "bdedb8cd8e9582ae51fe22f2e0540ee8bdf9a6eacd35d4107eb1985c525e0f78",
+    "scripts/train_flight.py": "44a94a73813beb432e8a1c7785dbfd2a0b36cca877a866a5edd7b9d2a1c8ac85",
+    "scripts/train_routing.py": "cb8a750bf071fc49ac6c5d6e6080e387662fd4922ce2dd7ef1a08332a1978227",
+    "scripts/transfer.py": "590ef33a77157fb90988ab3cce5ebc9737f8f1ab88c8e99125a7d8e633bee783",
+    "scripts/verify_analytical_costs.py": "975280d46b107b90cebebfbcc1a04a3d2d729f6463795fd555f5c3f540c64161",
+    "scripts/verify_delivery.py": "87caac85b2d2ef15d971f85316053d3f8b8ca0ed5589341518d72b6d95c07f0e",
+    "scripts/verify_dispersed_layout.py": "dc49acba64e1bc34a47be94d8870e5e5b3d748439da29b6118f25404beac2dd3",
+    "scripts/verify_dispersed_transitions.py": "5589f0489f4bb83d904639fc6555bc2df298f78a3dac2c88bd1b0f774a238645",
+    "scripts/verify_visible_flight.py": "edf71fe80df9b7536f4f2a908814f9fdd10f8bf90b958fd5675e8755c800a650"
+  },
+  "transition_summaries": [
+    {
+      "seed": 11,
+      "summary_sha256": "e11350633053f1b7fc08ccb89b65c8176bc55cc2d179bc80ee3e97af86306533"
+    },
+    {
+      "seed": 12,
+      "summary_sha256": "e0b090420e2c857be66de192372858d9c7e34b1c7fcc161732ea8a3c42942591"
+    },
+    {
+      "seed": 31,
+      "summary_sha256": "eecb33ec6ece25e42fb8fc5d237417ed84d08fc8452a8483e0a1a25df2bf41f5"
+    },
+    {
+      "seed": 32,
+      "summary_sha256": "fff402fc9e260d58e367ae17887d5e08c1089ed5a9d98cf279afe3cc27f67711"
+    },
+    {
+      "seed": 33,
+      "summary_sha256": "1adb0ea65722f61cba68da943409d10bac8fb1942d2170a6fcc76aa0dc9fbcef"
+    }
+  ]
+}

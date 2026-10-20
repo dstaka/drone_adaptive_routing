@@ -1,0 +1,127 @@
+{
+  "schema_version": 2,
+  "status": "PASS",
+  "raw": [
+    {
+      "run_id": "normal_seed_1",
+      "status": "PASS",
+      "frames": 1636,
+      "physical_end_s": 32.64,
+      "encoded_duration_s": 32.65,
+      "max_pts_error_s": 7.105427357601002e-15,
+      "max_raw_tile_pixel_mae": 4.752604166666667,
+      "original_end_drift_s": 0.28000000000000114,
+      "full_decode": "PASS"
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "status": "PASS",
+      "frames": 1680,
+      "physical_end_s": 33.45,
+      "encoded_duration_s": 33.46,
+      "max_pts_error_s": 7.105427357601002e-15,
+      "max_raw_tile_pixel_mae": 4.826822916666667,
+      "original_end_drift_s": 0.3499999999999943,
+      "full_decode": "PASS"
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "status": "PASS",
+      "frames": 1542,
+      "physical_end_s": 30.740000000000002,
+      "encoded_duration_s": 30.75,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 4.735677083333333,
+      "original_end_drift_s": 0.29999999999999716,
+      "full_decode": "PASS"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/demo_full.mp4",
+      "status": "PASS",
+      "sha256": "6d485be4cffb0b76f4d62db0ea5c3d4ad8007d551150389f0c9326092b728579",
+      "bytes": 20871161,
+      "duration_s": 140.9,
+      "fps": 30,
+      "decoded_frames": 4227,
+      "flight_frames": 2907,
+      "flight_fraction": 0.687721788502484,
+      "max_hud_luma_mae": 3.525731421744325,
+      "max_card_luma_mae": 0.6804767770876466,
+      "max_motion_pixel_mae": 3.5492444444444446,
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_cost_shift.mp4",
+      "status": "PASS",
+      "sha256": "5bd2c8072566400c070763d2d8a7d8b048d27267c62ecbfe410572c5073caa56",
+      "bytes": 6021062,
+      "duration_s": 30.766667,
+      "fps": 30,
+      "decoded_frames": 923,
+      "flight_frames": 923,
+      "flight_fraction": 1.0,
+      "max_hud_luma_mae": 3.5222841895659105,
+      "max_card_luma_mae": 0,
+      "max_motion_pixel_mae": 3.5492444444444446,
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_emergency.mp4",
+      "status": "PASS",
+      "sha256": "41632fea035cc1e43426a5cf4bab3e27847d2eb6795ab87b6048dd9096d0197d",
+      "bytes": 6724718,
+      "duration_s": 33.466667,
+      "fps": 30,
+      "decoded_frames": 1004,
+      "flight_frames": 1004,
+      "flight_fraction": 1.0,
+      "max_hud_luma_mae": 3.525731421744325,
+      "max_card_luma_mae": 0,
+      "max_motion_pixel_mae": 3.3851555555555555,
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_normal.mp4",
+      "status": "PASS",
+      "sha256": "5bb811fbd0343a8facdac1455c6d292f111635cac2fa5e5fb933719b3c99b9fc",
+      "bytes": 6217241,
+      "duration_s": 32.666667,
+      "fps": 30,
+      "decoded_frames": 980,
+      "flight_frames": 980,
+      "flight_fraction": 1.0,
+      "max_hud_luma_mae": 3.5222841895659105,
+      "max_card_luma_mae": 0,
+      "max_motion_pixel_mae": 3.4327,
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/submission.mp4",
+      "status": "PASS",
+      "sha256": "6d485be4cffb0b76f4d62db0ea5c3d4ad8007d551150389f0c9326092b728579",
+      "bytes": 20871161,
+      "duration_s": 140.9,
+      "fps": 30,
+      "decoded_frames": 4227,
+      "flight_frames": 2907,
+      "flight_fraction": 0.687721788502484,
+      "max_hud_luma_mae": 3.525731421744325,
+      "max_card_luma_mae": 0.6804767770876466,
+      "max_motion_pixel_mae": 3.5492444444444446,
+      "full_decode": "PASS",
+      "omitted_intervals": []
+    }
+  ],
+  "trials": {
+    "attempted": 9,
+    "succeeded": 9,
+    "inspections": 90
+  },
+  "checker_method": "Original physics steps + actual encoded PTS + every flight frame pixel provenance, visible Japanese HUD and original drone crop; independent cost replay and exact re-solve."
+}

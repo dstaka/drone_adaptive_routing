@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "finalized_date": "2026-10-21",
+  "spec": "specs/2026-10-17-dispersed-destination-layout/spec.md",
+  "base_revision": "92a2a4d87cb9e3f6768e698f71e98a33e18c45db",
+  "criteria": [
+    {
+      "criterion": 1,
+      "status": "PASS",
+      "description": "Reproducible common geometry",
+      "evidence": [
+        "docs/evidence/dispersed/layout.json",
+        "docs/evidence/dispersed/reproduction-check.json",
+        "docs/evidence/dispersed/candidate-audit.json"
+      ]
+    },
+    {
+      "criterion": 2,
+      "status": "PASS",
+      "description": "Bounds, spans, sliding triples, height thirds and separation",
+      "evidence": [
+        "docs/evidence/dispersed/geometry-independent.json",
+        "docs/evidence/dispersed/tests.json"
+      ]
+    },
+    {
+      "criterion": 3,
+      "status": "PASS",
+      "description": "Spatial approval and final real-frame visibility",
+      "evidence": [
+        "docs/evidence/dispersed/frozen-suite-v1.json",
+        "docs/evidence/dispersed/manual-review-final.json",
+        "docs/evidence/dispersed/visual-review.json"
+      ]
+    },
+    {
+      "criterion": 4,
+      "status": "PASS",
+      "description": "New fixed nine missions and ninety inspections",
+      "evidence": [
+        "docs/evidence/dispersed/physical-acceptance.json",
+        "docs/evidence/dispersed/physical-metrics.json",
+        "docs/evidence/dispersed/frozen-binding-check.json"
+      ]
+    },
+    {
+      "criterion": 5,
+      "status": "PASS",
+      "description": "New actual-boundary routing and optimality costs",
+      "evidence": [
+        "docs/evidence/dispersed/routing-static.json",
+        "docs/evidence/dispersed/routing-dynamic.json",
+        "docs/evidence/dispersed/physical-cost-check.json",
+        "docs/evidence/dispersed/featured-physical-explanation.json"
+      ]
+    },
+    {
+      "criterion": 6,
+      "status": "PASS",
+      "description": "Five final1x videos, timing/pixels and operator playback",
+      "evidence": [
+        "docs/evidence/dispersed/media-verification.json",
+        "docs/evidence/dispersed/manual-review-final.json"
+      ]
+    },
+    {
+      "criterion": 7,
+      "status": "PASS",
+      "description": "Handoff, model/config hashes, failures, GPU ledger and manifests",
+      "evidence": [
+        "docs/evidence/dispersed/artifacts.json",
+        "docs/evidence/dispersed/failed-transition-v1.json",
+        "docs/evidence/dispersed/failed-media-v1.json",
+        "docs/evidence/dispersed/delivery-manifest-receipt.json"
+      ]
+    }
+  ],
+  "missions": {
+    "attempted": 9,
+    "succeeded": 9,
+    "inspections": 90
+  },
+  "final_videos": 5,
+  "decoded_output_frames": 11361,
+  "gpu": {
+    "baseline_s": 3198.9943080281373,
+    "used_s": 5779.474017477245,
+    "remaining_s": 23020.525982522755
+  },
+  "failures_preserved": [
+    "Fixed-badge50000-candidate search",
+    "First expanded flight model validation ground clearance",
+    "InitialCRF18 video glyph pixel gate"
+  ],
+  "limitations": [
+    "Deterministic simulation, no disturbance/obstacle/real-aircraft safety claim",
+    "Learned full suffix can be suboptimal"
+  ],
+  "remaining": []
+}

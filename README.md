@@ -1,62 +1,48 @@
 # 適応型ドローン巡回点検
 
-A〜Jの10地点を、同じ学習済みルーティング方策と飛行方策で巡回します。重要度は実値・表示とも1〜100の整数で、大きいほど重要ですが訪問順そのものではありません。各地点を独立に復元抽選し、固定seedで再現します。配置は先行デモと同じ長方形のままです。
+A〜Jの実目的地を不規則な3次元配置へ変更し、同じ学習済みrouting方策と互換な飛行方策で巡回します。重要度は実値・表示とも1〜100整数で、大きいほど重要ですが訪問順そのものではありません。
 
-[今回の承認済み仕様](specs/2026-10-17-integer-priorities/spec.md)、[実装計画](docs/superpowers/plans/2026-10-20-integer-priorities.md)、[モデル・測定・全再実行手順](docs/integer-priorities-handoff.md)を参照してください。過去の[経路最適化](docs/scalable-routing-handoff.md)、[全地点飛行](docs/visible-flight-handoff.md)、[旧1倍速動画](docs/realtime-video-handoff.md)の記録・成果物は保持しています。
+[今回の承認済みspec](specs/2026-10-17-dispersed-destination-layout/spec.md)、[実装計画](docs/superpowers/plans/2026-10-20-dispersed-destination-layout.md)、[モデル・測定・失敗・再実行手順](docs/dispersed-destination-layout-handoff.md)、[日本語レポート](docs/report_ja.md)を参照してください。[整数重要度](docs/integer-priorities-handoff.md)、[経路最適化](docs/scalable-routing-handoff.md)、[全地点飛行](docs/visible-flight-handoff.md)、[旧1倍速動画](docs/realtime-video-handoff.md)は歴史記録として保持しています。
 
-## 今回の実測
+## 配置と固定契約
 
-新しい重要度・対応routingモデルで固定3seed×3シナリオを走らせ、9/9ミッション・90/90点検を完了しました。通常17.61秒、緊急18.07秒、コスト変化18.76秒です。reset・終了・安全異常は0。最大傾斜37.686度、最低高度0.805877m。全90判断から物理説明を再生成し、重要度差10以上・実pose距離・厳密コストの条件を満たすL/H判断が33件あります。
+S=(0,0,1)、10地点の範囲はx±2.7 m、y±1.8 m、地面からの絶対高度z=1〜3 m。実spanは5.060577/3.410568/1.827545 m、最小3D間隔0.865248 m、高さ3帯の点数は5/2/3です。x/yの任意の閉区間0.10 m帯に3点が入らないことを、ソート後の連続3点で検査します。
 
-初期重要度は A=81、B=42、C=43、D=64、E=23、F=84、G=6、H=98、I=22、J=56。3シナリオ・実行seed1/2/3で共通です。最初の実点検後（3.43秒）、緊急では未点検Cのみ43→100、有向コスト変化ではH→Fのみ倍率1→5を更新します。次の選択は更新なしのFに対し、CとJへそれぞれ変わります。同一の更新後条件で旧/新suffixを比較した改善は0.631889と14.734742です。これは論理目的コストの比較で、物理時間・電力の削減とは区別します。
+独立した配置乱数 `PCG64(SeedSequence([51000,300,attempt]))` の候補3353を採用し、全候補の棄却理由・hashを保存しました。ユーザーによる新旧空間プレビューの確認・配置承認を受領しています。全精度座標と承認範囲は [配置manifest](docs/evidence/dispersed/layout.json) にあります。公称水平領域の9倍と、実凸包面積12.274250 m²や飛行距離の比を混同しません。
 
-新routingはscenario v3、`routing-v3-integer100-n10-324`、324要素・10行動です。3seed42/43/44を新規学習し、validationでseed44を選択・凍結してからheld-outを評価しました。全450 learned episodesが完走し、全3seedで既存品質条件を満たしました。採用seedの静的平均AI/厳密解比は1.040070、最悪1.156867。動的50例のうち49適用、7選択変更、6改善です。一般に常時最適とは主張しません。
+重要度seed40029とA81/B42/C43/D64/E23/F84/G6/H98/I22/J56を維持します。3シナリオ・全execution seedで同じ配置・初期値を使い、再抽選しません。目的コストは移動コスト＋0.05×Σ（整数重要度×名目完了時刻）。alpha=1、beta=0.05、名目速度1 m/s、サービス0.50秒、帰還なし、重要度観測の除数100。有向倍率1〜5は論理コストだけに適用します。緊急は未点検Cを43→100、コスト変更は新解析から宣言したF→Aのみ1→5です。
 
-## 目的関数と互換性
+## 新しい解析と飛行検証
 
-目的コスト＝移動コスト＋0.05×Σ（整数重要度×名目完了時刻）。alpha=1、beta=0.05、名目速度1m/s、サービス0.50秒、帰還なし。観測の重要度は固定値100で割り、現在の最大値では正規化しません。有向倍率は1〜5で、名目時間や物理速度を変更しません。生の重要度時刻成分と0.05適用後の寄与を別々に記録・表示します。
+採用済み整数routing seed44を維持し、新3D分布で全3モデルをvalidation100・静的held-out100・動的50例に評価しました。450 learned episodes完走、無効行動0、全モデルが静的品質条件を満たしました。採用44の平均AI/厳密解比は1.078192、greedyとの差−24.744215、fixedとの差−243.810273です。最悪比1.397014、動的49適用中6変更・4改善も保存し、常時最適とは主張しません。
 
-7.0を含む浮動小数、真偽値、文字列、非有限値、範囲外をnew-profileの重要度として受け付けません。v2・旧checkpointは元の解釈を維持し、形状が同じでもv3への読替えは拒否します。新checkpoint内部・sidecar・教師データにも契約を記録します。詳細は [互換性記録](docs/compatibility.md) にあります。
+新配置の30判断・225完全順序を標準ライブラリのみの独立checkerで再計算し、成分最大差1.819×10^-12で一致しました。Q*/J*、AIのsuffix、実飛行を区別し、先行の実績を新配置へ流用しません。
 
-飛行には指定の追加学習後 `model_1300.pt` を継続使用します。新しいGPUサーバで長距離・反転・ホバーを再確認し、マーカー有無の1,508サンプルは一致しました。実到達は半径0.20m以内・速度0.30m/s以下を連続0.20秒、点検は同条件で合計0.50秒です。固定初期条件でのデモ安定性の結果であり、擾乱・障害物認識・実機安全性は未検証です。
+旧飛行model_1300/cfgのhashは一致しましたが、旧範囲x/y±1 m・z=1 mは新配置を支持しません。追加学習の初回モデルはvalidationで地面条件に達して失敗し、モデル・sample・画像を保存しました。採用済みmodel_1300から4段階・3000更新の学習を行い、新model_4296を採用しました。validation11/12・held-out31/32/33の45遷移とマーカー有無比較が合格した後、座標・モデル対・カメラ・閾値を凍結しました。到達半径.20 m・速度<=.30 m/s・保持.20秒・点検.50秒・地面.10 m・傾斜60度を維持します。
 
-## 成果物と再生成
+新規固定9試行は9/9成功・90/90点検で、独立物理checker・14,673元フレームのdecode/PTS照合・凍結入力照合がPASS。通常32.64秒、緊急33.45秒、コスト変化30.74秒です。最大傾斜49.614度、最低高度0.835222 m。最終動画5本・11,361フレームの独立照合と、画質修正後の全編3本・両イベント区間の人手確認も完了しました。全7受入条件を満たしました。詳細は [引き継ぎ](docs/dispersed-destination-layout-handoff.md) にあります。
 
-一意な成果物ルートは `outputs/integer_20261020_v1/`（Git管理外）です。旧動画を今回の受入に流用していません。確定した機械検証・実フレーム/PDF確認・連続再生確認の状態は [引き継ぎ](docs/integer-priorities-handoff.md) と `docs/evidence/integer/acceptance.json` に分けて記録します。未確認の項目を合格とは扱いません。
+## 成果物と再実行
 
-- `training/`、`frozen/`：3seedの新モデル、教師データ、validation、凍結記録。
-- `static/`、`dynamic/`、`demo/`：全新入力、評価、30候補の抽選と却下理由、厳密説明。
-- `remote-acceptance/outputs/integer/acceptance_v1/genesis/`：9本の元動画、全物理・判断・イベントログ。
-- `physical-verification/`：90判断の再生成説明と独立物理受入。
-- `delivery/`：3本の自然尺全編、全3飛行を含む `demo_full.mp4` と `submission.mp4`、1倍速raw、対応表、manifest、最新PDF。
+一意な出力先は `outputs/dispersed_20261020_v1/`（Git管理外）。全モデル・元動画・大量ログ・接続情報をcommitへ含めません。飛行用環境とCPU routing用環境は `requirements/flight-linux.lock.txt` と `requirements/routing-scalable-linux.lock.txt` で分離します。新しい作業先・設定・出力名を使用し、過去のサーバ絶対パスを流用しません。
 
 ```bash
 export PYTHONPATH=src
-export PATH="$PWD/outputs/integer_20261020_v1/tools:$PATH"
-export MPLCONFIGDIR=outputs/integer_rerun_new/mpl
+export MPLCONFIGDIR=outputs/dispersed_rerun_new/mpl
+.venv-routing311/bin/python scripts/select_dispersed_layout.py \
+  --config configs/dispersed_layout.yaml --out outputs/dispersed_rerun_new/demo
+.venv-routing311/bin/python scripts/preview_dispersed_layout.py \
+  --layout outputs/dispersed_rerun_new/demo/layout.json \
+  --out outputs/dispersed_rerun_new/layout-preview.png
+.venv-routing311/bin/python scripts/verify_dispersed_layout.py \
+  --layout outputs/dispersed_rerun_new/demo/layout.json \
+  --out outputs/dispersed_rerun_new/geometry-check.json
 .venv-routing311/bin/python -m pytest -m 'not gpu' -q
 .venv-routing311/bin/python -m ruff check src scripts tests
-
-# Use a fresh output directory each time.
-.venv-routing311/bin/python scripts/build_video.py --config configs/video_integer.yaml \
-  --input-root outputs/integer_20261020_v1/remote-acceptance/outputs/integer/acceptance_v1/genesis \
-  --explanations outputs/integer_20261020_v1/physical-verification/decision_explanations.json \
-  --mode full --out outputs/integer_video_new/demo_full.mp4
-.venv-routing311/bin/python scripts/build_video.py --config configs/video_integer.yaml \
-  --input-root outputs/integer_20261020_v1/remote-acceptance/outputs/integer/acceptance_v1/genesis \
-  --explanations outputs/integer_20261020_v1/physical-verification/decision_explanations.json \
-  --mode submission --duration 120 --out outputs/integer_video_new/submission.mp4
-.venv-routing311/bin/python scripts/check_realtime_media.py --root outputs/integer_video_new \
-  --ffprobe outputs/integer_20261020_v1/tools/ffprobe
-.venv-routing311/bin/python scripts/inspect_realtime_frames.py --root outputs/integer_video_new
-.venv-routing311/bin/python scripts/build_report.py --source docs/report_ja.md --date 2026-10-20 \
-  --out outputs/integer_video_new/report/report.pdf
 ```
 
-学習、manifest、モデル互換性、GPU実行設定の生成、物理再評価、動画の最終化は [引き継ぎの手順](docs/integer-priorities-handoff.md) を使用してください。新サーバでは新しい作業先と別venvを使い、`requirements/flight-linux.lock.txt` と `requirements/routing-scalable-linux.lock.txt` を分離します。
+予算は累計8時間を継続し、開始3198.994308秒から全GPUジョブを加算しました。今回増分2580.479709秒、累計5779.474017秒、残り23020.525983秒です。同時1ジョブ・残予算内timeoutを守り、未確認・失敗を合格にしません。新しい自然尺3全編・統合・140.9秒提出用を生成し、全飛行を1倍速で保持しました。公開・push・PR作成・マージ・コース提出は行いません。継承元とライセンスは [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) を参照してください。
 
-## 保存・予算・出典
+新しい映像（全飛行区間を省略せず1倍速、1920×1080/30fps）：[通常全編](outputs/dispersed_20261020_v1/delivery_v2/full_normal.mp4)、[緊急全編](outputs/dispersed_20261020_v1/delivery_v2/full_emergency.mp4)、[コスト変化全編](outputs/dispersed_20261020_v1/delivery_v2/full_cost_shift.mp4)、[統合版](outputs/dispersed_20261020_v1/delivery_v2/demo_full.mp4)、[140.9秒提出用](outputs/dispersed_20261020_v1/delivery_v2/submission.mp4)。提出用は統合版と同じ内容でカットなし、飛行96.9秒＋独立説明カード44秒です。
 
-今回GPU増分395.4215675460873秒、累計3,198.9943080281373秒、8時間枠の残り25,601.005691971863秒です。初期化・推論・撮影・契約テストを含む全3ジョブを台帳へ追記しました。モデル・設定・旧素材465ファイル、新規転送132ファイルをサイズ・SHA-256で照合しています。
-
-Gitには今回のspec・コード・テスト・必要な文書・コンパクトな証拠のみを含めます。歴史資料、他spec、個人ファイル、動画・モデル・大量ログ・接続先情報は混ぜません。[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) に継承元とライセンスを記載しています。push、PR作成/マージ、動画公開、コース提出、サーバの契約変更・追加レンタル・破棄は行いません。
+最終日本語PDF：[測定・受入レポート](outputs/dispersed_20261020_v1/delivery_v2/report/final-report.pdf)。成果物サイズ・SHA-256は [コンパクトmanifest](docs/evidence/dispersed/artifacts.json)、受入結果は [受入記録](docs/evidence/dispersed/acceptance.json) を参照してください。

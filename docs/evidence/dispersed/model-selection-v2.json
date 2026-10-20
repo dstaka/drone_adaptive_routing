@@ -1,0 +1,18 @@
+{
+  "selected_checkpoint": "outputs/dispersed/finetune_v2/model_4296.pt",
+  "flight_checkpoint_sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+  "flight_config_sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55",
+  "routing_model_sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "selected_utc": "2026-10-20T14:51:21.454557+00:00",
+  "heldout_opened": false,
+  "validation_seeds": [
+    11,
+    12
+  ],
+  "heldout_seeds": [
+    31,
+    32,
+    33
+  ],
+  "rationale": "Final curriculum checkpoint passes predeclared full-domain validation, exact marker equivalence and all three development missions; no held-out input read for selection."
+}

@@ -1,0 +1,31 @@
+{
+  "local_cpu": {
+    "passed": 196,
+    "gpu_deselected": 1,
+    "final_encoding_elapsed_s": 119.78
+  },
+  "linux_cpu": {
+    "passed": 196,
+    "gpu_deselected": 1,
+    "source_scope": "Frozen flight and checker source before local CPU-only encoding CRF fix; model/physics unchanged"
+  },
+  "gpu_contract": {
+    "passed": 1,
+    "elapsed_s": 8.82
+  },
+  "ruff": "PASS",
+  "compileall": "PASS",
+  "diff_check": "PASS",
+  "final_encoding_video_regression": {
+    "passed": 22,
+    "elapsed_s": 0.91
+  },
+  "final_commit_cpu": {
+    "passed": 196,
+    "gpu_deselected": 1,
+    "elapsed_s": 53.79,
+    "source_tree_sha256": "0077d4be2d93aa6169ef26210447a648d899883a10dabc78bbe7c0dea678f3a3",
+    "hash_method": "SHA256 of sorted compact JSON mapping repository-relative Python source/test paths to file SHA256",
+    "command": "PYTHONPATH=src .venv-routing311/bin/python -m pytest -q -m 'not gpu'"
+  }
+}

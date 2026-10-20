@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "date": "2026-10-20",
+  "scope": "All three new full flights; readable IDs/priorities/height/status/vehicle; continuous 1x event-to-next-inspection and through C inspection",
+  "intervals_s": {
+    "emergency": [
+      2.72,
+      10.42
+    ],
+    "cost_shift": [
+      2.72,
+      12.41
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery/full_normal.mp4",
+      "bytes": 2009639,
+      "sha256": "ea9c824921c3cd416ff4dee6b01c3288969c0678428c8b7792b064b206aa67b9"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery/full_emergency.mp4",
+      "bytes": 2225254,
+      "sha256": "94961c904bb5dae5eeded69130e730262a61e5fad9e0e76b8000448a4e68b4ef"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery/full_cost_shift.mp4",
+      "bytes": 1969387,
+      "sha256": "a2dcf0b9340bc6d67da747f6d531b3ad6213497bb194e53033b3950352f52113"
+    }
+  ],
+  "response": "全3本と両区間を1倍速で確認し、問題なし",
+  "reviewer": "user",
+  "scope_confirmed": true
+}

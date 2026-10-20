@@ -207,9 +207,12 @@ def annotate_run(run, output, font_path, explanations=None):
     return checks
 
 
-def same_frame_detail(image, position):
+def same_frame_detail(image, position, crop_size=(96,72)):
     """Crop genuine current camera pixels before any badge can cover the vehicle."""
     x,y = position
-    left = max(0,min(image.width-96,int(round(x))-48))
-    top = max(0,min(image.height-72,int(round(y))-36))
-    return image.crop((left,top,left+96,top+72)).resize((240,180),Image.Resampling.LANCZOS)
+    width,height=crop_size
+    if width < 1 or height < 1 or width > image.width or height > image.height:
+        raise ValueError('Invalid genuine camera crop dimensions')
+    left = max(0,min(image.width-width,int(round(x))-width//2))
+    top = max(0,min(image.height-height,int(round(y))-height//2))
+    return image.crop((left,top,left+width,top+height)).resize((240,180),Image.Resampling.LANCZOS)

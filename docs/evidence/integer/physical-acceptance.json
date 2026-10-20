@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "physical",
+  "missions_attempted": 9,
+  "missions_succeeded": 9,
+  "inspections_completed": 90,
+  "by_scenario": {
+    "normal": {
+      "succeeded": 3,
+      "attempted": 3
+    },
+    "emergency": {
+      "succeeded": 3,
+      "attempted": 3
+    },
+    "cost_shift": {
+      "succeeded": 3,
+      "attempted": 3
+    }
+  },
+  "nearer_lower_priority_decisions": [
+    {
+      "run_id": "cost_shift_seed_1",
+      "decision_id": "decision-3",
+      "L": "D",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 753,
+        "event_seq": 18,
+        "physical_pose": [
+          0.8903907537460327,
+          0.032268669456243515,
+          0.8826469779014587
+        ],
+        "boundary_hash": "ba81d47dd715f490ff7c0b4a6d7573b6dfbc17717a0209b6253b0792c4e32771"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "decision_id": "decision-4",
+      "L": "C",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 956,
+        "event_seq": 23,
+        "physical_pose": [
+          0.8854444622993469,
+          -0.5695141553878784,
+          0.8779047727584839
+        ],
+        "boundary_hash": "6cf7c20f8ba6b51f549955c9eeb1a828ebd4707a765ec04e38aa633e2fd58e1d"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "decision_id": "decision-5",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1099,
+        "event_seq": 27,
+        "physical_pose": [
+          0.2720702886581421,
+          -0.5890796184539795,
+          0.8843105435371399
+        ],
+        "boundary_hash": "c28b242c8bea4fe12c6fa066dc9bcff5d111d087244edffdd76c168d48e1a40d"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_2",
+      "decision_id": "decision-3",
+      "L": "D",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 753,
+        "event_seq": 18,
+        "physical_pose": [
+          0.8903907537460327,
+          0.032268669456243515,
+          0.8826469779014587
+        ],
+        "boundary_hash": "ba81d47dd715f490ff7c0b4a6d7573b6dfbc17717a0209b6253b0792c4e32771"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_2",
+      "decision_id": "decision-4",
+      "L": "C",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 956,
+        "event_seq": 23,
+        "physical_pose": [
+          0.8854444622993469,
+          -0.5695141553878784,
+          0.8779047727584839
+        ],
+        "boundary_hash": "6cf7c20f8ba6b51f549955c9eeb1a828ebd4707a765ec04e38aa633e2fd58e1d"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_2",
+      "decision_id": "decision-5",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1099,
+        "event_seq": 27,
+        "physical_pose": [
+          0.2720702886581421,
+          -0.5890796184539795,
+          0.8843105435371399
+        ],
+        "boundary_hash": "c28b242c8bea4fe12c6fa066dc9bcff5d111d087244edffdd76c168d48e1a40d"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_3",
+      "decision_id": "decision-3",
+      "L": "D",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 753,
+        "event_seq": 18,
+        "physical_pose": [
+          0.8903907537460327,
+          0.032268669456243515,
+          0.8826469779014587
+        ],
+        "boundary_hash": "ba81d47dd715f490ff7c0b4a6d7573b6dfbc17717a0209b6253b0792c4e32771"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_3",
+      "decision_id": "decision-4",
+      "L": "C",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 956,
+        "event_seq": 23,
+        "physical_pose": [
+          0.8854444622993469,
+          -0.5695141553878784,
+          0.8779047727584839
+        ],
+        "boundary_hash": "6cf7c20f8ba6b51f549955c9eeb1a828ebd4707a765ec04e38aa633e2fd58e1d"
+      }
+    },
+    {
+      "run_id": "cost_shift_seed_3",
+      "decision_id": "decision-5",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1099,
+        "event_seq": 27,
+        "physical_pose": [
+          0.2720702886581421,
+          -0.5890796184539795,
+          0.8843105435371399
+        ],
+        "boundary_hash": "c28b242c8bea4fe12c6fa066dc9bcff5d111d087244edffdd76c168d48e1a40d"
+      }
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "decision_id": "decision-2",
+      "L": "D",
+      "H": "F",
+      "physical_reference": {
+        "simulation_step": 574,
+        "event_seq": 13,
+        "physical_pose": [
+          0.32268086075782776,
+          -0.5568732023239136,
+          0.8756135106086731
+        ],
+        "boundary_hash": "1999f869a95457c444976a202549562ee172fe160cdcd493f31f1e358455e2e9"
+      }
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "decision_id": "decision-4",
+      "L": "J",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 857,
+        "event_seq": 21,
+        "physical_pose": [
+          0.8634307980537415,
+          0.050282251089811325,
+          0.8849387764930725
+        ],
+        "boundary_hash": "119f1159f49dadcfe1df4680ceebdb29d30565d1e04f8ea1b3909c2264650847"
+      }
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "decision_id": "decision-5",
+      "L": "I",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1013,
+        "event_seq": 25,
+        "physical_pose": [
+          0.867661714553833,
+          0.6692079305648804,
+          0.879448413848877
+        ],
+        "boundary_hash": "45db133abf3def0109e74f5d7a0dc6666ceea81a26f1d057af213105607a49fa"
+      }
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "decision_id": "decision-6",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1153,
+        "event_seq": 29,
+        "physical_pose": [
+          0.325112521648407,
+          0.6205015182495117,
+          0.8729263544082642
+        ],
+        "boundary_hash": "7c8584d23f472f4f92e31410e85903ca22a6c4bc0109ff4435d3d288d159d4f0"
+      }
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "decision_id": "decision-2",
+      "L": "D",
+      "H": "F",
+      "physical_reference": {
+        "simulation_step": 574,
+        "event_seq": 13,
+        "physical_pose": [
+          0.32268086075782776,
+          -0.5568732023239136,
+          0.8756135106086731
+        ],
+        "boundary_hash": "1999f869a95457c444976a202549562ee172fe160cdcd493f31f1e358455e2e9"
+      }
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "decision_id": "decision-4",
+      "L": "J",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 857,
+        "event_seq": 21,
+        "physical_pose": [
+          0.8634307980537415,
+          0.050282251089811325,
+          0.8849387764930725
+        ],
+        "boundary_hash": "119f1159f49dadcfe1df4680ceebdb29d30565d1e04f8ea1b3909c2264650847"
+      }
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "decision_id": "decision-5",
+      "L": "I",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1013,
+        "event_seq": 25,
+        "physical_pose": [
+          0.867661714553833,
+          0.6692079305648804,
+          0.879448413848877
+        ],
+        "boundary_hash": "45db133abf3def0109e74f5d7a0dc6666ceea81a26f1d057af213105607a49fa"
+      }
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "decision_id": "decision-6",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1153,
+        "event_seq": 29,
+        "physical_pose": [
+          0.325112521648407,
+          0.6205015182495117,
+          0.8729263544082642
+        ],
+        "boundary_hash": "7c8584d23f472f4f92e31410e85903ca22a6c4bc0109ff4435d3d288d159d4f0"
+      }
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "decision_id": "decision-2",
+      "L": "D",
+      "H": "F",
+      "physical_reference": {
+        "simulation_step": 574,
+        "event_seq": 13,
+        "physical_pose": [
+          0.32268086075782776,
+          -0.5568732023239136,
+          0.8756135106086731
+        ],
+        "boundary_hash": "1999f869a95457c444976a202549562ee172fe160cdcd493f31f1e358455e2e9"
+      }
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "decision_id": "decision-4",
+      "L": "J",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 857,
+        "event_seq": 21,
+        "physical_pose": [
+          0.8634307980537415,
+          0.050282251089811325,
+          0.8849387764930725
+        ],
+        "boundary_hash": "119f1159f49dadcfe1df4680ceebdb29d30565d1e04f8ea1b3909c2264650847"
+      }
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "decision_id": "decision-5",
+      "L": "I",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1013,
+        "event_seq": 25,
+        "physical_pose": [
+          0.867661714553833,
+          0.6692079305648804,
+          0.879448413848877
+        ],
+        "boundary_hash": "45db133abf3def0109e74f5d7a0dc6666ceea81a26f1d057af213105607a49fa"
+      }
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "decision_id": "decision-6",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 1153,
+        "event_seq": 29,
+        "physical_pose": [
+          0.325112521648407,
+          0.6205015182495117,
+          0.8729263544082642
+        ],
+        "boundary_hash": "7c8584d23f472f4f92e31410e85903ca22a6c4bc0109ff4435d3d288d159d4f0"
+      }
+    },
+    {
+      "run_id": "normal_seed_1",
+      "decision_id": "decision-2",
+      "L": "D",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 546,
+        "event_seq": 12,
+        "physical_pose": [
+          0.9695963859558105,
+          0.013281993567943573,
+          0.8831557035446167
+        ],
+        "boundary_hash": "cd8ae60053999a19c793e90982f45ab6448c6287f29bb3f120a606545da55395"
+      }
+    },
+    {
+      "run_id": "normal_seed_1",
+      "decision_id": "decision-3",
+      "L": "C",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 692,
+        "event_seq": 16,
+        "physical_pose": [
+          0.9875999093055725,
+          -0.5854572653770447,
+          0.9085384607315063
+        ],
+        "boundary_hash": "f0c7e3a7230d425c558324d6a2ee59ae9061b46fd6945303ae136648d90304e6"
+      }
+    },
+    {
+      "run_id": "normal_seed_1",
+      "decision_id": "decision-4",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 850,
+        "event_seq": 20,
+        "physical_pose": [
+          0.3106456995010376,
+          -0.5811460614204407,
+          0.8765226006507874
+        ],
+        "boundary_hash": "9233f8ef71a4d6f4636c10d3d43ff309921571f561bc6ab8656e6cfaf0ae9a6f"
+      }
+    },
+    {
+      "run_id": "normal_seed_1",
+      "decision_id": "decision-6",
+      "L": "E",
+      "H": "J",
+      "physical_reference": {
+        "simulation_step": 1138,
+        "event_seq": 28,
+        "physical_pose": [
+          -0.9148420691490173,
+          -0.579795241355896,
+          0.8918520212173462
+        ],
+        "boundary_hash": "25a6a7fc25b42d7382c5676dc3dd78d47418b34a04030155b42d427238b05aff"
+      }
+    },
+    {
+      "run_id": "normal_seed_2",
+      "decision_id": "decision-2",
+      "L": "D",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 546,
+        "event_seq": 12,
+        "physical_pose": [
+          0.9695963859558105,
+          0.013281993567943573,
+          0.8831557035446167
+        ],
+        "boundary_hash": "cd8ae60053999a19c793e90982f45ab6448c6287f29bb3f120a606545da55395"
+      }
+    },
+    {
+      "run_id": "normal_seed_2",
+      "decision_id": "decision-3",
+      "L": "C",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 692,
+        "event_seq": 16,
+        "physical_pose": [
+          0.9875999093055725,
+          -0.5854572653770447,
+          0.9085384607315063
+        ],
+        "boundary_hash": "f0c7e3a7230d425c558324d6a2ee59ae9061b46fd6945303ae136648d90304e6"
+      }
+    },
+    {
+      "run_id": "normal_seed_2",
+      "decision_id": "decision-4",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 850,
+        "event_seq": 20,
+        "physical_pose": [
+          0.3106456995010376,
+          -0.5811460614204407,
+          0.8765226006507874
+        ],
+        "boundary_hash": "9233f8ef71a4d6f4636c10d3d43ff309921571f561bc6ab8656e6cfaf0ae9a6f"
+      }
+    },
+    {
+      "run_id": "normal_seed_2",
+      "decision_id": "decision-6",
+      "L": "E",
+      "H": "J",
+      "physical_reference": {
+        "simulation_step": 1138,
+        "event_seq": 28,
+        "physical_pose": [
+          -0.9148420691490173,
+          -0.579795241355896,
+          0.8918520212173462
+        ],
+        "boundary_hash": "25a6a7fc25b42d7382c5676dc3dd78d47418b34a04030155b42d427238b05aff"
+      }
+    },
+    {
+      "run_id": "normal_seed_3",
+      "decision_id": "decision-2",
+      "L": "D",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 546,
+        "event_seq": 12,
+        "physical_pose": [
+          0.9695963859558105,
+          0.013281993567943573,
+          0.8831557035446167
+        ],
+        "boundary_hash": "cd8ae60053999a19c793e90982f45ab6448c6287f29bb3f120a606545da55395"
+      }
+    },
+    {
+      "run_id": "normal_seed_3",
+      "decision_id": "decision-3",
+      "L": "C",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 692,
+        "event_seq": 16,
+        "physical_pose": [
+          0.9875999093055725,
+          -0.5854572653770447,
+          0.9085384607315063
+        ],
+        "boundary_hash": "f0c7e3a7230d425c558324d6a2ee59ae9061b46fd6945303ae136648d90304e6"
+      }
+    },
+    {
+      "run_id": "normal_seed_3",
+      "decision_id": "decision-4",
+      "L": "B",
+      "H": "A",
+      "physical_reference": {
+        "simulation_step": 850,
+        "event_seq": 20,
+        "physical_pose": [
+          0.3106456995010376,
+          -0.5811460614204407,
+          0.8765226006507874
+        ],
+        "boundary_hash": "9233f8ef71a4d6f4636c10d3d43ff309921571f561bc6ab8656e6cfaf0ae9a6f"
+      }
+    },
+    {
+      "run_id": "normal_seed_3",
+      "decision_id": "decision-6",
+      "L": "E",
+      "H": "J",
+      "physical_reference": {
+        "simulation_step": 1138,
+        "event_seq": 28,
+        "physical_pose": [
+          -0.9148420691490173,
+          -0.579795241355896,
+          0.8918520212173462
+        ],
+        "boundary_hash": "25a6a7fc25b42d7382c5676dc3dd78d47418b34a04030155b42d427238b05aff"
+      }
+    }
+  ],
+  "policy_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "explanations_sha256": "708b5764d0b1a3a22f3e67cde5280ed93f9aea12202a94f7b8b87ceb0041b9e5",
+  "runs": [
+    {
+      "run_id": "cost_shift_seed_1",
+      "scenario_id": "cost_shift",
+      "execution_seed": 1,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "J",
+        "F",
+        "D",
+        "C",
+        "B",
+        "A",
+        "E",
+        "G",
+        "I"
+      ],
+      "analytical_cost": 143.9486095980858,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "cost_shift_seed_2",
+      "scenario_id": "cost_shift",
+      "execution_seed": 2,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "J",
+        "F",
+        "D",
+        "C",
+        "B",
+        "A",
+        "E",
+        "G",
+        "I"
+      ],
+      "analytical_cost": 143.9486095980858,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "cost_shift_seed_3",
+      "scenario_id": "cost_shift",
+      "execution_seed": 3,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "J",
+        "F",
+        "D",
+        "C",
+        "B",
+        "A",
+        "E",
+        "G",
+        "I"
+      ],
+      "analytical_cost": 143.9486095980858,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "scenario_id": "emergency",
+      "execution_seed": 1,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "C",
+        "D",
+        "F",
+        "J",
+        "I",
+        "B",
+        "A",
+        "E",
+        "G"
+      ],
+      "analytical_cost": 167.54041406659388,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "scenario_id": "emergency",
+      "execution_seed": 2,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "C",
+        "D",
+        "F",
+        "J",
+        "I",
+        "B",
+        "A",
+        "E",
+        "G"
+      ],
+      "analytical_cost": 167.54041406659388,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "scenario_id": "emergency",
+      "execution_seed": 3,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "C",
+        "D",
+        "F",
+        "J",
+        "I",
+        "B",
+        "A",
+        "E",
+        "G"
+      ],
+      "analytical_cost": 167.54041406659388,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "normal_seed_1",
+      "scenario_id": "normal",
+      "execution_seed": 1,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "F",
+        "D",
+        "C",
+        "B",
+        "A",
+        "E",
+        "G",
+        "I",
+        "J"
+      ],
+      "analytical_cost": 153.316788940408,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "normal_seed_2",
+      "scenario_id": "normal",
+      "execution_seed": 2,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "F",
+        "D",
+        "C",
+        "B",
+        "A",
+        "E",
+        "G",
+        "I",
+        "J"
+      ],
+      "analytical_cost": 153.316788940408,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "run_id": "normal_seed_3",
+      "scenario_id": "normal",
+      "execution_seed": 3,
+      "status": "SUCCEEDED",
+      "completed_count": 10,
+      "completed_order": [
+        "H",
+        "F",
+        "D",
+        "C",
+        "B",
+        "A",
+        "E",
+        "G",
+        "I",
+        "J"
+      ],
+      "analytical_cost": 153.316788940408,
+      "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+      "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    }
+  ],
+  "status": "PASS"
+}

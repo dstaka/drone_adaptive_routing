@@ -29,6 +29,8 @@ def evaluate_scenario(scenario, chooser):
     if state.return_accounted:
         travel += float(np.linalg.norm(np.asarray(scenario.coords[state.current]) - scenario.coords[0])) * state.scenario.multipliers[state.current][0]
     return {'analytical_cost': state.cost, 'priority_completion_penalty': state.penalty,
+            'weighted_travel_cost': scenario.alpha * travel,
+            'weighted_completion_penalty': scenario.beta * state.penalty,
             'travel_cost': travel,
             'nominal_distance_m': state.distance, 'completion_ratio': float(state.visited.mean()),
             'invalid_actions': state.invalid_count, 'order': [scenario.checkpoint_ids[i] for i in order],
@@ -51,7 +53,8 @@ def benchmark(models, split, episodes, out, num_checkpoints=None):
         raise ValueError('Evaluation/model destination counts disagree; retrain for this N')
     out = unique_dir(out)
     seeds = range(20000, 20000 + episodes) if split == 'static' else range(30000, 30000 + episodes)
-    scenarios = [generate_scenario(s, split, num_checkpoints=n) for s in seeds]
+    scenarios = [generate_scenario(s, split, num_checkpoints=n,
+                                   priority_profile=agents[0][1].priority_profile) for s in seeds]
     for _, agent in agents:
         for s in scenarios:
             agent.validate_scenario(s)
@@ -91,6 +94,8 @@ def benchmark(models, split, episodes, out, num_checkpoints=None):
             return float(np.mean([r[key] for r in subset]))
         summary = {'seed': item['seed'], 'episodes': episodes, 'cost_mean': mean('analytical_cost'),
                    'travel_cost_mean': mean('travel_cost'), 'completion_penalty_mean': mean('priority_completion_penalty'),
+                   'weighted_travel_cost_mean': mean('weighted_travel_cost'),
+                   'weighted_completion_penalty_mean': mean('weighted_completion_penalty'),
                    'delta_fixed_mean': mean('delta_vs_fixed'), 'delta_greedy_mean': mean('delta_vs_greedy'),
                    'exact_ratio_mean': mean('static_exact_ratio') if split == 'static' else None,
                    'exact_ratio_worst': max(r['static_exact_ratio'] for r in subset) if split == 'static' else None,

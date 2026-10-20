@@ -1,0 +1,12 @@
+{
+  "python": "3.11.14",
+  "versions": {
+    "torch": "2.2.2",
+    "numpy": "1.26.4",
+    "gymnasium": "1.0.0",
+    "stable-baselines3": "2.4.1",
+    "sb3-contrib": "2.4.0",
+    "PyYAML": "6.0.3",
+    "pytest": "8.4.2"
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "schema_version": 2,
+  "evidence_kind": "physical",
+  "run_id": "cost_shift_seed_1",
+  "decision_id": "decision-3",
+  "boundary_id": "cost_shift_seed_1:decision-3",
+  "snapshot": {
+    "scenario": {
+      "scenario_id": "cost_shift",
+      "split": "demo",
+      "seed": 40029,
+      "coords": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.9,
+          -0.6,
+          1.0
+        ],
+        [
+          -0.3,
+          -0.6,
+          1.0
+        ],
+        [
+          0.3,
+          -0.6,
+          1.0
+        ],
+        [
+          0.9,
+          -0.6,
+          1.0
+        ],
+        [
+          -0.9,
+          0.0,
+          1.0
+        ],
+        [
+          0.9,
+          0.0,
+          1.0
+        ],
+        [
+          -0.9,
+          0.6,
+          1.0
+        ],
+        [
+          -0.3,
+          0.6,
+          1.0
+        ],
+        [
+          0.3,
+          0.6,
+          1.0
+        ],
+        [
+          0.9,
+          0.6,
+          1.0
+        ]
+      ],
+      "priorities": [
+        81,
+        42,
+        43,
+        64,
+        23,
+        84,
+        6,
+        98,
+        22,
+        56
+      ],
+      "multipliers": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          5,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "service_duration_s": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "alpha": 1.0,
+      "beta": 0.05,
+      "nominal_speed_mps": 1.0,
+      "return_to_base": false,
+      "event": null,
+      "schema_version": 3,
+      "checkpoint_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ]
+    },
+    "current": 6,
+    "visited": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "elapsed": 3.970820393249937
+  },
+  "boundary_hash": "ba81d47dd715f490ff7c0b4a6d7573b6dfbc17717a0209b6253b0792c4e32771",
+  "policy_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "scope": "Frozen currently observed conditions; remaining objective excludes incurred prefix cost; no future events or physical optimality claim.",
+  "policy_action": 3,
+  "policy_rollout": {
+    "order": [
+      3,
+      2,
+      1,
+      0,
+      4,
+      6,
+      8
+    ],
+    "cost": 111.02502652516162,
+    "travel_cost": 4.800000000000001,
+    "completion_penalty": 2124.500530503232,
+    "weighted_travel_cost": 4.800000000000001,
+    "weighted_completion_penalty": 106.2250265251616
+  },
+  "exact": {
+    "order": [
+      3,
+      2,
+      1,
+      0,
+      4,
+      6,
+      8
+    ],
+    "cost": 111.02502652516162,
+    "travel_cost": 4.800000000000001,
+    "completion_penalty": 2124.500530503232,
+    "weighted_travel_cost": 4.800000000000001,
+    "weighted_completion_penalty": 106.2250265251616,
+    "status": "OPTIMAL",
+    "proven": true,
+    "solver": "weighted-completion-subset-dp-v1",
+    "elapsed_s": 0.0026304629864171147,
+    "states": 449
+  },
+  "forced_first": [
+    {
+      "action": 0,
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        4,
+        6
+      ],
+      "cost": 130.16523851548132,
+      "travel_cost": 6.980648169100776,
+      "completion_penalty": 2463.691806927611,
+      "weighted_travel_cost": 6.980648169100776,
+      "weighted_completion_penalty": 123.18459034638056,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0012230790161993355,
+      "states": 193
+    },
+    {
+      "action": 1,
+      "order": [
+        1,
+        0,
+        2,
+        3,
+        8,
+        4,
+        6
+      ],
+      "cost": 129.28656508098396,
+      "travel_cost": 7.024922359499621,
+      "completion_penalty": 2445.2328544296865,
+      "weighted_travel_cost": 7.024922359499621,
+      "weighted_completion_penalty": 122.26164272148434,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0014734690194018185,
+      "states": 193
+    },
+    {
+      "action": 2,
+      "order": [
+        2,
+        3,
+        1,
+        0,
+        4,
+        6,
+        8
+      ],
+      "cost": 121.74037499339067,
+      "travel_cost": 5.648528137423857,
+      "completion_penalty": 2321.8369371193357,
+      "weighted_travel_cost": 5.648528137423857,
+      "weighted_completion_penalty": 116.09184685596679,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.001183401996968314,
+      "states": 193
+    },
+    {
+      "action": 3,
+      "order": [
+        3,
+        2,
+        1,
+        0,
+        4,
+        6,
+        8
+      ],
+      "cost": 111.02502652516162,
+      "travel_cost": 4.800000000000001,
+      "completion_penalty": 2124.500530503232,
+      "weighted_travel_cost": 4.800000000000001,
+      "weighted_completion_penalty": 106.2250265251616,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0012805550068151206,
+      "states": 193
+    },
+    {
+      "action": 4,
+      "order": [
+        4,
+        0,
+        1,
+        2,
+        3,
+        8,
+        6
+      ],
+      "cost": 134.34496441276133,
+      "travel_cost": 6.741640786499874,
+      "completion_penalty": 2552.0664725252286,
+      "weighted_travel_cost": 6.741640786499874,
+      "weighted_completion_penalty": 127.60332362626144,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0015545789792668074,
+      "states": 193
+    },
+    {
+      "action": 6,
+      "order": [
+        6,
+        4,
+        0,
+        1,
+        2,
+        3,
+        8
+      ],
+      "cost": 147.9528394481318,
+      "travel_cost": 6.239007382600902,
+      "completion_penalty": 2834.276641310618,
+      "weighted_travel_cost": 6.239007382600902,
+      "weighted_completion_penalty": 141.7138320655309,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.002020395011641085,
+      "states": 193
+    },
+    {
+      "action": 8,
+      "order": [
+        8,
+        3,
+        2,
+        1,
+        0,
+        4,
+        6
+      ],
+      "cost": 130.83626396506395,
+      "travel_cost": 5.190168923923731,
+      "completion_penalty": 2512.9219008228038,
+      "weighted_travel_cost": 5.190168923923731,
+      "weighted_completion_penalty": 125.6460950411402,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.001513113995315507,
+      "states": 193
+    }
+  ],
+  "equality_tolerance": 1.1102502652516163e-06,
+  "policy_gap": 0.0,
+  "policy_optimality": "OPTIMAL",
+  "candidate_priorities_distances": [
+    {
+      "action": 0,
+      "id": "A",
+      "priority": 81,
+      "distance_m": 1.8973665961010275,
+      "pose_distance_m": 1.9023760020750147
+    },
+    {
+      "action": 1,
+      "id": "B",
+      "priority": 42,
+      "distance_m": 1.3416407864998738,
+      "pose_distance_m": 1.3529839425416983
+    },
+    {
+      "action": 2,
+      "id": "C",
+      "priority": 43,
+      "distance_m": 0.8485281374238571,
+      "pose_distance_m": 0.8729814684633562
+    },
+    {
+      "action": 3,
+      "id": "D",
+      "priority": 64,
+      "distance_m": 0.6,
+      "pose_distance_m": 0.6431389739280294
+    },
+    {
+      "action": 4,
+      "id": "E",
+      "priority": 23,
+      "distance_m": 1.8,
+      "pose_distance_m": 1.7945227916979556
+    },
+    {
+      "action": 6,
+      "id": "G",
+      "priority": 6,
+      "distance_m": 1.8973665961010275,
+      "pose_distance_m": 1.8819111686197973
+    },
+    {
+      "action": 8,
+      "id": "I",
+      "priority": 22,
+      "distance_m": 0.8485281374238571,
+      "pose_distance_m": 0.8274369085226095
+    }
+  ],
+  "selected_L": "D",
+  "selected_H": "A",
+  "nearer_lower_priority_gate": true,
+  "maximum_priority_ids": [
+    "A"
+  ],
+  "physical_reference": {
+    "simulation_step": 753,
+    "event_seq": 18,
+    "physical_pose": [
+      0.8903907537460327,
+      0.032268669456243515,
+      0.8826469779014587
+    ],
+    "boundary_hash": "ba81d47dd715f490ff7c0b4a6d7573b6dfbc17717a0209b6253b0792c4e32771"
+  },
+  "planning_selected_L": "D",
+  "planning_selected_H": "A",
+  "planning_nearer_lower_priority_gate": true
+}

@@ -10,7 +10,7 @@ from sb3_contrib import MaskablePPO
 from stable_baselines3.common.logger import configure
 from .routing_env import RoutingEnv
 from .objective import SCHEMA, schema_for
-from .scenario import generate_scenario
+from .scenario import generate_scenario, LEGACY_PROFILE, INTEGER_PROFILE
 from .util import sha256, unique_dir, json_write
 
 
@@ -23,12 +23,18 @@ class RoutingAgent:
         self.schema = json.loads(self.path.with_suffix('.schema.json').read_text())
         self.legacy = self.schema == SCHEMA
         self.num_checkpoints = 3 if self.legacy else self.schema.get('num_checkpoints')
+        self.priority_profile = self.schema.get('priority_contract', {}).get('profile', LEGACY_PROFILE)
         if not self.legacy:
-            contract = generate_scenario(0, 'training', num_checkpoints=self.num_checkpoints)
+            contract = generate_scenario(0, 'training', num_checkpoints=self.num_checkpoints,
+                                         priority_profile=self.priority_profile)
             if self.schema != schema_for(contract):
                 raise ValueError('Routing schema mismatch; retrain with the required contract')
         torch.set_num_threads(1)
         self.model = MaskablePPO.load(self.path, device='cpu')
+        embedded = getattr(self.model, 'routing_schema', None)
+        if ((embedded is not None and embedded != self.schema) or
+                (self.priority_profile == INTEGER_PROFILE and embedded != self.schema)):
+            raise ValueError('Checkpoint embedded contract differs from schema sidecar; retrain')
         if (self.model.action_space.n != self.num_checkpoints or
                 self.model.observation_space.shape != (self.schema['size'],)):
             raise ValueError('Checkpoint dimensions mismatch; retrain for this destination count')
@@ -70,19 +76,21 @@ class RoutingAgent:
 
 
 
-def training_env(num_checkpoints, event_mixture=False, reward_scale=1.):
+def training_env(num_checkpoints, event_mixture=False, reward_scale=1., priority_profile=LEGACY_PROFILE):
     """Scale only optimizer rewards; raw RoutingEnv accounting stays unchanged."""
     import gymnasium as gym
     if not np.isfinite(reward_scale) or reward_scale <= 0:
         raise ValueError('Optimizer reward scale must be positive and finite')
-    env = RoutingEnv(num_checkpoints=num_checkpoints, event_mixture=event_mixture)
+    env = RoutingEnv(num_checkpoints=num_checkpoints, event_mixture=event_mixture,
+                     priority_profile=priority_profile)
     return gym.wrappers.TransformReward(env, lambda reward: reward * reward_scale)
 
 
 def train_one(seed, output, static_steps=50000, event_steps=50000, n_epochs=10,
               n_steps=256, batch_size=64, learning_rate=3e-4, num_checkpoints=10,
               max_actual_steps=200000, net_arch=None, policy_arch='mlp',
-              warmstart_cases=0, warmstart_epochs=0, teacher_directory=None, reward_scale=1., **kwargs):
+              warmstart_cases=0, warmstart_epochs=0, teacher_directory=None, reward_scale=1.,
+              priority_profile=LEGACY_PROFILE, **kwargs):
     actual = sum(math.ceil(s / n_steps) * n_steps for s in [static_steps, event_steps]) if n_steps > 0 else 0
     if n_steps <= 0 or static_steps <= 0 or event_steps <= 0 or actual > max_actual_steps:
         raise ValueError('Both curriculum stages required; rounded actual steps exceed declared cap')
@@ -91,7 +99,7 @@ def train_one(seed, output, static_steps=50000, event_steps=50000, n_epochs=10,
         raise FileExistsError('Refusing to overwrite an existing checkpoint')
     directory = unique_dir(output.parent / (output.name + '_run'))
     torch.set_num_threads(1)
-    env = training_env(num_checkpoints, reward_scale=reward_scale)
+    env = training_env(num_checkpoints, reward_scale=reward_scale, priority_profile=priority_profile)
     architecture = net_arch or [128, 128]
     if policy_arch not in ('mlp', 'candidate'):
         raise ValueError('Unknown policy_arch')
@@ -101,26 +109,31 @@ def train_one(seed, output, static_steps=50000, event_steps=50000, n_epochs=10,
                         learning_rate=learning_rate, n_steps=n_steps, batch_size=batch_size,
                         n_epochs=n_epochs, policy_kwargs={'net_arch': architecture}, verbose=0)
     model.set_logger(configure(str(directory), ['csv']))
+    model.routing_schema = schema_for(generate_scenario(0, 'training', num_checkpoints=num_checkpoints,
+                                                        priority_profile=priority_profile))
     start = time.monotonic()
     initialization = None
     if warmstart_cases:
         if policy_arch != 'candidate' or warmstart_epochs <= 0:
             raise ValueError('Teacher initialization requires candidate policy and positive epochs')
         from .routing_teacher import prepare_teacher, warmstart
-        teacher = Path(teacher_directory) if teacher_directory else prepare_teacher(directory / 'teacher', num_checkpoints, warmstart_cases)
+        teacher = Path(teacher_directory) if teacher_directory else prepare_teacher(
+            directory / 'teacher', num_checkpoints, warmstart_cases, priority_profile)
         initialization = warmstart(model, teacher, warmstart_epochs, seed, warmstart_cases)
         if teacher_directory is None:
             import shutil
             shutil.copyfile(teacher / 'teacher.jsonl.gz', directory / 'teacher.jsonl.gz')
     model.learn(static_steps)
     static_actual = model.num_timesteps
-    model.set_env(training_env(num_checkpoints, event_mixture=True, reward_scale=reward_scale))
+    model.set_env(training_env(num_checkpoints, event_mixture=True, reward_scale=reward_scale,
+                              priority_profile=priority_profile))
     model.learn(event_steps, reset_num_timesteps=False)
     model.save(output)
     path = output.with_suffix('.zip')
-    contract = schema_for(generate_scenario(0, 'training', num_checkpoints=num_checkpoints))
+    contract = model.routing_schema
     json_write(path.with_suffix('.schema.json'), contract)
     json_write(directory / 'training.json', {'seed': seed, 'num_checkpoints': num_checkpoints,
+               'priority_profile': priority_profile, 'schema': contract,
                'static_steps_actual': static_actual, 'total_steps_actual': model.num_timesteps,
                'requested_static': static_steps, 'requested_events': event_steps,
                'event_mixture': [.5, .25, .25], 'elapsed_s': time.monotonic() - start,
@@ -138,7 +151,7 @@ def validation(agent, episodes=100):
     costs, changes, event_count, scenarios = [], 0, 0, []
     for index in range(episodes):
         kind = ['static', 'priority', 'cost'][index % 3]
-        s = generate_scenario(10000 + index, 'validation', kind, agent.num_checkpoints)
+        s = generate_scenario(10000 + index, 'validation', kind, agent.num_checkpoints, agent.priority_profile)
         scenarios.append(s.to_dict())
         result = evaluate_scenario(s, agent.predict)
         costs.append(result['analytical_cost'])
@@ -165,7 +178,8 @@ def train(config, seeds, out):
     models = []
     if config.get('warmstart_cases'):
         from .routing_teacher import prepare_teacher
-        teacher = prepare_teacher(out / 'teacher', config['num_checkpoints'], config['warmstart_cases'])
+        teacher = prepare_teacher(out / 'teacher', config['num_checkpoints'], config['warmstart_cases'],
+                                  config.get('priority_profile', LEGACY_PROFILE))
         config['teacher_directory'] = str(teacher)
     arguments = [(seed, out, config) for seed in seeds]
     workers = config.get('parallel_seeds', 1)

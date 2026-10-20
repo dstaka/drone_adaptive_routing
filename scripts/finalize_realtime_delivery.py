@@ -7,12 +7,14 @@ import json
 from pathlib import Path
 from adaptive_drone_patrol.util import json_write, sha256
 from adaptive_drone_patrol.video_check import artifact_entries
+from adaptive_drone_patrol.video_delivery import delivery_execution_metadata
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root", required=True)
     p.add_argument("--visual-notes", required=True)
+    p.add_argument("--execution-context", help="Verified new execution/transfer metadata; omit for legacy CPU edits")
     a = p.parse_args()
     root = Path(a.root)
     result = json.loads((root / "verification.json").read_text())
@@ -99,9 +101,8 @@ def main():
         )
     complete = notes["continuous_playback_review"] == "PASS"
     ledger = json.loads(Path("outputs/gpu_ledger.json").read_text())
-    used = ledger["used_s"]
-    if ledger.get("active_job"):
-        raise ValueError("Unreconciled GPU job")
+    context = json.loads(Path(a.execution_context).read_text()) if a.execution_context else None
+    execution = delivery_execution_metadata(ledger, context)
     json_write(
         root / "acceptance.json",
         {
@@ -114,13 +115,10 @@ def main():
             "remaining": []
             if complete
             else [
-                "Event/response continuous 1x playback review is pending; browser policy/connectivity blocked local video playback."
+                notes.get("continuous_playback_pending_reason",
+                          "Event/response continuous 1x playback review is pending.")
             ],
-            "gpu_used_s": used,
-            "gpu_added_s": 0,
-            "gpu_remaining_s": 28800 - used,
-            "new_server_directories": [],
-            "transfer": "No new external server transfer; inherited 465/465 input hashes verified.",
+            **execution,
         },
     )
     entries = artifact_entries(root)

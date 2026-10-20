@@ -1,0 +1,1095 @@
+{
+  "status": "PASS",
+  "policy_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "priority_profile": "integer-100-v1",
+  "priority_generator": "numpy-PCG64-SeedSequence(seed,100)-integers-1-101-v1",
+  "selected_seed": 40029,
+  "search_split": "demo 40000-40099",
+  "scenario_hashes": {
+    "normal": "a080e7a12a4ca47f28274a849103af12300542cafb68aea57ffdd601f5039c4d",
+    "emergency": "c38df863ffafd6709f51500e8cd5870ba8970ff4ab54ddf6c77f72bac07dc71b",
+    "cost_shift": "5112fbffc14b4fcd661e676f828bdc45a65374da13375ea8a2ce91104099b722"
+  },
+  "explanation_gate": true,
+  "event_gates": true,
+  "directed_updates": "One direction only; reverse edge unchanged.",
+  "criteria": "Shared geometry/initial state; C-only emergency, earlier C, changed next action and positive full-suffix benefit; cost-only event with positive benefit; exact nearer/lower-priority example.",
+  "geometry_note": "Specified candidate grid, minimum separation 0.60 m. Physical envelope unverified.",
+  "note": "Illustrative demo selection only; held-out test cases are never read.",
+  "full_search_record": {
+    "path": "outputs/integer_20261020_v1/demo/selection.json",
+    "sha256": "c1e3c6e934d5883585e185f878f2964690943ca4401fc1442f83f8ad73a1bf57"
+  },
+  "attempts": [
+    {
+      "seed": 40000,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 18,
+        "B": 94,
+        "C": 83,
+        "D": 59,
+        "E": 40,
+        "F": 86,
+        "G": 57,
+        "H": 100,
+        "I": 77,
+        "J": 70
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 3,
+          "post_event_first": 3,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 1,
+          "improvement": -6.482234724271677
+        }
+      ]
+    },
+    {
+      "seed": 40001,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 98,
+        "B": 29,
+        "C": 46,
+        "D": 64,
+        "E": 7,
+        "F": 76,
+        "G": 16,
+        "H": 75,
+        "I": 79,
+        "J": 83
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 5,
+          "improvement": -15.022173131793124
+        }
+      ]
+    },
+    {
+      "seed": 40002,
+      "first": 5,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 80,
+        "B": 23,
+        "C": 74,
+        "D": 44,
+        "E": 3,
+        "F": 98,
+        "G": 69,
+        "H": 93,
+        "I": 10,
+        "J": 83
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 2.1209384042995225
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 3,
+          "improvement": -9.188256982822622
+        }
+      ]
+    },
+    {
+      "seed": 40003,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 35,
+        "B": 8,
+        "C": 2,
+        "D": 63,
+        "E": 94,
+        "F": 6,
+        "G": 41,
+        "H": 40,
+        "I": 81,
+        "J": 66
+      },
+      "cost_shift_gate": true,
+      "rejection_reasons": [
+        "C emergency response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 31.843845346339776
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 7,
+          "improvement": 5.400139551601981
+        }
+      ]
+    },
+    {
+      "seed": 40004,
+      "first": 5,
+      "emergency_gate": true,
+      "initial_priorities": {
+        "A": 84,
+        "B": 48,
+        "C": 43,
+        "D": 20,
+        "E": 74,
+        "F": 99,
+        "G": 56,
+        "H": 12,
+        "I": 58,
+        "J": 38
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 2,
+          "improvement": 29.47154438556896
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 8,
+          "improvement": -0.7862321976701878
+        }
+      ]
+    },
+    {
+      "seed": 40005,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 37,
+        "B": 51,
+        "C": 40,
+        "D": 1,
+        "E": 98,
+        "F": 19,
+        "G": 4,
+        "H": 7,
+        "I": 92,
+        "J": 93
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 1.1885776481068007
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40006,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 48,
+        "B": 75,
+        "C": 63,
+        "D": 3,
+        "E": 98,
+        "F": 70,
+        "G": 8,
+        "H": 43,
+        "I": 96,
+        "J": 79
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40007,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 46,
+        "B": 87,
+        "C": 48,
+        "D": 74,
+        "E": 1,
+        "F": 49,
+        "G": 80,
+        "H": 19,
+        "I": 10,
+        "J": 69
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 2,
+          "post_event_first": 2,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 2,
+          "post_event_first": 0,
+          "improvement": -12.378722825824894
+        }
+      ]
+    },
+    {
+      "seed": 40008,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 98,
+        "B": 55,
+        "C": 70,
+        "D": 75,
+        "E": 34,
+        "F": 55,
+        "G": 63,
+        "H": 37,
+        "I": 10,
+        "J": 46
+      },
+      "cost_shift_gate": true,
+      "rejection_reasons": [
+        "C emergency response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 3,
+          "post_event_first": 3,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 1,
+          "improvement": 7.4436623254048015
+        }
+      ]
+    },
+    {
+      "seed": 40009,
+      "first": 4,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 42,
+        "B": 8,
+        "C": 57,
+        "D": 40,
+        "E": 82,
+        "F": 30,
+        "G": 57,
+        "H": 34,
+        "I": 28,
+        "J": 91
+      },
+      "cost_shift_gate": true,
+      "rejection_reasons": [
+        "C emergency response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 6,
+          "post_event_first": 6,
+          "improvement": 8.110742752749559
+        },
+        {
+          "applicable": true,
+          "no_event_first": 6,
+          "post_event_first": 0,
+          "improvement": 0.14074275274953152
+        }
+      ]
+    },
+    {
+      "seed": 40010,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 50,
+        "B": 72,
+        "C": 81,
+        "D": 42,
+        "E": 93,
+        "F": 3,
+        "G": 60,
+        "H": 44,
+        "I": 57,
+        "J": 28
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 2,
+          "improvement": -8.605521977183656
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 2,
+          "improvement": -12.000521977183638
+        }
+      ]
+    },
+    {
+      "seed": 40011,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 91,
+        "B": 83,
+        "C": 42,
+        "D": 50,
+        "E": 5,
+        "F": 70,
+        "G": 30,
+        "H": 36,
+        "I": 17,
+        "J": 23
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 2,
+          "improvement": -11.304999999999964
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40012,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 92,
+        "B": 39,
+        "C": 39,
+        "D": 90,
+        "E": 13,
+        "F": 51,
+        "G": 92,
+        "H": 63,
+        "I": 96,
+        "J": 28
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 7,
+          "post_event_first": 7,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 7,
+          "post_event_first": 7,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40013,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 77,
+        "B": 62,
+        "C": 98,
+        "D": 62,
+        "E": 78,
+        "F": 54,
+        "G": 86,
+        "H": 61,
+        "I": 95,
+        "J": 28
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 1,
+          "post_event_first": 1,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 1,
+          "post_event_first": 3,
+          "improvement": -7.9501926164536485
+        }
+      ]
+    },
+    {
+      "seed": 40014,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 41,
+        "B": 31,
+        "C": 98,
+        "D": 98,
+        "E": 16,
+        "F": 42,
+        "G": 16,
+        "H": 44,
+        "I": 57,
+        "J": 1
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 3,
+          "post_event_first": 3,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 3,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40015,
+      "first": 4,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 41,
+        "B": 49,
+        "C": 48,
+        "D": 36,
+        "E": 100,
+        "F": 55,
+        "G": 10,
+        "H": 53,
+        "I": 32,
+        "J": 4
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 1,
+          "improvement": -9.224389591175125
+        }
+      ]
+    },
+    {
+      "seed": 40016,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 67,
+        "B": 9,
+        "C": 26,
+        "D": 87,
+        "E": 85,
+        "F": 12,
+        "G": 34,
+        "H": 30,
+        "I": 97,
+        "J": 7
+      },
+      "cost_shift_gate": true,
+      "rejection_reasons": [
+        "C emergency response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 2,
+          "improvement": -4.0110002644278495
+        },
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 4,
+          "improvement": 0.15831262919985534
+        }
+      ]
+    },
+    {
+      "seed": 40017,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 39,
+        "B": 61,
+        "C": 89,
+        "D": 15,
+        "E": 33,
+        "F": 74,
+        "G": 65,
+        "H": 81,
+        "I": 17,
+        "J": 60
+      },
+      "cost_shift_gate": true,
+      "rejection_reasons": [
+        "C emergency response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 1,
+          "post_event_first": 1,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 1,
+          "post_event_first": 5,
+          "improvement": 3.339685349870564
+        }
+      ]
+    },
+    {
+      "seed": 40018,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 66,
+        "B": 77,
+        "C": 94,
+        "D": 25,
+        "E": 16,
+        "F": 3,
+        "G": 77,
+        "H": 22,
+        "I": 23,
+        "J": 25
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 2,
+          "post_event_first": 2,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 2,
+          "post_event_first": 0,
+          "improvement": -8.75831594530922
+        }
+      ]
+    },
+    {
+      "seed": 40019,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 27,
+        "B": 2,
+        "C": 82,
+        "D": 62,
+        "E": 49,
+        "F": 96,
+        "G": 61,
+        "H": 95,
+        "I": 47,
+        "J": 41
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 3,
+          "post_event_first": 3,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 5,
+          "improvement": -12.203203435596407
+        }
+      ]
+    },
+    {
+      "seed": 40020,
+      "first": 1,
+      "emergency_gate": true,
+      "initial_priorities": {
+        "A": 87,
+        "B": 93,
+        "C": 12,
+        "D": 75,
+        "E": 26,
+        "F": 59,
+        "G": 87,
+        "H": 2,
+        "I": 21,
+        "J": 31
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 2,
+          "improvement": 30.399333639136643
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40021,
+      "first": 8,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 56,
+        "B": 81,
+        "C": 17,
+        "D": 4,
+        "E": 21,
+        "F": 28,
+        "G": 68,
+        "H": 63,
+        "I": 81,
+        "J": 82
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 9,
+          "improvement": 8.333038894974464
+        },
+        {
+          "applicable": true,
+          "no_event_first": 9,
+          "post_event_first": 7,
+          "improvement": -1.2616017177982144
+        }
+      ]
+    },
+    {
+      "seed": 40022,
+      "first": 4,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 93,
+        "B": 40,
+        "C": 5,
+        "D": 70,
+        "E": 76,
+        "F": 10,
+        "G": 84,
+        "H": 47,
+        "I": 55,
+        "J": 42
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 9.05303312790869
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 6,
+          "improvement": -5.8285315481545865
+        }
+      ]
+    },
+    {
+      "seed": 40023,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 78,
+        "B": 85,
+        "C": 65,
+        "D": 9,
+        "E": 35,
+        "F": 60,
+        "G": 77,
+        "H": 20,
+        "I": 18,
+        "J": 51
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 3.0220889144622163
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40024,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 79,
+        "B": 64,
+        "C": 100,
+        "D": 56,
+        "E": 51,
+        "F": 47,
+        "G": 57,
+        "H": 65,
+        "I": 48,
+        "J": 34
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 1,
+          "post_event_first": 1,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 1,
+          "post_event_first": 3,
+          "improvement": -16.409999999999997
+        }
+      ]
+    },
+    {
+      "seed": 40025,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 65,
+        "B": 69,
+        "C": 25,
+        "D": 34,
+        "E": 61,
+        "F": 74,
+        "G": 13,
+        "H": 65,
+        "I": 39,
+        "J": 35
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 2,
+          "improvement": -0.9037424176719355
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40026,
+      "first": 7,
+      "emergency_gate": true,
+      "initial_priorities": {
+        "A": 3,
+        "B": 9,
+        "C": 10,
+        "D": 38,
+        "E": 89,
+        "F": 12,
+        "G": 43,
+        "H": 90,
+        "I": 5,
+        "J": 23
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 6,
+          "post_event_first": 4,
+          "improvement": 2.1844527057512266
+        },
+        {
+          "applicable": true,
+          "no_event_first": 6,
+          "post_event_first": 4,
+          "improvement": -1.8014545315405854
+        }
+      ]
+    },
+    {
+      "seed": 40027,
+      "first": 1,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 91,
+        "B": 65,
+        "C": 77,
+        "D": 53,
+        "E": 69,
+        "F": 2,
+        "G": 7,
+        "H": 27,
+        "I": 72,
+        "J": 11
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 0,
+          "post_event_first": 0,
+          "improvement": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 40028,
+      "first": 2,
+      "emergency_gate": false,
+      "initial_priorities": {
+        "A": 9,
+        "B": 48,
+        "C": 98,
+        "D": 58,
+        "E": 86,
+        "F": 83,
+        "G": 41,
+        "H": 20,
+        "I": 41,
+        "J": 81
+      },
+      "cost_shift_gate": false,
+      "rejection_reasons": [
+        "C emergency response gate",
+        "directed cost response gate"
+      ],
+      "comparisons": [
+        {
+          "applicable": false,
+          "no_event_first": 3,
+          "post_event_first": 3,
+          "improvement": 0.0
+        },
+        {
+          "applicable": true,
+          "no_event_first": 3,
+          "post_event_first": 5,
+          "improvement": -14.334388656592068
+        }
+      ]
+    },
+    {
+      "seed": 40029,
+      "first": 7,
+      "emergency_gate": true,
+      "initial_priorities": {
+        "A": 81,
+        "B": 42,
+        "C": 43,
+        "D": 64,
+        "E": 23,
+        "F": 84,
+        "G": 6,
+        "H": 98,
+        "I": 22,
+        "J": 56
+      },
+      "cost_shift_gate": true,
+      "rejection_reasons": [],
+      "explanation_gate": true,
+      "comparisons": [
+        {
+          "applicable": true,
+          "no_event_first": 5,
+          "post_event_first": 2,
+          "improvement": 0.631889236101074
+        },
+        {
+          "applicable": true,
+          "no_event_first": 5,
+          "post_event_first": 9,
+          "improvement": 14.734742488321729
+        }
+      ]
+    }
+  ]
+}

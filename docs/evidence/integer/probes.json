@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "transferred_files": 28,
+  "archive_sha256": "eeee839da5d1f242338f0d0448ad8b1439efded7d9c45a4fc8d178088f19a5aa",
+  "marker_dynamics_samples": 1508,
+  "marker_dynamics_identical": true,
+  "gpu_used_s": 2927.513386965031,
+  "gpu_remaining_s": 25872.48661303497
+}

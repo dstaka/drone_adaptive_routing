@@ -1,70 +1,62 @@
 # 適応型ドローン巡回点検
 
-A〜Jの10地点を、同じ学習済みルーティング方策と飛行方策で巡回します。点検完了後の境界で、地点Cの優先度上昇や有向辺B→Aのコスト増加を受け取り、次の未訪問地点を選び直します。実際のGenesis映像、位置・速度、点検・更新ログを同じ実行で記録しています。
+A〜Jの10地点を、同じ学習済みルーティング方策と飛行方策で巡回します。重要度は実値・表示とも1〜100の整数で、大きいほど重要ですが訪問順そのものではありません。各地点を独立に復元抽選し、固定seedで再現します。配置は先行デモと同じ長方形のままです。
 
-[今回の承認済み仕様](specs/2026-10-14-realtime-demo-video/spec.md)、[実装計画](docs/superpowers/plans/2026-10-16-realtime-demo-video.md)、[成果物・検証・再実行の引き継ぎ](docs/realtime-video-handoff.md)を参照してください。先行する[経路最適化](docs/scalable-routing-handoff.md)と[全地点物理飛行](docs/visible-flight-handoff.md)の結果も保持しています。
+[今回の承認済み仕様](specs/2026-10-17-integer-priorities/spec.md)、[実装計画](docs/superpowers/plans/2026-10-20-integer-priorities.md)、[モデル・測定・全再実行手順](docs/integer-priorities-handoff.md)を参照してください。過去の[経路最適化](docs/scalable-routing-handoff.md)、[全地点飛行](docs/visible-flight-handoff.md)、[旧1倍速動画](docs/realtime-video-handoff.md)の記録・成果物は保持しています。
 
-## 実測結果と動画
+## 今回の実測
 
-固定3シード×3シナリオは全9試行成功、90/90地点の点検を完了しました。seed 1の3本を選び、全飛行を省略せず1倍速で編集します。通常17.82秒、緊急17.23秒、コスト変化17.23秒が実シミュレーション時間です。動画の長さは出力フレーム単位に量子化し、末尾の実点検完了状態を表示します。
+新しい重要度・対応routingモデルで固定3seed×3シナリオを走らせ、9/9ミッション・90/90点検を完了しました。通常17.61秒、緊急18.07秒、コスト変化18.76秒です。reset・終了・安全異常は0。最大傾斜37.686度、最低高度0.805877m。全90判断から物理説明を再生成し、重要度差10以上・実pose距離・厳密コストの条件を満たすL/H判断が33件あります。
 
-成果物ルートは `outputs/realtime_20261016_v2/`（Git管理外）です。
+初期重要度は A=81、B=42、C=43、D=64、E=23、F=84、G=6、H=98、I=22、J=56。3シナリオ・実行seed1/2/3で共通です。最初の実点検後（3.43秒）、緊急では未点検Cのみ43→100、有向コスト変化ではH→Fのみ倍率1→5を更新します。次の選択は更新なしのFに対し、CとJへそれぞれ変わります。同一の更新後条件で旧/新suffixを比較した改善は0.631889と14.734742です。これは論理目的コストの比較で、物理時間・電力の削減とは区別します。
 
-- `sources/{normal,emergency,cost_shift}_seed_1/`：元raw・時刻表・物理ログの完全コピー。
-- `raw/*/raw.mp4`：実物理時刻へ正規化した1倍速raw。元の境界追加撮影との対応を `frames.csv` と `timing.json` に記録。
-- `full_normal.mp4`、`full_emergency.mp4`、`full_cost_shift.mp4`：全10点検の日本語HUD付き全編。
-- `demo_full.mp4`、`submission.mp4`：全3シナリオと独立した説明カード。今回の素材は全飛行が収まるため、省略はありません。
-- 各動画の `.timeline.json`、`.selection.json`、`.verification.json`、成果物全体の `manifest.json`。
-- `report/report.pdf`：今回の日本語レポート。
+新routingはscenario v3、`routing-v3-integer100-n10-324`、324要素・10行動です。3seed42/43/44を新規学習し、validationでseed44を選択・凍結してからheld-outを評価しました。全450 learned episodesが完走し、全3seedで既存品質条件を満たしました。採用seedの静的平均AI/厳密解比は1.040070、最悪1.156867。動的50例のうち49適用、7選択変更、6改善です。一般に常時最適とは主張しません。
 
-飛行はシミュレーション時間に対して1.0倍速です。計算に要した実時間とは別です。説明カード中はシミュレーション時計を進めません。優先度1〜5の固定色と数値、目標の輪、点検済みのチェックを独立して表示します。予測順序と実飛行は区別し、総コストを物理時間・電力と呼びません。
+## 目的関数と互換性
 
-上位はCPUのMaskablePPO、下位はGenesis/RSL-RLのPPOです。ルーティング採用seedは42、観測は `routing-v2-n10-324`、324要素・10行動です。飛行には追加学習後の `model_1300.pt` を使用し、旧モデルへ戻していません。モデルハッシュと保存先は引き継ぎ記録に記載しています。
+目的コスト＝移動コスト＋0.05×Σ（整数重要度×名目完了時刻）。alpha=1、beta=0.05、名目速度1m/s、サービス0.50秒、帰還なし。観測の重要度は固定値100で割り、現在の最大値では正規化しません。有向倍率は1〜5で、名目時間や物理速度を変更しません。生の重要度時刻成分と0.05適用後の寄与を別々に記録・表示します。
 
-全フレーム・PTSの独立検証、静止フレームとPDFの目視に加え、2026年10月17日にユーザーから動画の目視OKを受領しました。残っていた人手確認を完了として記録し、今回の仕様受入はPASSです。改善案は別spec／PRで扱います。
+7.0を含む浮動小数、真偽値、文字列、非有限値、範囲外をnew-profileの重要度として受け付けません。v2・旧checkpointは元の解釈を維持し、形状が同じでもv3への読替えは拒否します。新checkpoint内部・sidecar・教師データにも契約を記録します。詳細は [互換性記録](docs/compatibility.md) にあります。
 
-## 判断と物理判定
+飛行には指定の追加学習後 `model_1300.pt` を継続使用します。新しいGPUサーバで長距離・反転・ホバーを再確認し、マーカー有無の1,508サンプルは一致しました。実到達は半径0.20m以内・速度0.30m/s以下を連続0.20秒、点検は同条件で合計0.50秒です。固定初期条件でのデモ安定性の結果であり、擾乱・障害物認識・実機安全性は未検証です。
 
-目的関数は α×移動コスト＋β×優先度を重みとした名目完了時刻のペナルティです。今回はα=β=1、名目速度1 m/s、サービス0.50秒、基地帰還なしです。有向辺倍率は移動コスト成分だけに適用し、物理速度や名目距離を変更しません。
+## 成果物と再生成
 
-コスト変化の物理判断 `cost_shift_seed_1 / decision-1` では、近いL＝地点Cを先にする条件付き最適コスト149.097に対し、遠い高優先度H＝地点Hは168.796です。同じsnapshotの厳密解J*とAI予測も149.097です。この例の最適性は「現在の条件を固定した残り巡回」に限ります。一般評価では常に最適ではなく、採用seedの静的100例の平均AI/厳密解比は約1.030、動的50例中48適用例の改善は2例です。
+一意な成果物ルートは `outputs/integer_20261020_v1/`（Git管理外）です。旧動画を今回の受入に流用していません。確定した機械検証・実フレーム/PDF確認・連続再生確認の状態は [引き継ぎ](docs/integer-priorities-handoff.md) と `docs/evidence/integer/acceptance.json` に分けて記録します。未確認の項目を合格とは扱いません。
 
-実点検は半径0.20 m以内・速度0.30 m/s以下を連続0.20秒維持し、合計0.50秒滞在して確定します。逸脱で滞在をリセットします。落下、reset、非有限値、目標不一致、通信異常、timeoutは成功に数えません。固定初期状態の決定論的デモであり、擾乱、障害物認識、実機安全性、実際の設備不具合検出は未検証です。
-
-## CPUで再生成する
-
-既存のローカルCPU環境 `.venv-routing311` を使用します。Linuxの飛行・ルーティングロックは別環境用です。今回、依存版変更、再学習、追加撮影、GPU利用はありません。CPU・GPUの試験値を混同しません。
+- `training/`、`frozen/`：3seedの新モデル、教師データ、validation、凍結記録。
+- `static/`、`dynamic/`、`demo/`：全新入力、評価、30候補の抽選と却下理由、厳密説明。
+- `remote-acceptance/outputs/integer/acceptance_v1/genesis/`：9本の元動画、全物理・判断・イベントログ。
+- `physical-verification/`：90判断の再生成説明と独立物理受入。
+- `delivery/`：3本の自然尺全編、全3飛行を含む `demo_full.mp4` と `submission.mp4`、1倍速raw、対応表、manifest、最新PDF。
 
 ```bash
 export PYTHONPATH=src
+export PATH="$PWD/outputs/integer_20261020_v1/tools:$PATH"
+export MPLCONFIGDIR=outputs/integer_rerun_new/mpl
 .venv-routing311/bin/python -m pytest -m 'not gpu' -q
 .venv-routing311/bin/python -m ruff check src scripts tests
 
-# 出力先は未使用の名前にする。fullは自然尺、submissionの上限は速度を変えない。
-.venv-routing311/bin/python scripts/build_video.py --config configs/video.yaml \
-  --input-root outputs/visible_20261015/remote/outputs/visible/acceptance_v1/genesis \
-  --explanations outputs/visible_20261015/remote/outputs/visible/verification_v2/decision_explanations.json \
-  --mode full --out outputs/realtime_new/demo_full.mp4
-.venv-routing311/bin/python scripts/build_video.py --config configs/video.yaml \
-  --input-root outputs/visible_20261015/remote/outputs/visible/acceptance_v1/genesis \
-  --explanations outputs/visible_20261015/remote/outputs/visible/verification_v2/decision_explanations.json \
-  --mode submission --duration 120 --out outputs/realtime_new/submission.mp4
-
-# ffprobeの実行ファイルを指定する。既存の検証結果は上書きしない。
-.venv-routing311/bin/python scripts/check_realtime_media.py --root outputs/realtime_new \
-  --ffprobe outputs/realtime_20261016_v2/tools/ffprobe
-.venv-routing311/bin/python scripts/build_report.py --source docs/report_ja.md \
-  --out outputs/realtime_new/report/report.pdf
+# Use a fresh output directory each time.
+.venv-routing311/bin/python scripts/build_video.py --config configs/video_integer.yaml \
+  --input-root outputs/integer_20261020_v1/remote-acceptance/outputs/integer/acceptance_v1/genesis \
+  --explanations outputs/integer_20261020_v1/physical-verification/decision_explanations.json \
+  --mode full --out outputs/integer_video_new/demo_full.mp4
+.venv-routing311/bin/python scripts/build_video.py --config configs/video_integer.yaml \
+  --input-root outputs/integer_20261020_v1/remote-acceptance/outputs/integer/acceptance_v1/genesis \
+  --explanations outputs/integer_20261020_v1/physical-verification/decision_explanations.json \
+  --mode submission --duration 120 --out outputs/integer_video_new/submission.mp4
+.venv-routing311/bin/python scripts/check_realtime_media.py --root outputs/integer_video_new \
+  --ffprobe outputs/integer_20261020_v1/tools/ffprobe
+.venv-routing311/bin/python scripts/inspect_realtime_frames.py --root outputs/integer_video_new
+.venv-routing311/bin/python scripts/build_report.py --source docs/report_ja.md --date 2026-10-20 \
+  --out outputs/integer_video_new/report/report.pdf
 ```
 
-`configs/video.yaml` の `fps` は25/30、`playback_rate` は1.0のみです。`submission_max_s` と `--duration` は提出尺の上限であり、飛行速度を計算する値ではありません。素材とカードが上限に収まらなければ明示的に失敗します。旧timeline v1と `scripts/check_media.py` は履歴資料用で、新1倍速受入とは分離しています。
-
-今回の独立検証は、元の物理step・実timestep・元rawのPTS・出力の符号化PTSから時刻を再計算します。全デコード、各飛行フレームの参照情報・日本語HUD・元映像由来の機体拡大、イベント、末尾coverage、全地点を照合します。動画の `playback_rate` 宣言だけでは合格しません。
+学習、manifest、モデル互換性、GPU実行設定の生成、物理再評価、動画の最終化は [引き継ぎの手順](docs/integer-priorities-handoff.md) を使用してください。新サーバでは新しい作業先と別venvを使い、`requirements/flight-linux.lock.txt` と `requirements/routing-scalable-linux.lock.txt` を分離します。
 
 ## 保存・予算・出典
 
-大きいモデル・動画・ログは `outputs/` に保存し、Gitにはコード、仕様、テスト、文書、少数の圧縮証拠画像だけを含めます。歴史資料 `adaptive_drone_patrol_20261013/` と過去成果物は実装先にせず保護します。公開参照はリポジトリ相対パスです。
+今回GPU増分395.4215675460873秒、累計3,198.9943080281373秒、8時間枠の残り25,601.005691971863秒です。初期化・推論・撮影・契約テストを含む全3ジョブを台帳へ追記しました。モデル・設定・旧素材465ファイル、新規転送132ファイルをサイズ・SHA-256で照合しています。
 
-GPU累計は2,803.57274048205秒、残り25,996.42725951795秒（8時間枠）です。今回の増分は0秒。新サーバは使っていません。追加物理撮影時は [前回の再構築・台帳手順](docs/visible-flight-handoff.md) に従い、現在の台帳と新しい実験名・出力先を使います。
-
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) にGenesis、提供ノートブック、SB3、RSL-RL、Noto Sans JPの継承元・ライセンスを記載しています。動画公開、コース提出、push、PR作成・マージは行いません。
+Gitには今回のspec・コード・テスト・必要な文書・コンパクトな証拠のみを含めます。歴史資料、他spec、個人ファイル、動画・モデル・大量ログ・接続先情報は混ぜません。[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) に継承元とライセンスを記載しています。push、PR作成/マージ、動画公開、コース提出、サーバの契約変更・追加レンタル・破棄は行いません。

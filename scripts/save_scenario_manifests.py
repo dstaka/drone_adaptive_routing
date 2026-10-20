@@ -11,13 +11,14 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--num-checkpoints', type=int, default=10)
     p.add_argument('--out', required=True)
+    p.add_argument('--priority-profile', default='legacy-5-v1', choices=['legacy-5-v1', 'integer-100-v1'])
     a = p.parse_args()
     out = unique_dir(a.out)
     with gzip.open(out / 'training_candidates.jsonl.gz', 'wt') as f:
         for seed in range(10000):
             for kind in ['static', 'priority', 'cost']:
-                f.write(json.dumps(generate_scenario(seed, 'training', kind, a.num_checkpoints).to_dict()) + '\n')
-    validation = [generate_scenario(10000 + i, 'validation', ['static', 'priority', 'cost'][i % 3], a.num_checkpoints).to_dict()
+                f.write(json.dumps(generate_scenario(seed, 'training', kind, a.num_checkpoints, a.priority_profile).to_dict()) + '\n')
+    validation = [generate_scenario(10000 + i, 'validation', ['static', 'priority', 'cost'][i % 3], a.num_checkpoints, a.priority_profile).to_dict()
                   for i in range(100)]
     json_write(out / 'validation.json', validation)
     json_write(out / 'splits.json', {'training_candidate_count': 30000, 'training_scenario_seeds': [0, 9999],

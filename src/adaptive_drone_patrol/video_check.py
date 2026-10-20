@@ -177,11 +177,15 @@ def recompute_cost(snapshot, order):
         current = action + 1
     if s["return_to_base"]:
         travel += float(np.linalg.norm(coords[current] - coords[0])) * s["multipliers"][current][0]
-    return {
+    result = {
         "cost": s["alpha"] * travel + s["beta"] * penalty,
         "travel_cost": travel,
         "completion_penalty": penalty,
     }
+    if s.get('schema_version') == 3:
+        result.update(weighted_travel_cost=s['alpha'] * travel,
+                      weighted_completion_penalty=s['beta'] * penalty)
+    return result
 
 
 def verify_display_rows(rows, value):
@@ -202,11 +206,20 @@ def verify_display_rows(rows, value):
         raise ValueError("Displayed alternatives/candidates do not match the authenticated decision")
 
 
-def event_lines(event, ids):
+def checked_priority_text(value, schema_version=2, decimals=2):
+    """Independently enforce the integer representation used in encoded text."""
+    if schema_version == 3:
+        if type(value) is not int or not 1 <= value <= 100:
+            raise ValueError("Invalid integer priority in media evidence")
+        return str(value)
+    return f"{value:.{decimals}f}"
+
+
+def event_lines(event, ids, schema_version=2):
     c = event["update"]
     comparison = event["comparison"]
     update = (
-        f"地点C：優先度 {c['old']:.3f} → {c['value']:g}"
+        f"地点C：優先度 {checked_priority_text(c['old'], schema_version, 3)} → {c['value']:g}"
         if event["type"] == "PRIORITY_UPDATED"
         else "有向辺 "
         + ", ".join(f"{a}→{b}" for a, b in c["edges"])
@@ -316,7 +329,7 @@ def verify_card_binding(card, decisions, events):
         )
         if content_hash(d["boundary_snapshot"]) != event["comparison"]["boundary_hash_after"]:
             raise ValueError("Event is not the actual next-decision snapshot")
-        if card["lines"] != event_lines(event, d["boundary_snapshot"]["scenario"]["checkpoint_ids"]):
+        if card["lines"] != event_lines(event, d["boundary_snapshot"]["scenario"]["checkpoint_ids"], d["boundary_snapshot"]["scenario"].get("schema_version", 2)):
             raise ValueError("Event card visible numbers/orders differ from original event")
         state = restore(d["boundary_snapshot"])
         frozen = snapshot(state)
@@ -421,7 +434,9 @@ def verify_card_pixels(image, card, font_path):
             s = v["snapshot"]["scenario"]
             errors.append(
                 check(
-                    f"総コスト {r['cost']:.3f} ＝ 移動 {s['alpha'] * r['travel_cost']:.3f} ＋ 優先度・完了時刻 {s['beta'] * r['completion_penalty']:.3f}",
+                    (f"総コスト {r['cost']:.3f} ＝ 移動 {r['travel_cost']:.3f} ＋ 0.05 × 重要度時刻 {r['completion_penalty']:.3f}（{.05 * r['completion_penalty']:.3f}）"
+                     if s.get('schema_version') == 3 else
+                     f"総コスト {r['cost']:.3f} ＝ 移動 {s['alpha'] * r['travel_cost']:.3f} ＋ 優先度・完了時刻 {s['beta'] * r['completion_penalty']:.3f}"),
                     (65, y + 78),
                     28,
                 )
@@ -432,7 +447,7 @@ def verify_card_pixels(image, card, font_path):
                 c = row["candidate"]
                 errors.append(
                     check(
-                        f"優先度 {c['priority']:.3f} ／計画距離 {c['distance_m']:.3f} m ／実位置から {c['pose_distance_m']:.3f} m",
+                        f"優先度 {checked_priority_text(c['priority'], s.get('schema_version', 2), 3)} ／計画距離 {c['distance_m']:.3f} m ／実位置から {c['pose_distance_m']:.3f} m",
                         (65, y + 39),
                         25,
                     )
@@ -487,13 +502,13 @@ def verify_pixels(image, mapping, record, font_path):
         y = 726 + (j % 5) * 43
         text_errors.append(
             verify_text_region(
-                image, f"{name}  優先度 {priorities[j]:.2f}", (x + 37, y), checker_font(record, font_path, 23)
+                image, f"{name}  優先度 {checked_priority_text(priorities[j], record['scenario'].get('schema_version', 2))}", (x + 37, y), checker_font(record, font_path, 23)
             )
         )
     if update:
         u = update["update"]
         text = (
-            f"地点Cの優先度 {u['old']:.3f} → {u['value']:g}"
+            f"地点Cの優先度 {checked_priority_text(u['old'], record['scenario'].get('schema_version', 2), 3)} → {u['value']:g}"
             if update["type"] == "PRIORITY_UPDATED"
             else "有向辺 "
             + ", ".join(f"{a}→{b}" for a, b in u["edges"])

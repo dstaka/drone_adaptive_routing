@@ -25,8 +25,12 @@ def recompute(snapshot, order):
         current = target
     if s['return_to_base'] and order:
         travel += math.dist(s['coords'][current], s['coords'][0]) * s['multipliers'][current][0]
-    return {'cost': s['alpha'] * travel + s['beta'] * penalty,
-            'travel_cost': travel, 'completion_penalty': penalty}
+    result = {'cost': s['alpha'] * travel + s['beta'] * penalty,
+              'travel_cost': travel, 'completion_penalty': penalty}
+    if s.get('schema_version') == 3:
+        result.update(weighted_travel_cost=s['alpha'] * travel,
+                      weighted_completion_penalty=s['beta'] * penalty)
+    return result
 
 
 def reject_constant(value):

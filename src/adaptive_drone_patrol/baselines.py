@@ -19,8 +19,12 @@ def remaining_cost(state, order):
     if st.return_accounted and not state.return_accounted:
         s = st.scenario
         travel += float(np.linalg.norm(np.array(s.coords[st.current]) - s.coords[0])) * s.multipliers[st.current][0]
-    return {'order': list(order), 'cost': st.cost - prefix_cost, 'travel_cost': travel,
-            'completion_penalty': st.penalty - prefix_penalty}
+    result = {'order': list(order), 'cost': st.cost - prefix_cost, 'travel_cost': travel,
+              'completion_penalty': st.penalty - prefix_penalty}
+    if st.scenario.schema_version == 3:
+        result.update(weighted_travel_cost=st.scenario.alpha * travel,
+                      weighted_completion_penalty=st.scenario.beta * result['completion_penalty'])
+    return result
 
 
 def tour_cost(scenario, order):

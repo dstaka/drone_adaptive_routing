@@ -1,0 +1,64 @@
+{
+  "schema_version": 3,
+  "spec": "specs/2026-10-17-integer-priorities/spec.md",
+  "base_commit": "7da4d23721770613d3ca910a20718ed6fd0e9371",
+  "spec_acceptance": "PASS",
+  "criteria": [
+    {
+      "id": 1,
+      "status": "PASS",
+      "evidence": "data-verification.json; models.json; demo-selection.json"
+    },
+    {
+      "id": 2,
+      "status": "PASS",
+      "evidence": "tests.json; legacy-compatibility.json"
+    },
+    {
+      "id": 3,
+      "status": "PASS",
+      "evidence": "media-verification.json; visual-review.json; frozen-suite.json"
+    },
+    {
+      "id": 4,
+      "status": "PASS",
+      "evidence": "models.json; training-records.json; environment-cpu.json"
+    },
+    {
+      "id": 5,
+      "status": "PASS",
+      "evidence": "analytical-cost-check.json; physical-cost-check.json; featured-physical-explanation.json"
+    },
+    {
+      "id": 6,
+      "status": "PASS",
+      "evidence": "physical-acceptance.json; media-verification.json; visual-review.json"
+    },
+    {
+      "id": 7,
+      "status": "PASS",
+      "evidence": "artifacts.json; transfer-receipt.json; tests.json"
+    }
+  ],
+  "unmet": [],
+  "routing_seed": 44,
+  "routing_model_sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "physical_missions": [
+    9,
+    9
+  ],
+  "physical_inspections": [
+    90,
+    90
+  ],
+  "local_cpu_tests_passed": 177,
+  "linux_cpu_tests_passed": 177,
+  "gpu_contract_tests_passed": 1,
+  "operator_continuous_review": "PASS",
+  "gpu_used_s": 3198.9943080281373,
+  "gpu_added_s": 395.4215675460873,
+  "gpu_remaining_s": 25601.005691971863,
+  "artifact_root": "outputs/integer_20261020_v1",
+  "media_root": "outputs/integer_20261020_v1/delivery",
+  "delivery_manifest_entries": 90
+}

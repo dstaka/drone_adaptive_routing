@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "training_catalog_count": 30000,
+  "priority_domain_observed": [
+    1,
+    100
+  ],
+  "distinct_values_observed": 100,
+  "duplicate_vectors_count": 11046,
+  "initial_draws_reproduced": 30000,
+  "teacher_states_checked": 12000,
+  "teacher_observation_normalization": 100,
+  "teacher_labels_masks_match_manifest": true,
+  "training_seed_range": [
+    0,
+    9999
+  ],
+  "teacher_npz_sha256": "f812cb66367cba279638111124357d84cb5d43e12bcb49ba10bcac76e9ef9aee"
+}

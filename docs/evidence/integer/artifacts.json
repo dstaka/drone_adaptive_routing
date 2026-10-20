@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "artifacts": [
+    {
+      "path": "outputs/integer_20261020_v1/delivery/full_cost_shift.mp4",
+      "bytes": 1293610,
+      "sha256": "ac48dcf902bc63825fb108888e12c5f20f7cfdf46ee392375aa11232ef70a71c"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/demo_full.mp4",
+      "bytes": 4981753,
+      "sha256": "bda2c6d2cd66f20156b55bef51a127e0481ab9656aa0438f5e6e775ad3145de5"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/full_normal.mp4",
+      "bytes": 1239474,
+      "sha256": "9a5b1a008f45e78fa05f97ba057d5dce11875b42d8062316679979364187d783"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/submission.mp4",
+      "bytes": 4981753,
+      "sha256": "bda2c6d2cd66f20156b55bef51a127e0481ab9656aa0438f5e6e775ad3145de5"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/full_emergency.mp4",
+      "bytes": 1279804,
+      "sha256": "cca2ae442b1bedda001b4f09abe5abe2f035681e2b8de86167438e49a0142d22"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/raw/normal_seed_1/raw.mp4",
+      "bytes": 282218,
+      "sha256": "4e2c0f6d7c17c7f4aec3e5b94ca01643404c921755c39e4c274236104e3c96de"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/raw/emergency_seed_1/raw.mp4",
+      "bytes": 295338,
+      "sha256": "6abcde30d86fdedd62a7a4e1981ac497a11380529c9206d18c0e856c3f70148a"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/raw/cost_shift_seed_1/raw.mp4",
+      "bytes": 298305,
+      "sha256": "920fa991d552034b5231eebc243606f2c2f9aa5704b5921e5f7ff26c57ae91f4"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/report/report.pdf",
+      "bytes": 802753,
+      "sha256": "d1440c494bdc83be0352cd36f38963e133b856849bdb950c5f0be2fd5f06aa92"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/manifest.json",
+      "bytes": 18396,
+      "sha256": "20dfa9620f52fefb53e3b03cb5efe88f98d21cf9cf3a0ea17a1d4560678d247f"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/training/seed_44.zip",
+      "bytes": 297837,
+      "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/training/seed_44.schema.json",
+      "bytes": 1257,
+      "sha256": "615987386a15eff6b47500e0b351c3f75d0d335c4177065a800599c2a8cec854"
+    },
+    {
+      "path": "configs/routing_integer.yaml",
+      "bytes": 377,
+      "sha256": "512fa3f47713fed7f20662606d809a6ca1e2da906096f3b0c3c22cbb1677864f"
+    },
+    {
+      "path": "configs/video_integer.yaml",
+      "bytes": 205,
+      "sha256": "713279310bda3e17e582ac842d229e4fd95b641980e266db793117d7cd1821fb"
+    },
+    {
+      "path": "configs/demo_scenarios_integer/normal.yaml",
+      "bytes": 1600,
+      "sha256": "a080e7a12a4ca47f28274a849103af12300542cafb68aea57ffdd601f5039c4d"
+    },
+    {
+      "path": "configs/demo_scenarios_integer/emergency.yaml",
+      "bytes": 1655,
+      "sha256": "c38df863ffafd6709f51500e8cd5870ba8970ff4ab54ddf6c77f72bac07dc71b"
+    },
+    {
+      "path": "configs/demo_scenarios_integer/cost_shift.yaml",
+      "bytes": 1659,
+      "sha256": "5112fbffc14b4fcd661e676f828bdc45a65374da13375ea8a2ce91104099b722"
+    }
+  ]
+}

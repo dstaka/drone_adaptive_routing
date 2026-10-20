@@ -43,3 +43,13 @@ python3.12 -m venv .venv-flight
 Physical patrol execution rejects `return_to_base=true` before creating a run. Optional analytic return accounting is tested in the routing environment; the required physical demonstrations use false. Physical acceptance and watchdog values must be finite, with positive radius, speed, hold, service and timeout values. Geometry validation uses the configured radius. Service must include the arrival hold.
 
 Each video composition reserves its complete output set. The canonical `submission.mp4` has `timeline.json` and `submission.selection.json`; a different filename has `<stem>.timeline.json` and `<stem>.selection.json`. Existing video/timeline/selection/reservation paths are rejected. Input runs are never modified by composition. Failed partial outputs remain identifiable; choose a fresh output name for retry. Manifest creation likewise rejects an existing output.
+
+## 整数重要度profile（scenario v3）
+
+Scenario v3は `integer-100-v1` を明示する。初期値・重要度イベントはJSON/YAMLの1〜100整数tokenのみを受け付け、7.0を含む浮動小数、真偽値、文字列、非有限値、範囲外を変換前に拒否する。snapshotも整数を保つ。v2と旧3地点データの小数1〜5という解釈は維持する。
+
+10地点の観測IDは `routing-v3-integer100-n10-324`。配列位置はv2と同じでも、重要度は固定値100で割る。alpha=1、beta=0.05、名目速度1 m/s、サービス0.50秒、帰還なしを固定する。有向倍率は独立して1〜5。生の重要度時刻成分と係数適用後の寄与を別記する。新checkpointはZIP内部にもschemaを保存し、sidecarと照合する。v2モデルをv3と表示し直して利用できない。教師manifestも配列サイズだけでなくschema全体と照合する。
+
+初期生成規則は `numpy-PCG64-SeedSequence(seed,100)-integers-1-101-v1`、実式は `Generator(PCG64(SeedSequence([seed,100]))).integers(1,101,N)`。各地点独立・復元抽選で、形状の乱数列を消費しない。3シナリオと実行seed1/2/3は同じ初期vectorを使う。条件付きで選んだデモを無作為benchmarkとは呼ばない。学習・validation・held-out・demoのseed範囲を分離する。
+
+sceneには100値すべての固定色対応を記録する。Hは条件を満たす最大重要度地点をID順に選び、同値の最大地点をすべて記録する。新しいL/H例は差10以上を追加条件とし、最適な次の一手・全suffixの最適性・実pose距離の証明を別々に保つ。採用モデル、実測評価、成果物、未確認事項は `docs/integer-priorities-handoff.md` を参照。

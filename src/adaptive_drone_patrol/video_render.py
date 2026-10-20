@@ -4,7 +4,7 @@ import hashlib
 import json
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from .scene import project, priority_color, marker_style
+from .scene import project, priority_color, marker_style, priority_text
 from .annotations import same_frame_detail, dashed_arrow
 from .video_delivery import optimality_captions
 
@@ -146,7 +146,7 @@ def card_specs(records, values):
         comparison = event["comparison"]
         c = event["update"]
         update = (
-            f"地点C：優先度 {c['old']:.3f} → {c['value']:g}"
+            f"地点C：優先度 {priority_text(c['old'], record['scenario'].get('schema_version', 2), 3)} → {c['value']:g}"
             if kind == "emergency"
             else "有向辺 "
             + ", ".join(f"{a}→{b}" for a, b in c["edges"])
@@ -168,6 +168,10 @@ def card_specs(records, values):
                 "同じ境界snapshot・同じ学習済み方策の比較。実飛行は次の映像で確認。",
             ],
         }
+    for card in cards.values():
+        card["scenario_schema_version"] = records[0]["scenario"].get("schema_version", 2)
+    if records[0]["scenario"].get("schema_version") == 3:
+        cards["intro"]["lines"][1] = "重要度は1〜100の整数。大きいほど重要で、訪問順そのものではありません"
     return cards
 
 
@@ -187,11 +191,11 @@ class Renderer:
             xy, str(value), font=self.fonts[size], fill=fill, stroke_width=stroke, stroke_fill="#102333"
         )
 
-    def legend(self, draw, y=995):
-        self.text(draw, (25, y), "優先度：1（低）〜5（高）", 25)
-        for i in range(1, 6):
-            x = 395 + (i - 1) * 95
-            draw.rectangle((x, y, x + 46, y + 32), fill=priority_color(i))
+    def legend(self, draw, y=995, schema_version=2):
+        self.text(draw, (25, y), "重要度：1（低）〜100（高）" if schema_version == 3 else "優先度：1（低）〜5（高）", 25)
+        for index, i in enumerate([1,25,50,75,100] if schema_version == 3 else range(1,6)):
+            x = 395 + index * 105
+            draw.rectangle((x, y, x + 46, y + 32), fill=priority_color(i, 100 if schema_version == 3 else 5))
             self.text(draw, (x + 55, y), i, 25)
         self.text(draw, (925, y), "水色の輪＝AIの選択 ／ ✓＝点検済み ／ 線＝実飛行", 25)
 
@@ -205,7 +209,7 @@ class Renderer:
         else:
             for i, line in enumerate(spec.get("lines", [])):
                 self.text(draw, (70, 220 + i * 98), line, 30)
-        self.legend(draw)
+        self.legend(draw, schema_version=spec.get("scenario_schema_version", 2))
         return image
 
     def tradeoff(self, draw, spec):
@@ -228,13 +232,15 @@ class Renderer:
                 self.text(
                     draw,
                     (65, y + 39),
-                    f"優先度 {c['priority']:.3f} ／計画距離 {c['distance_m']:.3f} m ／実位置から {c['pose_distance_m']:.3f} m",
+                    f"優先度 {priority_text(c['priority'], value['snapshot']['scenario'].get('schema_version', 2), 3)} ／計画距離 {c['distance_m']:.3f} m ／実位置から {c['pose_distance_m']:.3f} m",
                     25,
                 )
             self.text(
                 draw,
                 (65, y + 78),
-                f"総コスト {r['cost']:.3f} ＝ 移動 {value['snapshot']['scenario']['alpha'] * r['travel_cost']:.3f} ＋ 優先度・完了時刻 {value['snapshot']['scenario']['beta'] * r['completion_penalty']:.3f}",
+                (f"総コスト {r['cost']:.3f} ＝ 移動 {r['travel_cost']:.3f} ＋ 0.05 × 重要度時刻 {r['completion_penalty']:.3f}（{.05 * r['completion_penalty']:.3f}）"
+                 if value['snapshot']['scenario'].get('schema_version') == 3 else
+                 f"総コスト {r['cost']:.3f} ＝ 移動 {value['snapshot']['scenario']['alpha'] * r['travel_cost']:.3f} ＋ 優先度・完了時刻 {value['snapshot']['scenario']['beta'] * r['completion_penalty']:.3f}"),
                 28,
             )
             label = "条件付き最適解（比較用）" if i < 2 else "AIの予測"
@@ -255,7 +261,7 @@ class Renderer:
                 dashed_arrow(draw, xy(coords[a]), xy(coords[b]), "#729da8")
             for j, name in enumerate(ids):
                 x, y = xy(coords[j + 1])
-                color = priority_color(value["snapshot"]["scenario"]["priorities"][j])
+                color = priority_color(value["snapshot"]["scenario"]["priorities"][j], 100 if value["snapshot"]["scenario"].get("schema_version") == 3 else 5)
                 draw.ellipse((x - 6, y - 6, x + 6, y + 6), fill=color, outline="white")
                 if name == value["selected_L"]:
                     draw.ellipse((x - 12, y - 12, x + 12, y + 12), outline="#00e5ff", width=2)
@@ -310,13 +316,13 @@ class Renderer:
             x, y = project(marker["world_xyz"], record["scene"]["camera"])
             x += 20
             y += 145
-            color = priority_color(state["priorities"][j])
-            ink = marker_style(state["priorities"][j])["ink"]
+            color = priority_color(state["priorities"][j], 100 if record["scenario"].get("schema_version") == 3 else 5)
+            ink = marker_style(state["priorities"][j], priority_max=100 if record["scenario"].get("schema_version") == 3 else 5)["ink"]
             draw.ellipse((x - 17, y - 17, x + 17, y + 17), outline=color, width=6)
             if marker["id"] == state["selected"]:
                 draw.ellipse((x - 25, y - 25, x + 25, y + 25), outline="#00e5ff", width=4)
                 self.text(draw, (x - 53, y - 63), "AIの選択", 20, fill="#00e5ff", stroke=1)
-            label = f"{marker['id']}  {state['priorities'][j]:.2f}"
+            label = f"{marker['id']}  {priority_text(state['priorities'][j], record['scenario'].get('schema_version', 2))}"
             w = draw.textlength(label, font=self.fonts[23]) + 18
             draw.rectangle((x - w / 2, y + 23, x + w / 2, y + 56), fill=color, outline="white", width=1)
             self.text(draw, (x - w / 2 + 9, y + 22), label, 23, fill=ink)
@@ -366,8 +372,8 @@ class Renderer:
         for j, name in enumerate(ids):
             x = 1340 + (j // 5) * 278
             y = 726 + (j % 5) * 43
-            draw.rectangle((x, y + 5, x + 26, y + 30), fill=priority_color(state["priorities"][j]))
-            self.text(draw, (x + 37, y), f"{name}  優先度 {state['priorities'][j]:.2f}", 23)
+            draw.rectangle((x, y + 5, x + 26, y + 30), fill=priority_color(state["priorities"][j], 100 if record["scenario"].get("schema_version") == 3 else 5))
+            self.text(draw, (x + 37, y), f"{name}  優先度 {priority_text(state['priorities'][j], record['scenario'].get('schema_version', 2))}", 23)
         point = project(pose, record["scene"]["camera"])
         detail = same_frame_detail(camera, point).resize((200, 150))
         image.paste(detail, (1070, 180))
@@ -378,7 +384,7 @@ class Renderer:
             event = state["update"]
             u = event["update"]
             text = (
-                f"地点Cの優先度 {u['old']:.3f} → {u['value']:g}"
+                f"地点Cの優先度 {priority_text(u['old'], record['scenario'].get('schema_version', 2), 3)} → {u['value']:g}"
                 if event["type"] == "PRIORITY_UPDATED"
                 else "有向辺 "
                 + ", ".join(f"{a}→{b}" for a, b in u["edges"])
@@ -389,7 +395,7 @@ class Renderer:
             self.text(
                 draw, (25, 930), "優先度は重要度であり、訪問順そのものではありません", 28, fill="#ffdc91"
             )
-        self.legend(draw, 1017)
+        self.legend(draw, 1017, record["scenario"].get("schema_version", 2))
         return image, state
 
     def map(self, draw, record, state, pose, time):
@@ -414,7 +420,7 @@ class Renderer:
         for i, name in enumerate(ids):
             x, y = xy(coords[i + 1])
             draw.ellipse(
-                (x - 9, y - 9, x + 9, y + 9), fill=priority_color(state["priorities"][i]), outline="white"
+                (x - 9, y - 9, x + 9, y + 9), fill=priority_color(state["priorities"][i], 100 if record["scenario"].get("schema_version") == 3 else 5), outline="white"
             )
             if name == state["selected"]:
                 draw.ellipse((x - 15, y - 15, x + 15, y + 15), outline="#00e5ff", width=3)

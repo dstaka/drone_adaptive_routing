@@ -4,7 +4,7 @@ import hashlib
 import json
 import numpy as np
 from .objective import RoutingState
-from .scenario import Scenario
+from .scenario import Scenario, LEGACY_PROFILE, INTEGER_PROFILE, draw_integer_priorities
 from .baselines import exact_remaining, remaining_cost
 
 
@@ -86,7 +86,9 @@ def explain_decision(state, chooser, policy_hash, run_id, decision_id):
     eligible = np.flatnonzero(state.mask()).tolist()
     maximum = max(s.priorities[a] for a in eligible)
     chosen_q = next(q for q in forced if q['action'] == low)
-    high = next((a for a in eligible if s.priorities[a] == maximum and s.priorities[low] < maximum and
+    high = next((a for a in sorted(eligible, key=lambda a: s.checkpoint_ids[a])
+                 if s.priorities[a] == maximum and s.priorities[low] < maximum and
+                 (s.schema_version != 3 or maximum - s.priorities[low] >= 10) and
                  distances[low] < distances[a] and
                  next(q for q in forced if q['action'] == a)['cost'] > exact['cost'] + tolerance(exact['cost'])), None)
     qualifies = (len(eligible) >= 3 and high is not None and
@@ -102,7 +104,8 @@ def explain_decision(state, chooser, policy_hash, run_id, decision_id):
                   'priority': s.priorities[a], 'distance_m': float(distances[a])} for a in eligible],
             'selected_L': s.checkpoint_ids[low] if qualifies else None,
             'selected_H': s.checkpoint_ids[high] if qualifies else None,
-            'nearer_lower_priority_gate': qualifies}
+            'nearer_lower_priority_gate': qualifies,
+            'maximum_priority_ids': sorted(s.checkpoint_ids[a] for a in eligible if s.priorities[a] == maximum)}
 
 
 def verify_explanation(value, policy_hash, run_id, decision_id):
@@ -132,7 +135,10 @@ def verify_explanation(value, policy_hash, run_id, decision_id):
     seen = set()
     for record in [value['policy_rollout'], value['exact'], *value['forced_first']]:
         independent = remaining_cost(st, record['order'])
-        if any(abs(record[key] - independent[key]) > tol for key in ['cost', 'travel_cost', 'completion_penalty']):
+        components = ['cost', 'travel_cost', 'completion_penalty']
+        if st.scenario.schema_version == 3:
+            components += ['weighted_travel_cost', 'weighted_completion_penalty']
+        if any(key not in record or abs(record[key] - independent[key]) > tol for key in components):
             raise ValueError('Explanation component cost mismatch')
         if record is value['policy_rollout']:
             continue
@@ -160,7 +166,12 @@ def verify_explanation(value, policy_hash, run_id, decision_id):
     low = value['policy_action']
     maximum = max(s.priorities[a] for a in eligible)
     chosen_cost = next(q['cost'] for q in value['forced_first'] if q['action'] == low)
-    high = next((a for a in eligible if s.priorities[a] == maximum and s.priorities[low] < maximum and
+    if s.schema_version == 3 and value.get('maximum_priority_ids') != sorted(
+            s.checkpoint_ids[a] for a in eligible if s.priorities[a] == maximum):
+        raise ValueError('Maximum-priority tie metadata mismatch')
+    high = next((a for a in sorted(eligible, key=lambda a: s.checkpoint_ids[a])
+                 if s.priorities[a] == maximum and s.priorities[low] < maximum and
+                 (s.schema_version != 3 or maximum - s.priorities[low] >= 10) and
                  distances[low] < distances[a] and
                  next(q['cost'] for q in value['forced_first'] if q['action'] == a) > exact['cost'] + tol), None)
     qualifies = bool(len(eligible) >= 3 and high is not None and abs(chosen_cost - exact['cost']) <= tol)
@@ -171,10 +182,14 @@ def verify_explanation(value, policy_hash, run_id, decision_id):
     return True
 
 
-def demo_fixture(seed):
+def demo_fixture(seed, priority_profile=LEGACY_PROFILE):
+    if priority_profile not in (LEGACY_PROFILE, INTEGER_PROFILE):
+        raise ValueError('Unsupported priority profile')
+    integer = priority_profile == INTEGER_PROFILE
     rng = np.random.default_rng(seed)
     points = [[x, y, 1.] for y in [-.6, 0., .6] for x in [-.9, -.3, .3, .9]
               if not (y == 0 and abs(x) == .3)]
     return Scenario('normal', 'demo', seed, [[0., 0., 1.]] + points,
-                    rng.uniform(2., 3., 10).tolist(), np.ones((11, 11)).tolist(), [.5] * 10,
-                    schema_version=2, checkpoint_ids=list('ABCDEFGHIJ'))
+                    draw_integer_priorities(seed, 10) if integer else rng.uniform(2., 3., 10).tolist(),
+                    np.ones((11, 11)).tolist(), [.5] * 10, beta=.05 if integer else 1.,
+                    schema_version=3 if integer else 2, checkpoint_ids=list('ABCDEFGHIJ'))

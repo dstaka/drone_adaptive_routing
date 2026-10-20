@@ -38,7 +38,10 @@ def physical_pair(value):
     best,tol = value['exact']['cost'],value['equality_tolerance']
     if len(candidates)<3 or abs(costs[low['action']]-best)>tol:
         return None,None
-    high = next((c for c in candidates if c['priority']==maximum and low['priority']<maximum
+    integer = value['snapshot']['scenario']['schema_version'] == 3
+    high = next((c for c in sorted(candidates, key=lambda c: c['id'])
+                 if c['priority']==maximum and low['priority']<maximum
+                 and (not integer or maximum-low['priority']>=10)
                  and low['distance_m']<c['distance_m'] and low['pose_distance_m']<c['pose_distance_m']
                  and costs[c['action']]>best+tol),None)
     return (low['id'],high['id']) if high else (None,None)
@@ -86,7 +89,10 @@ def verify_event_response(events, decisions):
                        - comparison['replanned_order_post_event']['cost'])) > 1e-8):
             raise ValueError('Physical event response does not meet frozen comparison conditions')
         if event['type']=='PRIORITY_UPDATED':
-            if update['checkpoint_id']!='C' or update['value']!=5 or new.index(2)>=old.index(2):
+            integer = following.get('boundary_snapshot', {}).get('scenario', {}).get('schema_version') == 3
+            if (update['checkpoint_id']!='C' or update['value']!=(100 if integer else 5)
+                    or (integer and (type(update['old']) is not int or update['old'] >= 100
+                                     or type(update['value']) is not int)) or new.index(2)>=old.index(2)):
                 raise ValueError('Emergency did not promote unvisited checkpoint C')
     return True
 

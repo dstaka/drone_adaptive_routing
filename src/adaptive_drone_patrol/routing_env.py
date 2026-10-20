@@ -2,19 +2,22 @@
 
 import gymnasium as gym
 import numpy as np
-from .scenario import generate_scenario
+from .scenario import generate_scenario, LEGACY_PROFILE
 from .objective import RoutingState, schema_for
 
 
 class RoutingEnv(gym.Env):
     metadata = {'render_modes': []}
 
-    def __init__(self, scenario=None, event_mixture=False, max_steps=None, num_checkpoints=10):
+    def __init__(self, scenario=None, event_mixture=False, max_steps=None, num_checkpoints=10,
+                 priority_profile=LEGACY_PROFILE):
         self.fixed = scenario
         self.event_mixture = event_mixture
         self.max_steps = max_steps
         self.num_checkpoints = scenario.num_checkpoints if scenario else num_checkpoints
-        contract = scenario or generate_scenario(0, 'training', num_checkpoints=self.num_checkpoints)
+        self.priority_profile = scenario.priority_profile if scenario else priority_profile
+        contract = scenario or generate_scenario(0, 'training', num_checkpoints=self.num_checkpoints,
+                                                 priority_profile=self.priority_profile)
         self.action_space = gym.spaces.Discrete(self.num_checkpoints)
         self.observation_space = gym.spaces.Box(-np.inf, np.inf, (schema_for(contract)['size'],), np.float32)
         self.state = None
@@ -26,7 +29,8 @@ class RoutingEnv(gym.Env):
         self.steps, self.finished = 0, False
         kind = self.np_random.choice(['static', 'priority', 'cost'], p=[.5, .25, .25]) \
             if self.event_mixture else 'static'
-        scenario = self.fixed or generate_scenario(int(self.np_random.integers(10000)), 'training', kind, self.num_checkpoints)
+        scenario = self.fixed or generate_scenario(int(self.np_random.integers(10000)), 'training', kind,
+                                                  self.num_checkpoints, self.priority_profile)
         self.state = RoutingState(scenario)
         return self.state.observation(), {}
 

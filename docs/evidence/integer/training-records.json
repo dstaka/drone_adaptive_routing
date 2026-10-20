@@ -1,0 +1,719 @@
+[
+  {
+    "seed": 42,
+    "num_checkpoints": 10,
+    "priority_profile": "integer-100-v1",
+    "schema": {
+      "id": "routing-v3-integer100-n10-324",
+      "dtype": "float32",
+      "size": 324,
+      "num_checkpoints": 10,
+      "checkpoint_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "fields": {
+        "current_onehot": [
+          0,
+          11
+        ],
+        "visited": [
+          11,
+          21
+        ],
+        "coords": [
+          21,
+          54
+        ],
+        "distance_matrix": [
+          54,
+          175
+        ],
+        "priorities": [
+          175,
+          185
+        ],
+        "edge_costs": [
+          185,
+          306
+        ],
+        "service": [
+          306,
+          316
+        ],
+        "elapsed": [
+          316,
+          317
+        ],
+        "completed": [
+          317,
+          318
+        ],
+        "constants": [
+          318,
+          324
+        ]
+      },
+      "normalization": {
+        "coordinates_m": 2.0,
+        "distance_m": 4.0,
+        "priority": 100.0,
+        "edge_cost": 20.0,
+        "service_s": 1.0,
+        "time_s": 80.0,
+        "count": 10.0,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "speed_mps": 1.0
+      },
+      "objective": {
+        "alpha": 1.0,
+        "beta": 0.05,
+        "nominal_speed_mps": 1.0,
+        "return_to_base": false
+      },
+      "priority_contract": {
+        "profile": "integer-100-v1",
+        "minimum": 1,
+        "maximum": 100,
+        "representation": "integer-token",
+        "observation_version": 1,
+        "objective_version": 1
+      }
+    },
+    "static_steps_actual": 50176,
+    "total_steps_actual": 100352,
+    "requested_static": 50000,
+    "requested_events": 50000,
+    "event_mixture": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "elapsed_s": 381.16616795997834,
+    "sha256": "12e94b7fc6f9f8dce24ce8d2ef561138c878a2d179b63e5177fe89e157a9360b",
+    "gamma": 1.0,
+    "n_steps": 512,
+    "batch_size": 128,
+    "n_epochs": 5,
+    "learning_rate": 0.0003,
+    "net_arch": [
+      128,
+      128
+    ],
+    "policy_arch": "candidate",
+    "optimizer_reward_scale": 0.01,
+    "candidate_architecture": {
+      "relations": [
+        4,
+        32,
+        32
+      ],
+      "nodes": [
+        44,
+        64,
+        64
+      ],
+      "score": [
+        128,
+        64,
+        1
+      ],
+      "critic": [
+        64,
+        64,
+        1
+      ]
+    },
+    "warmstart": {
+      "cases": 12000,
+      "num_checkpoints": 10,
+      "split": "training",
+      "schema": {
+        "id": "routing-v3-integer100-n10-324",
+        "dtype": "float32",
+        "size": 324,
+        "num_checkpoints": 10,
+        "checkpoint_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "fields": {
+          "current_onehot": [
+            0,
+            11
+          ],
+          "visited": [
+            11,
+            21
+          ],
+          "coords": [
+            21,
+            54
+          ],
+          "distance_matrix": [
+            54,
+            175
+          ],
+          "priorities": [
+            175,
+            185
+          ],
+          "edge_costs": [
+            185,
+            306
+          ],
+          "service": [
+            306,
+            316
+          ],
+          "elapsed": [
+            316,
+            317
+          ],
+          "completed": [
+            317,
+            318
+          ],
+          "constants": [
+            318,
+            324
+          ]
+        },
+        "normalization": {
+          "coordinates_m": 2.0,
+          "distance_m": 4.0,
+          "priority": 100.0,
+          "edge_cost": 20.0,
+          "service_s": 1.0,
+          "time_s": 80.0,
+          "count": 10.0,
+          "alpha": 1.0,
+          "beta": 1.0,
+          "speed_mps": 1.0
+        },
+        "objective": {
+          "alpha": 1.0,
+          "beta": 0.05,
+          "nominal_speed_mps": 1.0,
+          "return_to_base": false
+        },
+        "priority_contract": {
+          "profile": "integer-100-v1",
+          "minimum": 1,
+          "maximum": 100,
+          "representation": "integer-token",
+          "observation_version": 1,
+          "objective_version": 1
+        }
+      },
+      "scenario_seeds": [
+        0,
+        9999
+      ],
+      "sha256": "f812cb66367cba279638111124357d84cb5d43e12bcb49ba10bcac76e9ef9aee",
+      "manifest_sha256": "1a27bb82069f43fae7f7723023486ca3b63775ee71767fe983da77fdd9c975a3",
+      "elapsed_s": 118.83575915597612,
+      "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+      "epochs": 30,
+      "training_elapsed_s": 50.021231584018096,
+      "directory": "outputs/integer_20261020_v1/training/teacher",
+      "final_batch_loss": 0.38261187076568604
+    },
+    "device": "cpu"
+  },
+  {
+    "seed": 43,
+    "num_checkpoints": 10,
+    "priority_profile": "integer-100-v1",
+    "schema": {
+      "id": "routing-v3-integer100-n10-324",
+      "dtype": "float32",
+      "size": 324,
+      "num_checkpoints": 10,
+      "checkpoint_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "fields": {
+        "current_onehot": [
+          0,
+          11
+        ],
+        "visited": [
+          11,
+          21
+        ],
+        "coords": [
+          21,
+          54
+        ],
+        "distance_matrix": [
+          54,
+          175
+        ],
+        "priorities": [
+          175,
+          185
+        ],
+        "edge_costs": [
+          185,
+          306
+        ],
+        "service": [
+          306,
+          316
+        ],
+        "elapsed": [
+          316,
+          317
+        ],
+        "completed": [
+          317,
+          318
+        ],
+        "constants": [
+          318,
+          324
+        ]
+      },
+      "normalization": {
+        "coordinates_m": 2.0,
+        "distance_m": 4.0,
+        "priority": 100.0,
+        "edge_cost": 20.0,
+        "service_s": 1.0,
+        "time_s": 80.0,
+        "count": 10.0,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "speed_mps": 1.0
+      },
+      "objective": {
+        "alpha": 1.0,
+        "beta": 0.05,
+        "nominal_speed_mps": 1.0,
+        "return_to_base": false
+      },
+      "priority_contract": {
+        "profile": "integer-100-v1",
+        "minimum": 1,
+        "maximum": 100,
+        "representation": "integer-token",
+        "observation_version": 1,
+        "objective_version": 1
+      }
+    },
+    "static_steps_actual": 50176,
+    "total_steps_actual": 100352,
+    "requested_static": 50000,
+    "requested_events": 50000,
+    "event_mixture": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "elapsed_s": 382.3384262830077,
+    "sha256": "0896f3dcf72fc0136227f4440b1eb20e872b2f01dff1fb919f8662d05db3f67c",
+    "gamma": 1.0,
+    "n_steps": 512,
+    "batch_size": 128,
+    "n_epochs": 5,
+    "learning_rate": 0.0003,
+    "net_arch": [
+      128,
+      128
+    ],
+    "policy_arch": "candidate",
+    "optimizer_reward_scale": 0.01,
+    "candidate_architecture": {
+      "relations": [
+        4,
+        32,
+        32
+      ],
+      "nodes": [
+        44,
+        64,
+        64
+      ],
+      "score": [
+        128,
+        64,
+        1
+      ],
+      "critic": [
+        64,
+        64,
+        1
+      ]
+    },
+    "warmstart": {
+      "cases": 12000,
+      "num_checkpoints": 10,
+      "split": "training",
+      "schema": {
+        "id": "routing-v3-integer100-n10-324",
+        "dtype": "float32",
+        "size": 324,
+        "num_checkpoints": 10,
+        "checkpoint_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "fields": {
+          "current_onehot": [
+            0,
+            11
+          ],
+          "visited": [
+            11,
+            21
+          ],
+          "coords": [
+            21,
+            54
+          ],
+          "distance_matrix": [
+            54,
+            175
+          ],
+          "priorities": [
+            175,
+            185
+          ],
+          "edge_costs": [
+            185,
+            306
+          ],
+          "service": [
+            306,
+            316
+          ],
+          "elapsed": [
+            316,
+            317
+          ],
+          "completed": [
+            317,
+            318
+          ],
+          "constants": [
+            318,
+            324
+          ]
+        },
+        "normalization": {
+          "coordinates_m": 2.0,
+          "distance_m": 4.0,
+          "priority": 100.0,
+          "edge_cost": 20.0,
+          "service_s": 1.0,
+          "time_s": 80.0,
+          "count": 10.0,
+          "alpha": 1.0,
+          "beta": 1.0,
+          "speed_mps": 1.0
+        },
+        "objective": {
+          "alpha": 1.0,
+          "beta": 0.05,
+          "nominal_speed_mps": 1.0,
+          "return_to_base": false
+        },
+        "priority_contract": {
+          "profile": "integer-100-v1",
+          "minimum": 1,
+          "maximum": 100,
+          "representation": "integer-token",
+          "observation_version": 1,
+          "objective_version": 1
+        }
+      },
+      "scenario_seeds": [
+        0,
+        9999
+      ],
+      "sha256": "f812cb66367cba279638111124357d84cb5d43e12bcb49ba10bcac76e9ef9aee",
+      "manifest_sha256": "1a27bb82069f43fae7f7723023486ca3b63775ee71767fe983da77fdd9c975a3",
+      "elapsed_s": 118.83575915597612,
+      "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+      "epochs": 30,
+      "training_elapsed_s": 49.96781130699674,
+      "directory": "outputs/integer_20261020_v1/training/teacher",
+      "final_batch_loss": 0.43909990787506104
+    },
+    "device": "cpu"
+  },
+  {
+    "seed": 44,
+    "num_checkpoints": 10,
+    "priority_profile": "integer-100-v1",
+    "schema": {
+      "id": "routing-v3-integer100-n10-324",
+      "dtype": "float32",
+      "size": 324,
+      "num_checkpoints": 10,
+      "checkpoint_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "fields": {
+        "current_onehot": [
+          0,
+          11
+        ],
+        "visited": [
+          11,
+          21
+        ],
+        "coords": [
+          21,
+          54
+        ],
+        "distance_matrix": [
+          54,
+          175
+        ],
+        "priorities": [
+          175,
+          185
+        ],
+        "edge_costs": [
+          185,
+          306
+        ],
+        "service": [
+          306,
+          316
+        ],
+        "elapsed": [
+          316,
+          317
+        ],
+        "completed": [
+          317,
+          318
+        ],
+        "constants": [
+          318,
+          324
+        ]
+      },
+      "normalization": {
+        "coordinates_m": 2.0,
+        "distance_m": 4.0,
+        "priority": 100.0,
+        "edge_cost": 20.0,
+        "service_s": 1.0,
+        "time_s": 80.0,
+        "count": 10.0,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "speed_mps": 1.0
+      },
+      "objective": {
+        "alpha": 1.0,
+        "beta": 0.05,
+        "nominal_speed_mps": 1.0,
+        "return_to_base": false
+      },
+      "priority_contract": {
+        "profile": "integer-100-v1",
+        "minimum": 1,
+        "maximum": 100,
+        "representation": "integer-token",
+        "observation_version": 1,
+        "objective_version": 1
+      }
+    },
+    "static_steps_actual": 50176,
+    "total_steps_actual": 100352,
+    "requested_static": 50000,
+    "requested_events": 50000,
+    "event_mixture": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "elapsed_s": 379.0179794690048,
+    "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+    "gamma": 1.0,
+    "n_steps": 512,
+    "batch_size": 128,
+    "n_epochs": 5,
+    "learning_rate": 0.0003,
+    "net_arch": [
+      128,
+      128
+    ],
+    "policy_arch": "candidate",
+    "optimizer_reward_scale": 0.01,
+    "candidate_architecture": {
+      "relations": [
+        4,
+        32,
+        32
+      ],
+      "nodes": [
+        44,
+        64,
+        64
+      ],
+      "score": [
+        128,
+        64,
+        1
+      ],
+      "critic": [
+        64,
+        64,
+        1
+      ]
+    },
+    "warmstart": {
+      "cases": 12000,
+      "num_checkpoints": 10,
+      "split": "training",
+      "schema": {
+        "id": "routing-v3-integer100-n10-324",
+        "dtype": "float32",
+        "size": 324,
+        "num_checkpoints": 10,
+        "checkpoint_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "fields": {
+          "current_onehot": [
+            0,
+            11
+          ],
+          "visited": [
+            11,
+            21
+          ],
+          "coords": [
+            21,
+            54
+          ],
+          "distance_matrix": [
+            54,
+            175
+          ],
+          "priorities": [
+            175,
+            185
+          ],
+          "edge_costs": [
+            185,
+            306
+          ],
+          "service": [
+            306,
+            316
+          ],
+          "elapsed": [
+            316,
+            317
+          ],
+          "completed": [
+            317,
+            318
+          ],
+          "constants": [
+            318,
+            324
+          ]
+        },
+        "normalization": {
+          "coordinates_m": 2.0,
+          "distance_m": 4.0,
+          "priority": 100.0,
+          "edge_cost": 20.0,
+          "service_s": 1.0,
+          "time_s": 80.0,
+          "count": 10.0,
+          "alpha": 1.0,
+          "beta": 1.0,
+          "speed_mps": 1.0
+        },
+        "objective": {
+          "alpha": 1.0,
+          "beta": 0.05,
+          "nominal_speed_mps": 1.0,
+          "return_to_base": false
+        },
+        "priority_contract": {
+          "profile": "integer-100-v1",
+          "minimum": 1,
+          "maximum": 100,
+          "representation": "integer-token",
+          "observation_version": 1,
+          "objective_version": 1
+        }
+      },
+      "scenario_seeds": [
+        0,
+        9999
+      ],
+      "sha256": "f812cb66367cba279638111124357d84cb5d43e12bcb49ba10bcac76e9ef9aee",
+      "manifest_sha256": "1a27bb82069f43fae7f7723023486ca3b63775ee71767fe983da77fdd9c975a3",
+      "elapsed_s": 118.83575915597612,
+      "purpose": "Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.",
+      "epochs": 30,
+      "training_elapsed_s": 49.79497039897251,
+      "directory": "outputs/integer_20261020_v1/training/teacher",
+      "final_batch_loss": 0.3554054796695709
+    },
+    "device": "cpu"
+  }
+]

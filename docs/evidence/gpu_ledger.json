@@ -1,5 +1,5 @@
 {
-  "used_s": 3198.9943080281373,
+  "used_s": 5779.474017477245,
   "jobs": [
     {
       "run_id": "smoke",
@@ -440,6 +440,132 @@
       "exit_code": 0,
       "elapsed_s": 271.4809210631065,
       "finished_epoch": 1792496735.4769094
+    },
+    {
+      "run_id": "train_job_v1",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/finetune_visible_flight.py",
+        "--config",
+        "configs/execution_dispersed_train.yaml",
+        "--domain",
+        "dispersed",
+        "--out",
+        "outputs/dispersed/finetune_v1",
+        "--iterations",
+        "1501",
+        "--num-envs",
+        "256"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792505403.1151307,
+      "timeout_s": 3000.0,
+      "pid": 5280,
+      "exit_code": 0,
+      "elapsed_s": 699.1044456959935,
+      "finished_epoch": 1792506102.220027
+    },
+    {
+      "run_id": "validation_job_v1",
+      "command": [
+        "bash",
+        "validation-worker-v1.sh"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792506106.246454,
+      "timeout_s": 1200.0,
+      "pid": 5501,
+      "exit_code": 2,
+      "elapsed_s": 37.998905754997395,
+      "finished_epoch": 1792506144.24586
+    },
+    {
+      "run_id": "train_job_v2",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/finetune_visible_flight.py",
+        "--config",
+        "configs/execution_dispersed_train.yaml",
+        "--domain",
+        "dispersed",
+        "--curriculum",
+        "--out",
+        "outputs/dispersed/finetune_v2",
+        "--iterations",
+        "3000",
+        "--num-envs",
+        "256"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792506403.67934,
+      "timeout_s": 3600.0,
+      "pid": 5684,
+      "exit_code": 0,
+      "elapsed_s": 1186.0714114999864,
+      "finished_epoch": 1792507589.7513528
+    },
+    {
+      "run_id": "validation_job_v2",
+      "command": [
+        "bash",
+        "validation-worker-v2.sh"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792507594.0662422,
+      "timeout_s": 1800.0,
+      "pid": 6247,
+      "exit_code": 0,
+      "elapsed_s": 92.7353342010174,
+      "finished_epoch": 1792507686.8020904
+    },
+    {
+      "run_id": "validation_extra_job_v2",
+      "command": [
+        "bash",
+        "validation-extra-worker-v2.sh"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792507688.2373686,
+      "timeout_s": 1200.0,
+      "pid": 6676,
+      "exit_code": 0,
+      "elapsed_s": 98.50147805607412,
+      "finished_epoch": 1792507786.7393885
+    },
+    {
+      "run_id": "heldout_job_v2",
+      "command": [
+        "bash",
+        "heldout-worker-v2.sh"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792507882.937681,
+      "timeout_s": 1200.0,
+      "pid": 7191,
+      "exit_code": 0,
+      "elapsed_s": 136.4663182030199,
+      "finished_epoch": 1792508019.4045415
+    },
+    {
+      "run_id": "acceptance_job_v1",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/final_gpu_validation.py",
+        "--config",
+        "configs/execution_dispersed_frozen_v1.yaml",
+        "--out",
+        "outputs/dispersed/acceptance_v1"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792508218.3306768,
+      "timeout_s": 5400.0,
+      "pid": 7533,
+      "exit_code": 0,
+      "elapsed_s": 329.601816038019,
+      "finished_epoch": 1792508547.9330602
     }
   ]
 }

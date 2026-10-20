@@ -33,3 +33,17 @@ def test_detail_crop_uses_unannotated_same_frame():
     assert crop.size==(240,180)
     assert crop.getpixel((120,90))[0]>100
     assert image.getpixel((24,450))==(17,34,51)
+
+
+def test_wide_scene_detail_can_zoom_real_pixels_without_using_another_time():
+    from adaptive_drone_patrol.annotations import same_frame_detail
+    from PIL import Image,ImageDraw
+    import numpy as np
+    image=Image.new('RGB',(1280,720),'blue')
+    ImageDraw.Draw(image).rectangle((669,359,672,362),fill='lime')
+    image.putpixel((640,360),(255,0,0))
+    wide=same_frame_detail(image,[640,360])
+    close=same_frame_detail(image,[640,360],[48,36])
+    assert np.asarray(wide)[:,:,1].max()>100
+    assert np.asarray(close)[:,:,1].max()==0
+    assert close.getpixel((120,90))[0]>100

@@ -312,6 +312,8 @@ def render_output(output, records, segments, font_path, fps, mode):
     values = read_json(output.parent / "decision_explanations.json")["decisions"]
     for record in records:
         record["_explanations"] = [v for v in values if v["run_id"] == record["path"].name]
+    # Preserve small height glyphs without changing accepted pixel thresholds.
+    crf = "1" if any(r["scene"].get("badge_rects") for r in records) else "18"
     encoder = subprocess.Popen(
         [
             ffmpeg_executable(),
@@ -335,7 +337,7 @@ def render_output(output, records, segments, font_path, fps, mode):
             "-threads",
             "4",
             "-crf",
-            "18",
+            crf,
             "-pix_fmt",
             "yuv420p",
             "-movflags",

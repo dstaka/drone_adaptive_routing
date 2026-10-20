@@ -1,0 +1,13 @@
+# Frozen before candidate search; selection uses demo inputs only.
+generator: numpy-PCG64-SeedSequence(seed,300,attempt)-uniform-xyz-v1
+layout_seed: 51000
+max_attempts: 50000
+priority_seed: 40029
+priority_profile: integer-100-v1
+routing_model: outputs/integer_20261020_v1/training/seed_44.zip
+routing_model_sha256: a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef
+minimum_spans_m: [4.86, 3.24, 1.80]
+horizontal_band_width_m: 0.10
+minimum_destination_separation_m: 0.50
+start_exclusion_radius_m: 0.20
+selection: first geometry, event, exact L/H and projected-label passing attempt

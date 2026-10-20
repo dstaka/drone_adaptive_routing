@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "path": "outputs/dispersed_20261020_v1/delivery_v2/manifest.json",
+  "bytes": 19454,
+  "sha256": "054ee391f97482ccc2c85ad19b923552edb5826beb73c9222044a215839fd686",
+  "files_verified": 93,
+  "scope": "Final JSON/CSV/JSONL/MP4/PDF delivery artifacts; decoded PNG and font caches are derived",
+  "total_verified_bytes": 76666184
+}

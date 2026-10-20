@@ -1,0 +1,63 @@
+{
+  "frame_review": "PASS",
+  "report_review": "PASS",
+  "continuous_playback_review": "PASS",
+  "finalized_date": "2026-10-21",
+  "agent_frame_review": {
+    "contact_sheets": 5,
+    "all_target_event_completion_frames": true,
+    "full_resolution_key_frames": [
+      "emergency-0144.jpg",
+      "normal-0559.jpg",
+      "cost_shift-0922.jpg",
+      "card-07.jpg"
+    ],
+    "layout_and_card_content_equivalence": "content-equivalence.json",
+    "labels_heights_status_vehicle": "PASS"
+  },
+  "report": {
+    "path": "outputs/dispersed_20261020_v1/delivery_v2/report/final-report.pdf",
+    "sha256": "835abc5a80fea8df3479fc1ddf2584b18e87e7abd45993e94e642876f7d29d60",
+    "source_path": "docs/report_ja.md",
+    "source_sha256": "224d4ad8f8f7440db81212e64a2036d0ac3dad9156f2bd6ff1e9d72d9a49503b",
+    "pages": 4,
+    "all_pages_rendered_and_viewed": true
+  },
+  "operator_review": {
+    "status": "PASS",
+    "date": "2026-10-20",
+    "scope": "Final CRF1 full three flights and both continuous 1x event intervals",
+    "intervals_s": {
+      "emergency": [
+        2.72,
+        10.42
+      ],
+      "cost_shift": [
+        2.72,
+        12.41
+      ]
+    },
+    "artifacts": [
+      {
+        "path": "outputs/dispersed_20261020_v1/delivery_v2/full_normal.mp4",
+        "bytes": 6217241,
+        "sha256": "5bb811fbd0343a8facdac1455c6d292f111635cac2fa5e5fb933719b3c99b9fc",
+        "same_timeline_and_mapping_as_initial": true
+      },
+      {
+        "path": "outputs/dispersed_20261020_v1/delivery_v2/full_emergency.mp4",
+        "bytes": 6724718,
+        "sha256": "41632fea035cc1e43426a5cf4bab3e27847d2eb6795ab87b6048dd9096d0197d",
+        "same_timeline_and_mapping_as_initial": true
+      },
+      {
+        "path": "outputs/dispersed_20261020_v1/delivery_v2/full_cost_shift.mp4",
+        "bytes": 6021062,
+        "sha256": "5bd2c8072566400c070763d2d8a7d8b048d27267c62ecbfe410572c5073caa56",
+        "same_timeline_and_mapping_as_initial": true
+      }
+    ],
+    "response": "最終3本と両区間を1倍速で確認し、問題なし",
+    "reviewer": "user"
+  }
+}

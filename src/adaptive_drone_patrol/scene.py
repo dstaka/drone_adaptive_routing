@@ -57,7 +57,54 @@ def scene_manifest(scenario):
         result.update(schema_version=2, priority_range=[1,100], priority_profile=scenario.priority_profile,
                       palette_version='integer100-linear-RGB-v1',
                       value_colors={str(p): priority_color(p, 100) for p in range(1,101)})
+    if float(np.ptp(points[1:, 2])) > .01:
+        result.update(height_display='absolute metres above ground',
+                      complementary_projection='XZ with labelled absolute heights',
+                      detail_crop_size_px=[48,36],
+                      camera_contract='dispersed-oblique-v1')
+        result['camera'] = dispersed_camera(points, result)
+        result['badge_rects'] = badge_rects([project(m['world_xyz'], result['camera']) for m in result['markers']])
     return result
+
+
+def dispersed_camera(points, manifest):
+    """Search a declared deterministic set of oblique views, without moving goals."""
+    center = (points.min(axis=0) + points.max(axis=0)) / 2
+    for elevation in [65, 75, 55, 80, 45]:
+        for azimuth in range(0, 360, 15):
+            az, el = np.radians([azimuth, elevation])
+            direction = np.array([np.cos(el)*np.sin(az), -np.cos(el)*np.cos(az), np.sin(el)])
+            for distance in [7., 8., 9., 10., 11., 12., 13., 14.]:
+                camera = {'res': [1280,720], 'pos': (center+distance*direction).tolist(),
+                          'lookat': center.tolist(), 'up': [0.,0.,1.], 'fov':40., 'margin_m':.6}
+                candidate = {**manifest, 'camera': camera}
+                try:
+                    validate_scene(candidate)
+                except ValueError:
+                    continue
+                return camera
+    raise ValueError('No declared oblique camera separates every dispersed label')
+
+
+def badge_rects(positions):
+    """Place full 140x85 badges with leader lines; never shrink text to fit."""
+    rectangles = []
+    for x,y in positions:
+        for dx,dy in [(-70,30),(30,-42),(-170,-42),(-70,-115),
+                      (50,30),(-190,30),(50,-115),(-190,-115),(-70,95),(-70,-180)]:
+            r = [x+dx,y+dy,x+dx+140,y+dy+85]
+            if not (15 <= r[0] and r[2] <= 1265 and 15 <= r[1] and r[3] <= 705):
+                continue
+            if any(r[0] < b[2]+8 and r[2]+8 > b[0] and r[1] < b[3]+8 and r[3]+8 > b[1]
+                   for b in rectangles):
+                continue
+            if any(r[0]-25 < px < r[2]+25 and r[1]-25 < py < r[3]+25 for px,py in positions):
+                continue
+            rectangles.append(r)
+            break
+        else:
+            raise ValueError('No nonoverlapping full-size ID/priority/height badge placement')
+    return rectangles
 
 
 def project(point, camera):
@@ -108,3 +155,7 @@ def validate_scene(manifest):
         raise ValueError('Overview does not frame every landmark with readable label margins')
     if any(np.linalg.norm(np.array(a)-b)<60 for i,a in enumerate(positions) for b in positions[i+1:]):
         raise ValueError('Projected landmark labels cannot be distinguished')
+    if manifest.get('camera_contract') == 'dispersed-oblique-v1':
+        rectangles=badge_rects(positions)
+        if manifest.get('badge_rects') is not None and manifest['badge_rects'] != rectangles:
+            raise ValueError('Frozen badge positions differ from their physical projection')

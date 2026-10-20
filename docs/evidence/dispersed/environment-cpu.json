@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "packages": [
+    {
+      "package": "cloudpickle",
+      "version": "3.1.2"
+    },
+    {
+      "package": "contourpy",
+      "version": "1.3.3"
+    },
+    {
+      "package": "cycler",
+      "version": "0.12.1"
+    },
+    {
+      "package": "Farama-Notifications",
+      "version": "0.0.6"
+    },
+    {
+      "package": "filelock",
+      "version": "3.32.3"
+    },
+    {
+      "package": "fonttools",
+      "version": "4.67.0"
+    },
+    {
+      "package": "fsspec",
+      "version": "2026.7.0"
+    },
+    {
+      "package": "gymnasium",
+      "version": "1.0.0"
+    },
+    {
+      "package": "iniconfig",
+      "version": "2.3.1"
+    },
+    {
+      "package": "Jinja2",
+      "version": "3.1.6"
+    },
+    {
+      "package": "kiwisolver",
+      "version": "1.5.1"
+    },
+    {
+      "package": "MarkupSafe",
+      "version": "3.0.3"
+    },
+    {
+      "package": "matplotlib",
+      "version": "3.11.2"
+    },
+    {
+      "package": "mpmath",
+      "version": "1.3.0"
+    },
+    {
+      "package": "networkx",
+      "version": "3.6.1"
+    },
+    {
+      "package": "numpy",
+      "version": "1.26.4"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3"
+    },
+    {
+      "package": "pandas",
+      "version": "3.0.6"
+    },
+    {
+      "package": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "package": "pluggy",
+      "version": "1.6.0"
+    },
+    {
+      "package": "Pygments",
+      "version": "2.21.0"
+    },
+    {
+      "package": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "package": "pytest",
+      "version": "8.4.2"
+    },
+    {
+      "package": "python-dateutil",
+      "version": "2.9.0.post0"
+    },
+    {
+      "package": "PyYAML",
+      "version": "6.0.2"
+    },
+    {
+      "package": "ruff",
+      "version": "0.13.2"
+    },
+    {
+      "package": "sb3_contrib",
+      "version": "2.4.0"
+    },
+    {
+      "package": "setuptools",
+      "version": "78.1.0"
+    },
+    {
+      "package": "six",
+      "version": "1.17.0"
+    },
+    {
+      "package": "stable_baselines3",
+      "version": "2.4.1"
+    },
+    {
+      "package": "sympy",
+      "version": "1.13.1"
+    },
+    {
+      "package": "torch",
+      "version": "2.6.0+cpu"
+    },
+    {
+      "package": "typing_extensions",
+      "version": "4.16.0"
+    }
+  ]
+}

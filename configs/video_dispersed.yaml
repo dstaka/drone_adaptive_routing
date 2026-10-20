@@ -1,0 +1,6 @@
+# Every retained physical interval stays at unit simulation-time slope.
+schema_version: 2
+fps: 30
+playback_rate: 1.0
+submission_max_s: 180
+font_path: outputs/visible_20261015/remote/NotoSansJP.ttf

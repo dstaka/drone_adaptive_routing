@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "generator": "numpy-PCG64-SeedSequence(seed,300,attempt)-uniform-xyz-v1",
+  "seed": 51000,
+  "records": [
+    {
+      "path": "outputs/dispersed_20261020_v1/demo/failed_selection.json",
+      "attempts": 50000,
+      "geometry_passing": 484,
+      "rejection_counts": {
+        "spans": 49105,
+        "separation": 19981,
+        "x_band": 4989,
+        "y_band": 10312,
+        "height_thirds": 2669,
+        "base_overlap": 268,
+        "C emergency response gate": 402,
+        "directed cost response gate": 307,
+        "No declared oblique camera separates every dispersed label": 50
+      }
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/demo_v2/layout.json",
+      "attempts": 3354,
+      "geometry_passing": 23,
+      "rejection_counts": {
+        "spans": 3305,
+        "separation": 1374,
+        "x_band": 326,
+        "y_band": 693,
+        "height_thirds": 182,
+        "base_overlap": 16,
+        "C emergency response gate": 20,
+        "directed cost response gate": 17
+      }
+    }
+  ],
+  "note": "All failed and selected candidate hashes regenerated; all geometry failures retained. Camera-v0 and reframed camera-v1 searches are separate."
+}

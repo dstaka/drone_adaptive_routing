@@ -1,0 +1,14 @@
+{
+  "status": "FAILED",
+  "error": "RuntimeError('Flight termination/reset/nonfinite state')",
+  "execution_seed": 11,
+  "split": "validation",
+  "legs": [],
+  "steps": 57,
+  "dt": 0.01,
+  "evidence_kind": "physical",
+  "checkpoint_sha256": "b16319e2d406e871cb44f8b240d83d82d3070343b90901f948e8d0da38245eb6",
+  "config_sha256": "4981eb5c5dae39a2e2f7aa675be3f4f87d61c84241c3c57833b9bc5b0ceef1b4",
+  "suite_sha256": "10b50f2b109242617dc7fbac67506a3ecb1c47f111e3333c5416db81cba9835a",
+  "camera": true
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "runs_bound": 9,
+  "inspections_reported": 90,
+  "coordinate_sha256": "21dd7cf41bf12c592ccdb4bf9c8817352feeafb9597103a3ba626e51a6d910e0",
+  "source_hash": "52c2c2e8b410db1fa83878acba0c13d19bb228825551fb4130db73cf53af3794",
+  "scene_sha256": "f26648052c9f6ca1de01a7be5ffee94461d667c1f7919cb26064188d8b2b7fce",
+  "model_hashes": {
+    "flight_checkpoint_hash": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+    "flight_cfg_hash": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55",
+    "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+    "hover_source_hash": "c2230130b9748b69416a18edad8491579e68c67882c8a6b6ab3662c5bbf76703"
+  },
+  "scope": "Frozen input bindings only; independent physical and media checks are required separately."
+}

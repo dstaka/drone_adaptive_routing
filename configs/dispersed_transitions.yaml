@@ -1,0 +1,22 @@
+# Validation transitions, frozen before the expanded-domain checkpoint is read.
+schema_version: 1
+suite: dispersed-domain-transitions-v1
+validation_seeds: [11, 12]
+heldout_seeds: [31, 32, 33]
+max_leg_s: 30.0
+max_tilt_deg: 60.0
+floor_m: 0.10
+arrival_radius_m: 0.20
+arrival_speed_mps: 0.30
+arrival_hold_s: 0.20
+inspection_dwell_s: 0.50
+targets:
+  - {kind: corner_departure, xyz: [-2.7, -1.8, 1.0]}
+  - {kind: long_horizontal, xyz: [2.7, 1.8, 1.0]}
+  - {kind: ascent, xyz: [2.7, 1.8, 3.0]}
+  - {kind: descent, xyz: [2.7, 1.8, 1.0]}
+  - {kind: combined, xyz: [-2.7, -1.8, 3.0]}
+  - {kind: reversal_combined, xyz: [2.7, 1.8, 1.0]}
+  - {kind: high_return, xyz: [0.0, 0.0, 3.0]}
+  - {kind: low_return, xyz: [0.0, 0.0, 1.0]}
+  - {kind: repeated_hover, xyz: [0.0, 0.0, 1.0]}

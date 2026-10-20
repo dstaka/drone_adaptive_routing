@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "path": "outputs/integer_20261020_v1/training/seed_44.zip",
+      "bytes": 297837,
+      "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/model_4296.pt",
+      "bytes": 475573,
+      "sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/cfgs.pkl",
+      "bytes": 1628,
+      "sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_normal.mp4",
+      "bytes": 6217241,
+      "sha256": "5bb811fbd0343a8facdac1455c6d292f111635cac2fa5e5fb933719b3c99b9fc",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_emergency.mp4",
+      "bytes": 6724718,
+      "sha256": "41632fea035cc1e43426a5cf4bab3e27847d2eb6795ab87b6048dd9096d0197d",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/full_cost_shift.mp4",
+      "bytes": 6021062,
+      "sha256": "5bd2c8072566400c070763d2d8a7d8b048d27267c62ecbfe410572c5073caa56",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/demo_full.mp4",
+      "bytes": 20871161,
+      "sha256": "6d485be4cffb0b76f4d62db0ea5c3d4ad8007d551150389f0c9326092b728579",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/submission.mp4",
+      "bytes": 20871161,
+      "sha256": "6d485be4cffb0b76f4d62db0ea5c3d4ad8007d551150389f0c9326092b728579",
+      "same_timeline_and_mapping_as_initial": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/report/final-report.pdf",
+      "bytes": 1009079,
+      "sha256": "835abc5a80fea8df3479fc1ddf2584b18e87e7abd45993e94e642876f7d29d60"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/manifest.json",
+      "bytes": 19454,
+      "sha256": "054ee391f97482ccc2c85ad19b923552edb5826beb73c9222044a215839fd686"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/delivery_v2/acceptance.json",
+      "bytes": 512,
+      "sha256": "c06a021bae1a72052f5dcd58ea527be65e3401b232fdfec4d7b78d2409d70782"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/private/probe-v4.tar.gz",
+      "bytes": 385515,
+      "sha256": "f6ef595afd939233177e056dc53befa9ccd2e78ad8cad4bfd33580e21dd11cef"
+    },
+    {
+      "path": "docs/evidence/dispersed/layout-preview.png",
+      "bytes": 293802,
+      "sha256": "e132f0cbc6d4dbdec98cab9199d6be6030a96225aa189131e622f813d53a6b9f"
+    },
+    {
+      "path": "docs/evidence/dispersed/flight-event.jpg",
+      "bytes": 296115,
+      "sha256": "e7f1d221b8b8138b4c6a73ad7d228b7047dcf6f7a56d7b7e7385946e6e07ad36"
+    },
+    {
+      "path": "docs/evidence/dispersed/comparison-card.jpg",
+      "bytes": 139563,
+      "sha256": "e8757a865b3db71cd03ed845d8d37889d74cc91808cfc827ac7ca26a03cf9da3"
+    }
+  ],
+  "status": "PASS"
+}

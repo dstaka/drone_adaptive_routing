@@ -1,0 +1,542 @@
+{
+  "schema_version": 2,
+  "evidence_kind": "physical",
+  "run_id": "cost_shift_seed_1",
+  "decision_id": "decision-3",
+  "boundary_id": "cost_shift_seed_1:decision-3",
+  "snapshot": {
+    "scenario": {
+      "scenario_id": "cost_shift",
+      "split": "demo",
+      "seed": 40029,
+      "coords": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -2.2574846772991513,
+          1.7335248129420815,
+          1.1016990644152351
+        ],
+        [
+          -2.68314398310277,
+          0.0440949448056831,
+          1.269620714931024
+        ],
+        [
+          1.7241406728049702,
+          0.6239499920354985,
+          1.7586228792407594
+        ],
+        [
+          -1.720730862092656,
+          -1.677042794662317,
+          2.7925100266436123
+        ],
+        [
+          -2.5969325368060674,
+          -1.2096210510295147,
+          1.3948581598205274
+        ],
+        [
+          -0.3282430937268912,
+          1.1881130985360875,
+          1.148211960076331
+        ],
+        [
+          -0.30323481702556077,
+          -1.6269570511921856,
+          2.911967352347588
+        ],
+        [
+          1.1703085519575023,
+          1.6670503818462155,
+          2.895834649862201
+        ],
+        [
+          2.3774328937869775,
+          1.052893998417688,
+          1.0844227584485355
+        ],
+        [
+          0.9181566059655957,
+          0.5654514730586941,
+          2.067850223042957
+        ]
+      ],
+      "priorities": [
+        81,
+        42,
+        43,
+        64,
+        23,
+        84,
+        6,
+        98,
+        22,
+        56
+      ],
+      "multipliers": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          5,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "service_duration_s": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "alpha": 1.0,
+      "beta": 0.05,
+      "nominal_speed_mps": 1.0,
+      "return_to_base": false,
+      "event": null,
+      "schema_version": 3,
+      "checkpoint_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ]
+    },
+    "current": 10,
+    "visited": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "elapsed": 6.493879627316868
+  },
+  "boundary_hash": "4e2d35b183ecbc51d752e9d0441905c1f8f05239fdbbc66d6f303510496b6efd",
+  "policy_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "scope": "Frozen currently observed conditions; remaining objective excludes incurred prefix cost; no future events or physical optimality claim.",
+  "policy_action": 2,
+  "policy_rollout": {
+    "order": [
+      2,
+      8,
+      0,
+      1,
+      4,
+      3,
+      6
+    ],
+    "cost": 229.095741262671,
+    "travel_cost": 12.733198103663488,
+    "completion_penalty": 4327.250863180149,
+    "weighted_travel_cost": 12.733198103663488,
+    "weighted_completion_penalty": 216.3625431590075
+  },
+  "exact": {
+    "order": [
+      2,
+      0,
+      1,
+      4,
+      3,
+      6,
+      8
+    ],
+    "cost": 227.4444951535058,
+    "travel_cost": 15.409638000284218,
+    "completion_penalty": 4240.697143064433,
+    "weighted_travel_cost": 15.409638000284218,
+    "weighted_completion_penalty": 212.03485715322165,
+    "status": "OPTIMAL",
+    "proven": true,
+    "solver": "weighted-completion-subset-dp-v1",
+    "elapsed_s": 0.003167485003359616,
+    "states": 449
+  },
+  "forced_first": [
+    {
+      "action": 0,
+      "order": [
+        0,
+        1,
+        4,
+        3,
+        6,
+        2,
+        8
+      ],
+      "cost": 233.69920540225127,
+      "travel_cost": 13.943632043017224,
+      "completion_penalty": 4395.111467184681,
+      "weighted_travel_cost": 13.943632043017224,
+      "weighted_completion_penalty": 219.75557335923406,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0019074750016443431,
+      "states": 193
+    },
+    {
+      "action": 1,
+      "order": [
+        1,
+        0,
+        4,
+        3,
+        6,
+        2,
+        8
+      ],
+      "cost": 256.45143990500986,
+      "travel_cost": 15.864337737436678,
+      "completion_penalty": 4811.7420433514635,
+      "weighted_travel_cost": 15.864337737436678,
+      "weighted_completion_penalty": 240.5871021675732,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0015847139875404537,
+      "states": 193
+    },
+    {
+      "action": 2,
+      "order": [
+        2,
+        0,
+        1,
+        4,
+        3,
+        6,
+        8
+      ],
+      "cost": 227.4444951535058,
+      "travel_cost": 15.409638000284218,
+      "completion_penalty": 4240.697143064433,
+      "weighted_travel_cost": 15.409638000284218,
+      "weighted_completion_penalty": 212.03485715322165,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0014642319874837995,
+      "states": 193
+    },
+    {
+      "action": 3,
+      "order": [
+        3,
+        4,
+        1,
+        0,
+        2,
+        8,
+        6
+      ],
+      "cost": 244.08458463281875,
+      "travel_cost": 17.69116356291587,
+      "completion_penalty": 4527.868421398059,
+      "weighted_travel_cost": 17.69116356291587,
+      "weighted_completion_penalty": 226.39342106990296,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0012438799894880503,
+      "states": 193
+    },
+    {
+      "action": 4,
+      "order": [
+        4,
+        1,
+        0,
+        3,
+        6,
+        2,
+        8
+      ],
+      "cost": 267.9847341908314,
+      "travel_cost": 16.549498968777183,
+      "completion_penalty": 5028.704704441084,
+      "weighted_travel_cost": 16.549498968777183,
+      "weighted_completion_penalty": 251.4352352220542,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0012152839917689562,
+      "states": 193
+    },
+    {
+      "action": 6,
+      "order": [
+        6,
+        3,
+        4,
+        1,
+        0,
+        2,
+        8
+      ],
+      "cost": 249.20327257443398,
+      "travel_cost": 14.016336648443819,
+      "completion_penalty": 4703.738718519803,
+      "weighted_travel_cost": 14.016336648443819,
+      "weighted_completion_penalty": 235.18693592599016,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.0013555249897763133,
+      "states": 193
+    },
+    {
+      "action": 8,
+      "order": [
+        8,
+        2,
+        0,
+        1,
+        4,
+        3,
+        6
+      ],
+      "cost": 239.2701787076344,
+      "travel_cost": 13.194493882115172,
+      "completion_penalty": 4521.513696510383,
+      "weighted_travel_cost": 13.194493882115172,
+      "weighted_completion_penalty": 226.07568482551915,
+      "status": "OPTIMAL",
+      "proven": true,
+      "solver": "weighted-completion-subset-dp-v1",
+      "elapsed_s": 0.001354003994492814,
+      "states": 193
+    }
+  ],
+  "equality_tolerance": 2.2744449515350583e-06,
+  "policy_gap": 1.6512461091651858,
+  "policy_optimality": "SUBOPTIMAL",
+  "candidate_priorities_distances": [
+    {
+      "action": 0,
+      "id": "A",
+      "priority": 81,
+      "distance_m": 3.5188834804010476,
+      "pose_distance_m": 3.4896226970313173
+    },
+    {
+      "action": 1,
+      "id": "B",
+      "priority": 42,
+      "distance_m": 3.7253656075607946,
+      "pose_distance_m": 3.7086797155036453
+    },
+    {
+      "action": 2,
+      "id": "C",
+      "priority": 43,
+      "distance_m": 0.86524790833401,
+      "pose_distance_m": 0.8585430367661151
+    },
+    {
+      "action": 3,
+      "id": "D",
+      "priority": 64,
+      "distance_m": 3.538027620128343,
+      "pose_distance_m": 3.5539923100247854
+    },
+    {
+      "action": 4,
+      "id": "E",
+      "priority": 23,
+      "distance_m": 3.9949533745169656,
+      "pose_distance_m": 3.9880138472578084
+    },
+    {
+      "action": 6,
+      "id": "G",
+      "priority": 6,
+      "distance_m": 2.6478266320417907,
+      "pose_distance_m": 2.676357089730788
+    },
+    {
+      "action": 8,
+      "id": "I",
+      "priority": 22,
+      "distance_m": 1.8259838657131442,
+      "pose_distance_m": 1.8041575498248537
+    }
+  ],
+  "selected_L": "C",
+  "selected_H": "A",
+  "nearer_lower_priority_gate": true,
+  "maximum_priority_ids": [
+    "A"
+  ],
+  "physical_reference": {
+    "simulation_step": 1030,
+    "event_seq": 17,
+    "physical_pose": [
+      0.9076423048973083,
+      0.5874736905097961,
+      2.021484136581421
+    ],
+    "boundary_hash": "4e2d35b183ecbc51d752e9d0441905c1f8f05239fdbbc66d6f303510496b6efd"
+  },
+  "planning_selected_L": "C",
+  "planning_selected_H": "A",
+  "planning_nearer_lower_priority_gate": true
+}

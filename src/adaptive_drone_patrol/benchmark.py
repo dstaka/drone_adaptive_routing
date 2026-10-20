@@ -42,7 +42,7 @@ def evaluate_scenario(scenario, chooser):
             'events': state.events, 'boundary_comparisons': comparisons}
 
 
-def benchmark(models, split, episodes, out, num_checkpoints=None):
+def benchmark(models, split, episodes, out, num_checkpoints=None, geometry_profile=None):
     limits = {'static': 100, 'dynamic': 50}
     if split not in limits or not 1 <= episodes <= limits[split]:
         raise ValueError('Invalid held-out split/episode count')
@@ -53,8 +53,16 @@ def benchmark(models, split, episodes, out, num_checkpoints=None):
         raise ValueError('Evaluation/model destination counts disagree; retrain for this N')
     out = unique_dir(out)
     seeds = range(20000, 20000 + episodes) if split == 'static' else range(30000, 30000 + episodes)
-    scenarios = [generate_scenario(s, split, num_checkpoints=n,
-                                   priority_profile=agents[0][1].priority_profile) for s in seeds]
+    if geometry_profile not in (None, 'dispersed-constrained3d-v1'):
+        raise ValueError('Unknown geometry profile')
+    if geometry_profile:
+        from .dispersed_layout import expanded_scenario
+        if n != 10 or agents[0][1].priority_profile != 'integer-100-v1':
+            raise ValueError('Expanded evaluation requires the adopted integer ten-point contract')
+        scenarios = [expanded_scenario(s, split) for s in seeds]
+    else:
+        scenarios = [generate_scenario(s, split, num_checkpoints=n,
+                                       priority_profile=agents[0][1].priority_profile) for s in seeds]
     for _, agent in agents:
         for s in scenarios:
             agent.validate_scenario(s)
@@ -112,6 +120,7 @@ def benchmark(models, split, episodes, out, num_checkpoints=None):
                                            summary['delta_fixed_mean'] < 0) if split == 'static' else None
         per_seed.append(summary)
     summary = {'schema_version': 2, 'evidence_kind': 'analytical', 'split': split, 'num_checkpoints': n,
+               'geometry_profile': geometry_profile,
                'common_scenarios': episodes, 'per_seed': per_seed, 'selected_seed': model_data['selected']['seed'],
                'across_seed_cost_mean': float(np.mean([r['cost_mean'] for r in per_seed])),
                'across_seed_cost_std': float(np.std([r['cost_mean'] for r in per_seed], ddof=1)) if len(per_seed) > 1 else 0.,

@@ -1,0 +1,80 @@
+{
+  "training": {
+    "parent_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+    "parent_config_hash": "25720a5b59b1edd769ed36ecc29be16febde3ad6088dcc6bdd878f71d2f8fff1",
+    "source_hash": "c2230130b9748b69416a18edad8491579e68c67882c8a6b6ab3662c5bbf76703",
+    "seed": 7,
+    "num_envs": 256,
+    "iterations_requested": 3000,
+    "initial_iteration": 1300,
+    "observation_size": 17,
+    "action_size": 4,
+    "command_bounds": {
+      "num_commands": 3,
+      "pos_x_range": [
+        -2.7,
+        2.7
+      ],
+      "pos_y_range": [
+        -1.8,
+        1.8
+      ],
+      "pos_z_range": [
+        1.0,
+        3.0
+      ]
+    },
+    "reward_config": {
+      "yaw_lambda": -10.0,
+      "reward_scales": {
+        "target": 2.0,
+        "smooth": -0.0001,
+        "yaw": 0.1,
+        "angular": -0.01,
+        "crash": -200.0,
+        "hover": 0.5,
+        "velocity": -0.03,
+        "altitude": -0.5,
+        "upright": -1.0
+      }
+    },
+    "retarget_period_steps": 800,
+    "training_dwell_steps": 50,
+    "curriculum_stages": [
+      [
+        1.0,
+        1.0,
+        1.5
+      ],
+      [
+        1.5,
+        1.2,
+        2.0
+      ],
+      [
+        2.1,
+        1.5,
+        2.5
+      ],
+      [
+        2.7,
+        1.8,
+        3.0
+      ]
+    ],
+    "corner_fraction": 0.2
+  },
+  "compatibility": {
+    "domain": "dispersed",
+    "observation_contract": "hover17-relative-world-v1",
+    "position_scale": 0.3333333333333333,
+    "position_clip": [
+      -1,
+      1
+    ],
+    "coordinate_meaning": "world metres; target minus vehicle position",
+    "changed_normalization": false,
+    "parent_is_initialization_only": true,
+    "transition_validation": "PENDING; training completion is not acceptance"
+  }
+}

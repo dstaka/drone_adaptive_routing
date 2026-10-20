@@ -1,0 +1,14 @@
+{
+  "status": "FIXED",
+  "review_kind": "independent read-only code review",
+  "important_findings": [
+    "Declared transition targets were not verified; stationary hovers could pass",
+    "Transition receipts were not bound to samples, summary or execution source",
+    "Varied-height legacy scenarios used integer-only palette"
+  ],
+  "fix_verification": "Failing regression cases observed, six targeted tests pass; final local and Linux CPU suites196 passed, GPU contract1 passed.",
+  "additional_contract_check": "Freeze inspects actual pickle domain, scale, initial pose, floor and tilt constraints",
+  "deferred_minors": [],
+  "encoding_followup": "No material findings. CRF1 changes compression only; final all-five media verification and approval of final hashes still required.",
+  "final_evidence": "All five final videos pass unchanged independent gates; new operator approval bound to final hashes; final four-page PDF rendered and reviewed."
+}

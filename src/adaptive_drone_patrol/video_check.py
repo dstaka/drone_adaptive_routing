@@ -7,6 +7,7 @@ helpers. A playback_rate declaration is never sufficient evidence of 1x motion.
 import bisect
 import csv
 import hashlib
+import math
 import json
 from pathlib import Path
 import subprocess
@@ -389,7 +390,7 @@ def verify_text_region(image, text, position, font, color="white", background="#
     return error
 
 
-def verify_camera_region(image, source, projected):
+def verify_camera_region(image, source, projected, badges=None):
     """Compare the principal native camera plane outside explicit overlays."""
     mask = np.ones((720, 1280), dtype=bool)
     for x, y in projected:
@@ -397,12 +398,51 @@ def verify_camera_region(image, source, projected):
             False
         )
     mask[:195, 1028:] = False  # same-frame detail and its caption
+    if badges:
+        overlay=Image.new('1',(1280,720),0)
+        drawing=ImageDraw.Draw(overlay)
+        for (x,y),rect in zip(projected,badges):
+            a,b,c,d=map(int,rect)
+            drawing.rectangle((a-5,b-5,c+5,d+5),fill=1)
+            drawing.line([(x,y),((a+c)/2,(b+d)/2)],fill=1,width=12)
+        mask[np.asarray(overlay,dtype=bool)]=False
     a = np.asarray(image.crop((20, 145, 1300, 865))).astype(np.int16)[::4, ::4]
     b = np.asarray(source).astype(np.int16)[::4, ::4]
     error = float(np.abs(a - b)[mask[::4, ::4]].mean())
     if error > 3:
         raise ValueError("Principal camera pixels differ from authenticated original raw")
     return error
+
+
+def verify_height_badges(image,record,priorities,font_path):
+    """Read each encoded ID/weight/height glyph against actual scenario coordinates."""
+    errors=[]
+    schema=record['scenario'].get('schema_version',2)
+    # Keep this rendering independent of the composer; compare the visible glyphs.
+    anchors = ["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15"]
+    for j, (marker, rect) in enumerate(zip(record["scene"]["markers"], record["scene"]["badge_rects"])):
+        a, b, _, _ = map(int, rect)
+        value = priorities[j]
+        v = 1 + 4 * (value - 1) / 99 if schema==3 else value
+        lo = min(3, int(v) - 1)
+        f = v - (lo + 1)
+        rgb = [[int(c[i : i + 2], 16) for i in (1, 3, 5)] for c in anchors[lo : lo + 2]]
+        color = "#" + "".join(f"{math.floor(x + f * (y - x) + 0.5):02x}" for x, y in zip(*rgb))
+        linear = [
+            (v / 255) / 12.92 if v / 255 <= 0.04045 else ((v / 255 + 0.055) / 1.055) ** 2.4
+            for v in [int(color[i : i + 2], 16) for i in (1, 3, 5)]
+        ]
+        ink = "#ffffff" if sum(x * y for x, y in zip([0.2126, 0.7152, 0.0722], linear)) < 0.179 else "#111111"
+        xyz = record["scenario"]["coords"][j + 1]
+        if marker["world_xyz"] != xyz:
+            raise ValueError("Displayed height/marker differs from physical scenario")
+        for text, dy, size in [(f"{marker['id']}  {checked_priority_text(value,schema)}", 148, 23), (f"z={xyz[2]:.3f}m", 175, 20)]:
+            errors.append(
+                verify_text_region(
+                    image, text, (a + 28, b + dy), checker_font(record, font_path, size), ink, color
+                )
+            )
+    return max(errors)
 
 
 def checker_font(record, path, size):
@@ -505,6 +545,8 @@ def verify_pixels(image, mapping, record, font_path):
                 image, f"{name}  優先度 {checked_priority_text(priorities[j], record['scenario'].get('schema_version', 2))}", (x + 37, y), checker_font(record, font_path, 23)
             )
         )
+    if record['scene'].get('badge_rects'):
+        text_errors.append(verify_height_badges(image,record,priorities,font_path))
     if update:
         u = update["update"]
         text = (
@@ -541,10 +583,11 @@ def verify_pixels(image, mapping, record, font_path):
             )
         text_errors.append(verify_text_region(image, label, (1340, 333), checker_font(record, font_path, 25)))
     x, y = project(pose, record["scene"]["camera"])
-    left = max(0, min(source.width - 96, int(round(x)) - 48))
-    top = max(0, min(source.height - 72, int(round(y)) - 36))
+    cw,ch=record['scene'].get('detail_crop_size_px',[96,72])
+    left = max(0, min(source.width - cw, int(round(x)) - cw//2))
+    top = max(0, min(source.height - ch, int(round(y)) - ch//2))
     detail = (
-        source.crop((left, top, left + 96, top + 72))
+        source.crop((left, top, left + cw, top + ch))
         .resize((240, 180), Image.Resampling.LANCZOS)
         .resize((200, 150))
     )
@@ -553,7 +596,7 @@ def verify_pixels(image, mapping, record, font_path):
     if motion_error > 6:
         raise ValueError("Encoded drone pixels differ from the claimed physical capture")
     projected = [project(m["world_xyz"], record["scene"]["camera"]) for m in record["scene"]["markers"]]
-    camera_error = verify_camera_region(image, source, projected)
+    camera_error = verify_camera_region(image, source, projected, record['scene'].get('badge_rects'))
     return max(text_errors), max(motion_error, camera_error)
 
 

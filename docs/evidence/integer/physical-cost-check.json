@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "evidence_kind": "physical",
+  "decisions": 90,
+  "complete_orders": 675,
+  "maximum_absolute_component_error": 1.3642420526593924e-12,
+  "components": [
+    "cost",
+    "travel_cost",
+    "completion_penalty",
+    "weighted_travel_cost",
+    "weighted_completion_penalty"
+  ],
+  "source": "outputs/integer_20261020_v1/physical-verification/decision_explanations.json",
+  "source_sha256": "708b5764d0b1a3a22f3e67cde5280ed93f9aea12202a94f7b8b87ceb0041b9e5"
+}

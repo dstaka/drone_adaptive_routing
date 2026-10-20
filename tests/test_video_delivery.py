@@ -89,3 +89,18 @@ def test_goal_switch_distance_uses_current_target_and_actual_pose():
     assert current_target_distance(scenario, [0.1, 0, 1], "C") == pytest.approx(0.9)
     assert current_target_distance(scenario, [0.1, 0, 1], "B") == pytest.approx(0.1)
     assert current_target_distance(scenario, [0.1, 0, 1], None) is None
+
+
+def test_new_execution_metadata_reports_cumulative_gpu_delta_and_transfer():
+    from adaptive_drone_patrol.video_delivery import delivery_execution_metadata
+    ledger = {'used_s':3200.,'jobs':[]}
+    context = {'gpu_baseline_used_s':2803.,'new_server_directories':['outputs/new_run'],
+               'transfer':'New delivery: all size/SHA-256 entries verified.'}
+    result = delivery_execution_metadata(ledger,context)
+    assert result['gpu_added_s'] == 397 and result['gpu_remaining_s'] == 25600
+    assert result['transfer'] == context['transfer'] and result['new_server_directories'] == ['outputs/new_run']
+    assert delivery_execution_metadata(ledger)['gpu_added_s'] == 0
+    with pytest.raises(ValueError):
+        delivery_execution_metadata(ledger,dict(context,gpu_baseline_used_s=3201))
+    with pytest.raises(ValueError):
+        delivery_execution_metadata(dict(ledger,active_job={'status':'RUNNING'}),context)

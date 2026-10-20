@@ -2,6 +2,7 @@
 
 import csv
 import json
+import math
 from pathlib import Path
 import shutil
 import subprocess
@@ -33,6 +34,19 @@ def validate_options(mode, fps, duration, rate=1):
     if mode == "submission" and duration is not None and not 60 <= duration <= 180:
         raise ValueError("Submission duration must be 60–180 seconds")
     return fps
+
+
+def delivery_execution_metadata(ledger, context=None):
+    """Keep inherited GPU usage and newly verified transfer metadata explicit."""
+    used = ledger['used_s']
+    baseline = (context or {}).get('gpu_baseline_used_s', used)
+    if (ledger.get('active_job') or not all(math.isfinite(v) for v in [used, baseline])
+            or not 0 <= baseline <= used <= 28800):
+        raise ValueError('Invalid or unreconciled cumulative GPU ledger/context')
+    return {'gpu_used_s': used, 'gpu_added_s': used - baseline, 'gpu_remaining_s': 28800 - used,
+            'new_server_directories': (context or {}).get('new_server_directories', []),
+            'transfer': (context or {}).get('transfer',
+                'No new external server transfer; inherited 465/465 input hashes verified.')}
 
 
 def optimality_captions(value):

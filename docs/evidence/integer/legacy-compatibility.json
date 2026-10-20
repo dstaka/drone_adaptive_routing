@@ -1,0 +1,7 @@
+{
+  "old_model_hash": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a",
+  "old_schema": "routing-v2-n10-324",
+  "new_scenario_version": 3,
+  "status": "REJECTED_BEFORE_INFERENCE",
+  "reason": "Scenario/model contract mismatch; retrain for this N, ID order and objective"
+}

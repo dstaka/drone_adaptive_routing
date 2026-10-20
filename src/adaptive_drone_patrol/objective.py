@@ -26,26 +26,37 @@ def schema_for(scenario):
     for name, width in widths:
         fields[name] = [offset, offset + width]
         offset += width
-    return {'id': f'routing-v2-n{n}-{offset}', 'dtype': 'float32', 'size': offset,
+    result = {'id': f'routing-v2-n{n}-{offset}', 'dtype': 'float32', 'size': offset,
             'num_checkpoints': n, 'checkpoint_ids': scenario.checkpoint_ids.copy(),
             'fields': fields, 'normalization': {**SCHEMA['normalization'], 'count': float(n),
                 'time_s': max(30., 8. * n)},
             'objective': {'alpha': scenario.alpha, 'beta': scenario.beta,
                           'nominal_speed_mps': scenario.nominal_speed_mps,
                           'return_to_base': scenario.return_to_base}}
+    if scenario.schema_version == 3:
+        result['id'] = f'routing-v3-integer100-n{n}-{offset}'
+        result['normalization']['priority'] = 100.
+        result['priority_contract'] = {'profile': scenario.priority_profile, 'minimum': 1,
+                                      'maximum': 100, 'representation': 'integer-token',
+                                      'observation_version': 1, 'objective_version': 1}
+    return result
 
 
 def leg_cost(scenario, current, target, elapsed):
     distance = float(np.linalg.norm(np.asarray(scenario.coords[current]) - scenario.coords[target]))
-    priority = float(scenario.priorities[target - 1])
+    priority = scenario.priorities[target - 1]
     multiplier = float(scenario.multipliers[current][target])
     completion = elapsed + distance / scenario.nominal_speed_mps + scenario.service_duration_s[target - 1]
     travel = distance * multiplier
     penalty = priority * completion
-    return {'from': current, 'to': target, 'distance_m': distance, 'priority': priority,
+    result = {'from': current, 'to': target, 'distance_m': distance, 'priority': priority,
             'multiplier': multiplier, 'completion_time_s': completion,
             'travel_cost': travel, 'completion_penalty': penalty,
             'cost': scenario.alpha * travel + scenario.beta * penalty}
+    if scenario.schema_version == 3:
+        result.update(weighted_travel_cost=scenario.alpha * travel,
+                      weighted_completion_penalty=scenario.beta * penalty)
+    return result
 
 
 class RoutingState:
@@ -103,7 +114,8 @@ class RoutingState:
             rng = np.random.default_rng(self.scenario.seed + 100000 + self.current)
             eligible = np.flatnonzero(self.mask())
             target = int(rng.choice(eligible))
-            event['value'] = int(rng.integers(1, 6))
+            event['value'] = int(rng.integers(1, self.scenario.priority_max + 1
+                                            if event['kind'] == 'priority' else 6))
             if event['kind'] == 'priority':
                 event['checkpoint'] = self.scenario.checkpoint_ids[target]
             else:
@@ -131,12 +143,14 @@ class RoutingState:
 
     def observation(self, legacy=False):
         s = self.scenario
+        if legacy and s.schema_version == 3:
+            raise ValueError('Integer profile cannot use legacy observations; retrain')
         coords = np.asarray(s.coords)
         distances = np.linalg.norm(coords[:, None] - coords[None, :], axis=-1)
         n = s.num_checkpoints
         time_scale = 30. if legacy else schema_for(s)['normalization']['time_s']
         return np.concatenate([np.eye(n + 1)[self.current], self.visited, coords.ravel() / 2,
-                               distances.ravel() / 4, np.asarray(s.priorities) / 5,
+                               distances.ravel() / 4, np.asarray(s.priorities) / s.priority_max,
                                (distances * np.asarray(s.multipliers)).ravel() / 20,
                                s.service_duration_s, [self.elapsed / time_scale, self.visited.sum() / n],
                                [s.alpha, s.beta, s.nominal_speed_mps, float(s.return_to_base),

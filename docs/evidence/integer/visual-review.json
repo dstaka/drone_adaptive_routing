@@ -1,0 +1,36 @@
+{
+  "frame_review": "PASS",
+  "report_review": "PASS",
+  "continuous_playback_review": "PASS",
+  "operator_confirmation_date": "2026-10-20",
+  "operator_confirmation": "全3本と両区間を1倍速で確認し、問題なし",
+  "requested_review_intervals": [
+    {
+      "clip": "full_emergency.mp4",
+      "start_s": 1.43,
+      "end_s": 6.0,
+      "event_s": 3.43,
+      "next_inspection_s": 5.74
+    },
+    {
+      "clip": "full_cost_shift.mp4",
+      "start_s": 1.43,
+      "end_s": 6.0,
+      "event_s": 3.43,
+      "next_inspection_s": 5.55
+    }
+  ],
+  "reviewed_video_hashes": {
+    "full_normal.mp4": "9a5b1a008f45e78fa05f97ba057d5dce11875b42d8062316679979364187d783",
+    "full_emergency.mp4": "cca2ae442b1bedda001b4f09abe5abe2f035681e2b8de86167438e49a0142d22",
+    "full_cost_shift.mp4": "ac48dcf902bc63825fb108888e12c5f20f7cfdf46ee392375aa11232ef70a71c"
+  },
+  "agent_frame_review": "Actual encoded start/all ten targets/event ±2 frames/final inspection contact sheets and all eight cards inspected; integer labels including100, fixed palette, target rings, checks, same-frame vehicle crop and cost coefficient/components readable. No clipping found.",
+  "agent_continuous_review": "Browser playback was initiated and playbackRate=1 with progress past next inspection verified; full human review is the operator confirmation above.",
+  "report_review_details": {
+    "pages": 4,
+    "font": "Noto Sans JP embedded",
+    "render": "Poppler PNG all pages inspected; orphan heading fixed, draft preserved outside delivery",
+    "sha256": "d1440c494bdc83be0352cd36f38963e133b856849bdb950c5f0be2fd5f06aa92"
+  }
+}

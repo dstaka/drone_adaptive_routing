@@ -1,0 +1,406 @@
+{
+  "execution_seeds": [
+    1,
+    2,
+    3
+  ],
+  "scenario_ids": [
+    "normal",
+    "emergency",
+    "cost_shift"
+  ],
+  "priority_profile": "integer-100-v1",
+  "routing_model_hash": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+  "observation_schema": {
+    "id": "routing-v3-integer100-n10-324",
+    "dtype": "float32",
+    "size": 324,
+    "num_checkpoints": 10,
+    "checkpoint_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "fields": {
+      "current_onehot": [
+        0,
+        11
+      ],
+      "visited": [
+        11,
+        21
+      ],
+      "coords": [
+        21,
+        54
+      ],
+      "distance_matrix": [
+        54,
+        175
+      ],
+      "priorities": [
+        175,
+        185
+      ],
+      "edge_costs": [
+        185,
+        306
+      ],
+      "service": [
+        306,
+        316
+      ],
+      "elapsed": [
+        316,
+        317
+      ],
+      "completed": [
+        317,
+        318
+      ],
+      "constants": [
+        318,
+        324
+      ]
+    },
+    "normalization": {
+      "coordinates_m": 2.0,
+      "distance_m": 4.0,
+      "priority": 100.0,
+      "edge_cost": 20.0,
+      "service_s": 1.0,
+      "time_s": 80.0,
+      "count": 10.0,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "speed_mps": 1.0
+    },
+    "objective": {
+      "alpha": 1.0,
+      "beta": 0.05,
+      "nominal_speed_mps": 1.0,
+      "return_to_base": false
+    },
+    "priority_contract": {
+      "profile": "integer-100-v1",
+      "minimum": 1,
+      "maximum": 100,
+      "representation": "integer-token",
+      "observation_version": 1,
+      "objective_version": 1
+    }
+  },
+  "flight_checkpoint_hash": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f",
+  "flight_config_hash": "25720a5b59b1edd769ed36ecc29be16febde3ad6088dcc6bdd878f71d2f8fff1",
+  "scenario_hashes": {
+    "normal": "a080e7a12a4ca47f28274a849103af12300542cafb68aea57ffdd601f5039c4d",
+    "emergency": "c38df863ffafd6709f51500e8cd5870ba8970ff4ab54ddf6c77f72bac07dc71b",
+    "cost_shift": "5112fbffc14b4fcd661e676f828bdc45a65374da13375ea8a2ce91104099b722"
+  },
+  "scene": {
+    "schema_version": 2,
+    "checkpoint_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "camera": {
+      "res": [
+        1280,
+        720
+      ],
+      "pos": [
+        0.0,
+        -0.65,
+        4.296972903345546
+      ],
+      "lookat": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov": 40.0,
+      "margin_m": 0.6
+    },
+    "rendering_method": "neutral fixed Genesis landmarks with world-anchored priority badges",
+    "priority_range": [
+      1,
+      100
+    ],
+    "palette": [
+      "#fee5d9",
+      "#fcae91",
+      "#fb6a4a",
+      "#de2d26",
+      "#a50f15"
+    ],
+    "fraction_mapping": "linear RGB, round half up",
+    "state_symbols": {
+      "selected": "double ring / \u9078\u629e\u4e2d",
+      "visited": "check / \u8a2a\u554f\u6e08\u307f",
+      "alert": "!"
+    },
+    "label_format": "ID | \u512a\u5148\u5ea6 value",
+    "marker_radius_m": 0.045,
+    "event_mapping": "Apply events with simulation_step <= captured frame step, in event_seq order",
+    "markers": [
+      {
+        "id": "A",
+        "world_xyz": [
+          -0.9,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 81
+      },
+      {
+        "id": "B",
+        "world_xyz": [
+          -0.3,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 42
+      },
+      {
+        "id": "C",
+        "world_xyz": [
+          0.3,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 43
+      },
+      {
+        "id": "D",
+        "world_xyz": [
+          0.9,
+          -0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 64
+      },
+      {
+        "id": "E",
+        "world_xyz": [
+          -0.9,
+          0.0,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 23
+      },
+      {
+        "id": "F",
+        "world_xyz": [
+          0.9,
+          0.0,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 84
+      },
+      {
+        "id": "G",
+        "world_xyz": [
+          -0.9,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 6
+      },
+      {
+        "id": "H",
+        "world_xyz": [
+          -0.3,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 98
+      },
+      {
+        "id": "I",
+        "world_xyz": [
+          0.3,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 22
+      },
+      {
+        "id": "J",
+        "world_xyz": [
+          0.9,
+          0.6,
+          1.0
+        ],
+        "visual_only": true,
+        "fixed": true,
+        "collision": false,
+        "priority": 56
+      }
+    ],
+    "priority_profile": "integer-100-v1",
+    "palette_version": "integer100-linear-RGB-v1",
+    "value_colors": {
+      "1": "#fee5d9",
+      "2": "#fee3d6",
+      "3": "#fee1d3",
+      "4": "#feded0",
+      "5": "#fedccd",
+      "6": "#fedaca",
+      "7": "#fed8c8",
+      "8": "#fdd5c5",
+      "9": "#fdd3c2",
+      "10": "#fdd1bf",
+      "11": "#fdcfbc",
+      "12": "#fdcdb9",
+      "13": "#fdcab6",
+      "14": "#fdc8b3",
+      "15": "#fdc6b0",
+      "16": "#fdc4ad",
+      "17": "#fdc1aa",
+      "18": "#fdbfa8",
+      "19": "#fdbda5",
+      "20": "#fcbba2",
+      "21": "#fcb99f",
+      "22": "#fcb69c",
+      "23": "#fcb499",
+      "24": "#fcb296",
+      "25": "#fcb093",
+      "26": "#fcad90",
+      "27": "#fcab8d",
+      "28": "#fca88b",
+      "29": "#fca588",
+      "30": "#fca285",
+      "31": "#fca082",
+      "32": "#fc9d7f",
+      "33": "#fc9a7c",
+      "34": "#fc9779",
+      "35": "#fc9576",
+      "36": "#fc9274",
+      "37": "#fc8f71",
+      "38": "#fc8c6e",
+      "39": "#fb8a6b",
+      "40": "#fb8768",
+      "41": "#fb8465",
+      "42": "#fb8162",
+      "43": "#fb7f60",
+      "44": "#fb7c5d",
+      "45": "#fb795a",
+      "46": "#fb7657",
+      "47": "#fb7454",
+      "48": "#fb7151",
+      "49": "#fb6e4e",
+      "50": "#fb6b4b",
+      "51": "#fa6949",
+      "52": "#f96648",
+      "53": "#f86446",
+      "54": "#f76145",
+      "55": "#f65f43",
+      "56": "#f55c42",
+      "57": "#f35a41",
+      "58": "#f2583f",
+      "59": "#f1553e",
+      "60": "#f0533c",
+      "61": "#ef503b",
+      "62": "#ee4e39",
+      "63": "#ec4b38",
+      "64": "#eb4936",
+      "65": "#ea4635",
+      "66": "#e94433",
+      "67": "#e84132",
+      "68": "#e63f31",
+      "69": "#e53c2f",
+      "70": "#e43a2e",
+      "71": "#e3372c",
+      "72": "#e2352b",
+      "73": "#e13329",
+      "74": "#df3028",
+      "75": "#de2e26",
+      "76": "#dc2c25",
+      "77": "#da2b25",
+      "78": "#d82a24",
+      "79": "#d52823",
+      "80": "#d32723",
+      "81": "#d12622",
+      "82": "#ce2521",
+      "83": "#cc2421",
+      "84": "#ca2220",
+      "85": "#c8211f",
+      "86": "#c5201f",
+      "87": "#c31f1e",
+      "88": "#c11e1d",
+      "89": "#be1c1d",
+      "90": "#bc1b1c",
+      "91": "#ba1a1b",
+      "92": "#b7191a",
+      "93": "#b5171a",
+      "94": "#b31619",
+      "95": "#b11518",
+      "96": "#ae1418",
+      "97": "#ac1317",
+      "98": "#aa1116",
+      "99": "#a71016",
+      "100": "#a50f15"
+    }
+  },
+  "arrival_settings": {
+    "arrival_radius_m": 0.2,
+    "arrival_speed_mps": 0.3,
+    "arrival_hold_s": 0.2,
+    "inspection_dwell_s": 0.5,
+    "max_leg_s": 30.0,
+    "max_mission_s": 120.0,
+    "max_wall_s": 600.0,
+    "intro_s": 2.0,
+    "floor_m": 0.1,
+    "max_tilt_deg": 60.0
+  },
+  "gpu_initial_used_s": 2927.513386965031,
+  "input_manifest_sha256": "809b59d9b7aa6e43965cfe2ae2400494f924b4399e03bb5bdd48113667d1a47e"
+}

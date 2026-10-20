@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "missions": 9,
+  "inspections": 90,
+  "full_raw_frames_verified": 8322,
+  "physical_explanations": 90,
+  "qualifying_LH_decisions": 33,
+  "complete_orders_independently_replayed": 675,
+  "maximum_dwell_distance_m": 0.1996167202765569,
+  "maximum_dwell_speed_mps": 0.29986111990326625,
+  "maximum_tilt_deg": 37.68631879938955,
+  "minimum_height_m": 0.8058773279190063,
+  "reset_count": 0,
+  "done_count": 0,
+  "safety_failure_count": 0,
+  "runs": [
+    {
+      "run_id": "cost_shift_seed_1",
+      "physical_end_s": 18.76
+    },
+    {
+      "run_id": "cost_shift_seed_2",
+      "physical_end_s": 18.76
+    },
+    {
+      "run_id": "cost_shift_seed_3",
+      "physical_end_s": 18.76
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "physical_end_s": 18.07
+    },
+    {
+      "run_id": "emergency_seed_2",
+      "physical_end_s": 18.07
+    },
+    {
+      "run_id": "emergency_seed_3",
+      "physical_end_s": 18.07
+    },
+    {
+      "run_id": "normal_seed_1",
+      "physical_end_s": 17.61
+    },
+    {
+      "run_id": "normal_seed_2",
+      "physical_end_s": 17.61
+    },
+    {
+      "run_id": "normal_seed_3",
+      "physical_end_s": 17.61
+    }
+  ]
+}

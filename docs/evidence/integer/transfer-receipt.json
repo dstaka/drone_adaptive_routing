@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "files_verified": 132,
+  "archive_bytes": 6629586,
+  "archive_sha256": "29c47aac3514cd904db73eba1467e5537b7364c788de505df69769abb59aacf7",
+  "artifact_root": "outputs/integer_20261020_v1/remote-acceptance",
+  "manifest_sha256": "ceab9d95359a0f1ee917724796891638476294b7c12aef234503192c984d097e",
+  "gpu_used_s": 3198.9943080281373,
+  "gpu_added_s": 395.4215675460873,
+  "gpu_remaining_s": 25601.005691971863,
+  "new_remote_workspace": "outputs/integer_20261020_v1/private/remote-workdir.txt"
+}

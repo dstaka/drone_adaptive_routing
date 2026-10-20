@@ -1,0 +1,24 @@
+{
+  "local_cpu": {
+    "passed": 177,
+    "gpu_deselected": 1,
+    "log": "outputs/integer_20261020_v1/cpu-suite-commit.log",
+    "elapsed_s": 22.98
+  },
+  "linux_cpu": {
+    "passed": 177,
+    "gpu_deselected": 1,
+    "elapsed_s": 11.67,
+    "log": "outputs/integer_20261020_v1/linux-cpu-commit-tests.log",
+    "bytes": 1963,
+    "sha256": "77551fc791c0db847ab6d43320a06af74d447b88f1e7f375982abd39c9e3efc9"
+  },
+  "gpu_contract": {
+    "passed": 1,
+    "log": "outputs/integer_20261020_v1/remote-acceptance/outputs/integer/acceptance_v1/gpu_tests.log"
+  },
+  "lint": "PASS",
+  "diff_check": "PASS",
+  "review": "No remaining important findings after weighted-component fix and metadata review.",
+  "pdf_layout_fix_verified": "Four pages rendered and visually inspected; final CPU suites rerun."
+}

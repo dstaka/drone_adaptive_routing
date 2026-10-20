@@ -20,6 +20,7 @@ def main():
     p.add_argument('--source', default='docs/report_ja.md')
     p.add_argument('--font', default='outputs/assets/NotoSansJP.ttf')
     p.add_argument('--out', required=True)
+    p.add_argument('--date', default='2026-10-20')
     a = p.parse_args()
     out = Path(a.out)
     static_font = out.with_suffix('.font.ttf')
@@ -34,7 +35,7 @@ def main():
     body = ParagraphStyle('body', fontName='NotoJP', fontSize=9.5, leading=14.5,
                           wordWrap='CJK', spaceAfter=7, textColor=colors.HexColor('#203744'))
     heading = ParagraphStyle('heading', parent=body, fontSize=13, leading=18, spaceBefore=9,
-                             textColor=colors.HexColor('#156e8c'))
+                             textColor=colors.HexColor('#156e8c'), keepWithNext=True)
     title = ParagraphStyle('title', parent=body, fontSize=20, leading=28, spaceAfter=16)
     story = []
     for line in Path(a.source).read_text().splitlines():
@@ -59,7 +60,7 @@ def main():
     def footer(canvas, doc):
         canvas.setFont('NotoJP', 8)
         canvas.setFillColor(colors.HexColor('#657c89'))
-        canvas.drawString(36, 24, 'Adaptive Drone Inspection | 2026-10-16 | 10地点・1倍速の実測報告')
+        canvas.drawString(36, 24, f'Adaptive Drone Inspection | {a.date} | 10地点・1倍速の実測報告')
         canvas.drawRightString(A4[0] - 36, 24, str(doc.page))
     doc = SimpleDocTemplate(str(out), pagesize=A4, rightMargin=36, leftMargin=36,
                             topMargin=36, bottomMargin=42, title='適応型ドローン巡回点検', author='dstaka')

@@ -1,5 +1,5 @@
 {
-  "used_s": 2803.57274048205,
+  "used_s": 3198.9943080281373,
   "jobs": [
     {
       "run_id": "smoke",
@@ -382,6 +382,64 @@
       "exit_code": 0,
       "elapsed_s": 484.7642950396985,
       "finished_epoch": 1792080817.8138053
+    },
+    {
+      "run_id": "integer_probe_markers",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_integer_probe.yaml",
+        "--out",
+        "outputs/integer/probe_markers"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792496043.11767,
+      "timeout_s": 1200.0,
+      "pid": 2091,
+      "exit_code": 0,
+      "elapsed_s": 99.80334640096407,
+      "finished_epoch": 1792496142.9214883
+    },
+    {
+      "run_id": "integer_probe_no_markers",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_visible_flight.py",
+        "--config",
+        "configs/execution_integer_probe.yaml",
+        "--out",
+        "outputs/integer/probe_no_markers",
+        "--without-markers"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792496175.1469479,
+      "timeout_s": 1200.0,
+      "pid": 2227,
+      "exit_code": 0,
+      "elapsed_s": 24.137300082016736,
+      "finished_epoch": 1792496199.2846937
+    },
+    {
+      "run_id": "integer_frozen_acceptance_v1",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/final_gpu_validation.py",
+        "--config",
+        "configs/execution_integer_frozen.yaml",
+        "--out",
+        "outputs/integer/acceptance_v1"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792496463.9954426,
+      "timeout_s": 5400.0,
+      "pid": 2481,
+      "exit_code": 0,
+      "elapsed_s": 271.4809210631065,
+      "finished_epoch": 1792496735.4769094
     }
   ]
 }

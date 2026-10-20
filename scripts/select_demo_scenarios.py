@@ -9,6 +9,7 @@ from adaptive_drone_patrol.routing_agent import RoutingAgent
 from adaptive_drone_patrol.objective import RoutingState
 from adaptive_drone_patrol.analytical import demo_fixture, event_comparison, explain_decision, verify_explanation
 from adaptive_drone_patrol.util import unique_dir, json_write, sha256
+from adaptive_drone_patrol.scenario import PRIORITY_GENERATOR
 
 
 def select(models, out):
@@ -19,7 +20,7 @@ def select(models, out):
     out = unique_dir(out)
     attempts, retained = [], None
     for seed in range(40000, 40100):
-        normal = demo_fixture(seed)
+        normal = demo_fixture(seed, agent.priority_profile)
         normal.validate_physical()
         boundary = RoutingState(normal)
         first = agent.predict(boundary)
@@ -27,7 +28,7 @@ def select(models, out):
         no_action = agent.predict(boundary)
         emergency = copy.deepcopy(normal)
         emergency.scenario_id = 'emergency'
-        emergency.event = {'kind': 'priority', 'after': 1, 'checkpoint': 'C', 'value': 5}
+        emergency.event = {'kind': 'priority', 'after': 1, 'checkpoint': 'C', 'value': normal.priority_max}
         cost = copy.deepcopy(normal)
         cost.scenario_id = 'cost_shift'
         cost.event = {'kind': 'cost', 'after': 1,
@@ -39,13 +40,16 @@ def select(models, out):
             comparisons.append(event_comparison(st, agent.predict))
         b, c = comparisons
         target = normal.checkpoint_ids.index('C')
-        b_ok = (b['applicable'] and target in b['no_event_order'] and
+        b_ok = (normal.priorities[target] < normal.priority_max and b['applicable'] and target in b['no_event_order'] and
                 b['post_event_order'].index(target) < b['no_event_order'].index(target) and
                 b['no_event_first'] != b['post_event_first'] and b['improvement'] > 1e-6)
         c_ok = (c['no_event_first'] != c['post_event_first'] and
                 c['no_event_order'] != c['post_event_order'] and c['improvement'] > 1e-6)
         attempt = {'seed': seed, 'first': first, 'emergency_gate': b_ok,
-                   'cost_shift_gate': c_ok, 'comparisons': comparisons}
+                   'initial_priorities': dict(zip(normal.checkpoint_ids, normal.priorities)),
+                   'cost_shift_gate': c_ok, 'comparisons': comparisons,
+                   'rejection_reasons': ([] if b_ok else ['C emergency response gate']) +
+                                        ([] if c_ok else ['directed cost response gate'])}
         attempts.append(attempt)
         if not (b_ok and c_ok):
             continue
@@ -70,6 +74,8 @@ def select(models, out):
                             'decisions': decisions, 'cost': st.cost, 'legs': st.legs})
         explanation_ok = any(e['nearer_lower_priority_gate'] for e in explanations)
         attempt['explanation_gate'] = explanation_ok
+        if not explanation_ok:
+            attempt['rejection_reasons'].append('exact L/H gap/distance/policy gate')
         if retained is None or explanation_ok:
             retained = (normal, emergency, cost, replays, explanations, seed)
         if explanation_ok:
@@ -87,6 +93,8 @@ def select(models, out):
     else:
         seed, passed, manifest = None, False, {}
     result = {'status': 'PASS' if retained and passed else 'INCOMPLETE', 'policy_hash': agent.hash,
+              'priority_profile': agent.priority_profile, 'priority_generator': PRIORITY_GENERATOR
+                  if agent.priority_profile == 'integer-100-v1' else 'legacy fractional uniform 2-3',
               'selected_seed': seed, 'search_split': 'demo 40000-40099', 'attempts': attempts,
               'scenario_hashes': manifest, 'explanation_gate': passed,
               'event_gates': retained is not None, 'directed_updates': 'One direction only; reverse edge unchanged.',

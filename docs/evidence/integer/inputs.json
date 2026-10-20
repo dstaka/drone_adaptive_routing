@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "checked_files": 465,
+  "source_manifest": "docs/evidence/visible/delivery-manifest.json",
+  "assets": [
+    {
+      "path": "NotoSansJP.ttf",
+      "bytes": 9589900,
+      "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f"
+    },
+    {
+      "path": "outputs/flight/cfgs.pkl",
+      "bytes": 1547,
+      "sha256": "bb35d0ef08c1a5846d20ca58276e1f3e7686095fb340cc5d7753c416178d9a32"
+    },
+    {
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_42.schema.json",
+      "bytes": 1046,
+      "sha256": "8d5aa5a75c11edebe78a53b903690886adfb50eac58fe6da0f77e9e3a334fb8a"
+    },
+    {
+      "path": "outputs/scalable_20261015/normalized-src/outputs/training/seed_42.zip",
+      "bytes": 295644,
+      "sha256": "c4c2a937d26650c09a7810073382263e79ba58fcf238a752387fd41d45a2bc2a"
+    },
+    {
+      "path": "outputs/visible/finetune_v1/cfgs.pkl",
+      "bytes": 1592,
+      "sha256": "25720a5b59b1edd769ed36ecc29be16febde3ad6088dcc6bdd878f71d2f8fff1"
+    },
+    {
+      "path": "outputs/visible/finetune_v1/model_1300.pt",
+      "bytes": 475573,
+      "sha256": "4a6f3b333735f3c10ed4e51f2ddd3466308cf90b7dfb3bec289b519a084a539f"
+    },
+    {
+      "path": "third_party/genesis_drone/hover_env.py",
+      "bytes": 11035,
+      "sha256": "c2230130b9748b69416a18edad8491579e68c67882c8a6b6ab3662c5bbf76703"
+    }
+  ]
+}

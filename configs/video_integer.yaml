@@ -1,0 +1,6 @@
+# Natural 1x flight duration, independently checked against physics timestamps.
+schema_version: 2
+fps: 30
+playback_rate: 1.0
+submission_max_s: 120
+font_path: outputs/visible_20261015/remote/NotoSansJP.ttf

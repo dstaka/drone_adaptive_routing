@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "edited_videos": 5,
+  "edited_frames": 7545,
+  "raw_videos": 3,
+  "raw_frames": 2741,
+  "max_event_alignment_error_s": 0.030000000000001137,
+  "max_hud_luma_mae": 3.768886411519515,
+  "max_card_luma_mae": 1.88023517203983,
+  "outputs": [
+    {
+      "path": "outputs/integer_20261020_v1/delivery/demo_full.mp4",
+      "status": "PASS",
+      "sha256": "bda2c6d2cd66f20156b55bef51a127e0481ab9656aa0438f5e6e775ad3145de5",
+      "bytes": 4981753,
+      "duration_s": 98.5,
+      "decoded_frames": 2955,
+      "flight_fraction": 0.5532994923857868,
+      "full_decode": "PASS"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/full_cost_shift.mp4",
+      "status": "PASS",
+      "sha256": "ac48dcf902bc63825fb108888e12c5f20f7cfdf46ee392375aa11232ef70a71c",
+      "bytes": 1293610,
+      "duration_s": 18.766667,
+      "decoded_frames": 563,
+      "flight_fraction": 1.0,
+      "full_decode": "PASS"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/full_emergency.mp4",
+      "status": "PASS",
+      "sha256": "cca2ae442b1bedda001b4f09abe5abe2f035681e2b8de86167438e49a0142d22",
+      "bytes": 1279804,
+      "duration_s": 18.1,
+      "decoded_frames": 543,
+      "flight_fraction": 1.0,
+      "full_decode": "PASS"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/full_normal.mp4",
+      "status": "PASS",
+      "sha256": "9a5b1a008f45e78fa05f97ba057d5dce11875b42d8062316679979364187d783",
+      "bytes": 1239474,
+      "duration_s": 17.633333,
+      "decoded_frames": 529,
+      "flight_fraction": 1.0,
+      "full_decode": "PASS"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/delivery/submission.mp4",
+      "status": "PASS",
+      "sha256": "bda2c6d2cd66f20156b55bef51a127e0481ab9656aa0438f5e6e775ad3145de5",
+      "bytes": 4981753,
+      "duration_s": 98.5,
+      "decoded_frames": 2955,
+      "flight_fraction": 0.5532994923857868,
+      "full_decode": "PASS"
+    }
+  ],
+  "raw": [
+    {
+      "run_id": "normal_seed_1",
+      "status": "PASS",
+      "frames": 886,
+      "physical_end_s": 17.61,
+      "encoded_duration_s": 17.62,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 6.430989583333333,
+      "original_end_drift_s": 0.3100000000000023,
+      "full_decode": "PASS"
+    },
+    {
+      "run_id": "emergency_seed_1",
+      "status": "PASS",
+      "frames": 910,
+      "physical_end_s": 18.07,
+      "encoded_duration_s": 18.08,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 6.700520833333333,
+      "original_end_drift_s": 0.3299999999999983,
+      "full_decode": "PASS"
+    },
+    {
+      "run_id": "cost_shift_seed_1",
+      "status": "PASS",
+      "frames": 945,
+      "physical_end_s": 18.76,
+      "encoded_duration_s": 18.77,
+      "max_pts_error_s": 3.552713678800501e-15,
+      "max_raw_tile_pixel_mae": 6.5078125,
+      "original_end_drift_s": 0.33999999999999986,
+      "full_decode": "PASS"
+    }
+  ],
+  "checker_method": "Original physics steps + actual encoded PTS + every flight frame pixel provenance, visible Japanese HUD and original drone crop; independent cost replay and exact re-solve."
+}

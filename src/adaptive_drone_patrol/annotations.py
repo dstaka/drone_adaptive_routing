@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from .scene import priority_color, project, marker_style
+from .scene import priority_color, project, marker_style, priority_text
 from .scenario import Scenario
 from .util import json_write
 
@@ -30,7 +30,7 @@ def display_state(scenario, events, event_seq):
             state['alert'] = name
             old = update.get('old', scenario.priorities[scenario.checkpoint_ids.index(name)])
             new = update.get('value', update.get('new', 5))
-            state['event_text'] = f'{name}：優先度 {old:.2f} → {new:g}'
+            state['event_text'] = f'{name}：優先度 {priority_text(old, scenario.schema_version)} → {priority_text(new, scenario.schema_version)}'
         if kind == 'COST_UPDATED':
             state['cost_update'] = event['update']
             update = event['update']
@@ -62,7 +62,7 @@ def draw_frame(image, scenario, manifest, state, pose, sim_time, font_path, expl
     for i,marker in enumerate(manifest['markers']):
         name = marker['id']
         x,y = project(marker['world_xyz'],manifest['camera'])
-        color = priority_color(state['priorities'][i])
+        color = priority_color(state['priorities'][i], scenario.priority_max)
         draw.ellipse((x-18,y-18,x+18,y+18),outline='#111111',width=7)
         draw.ellipse((x-16,y-16,x+16,y+16),outline=color,width=5)
         if name == state['selected']:
@@ -72,11 +72,11 @@ def draw_frame(image, scenario, manifest, state, pose, sim_time, font_path, expl
             draw.line([(x+17,y-22),(x+22,y-17),(x+32,y-30)],fill='white',width=3)
         if name == state['alert']:
             text((x-32,y-37),'!',title,fill='#ffe600')
-        label = f'{name}｜優先度 {state["priorities"][i]:.2f}'
+        label = f'{name}｜優先度 {priority_text(state["priorities"][i], scenario.schema_version)}'
         box = draw.textbbox((0,0),label,font=font)
         width = box[2]+14
         draw.rounded_rectangle((x-width/2,y+22,x+width/2,y+50),radius=5,fill=color,outline='white',width=2)
-        draw.text((x-width/2+7,y+22),label,font=font,fill=marker_style(state['priorities'][i])['ink'])
+        draw.text((x-width/2+7,y+22),label,font=font,fill=marker_style(state['priorities'][i], priority_max=scenario.priority_max)['ink'])
         symbols = []
         if name == state['selected']:
             symbols.append('選択中')
@@ -92,7 +92,7 @@ def draw_frame(image, scenario, manifest, state, pose, sim_time, font_path, expl
         return (1147+float(point[0])*95, 300-float(point[1])*115)
     for i,name in enumerate(scenario.checkpoint_ids):
         x,y=map_xy(coords[i+1])
-        draw.ellipse((x-7,y-7,x+7,y+7),fill=priority_color(state['priorities'][i]),outline='white')
+        draw.ellipse((x-7,y-7,x+7,y+7),fill=priority_color(state['priorities'][i], scenario.priority_max),outline='white')
         text((x-5,y+7),name,small)
     if state['cost_update']:
         # The retained scenario explicitly changes B->A only; use event edge IDs for general inputs.
@@ -114,7 +114,7 @@ def draw_frame(image, scenario, manifest, state, pose, sim_time, font_path, expl
         for j,name in enumerate([low,high]):
             idx = scenario.checkpoint_ids.index(name)
             measured = float(np.linalg.norm(coords[idx+1]-pose))
-            text((22,190+j*29),f'{name}: 実距離 {measured:.2f} m / p={state["priorities"][idx]:.2f}',small)
+            text((22,190+j*29),f'{name}: 実距離 {measured:.2f} m / p={priority_text(state["priorities"][idx], scenario.schema_version)}',small)
             x,y = project(coords[idx+1],manifest['camera'])
             text((x-32,y-63),f'{"L" if j==0 else "H"}：{measured:.2f} m',small,fill='#ffe600')
         text((22,260),'現在の条件を固定した',small)
@@ -132,9 +132,9 @@ def draw_frame(image, scenario, manifest, state, pose, sim_time, font_path, expl
     if state['event_text']:
         text((24,100),state['event_text'],font,fill='#ffe600')
     text((390,665),'薄い色＝低優先度 / 濃い赤＝高優先度',small)
-    for i in range(1,6):
-        x=855+(i-1)*52
-        draw.rectangle((x,667,x+25,691),fill=priority_color(i),outline='white')
+    for index,i in enumerate([1,25,50,75,100] if scenario.schema_version == 3 else range(1,6)):
+        x=855+index*70
+        draw.rectangle((x,667,x+25,691),fill=priority_color(i, scenario.priority_max),outline='white')
         text((x+29,666),str(i),small)
     return image
 

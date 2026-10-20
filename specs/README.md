@@ -45,3 +45,7 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-16 realtime video implementation session
 
 [1倍速動画と統合デモ成果物](2026-10-14-realtime-demo-video/spec.md)を承認済み仕様としてルートへ実装しました。[実装計画](../docs/superpowers/plans/2026-10-16-realtime-demo-video.md)、[入力・出力・再実行・検証記録](../docs/realtime-video-handoff.md)、[英文PR description](../docs/realtime-video-pr-description.md)を参照してください。全3シナリオの自然尺動画、96.30秒の提出用、元撮影からの独立PTS・画素照合と日本語PDFを生成しました。2026年10月17日のユーザーによる目視OKを反映し、残っていた人手確認を完了、仕様受入をPASSとして記録しました。改善案は別spec／PRで扱います。
+
+## 2026-10-20 integer priorities implementation session
+
+[1〜100の整数重要度](2026-10-17-integer-priorities/spec.md)を独立した変更として実装しました。[実装計画](../docs/superpowers/plans/2026-10-20-integer-priorities.md)と[整数重要度の引き継ぎ](../docs/integer-priorities-handoff.md)を参照してください。既存配置を維持し、新profileのモデル・データ・9物理試行・1倍速動画を別出力先へ保存しました。全7受入条件を満たし、人手確認・PDF確認も完了しています。分散配置と吊り荷は今回のcommitの対象外です。

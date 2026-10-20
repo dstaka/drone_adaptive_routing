@@ -5,6 +5,15 @@ import copy
 import numpy as np
 
 IDS = ('A', 'B', 'C')  # Historical physical runner contract.
+LEGACY_PROFILE = 'legacy-5-v1'
+INTEGER_PROFILE = 'integer-100-v1'
+PRIORITY_GENERATOR = 'numpy-PCG64-SeedSequence(seed,100)-integers-1-101-v1'
+
+
+def draw_integer_priorities(seed, count):
+    """Draw independently with replacement on a geometry-independent stream."""
+    return np.random.Generator(np.random.PCG64(np.random.SeedSequence([seed, 100]))).integers(
+        1, 101, count).tolist()
 
 
 def checkpoint_ids(n):
@@ -36,8 +45,12 @@ class Scenario:
             if self.checkpoint_ids is not None or len(self.priorities) != 3:
                 raise ValueError('Unversioned scenarios require exactly three checkpoints and no IDs')
             self.schema_version, self.checkpoint_ids = 2, list(IDS)
-        if type(self.schema_version) is not int or self.schema_version != 2:
-            raise ValueError('Unsupported scenario schema_version; expected 2')
+        if type(self.schema_version) is not int or self.schema_version not in (2, 3):
+            raise ValueError('Unsupported scenario schema_version; expected 2 or 3')
+        integer = self.schema_version == 3
+        if integer and (not isinstance(self.priorities, list) or
+                        any(type(p) is not int or not 1 <= p <= 100 for p in self.priorities)):
+            raise ValueError('Integer priorities require integer tokens in [1,100]')
         ids = self.checkpoint_ids
         if (not isinstance(ids, list) or not ids or
                 any(not isinstance(i, str) or not i.strip() or i != i.strip() or i == 'S' for i in ids)
@@ -50,10 +63,11 @@ class Scenario:
             a = np.asarray(getattr(self, name), dtype=float)
             if a.shape != shape or not np.isfinite(a).all():
                 raise ValueError(f'{name} must be finite with shape {shape}')
-            setattr(self, name, a.tolist())
+            if not (integer and name == 'priorities'):
+                setattr(self, name, a.tolist())
         if len({tuple(p) for p in self.coords}) != n + 1:
             raise ValueError('Positions must be distinct')
-        if not all(1 <= p <= 5 for p in self.priorities):
+        if not integer and not all(1 <= p <= 5 for p in self.priorities):
             raise ValueError('Priorities must lie in [1,5]')
         if not np.all((np.asarray(self.multipliers) >= 1) & (np.asarray(self.multipliers) <= 5)):
             raise ValueError('Multipliers must lie in [1,5]')
@@ -65,12 +79,18 @@ class Scenario:
             raise ValueError('Scenario ID and integer seed are required')
         if type(self.return_to_base) is not bool:
             raise ValueError('return_to_base must be boolean')
+        if integer and (self.alpha != 1 or self.beta != .05 or self.nominal_speed_mps != 1
+                        or self.return_to_base or any(t != .5 for t in self.service_duration_s)):
+            raise ValueError('Integer profile requires alpha=1, beta=0.05, speed=1, service=0.5 and no return')
         if self.event is not None:
             e = copy.deepcopy(self.event)
             if (not isinstance(e, dict) or e.get('kind') not in ('priority', 'cost') or
                     type(e.get('after')) is not int or e['after'] != 1):
                 raise ValueError('Events must be priority/cost updates after first completion')
-            if type(e.get('value')) not in (int, float) or not np.isfinite(e['value']) or not 1 <= e['value'] <= 5:
+            if integer and e['kind'] == 'priority':
+                if type(e.get('value')) is not int or not 1 <= e['value'] <= 100:
+                    raise ValueError('Priority event requires an integer token in [1,100]')
+            elif type(e.get('value')) not in (int, float) or not np.isfinite(e['value']) or not 1 <= e['value'] <= 5:
                 raise ValueError('Event value must lie in [1,5]')
             if type(e.get('sample_at_boundary', False)) is not bool:
                 raise ValueError('sample_at_boundary must be boolean')
@@ -100,6 +120,14 @@ class Scenario:
             self.event = e
 
     @property
+    def priority_profile(self):
+        return INTEGER_PROFILE if self.schema_version == 3 else LEGACY_PROFILE
+
+    @property
+    def priority_max(self):
+        return 100 if self.schema_version == 3 else 5
+
+    @property
     def num_checkpoints(self):
         return len(self.checkpoint_ids)
 
@@ -127,7 +155,10 @@ class Scenario:
             raise ValueError('Initial pose lies within checkpoint arrival radius')
 
 
-def generate_scenario(seed, split, kind=None, num_checkpoints=3):
+def generate_scenario(seed, split, kind=None, num_checkpoints=3, priority_profile=LEGACY_PROFILE):
+    if priority_profile not in (LEGACY_PROFILE, INTEGER_PROFILE):
+        raise ValueError('Unsupported priority profile')
+    integer = priority_profile == INTEGER_PROFILE
     ranges = {'training': (0, 10000), 'validation': (10000, 20000),
               'static': (20000, 20100), 'dynamic': (30000, 30050), 'demo': (40000, 40100)}
     if split not in ranges or not ranges[split][0] <= seed < ranges[split][1]:
@@ -140,11 +171,14 @@ def generate_scenario(seed, split, kind=None, num_checkpoints=3):
     priorities = rng.integers(1, 6, n)
     multipliers = rng.uniform(1, 5, (n + 1, n + 1))
     np.fill_diagonal(multipliers, 1)
+    if integer:
+        priorities = draw_integer_priorities(seed, n)
     if kind is None:
         kind = ('priority' if seed % 2 else 'cost') if split == 'dynamic' else 'static'
     event = None
     if kind == 'priority':
-        event = {'kind': 'priority', 'after': 1, 'checkpoint': 'C' if n >= 3 else ids[-1], 'value': 5}
+        event = {'kind': 'priority', 'after': 1, 'checkpoint': 'C' if n >= 3 else ids[-1],
+                 'value': 100 if integer else 5}
     elif kind == 'cost':
         target = ids[int(rng.integers(n))]
         event = {'kind': 'cost', 'after': 1, 'edges': [[i, target] for i in ['S'] + ids if i != target],
@@ -153,5 +187,7 @@ def generate_scenario(seed, split, kind=None, num_checkpoints=3):
         raise ValueError(f'Unknown scenario kind {kind}')
     if event and split == 'training':
         event['sample_at_boundary'] = True
-    return Scenario(f'{split}-{seed}', split, int(seed), coords.tolist(), priorities.tolist(),
-                    multipliers.tolist(), [.5] * n, event=event, schema_version=2, checkpoint_ids=ids)
+    return Scenario(f'{split}-{seed}', split, int(seed), coords.tolist(),
+                    priorities if integer else priorities.tolist(), multipliers.tolist(), [.5] * n,
+                    beta=.05 if integer else 1., event=event, schema_version=3 if integer else 2,
+                    checkpoint_ids=ids)

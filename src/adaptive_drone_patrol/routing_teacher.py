@@ -8,12 +8,12 @@ import numpy as np
 import torch
 from .analytical import snapshot
 from .baselines import exact_remaining
-from .objective import RoutingState
-from .scenario import generate_scenario
+from .objective import RoutingState, schema_for
+from .scenario import Scenario, generate_scenario, LEGACY_PROFILE
 from .util import sha256, json_write
 
 
-def prepare_teacher(directory, n, cases):
+def prepare_teacher(directory, n, cases, priority_profile=LEGACY_PROFILE):
     """Persist all inputs and labels from training seeds only."""
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=False)
@@ -25,7 +25,7 @@ def prepare_teacher(directory, n, cases):
     with gzip.open(directory / 'teacher.jsonl.gz', 'wt') as stream:
         for index in range(cases):
             kind = ['static', 'priority', 'cost'][index % 3]
-            state = RoutingState(generate_scenario(index % 10000, 'training', kind, n))
+            state = RoutingState(generate_scenario(index % 10000, 'training', kind, n, priority_profile))
             prefix = rng.permutation(n)[:int(rng.integers(n))]
             for a in prefix:
                 state.complete(int(a), state.departure(int(a)))
@@ -37,7 +37,10 @@ def prepare_teacher(directory, n, cases):
             stream.write(json.dumps({'snapshot': snapshot(state), 'exact': exact}) + '\n')
     np.savez_compressed(directory / 'teacher.npz', observations=np.asarray(observations),
                         masks=np.asarray(masks), labels=np.asarray(labels))
-    record = {'cases': cases, 'num_checkpoints': n, 'split': 'training', 'scenario_seeds': [0, min(cases - 1, 9999)],
+    record = {'cases': cases, 'num_checkpoints': n, 'split': 'training',
+              'schema': schema_for(generate_scenario(0, 'training', num_checkpoints=n,
+                                                    priority_profile=priority_profile)),
+              'scenario_seeds': [0, min(cases - 1, 9999)],
               'sha256': sha256(directory / 'teacher.npz'), 'manifest_sha256': sha256(directory / 'teacher.jsonl.gz'),
               'elapsed_s': time.monotonic() - start, 'purpose': 'Supervised initialization before static and event-inclusive MaskablePPO; no teacher at inference.'}
     json_write(directory / 'teacher.json', record)
@@ -49,6 +52,7 @@ def warmstart(model, directory, epochs, seed, expected_cases):
     directory = Path(directory)
     record = json.loads((directory / 'teacher.json').read_text())
     if (record['split'] != 'training' or record['cases'] != expected_cases or
+            record.get('schema') != model.routing_schema or
             record['num_checkpoints'] != model.action_space.n or
             sha256(directory / 'teacher.jsonl.gz') != record['manifest_sha256'] or
             sha256(directory / 'teacher.npz') != record['sha256']):
@@ -69,7 +73,8 @@ def warmstart(model, directory, epochs, seed, expected_cases):
             item = json.loads(line)
             scenario = item['snapshot']['scenario']
             if (scenario['split'] != 'training' or not 0 <= scenario['seed'] < 10000 or
-                    len(scenario['checkpoint_ids']) != model.action_space.n):
+                    len(scenario['checkpoint_ids']) != model.action_space.n or
+                    schema_for(Scenario.from_dict(scenario)) != model.routing_schema):
                 raise ValueError('Teacher manifest contains nontraining or incompatible inputs')
             count += 1
         if count != expected_cases:

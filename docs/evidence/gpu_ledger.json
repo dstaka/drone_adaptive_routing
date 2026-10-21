@@ -1,5 +1,5 @@
 {
-  "used_s": 5779.474017477245,
+  "used_s": 7484.093172315159,
   "jobs": [
     {
       "run_id": "smoke",
@@ -566,6 +566,217 @@
       "exit_code": 0,
       "elapsed_s": 329.601816038019,
       "finished_epoch": 1792508547.9330602
+    },
+    {
+      "run_id": "probe_job_v1",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/probe_payload_physics.py",
+        "--out",
+        "outputs/probe_v1",
+        "--steps",
+        "100"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792582386.50463,
+      "timeout_s": 900.0,
+      "pid": 2655,
+      "exit_code": 2,
+      "elapsed_s": 108.68504684901563,
+      "finished_epoch": 1792582495.1904287
+    },
+    {
+      "run_id": "probe_job_v2",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/probe_payload_physics.py",
+        "--out",
+        "outputs/probe_v2",
+        "--steps",
+        "100"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792582562.4198215,
+      "timeout_s": 600.0,
+      "pid": 2910,
+      "exit_code": 0,
+      "elapsed_s": 10.63326979096746,
+      "finished_epoch": 1792582573.054022
+    },
+    {
+      "run_id": "probes_job_v3",
+      "command": [
+        "bash",
+        "probes-v3.sh"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792582772.0685835,
+      "timeout_s": 1200.0,
+      "pid": 3143,
+      "exit_code": 0,
+      "elapsed_s": 170.03881349397125,
+      "finished_epoch": 1792582942.1085176
+    },
+    {
+      "run_id": "bank_job_v1",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/probe_payload_bank.py",
+        "--out",
+        "outputs/bank_v1"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792583207.064328,
+      "timeout_s": 600.0,
+      "pid": 5397,
+      "exit_code": 1,
+      "elapsed_s": 69.75165039900457,
+      "finished_epoch": 1792583276.8168318
+    },
+    {
+      "run_id": "bank_job_v2",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/probe_payload_bank.py",
+        "--out",
+        "outputs/bank_v2"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792583346.1726956,
+      "timeout_s": 300.0,
+      "pid": 5614,
+      "exit_code": 0,
+      "elapsed_s": 12.288201747986022,
+      "finished_epoch": 1792583358.4617536
+    },
+    {
+      "run_id": "bank_job_v3",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/probe_payload_bank.py",
+        "--out",
+        "outputs/bank_v3"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792583472.3515544,
+      "timeout_s": 120.0,
+      "pid": 5817,
+      "exit_code": 2,
+      "elapsed_s": 11.836425095971208,
+      "finished_epoch": 1792583484.1888366
+    },
+    {
+      "run_id": "probes_job_v4",
+      "command": [
+        "bash",
+        "probes-v4.sh"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792583634.5537605,
+      "timeout_s": 700.0,
+      "pid": 6098,
+      "exit_code": 0,
+      "elapsed_s": 164.20111677900422,
+      "finished_epoch": 1792583798.7557585
+    },
+    {
+      "run_id": "train_randomized_job_v1",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/train_payload_flight.py",
+        "--parent",
+        "inputs/model_4296.pt",
+        "--config",
+        "inputs/cfgs.pkl",
+        "--out",
+        "outputs/train_randomized_v1",
+        "--method",
+        "randomized",
+        "--iterations",
+        "3000",
+        "--preflight",
+        "outputs/preflight-v4.json",
+        "--preflight-sha256",
+        "a12bf2004d733142c42e6e81a1365d4af13b36f7320c2d5b1c218342ca5aed6f"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792584331.9883416,
+      "timeout_s": 4200.0,
+      "pid": 8597,
+      "exit_code": 1,
+      "elapsed_s": 17.004238524998073,
+      "finished_epoch": 1792584348.9935172
+    },
+    {
+      "run_id": "train_randomized_job_v2",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/train_payload_flight.py",
+        "--parent",
+        "inputs/model_4296.pt",
+        "--config",
+        "inputs/cfgs.pkl",
+        "--out",
+        "outputs/train_randomized_v2",
+        "--method",
+        "randomized",
+        "--iterations",
+        "3000",
+        "--preflight",
+        "outputs/preflight-v4.json",
+        "--preflight-sha256",
+        "a12bf2004d733142c42e6e81a1365d4af13b36f7320c2d5b1c218342ca5aed6f"
+      ],
+      "status": "FAILED",
+      "started_epoch": 1792584551.7887695,
+      "timeout_s": 4100.0,
+      "pid": 8873,
+      "exit_code": -15,
+      "elapsed_s": 1049.5511462779832,
+      "finished_epoch": 1792585601.3408384
+    },
+    {
+      "run_id": "diagnostic_job_v1",
+      "command": [
+        ".venv-flight312/bin/python",
+        "-u",
+        "scripts/diagnose_payload_training.py",
+        "--checkpoint",
+        "outputs/train_randomized_v2/model_2000.pt",
+        "--out",
+        "outputs/diagnostic_v1",
+        "--steps",
+        "10000"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792586327.129227,
+      "timeout_s": 180.0,
+      "pid": 9201,
+      "exit_code": 0,
+      "elapsed_s": 24.599072318989784,
+      "finished_epoch": 1792586351.729209
+    },
+    {
+      "run_id": "diagnostic_substeps_job_v1",
+      "command": [
+        "bash",
+        "-c",
+        ".venv-flight312/bin/python -u scripts/diagnose_payload_training.py --checkpoint outputs/train_randomized_v2/model_2000.pt --out outputs/diagnostic_substeps8_v1 --steps 10000 --substeps 8; .venv-flight312/bin/python -u scripts/diagnose_payload_training.py --checkpoint outputs/train_randomized_v2/model_2000.pt --out outputs/diagnostic_substeps16_v1 --steps 10000 --substeps 16"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792586589.3183637,
+      "timeout_s": 700.0,
+      "pid": 9477,
+      "exit_code": 0,
+      "elapsed_s": 66.03017356002238,
+      "finished_epoch": 1792586655.3494723
     }
   ]
 }

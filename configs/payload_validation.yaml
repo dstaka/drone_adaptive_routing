@@ -1,0 +1,22 @@
+schema: payload-transitions-v1
+split: validation
+initial_seeds: [11, 12]
+loads:
+  - {side_m: 0.030, mass_ratio: 0.13}
+  - {side_m: 0.045, mass_ratio: 0.20}
+  - {side_m: 0.060, mass_ratio: 0.27}
+targets:
+  - [0.0, 0.0, 1.0]
+  - [0.5, 0.0, 1.0]
+  - [-2.7, -1.8, 1.0]
+  - [2.7, 1.8, 1.0]
+  - [2.7, 1.8, 3.0]
+  - [2.7, 1.8, 1.0]
+  - [-2.7, -1.8, 3.0]
+  - [2.7, 1.8, 1.0]
+  - [0.0, 0.0, 1.0]
+  - [0.0, 0.0, 1.0]
+selection_rule: final matched-budget checkpoints only; validation before held-out; no hidden checkpoint search
+leg_timeout_s: 30
+mission_timeout_s: 120
+wall_timeout_s: 600

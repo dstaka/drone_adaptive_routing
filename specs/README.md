@@ -53,3 +53,9 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-20 dispersed destination implementation session
 
 [分散3次元目的地配置](2026-10-17-dispersed-destination-layout/spec.md)を整数重要度PRのマージ後から実装しました。[実装計画](../docs/superpowers/plans/2026-10-20-dispersed-destination-layout.md)と[新規測定・失敗・再実行の引き継ぎ](../docs/dispersed-destination-layout-handoff.md)を参照してください。配置承認、追加学習、9物理試行90点検、全5動画11,361フレームの独立照合、最終動画の人手確認とPDF確認を完了し、全7受入条件を満たしました。他の未追跡specは今回のcommitへ含めません。
+
+## 2026-10-17: 吊り荷を運ぶ強化学習制御
+
+[吊り荷付き10地点巡回と荷重・寸法ランダム化](2026-10-17-suspended-payload-flight/spec.md)を、動画改善PRとは独立した仕様として作成しました。既存の小型機で荷物を吊り下げ、各地点で荷物も安定するまで待ちます。初版は固定長リンクによる近似から始め、3種類の箱サイズと連続的な質量をepisodeごとに抽選します。方策は荷物の動きを観測しますが、正確な質量・寸法は入力しません。投下とロープの弛みは対象外です。
+
+確認済みの受入は、機体・荷物の同時安定1秒、基本9/9成功、端点条件18/18成功、未学習ランダム100試行中95件以上成功です。固定荷物で学習した比較方策にも同じ127条件を使用します。動画成果物は1倍速rawと日本語HUD付き全編3本までとし、提出用再編集は別PRへ分離します。作成時点では最終レビュー待ち・実装未開始でした。2026-10-21の明示指示により実装・物理probe・一部学習を行い、数値破綻のため停止しました。固定比較・254受入・動画は未達です。[実装と失敗の引き継ぎ](../docs/suspended-payload-flight-handoff.md)を参照してください。

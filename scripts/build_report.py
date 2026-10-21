@@ -21,6 +21,7 @@ def main():
     p.add_argument('--font', default='outputs/assets/NotoSansJP.ttf')
     p.add_argument('--out', required=True)
     p.add_argument('--date', default='2026-10-20')
+    p.add_argument('--footer', default='10地点・1倍速の実測報告')
     a = p.parse_args()
     out = Path(a.out)
     static_font = out.with_suffix('.font.ttf')
@@ -60,7 +61,7 @@ def main():
     def footer(canvas, doc):
         canvas.setFont('NotoJP', 8)
         canvas.setFillColor(colors.HexColor('#657c89'))
-        canvas.drawString(36, 24, f'Adaptive Drone Inspection | {a.date} | 10地点・1倍速の実測報告')
+        canvas.drawString(36, 24, f'Adaptive Drone Inspection | {a.date} | {a.footer}')
         canvas.drawRightString(A4[0] - 36, 24, str(doc.page))
     doc = SimpleDocTemplate(str(out), pagesize=A4, rightMargin=36, leftMargin=36,
                             topMargin=36, bottomMargin=42, title='適応型ドローン巡回点検', author='dstaka')

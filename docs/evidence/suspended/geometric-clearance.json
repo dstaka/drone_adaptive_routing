@@ -1,0 +1,9 @@
+{
+  "status": "STATIC_GEOMETRY_ONLY",
+  "cases": 127,
+  "initial_minimum_package_floor_m": 0.6200248975374648,
+  "nominal_vertical_minimum_over_start_and_all_targets_m": 0.6199999999999999,
+  "static_any_orientation_bound_m": 0.5980384757729336,
+  "dynamic_clearance": "NOT_VALIDATED_FEASIBILITY_FAILED",
+  "clarification_ja": "箱上面から中心への半辺を含めて保守境界を計算。地面接触による安定化や実遷移の成功を示さない。"
+}

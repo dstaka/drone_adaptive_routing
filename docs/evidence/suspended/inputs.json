@@ -1,0 +1,28 @@
+{
+  "base_revision": "f3e33747ebd62d5e5e0466cb671a1b39069d182f",
+  "artifacts": [
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/model_4296.pt",
+      "bytes": 475573,
+      "sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/cfgs.pkl",
+      "bytes": 1628,
+      "sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/training/seed_44.zip",
+      "bytes": 297837,
+      "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    }
+  ],
+  "spec_input_sha256": "f0e5efa9679470786b7e82db8ff69c49075727724d605e33b7efa524ed88addf",
+  "gpu_initial_used_s": 5779.474017477245,
+  "gpu_remaining_s": 23020.525982522755,
+  "case_manifest": {
+    "path": "outputs/suspended_20261021_v1/cases-v1.json",
+    "sha256": "f98e0632d96a4d7b40feda667bff6e9ca831fc7f67e1734f2438e3c527ecf01c"
+  },
+  "case_execution_status": "NOT_RUN"
+}

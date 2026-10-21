@@ -1,0 +1,305 @@
+{
+  "schema": "payload-feasibility-outcome-v1",
+  "status": "FEASIBILITY_FAILED",
+  "training_admitted": false,
+  "policy_admitted": false,
+  "reason_ja": "短時間の受動・開ループprobe後、方策駆動中に数値破綻。2/8/16 substepでも再現したためGPU作業を停止。",
+  "interpretation_ja": "このEuler関節表現の運用域での安定性を検証できなかった。固定リンク方式全般が不可能という証明ではない。",
+  "historical_short_probe": {
+    "receipt": {
+      "path": "outputs/suspended_20261021_v1/remote-final/outputs/preflight-v4.json",
+      "bytes": 12345,
+      "sha256": "a12bf2004d733142c42e6e81a1365d4af13b36f7320c2d5b1c218342ca5aed6f"
+    },
+    "original_status": "PASS",
+    "current_status": "INVALIDATED_FOR_OPERATING_DOMAIN",
+    "checks": 13,
+    "bank_resets": 30,
+    "maximum_constraint_residual_m": 1.1225354051846992e-07,
+    "minimum_coupled_floor_m": 0.6135841448426972,
+    "maximum_energy_drift": 0.015817769157766202,
+    "timestep_comparisons": [
+      {
+        "side_m": 0.03,
+        "max_position_difference_m": 0.00022910099917241523,
+        "max_swing_difference_deg": 0.04418200303796582,
+        "passed": true
+      },
+      {
+        "side_m": 0.045,
+        "max_position_difference_m": 0.00023171909082302995,
+        "max_swing_difference_deg": 0.044440211200223956,
+        "passed": true
+      },
+      {
+        "side_m": 0.06,
+        "max_position_difference_m": 0.00023148664598273295,
+        "max_swing_difference_deg": 0.04364636224461586,
+        "passed": true
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "substeps": 2,
+      "control_dt_s": 0.01,
+      "physics_dt_s": 0.005,
+      "status": "NUMERICAL_DIVERGENCE",
+      "summary": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_v1/summary.json",
+        "bytes": 414,
+        "sha256": "4b5eebb183989519cd37cfd0a7a5c429f3e4ae14843bf209c4f50517651ebc3f"
+      },
+      "raw_state": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_v1/raw-states.jsonl",
+        "bytes": 2528411,
+        "sha256": "75a222b3fa77bb5358ec3e74320ead9b60f63be9b13254d9c58f9882d31ab30d"
+      },
+      "samples": 2789,
+      "last_sample": {
+        "index": 2788,
+        "target": [
+          2.7,
+          1.8,
+          3.0
+        ],
+        "actions": [
+          -0.49828827381134033,
+          0.23932717740535736,
+          0.2614121437072754,
+          -0.10811019688844681
+        ],
+        "mass_ratio": 0.2770147363865064,
+        "side_m": 0.06,
+        "drone_xyz": [
+          -6969.12646484375,
+          24264.341796875,
+          -33044.703125
+        ],
+        "drone_quaternion_wxyz": [
+          0.7875242829322815,
+          -0.11925611644983292,
+          0.29685696959495544,
+          0.5267441272735596
+        ],
+        "drone_velocity": [
+          -1393262.5,
+          4852838.0,
+          -6609993.5
+        ],
+        "drone_angular_velocity": [
+          -286692384.0,
+          46231500.0,
+          94279224.0
+        ],
+        "package_xyz": [
+          -6969.25341796875,
+          24264.130859375,
+          -33044.52734375
+        ],
+        "package_quaternion_wxyz": [
+          0.06674450635910034,
+          0.5608852505683899,
+          -0.7069650292396545,
+          0.4256211221218109
+        ],
+        "package_velocity": [
+          42672384.0,
+          152075712.0,
+          43284672.0
+        ],
+        "package_angular_velocity": [
+          -4019295744.0,
+          4481838592.0,
+          164216528.0
+        ]
+      },
+      "max_package_speed_m_s": 163772761.36982605,
+      "max_motor_action": 1.0,
+      "first_speed_above_1e4_index": 2788
+    },
+    {
+      "substeps": 8,
+      "control_dt_s": 0.01,
+      "physics_dt_s": 0.00125,
+      "status": "NUMERICAL_DIVERGENCE",
+      "summary": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps8_v1/summary.json",
+        "bytes": 481,
+        "sha256": "f7090172fd2a41de64b4d1ffb0020dcf3c4c47556589fe1219b607667171751d"
+      },
+      "raw_state": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps8_v1/raw-states.jsonl",
+        "bytes": 827943,
+        "sha256": "657551c335e4cacbcb9bf993793b6ca625b2b93ea9e437c6287b4cbe76a61737"
+      },
+      "samples": 914,
+      "last_sample": {
+        "index": 913,
+        "target": [
+          2.7,
+          1.8,
+          3.0
+        ],
+        "actions": [
+          0.12751519680023193,
+          0.5246025919914246,
+          1.0,
+          -1.0
+        ],
+        "mass_ratio": 0.2477959492069051,
+        "side_m": 0.045,
+        "drone_xyz": [
+          486619872.0,
+          -474472224.0,
+          -26919932.0
+        ],
+        "drone_quaternion_wxyz": [
+          -0.2600635886192322,
+          0.05897938832640648,
+          0.5066919922828674,
+          -0.8198485374450684
+        ],
+        "drone_velocity": [
+          389294096384.0,
+          -379567734784.0,
+          -21541945344.0
+        ],
+        "drone_angular_velocity": [
+          -7547844558848.0,
+          -6656780926976.0,
+          -17536113442816.0
+        ],
+        "package_xyz": [
+          486619872.0,
+          -474472224.0,
+          -26919932.0
+        ],
+        "package_quaternion_wxyz": [
+          -0.2600635886192322,
+          0.05897938832640648,
+          0.5066919922828674,
+          -0.8198485374450684
+        ],
+        "package_velocity": [
+          389294096384.0,
+          -380104605696.0,
+          -17179869184.0
+        ],
+        "package_angular_velocity": [
+          1203516274114560.0,
+          -3083390844665856.0,
+          697858969829376.0
+        ]
+      },
+      "max_package_speed_m_s": 544357008456.6984,
+      "max_motor_action": 1.0,
+      "first_speed_above_1e4_index": 913
+    },
+    {
+      "substeps": 16,
+      "control_dt_s": 0.01,
+      "physics_dt_s": 0.000625,
+      "status": "NUMERICAL_DIVERGENCE",
+      "summary": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps16_v1/summary.json",
+        "bytes": 484,
+        "sha256": "ef31556c501f329fa0fded7b936ddeed7766d0bb746c490eb4aee797d75b5455"
+      },
+      "raw_state": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps16_v1/raw-states.jsonl",
+        "bytes": 3363770,
+        "sha256": "93140af7e90d5b92b0e823a992141d6945723919cee2666afcb765f9df2c1420"
+      },
+      "samples": 3714,
+      "last_sample": {
+        "index": 3713,
+        "target": [
+          2.7,
+          1.8,
+          3.0
+        ],
+        "actions": [
+          0.672948956489563,
+          0.6275278925895691,
+          -1.0,
+          -0.8898006081581116
+        ],
+        "mass_ratio": 0.2589771633892537,
+        "side_m": 0.03,
+        "drone_xyz": [
+          5063901696.0,
+          396838816.0,
+          404152992.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.7449780106544495,
+          0.6640965938568115,
+          0.0021411089692264795,
+          0.0630793571472168
+        ],
+        "drone_velocity": [
+          8102455803904.0,
+          634984071168.0,
+          646661013504.0
+        ],
+        "drone_angular_velocity": [
+          27113453256704.0,
+          -30921531064320.0,
+          -310273906835456.0
+        ],
+        "package_xyz": [
+          5063901696.0,
+          396838816.0,
+          404152992.0
+        ],
+        "package_quaternion_wxyz": [
+          0.7449780106544495,
+          0.6640965938568115,
+          0.0021411089692264795,
+          0.0630793571472168
+        ],
+        "package_velocity": [
+          8108898254848.0,
+          635655159808.0,
+          635655159808.0
+        ],
+        "package_angular_velocity": [
+          1812236083396608.0,
+          -5275777838874624.0,
+          940606092214272.0
+        ]
+      },
+      "max_package_speed_m_s": 8158574990269.932,
+      "max_motor_action": 1.0,
+      "first_speed_above_1e4_index": 3713
+    }
+  ],
+  "training_source_snapshot": {
+    "path": "outputs/suspended_20261021_v1/source-before-substeps.tar.gz",
+    "bytes": 28074,
+    "sha256": "8de9045eb9fe4301ff87ba9d38f9fabc3a6e766ae5376687211dec81fc2c28b8"
+  },
+  "failed_checkpoint": {
+    "path": "outputs/suspended_20261021_v1/remote-final/outputs/train_randomized_v2/model_2000.pt",
+    "bytes": 512437,
+    "sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d"
+  },
+  "gates": {
+    "randomized_training": "ABORTED",
+    "fixed_training": "NOT_RUN",
+    "validation": "NOT_RUN",
+    "acceptance": "NOT_RUN",
+    "raw_videos": "NOT_RUN",
+    "hud_videos": "NOT_RUN",
+    "human_review": "NOT_REQUESTED_NO_FINAL_VIDEO"
+  },
+  "attempted_acceptance_trials": 0,
+  "planned_acceptance_trials": 254,
+  "completed_training_policies": 0,
+  "followup_ja": [
+    "同じpinned版の受動球関節表現を調査し、機体root・rotor適用先を再検証する。未実装。",
+    "長時間・全荷重・反転・上下・同時変更を学習前probeに追加する。",
+    "物理変更後は全probe・両方策のmatched予算学習・validation・凍結・254評価・撮影を最初から新規に行う。"
+  ]
+}

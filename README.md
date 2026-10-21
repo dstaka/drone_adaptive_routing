@@ -1,5 +1,11 @@
 # 適応型ドローン巡回点検
 
+2026-10-21追記：**吊り荷版は物理実現性ゲートで不合格、受入未達です。** [対象spec](specs/2026-10-17-suspended-payload-flight/spec.md) に沿って受動0.30 m固定リンク、実質量・慣性・collision、episode再抽選、29観測、同時1秒settlingと評価checkerを実装しました。短いprobe後のランダム化学習で数値破綻し、2/8/16 substepの診断でも再現したためGPU作業を停止しました。採用済み吊り荷モデル、固定比較、254受入試行、全編動画3本、人手確認はありません。成功率やランダム化の優位性を主張しません。
+
+[実装・失敗・hash・再実行の引き継ぎ](docs/suspended-payload-flight-handoff.md)、[実装計画と到達状況](docs/superpowers/plans/2026-10-21-suspended-payload-flight.md)、[独立raw検査](docs/evidence/suspended/failure-check.json)、[日本語レポート](docs/report_ja.md) を参照してください。GPU累計7,484.093172秒、残り21,315.906828秒。旧い短時間PASSで訓練を再開できないよう停止状態を記録しています。数値破綻の修理は未達です。
+
+以下は**先行の無荷物・分散3D版**の成果と再実行記録です。吊り荷の成功や動画承認を表しません。
+
 A〜Jの実目的地を不規則な3次元配置へ変更し、同じ学習済みrouting方策と互換な飛行方策で巡回します。重要度は実値・表示とも1〜100整数で、大きいほど重要ですが訪問順そのものではありません。
 
 [今回の承認済みspec](specs/2026-10-17-dispersed-destination-layout/spec.md)、[実装計画](docs/superpowers/plans/2026-10-20-dispersed-destination-layout.md)、[モデル・測定・失敗・再実行手順](docs/dispersed-destination-layout-handoff.md)、[日本語レポート](docs/report_ja.md)を参照してください。[整数重要度](docs/integer-priorities-handoff.md)、[経路最適化](docs/scalable-routing-handoff.md)、[全地点飛行](docs/visible-flight-handoff.md)、[旧1倍速動画](docs/realtime-video-handoff.md)は歴史記録として保持しています。

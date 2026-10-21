@@ -1,0 +1,27 @@
+schema: payload-preflight-v1
+status: diagnostic_thresholds_declared_before_v3
+link_m: 0.30
+link_mass_kg: 0.0001
+gimbal_mass_kg: 0.000001
+joint_damping: 0.0
+default_armature: 0.0
+precision: '32'
+control_dt_s: 0.01
+rigid_dt_s: 0.005
+solver: Newton
+constraint_residual_max_m: 0.00002
+mass_relative_tolerance: 0.00001
+inertia_relative_tolerance: 0.00001
+collision_extent_tolerance_m: 0.00001
+anchor_initial_angle_deg: 5.0
+anchor_duration_s: 10.0
+anchor_relative_energy_drift_limit: 0.05
+half_dt_position_max_difference_m: 0.02
+half_dt_swing_max_difference_deg: 2.0
+small_angle_dominant_period_relative_tolerance: 0.10
+coupled_probe_duration_s: 0.60
+coupled_probe_floor_m: 0.10
+admission: all_physical_and_reset_geometry_checks_required_before_training
+
+# Short passive probes passed, but policy-driven dynamics diverged at 2/8/16 substeps.
+operating_domain_admission: blocked_numerical_instability

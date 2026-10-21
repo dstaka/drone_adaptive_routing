@@ -1,0 +1,275 @@
+{
+  "schema": "payload-probe-check-v1",
+  "status": "DIAGNOSTICS_ONLY",
+  "checker_sha256": "133b49fc4e9c2b2fdfc47405de70598e1f63f63b0bd26cad6d7f4c3ff052a6e6",
+  "physical_training_admitted": false,
+  "checks": [
+    {
+      "probe": "anchor_0.030",
+      "binding": {
+        "asset.json": "608de14dc5f0a8b9e4679f6a54ec6b3e794a89a2786573a1119992e819290bb1",
+        "loaded.urdf": "8cbbe6fee28869c3b0394eeb90467d1b4ae224b04cb89a196bc7de31b536846d",
+        "runtime-initial.json": "4de0e804aa1e0043512781a93ba11b74bcac1e210e6f4adaf039ca0019abb67d",
+        "samples.jsonl": "308cf79cdc134588abc37478181295ff74de17e46867625b278668ce87f31784",
+        "summary.json": "2caf30f5d13277be26a104ab2e94e912a65fb35b5f7ed62ec7b4a86bc2c5815d"
+      },
+      "max_residual_m": 8.666708661841938e-08,
+      "minimum_floor_m": 0.649587769337039,
+      "constraint_pass": true,
+      "relative_energy_drift": [
+        0.015817769157766202,
+        0.015790184293553167,
+        0.015739728844887543
+      ],
+      "measured_period_s": [
+        1.1225,
+        1.125,
+        1.1262499999999998
+      ],
+      "energy_pass": true
+    },
+    {
+      "probe": "anchor_0.045",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "ad8be23fca9eb040ef3dc23b131afdc4ed14171823621e812eb5345263373a1d",
+        "samples.jsonl": "9e090b5a8f80062b30ad5cf194ab1f46e0355a7ab89031cff3b9d3f1ec91ee52",
+        "summary.json": "07c43d2f2e3107de4a6c0295565510981049011d9036308a4a37e3b055762a5b"
+      },
+      "max_residual_m": 8.462706579948076e-08,
+      "minimum_floor_m": 0.634100490059735,
+      "constraint_pass": true,
+      "relative_energy_drift": [
+        0.015591781610987369,
+        0.015605399781037508,
+        0.015546277390433422
+      ],
+      "measured_period_s": [
+        1.1375000000000002,
+        1.1400000000000001,
+        1.1400000000000001
+      ],
+      "energy_pass": true
+    },
+    {
+      "probe": "anchor_0.060",
+      "binding": {
+        "asset.json": "d72c577f05aaa61499126741a812c5dbdf67336faa9bf42d7cfe63fda59f7dcd",
+        "loaded.urdf": "ff2c49e76776b5a7187eabbbdb65875f0411f34d542b2c2e2d4fcef3c5c3b15a",
+        "runtime-initial.json": "42bbfea51aef57e33fa5d28b16568be64ecd28c176f52b98264645f728f06f12",
+        "samples.jsonl": "fcf6a1037adbf6c0d20bdfd469eae5a32f18d3530f6d5a651883615085f58eaa",
+        "summary.json": "bd95eb84695788b326c1894bd956771fad652e71490014b9d601e38cff86a213"
+      },
+      "max_residual_m": 8.912720511622396e-08,
+      "minimum_floor_m": 0.618446496423234,
+      "constraint_pass": true,
+      "relative_energy_drift": [
+        0.015361090127751598,
+        0.015402865716086032,
+        0.015349504393254585
+      ],
+      "measured_period_s": [
+        1.1514285714285712,
+        1.1542857142857146,
+        1.1542857142857146
+      ],
+      "energy_pass": true
+    },
+    {
+      "probe": "anchor_half_0.030",
+      "binding": {
+        "asset.json": "608de14dc5f0a8b9e4679f6a54ec6b3e794a89a2786573a1119992e819290bb1",
+        "loaded.urdf": "8cbbe6fee28869c3b0394eeb90467d1b4ae224b04cb89a196bc7de31b536846d",
+        "runtime-initial.json": "990f583c37c81b6fd42f138bd00596b66b583948e94001e8e143e38f976fbd91",
+        "samples.jsonl": "d298449a0cf05fb83a91f6d6243932d9bacbe1fa549d6e930d1d687552e96629",
+        "summary.json": "1a326fdc0b6ea3c88d91f7d11b6aa34f0e9f1a5e0d6b8ef29c1f1ad38656b202"
+      },
+      "max_residual_m": 8.886430974408555e-08,
+      "minimum_floor_m": 0.6495875949202953,
+      "constraint_pass": true,
+      "relative_energy_drift": [
+        0.00745105378073549,
+        0.007493463324545934,
+        0.0074878343648763935
+      ],
+      "measured_period_s": [
+        1.1237500000000002,
+        1.1256249999999999,
+        1.1262500000000002
+      ],
+      "energy_pass": true
+    },
+    {
+      "probe": "anchor_half_0.045",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "5b88f8cd10b6b02ed7d6247f05db260e06440f6f0a3813b4eef2765a6f862764",
+        "samples.jsonl": "45b31fe603401fd2eb13cdf6457fdbd46bcf87a3f586a0dd56c39a9a341ad8ac",
+        "summary.json": "c7cff2f5961b351affb1815e0dd3f77d7f7b530dc560e1ebbbad7e925b5b1b19"
+      },
+      "max_residual_m": 8.796718731218789e-08,
+      "minimum_floor_m": 0.6341005088856949,
+      "constraint_pass": true,
+      "relative_energy_drift": [
+        0.007403622979170283,
+        0.0073932033769549,
+        0.007387854112422434
+      ],
+      "measured_period_s": [
+        1.138125,
+        1.1400000000000001,
+        1.140625
+      ],
+      "energy_pass": true
+    },
+    {
+      "probe": "anchor_half_0.060",
+      "binding": {
+        "asset.json": "d72c577f05aaa61499126741a812c5dbdf67336faa9bf42d7cfe63fda59f7dcd",
+        "loaded.urdf": "ff2c49e76776b5a7187eabbbdb65875f0411f34d542b2c2e2d4fcef3c5c3b15a",
+        "runtime-initial.json": "6d4ad1f05a3b10af90f6d2188bb322811f0ef5efdc9f633841e612420e22d94b",
+        "samples.jsonl": "d6ddfe33b4e498a54b5beaa8598529450ad058c835d393c90110d0c76bbc2b91",
+        "summary.json": "539b6998c7ce7c6299099b4919847f3b075784e80077d339ac5e2b5d793c0236"
+      },
+      "max_residual_m": 8.823132718882576e-08,
+      "minimum_floor_m": 0.6184466897172219,
+      "constraint_pass": true,
+      "relative_energy_drift": [
+        0.0072838227496676115,
+        0.007265839543746517,
+        0.007267392125525307
+      ],
+      "measured_period_s": [
+        1.1528571428571428,
+        1.155,
+        1.1557142857142857
+      ],
+      "energy_pass": true
+    },
+    {
+      "probe": "coupled_0.030",
+      "binding": {
+        "asset.json": "608de14dc5f0a8b9e4679f6a54ec6b3e794a89a2786573a1119992e819290bb1",
+        "loaded.urdf": "8cbbe6fee28869c3b0394eeb90467d1b4ae224b04cb89a196bc7de31b536846d",
+        "runtime-initial.json": "054e9a6cc914f2debb3f299e4b8f2cb1e1435ae86d256a9aa17b29cfbf2f0210",
+        "samples.jsonl": "0a5dcd95e1cd63281748dd3e452f5a4e49380fdff4055a981f32b2f3ef0af995",
+        "summary.json": "e3978691e23784777274beb5deefb3741a870cf027d20ec897f4ccc38333babf"
+      },
+      "max_residual_m": 1.0016010593139058e-07,
+      "minimum_floor_m": 0.6444243214615254,
+      "constraint_pass": true,
+      "floor_pass": true
+    },
+    {
+      "probe": "coupled_0.045",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "ccc68a7cf2448e5f0bd28915eb4f1a4157c4f54e2742e375ff8a215895e61738",
+        "samples.jsonl": "7b4ebe7818bbea871a0eafcaa73355f61282049f3085c20ec79d4e6f1b094f85",
+        "summary.json": "97a31658b61f5a51b825b97c61c1efc6f7cdce9c7d3a2bed2a226997a0ba0157"
+      },
+      "max_residual_m": 1.1225354051846992e-07,
+      "minimum_floor_m": 0.6288103250689977,
+      "constraint_pass": true,
+      "floor_pass": true
+    },
+    {
+      "probe": "coupled_0.060",
+      "binding": {
+        "asset.json": "d72c577f05aaa61499126741a812c5dbdf67336faa9bf42d7cfe63fda59f7dcd",
+        "loaded.urdf": "ff2c49e76776b5a7187eabbbdb65875f0411f34d542b2c2e2d4fcef3c5c3b15a",
+        "runtime-initial.json": "a74ddd85253fbeb782c386dfd7d1032525124600315b79a23d8dd4aac79473a1",
+        "samples.jsonl": "b17f64f0a81aa84af54a6e2c7e415ab0b7b4b23f4f3607a37336840df1d1f516",
+        "summary.json": "270802aa5cd5e13f4fabcfc3eaddaf29693ab3481de48a2a4c1ec65aa9faafc7"
+      },
+      "max_residual_m": 9.013846968830563e-08,
+      "minimum_floor_m": 0.6135841448426972,
+      "constraint_pass": true,
+      "floor_pass": true
+    },
+    {
+      "probe": "rotor_0",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "0d869cb8f53e6643e9ab36e1f3941955615f020c3d5bf84d9134492e98ea1401",
+        "samples.jsonl": "010f199cd10b354aa202ce741f65e2c67ca37eb52784ae1fcb301a060dcf27d2",
+        "summary.json": "e3beeb93c1041567bd7d535134a3f5e102c916127e31c90cb9443869f239f280"
+      },
+      "max_residual_m": 7.597951212634513e-08,
+      "minimum_floor_m": 0.6337705074334372,
+      "constraint_pass": true
+    },
+    {
+      "probe": "rotor_1",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "d95aef048e90cd82e555693a06d743772dd994b90d909dd63e5c86b2d4ade878",
+        "samples.jsonl": "5c495b4a25e150ad0fb2745bdca9f6add2bcc8c02741209e45562653ceb4116d",
+        "summary.json": "0806d20348d49c02e44626f275d0000f9d31f7926e8e65444e572ee4e8d799f8"
+      },
+      "max_residual_m": 7.565430593103883e-08,
+      "minimum_floor_m": 0.633770507433894,
+      "constraint_pass": true
+    },
+    {
+      "probe": "rotor_2",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "4f743497f95c2b404cacf2ab476d2b65197f69e0e9139e0bc5e564292bf9420c",
+        "samples.jsonl": "ebe619b499da21146f5a78e8f1bd40991effd208ed3f4897802ba19b084865c9",
+        "summary.json": "c4a2c44a643ad283671e471fe7c79e7bd919a5da0b75916ff9f50b0c819f2c65"
+      },
+      "max_residual_m": 3.7507597361319256e-08,
+      "minimum_floor_m": 0.6337426590717212,
+      "constraint_pass": true
+    },
+    {
+      "probe": "rotor_3",
+      "binding": {
+        "asset.json": "734093e02dab5e46ca6e38bd274077a2953cbb0c277ff7c15a7b3fab44748b50",
+        "loaded.urdf": "cb48a9a7a4083c1ce219c7e462e43132f9eb8c62b7815618b16c3ecef0d8d0fd",
+        "runtime-initial.json": "50d8fcb1e4a4c3478b9bc24e5df3c1b8507a10d139a60a911874f676be24638b",
+        "samples.jsonl": "f16025262be09a61b134e47e859c0f53cfc33897dca0cc60e83cda7d5bf29ce4",
+        "summary.json": "7e741f9d2e6c3f3891d303e83d29457b256f0f52d98dde90ae4f0dfb49e1a0e9"
+      },
+      "max_residual_m": 3.7667238994565366e-08,
+      "minimum_floor_m": 0.6337426588985918,
+      "constraint_pass": true
+    }
+  ],
+  "timestep_comparisons": [
+    {
+      "side_m": 0.03,
+      "max_position_difference_m": 0.00022910099917241523,
+      "max_swing_difference_deg": 0.04418200303796582,
+      "passed": true
+    },
+    {
+      "side_m": 0.045,
+      "max_position_difference_m": 0.00023171909082302995,
+      "max_swing_difference_deg": 0.044440211200223956,
+      "passed": true
+    },
+    {
+      "side_m": 0.06,
+      "max_position_difference_m": 0.00023148664598273295,
+      "max_swing_difference_deg": 0.04364636224461585,
+      "passed": true
+    }
+  ],
+  "remaining": [
+    "Runtime collision extents",
+    "Selective mass/inertia/geometry reset isolation",
+    "Rotor impulse sign/COM audit",
+    "Compression/reaction observability audit",
+    "All-target and perturbed-state clearance",
+    "Small-angle analytical period comparison"
+  ],
+  "thresholds_sha256": "e41d0360d5b7716678feda658c5ededc3a64f2bdf6ee6798778a9423c87436dd"
+}

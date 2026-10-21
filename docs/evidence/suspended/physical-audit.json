@@ -1,0 +1,148 @@
+{
+  "status": "HISTORICAL_SHORT_DIAGNOSTICS_ONLY",
+  "small_angle_period_comparisons": [
+    {
+      "side_m": 0.03,
+      "mass_ratio": 0.1,
+      "linearized_period_s": 1.1231949613484014,
+      "measured_period_s": 1.1225,
+      "relative_error": 0.000618736169869385
+    },
+    {
+      "side_m": 0.03,
+      "mass_ratio": 0.2,
+      "linearized_period_s": 1.1249720157869436,
+      "measured_period_s": 1.125,
+      "relative_error": 2.4875474823976993e-05
+    },
+    {
+      "side_m": 0.03,
+      "mass_ratio": 0.3,
+      "linearized_period_s": 1.125571046707062,
+      "measured_period_s": 1.1262499999999998,
+      "relative_error": 0.0006032078516269428
+    },
+    {
+      "side_m": 0.045,
+      "mass_ratio": 0.1,
+      "linearized_period_s": 1.1374619610322547,
+      "measured_period_s": 1.1375000000000002,
+      "relative_error": 3.344196909313496e-05
+    },
+    {
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "linearized_period_s": 1.1392941495923112,
+      "measured_period_s": 1.1400000000000001,
+      "relative_error": 0.000619550629608231
+    },
+    {
+      "side_m": 0.045,
+      "mass_ratio": 0.3,
+      "linearized_period_s": 1.1399116397718052,
+      "measured_period_s": 1.1400000000000001,
+      "relative_error": 7.751498020724262e-05
+    },
+    {
+      "side_m": 0.06,
+      "mass_ratio": 0.1,
+      "linearized_period_s": 1.151955996336524,
+      "measured_period_s": 1.1514285714285712,
+      "relative_error": 0.0004578516103306858
+    },
+    {
+      "side_m": 0.06,
+      "mass_ratio": 0.2,
+      "linearized_period_s": 1.1538382087443533,
+      "measured_period_s": 1.1542857142857146,
+      "relative_error": 0.00038784080642319415
+    },
+    {
+      "side_m": 0.06,
+      "mass_ratio": 0.3,
+      "linearized_period_s": 1.154472439686508,
+      "measured_period_s": 1.1542857142857146,
+      "relative_error": 0.0001617408907952425
+    }
+  ],
+  "rotor_impulses": [
+    {
+      "rotor": 0,
+      "measured_angular_velocity_rad_s": [
+        -1.3073853254318237,
+        -1.3197615146636963,
+        -0.7658231258392334
+      ],
+      "expected_sign": [
+        -1,
+        -1,
+        -1
+      ],
+      "passed": true
+    },
+    {
+      "rotor": 1,
+      "measured_angular_velocity_rad_s": [
+        -1.3073828220367432,
+        1.3197613954544067,
+        0.7658230066299438
+      ],
+      "expected_sign": [
+        -1,
+        1,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "rotor": 2,
+      "measured_angular_velocity_rad_s": [
+        1.3351056575775146,
+        1.3197873830795288,
+        -0.7658505439758301
+      ],
+      "expected_sign": [
+        1,
+        1,
+        -1
+      ],
+      "passed": true
+    },
+    {
+      "rotor": 3,
+      "measured_angular_velocity_rad_s": [
+        1.3351056575775146,
+        -1.3197873830795288,
+        0.7658505439758301
+      ],
+      "expected_sign": [
+        1,
+        -1,
+        1
+      ],
+      "passed": true
+    }
+  ],
+  "retained_motor_limit_rpm": 26043.172530301257,
+  "derived_max_thrust_N": 0.857304,
+  "max_payload_system_weight_N": 0.34534143,
+  "derived_thrust_to_loaded_weight": 2.4824823363938697,
+  "original_root_semantics": "base_link authored origin, measured (0,0,1); not articulated total COM",
+  "passive_joint_damping": 0,
+  "armature": 0,
+  "base_angular_damping": "Inherited Drone default coefficient 1e-5 multiplied by authored total mass; same across methods",
+  "reaction_evidence": "Mass-dependent root linear/angular response to initial joint displacement under unchanged rotor interface",
+  "compression_audit": {
+    "direct_constraint_wrench_available": false,
+    "reason": "Pinned public API exposes generalized dof forces and contact forces, not eliminated internal joint reaction wrenches",
+    "claim": "Compression-capable rigid link only; no tension-only-rope validation"
+  },
+  "limits": "Nominal/initial geometry bound only, not transient loaded flight clearance",
+  "superseded_by": "docs/evidence/suspended/feasibility.json",
+  "authored_reference_mass_kg": 0.027,
+  "original_measured_runtime_mass_kg": 0.02700047753751278,
+  "physical_training_admitted": false,
+  "vertical_nominal_minimum_floor_m": 0.6199999999999999,
+  "any_orientation_conservative_static_floor_bound_m": 0.5980384757729336,
+  "static_bound_formula": "minimum root z - 0.02 attachment offset - 0.30 link - side/2*(1+sqrt(3)); not a dynamic guarantee"
+}

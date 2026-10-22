@@ -1,3 +1,110 @@
+# 吊り荷飛行の再挑戦と運用域検証
+
+2026年10月22日 / native ball固定リンク / 運用域qualification不合格・学習と受入は停止
+
+## 1. 新しい表現と継承条件
+
+起点2d0e00324c63d96a9376aa4f23128ec4d9e2bde4から、specs/2026-10-21-suspended-payload-flight-retry/spec.mdに基づき再実装した。旧Euler試行・旧handoff・旧失敗rawは履歴として残した。旧model_2000は失敗資料であり、今回の学習初期値に使わない。旧0.60秒probe、旧短時間PASS、CPU試験だけでは物理修理を証明できない。
+
+pinned Genesis1.4.3の実sourceを読み、MJCFの受動native ballを実際に構築・stepした。上下各3DOFで荷物の姿勢も自由にし、小さいEuler補助bodyを除いた。機体下面(0,0,-0.020)、attachment間0.30 m、荷物上面取付、rod質量0.0001 kg、cubeの実質量・慣性・衝突を保持する。固定リンクは圧縮も伝え、張力だけのロープではない。位置・姿勢の強制追従、直接荷物制御、隠れた揺れ打消し、motor権限拡大は加えていない。
+
+元機体5 linkの実solver質量は0.02700047753751278 kg。荷物比0.10〜0.30と一辺0.030/0.045/0.060 mを維持する。固定anchorではrotorのsolver epsilonが自由機体と異なるため、自由機体の実auditを別にhashで束縛する。固定fixtureの合計を荷物基準へ黙って置き換えない。
+
+座標seed51000/attempt3353、S=(0,0,1)、全精度A〜J・高度1〜3 m、整数重要度A81/B42/C43/D64/E23/F84/G6/H98/I22/J56は不変。初回の新しい実完了後のC43→100、F→Aだけ1→5も維持する。旧時刻4.72秒や旧判断のQ*/J*/suffixは今回の結果へ流用しない。
+
+## 2. Motor等価性と初期不備の修正
+
+元の4 rotor link COMに同じkernelで推力・反トルクを与える。番号2〜5、spin−/+ /−/+、KF3.16e−10、KM7.94e−12、RPM=(1+0.8×action)×14468.429183500699を保持する。単に合力だけをrootへ加える方式ではない。
+
+unaligned候補は無荷物で約0.925 mmの位置差となり、事前閾値10 µmに不合格。pinned sourceと同入力実測から、元Droneとのroot慣性整列・積分経路の違いを調べた。整列を要求する候補で全15 motor条件を再取得し、無荷物の最大差は位置2.18e−11 m、姿勢2.42e−6度、速度1.87e−9 m/s、角速度2.39e−6 rad/sとなった。実慣性tensorは共通座標へ変換して比較し、実solverの適用力・作用点・全モーメントも検査した。荷物接続時のroot実alignmentはfalseであり、要求値trueと混同しない。
+
+独立レビューで初期方位の90度不一致を検出して長時間driverを停止し、world方位と整合するquaternion式へ修正した。元raw・失敗・中断・使用時間を残し、新sourceで取り直した。旧runのdurationや閾値を短縮して合格にしない。
+
+<!-- pagebreak -->
+
+## 3. 長時間qualificationと仕事の観測
+
+学習前に55条件を宣言した。全9荷物の固定anchor各120秒、9荷物の90度診断とnominalの5/45/80/89/91/120/170度診断各30秒、9荷物×初期揺れ0/10度の18 powered各120秒、全6端点のdt/半dt各30秒である。別に30 resetを実施し、質量・慣性・形状・初速度・非選択scene保持を独立再構成する。runnerの正常終了は独立物理PASSとは分ける。
+
+制御周期0.01秒、物理dt0.005秒と0.0025秒、拘束残差2e−5 m、物性相対1e−5、形状1e−5 m、周期差10%、受動正energy増加5%、同時刻dt差0.02 m/2度を維持した。poweredの地面0.10 m・傾斜60度も不変。probe専用PDは機体状態・目標・合計質量を知り、4 rotorだけを使う。学習・受入方策として使わない。
+
+control端点の仕事推定だけではsubstep内の回転経路を上界化できないため、その観測不足を解消してからpowered長時間計測へ進んだ。V10は各実substepの前後qpos、world外力・モーメント、rootCOM、実積分vel_nextをread-onlyで保存する。実形状に基づくCOM距離0.5 m上界と根元の移動・回転pathから保守的仕事上界を作る。従来の0.02 J+1.1倍endpoint guardは別条件として維持した。100制御step/200 substepの観測有無比較では全qposが完全一致した。内部拘束反力やロープ張力を測ったとは主張しない。
+
+独立checkerは全実sample・末尾・時刻・初期方位・設定・asset・物性・source・engineを再構成する。数値有限でも速度・角速度・quaternion・拘束・energyの異常は失敗として保存する。静的検査では全127初期drawとS+全10地点を照合し、荷物最下点は初期0.620025 m以上、nominal0.620000 m以上。これは実遷移中の余裕を保証する結果ではない。
+
+## 4. 観測契約と比較条件
+
+新観測はpayload29-ideal-world-current-action-v2。現在適用したclipped motor actionを次観測の履歴へ入れ、retargetで保持、episode resetで0にする。actorへ質量・寸法・慣性・bank ID・seedは入れない。model4296の0〜12列と他の互換tensorをコピーし、意味が変わる履歴13〜16列と追加17〜28列を0にする。optimizer/iterationは新規0。実採用checkpointとcfgのhash・CPU tensor移植を確認した。
+
+randomized/fixedは同じseed7・architecture・optimizer・reward・curriculumで各300000環境stepを予定する。randomizedは全stageで毎episodeの独立mass/size抽選を維持する。新guardはreward・観測生成前にrawを保存し、速度20 m/s・角速度200 rad/sなどを超えたらPPOへ返さず停止する。全stepのclip前後観測・入力・RPM・飽和・接触・拘束・報酬、異常前128stepと当該rawを保持する。
+
+旧127 caseは物理drawを変えずmetadataだけ移行した。旧PROVISIONALは凍結済みと扱わない。validation12条件/120実遷移、両方策それぞれ基本9・端点18・held-out100、計254件が必要である。機体・荷物を同時1秒安定させる条件、地面0.10 m、傾斜60度、leg30秒/mission120秒/wall600秒を維持する。未実行試行の成功率や信頼区間は出さない。
+
+<!-- pagebreak -->
+
+## 5. 最終55条件と停止理由
+
+V10の固定sourceで全55条件を各1回試行した。runnerは47条件が宣言時間を完了し、8条件は荷物最下点0.10 m違反で停止した。固定anchor9条件は各120秒、大角度16条件は各30秒を完了。powered18条件のうち12条件が120秒を完了し、質量比0.30の6条件が停止した。refinement12条件のうち10条件が30秒を完了し、半dtの高質量2条件が停止した。これらは学習方策の受入成功数ではない。
+
+powered 0.030 m / 0.30：初期0/10度とも39.35秒、荷物最下点0.098242/0.098104 m。
+powered 0.045 m / 0.30：とも38.71秒、0.096502/0.095450 m。
+powered 0.060 m / 0.30：とも38.62秒、0.098892/0.098735 m。
+half-dt 0.045 m / 0.30：21.63秒、0.098162 m。
+half-dt 0.060 m / 0.30：16.22秒、0.097660 m。
+
+初回失敗のcontactはfalse、機体床余裕0.38478 m、拘束残差6.55e-8 m。軌跡全体の最大拘束4.37e-7 m、body速度5.39208 m/s、角速度3.88925 rad/sで、有限な状態の安全違反だった。energy増分0.76262 Jはendpoint guard1.98153 J以内、独立substep仕事上界も超えていない。旧Eulerの数値catastropheと同じ根因、または固定リンク全般が物理的に不可能と断定しない。
+
+独立checkerは33/55条件pass（anchor9/9、大角度2/16、powered12/18、refinement個別10/12）、pair0/6でQUALIFICATION_BLOCKED。runnerの47正常完了とは区別する。anchorの正energy増加は最大1.480072%、周期誤差0.048862%。大角度14/16はmotor0でも5%上限を超えた。90度の9荷物は188.876〜530.703%、nominal80/89/91/120/170度は51.021〜364.157%で不合格、5/45度だけ閾値内だった。
+
+最大の0.060 m/0.10では、COM位置/姿勢の中心差分から速度/角速度を作る別CPU検算でも約523.276%の増加が残った。この近似はgateを置換しないが、powered controller不足だけで説明できない受動energyの問題がある。数値/拘束/状態表現の切り分けは未完了で、根因は確定していない。
+
+全6端点の同時刻dt/半dt比較は0.02 m / 2度を超えた。比0.10は寸法順で位置0.026208/0.027604/0.028956 m、姿勢3.15495/3.29776/3.52341度。比0.30は0.559128/0.633547/0.613629 m、65.36070/40.32504/39.96613度。後2組は30秒自体も未完了。半dtの失敗は16.22/21.63秒であり、36秒の長距離反転だけで失敗全体を説明できない。
+
+物理制御の不足、閉ループの時間刻み依存性、積分/拘束の誤差を切り分けられていない。ball化が旧問題を修理したとは主張しない。床余裕と時間刻みのgateが未成立なので、学習・validation・254受入・撮影を止めた。全実sample、設定、asset/source/engineの独立再構成はdocs/evidence/suspended-retry/qualification.jsonに記録する。
+
+<!-- pagebreak -->
+
+## 6. 初回失敗の実raw
+
+![初回powered診断の失敗](docs/evidence/suspended-retry/qualification-failure.png)
+
+上から荷物と機体の床余裕、速度、拘束残差。36秒の点線はprobe command切替であり、実missionの訪問完了や緊急イベントではない。位置/速度/拘束はclip前の元rawから作成し、描画だけの対数下限以外は変換していない。荷物への直接制御や地面接触による安定化はない。図のraw/script/PNG hashはfailure-plot.jsonに保存した。
+
+## 7. 失敗後の修正と次回の切り分け
+
+実GPU sourceはcandidate-source-v10.tar.gz、27339 bytes、SHA-256 ca27fbdff020ef6a890ef98aeefb8af360803029ddea861c527ed4abae128a3f。V10のguardが4 rotor速度配列の行列normを使う追加の保守性を見つけ、current sourceは各3-vector最大normへ修正した。宣言20 m/s・200 rad/sは不変。床違反8件を合格へ変えず、修正版のGPU再実行もしていない。CPU guardを物理修理の証拠にしない。
+
+次回はまずmotor0・大角度の固定anchorでdt/半dtのenergy・COM・quaternion・拘束・実substepを比較し、controllerに依存しない不整合を切り分ける。その後6端点の同一RPM再生をdt/半dtで比較し、入力差を生む閉ループと同一外力での積分差を分離する。hover/短距離でprobe controllerの応答を測り、必要なgain修正はprobe専用として事前宣言・source凍結する。その後、変更sourceで55条件・motor・30resetを完全に取り直す。荷物・長さ・配置・motor権限・受入閾値・依存版は変更しない。残り物理phase約359.97秒では新完全qualificationを収容できず、今回は追加GPU作業を止めた。
+
+<!-- pagebreak -->
+
+## 8. 全gate、比較、人手確認
+
+Gate1：物理資格は不合格。14大角度energy超過、8床違反、6pair不合格。15 motorと30resetの成功を長時間・dt比較合格へ流用しない。
+Gate2：実30resetの物性とscene隔離、actor負CPU試験は確認。学習時readerと全分布のGPU統合は未実行。
+Gate3：randomized/fixedとも0/300000環境step。validation0/12条件・0/120実遷移。
+Gate4：両方策それぞれ0/127、合計0/254。基本9/9、端点18/18、held-out95/100の判定はなく、成功率・95%区間・優位性を出さない。
+Gate5：新しい実mission完了・連続遷移・イベント・routing判断はなく、Q*/J*/suffixを過去から転用しない。
+Gate6：採用方策なし、最終動画0/3。全フレーム検査は未実行。人手確認はpendingで、新規1倍速視聴依頼は最終動画がないため行っていない。
+Gate7：失敗証拠、環境/転送/GPU/CPU、日本語文書とPDFを保存。存在しないvalidation/受入bindingsを捏造しない。
+Gate8：新spec・公開指示・索引・コード・試験・compact証拠を1件のローカルcommitへ保存する。push・PR・公開・コース提出は行わない。
+
+新native版のvalidation/受入/撮影統合は未完である。共通motor/観測の影響を受ける先行無荷物統合gateも未実行で、互換性は短motor15件の範囲に限る。元routing/無荷物runtimeと採用入力は変更していない。旧successful動画や別々のPASSを新統合成功として扱わない。
+
+## 9. 環境、CPU、転送、GPU
+
+新Python3.12.3の隔離flight/CPU routing環境は既存Linux lockの全169版/33版と一致した。最終CPU回帰はローカルPython3.11.14と隔離Linux3.12.3の両方で547件成功・GPU1件除外。実行source188件はhash一致。ローカル39件/Linux23件のwarningをログへ保存した。Ruffと空白検査も実施する。新GPU/RSL学習の成功は確認していない。
+
+最終GPU台帳は累計10824.12788819254秒、残り17975.87211180746秒（8時間上限）。194 job、activeなし、今回増分3340.034715877381秒・155 job。初期7484.093172315159秒を引き継ぎ、初期化・失敗・中断・再試行を全計上した。物理配分は3000秒から予備700秒を移して3700秒。学習3500秒×2・validation1500秒・254評価6500秒・撮影2000秒・最終検証500秒は保持した。
+
+最終archiveは817588972 bytes、SHA-256 c95f0fd7913644e0482c9bfc78bff0ffa114db4b0125201e6e26e713419ba19e。1631 memberのサイズ/SHA-256を全照合し、外部rawをローカル一意出力へ保存した。最終CPU証拠3 memberも別archiveで検証した。モデル・動画・大量log・個人ファイル・接続情報・機械固有pathはGitへ含めない。
+
+再実行案内はdocs/suspended-payload-flight-retry-handoff.md、英文PR本文案はdocs/suspended-payload-flight-retry-pr-description.md。全gate・hash・失敗・CPU・GPU・転送はdocs/evidence/suspended-retry/以下に保存する。以下は2026年10月21日以前のレポート全文を履歴として保持した付録であり、今回の合格を示さない。
+
+<!-- pagebreak -->
+
+# 履歴付録：前回吊り荷試行と先行無荷物成果
+
 # 吊り荷飛行の実装と物理実現性検証
 
 2026年10月21日 / 物理ゲート不合格・受入未達 / 先行無荷物成果は付録

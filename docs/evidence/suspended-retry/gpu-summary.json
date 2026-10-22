@@ -1,0 +1,42 @@
+{
+  "schema": "suspended-retry-gpu-summary-v1",
+  "limit_s": 28800,
+  "initial_used_s": 7484.093172315159,
+  "used_s": 10824.12788819254,
+  "remaining_s": 17975.87211180746,
+  "session_used_s": 3340.03471587738,
+  "jobs": 194,
+  "session_jobs": 155,
+  "active_job": null,
+  "ledgers_identical": true,
+  "ledger_sha256": "89aee7af402a51762d529065a818bad9e8839d71b0e0bbce6a3403aa23e3b017",
+  "elapsed_sum_s": 10824.12788819254,
+  "phase_ceiling_s": 3700,
+  "phase_unused_s": 359.9652841226198,
+  "training_steps": {
+    "randomized": 0,
+    "fixed": 0
+  },
+  "allocation_s": {
+    "physics": 3700,
+    "randomized_training": 3500,
+    "fixed_training": 3500,
+    "validation": 1500,
+    "acceptance_254": 6500,
+    "filming": 2000,
+    "final_verification": 500,
+    "reserve": 115.90682768484
+  },
+  "note_ja": "全初期化・失敗・中断・再試行を累積。CPU-only Linux試験はCUDA無効でGPU jobを開始しない。物理資格不合格により後段GPU作業を停止。",
+  "private_raw_ledger": {
+    "path": "outputs/suspended_retry_20261022_052336/gpu-ledger-remote-final-raw.json",
+    "bytes": 117063,
+    "sha256": "2d8fe8b8dda8871412f077eebe4c30ae1db7154749b3548446772d4225834b77"
+  },
+  "public_path_normalization": {
+    "command_arguments": 53,
+    "timing_status_job_ids_unchanged": true,
+    "canonical_output_and_docs_bytes_equal": true,
+    "reason_ja": "実行機固有のPython絶対pathだけをリポジトリ相対pathへ正規化。元raw台帳はGit外に保存し、全時間・job状態・順序は変更しない。"
+  }
+}

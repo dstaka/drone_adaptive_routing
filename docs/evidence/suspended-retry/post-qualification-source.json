@@ -1,0 +1,21 @@
+{
+  "schema": "post-qualification-cpu-source-change-v1",
+  "executed_physical_source_archive": {
+    "path": "outputs/suspended_retry_20261022_052336/candidate-source-v10.tar.gz",
+    "sha256": "ca27fbdff020ef6a890ef98aeefb8af360803029ddea861c527ed4abae128a3f"
+  },
+  "post_failure_source_archive": {
+    "path": "outputs/suspended_retry_20261022_052336/source-after-qualification-v11.tar.gz",
+    "bytes": 27375,
+    "sha256": "c7687b5ebbd24f2c8ffbd5ce76552eb90b703429b64a53b7eb9a803faa6af2b3"
+  },
+  "changed_files": [
+    "scripts/probe_payload_ball.py"
+  ],
+  "reason_ja": "V10のrunnerは4rotor速度配列を行列normで集計し、同一並進/角速度を2倍に見積もる追加の保守guardがあった。current codeは各ベクトルの最大normへ修正。既宣言の20m/s・200rad/sは変更しない。",
+  "gpu_reexecuted": false,
+  "physical_repair_claimed": false,
+  "old_failure_reclassified_as_pass": false,
+  "all_v10_raw_and_receipts_preserved": true,
+  "qualification_for_current_source": "NOT_ADMITTED_REQUIRES_NEW_COMPLETE_QUALIFICATION"
+}

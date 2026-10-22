@@ -1,0 +1,187 @@
+{
+  "schema": "payload-retry-motor-audit-evidence-v1",
+  "date": "2026-10-22",
+  "status": "QUALIFICATION_BLOCKED",
+  "motor_audit_passed": false,
+  "physical_training_admitted": false,
+  "operational_qualification": "NOT_RUN",
+  "scope_ja": "固定宣言の元機体・無荷物MJCF・荷物MJCFの各hover/4単独rotor、計15短時間traceを独立CPU監査。全長時間qualificationや学習・受入の証明ではない。",
+  "full_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/motor-audit-v2.json",
+    "bytes": 52846,
+    "sha256": "f4e6c92660e5c5ee3356c3a402d0c96b3dfcfd07b5ff17b2789998e27a73c3a8"
+  },
+  "checker": {
+    "path": "scripts/check_payload_motor_audit.py",
+    "bytes": 24494,
+    "sha256": "f0e9175f8bb823a06d35c4c2312edf4157da99e463841f2308d48b324b0fde06"
+  },
+  "exact_source_snapshot": "outputs/suspended_retry_20261022_052336/source-v5",
+  "probe_root": "outputs/suspended_retry_20261022_052336/delivery-v2/outputs",
+  "declaration_sha256": "1466cbb9b415571695a94fd6e2be59d5e14dab395398684e90304a85e7d6f344",
+  "motor_plan_sha256": "f8b10a9a9e1fa5ab27db0b232168f4f5e769e69d0a7f37b65ce1c82ea3ca67d1",
+  "execution_source_binding": {
+    "scripts/probe_payload_ball.py": "b5925568170b45c8781e640454d3647cd561c88ffbfd0723dd8ab35be99d46ab",
+    "src/adaptive_drone_patrol/payload_ball_asset.py": "74c9e4d6bf38392c7e2795a025286d0133b80b4bb116fd2169070f7579edcef2",
+    "src/adaptive_drone_patrol/payload_qualification.py": "151ad84dc86c96daa63451359ad375dc9cec41369fc0258bc61b23c75d4bd6a3",
+    "src/adaptive_drone_patrol/payload_contract.py": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e"
+  },
+  "controller_source_sha256": "6badf96b1b74751de8deac485496d19b93d5d099dbde6041e6a602d6c12c6943",
+  "failure_codes": [
+    "VEHICLE_PROPERTY_MISMATCH",
+    "UNLOADED_EQUIVALENCE"
+  ],
+  "traces_checked": 15,
+  "sample_counts": {
+    "motor-original-hover-v4": 101,
+    "motor-original-rotor0-v4": 6,
+    "motor-original-rotor1-v4": 6,
+    "motor-original-rotor2-v4": 6,
+    "motor-original-rotor3-v4": 6,
+    "motor-unloaded-hover-v4": 101,
+    "motor-unloaded-rotor0-v4": 6,
+    "motor-unloaded-rotor1-v4": 6,
+    "motor-unloaded-rotor2-v4": 6,
+    "motor-unloaded-rotor3-v4": 6,
+    "motor-loaded-hover-v4": 101,
+    "motor-loaded-rotor0-v4": 6,
+    "motor-loaded-rotor1-v4": 6,
+    "motor-loaded-rotor2-v4": 6,
+    "motor-loaded-rotor3-v4": 6
+  },
+  "unloaded_equivalence": {
+    "hover": {
+      "position_m": 2.5570392608642578e-05,
+      "angle_deg": 0.0,
+      "velocity_m_s": 1.5273690223693848e-07,
+      "angular_velocity_rad_s": 0.0
+    },
+    "rotor0": {
+      "position_m": 0.0009247955672271948,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 0.004315698538530714,
+      "angular_velocity_rad_s": 1.066240299940009e-06
+    },
+    "rotor1": {
+      "position_m": 0.0009247955677171669,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 0.004315698529797717,
+      "angular_velocity_rad_s": 1.7357134555054946e-06
+    },
+    "rotor2": {
+      "position_m": 0.0009247955662202513,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 0.004315697529051849,
+      "angular_velocity_rad_s": 1.5266237824995157e-06
+    },
+    "rotor3": {
+      "position_m": 0.0009247955692275823,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 0.004315699530543804,
+      "angular_velocity_rad_s": 6.743495761743046e-07
+    }
+  },
+  "declared_equivalence_limits": {
+    "position_m": 1e-05,
+    "angle_deg": 0.001,
+    "velocity_m_s": 0.001,
+    "angular_velocity_rad_s": 0.001
+  },
+  "root_difference_ja": "同一timestampで無荷物同等性が不合格。hover最大位置差2.5570392608642578e-5m。単独rotorの最大位置差は約9.24796e-4m、最大速度差約0.00431570m/s。差の原因は未確定であり、閾値を緩和しない。",
+  "reported_base_inertia_kg_m2": {
+    "original": [
+      [
+        2.1699999706470408e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.4000000192027073e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.4000000192027073e-05
+      ]
+    ],
+    "unloaded": [
+      [
+        1.4000000192027073e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.4000000192027073e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.1699999706470408e-05
+      ]
+    ],
+    "loaded": [
+      [
+        1.4000000192027073e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.4000000192027073e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.1699999706470408e-05
+      ]
+    ]
+  },
+  "inertia_uncertainty_ja": "元Drone importerとMJCFのget_links_inertia配列は主対角の軸順が異なる。APIが主慣性frameの対角値を返している可能性があるため、元の物理慣性が変わったと断定しない。実inertial-frame回転が未収録で、共通frameでの慣性同等性は未解決。固有値をsortして合格へ置き換えない。",
+  "coupling": {
+    "rotor0": {
+      "maximum_root_velocity_delta_m_s": 0.030174610134461887,
+      "maximum_package_relative_velocity_m_s": 0.062486996670541806,
+      "maximum_package_displacement_m": 0.009882289441735932
+    },
+    "rotor1": {
+      "maximum_root_velocity_delta_m_s": 0.030174565680532704,
+      "maximum_package_relative_velocity_m_s": 0.06249199780567105,
+      "maximum_package_displacement_m": 0.009882302007595102
+    },
+    "rotor2": {
+      "maximum_root_velocity_delta_m_s": 0.025889092556205567,
+      "maximum_package_relative_velocity_m_s": 0.03829356947420604,
+      "maximum_package_displacement_m": 0.010398756275615262
+    },
+    "rotor3": {
+      "maximum_root_velocity_delta_m_s": 0.0258890747775523,
+      "maximum_package_relative_velocity_m_s": 0.038307279913705576,
+      "maximum_package_displacement_m": 0.010398823769606642
+    }
+  },
+  "coupling_ja": "同じ単独rotor入力で荷物有無のroot速度差と、荷物の相対速度/移動を測定した。相互作用の限定証拠であり、constraint反力の実測・完全運動量収支・張力のみロープの検証ではない。",
+  "passed_subchecks_ja": "15/15traceの101または6sample、raw/sample/summary/source/declaration hash、stepとtimestamp、RPM履歴、4rotor COM/twistとforce/drag torque、armによる全moment、最初の運動反応方向、motor仕事再構成では追加failure codeなし。全体の不合格をこれらで相殺しない。",
+  "limits_preserved": true,
+  "qualification_blocker_ja": "無荷物同等性の原因と慣性frameを解決し、影響する試験を新規記録するまで運用域qualification/optimizer/training/acceptance/filmingを許可しない。",
+  "missing_evidence_ja": [
+    "共通frameでの元5link慣性の実照合",
+    "同一入力の無荷物root移動差の原因特定と必要な修正後再試験",
+    "全長時間・refinement・reset isolation・全target動的clearanceのqualification",
+    "両方策学習/validation・254paired受入・3動画と新しい人手承認"
+  ],
+  "cpu_verification": {
+    "targeted_tests_passed": 33,
+    "full_cpu_tests_passed": 378,
+    "gpu_tests_deselected": 1,
+    "dependency_warnings": 39,
+    "ruff": "PASS",
+    "diff_check": "PASS",
+    "test_source_sha256": "6b3218a3f8c8584239446aa597c24522b3a653354c1b6b6a389009939fa6d091",
+    "scope_ja": "CPU fixtureはcheckerの論理試験専用。実物理の合格数には加えない。"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "suspended-retry-cpu-verification-v4",
+  "status": "CPU_VERIFIED_NOT_PHYSICAL_ACCEPTANCE",
+  "source_files": 188,
+  "source_binding": {
+    "path": "outputs/suspended_retry_20261022_052336/cpu-final-source-binding-v5.json",
+    "sha256": "bb911e35a7704b1509e486edf86295f3a5985cdb3c20897273832a2709a9edf1"
+  },
+  "sources_equal_after_tests": true,
+  "local": {
+    "python": "3.11.14",
+    "passed": 547,
+    "gpu_deselected": 1,
+    "warnings": 39,
+    "elapsed_s": 98.85,
+    "log": {
+      "path": "outputs/suspended_retry_20261022_052336/cpu-verification-v5.log",
+      "bytes": 4933,
+      "sha256": "ba57e2ce5f53ed755138b296e72ec62706502d2ea7479ba51475ab397abf15ce"
+    }
+  },
+  "linux": {
+    "python": "3.12.3",
+    "passed": 547,
+    "gpu_deselected": 1,
+    "warnings": 23,
+    "elapsed_s": 54.52,
+    "cuda_disabled": true,
+    "source_equal": true,
+    "log": {
+      "path": "outputs/suspended_retry_20261022_052336/cpu-linux-final-v4/cpu-linux-verification-v4.log",
+      "bytes": 2415,
+      "sha256": "8852273a63e4c551f2239832a92035c5830ae6c9e8e46791dc827c00282dc520"
+    },
+    "transfer": {
+      "path": "outputs/suspended_retry_20261022_052336/cpu-linux-final-v4.tar.gz",
+      "bytes": 10332,
+      "sha256": "247eac6b0cc84879aaacb490662ebb5bcbbb7efaf2920ecc3ab5eeb4443898dc",
+      "members_verified": 3
+    }
+  },
+  "ruff": "ALL_SRC_SCRIPTS_TESTS_PASSED",
+  "whitespace": "PASSED",
+  "physical_training_admission": false,
+  "scope_ja": "現在のpost-qualification CPU sourceを両環境で検証。物理実行source V10とは区別する。CPU guard修正のGPU再実行、物理合格、学習、受入、動画確認を意味しない。"
+}

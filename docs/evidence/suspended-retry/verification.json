@@ -1,0 +1,112 @@
+{
+  "schema": "suspended-retry-verification-v1",
+  "status": "FAILURE_DOCUMENTATION_VERIFIED_NOT_ACCEPTED",
+  "pdf": {
+    "path": "outputs/suspended_retry_20261022_052336/report_ja_retry_v2.pdf",
+    "bytes": 1423183,
+    "sha256": "90e6656e697bcb52db359dbe03af7a37a00a9c38b874b7e8a541d100c0cf72cc"
+  },
+  "report_markdown": {
+    "path": "docs/report_ja.md",
+    "bytes": 30781,
+    "sha256": "5b1e3fd93a6598d3e4e961595684f65806c53169debab1fdc2cce958e6281475"
+  },
+  "pdf_pages": 12,
+  "rendered_pages": 12,
+  "render_dpi": 100,
+  "visually_inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "visual_findings": [],
+  "every_page_text_and_footer_checked": true,
+  "critical_result_text_checked": true,
+  "page_renders": [
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-01.png",
+      "bytes": 291685,
+      "sha256": "0e602aa8e38fffcb18e18d9ae80f64a77795df22f30bba36c24acf2d4c0d63da"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-02.png",
+      "bytes": 325046,
+      "sha256": "c850f1be500f5791d5a08887b8e66ec6af72b6a2547e9a00284b9114442e7047"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-03.png",
+      "bytes": 283525,
+      "sha256": "7f664f0b6c83c93528af9302d01df9f0ce911418981d696226f06b0a8e7df245"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-04.png",
+      "bytes": 259535,
+      "sha256": "2e3085bbb2d52119180c82063b93ad4437f95d7816c8bce139910c41be18abf2"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-05.png",
+      "bytes": 314093,
+      "sha256": "467d9ee4ff9cf4d3ada5b2c554ed81b84b1cb8e5449bcb9ba077fb9a5005cb0e"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-06.png",
+      "bytes": 292649,
+      "sha256": "150842277be01884d9896502b44c1ef7bd9971891cde4475d54413d2beb3344a"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-07.png",
+      "bytes": 222486,
+      "sha256": "8f5fb9c70395fff271eba1fd850fedc2f64b8d470c0ddfada8c78ae6c1380b2e"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-08.png",
+      "bytes": 240971,
+      "sha256": "29c58142fcacd2904a81b6f98ceb3588ca09c7260a9653ebed784fff2f6e2948"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-09.png",
+      "bytes": 282600,
+      "sha256": "399c6ff042e71011d9f91e280263d19f560d6ffae25d5e71dbce4b0774e2e598"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-10.png",
+      "bytes": 266583,
+      "sha256": "06edf808394cf0f08c8dd6223316c00ebdba5a9a4e88f063e21ada4691ea23ab"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-11.png",
+      "bytes": 360157,
+      "sha256": "562f1d84b237a34633ec4e39c82e366dac3bcc32fb6a599dcffcc1c26985c445"
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/report-v2-page-12.png",
+      "bytes": 420670,
+      "sha256": "98a19501720ccea9afed119a5da4f1937757f2f8adcef16857bfc0561aff837e"
+    }
+  ],
+  "font": "NotoSansJP embedded",
+  "generator": "scripts/build_report.py",
+  "generator_runtime": "existing local routing/report Python; bundled runtime lacked fontTools, no dependency changed",
+  "cpu_evidence": "docs/evidence/suspended-retry/cpu-verification.json",
+  "physical_and_acceptance_evidence": [
+    "docs/evidence/suspended-retry/qualification.json",
+    "docs/evidence/suspended-retry/acceptance.json"
+  ],
+  "scope_ja": "12ページ全描画を目視確認。新しい失敗報告5ページと旧歴史付録7ページ。物理合格や動画承認を意味しない。",
+  "qualification_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/qualification-final-v10.json",
+    "bytes": 6241586,
+    "sha256": "2ca4f9b3b0d52bafeca38c8fc723d160af21b228ef48e1d74260e0c7d1cf49ce"
+  },
+  "admission_negative_cli": "docs/evidence/suspended-retry/admission-check.json",
+  "history_ja": "旧PDF v1は大角度energyの最終独立判定が入る前の中間成果。最終deliverableはv2。v2全12ページを改めて描画し目視確認した。"
+}

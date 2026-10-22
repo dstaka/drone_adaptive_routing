@@ -1,0 +1,36 @@
+{
+  "schema": "suspended-retry-review-v1",
+  "independent_review_findings": [
+    {
+      "id": "R1",
+      "priority": "P1",
+      "issue": "Initial probe azimuth mismatched declaration",
+      "resolution": "Quaternion axis corrected;27analytic cases and newV10actualinitial-state checks; oldruns retained"
+    },
+    {
+      "id": "R2",
+      "priority": "P1",
+      "issue": "Finite extreme velocities could reach PPO",
+      "resolution": "Raw guards before reward/normalization;20m/s,200rad/s and native quaternions; saved current/preceding reset state; independent actual-substep guards"
+    },
+    {
+      "id": "R3",
+      "priority": "P1",
+      "issue": "Normal training steps lacked complete trace",
+      "resolution": "Every-step raw, observations,action/RPM,saturation,contact,constraint,reward and128-step abnormal window; every-reset properties"
+    }
+  ],
+  "additional_parent_checks": [
+    "Read-only substep hook exact100control/200physicssteps equality onGPU",
+    "Original case bytes retained across Linux arithmetic; even1ULP artifact edit rejected",
+    "Actual model4296 CPU initialization mapping; nofailedmodel2000 use",
+    "Post-qualification probe vector norm and training CLI source-list defects fixed by CPU RED/GREEN only; V10 GPU evidence kept immutable",
+    "All6 independent same-time dt/halfdt pair comparisons fail; no favorable substep chosen for adoption"
+  ],
+  "validation": "547CPU tests each local+lockedLinux;188 source hashes equal; GPU integration remains limited to V10 diagnostics",
+  "unverified": [
+    "Real GPU/RSL learning and new native runtime validation/acceptance/media integration",
+    "Whole final addition has not received another independent-agent review after the initial findings"
+  ],
+  "scope": "No claim of operational acceptance"
+}

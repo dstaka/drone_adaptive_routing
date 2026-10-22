@@ -1,0 +1,815 @@
+{
+  "schema": "suspended-retry-inherited-contracts-v1",
+  "date": "2026-10-22",
+  "status": "CPU_INPUT_AUDIT_ONLY",
+  "spec": "specs/2026-10-21-suspended-payload-flight-retry/spec.md",
+  "scope_ja": "継承入力と実ソースのCPU監査。物理qualification・互換性再受入・loaded学習/試行/動画の合格証ではない。歴史資料は変更せず、新profileの実行時にはhashを再計算する。接続情報・個人絶対パスを含めない。",
+  "audited_artifacts": [
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/model_4296.pt",
+      "bytes": 475573,
+      "sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/cfgs.pkl",
+      "bytes": 1628,
+      "sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55",
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/integer_20261020_v1/training/seed_44.zip",
+      "bytes": 297837,
+      "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/cases-v1.json",
+      "bytes": 153133,
+      "sha256": "f98e0632d96a4d7b40feda667bff6e9ca831fc7f67e1734f2438e3c527ecf01c",
+      "status": "PASS"
+    }
+  ],
+  "routing_sidecar": {
+    "path": "outputs/integer_20261020_v1/training/seed_44.schema.json",
+    "bytes": 1257,
+    "sha256": "615987386a15eff6b47500e0b351c3f75d0d335c4177065a800599c2a8cec854",
+    "embedded_equal": true,
+    "schema": {
+      "id": "routing-v3-integer100-n10-324",
+      "dtype": "float32",
+      "size": 324,
+      "num_checkpoints": 10,
+      "checkpoint_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "fields": {
+        "current_onehot": [
+          0,
+          11
+        ],
+        "visited": [
+          11,
+          21
+        ],
+        "coords": [
+          21,
+          54
+        ],
+        "distance_matrix": [
+          54,
+          175
+        ],
+        "priorities": [
+          175,
+          185
+        ],
+        "edge_costs": [
+          185,
+          306
+        ],
+        "service": [
+          306,
+          316
+        ],
+        "elapsed": [
+          316,
+          317
+        ],
+        "completed": [
+          317,
+          318
+        ],
+        "constants": [
+          318,
+          324
+        ]
+      },
+      "normalization": {
+        "coordinates_m": 2.0,
+        "distance_m": 4.0,
+        "priority": 100.0,
+        "edge_cost": 20.0,
+        "service_s": 1.0,
+        "time_s": 80.0,
+        "count": 10.0,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "speed_mps": 1.0
+      },
+      "objective": {
+        "alpha": 1.0,
+        "beta": 0.05,
+        "nominal_speed_mps": 1.0,
+        "return_to_base": false
+      },
+      "priority_contract": {
+        "profile": "integer-100-v1",
+        "minimum": 1,
+        "maximum": 100,
+        "representation": "integer-token",
+        "observation_version": 1,
+        "objective_version": 1
+      }
+    }
+  },
+  "source_snapshot": [
+    {
+      "path": "third_party/genesis_drone/hover_env.py",
+      "bytes": 11035,
+      "sha256": "c2230130b9748b69416a18edad8491579e68c67882c8a6b6ab3662c5bbf76703"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/flight_agent.py",
+      "bytes": 4747,
+      "sha256": "b9376a8e63cd465cf34293043f4938755ea6b01de41ac805011dfcf1e4c7eff2"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/target_adapter.py",
+      "bytes": 4408,
+      "sha256": "cf4caa38fb62c327b7f328f1bf41fb28cf027ee7401a9e58c7d9c2ae0158e316"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/objective.py",
+      "bytes": 8119,
+      "sha256": "85d7ede3919547e19cb2d87483bda67e4fced1c1eea08238f628e8c8ef8d4f8d"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/scenario.py",
+      "bytes": 9835,
+      "sha256": "027073fb293d59844548ceee2b00704a4781e8f5fe98e24f0c83e332d8a3870e"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/routing_agent.py",
+      "bytes": 14271,
+      "sha256": "b6ccfee5dca8eca1d31f2931f7ec276836ac32c471e65aeb1fcb8c9fe05de258"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/routing_policy.py",
+      "bytes": 3675,
+      "sha256": "dbaf0614ea7333ac7b660a7855d3c6fba336f6e0d6edf98da4d3e3bb3ce034a4"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/routing_env.py",
+      "bytes": 2887,
+      "sha256": "b4e101f40eae4699024a264d29743543d313248d4948b05fd058d66f07745fca"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/planner_ipc.py",
+      "bytes": 5837,
+      "sha256": "ca4278a9037e8acf183c265b02d5508bfa6d110bd369f1afba541941848dcd1e"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/patrol_runner.py",
+      "bytes": 2345,
+      "sha256": "09abd1be7039a24a4423ff04c3b22123aa03a09603333c47bfb4f483e1851691"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_contract.py",
+      "bytes": 10568,
+      "sha256": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_runtime.py",
+      "bytes": 4519,
+      "sha256": "f978bc4677a032cc9b7992b6d5f238dba270edb2d81f47e0f5eb5eac62220a6a"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_training.py",
+      "bytes": 7740,
+      "sha256": "c17189a416cb3867f2c461fe715afa414ed08ef4b8d2a79de136e2d98e09722d"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_checkpoint.py",
+      "bytes": 3675,
+      "sha256": "1066e2dd08e99589619f09557cc0b2f9db358a75fb35addbc6c3fb3bd9b1f718"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_bank.py",
+      "bytes": 5890,
+      "sha256": "1bcd4c102af6ccf060a8c5e2c5ad3c9d2011e3633efd6d072e232a7f715b033b"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_asset.py",
+      "bytes": 3576,
+      "sha256": "79a8360f90b2b512031faf87be2f55221cbe02577e96a9c6a127c07f16e3b33a"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_cases.py",
+      "bytes": 5301,
+      "sha256": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/transition_check.py",
+      "bytes": 7197,
+      "sha256": "0043d5b0823bbb3dd9fdbaf22a689d18f7a61693a34fab6e8a05ded8f9930d3f"
+    },
+    {
+      "path": "scripts/evaluate_payload_flight.py",
+      "bytes": 9560,
+      "sha256": "582c8bf4809dbd6e69b2d50f2a43f3c8db8da74c12a22888b6b35dcf03ec8d1d"
+    },
+    {
+      "path": "configs/visible_flight_eval.yaml",
+      "bytes": 283,
+      "sha256": "1f519d2d0e2d037d50fe11e3d0e105635915edc9e3767557787fa0863dc14d60"
+    },
+    {
+      "path": "configs/payload_validation.yaml",
+      "bytes": 579,
+      "sha256": "5820da816e284e34c0f5586dcee2721414b097dfba07406bb832b18066e85490"
+    },
+    {
+      "path": "configs/payload_preflight.yaml",
+      "bytes": 894,
+      "sha256": "e41d0360d5b7716678feda658c5ededc3a64f2bdf6ee6798778a9423c87436dd"
+    }
+  ],
+  "context_snapshot": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 1164,
+      "sha256": "2788435918bcb60eb85b7c4b8ebe4ca23dc968ee18a685df1b2ad504da195b20"
+    },
+    {
+      "path": "specs/2026-10-21-suspended-payload-flight-retry/spec.md",
+      "bytes": 32933,
+      "sha256": "19496c144714bc03c8ff880bacc74cff08697f11697ddfcd09ea5fedf6619c07"
+    },
+    {
+      "path": "specs/2026-10-17-suspended-payload-flight/spec.md",
+      "bytes": 43418,
+      "sha256": "9876d052bd6cf6a94b6cc345c0f28fb49b38d97f083cbba5c2ba710773684d4c"
+    },
+    {
+      "path": "docs/suspended-payload-flight-handoff.md",
+      "bytes": 16772,
+      "sha256": "f87f1112dccf136808fc253d42a611d92a3991d5cbdd4f265e529a77f43f27ad"
+    },
+    {
+      "path": "specs/2026-10-17-dispersed-destination-layout/spec.md",
+      "bytes": 15332,
+      "sha256": "68a7f45d78f5915a3f8a21146b2f6fbd910c09368dd20e88c392fc8365cf7673"
+    },
+    {
+      "path": "specs/2026-10-17-integer-priorities/spec.md",
+      "bytes": 16410,
+      "sha256": "02ae58ce2859631b22cd19bfeab5829d4dd9888a983c314f70b059e3a20c764f"
+    },
+    {
+      "path": "specs/2026-10-14-scalable-adaptive-routing/spec.md",
+      "bytes": 23502,
+      "sha256": "179f5eeab4680b8df579cd52a4d9080343635421b96b484860528380d6d6c7e7"
+    },
+    {
+      "path": "specs/2026-10-14-visible-multigoal-flight/spec.md",
+      "bytes": 18190,
+      "sha256": "736b2f1ac1ce069407ebbde6f77ff729393681dcbec2e639b654614eebf2da5d"
+    },
+    {
+      "path": "specs/2026-10-14-realtime-demo-video/spec.md",
+      "bytes": 17176,
+      "sha256": "29faa61ae36ef1c78a40d652e255457eaaa7e48125eda59b6bdb35e12845155f"
+    },
+    {
+      "path": "docs/dispersed-destination-layout-handoff.md",
+      "bytes": 27533,
+      "sha256": "532aecaee1863f7a4f32034c2363bdb516ac9810522d79a9144a6e8e3a465538"
+    },
+    {
+      "path": "docs/integer-priorities-handoff.md",
+      "bytes": 18130,
+      "sha256": "da9f7fe21d2e7644c0fea2ec36babbf5107b0c2822325bc5bbf7d4a722f6a72c"
+    },
+    {
+      "path": "docs/scalable-routing-handoff.md",
+      "bytes": 14956,
+      "sha256": "abd17753a270af83289f7c9b9ea3e6e80606f5ce606de73a237c92593cfdae02"
+    },
+    {
+      "path": "docs/visible-flight-handoff.md",
+      "bytes": 14583,
+      "sha256": "907bf83ef67b2c4a4ca86a73627373b38a28e7067e7884fd9fa2c0d147d53fc4"
+    },
+    {
+      "path": "docs/realtime-video-handoff.md",
+      "bytes": 15627,
+      "sha256": "d5147ed306d8bd894e2b04eecbd1fbd3f54c4654d31274cf8ace0719474cfa60"
+    },
+    {
+      "path": "docs/evidence/dispersed/acceptance.json",
+      "bytes": 3178,
+      "sha256": "55de31f020ea16fde84fe53ba335331cd6216f811a104909220902718065dc0c"
+    },
+    {
+      "path": "docs/evidence/dispersed/model-selection-v2.json",
+      "bytes": 723,
+      "sha256": "8f390e0bc6520e713e6c7ca1f8fa8548b1cfe2e5f654dfadaf7c711cdb2fd99f"
+    },
+    {
+      "path": "docs/evidence/dispersed/failed-transition-v1.json",
+      "bytes": 501,
+      "sha256": "94fb3aeebe63599c474eeb908ddef2cc49cd72769a5ee6bf799b83d2c1143e09"
+    },
+    {
+      "path": "docs/evidence/dispersed/failed-media-v1.json",
+      "bytes": 704,
+      "sha256": "2fc2edf133eec73d2b97e10a73981c4bd9f7a5f066a58a699aee2d15aef9b2b8"
+    },
+    {
+      "path": "docs/evidence/dispersed/review.json",
+      "bytes": 958,
+      "sha256": "52ab5b2da24ae31dfbcf7c1f8f2b74c1b5f0eaa4f8b36bcf37b4ca6def2fba74"
+    },
+    {
+      "path": "docs/evidence/dispersed/transition-checks.json",
+      "bytes": 8909,
+      "sha256": "7e8fb5a6e152a31080a42d29adf0f49f806d74c7381e2e5e08415bb9c3e215a1"
+    },
+    {
+      "path": "docs/evidence/dispersed/frozen-binding-check.json",
+      "bytes": 839,
+      "sha256": "5125badad42c4f37ae58f8b7ef170946d4a2d7a16d1fa694e9bac1f013c77298"
+    },
+    {
+      "path": "docs/evidence/dispersed/physical-acceptance.json",
+      "bytes": 606,
+      "sha256": "79abdf6b5298c5bd8474f18d64436500c75e1979256a06bcfe857af02a3ad3b8"
+    },
+    {
+      "path": "docs/evidence/dispersed/physical-metrics.json",
+      "bytes": 6147,
+      "sha256": "1b3adaf3db60e876fa2b7ce95a2c8a90eb28c5d54c5044c2041f0352e35ca81c"
+    },
+    {
+      "path": "docs/evidence/dispersed/physical-cost-check.json",
+      "bytes": 410,
+      "sha256": "bb7232561a412330d9515f5868d41d5ed983803937d6d974ad386c41693ef0e0"
+    },
+    {
+      "path": "docs/evidence/dispersed/analytical-cost-check.json",
+      "bytes": 446,
+      "sha256": "1670a35a30fbb84e2f5b2a807c1c4cec4d5d9ffa1a482bf6673b888cf531ee47"
+    },
+    {
+      "path": "docs/evidence/dispersed/geometry-independent.json",
+      "bytes": 529,
+      "sha256": "bd12006c9f2a241b54ef270657268d4b9ca20181674693dc3401041b5e6e4716"
+    },
+    {
+      "path": "docs/evidence/dispersed/reproduction-check.json",
+      "bytes": 176,
+      "sha256": "14a843786a6665758b608da210fec0a81727fbd52a02d419b787e7e063ad8732"
+    },
+    {
+      "path": "docs/evidence/dispersed/layout.json",
+      "bytes": 3367,
+      "sha256": "37c4c434e5f4d2b3d295bfd30265491e7d2c300d1b61989a9c2c752e22f42a61"
+    },
+    {
+      "path": "docs/evidence/dispersed/inputs.json",
+      "bytes": 3187,
+      "sha256": "ee38505369079cb680ae814f9d98f2462363a5ab2fe2b2b33d595fbc0d983659"
+    },
+    {
+      "path": "docs/evidence/dispersed/encoding-diagnostic.json",
+      "bytes": 465,
+      "sha256": "79291081ed07e1334144b0de3fdf3ac508e616d78f113f7e87b18618ae7db7fa"
+    },
+    {
+      "path": "docs/evidence/dispersed/encoding-final-profile.json",
+      "bytes": 200,
+      "sha256": "bb581135f88957b770c95e63a632c405f731ed6a676efa796d3263da6496b2f0"
+    },
+    {
+      "path": "docs/evidence/dispersed/manual-review-final.json",
+      "bytes": 1122,
+      "sha256": "9cc495a234bb1c0a843d1c192bdbe30630f4c729045b12e5b2c0ac6f26eb0695"
+    },
+    {
+      "path": "docs/evidence/dispersed/media-verification.json",
+      "bytes": 4135,
+      "sha256": "162f9c0510436e7cdc7aea7acda96690a98131b8a33b0a8d4a8305a331299f7b"
+    },
+    {
+      "path": "docs/evidence/dispersed/physical-source-archive.json",
+      "bytes": 267,
+      "sha256": "3a94ffbf758024d141af5623fde48f8efc04827c9c224155f4cfba1051b04632"
+    },
+    {
+      "path": "docs/evidence/suspended/feasibility.json",
+      "bytes": 9232,
+      "sha256": "01458758eac0b753370d9936409eb94ec7f140da6a28f5ae672791ea7c1367b1"
+    },
+    {
+      "path": "docs/evidence/suspended/failure-check.json",
+      "bytes": 1350,
+      "sha256": "a476418cec12d41f981853275137a143782f56bba92aec28f088a869725b95df"
+    },
+    {
+      "path": "docs/evidence/suspended/acceptance.json",
+      "bytes": 4093,
+      "sha256": "520df2e7f0ac64d0390ac21be959ecaf4ca2f9b5f9cf0bbfda241612aa74d5ff"
+    },
+    {
+      "path": "docs/evidence/suspended/verification.json",
+      "bytes": 4520,
+      "sha256": "9836aeb815680ee3104dd73a515ab36c6b68799b8fa1537438e56032101ef30b"
+    },
+    {
+      "path": "docs/evidence/suspended/transfer.json",
+      "bytes": 615,
+      "sha256": "8d162385c17fbf64bc6ec1ca6d1d0246aaa8ca81688350eb06be34c51d3983a4"
+    },
+    {
+      "path": "docs/evidence/suspended/geometric-clearance.json",
+      "bytes": 470,
+      "sha256": "87d7c4c044adb932077809db40c05228e3d2a5e80f79cf7dd44eecb89a1a4ddc"
+    }
+  ],
+  "locks": [
+    {
+      "path": "requirements/flight-linux.lock.txt",
+      "bytes": 3270,
+      "sha256": "a6985bdf3307ab18cdf5a32b715093d6f607ee005ebdf8f3527030971fc0553c",
+      "package_count": 169,
+      "key_pins": [
+        "genesis-world==1.4.3",
+        "mujoco==3.15.0",
+        "numpy==2.5.3",
+        "rsl-rl-lib==5.5.1",
+        "tensordict==0.14.3",
+        "torch==2.14.0+cu132"
+      ]
+    },
+    {
+      "path": "requirements/routing-scalable-linux.lock.txt",
+      "bytes": 696,
+      "sha256": "444ca81d097c906ec6b884ecd7086f6c759903a43dcc43141eaeb4889512a4fc",
+      "package_count": 33,
+      "key_pins": [
+        "gymnasium==1.0.0",
+        "numpy==1.26.4",
+        "sb3_contrib==2.4.0",
+        "stable_baselines3==2.4.1",
+        "torch==2.6.0+cpu"
+      ]
+    }
+  ],
+  "geometry": {
+    "status": "PASS_CPU",
+    "coordinate_sha256": "21dd7cf41bf12c592ccdb4bf9c8817352feeafb9597103a3ba626e51a6d910e0",
+    "hash_encoding": "SHA256(JSON compact separators comma/colon; full-precision coords including S; allow_nan=false)",
+    "layout_seed": 51000,
+    "candidate_attempt": 3353,
+    "generator": "numpy-PCG64-SeedSequence(seed,300,attempt)-uniform-xyz-v1",
+    "coordinates_m": {
+      "S": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "A": [
+        -2.2574846772991513,
+        1.7335248129420815,
+        1.1016990644152351
+      ],
+      "B": [
+        -2.68314398310277,
+        0.0440949448056831,
+        1.269620714931024
+      ],
+      "C": [
+        1.7241406728049702,
+        0.6239499920354985,
+        1.7586228792407594
+      ],
+      "D": [
+        -1.720730862092656,
+        -1.677042794662317,
+        2.7925100266436123
+      ],
+      "E": [
+        -2.5969325368060674,
+        -1.2096210510295147,
+        1.3948581598205274
+      ],
+      "F": [
+        -0.3282430937268912,
+        1.1881130985360875,
+        1.148211960076331
+      ],
+      "G": [
+        -0.30323481702556077,
+        -1.6269570511921856,
+        2.911967352347588
+      ],
+      "H": [
+        1.1703085519575023,
+        1.6670503818462155,
+        2.895834649862201
+      ],
+      "I": [
+        2.3774328937869775,
+        1.052893998417688,
+        1.0844227584485355
+      ],
+      "J": [
+        0.9181566059655957,
+        0.5654514730586941,
+        2.067850223042957
+      ]
+    },
+    "same_three_scenarios": true,
+    "scenario_files": [
+      {
+        "path": "configs/demo_scenarios_dispersed/normal.yaml",
+        "bytes": 2041,
+        "sha256": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa"
+      },
+      {
+        "path": "configs/demo_scenarios_dispersed/emergency.yaml",
+        "bytes": 2096,
+        "sha256": "7f0629c872837ebf3f53afdd572d07e89832a8c13afd74325d89d3af28889c5d"
+      },
+      {
+        "path": "configs/demo_scenarios_dispersed/cost_shift.yaml",
+        "bytes": 2100,
+        "sha256": "3a408c294b308def450a953e763f9ecca1c50782a0feca0439826a28391128ff"
+      }
+    ],
+    "bounds_m": [
+      [
+        -2.7,
+        2.7
+      ],
+      [
+        -1.8,
+        1.8
+      ],
+      [
+        1.0,
+        3.0
+      ]
+    ],
+    "minimum_spans_m": [
+      4.86,
+      3.24,
+      1.8
+    ],
+    "actual_spans_m": [
+      5.060576876889748,
+      3.4105676076043983,
+      1.8275445938990527
+    ],
+    "row_band_width_m": 0.1,
+    "min_sorted_triple_spans_xy_m": [
+      0.4256593058036189,
+      0.4674217436328023
+    ],
+    "actual_min_pair_distance_m": 0.86524790833401,
+    "minimum_pair_distance_m": 0.5,
+    "actual_min_S_distance_m": 1.2415003216278646,
+    "height_third_counts": [
+      5,
+      2,
+      3
+    ],
+    "invariant_ja": "全精度座標・固定配置・Sを保持。目標zの1–3mと過渡機体高度は別。荷物用に配置を上げたり再抽選しない。投影可読性は別途実frameで再検証。"
+  },
+  "priorities_events": {
+    "priority_seed": 40029,
+    "generator": "numpy-PCG64-SeedSequence([40029,100]); discrete uniform inclusive 1..100 with replacement",
+    "initial": {
+      "A": 81,
+      "B": 42,
+      "C": 43,
+      "D": 64,
+      "E": 23,
+      "F": 84,
+      "G": 6,
+      "H": 98,
+      "I": 22,
+      "J": 56
+    },
+    "normal_event": null,
+    "emergency": {
+      "kind": "priority",
+      "after": 1,
+      "checkpoint": "C",
+      "value": 100
+    },
+    "cost_shift": {
+      "kind": "cost",
+      "after": 1,
+      "edges": [
+        [
+          "F",
+          "A"
+        ]
+      ],
+      "value": 5
+    },
+    "timing_ja": "新しい最初のshared completion後・次の判断前。Cは未訪問。F→Aだけ1→5、A→Fは不変。旧無荷物イベント4.72秒を再利用しない。値/色は固定1–100尺度で目標・訪問状態とは独立。"
+  },
+  "routing": {
+    "status": "PASS_CPU_ARTIFACT_CONTRACT",
+    "checkpoint_seed": 44,
+    "alpha": 1.0,
+    "beta": 0.05,
+    "nominal_speed_m_s": 1.0,
+    "nominal_service_s": 0.5,
+    "return_to_base": false,
+    "directed_multiplier_domain": [
+      1,
+      5
+    ],
+    "objective": "d=Euclidean3D(i,j); t_complete=t_depart+d/1+0.50; leg=1*d*multiplier[i,j]+0.05*priority[j]*t_complete",
+    "invariants_ja": [
+      "departure snapshotの値で完了を計上し、終了済みlegを再価格化しない。",
+      "routing elapsedはnominal値で、荷物の実1秒settlingや飛行時間へ置き換えない。倍率は論理costのみで物理motor/速度を変更しない。",
+      "10離散action/10mask/324float32、A-J順序、埋込schemaとsidecarを検証。観測Boxは非有界で座標をclipしない。",
+      "CPU routing subprocessとflightの分離・hash照合を保持。future event・exact solver/heuristic fallbackを推論へ入れない。",
+      "actual shared boundaryの新snapshotからcounterfactual/Q*/J*/AI suffixを再計算。最適firstと全suffix最適を混同しない。"
+    ]
+  },
+  "flight_observation_action": {
+    "legacy_id": "hover17-relative-world-v1",
+    "legacy_fields": [
+      "clip((world_target-world_drone_position)/3,-1,1):3",
+      "body_to_world quaternion wxyz:4",
+      "clip(body_frame_linear_velocity/3,-1,1):3",
+      "clip(body_frame_angular_velocity/3.14159,-1,1):3",
+      "last_actions:4"
+    ],
+    "control_dt_s": 0.01,
+    "legacy_rigid_dt_s": 0.005,
+    "legacy_precision": "32",
+    "actions": 4,
+    "action_clip": [
+      -1,
+      1
+    ],
+    "rpm_mapping": "rpm=(1+0.8*action)*14468.429183500699",
+    "rpm_bounds": [
+      2893.68583670014,
+      26043.172530301257
+    ],
+    "legacy_timing_ja": "simulate_action_latency=Trueを保存するが、stepはclipした現在actionを直ちにmotorへ適用しscene.stepする。step後の観測をlast_actions更新前に作るため返却観測のhistoryは一つ古い。TargetAdapter.set_targetは物理状態/historyを変えず観測を再生成するため、その時点でhistoryには直前の実行actionが入る。flagだけからmotor遅延を実装しない。",
+    "failed_payload_timing_ja": "payload_training/runtimeも通常stepでは観測作成後にhistory更新。trainingのretarget分岐とruntime.set_targetは更新後historyで再生成する。この経路差を新profileで明文化/試験する。意味変更時は29次元でも新contractと両方策の新学習が必要。",
+    "payload29_fields": [
+      "legacy17",
+      "clip((package_center-drone_center)/.30):3",
+      "clip((package_world_velocity-drone_world_velocity)/3):3",
+      "attachment_world_unit_direction:3",
+      "clip(cross(r,v_b-v_a)/length²/pi):3"
+    ],
+    "attachment_velocity": "v_attachment=v_center+cross(omega_world, rotated_local_offset)",
+    "forbidden_actor_inputs": [
+      "mass",
+      "side",
+      "density",
+      "inertia",
+      "bank ID",
+      "seed",
+      "future event"
+    ],
+    "initialization_cpu_check": {
+      "actual_parent_config": "PASS",
+      "actor_first_layer": [
+        128,
+        17
+      ],
+      "critic_first_layer": [
+        128,
+        17
+      ],
+      "hidden_dims": [
+        128,
+        128
+      ],
+      "activation": "tanh",
+      "transfer": "17 legacy columns copied; 12 added columns zero; other compatible tensors copied; new optimizer and iteration0",
+      "actor_legacy_columns_equal": true,
+      "added_columns_zero": true,
+      "optimizer_carried": false
+    },
+    "invariants_ja": [
+      "target切替で機体/荷物pose・速度・joint・historyを保持し直前観測を更新。",
+      "初期pose S=(0,0,1),quat=(1,0,0,0)。target範囲x±2.7/y±1.8/z1–3。training相対終了域x±6/y±4/z±3。",
+      "既存transitionには実観測飽和2445/18455sampleがあった。shape一致やvalidator拡張を制御成功と見なさない。",
+      "新importerはrootを元vehicle frameとして監査し、payload込みCOMへ黙って変更しない。4rotor frame/spin/力/反力torque/適用点/係数と元質量慣性を実測。"
+    ]
+  },
+  "payload_completion_safety": {
+    "link_m": 0.3,
+    "drone_attachment_local_m": [
+      0,
+      0,
+      -0.02
+    ],
+    "package_attachment": "top center",
+    "reference_mass_previous_runtime_kg": 0.02700047753751278,
+    "reference_mass_rule_ja": "元vehicle link質量sum。新importerで再測定し差異を学習前に説明。payload/suspension除外。",
+    "sizes_m": [
+      0.03,
+      0.045,
+      0.06
+    ],
+    "randomized_ratio_uniform": [
+      0.1,
+      0.3
+    ],
+    "size_probability_each": 0.3333333333333333,
+    "nominal_ratio": 0.2,
+    "nominal_side_m": 0.045,
+    "cube_inertia": "Ixx=Iyy=Izz=m*s*s/6",
+    "resampling_ja": "randomizedは毎episode mass/size独立再抽選、mission内保持。fixedはnominal。評価は凍結manifest。inactive bankはforce/contact/inertiaゼロ、部分resetは他env不変。",
+    "simultaneous_maxima": {
+      "drone_error_m": 0.2,
+      "drone_speed_m_s": 0.3,
+      "package_nominal_error_m": 0.2,
+      "package_speed_m_s": 0.1,
+      "swing_deg": 5,
+      "swing_rate_deg_s": 10,
+      "package_spin_deg_s": 10
+    },
+    "continuous_hold_s": 1.0,
+    "valid_control_intervals_required": 100,
+    "oriented_package_lowest_point_m_gt": 0.1,
+    "drone_floor_m_gt": 0.1,
+    "absolute_roll_pitch_deg_max": 60,
+    "leg_timeout_s": 30,
+    "mission_timeout_s": 120,
+    "wall_timeout_s": 600,
+    "reset_or_contact_assisted_settling_allowed": false,
+    "nominal_target_ja": "固定drone target+underbody offset−(link+side/2)world vertical。drifting droneへrecenterしない。全predicate同時成立、途中失敗でdwellを0へ戻す。"
+  },
+  "predecessor_impacts": [
+    {
+      "change": "専用physics profileのみ追加、既存unloaded entrypoint不変",
+      "rerun_ja": "旧資料はhistoricalとして保持。新root/motor/observation/target変更は新profile自身のconstruction+unloaded motor equivalence+全loaded qualificationで実測。歴史PASSをloadedへ転用しない。",
+      "status": "新profile証拠未取得"
+    },
+    {
+      "change": "共有motor/importer/root/observation/action timingを変更",
+      "rerun_ja": "visible/dispersedのunloaded baseline、長水平/上昇下降/対角/反転/反復hover、marker-on/off不変性、pre-reset安全/target/history continuity、validation11/12とheldout31/32/33、凍結3scenario×seed1/2/3=9mission/90inspection。source/config/modelを新hashへ束縛。",
+      "status": "変更された場合は未検証として扱う"
+    },
+    {
+      "change": "routing model/schema/IPC/objectiveを変更",
+      "rerun_ja": "integer/scalable/dispersedの分離validation100・static held-out100・dynamic50/seed42,43,44、invalid0、平均learned/exact<=1.10・平均greedy以下・fixed未満。exact照合とeventの変化next/正post-event benefit、実boundary L/H priority差>=10/Q*(L)=J*<Q*(H)を新規計算。",
+      "status": "本監査では変更なし。共有境界のloaded説明は新規必要"
+    },
+    {
+      "change": "camera/scene/HUD/encoder/captureを変更",
+      "rerun_ja": "visibleの全ID/優先度/機体/荷物/link/高さ可読性、同frame crop、marker非干渉。realtimeの全decode・physics step/実PTS unit-slope・terminal coverage・全HUD実画素・イベント同期<=1frame。最終3本のfresh operator連続1x reviewをhashへ結ぶ。",
+      "status": "unloaded camera/video承認はloadedを覆わない"
+    },
+    {
+      "change": "loaded専用completion/event integration",
+      "rerun_ja": "既存nominal planner service=.50は保持し実shared1秒のみでvisited/event更新。両方策同一127case、3scenario同条件、既存receipt拒否、target/terminal/sample/source改ざんのnegative check。",
+      "status": "新254試行を完了するまで未達"
+    }
+  ],
+  "historical_findings_ja": [
+    "分散配置初回broad-domain model2800は57stepの高度0.091373533mで不採用。model1300への後退を採用としない。",
+    "旧transition checkerは自己申告target/古いPASSで静止hoverを誤受入し得た。実target/source/raw/summary/freezeを再照合する修正が必要だった。",
+    "分散最終採用はmodel4296/cfgとinteger seed44。9/9mission/90inspection、45transitionのPASSはunloaded固定配置の決定論的結果で、外乱頑健性ではない。",
+    "CRF18で高さ字幕luma MAE>4となり不合格。最終CRF1/YUV420へのencode修正はthreshold不変。loaded HUDも実encoded全frameで検証する。",
+    "Euler吊り荷旧profileは2/8/16substepすべて数値破綻。短probe PASS、旧設定、途中model2000は新training admissionにならない。"
+  ],
+  "new_retry_required_ja": [
+    "native ball/constraint候補とmotor/root/元質量のpinned1.4.3実測、選定理由・失敗候補を保持。",
+    "9load×120秒passive、18×120秒powered、6endpoint×30秒matched half-dt、30resetと全target clearanceを完全rawから独立判定。",
+    "新signature/source/asset/settings/receiptを再hashし全probe合格までoptimizer/validation/acceptance/filming禁止。",
+    "同じseed7・初期tensor・300000環境step/方策を既定とする同条件比較。validation12case/120transition完了後heldout開封。",
+    "各方策127case(9 basic,18 endpoint,100 heldout)、randomized9/9+18/18+>=95/100別gate。Wilson95%CI/全subgroup/全失敗保持。",
+    "記録はbasic seed1/nominal、全10shared stopを含む3raw/HUD全編1x。combined/submissionは範囲外。"
+  ],
+  "missing_evidence_ja": [
+    "本CPU監査はGenesis runtimeの新候補をconstruction/stepしていない。新importerでのroot/rotor/mass/constraint反力とunloaded同等性は未測定。",
+    "新profileの全長時間qualification・dt比較・runtime reset isolation・動的地面余裕は未取得。",
+    "両方策の新training/validation、254paired acceptance、実boundary説明、3本のraw/HUD/最終hash人手承認は未取得。",
+    "共有経路変更時に必要なpredecessor再試験は本監査では実行していない。",
+    "本記録のcontext/source hashは監査時snapshotであり、後続編集の新実行を認証しない。freeze時は実行版を再採取する。"
+  ],
+  "verification": {
+    "method_ja": "ローカルCPUで実ファイルsize/hash、YAML三者の全精度同一性・event、routing ZIP内schema/sidecar、実pickle設定・checkpoint first-layerと17→29transferを照合。GPU/SSH/学習/ledger変更なし。",
+    "geometry_checks": "PASS",
+    "model_size_sha256_checks": "PASS",
+    "routing_embedded_sidecar": "PASS",
+    "parent_actual_pickle_and_cpu_transfer": "PASS",
+    "physics_acceptance": "NOT_RUN",
+    "operator_loaded_review": "NOT_OBTAINED"
+  }
+}

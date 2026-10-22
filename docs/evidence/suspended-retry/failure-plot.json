@@ -1,0 +1,24 @@
+{
+  "schema": "suspended-retry-diagnostic-plot-v1",
+  "plot": {
+    "path": "docs/evidence/suspended-retry/qualification-failure.png",
+    "bytes": 192435,
+    "sha256": "2954d91b0c0735e54a8a6f2222af836a0a05ead6add8c6dc2d9ff50b6f01d65c",
+    "pixels": [
+      1600,
+      1280
+    ]
+  },
+  "raw": {
+    "path": "outputs/suspended_retry_20261022_052336/first-powered-failure-v10/outputs/qualification-v3-domain/powered_0.030_0.30_0/samples.jsonl",
+    "sha256": "b77f2d13d88facf4bc67f321e135ad1a6927b23dc190147ceb902babc17798b5"
+  },
+  "script": {
+    "path": "scripts/plot_payload_retry_failure.py",
+    "sha256": "529ffa77ad077919fd5c8405e89ac119ea2f908a597b29bb3a23675aca408421"
+  },
+  "visual_inspection": true,
+  "role": "Diagnostic failure only, not learned-policy acceptance or full mission video",
+  "log_axis_display_floor_m": 1e-10,
+  "raw_values_modified": false
+}

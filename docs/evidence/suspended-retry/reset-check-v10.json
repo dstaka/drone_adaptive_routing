@@ -1,0 +1,471 @@
+{
+  "schema": "payload-ball-bank-independent-check-v1",
+  "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+  "physical_training_admitted": false,
+  "policy_admitted": false,
+  "probe": "bank-reset-v1",
+  "failure_codes": [],
+  "missing_evidence": [],
+  "files": {
+    "declaration.json": {
+      "bytes": 37854,
+      "sha256": "d3f564e5aaf4cc9768f9c2faf28e9895fa706385e994546e84d5410306b23f23"
+    },
+    "runtimeproperties.json": {
+      "bytes": 24842,
+      "sha256": "1c091ad8928c18d200faf385b78821e574ecf83f785f66915a0e8b67f7d0cfd4"
+    },
+    "reset-samples.json": {
+      "bytes": 2682583,
+      "sha256": "dcdc8402bd69040ca3c0f0036c981f29b31f362b1717d0a00072c4a42a4a15ae"
+    },
+    "summary.json": {
+      "bytes": 1777,
+      "sha256": "ed1d980eed63e7dcced325a86e7619998f85ff939b04c6a20b63472128c29c1e"
+    }
+  },
+  "actual_source_binding": {
+    "scripts/probe_payload_ball_bank.py": "64a67c082191f7988731359bf859fc34a766b54a339083cfb51affe48fc8bf1e",
+    "src/adaptive_drone_patrol/payload_ball_bank.py": "5517b52bca8bfda32fd77bc1d1a76051f77affc1d4b5fc7743543c1d49eaf967",
+    "src/adaptive_drone_patrol/payload_ball_asset.py": "74c9e4d6bf38392c7e2795a025286d0133b80b4bb116fd2169070f7579edcef2",
+    "src/adaptive_drone_patrol/payload_contract.py": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e",
+    "src/adaptive_drone_patrol/payload_cases.py": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b",
+    "src/adaptive_drone_patrol/util.py": "24f228460404f0a19b87a25f2a15f7f29fbb1743c39ee30eec0b8019b40301d4"
+  },
+  "manifest_sha256": "fdc9cf58cd4cbee1e38afc6b8fb166d2a2f84e447974775226250edcbe9c9f0b",
+  "checker_sha256": "ce8a072cf709ba19955a021d87653e9edfcacf72ed492180738af6b897bc9928",
+  "reset_count": 30,
+  "reconstructed_moving_inactive_comparisons": 57,
+  "reconstructed_motor_steps": 29,
+  "expected_motor_rpm": [
+    15047.166350840727,
+    14468.429183500699,
+    14468.429183500699,
+    14468.429183500699
+  ],
+  "actual_kernel_rpm_observed": false,
+  "outcomes": [
+    {
+      "index": 0,
+      "failures": [],
+      "moving_inactive": [],
+      "mass_relative_error": 1.724640925057918e-08,
+      "inertia_relative_error": 1.9379754209480886e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.795307728677756e-08,
+      "aabb_max_error_m": 1.4554255911569669e-08,
+      "package_floor_m": 0.6538134667766157
+    },
+    {
+      "index": 1,
+      "failures": [],
+      "moving_inactive": [
+        "0.030"
+      ],
+      "mass_relative_error": 1.724640925057918e-08,
+      "inertia_relative_error": 4.0121854933716e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 3.853158803135415e-08,
+      "aabb_max_error_m": 2.1525056292936995e-08,
+      "package_floor_m": 0.6350970649045397
+    },
+    {
+      "index": 2,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 1.724640925057918e-08,
+      "inertia_relative_error": 1.9379754209480886e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 8.044067412171785e-09,
+      "aabb_max_error_m": 2.866378390198321e-08,
+      "package_floor_m": 0.6200226258696023
+    },
+    {
+      "index": 3,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 1.724640925057918e-08,
+      "inertia_relative_error": 1.9379754209480886e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.803540154529884e-08,
+      "aabb_max_error_m": 1.4316487106924569e-08,
+      "package_floor_m": 0.6500401949768784
+    },
+    {
+      "index": 4,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 1.724640925057918e-08,
+      "inertia_relative_error": 4.0121854933716e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 2.7822611701867583e-08,
+      "aabb_max_error_m": 2.1628403512607974e-08,
+      "package_floor_m": 0.6385803602418663
+    },
+    {
+      "index": 5,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 1.724640925057918e-08,
+      "inertia_relative_error": 1.9379754209480886e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 6.046396211195199e-09,
+      "aabb_max_error_m": 2.8689383091418108e-08,
+      "package_floor_m": 0.6203182648820891
+    },
+    {
+      "index": 6,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 4.599042488237076e-08,
+      "inertia_relative_error": 4.0121853771825795e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 8.806993240240146e-08,
+      "aabb_max_error_m": 1.4363472189415916e-08,
+      "package_floor_m": 0.6503670071971968
+    },
+    {
+      "index": 7,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 4.599042488237076e-08,
+      "inertia_relative_error": 2.4805020681516905e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 2.1064581412488792e-08,
+      "aabb_max_error_m": 2.1527964300105396e-08,
+      "package_floor_m": 0.636338629652303
+    },
+    {
+      "index": 8,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 4.599042488237076e-08,
+      "inertia_relative_error": 4.0121853771825795e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 6.38840063627022e-08,
+      "aabb_max_error_m": 2.8732001222664394e-08,
+      "package_floor_m": 0.6239042590830928
+    },
+    {
+      "index": 9,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 3.623100389585394e-08,
+      "inertia_relative_error": 1.0537012396378583e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 1.9099564541047442e-08,
+      "aabb_max_error_m": 2.1563732244267442e-08,
+      "package_floor_m": 0.6350887202155951
+    },
+    {
+      "index": 10,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 4.048458065543376e-08,
+      "inertia_relative_error": 8.6744955797638e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 9.118506298787251e-08,
+      "aabb_max_error_m": 2.157460399221378e-08,
+      "package_floor_m": 0.6353416227125054
+    },
+    {
+      "index": 11,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 1.0951785075492563e-08,
+      "inertia_relative_error": 2.619574768530799e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.148485281173768e-08,
+      "aabb_max_error_m": 2.1484236945035207e-08,
+      "package_floor_m": 0.6350199961396644
+    },
+    {
+      "index": 12,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 2.212217236177048e-08,
+      "inertia_relative_error": 4.778179682925063e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 3.682101676816101e-09,
+      "aabb_max_error_m": 2.8875068669442783e-08,
+      "package_floor_m": 0.6219389745924911
+    },
+    {
+      "index": 13,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 2.6379901225202685e-08,
+      "inertia_relative_error": 4.3961880865838655e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 1.837465144814119e-08,
+      "aabb_max_error_m": 2.875355753495512e-08,
+      "package_floor_m": 0.6218955825326058
+    },
+    {
+      "index": 14,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 4.6368287317185355e-08,
+      "inertia_relative_error": 3.7551311026581405e-10,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 2.65042274238958e-08,
+      "aabb_max_error_m": 2.1824931972780348e-08,
+      "package_floor_m": 0.6371288677357675
+    },
+    {
+      "index": 15,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 2.955779266679072e-09,
+      "inertia_relative_error": 3.307005614853886e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 2.8224134751564378e-08,
+      "aabb_max_error_m": 2.8641576332866236e-08,
+      "package_floor_m": 0.6206462692900948
+    },
+    {
+      "index": 16,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 5.1203518544803166e-08,
+      "inertia_relative_error": 2.759327062197654e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 1.3013397670071022e-08,
+      "aabb_max_error_m": 2.1665453320274253e-08,
+      "package_floor_m": 0.6358337781735665
+    },
+    {
+      "index": 17,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 1.4936581711530194e-08,
+      "inertia_relative_error": 1.479489114672198e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 1.2623637635211793e-08,
+      "aabb_max_error_m": 1.433094631853038e-08,
+      "package_floor_m": 0.6500270223359238
+    },
+    {
+      "index": 18,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 2.7364295911813297e-08,
+      "inertia_relative_error": 3.0978067783011205e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 3.799654118658621e-08,
+      "aabb_max_error_m": 1.4456147168218081e-08,
+      "package_floor_m": 0.6503219459930716
+    },
+    {
+      "index": 19,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 1.099288265100287e-08,
+      "inertia_relative_error": 3.9269538865095156e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 2.994342923118686e-08,
+      "aabb_max_error_m": 2.870652981989963e-08,
+      "package_floor_m": 0.6206757139196604
+    },
+    {
+      "index": 20,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 1.65845527884654e-08,
+      "inertia_relative_error": 1.6470282302369102e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 2.5801417380559196e-08,
+      "aabb_max_error_m": 2.148324884654329e-08,
+      "package_floor_m": 0.6350907468540009
+    },
+    {
+      "index": 21,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 1.1065463985444916e-08,
+      "inertia_relative_error": 2.4571366360424195e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 1.4601937227236538e-08,
+      "aabb_max_error_m": 1.4342120380206325e-08,
+      "package_floor_m": 0.6527352785694092
+    },
+    {
+      "index": 22,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 2.706147335204368e-09,
+      "inertia_relative_error": 4.231356264010297e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.222234167120061e-08,
+      "aabb_max_error_m": 1.447232045315161e-08,
+      "package_floor_m": 0.6515772794005128
+    },
+    {
+      "index": 23,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 1.4941729541021105e-08,
+      "inertia_relative_error": 4.010643726027538e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 6.997311868441065e-08,
+      "aabb_max_error_m": 2.1805940608743413e-08,
+      "package_floor_m": 0.6380001684520855
+    },
+    {
+      "index": 24,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 1.7886932947421447e-08,
+      "inertia_relative_error": 3.6406333035068645e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.035326106599513e-08,
+      "aabb_max_error_m": 2.877119653632576e-08,
+      "package_floor_m": 0.6208594153701914
+    },
+    {
+      "index": 25,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 1.785676804819805e-08,
+      "inertia_relative_error": 1.4540874520745646e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.300660269673178e-08,
+      "aabb_max_error_m": 2.1670313210542247e-08,
+      "package_floor_m": 0.6390648863573357
+    },
+    {
+      "index": 26,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 3.493953829673355e-08,
+      "inertia_relative_error": 6.372357125652999e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 4.86662637966262e-08,
+      "aabb_max_error_m": 2.8841920518551944e-08,
+      "package_floor_m": 0.6220843503542465
+    },
+    {
+      "index": 27,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.030"
+      ],
+      "mass_relative_error": 4.0314070131854365e-08,
+      "inertia_relative_error": 5.054370784768704e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 5.872107261550852e-08,
+      "aabb_max_error_m": 2.1752740608782517e-08,
+      "package_floor_m": 0.6386894366174681
+    },
+    {
+      "index": 28,
+      "failures": [],
+      "moving_inactive": [
+        "0.060",
+        "0.045"
+      ],
+      "mass_relative_error": 2.008385007589673e-08,
+      "inertia_relative_error": 2.8356071119183202e-08,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 1.9142352092327286e-08,
+      "aabb_max_error_m": 1.4400717618379133e-08,
+      "package_floor_m": 0.6518097971913844
+    },
+    {
+      "index": 29,
+      "failures": [],
+      "moving_inactive": [
+        "0.045",
+        "0.030"
+      ],
+      "mass_relative_error": 1.705611979964164e-08,
+      "inertia_relative_error": 8.175201555874553e-09,
+      "maximum_reset_velocity": 0.0,
+      "constraint_residual_m": 3.559218669790809e-08,
+      "aabb_max_error_m": 2.8804717944197478e-08,
+      "package_floor_m": 0.6218012283287659
+    }
+  ],
+  "limitations_ja": "RPMは宣言actionとhash固定bank.step sourceから計算した期待値。実kernel引数の測定値はreset rawにない。motor等価性は別の独立suiteを要する。30 reset/property/FK/isolationだけでは学習許可を出さない。",
+  "full_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/reset-check-v10.json",
+    "bytes": 14698,
+    "sha256": "a428ea9c963af86c7d096a527f76775e733a966c6b5ef85a49b0a562505bdb46"
+  }
+}

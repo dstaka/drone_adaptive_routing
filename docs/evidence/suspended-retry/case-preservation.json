@@ -1,0 +1,23 @@
+{
+  "schema": "retry-case-preservation-cross-platform-v1",
+  "original_sha256": "f98e0632d96a4d7b40feda667bff6e9ca831fc7f67e1734f2438e3c527ecf01c",
+  "linux_regenerated_sha256": "03367285844eb0ab4276ee66bfda9b99b6db512ddb65623083ba94105e3681f8",
+  "differing_values": 23,
+  "different_fields": [
+    "initial.package_xyz"
+  ],
+  "maximum_absolute_difference_m": 1.3877787807814457e-17,
+  "all_random_draws_and_quaternions_exact": true,
+  "original_case_bytes_modified": false,
+  "acceptance_thresholds_changed": false,
+  "new_wrapper_uses_original_exact_hash": true,
+  "independent_regeneration_geometry_rounding": "8float64epsilon at unit scale; derived package center only",
+  "reconstruction": "Reject if bytes do not reproduce the original hash; use verified original file",
+  "new_wrapper": {
+    "path": "outputs/suspended_retry_20261022_052336/cases-wrapper-v11.json",
+    "sha256": "4f4e0f03c5fffc70cd0e02a46b32c7897da900d82a50811cd5baa89f6da58eeb"
+  },
+  "source_sha256": "45869ca553df09fbd23f764067da9cffaf8aadf13ce2a67c524e3fbf6e54d002",
+  "results": "NOT_RUN",
+  "acceptance_freeze": "NOT_FROZEN_FOR_ACCEPTANCE"
+}

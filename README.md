@@ -1,5 +1,9 @@
 # 適応型ドローン巡回点検
 
+2026-10-22追記：**native ballによる再挑戦も、現時点で運用域qualificationは不合格です。** [新spec](specs/2026-10-21-suspended-payload-flight-retry/spec.md) に基づき、受動2球関節、元4ローターと等価な推力・反トルク、実substepの仕事観測、独立checker、reset/観測/学習guardを実装しました。全15motor比較と30resetの独立検査は通りましたが、質量比0.30・一辺0.030 mのpowered診断で39.35秒に荷物最下点0.09824 mとなり、0.10 mの安全条件に違反しました。数値発散の確定診断や、固定リンク全般が不可能という結論ではありません。
+
+今回の学習・validation・受入254件・最終全編動画3本は未実行です。成功率・ランダム化の優位性・人手承認はありません。[新しい引き継ぎ](docs/suspended-payload-flight-retry-handoff.md)、[motor実測](docs/evidence/suspended-retry/motor-audit-v10.json)、[substep観測の同一入力検査](docs/evidence/suspended-retry/substep-observation.json)、[日本語レポート](docs/report_ja.md) を参照してください。宣言55条件は全件試行し、8条件が床余裕違反、大角度14/16条件が受動エネルギー上限違反、全6端点のdt/半dt比較も不合格でした。CPU回帰は両環境で547件成功ですが、物理修理の証拠ではありません。GPU累計10824.12788819254秒、残り17975.87211180746秒です。[最終qualification](docs/evidence/suspended-retry/qualification.json)と[全gate](docs/evidence/suspended-retry/acceptance.json)に未達を記録しました。以下の10月21日以前の記録は履歴です。
+
 2026-10-21追記：**吊り荷版は物理実現性ゲートで不合格、受入未達です。** [対象spec](specs/2026-10-17-suspended-payload-flight/spec.md) に沿って受動0.30 m固定リンク、実質量・慣性・collision、episode再抽選、29観測、同時1秒settlingと評価checkerを実装しました。短いprobe後のランダム化学習で数値破綻し、2/8/16 substepの診断でも再現したためGPU作業を停止しました。採用済み吊り荷モデル、固定比較、254受入試行、全編動画3本、人手確認はありません。成功率やランダム化の優位性を主張しません。
 
 [実装・失敗・hash・再実行の引き継ぎ](docs/suspended-payload-flight-handoff.md)、[実装計画と到達状況](docs/superpowers/plans/2026-10-21-suspended-payload-flight.md)、[独立raw検査](docs/evidence/suspended/failure-check.json)、[日本語レポート](docs/report_ja.md) を参照してください。GPU累計7,484.093172秒、残り21,315.906828秒。旧い短時間PASSで訓練を再開できないよう停止状態を記録しています。数値破綻の修理は未達です。

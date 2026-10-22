@@ -1,0 +1,4349 @@
+{
+  "schema": "payload-operating-domain-independent-v3",
+  "status": "QUALIFICATION_BLOCKED",
+  "physical_training_admitted": false,
+  "policy_admitted": false,
+  "failure_codes": [
+    "REQUIRED_STAGE_INCOMPLETE:sixteen_complete_large_angle_diagnostics",
+    "REQUIRED_STAGE_INCOMPLETE:eighteen_powered_120s_zero_and_10deg",
+    "REQUIRED_STAGE_INCOMPLETE:six_matched_30s_dt_and_halfdt_pairs",
+    "REQUIRED_STAGE_INCOMPLETE:all_powered_oriented_dynamic_clearance_no_contact",
+    "OPERATING_DOMAIN_CONDITIONS_NOT_QUALIFIED"
+  ],
+  "missing_evidence": [],
+  "checklist": {
+    "construction_motor_and_reciprocal_coupling": {
+      "passed": true
+    },
+    "thirty_effective_partial_resets": {
+      "passed": true
+    },
+    "S_all_ten_nominal_targets_and_127_initial_draws_static_geometry": {
+      "passed": true,
+      "initial_cases": 127,
+      "locations": 11,
+      "dynamic_clearance_certified": false,
+      "minimum_initial_package_floor_m": 0.6200248975374648,
+      "minimum_nominal_package_floor_m": 0.6199999999999999,
+      "failures": [],
+      "initial_cases_sha256": "f98e0632d96a4d7b40feda667bff6e9ca831fc7f67e1734f2438e3c527ecf01c",
+      "nominal_size_location_checks": 33
+    },
+    "nine_full_small_angle_120s_energy_period": {
+      "passed": true,
+      "required": 9
+    },
+    "sixteen_complete_large_angle_diagnostics": {
+      "passed": false,
+      "required": 16
+    },
+    "eighteen_powered_120s_zero_and_10deg": {
+      "passed": false,
+      "required": 18
+    },
+    "six_matched_30s_dt_and_halfdt_pairs": {
+      "passed": false,
+      "required": 6
+    },
+    "all_powered_oriented_dynamic_clearance_no_contact": {
+      "passed": false
+    },
+    "actual_pinned_engine_source_bytes": {
+      "passed": true,
+      "observed_source_count": 23
+    },
+    "justified_powered_work_bound": {
+      "passed": true,
+      "reason": "Requires complete verified substep path work as well as the independent endpoint guard."
+    }
+  },
+  "cases": {
+    "anchor_0.030_0.10": {
+      "case": {
+        "id": "anchor_0.030_0.10",
+        "kind": "anchor",
+        "side_m": 0.03,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2420,
+            "sha256": "7cc006a0692a1a472c7278a753b9699d8f41a743ea0c52770b70091bdae7bd93"
+          },
+          "summary.json": {
+            "bytes": 14007,
+            "sha256": "29be10695e5967e11b4ed47a343f991b55d4f4865c5879b50d6cc379734b1d43"
+          },
+          "runtime-initial.json": {
+            "bytes": 13174,
+            "sha256": "674a07fa8640313bffa0efef71d6a6265d22c86b2223236a948b3aa510d05f30"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24646780,
+            "sha256": "e2c211f8bb3ce149645ca970fc8b1c12ce13d0801c72d5f29c1aa01616f355cc"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.2656165210289672e-07,
+          "minimum_package_floor_m": 0.6495870927444619,
+          "max_speed_m_s": 0.1537903867164763,
+          "max_angular_speed_rad_s": 0.61314857006073
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "eb8a561a91ae6ca7f9404714e912af0f31dbdc6c293d99178c67052734788fed",
+      "runtime_sha256": "674a07fa8640313bffa0efef71d6a6265d22c86b2223236a948b3aa510d05f30",
+      "asset_sha256": "213e386e7278e03c20de79c1b327588c1cb0d40e5be987750e0fc057f2acd081",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 3.2309726119192455e-05,
+        "positive_energy_fraction": 0.014562396793742155,
+        "minimum_energy_fraction_of_initial": 0.9861318521862021,
+        "measured_period_s": 1.1237605809903588,
+        "analytical_period_s": 1.1232117611231665,
+        "period_relative_error": 0.0004886165602856169,
+        "crossings": 107,
+        "terminal_energy_fraction_of_initial": 1.0063908869891427,
+        "maximum_energy_j": 3.278023317123727e-05,
+        "minimum_energy_j": 3.186165006154817e-05,
+        "crossing_period_range_s": 0.0011173783069011733
+      },
+      "failures": []
+    },
+    "large_0.030_0.10": {
+      "case": {
+        "id": "large_0.030_0.10",
+        "kind": "large_angle",
+        "side_m": 0.03,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2424,
+            "sha256": "8af9cd6d998004fd79fb4d153ca220b51780a3016260c9f133e63643da932621"
+          },
+          "summary.json": {
+            "bytes": 14009,
+            "sha256": "aee9908d9b34cfb89bda40ace3ab6160c14a9cf8c11322090ceb5f6d24e99106"
+          },
+          "runtime-initial.json": {
+            "bytes": 13178,
+            "sha256": "b7228cf8e0391d8f680a0eda645a0aa710e9ae4062206bf4255d1f7ea1d27193"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6113839,
+            "sha256": "a5b5afff45f29d6bd0d765c0ab261338f511d02b555625220cf4fbb674350eb2"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.688516544961389e-07,
+          "minimum_package_floor_m": 0.6465055377099749,
+          "max_speed_m_s": 4.209842219637392,
+          "max_angular_speed_rad_s": 93.32418060302734
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "23586d5c01e1fb54380c1f1bce0dec3b2767e6df9e7148a2a6420e534af4d67e",
+      "runtime_sha256": "b7228cf8e0391d8f680a0eda645a0aa710e9ae4062206bf4255d1f7ea1d27193",
+      "asset_sha256": "213e386e7278e03c20de79c1b327588c1cb0d40e5be987750e0fc057f2acd081",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.008490703250123886,
+        "positive_energy_fraction": 1.8887595475062822
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.030_0.10_0": {
+      "case": {
+        "id": "powered_0.030_0.10_0",
+        "kind": "powered",
+        "side_m": 0.03,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2267,
+            "sha256": "76e8e01bf1b567be715ecf18614a386517f3f28ca0c0f610aa8a62afa2d5d714"
+          },
+          "summary.json": {
+            "bytes": 14433,
+            "sha256": "2f0c309ba2a2839b9bf6a688bec7429764aabf39f82eeb74a4059c3b21dbe1d4"
+          },
+          "runtime-initial.json": {
+            "bytes": 13596,
+            "sha256": "95ccf1b03280e5f853b5b757e29e146d3f5876c60c7e3138bca0b9c97d08efd0"
+          },
+          "samples.jsonl": {
+            "bytes": 47782822,
+            "sha256": "e9b1a07874c598572436ca2086f0369c541fe20e374685c8cb2dd9dcf05afd95"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.496111188134945e-07,
+          "minimum_package_floor_m": 0.6015530679538207,
+          "max_speed_m_s": 5.105612786615468,
+          "max_angular_speed_rad_s": 4.337619907525238
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "8508e78b1db8319dcae73e758c5efffa94e318026f3c4058de399cefe3dcbb5c",
+      "runtime_sha256": "95ccf1b03280e5f853b5b757e29e146d3f5876c60c7e3138bca0b9c97d08efd0",
+      "asset_sha256": "076c66df74073f8d12417b0990bfc0f4988756bde72347309d134aa03989b72e",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "e1c5f49db8c797d715e54773352aed6a85d9df2c82b0a2259a254c89a95f996f"
+      },
+      "powered_energy": {
+        "work_guard_j": 4.279620232425758,
+        "maximum_energy_growth_j": 0.6246316323354788,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "powered_0.030_0.10_10": {
+      "case": {
+        "id": "powered_0.030_0.10_10",
+        "kind": "powered",
+        "side_m": 0.03,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "7ed07f51c3232a4e7a6556a8cc910bb6da97a21b5ea96888aefd70b246976f4b"
+          },
+          "summary.json": {
+            "bytes": 14436,
+            "sha256": "fde143379ce4de2416b5ffc72ff26506e10bf0acca1d3aec58c4d8bb4f032f78"
+          },
+          "runtime-initial.json": {
+            "bytes": 13598,
+            "sha256": "c92fd7301bcf6e376e7229492a6243489b743bad8b2032fde1eedf21b237e710"
+          },
+          "samples.jsonl": {
+            "bytes": 50578197,
+            "sha256": "643f11128037fde024d48b08cfdeb6875bcbe336c648d8b765beef1b57a0029a"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.450251466781019e-07,
+          "minimum_package_floor_m": 0.6015334152709279,
+          "max_speed_m_s": 5.1056701950175025,
+          "max_angular_speed_rad_s": 4.2422300245482
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "11b92be9943cfc6b39c194196eb2c9e338e86329e92dd93b7865e685525ca9a1",
+      "runtime_sha256": "c92fd7301bcf6e376e7229492a6243489b743bad8b2032fde1eedf21b237e710",
+      "asset_sha256": "076c66df74073f8d12417b0990bfc0f4988756bde72347309d134aa03989b72e",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "36e05df3df7b64142af84c4781e6424c71a45a8abf5b12b4e4c90c7e6dae90fc"
+      },
+      "powered_energy": {
+        "work_guard_j": 4.282562813576072,
+        "maximum_energy_growth_j": 0.6245031715713879,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.030_0.20": {
+      "case": {
+        "id": "anchor_0.030_0.20",
+        "kind": "anchor",
+        "side_m": 0.03,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2420,
+            "sha256": "656820993d629fd37e314063783679412c0fe63571a37d259d506ab768b5f710"
+          },
+          "summary.json": {
+            "bytes": 14003,
+            "sha256": "d96d5cc49c40dacbea8eeedf1938fb88396b36f746a98dc7bf7cbe012eb22c8a"
+          },
+          "runtime-initial.json": {
+            "bytes": 13170,
+            "sha256": "cc3f1083f0f42ef77bae50f1b6b270cedd9100d261f3c580422b077dd573afc7"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24639704,
+            "sha256": "b17a4c29470ada5c20a8d04b826a7ff9cab31777ff6a02158b4e8da068e292af"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.2245459102278033e-07,
+          "minimum_package_floor_m": 0.6495936720305583,
+          "max_speed_m_s": 0.15355833013654072,
+          "max_angular_speed_rad_s": 0.600952684879303
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "c44e18b3ff3ed71706bcaf953863f1fc2f8f7d24a3f7e8c5abbeef8530159085",
+      "runtime_sha256": "cc3f1083f0f42ef77bae50f1b6b270cedd9100d261f3c580422b077dd573afc7",
+      "asset_sha256": "8a9c12345d489d02b7ce0717c1d62bbc4c22cefd06247952b5dd0231345d66c7",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 6.405948337882616e-05,
+        "positive_energy_fraction": 0.014711465296523523,
+        "minimum_energy_fraction_of_initial": 0.9863589451194182,
+        "measured_period_s": 1.1255280746519745,
+        "analytical_period_s": 1.124981097371447,
+        "period_relative_error": 0.0004862101966029287,
+        "crossings": 107,
+        "terminal_energy_fraction_of_initial": 0.9867078244465614,
+        "maximum_energy_j": 6.500189224546699e-05,
+        "minimum_energy_j": 6.318564445043388e-05,
+        "crossing_period_range_s": 0.0009326320044777958
+      },
+      "failures": []
+    },
+    "large_0.030_0.20": {
+      "case": {
+        "id": "large_0.030_0.20",
+        "kind": "large_angle",
+        "side_m": 0.03,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2424,
+            "sha256": "2620ccd6c3ff3e3d1571b42655a735030848ad77db064a749ebd8e79f00f5c7f"
+          },
+          "summary.json": {
+            "bytes": 14006,
+            "sha256": "6bec26b903654388372816a2cc35afa9b23e7e39c7d0b6d60314bbde62074605"
+          },
+          "runtime-initial.json": {
+            "bytes": 13174,
+            "sha256": "974fc5e48232e564cb25be123473af3528e6801d2c8a1e9b4867d2eeb0613bd4"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6125983,
+            "sha256": "c271552533d4e54ce5d5b9666328a8d38a729cb490bce5468865a966eddf4d36"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.6952324157785615e-07,
+          "minimum_package_floor_m": 0.6465411981886098,
+          "max_speed_m_s": 4.386199824545841,
+          "max_angular_speed_rad_s": 69.77935028076172
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "437a72a94c4b6c64f3a9d546bd5956caf6ddf9f2a1bfebe633fa15eec5614492",
+      "runtime_sha256": "974fc5e48232e564cb25be123473af3528e6801d2c8a1e9b4867d2eeb0613bd4",
+      "asset_sha256": "8a9c12345d489d02b7ce0717c1d62bbc4c22cefd06247952b5dd0231345d66c7",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.0168342564654831,
+        "positive_energy_fraction": 2.1397266071256458
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.030_0.20_0": {
+      "case": {
+        "id": "powered_0.030_0.20_0",
+        "kind": "powered",
+        "side_m": 0.03,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2267,
+            "sha256": "1545d538c125dd3bc6f6abdf82c3db132734f9beeb0766edeba68d94fe08af2c"
+          },
+          "summary.json": {
+            "bytes": 14433,
+            "sha256": "9deaa721ea7bad3c73fa6733a3e5b094c8736ad2415320131012e05312104632"
+          },
+          "runtime-initial.json": {
+            "bytes": 13595,
+            "sha256": "e12f7a9309f0f12db02f947d72d2261e3f1e572b1886c330267eb1b5152665e6"
+          },
+          "samples.jsonl": {
+            "bytes": 47883622,
+            "sha256": "1e22cfc987ac469545d80ab969d3792fcb7087876686e8ecf2e1f493cd89d78f"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.324215172168688e-07,
+          "minimum_package_floor_m": 0.43076024069921753,
+          "max_speed_m_s": 5.175110005759493,
+          "max_angular_speed_rad_s": 3.961725436221576
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "70b87f8c73c36d4aa4fad0d7386528ed0b51500be5cc9d5d1215882af9108440",
+      "runtime_sha256": "e12f7a9309f0f12db02f947d72d2261e3f1e572b1886c330267eb1b5152665e6",
+      "asset_sha256": "32a1ef4382f8f5178fbe7bcf41eb7b33ac2fd40cbb0ee365c417b4857af1106e",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "34ef987a6b5878145354f4e440c9c04671d9aae63f1af909caff40f07c78ebec"
+      },
+      "powered_energy": {
+        "work_guard_j": 5.029629517421156,
+        "maximum_energy_growth_j": 0.6966831068036012,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "powered_0.030_0.20_10": {
+      "case": {
+        "id": "powered_0.030_0.20_10",
+        "kind": "powered",
+        "side_m": 0.03,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "ca52603992f931f3fb5c19d9735fa3ff5569d90cb6abf7e174c2bb52d936487b"
+          },
+          "summary.json": {
+            "bytes": 14435,
+            "sha256": "7d4c6a9d258d294e75b95e9e59d34fcf438706ceb0e8781554b788e89cb74fc5"
+          },
+          "runtime-initial.json": {
+            "bytes": 13597,
+            "sha256": "f870455c1308bc82984a26a845275dfaae65121147ff863be38a3edfd2e5dbf9"
+          },
+          "samples.jsonl": {
+            "bytes": 50451483,
+            "sha256": "eb77f8766265d2b4969ac17d9ab696118db869ef6442c57f24c30ae4fe21a321"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.484273455340748e-07,
+          "minimum_package_floor_m": 0.43080504830280214,
+          "max_speed_m_s": 5.1752665620532285,
+          "max_angular_speed_rad_s": 3.8617829808243176
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "ed2c7bb1ad9f023e10df04aa42dd314fe2a1f1179e2839a03eb586d94c612f56",
+      "runtime_sha256": "f870455c1308bc82984a26a845275dfaae65121147ff863be38a3edfd2e5dbf9",
+      "asset_sha256": "32a1ef4382f8f5178fbe7bcf41eb7b33ac2fd40cbb0ee365c417b4857af1106e",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "c7a1c8eb0216aae452c058b37cf5e54df9e9ef725212771349e528bf2dc7264c"
+      },
+      "powered_energy": {
+        "work_guard_j": 5.037261769182544,
+        "maximum_energy_growth_j": 0.6964312301359254,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.030_0.30": {
+      "case": {
+        "id": "anchor_0.030_0.30",
+        "kind": "anchor",
+        "side_m": 0.03,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2420,
+            "sha256": "27951354aa28f3b9fe80c11efeb6803605aa0d77a1560b482141e58fffb86fc8"
+          },
+          "summary.json": {
+            "bytes": 14006,
+            "sha256": "01d6cce80828f24a61ab1cf8c856fae62e742a21874e064af7ef0fc3eb760661"
+          },
+          "runtime-initial.json": {
+            "bytes": 13173,
+            "sha256": "df4fb7572b9befbd96d9cd2cd6a324ac3ff1836ee218c46a2ef4433c359f6b57"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24637840,
+            "sha256": "137ab53607064ac8d4e9916fdd33df6fcf565aa1b0433833ea349242c8af7b67"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.3258505687785416e-07,
+          "minimum_package_floor_m": 0.6495959756744942,
+          "max_speed_m_s": 0.1534482677675108,
+          "max_angular_speed_rad_s": 0.5972615480422974
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "7168d734a31b736d77c205b908fad72be763a10c6a2f502ed66ca10d19a0d8a3",
+      "runtime_sha256": "df4fb7572b9befbd96d9cd2cd6a324ac3ff1836ee218c46a2ef4433c359f6b57",
+      "asset_sha256": "39e84072264b3e9887e6065aac5170895c982ee305424cddc63d4c7c0fc4cd30",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 9.580924337630638e-05,
+        "positive_energy_fraction": 0.014340280492491959,
+        "minimum_energy_fraction_of_initial": 0.9859042338105046,
+        "measured_period_s": 1.126116594103621,
+        "analytical_period_s": 1.1255772557942625,
+        "period_relative_error": 0.0004791659626935257,
+        "crossings": 107,
+        "terminal_energy_fraction_of_initial": 0.9902182717653869,
+        "maximum_energy_j": 9.718317480009604e-05,
+        "minimum_energy_j": 9.44587386828815e-05,
+        "crossing_period_range_s": 0.0008817438566097735
+      },
+      "failures": []
+    },
+    "large_0.030_0.30": {
+      "case": {
+        "id": "large_0.030_0.30",
+        "kind": "large_angle",
+        "side_m": 0.03,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2424,
+            "sha256": "6f778e8c8ececc28bd8c0262f1a7398538377cea28d67880a31aedd391b78a65"
+          },
+          "summary.json": {
+            "bytes": 14007,
+            "sha256": "9594edf28142f4de3e9aed2ee8940d2b544877a7ebd879a9a2f4da0577e37d11"
+          },
+          "runtime-initial.json": {
+            "bytes": 13177,
+            "sha256": "f6b387b371f99038631b3116316acd6b46bbd600af14b1a89c1868ef7146877e"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6118880,
+            "sha256": "02507fb99627aefa03218173f42d32d8745e18d0a9185c85227bbdf59d57221e"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.71559538007986e-07,
+          "minimum_package_floor_m": 0.6464807262058481,
+          "max_speed_m_s": 4.529812234982236,
+          "max_angular_speed_rad_s": 96.43415069580078
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "01dd2ba64fcef81e01b2400f4e49c1d30e348141f2b4143209789c7990b95479",
+      "runtime_sha256": "f6b387b371f99038631b3116316acd6b46bbd600af14b1a89c1868ef7146877e",
+      "asset_sha256": "39e84072264b3e9887e6065aac5170895c982ee305424cddc63d4c7c0fc4cd30",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.025177810400323967,
+        "positive_energy_fraction": 2.3543555523886694
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.030_0.30_0": {
+      "case": {
+        "id": "powered_0.030_0.30_0",
+        "kind": "powered",
+        "side_m": 0.03,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2267,
+            "sha256": "a65eae8b31e7b3029b59f25777cf26d1f10528b5fd549b6ff1733933f2370bca"
+          },
+          "summary.json": {
+            "bytes": 14457,
+            "sha256": "5e6ce04791a80553637fe2fcebe39b14c0a789ce3a45cfdf28b166076a5a4bc1"
+          },
+          "runtime-initial.json": {
+            "bytes": 13595,
+            "sha256": "6ff7626f506e2ec947f5ceb400734695d7bb2146bfc8ab6b70f496f1ebadaffa"
+          },
+          "samples.jsonl": {
+            "bytes": 14058586,
+            "sha256": "b77f2d13d88facf4bc67f321e135ad1a6927b23dc190147ceb902babc17798b5"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3936,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.3731077742359403e-07,
+          "minimum_package_floor_m": 0.0982416742547239,
+          "max_speed_m_s": 5.392079271389315,
+          "max_angular_speed_rad_s": 3.8892534360579543
+        }
+      },
+      "samples": 3936,
+      "measured_duration_s": 39.35,
+      "raw_sha256": "c0260d7986f6b3e293fe0e70bdf2d7db5f48419bcf905691403723123f4dac1f",
+      "runtime_sha256": "6ff7626f506e2ec947f5ceb400734695d7bb2146bfc8ab6b70f496f1ebadaffa",
+      "asset_sha256": "83c0ee40cef37b27cfcd870a4ca56814ddd064061639e8cd35a0886fd13628ce",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "5c8672d7b0c7ff6d659bace6ef72602072e758946df194a0a753d6f54ae34daa"
+      },
+      "powered_energy": {
+        "work_guard_j": 1.9815257048032595,
+        "maximum_energy_growth_j": 0.762622742724563,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "powered_0.030_0.30_10": {
+      "case": {
+        "id": "powered_0.030_0.30_10",
+        "kind": "powered",
+        "side_m": 0.03,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "45d32fa30b3038718d33bf6b17db2e859be563bf510a5c7d2b8a7bc0a41950f3"
+          },
+          "summary.json": {
+            "bytes": 14460,
+            "sha256": "45149a7b6e73141eb28cd44ec3c96955f883bf93ef1f6bab72fb8d4ad83c759f"
+          },
+          "runtime-initial.json": {
+            "bytes": 13597,
+            "sha256": "afaa89bf29cb4f7b30051f3be08f0add77f9dea0975db1ab4e6ea78d01104848"
+          },
+          "samples.jsonl": {
+            "bytes": 16575628,
+            "sha256": "d0104e685ef1ff799a85d7b3070fc9d1a9cc8c82443913d00cb085056bd3c97f"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3936,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.011358132327558e-07,
+          "minimum_package_floor_m": 0.09810390646191788,
+          "max_speed_m_s": 5.392495068560509,
+          "max_angular_speed_rad_s": 4.086901552364671
+        }
+      },
+      "samples": 3936,
+      "measured_duration_s": 39.35,
+      "raw_sha256": "df03951af3e929d7f7e81facd8ddb0e802606b62304566197a33a4443ab736c9",
+      "runtime_sha256": "afaa89bf29cb4f7b30051f3be08f0add77f9dea0975db1ab4e6ea78d01104848",
+      "asset_sha256": "83c0ee40cef37b27cfcd870a4ca56814ddd064061639e8cd35a0886fd13628ce",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "bdcf1719ea45ccc670e0af33d7134c9a0623ada1aff034600171ab244ef9d8a6"
+      },
+      "powered_energy": {
+        "work_guard_j": 1.9959226717079657,
+        "maximum_energy_growth_j": 0.7622119283503879,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "refine_0.030_0.10_2": {
+      "case": {
+        "id": "refine_0.030_0.10_2",
+        "kind": "refinement",
+        "side_m": 0.03,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "847623a2e9771492f10e360479d83eba2832b7b04ef5088e2796b5058d998a27"
+          },
+          "summary.json": {
+            "bytes": 14432,
+            "sha256": "5544d7ce371e4ea88e0e47af339cb7fd49c9a4c34652e3ce44aea2ea42b7e6ed"
+          },
+          "runtime-initial.json": {
+            "bytes": 13598,
+            "sha256": "cf76202cecfe12ac86d68bf1038dd026443b3f216be973b62a9d2c5f51b4c798"
+          },
+          "samples.jsonl": {
+            "bytes": 12746415,
+            "sha256": "6d8e98325163462b4564cd72cf361427b2e69234b9c1729092196e548f9963d3"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 4.450251466781019e-07,
+          "minimum_package_floor_m": 0.6455146117895847,
+          "max_speed_m_s": 2.419158210841652,
+          "max_angular_speed_rad_s": 2.003689319423433
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "61b65eed628f32a4dcf384ac579c78bb31e6dd99df8bb970d8e43f6267527851",
+      "runtime_sha256": "cf76202cecfe12ac86d68bf1038dd026443b3f216be973b62a9d2c5f51b4c798",
+      "asset_sha256": "076c66df74073f8d12417b0990bfc0f4988756bde72347309d134aa03989b72e",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "679ee64ab6b072144fa5f06792a1ab2747b2735b839fcf88278faed45efcf334"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.6676493325724481,
+        "maximum_energy_growth_j": 0.5829542472814249,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.030_0.10_4": {
+      "case": {
+        "id": "refine_0.030_0.10_4",
+        "kind": "refinement",
+        "side_m": 0.03,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 4,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "d0c495e9f423013402a6b296ca08bdc6dde423d3edaecea4bbea0b25c15fd5c4"
+          },
+          "summary.json": {
+            "bytes": 14436,
+            "sha256": "d52a985a53c8014a4c64928c85de1406377ca978163a25039322cdc9b708f57c"
+          },
+          "runtime-initial.json": {
+            "bytes": 13600,
+            "sha256": "608620c49f8510a22fc1f8cf86875a6b8acd5ab71bd67c8a7120ae3a37ff836a"
+          },
+          "samples.jsonl": {
+            "bytes": 12757045,
+            "sha256": "c772de006cbfb38a96cc2406f20e2fda485d1c1beb377566db2fc2d59b5c7213"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.8152573588409873e-07,
+          "minimum_package_floor_m": 0.6445935128337915,
+          "max_speed_m_s": 2.46193654420616,
+          "max_angular_speed_rad_s": 2.1376483344120887
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "8d5f8f58ce36b08abd9ebae5b4eb010bbc039349ea5b0aa239ec1cb47717c995",
+      "runtime_sha256": "608620c49f8510a22fc1f8cf86875a6b8acd5ab71bd67c8a7120ae3a37ff836a",
+      "asset_sha256": "076c66df74073f8d12417b0990bfc0f4988756bde72347309d134aa03989b72e",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "e382f1c993c54e127b9d3f65e82e549f5ebac310c35225fef9d4b9ddfa8b3406"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.6672886098361547,
+        "maximum_energy_growth_j": 0.5819748279251056,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.030_0.30_2": {
+      "case": {
+        "id": "refine_0.030_0.30_2",
+        "kind": "refinement",
+        "side_m": 0.03,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "7fda554e6a11ad110280b6175e34f85be4ffca7ae7d1f0e0e041d36d9399c3da"
+          },
+          "summary.json": {
+            "bytes": 14432,
+            "sha256": "a94bf56eccc52523cba54be256b1b64a1a84f74aa4c30068d7b4069e15fa19ef"
+          },
+          "runtime-initial.json": {
+            "bytes": 13597,
+            "sha256": "2cfc919f7a17b12573d8ce5889d9a9b0efe5f0b40159c20a82b6232cc57eac77"
+          },
+          "samples.jsonl": {
+            "bytes": 12732934,
+            "sha256": "7fcbf8c23365d861cb1a9f03ad3ce520328d8f33f02678521a713c631591175f"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.867997220732674e-07,
+          "minimum_package_floor_m": 0.6308217355123473,
+          "max_speed_m_s": 2.501817456698174,
+          "max_angular_speed_rad_s": 1.8172499999256304
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "41c3221ff093a31bf08f728734213b4aaed2169d55c48c6fd1f6e8c5cbd5c4f9",
+      "runtime_sha256": "2cfc919f7a17b12573d8ce5889d9a9b0efe5f0b40159c20a82b6232cc57eac77",
+      "asset_sha256": "83c0ee40cef37b27cfcd870a4ca56814ddd064061639e8cd35a0886fd13628ce",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "f0c9077db8844d7ed294c3bd4dca659a8c9bb8f23fc1f141b023e9dfe9a4262d"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.7748403242799977,
+        "maximum_energy_growth_j": 0.6690675837261859,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.030_0.30_4": {
+      "case": {
+        "id": "refine_0.030_0.30_4",
+        "kind": "refinement",
+        "side_m": 0.03,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 4,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "5cba96b0954bbf18d4153ac071cf8816056cf3c013286b140ea7110b4d20dcae"
+          },
+          "summary.json": {
+            "bytes": 14435,
+            "sha256": "c007718c0fb08945f81bc2a0e62201fd96af31f08d823b6cdddda10e834ebefc"
+          },
+          "runtime-initial.json": {
+            "bytes": 13599,
+            "sha256": "d30d27cdf803ee2f27b7e26fc2f312d5b4abfe80d943ce636c9c3e2470a02ca0"
+          },
+          "samples.jsonl": {
+            "bytes": 12647725,
+            "sha256": "2f0a97ced08202284cb57b63a31ad973ab5316220a0c2be0e37cb7bbec451277"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.776669212363082e-07,
+          "minimum_package_floor_m": 0.36326518283003434,
+          "max_speed_m_s": 3.0203420608839506,
+          "max_angular_speed_rad_s": 2.6778632465607752
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "8f0e8da07a4911eefbbc50e7a7a2b85bfb996fb67137e7d7752476f6e9816364",
+      "runtime_sha256": "d30d27cdf803ee2f27b7e26fc2f312d5b4abfe80d943ce636c9c3e2470a02ca0",
+      "asset_sha256": "83c0ee40cef37b27cfcd870a4ca56814ddd064061639e8cd35a0886fd13628ce",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "53b9c92b59404a37b1fbc1efad4ad94cef54a108a50255c5bc683bc36e4fe399"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.9211438131614638,
+        "maximum_energy_growth_j": 0.522432607412938,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.045_0.10": {
+      "case": {
+        "id": "anchor_0.045_0.10",
+        "kind": "anchor",
+        "side_m": 0.045,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2421,
+            "sha256": "efa1caae5a13bf3d20566a6369b8dfc29f87efd66a173678e964630575329973"
+          },
+          "summary.json": {
+            "bytes": 14002,
+            "sha256": "fd843de82df0b90e80f7ce3939bbecd1eaa3eabaf5bd561ab5d974501da31f9c"
+          },
+          "runtime-initial.json": {
+            "bytes": 13169,
+            "sha256": "17cf5b3d7660d0a7fd46eb15c10803d4d4d7d150f743e4da6a0839d53c4d87da"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24651923,
+            "sha256": "b20d625398cde87bd64cbe640fc48562b7cb5c3d20f56584545b5e1e261d1e96"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.3322269576399037e-07,
+          "minimum_package_floor_m": 0.6341006007917186,
+          "max_speed_m_s": 0.155526776973428,
+          "max_angular_speed_rad_s": 0.6267445087432861
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "9b9bd5fe4128db856fd0d1d3d4fdc8923b595ab7bc69a652156c6ba121fbf708",
+      "runtime_sha256": "17cf5b3d7660d0a7fd46eb15c10803d4d4d7d150f743e4da6a0839d53c4d87da",
+      "asset_sha256": "006e97275f5750e6a7a49d04da89abf6294933ff34a7618804daa2168947fb42",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 3.306614936065649e-05,
+        "positive_energy_fraction": 0.014479343759729708,
+        "minimum_energy_fraction_of_initial": 0.9863035311283511,
+        "measured_period_s": 1.1380197552964972,
+        "analytical_period_s": 1.137487636454302,
+        "period_relative_error": 0.000467801868909852,
+        "crossings": 106,
+        "terminal_energy_fraction_of_initial": 1.0091222032094391,
+        "maximum_energy_j": 3.354492550406e-05,
+        "minimum_energy_j": 3.261325987523297e-05,
+        "crossing_period_range_s": 0.0019152259673731464
+      },
+      "failures": []
+    },
+    "large_0.045_0.10": {
+      "case": {
+        "id": "large_0.045_0.10",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2425,
+            "sha256": "c54c17fabc19be2ed999276d8111cc427e4232d65a350055c58995a090b2b9ac"
+          },
+          "summary.json": {
+            "bytes": 14004,
+            "sha256": "0ad749a8069d870266ced47b4fb93337c614e1f5a623e913a94f41cf09a40153"
+          },
+          "runtime-initial.json": {
+            "bytes": 13173,
+            "sha256": "cc520ee3d492dba4d755cee955fc2861e7e52c6f33cc2d44c450b6a477f0a7ff"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6115210,
+            "sha256": "a5dad2c7775188a3ac7b29d6d7de911574257f868a0e0b11904581bb29f53e6e"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.928640749955945e-07,
+          "minimum_package_floor_m": 0.6297510335266192,
+          "max_speed_m_s": 5.14967695458534,
+          "max_angular_speed_rad_s": 64.52798461914062
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "441f95b20ad55bf34d5bcd77149d9d751774fc69af9a2088f38de8105badf455",
+      "runtime_sha256": "cc520ee3d492dba4d755cee955fc2861e7e52c6f33cc2d44c450b6a477f0a7ff",
+      "asset_sha256": "006e97275f5750e6a7a49d04da89abf6294933ff34a7618804daa2168947fb42",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.008689359267032237,
+        "positive_energy_fraction": 3.229407777067053
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.045_0.10_0": {
+      "case": {
+        "id": "powered_0.045_0.10_0",
+        "kind": "powered",
+        "side_m": 0.045,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2268,
+            "sha256": "f6cba10b6971047e6a83da5d13016e72c1a73677ee73c9cfe9c54140fbd7e1fc"
+          },
+          "summary.json": {
+            "bytes": 14428,
+            "sha256": "dd49a8c3233113e87ec05ca533ca6c467dee8891cad7c70319b4a9994e0c63e1"
+          },
+          "runtime-initial.json": {
+            "bytes": 13591,
+            "sha256": "23d3329d20f71ce4463cb31a579915eafd7293fc1fbe6289672733dc185f93e7"
+          },
+          "samples.jsonl": {
+            "bytes": 47743417,
+            "sha256": "ca5732d3fd2a6782aeba8393f1544ddc5b997bdcbde57af9c3294b38c66c3b0a"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.1363794730163935e-07,
+          "minimum_package_floor_m": 0.5797169142050584,
+          "max_speed_m_s": 5.13786799812281,
+          "max_angular_speed_rad_s": 4.789844031230555
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "d87ec9cc7f74abea625d4ec5a3a84aba287769005e59507ddce248252a024709",
+      "runtime_sha256": "23d3329d20f71ce4463cb31a579915eafd7293fc1fbe6289672733dc185f93e7",
+      "asset_sha256": "f1757e5e058e84598c176a7eb84a52088ef5dc59722873abe0aa2a0edcb8726a",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "71ce17c173548e5d5bc73be00a7ea1e9d97929927097e5627f7e4091e729519c"
+      },
+      "powered_energy": {
+        "work_guard_j": 4.290224957387603,
+        "maximum_energy_growth_j": 0.6243682419429488,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "powered_0.045_0.10_10": {
+      "case": {
+        "id": "powered_0.045_0.10_10",
+        "kind": "powered",
+        "side_m": 0.045,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "0a50d79d8472db0d630b2e08db63d935f3616b310197935015c51c03f4b6fe5d"
+          },
+          "summary.json": {
+            "bytes": 14430,
+            "sha256": "5e29d8fbe1b26c0ab210582da06be4762a70e76ef69cd0791598219f18b475af"
+          },
+          "runtime-initial.json": {
+            "bytes": 13593,
+            "sha256": "8badc1b23fc3fe1eafa102fc9c9091320fa764e219de383c52f426ccfc7a0dfc"
+          },
+          "samples.jsonl": {
+            "bytes": 50519274,
+            "sha256": "66be5f11ff404c889d0095f004ceeff4191313490b8986bf372d44d6384819b1"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.4046431291189236e-07,
+          "minimum_package_floor_m": 0.5795289164444415,
+          "max_speed_m_s": 5.137816512283715,
+          "max_angular_speed_rad_s": 4.97992827202903
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "4490efd1ab64cb94ce6c2a877829b99e81d8e60488cd2c763d233d64c9c4538c",
+      "runtime_sha256": "8badc1b23fc3fe1eafa102fc9c9091320fa764e219de383c52f426ccfc7a0dfc",
+      "asset_sha256": "f1757e5e058e84598c176a7eb84a52088ef5dc59722873abe0aa2a0edcb8726a",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "52dce50f378f6e43d030fe1f2350efac28a36c4405e8e68cc54ae38e873f6cce"
+      },
+      "powered_energy": {
+        "work_guard_j": 4.293286277614733,
+        "maximum_energy_growth_j": 0.6242384617704251,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.045_0.20": {
+      "case": {
+        "id": "anchor_0.045_0.20",
+        "kind": "anchor",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2421,
+            "sha256": "1fb11ad9238b953d40bc2aec2d6143ff056b31af388cfb3cf01582a251278766"
+          },
+          "summary.json": {
+            "bytes": 14004,
+            "sha256": "1c4e8bc2b5b2eddfed0aab4e5d54f041f92e8d4fb2d018ea83b0694c450b7c39"
+          },
+          "runtime-initial.json": {
+            "bytes": 13171,
+            "sha256": "165f4ff8b850ade7a176523774130a1b2f0c3d325c528eacb10360294ee63997"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24646452,
+            "sha256": "32fcc159a5a10b967858ee49316b6da2cf88be962870dcca96db56422871d8a2"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.352955388833621e-07,
+          "minimum_package_floor_m": 0.6341116439752781,
+          "max_speed_m_s": 0.15526498976361017,
+          "max_angular_speed_rad_s": 0.6168153285980225
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "0aa6632c1f061d5f924a106c239a8fd3be4909828866d58e42e55bc8271ca094",
+      "runtime_sha256": "165f4ff8b850ade7a176523774130a1b2f0c3d325c528eacb10360294ee63997",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 6.557232986175425e-05,
+        "positive_energy_fraction": 0.014159961845808021,
+        "minimum_energy_fraction_of_initial": 0.9863115185762472,
+        "measured_period_s": 1.1398080834626532,
+        "analytical_period_s": 1.1393077034514973,
+        "period_relative_error": 0.00043919654860573244,
+        "crossings": 106,
+        "terminal_energy_fraction_of_initial": 1.0049502108380217,
+        "maximum_energy_j": 6.650083155073742e-05,
+        "minimum_energy_j": 6.467474424252943e-05,
+        "crossing_period_range_s": 0.001597046440004135
+      },
+      "failures": []
+    },
+    "large_0.045_0.20": {
+      "case": {
+        "id": "large_0.045_0.20",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2425,
+            "sha256": "f987532a6b85b7832cd388043987792a213cf3ff0b30c8aa2ae8d57ee81844e6"
+          },
+          "summary.json": {
+            "bytes": 14007,
+            "sha256": "b038107364fb37858434e3dbb93d7a378a448806d930910692babe2ea4890146"
+          },
+          "runtime-initial.json": {
+            "bytes": 13175,
+            "sha256": "cdfe9c803c8d17b62b11be856a1c83c902433f0899d7e1065564451485f7b044"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6117773,
+            "sha256": "f4e052d8e11cf2254e8d0bdd04ac3640fb5a9b7804bfd001a91b527b1b7cc988"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.769828595118259e-07,
+          "minimum_package_floor_m": 0.6299415195336135,
+          "max_speed_m_s": 5.858411265396245,
+          "max_angular_speed_rad_s": 72.3738784790039
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "070b39713ffbe5e50cc90bccbd38271fb3546e0c404a487da799c348ef9838d7",
+      "runtime_sha256": "cdfe9c803c8d17b62b11be856a1c83c902433f0899d7e1065564451485f7b044",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.017231568499299802,
+        "positive_energy_fraction": 4.476517702097073
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.045_0.20_0": {
+      "case": {
+        "id": "powered_0.045_0.20_0",
+        "kind": "powered",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2268,
+            "sha256": "fa7b9d3011533b1124550723389629a94499482a3c6b78ae748bf6b412817637"
+          },
+          "summary.json": {
+            "bytes": 14432,
+            "sha256": "88c1d2f3cdba0ad2107b5fc3ccd14e09b96c23ca4171d9bef85f80d3ea24d549"
+          },
+          "runtime-initial.json": {
+            "bytes": 13596,
+            "sha256": "56bca32912f92a0d0e2c902d0a54fd20500e18cbd40f59ca909e0f763b96a475"
+          },
+          "samples.jsonl": {
+            "bytes": 47826550,
+            "sha256": "287c6154138fc91872d7960257ebf61c79020e3d70610964d78b88b158ce009c"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.167733748075096e-07,
+          "minimum_package_floor_m": 0.39273408946656047,
+          "max_speed_m_s": 5.206105469075395,
+          "max_angular_speed_rad_s": 4.065561661768671
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "76da3e6ca3d99be15fd3b431a6c2592930481ee869f54358e49da0fc131079c7",
+      "runtime_sha256": "56bca32912f92a0d0e2c902d0a54fd20500e18cbd40f59ca909e0f763b96a475",
+      "asset_sha256": "748077451435b03a671284126d52acc08e027b308626afc022c26f0863091538",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "e8d6a5bcee6a498df817e2fd537306abad919a19c3e4b8ef3f1704eb026f1419"
+      },
+      "powered_energy": {
+        "work_guard_j": 5.06169769702959,
+        "maximum_energy_growth_j": 0.6966655379684101,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "powered_0.045_0.20_10": {
+      "case": {
+        "id": "powered_0.045_0.20_10",
+        "kind": "powered",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "4733a4cc4bd4fd4f2d98b7fc353b3d7e4745e26bf03f010a544d221bf6e42c65"
+          },
+          "summary.json": {
+            "bytes": 14435,
+            "sha256": "537f2f87becad963e22788e26b2700b602b0197b18d0cedafff645645242b3e6"
+          },
+          "runtime-initial.json": {
+            "bytes": 13598,
+            "sha256": "9d52955e63e861c53ccdd7c758ee4482baf09b405cf9b202730b0ed4bd05d11b"
+          },
+          "samples.jsonl": {
+            "bytes": 50388469,
+            "sha256": "bcd145907ff211a7c313012acd80424ee73899a3b0a689b16704616bbcfaad8f"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.236521990441666e-07,
+          "minimum_package_floor_m": 0.39291697839533396,
+          "max_speed_m_s": 5.20590207714441,
+          "max_angular_speed_rad_s": 4.101951936484832
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "79f38c36738061c5d619af56a94cb12a28152ecf440c0370473e9f4740bffe29",
+      "runtime_sha256": "9d52955e63e861c53ccdd7c758ee4482baf09b405cf9b202730b0ed4bd05d11b",
+      "asset_sha256": "748077451435b03a671284126d52acc08e027b308626afc022c26f0863091538",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "31851f13b407cbb6a1d1fd3e22931845d5ee4dbf29a404b2f2db988a18766572"
+      },
+      "powered_energy": {
+        "work_guard_j": 5.069614872347346,
+        "maximum_energy_growth_j": 0.6964044068298952,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.045_0.30": {
+      "case": {
+        "id": "anchor_0.045_0.30",
+        "kind": "anchor",
+        "side_m": 0.045,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2421,
+            "sha256": "6ebfadf3de1230370c8415bfd1926f02e4372fc3d5a70a1d87ef3cddea3b4d5a"
+          },
+          "summary.json": {
+            "bytes": 14002,
+            "sha256": "360872cedf5eac4b2501ae78ae1759b87fe4f688a8e549eabbca108e28ace8cd"
+          },
+          "runtime-initial.json": {
+            "bytes": 13168,
+            "sha256": "1eefcff96aa28fc06a06c2939279a15b8885c567c24614f2313fb01dedf79b21"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24645040,
+            "sha256": "d91a6bf8c4e31c815d64e082c3b1cc2a247690a6e5110b99b1400137e5f6068a"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.4263436770578508e-07,
+          "minimum_package_floor_m": 0.6341155472931486,
+          "max_speed_m_s": 0.1551876218703165,
+          "max_angular_speed_rad_s": 0.6133056282997131
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "6fdc670182c7b87dcb4780388f06a7265ac6960fc46f535df80a539e33dd64ac",
+      "runtime_sha256": "1eefcff96aa28fc06a06c2939279a15b8885c567c24614f2313fb01dedf79b21",
+      "asset_sha256": "871cfca7f1de7ea05ca12397350463add33c853d8b98c25b2608c09854ccec13",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 9.807851316592642e-05,
+        "positive_energy_fraction": 0.014152194684529428,
+        "minimum_energy_fraction_of_initial": 0.9863382399718293,
+        "measured_period_s": 1.1404644689915866,
+        "analytical_period_s": 1.1399208380207686,
+        "period_relative_error": 0.00047690238890789896,
+        "crossings": 105,
+        "terminal_energy_fraction_of_initial": 0.9954746599010681,
+        "maximum_energy_j": 9.94665393786198e-05,
+        "minimum_energy_j": 9.673858805513376e-05,
+        "crossing_period_range_s": 0.001497629341702833
+      },
+      "failures": []
+    },
+    "large_0.045_0.30": {
+      "case": {
+        "id": "large_0.045_0.30",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2425,
+            "sha256": "d318c1e526cf363bf91ebc0e2cd5be77ea120290123944b3a95b10bc9af0103c"
+          },
+          "summary.json": {
+            "bytes": 14003,
+            "sha256": "fd0790d2b2a5e6a9796b0d405a88ab007c26574d7cc17627b564f47f8f3c33c4"
+          },
+          "runtime-initial.json": {
+            "bytes": 13172,
+            "sha256": "4136444e1db39f6abb94b75e0f09049af8f9f962128f33ca17edac8346098cb0"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6127025,
+            "sha256": "939f72c08cc984e96fa9b29be61c76989226265b71440a77d05b3a9851b3e201"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.656602376963614e-07,
+          "minimum_package_floor_m": 0.6297760546391756,
+          "max_speed_m_s": 4.944641112043201,
+          "max_angular_speed_rad_s": 91.55681610107422
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "17fe3ed7593fd005fa171bc55d646ea70d9087e94b0758f1b95133255b61e914",
+      "runtime_sha256": "4136444e1db39f6abb94b75e0f09049af8f9f962128f33ca17edac8346098cb0",
+      "asset_sha256": "871cfca7f1de7ea05ca12397350463add33c853d8b98c25b2608c09854ccec13",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.02577377846817954,
+        "positive_energy_fraction": 2.9022166848765165
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.045_0.30_0": {
+      "case": {
+        "id": "powered_0.045_0.30_0",
+        "kind": "powered",
+        "side_m": 0.045,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2268,
+            "sha256": "ed33e43b8489a5fbfe80575a1d4b7760e0af43bcaf6d0f7bf8716daa74e10aa7"
+          },
+          "summary.json": {
+            "bytes": 14453,
+            "sha256": "94d8de3b31188b961e967f5334ee00e0ae406781d5f0c7a0054703605f28d8f4"
+          },
+          "runtime-initial.json": {
+            "bytes": 13590,
+            "sha256": "5acf33e511e1657fd5e73da3defe6ccb28945f72923dc716238ee9ed1c800bdb"
+          },
+          "samples.jsonl": {
+            "bytes": 13793259,
+            "sha256": "88bc90ac1994fe6b3f8d137cfd026a64e910b01ce7e489ebbeb6e4a53a18ec3e"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3872,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.0435897213919603e-07,
+          "minimum_package_floor_m": 0.09650203205280777,
+          "max_speed_m_s": 5.461086829781333,
+          "max_angular_speed_rad_s": 3.816133987950197
+        }
+      },
+      "samples": 3872,
+      "measured_duration_s": 38.71,
+      "raw_sha256": "20a1992ff4734a673047c4a575a1fcf75880e48d757106c36bcb508c26dfad56",
+      "runtime_sha256": "5acf33e511e1657fd5e73da3defe6ccb28945f72923dc716238ee9ed1c800bdb",
+      "asset_sha256": "e38496678617d73e23ee5659d799a10a0e2b8e1485df2df6f6debbb5be0c8abf",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "13fcea0e1edd5004b4c04d03950cb73c436e5008c65fc47d94214b115ec6f612"
+      },
+      "powered_energy": {
+        "work_guard_j": 1.8743038558161933,
+        "maximum_energy_growth_j": 0.7599177401134822,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "powered_0.045_0.30_10": {
+      "case": {
+        "id": "powered_0.045_0.30_10",
+        "kind": "powered",
+        "side_m": 0.045,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "a362336dc9df4b7134c23583647f5d1df0a718c7e81770b9faffe9b8ab178877"
+          },
+          "summary.json": {
+            "bytes": 14454,
+            "sha256": "3f9192eb82956a2ee673f83d1cfa1f3ff778337fdaa7eaa6627cce53e2a34d5c"
+          },
+          "runtime-initial.json": {
+            "bytes": 13592,
+            "sha256": "e2c61a8c8058926ceeedc34b8aff7dfe75c03546235939d420bc42f60894d675"
+          },
+          "samples.jsonl": {
+            "bytes": 16312491,
+            "sha256": "b1bbbebdd20589b3dc2f1406d5ac2b3d5fcc93c11daf2999a5450271a479827b"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3872,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.0995064998217146e-07,
+          "minimum_package_floor_m": 0.09545028207005507,
+          "max_speed_m_s": 5.462329386194349,
+          "max_angular_speed_rad_s": 3.8082394454426085
+        }
+      },
+      "samples": 3872,
+      "measured_duration_s": 38.71,
+      "raw_sha256": "c5a53eeb23bc305265dc41aabf9a66a39f1c25278a0101a15d9a97ac0f19eeee",
+      "runtime_sha256": "e2c61a8c8058926ceeedc34b8aff7dfe75c03546235939d420bc42f60894d675",
+      "asset_sha256": "e38496678617d73e23ee5659d799a10a0e2b8e1485df2df6f6debbb5be0c8abf",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "739f3d629513792e71847caa1e6929df23e8ee52a26419e53a7aa7d682ffdf7c"
+      },
+      "powered_energy": {
+        "work_guard_j": 1.8898977745053223,
+        "maximum_energy_growth_j": 0.7594037042066482,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "refine_0.045_0.10_2": {
+      "case": {
+        "id": "refine_0.045_0.10_2",
+        "kind": "refinement",
+        "side_m": 0.045,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "e288244460cde9fb5b6ae766b35589f38cec74f72f4fe8fadfa3cca6d893c735"
+          },
+          "summary.json": {
+            "bytes": 14428,
+            "sha256": "474fccca2c674521bd868589c31205805a5ce40deb742721b211e5406bcfb00a"
+          },
+          "runtime-initial.json": {
+            "bytes": 13593,
+            "sha256": "013b0e84d0347c896622a007ab7eedd86b01fc40c2964e80fb9f0fff1d1e2357"
+          },
+          "samples.jsonl": {
+            "bytes": 12752420,
+            "sha256": "baa4302501acaaa3f3772b377cf5cb121cb60192f18a98daadc58137a2a9d97a"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 4.282379398867775e-07,
+          "minimum_package_floor_m": 0.629802257658283,
+          "max_speed_m_s": 2.4341362132299236,
+          "max_angular_speed_rad_s": 2.092933277014596
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "eb2dc826606a53048ad2f19ceb7e40eb265fbdc263dd572a7cbb1f257e1c7738",
+      "runtime_sha256": "013b0e84d0347c896622a007ab7eedd86b01fc40c2964e80fb9f0fff1d1e2357",
+      "asset_sha256": "f1757e5e058e84598c176a7eb84a52088ef5dc59722873abe0aa2a0edcb8726a",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "90a18d516e1392aadb1a8793b1a874bb71fd51b23052b93e2c391e623961dac2"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.6675618628877577,
+        "maximum_energy_growth_j": 0.582782226970636,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.045_0.10_4": {
+      "case": {
+        "id": "refine_0.045_0.10_4",
+        "kind": "refinement",
+        "side_m": 0.045,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 4,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "0a1e0f0a33da1aa172b2273f15668b35368ca02dd881a8e8fae4aeb00b00f2a3"
+          },
+          "summary.json": {
+            "bytes": 14431,
+            "sha256": "47f61856e1ef4092e6b76c2929be136c1973e35974a4481d544ee00ffaa78a18"
+          },
+          "runtime-initial.json": {
+            "bytes": 13595,
+            "sha256": "7eba87655f70e95f0b0140fc50ee3d6912c5317eeafb9f184853b5e465d4a3b2"
+          },
+          "samples.jsonl": {
+            "bytes": 12761289,
+            "sha256": "416e244947ac0de639ebf1efd62d8448bea3b66e18f48b2b2a89956d0654dd57"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.7164829725674785e-07,
+          "minimum_package_floor_m": 0.6287260735185882,
+          "max_speed_m_s": 2.4779509951970575,
+          "max_angular_speed_rad_s": 2.2066894373127237
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "9b3f35e19a11151e59daa0d05849522e9fa4d9284e7acfe5f014c187c8f5f8db",
+      "runtime_sha256": "7eba87655f70e95f0b0140fc50ee3d6912c5317eeafb9f184853b5e465d4a3b2",
+      "asset_sha256": "f1757e5e058e84598c176a7eb84a52088ef5dc59722873abe0aa2a0edcb8726a",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "c789302ef0b3a63d3c269faaf75adf9726af727c6546872b02fbb33d8a9d13a0"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.6670331896995718,
+        "maximum_energy_growth_j": 0.5816001587179664,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.045_0.30_2": {
+      "case": {
+        "id": "refine_0.045_0.30_2",
+        "kind": "refinement",
+        "side_m": 0.045,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "144589d0d9295e50debc92ddb84a5e0dbd2b2e06af5e029b0a9dcdb6426dfecc"
+          },
+          "summary.json": {
+            "bytes": 14427,
+            "sha256": "cbea134bd37167d704ba5650a97cef97557e36a08890c766fe50b5c111883608"
+          },
+          "runtime-initial.json": {
+            "bytes": 13592,
+            "sha256": "3a057075f6f62ca9932abdc7d809f6784c2e291b0dcb658468092d8aebcd88f5"
+          },
+          "samples.jsonl": {
+            "bytes": 12733267,
+            "sha256": "479a26fde34a19ebe7e842eaf6ff2857c9fdcd6dc882d881faf98d484b730a86"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.953925044925445e-07,
+          "minimum_package_floor_m": 0.6141877740388073,
+          "max_speed_m_s": 2.5212715012463156,
+          "max_angular_speed_rad_s": 1.7919221446599947
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "2642b42e321cc37e3d5c255f72eae0123f3576c057223287cc8cfa139eb8cb9f",
+      "runtime_sha256": "3a057075f6f62ca9932abdc7d809f6784c2e291b0dcb658468092d8aebcd88f5",
+      "asset_sha256": "e38496678617d73e23ee5659d799a10a0e2b8e1485df2df6f6debbb5be0c8abf",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "b7a9dc1a5cbb0d149f3646bae90ce86438344b934cf73e37081ab0286283c4d2"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.7712888198689605,
+        "maximum_energy_growth_j": 0.66487853059364,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.045_0.30_4": {
+      "case": {
+        "id": "refine_0.045_0.30_4",
+        "kind": "refinement",
+        "side_m": 0.045,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 4,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2270,
+            "sha256": "cc3fda5511b580b9073b840fc539ee0fde6459c596d65623bfed49751ef71528"
+          },
+          "summary.json": {
+            "bytes": 14457,
+            "sha256": "77b893b555143ed0ed530e9e810d8314c2c72c6d0abf578900df3ebfc625f017"
+          },
+          "runtime-initial.json": {
+            "bytes": 13594,
+            "sha256": "d2d377e9863bb84ebb98e0fe4a172db0695547ae5f0bbe6b9ce695e63b048147"
+          },
+          "samples.jsonl": {
+            "bytes": 9191870,
+            "sha256": "1bd0b1f8b5b6593abc6dbba5227a6c6297740907a4d5a6b95754d286f8426518"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 2164,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 1.2039376340311492e-07,
+          "minimum_package_floor_m": 0.09816222465435712,
+          "max_speed_m_s": 1.6802239749535084,
+          "max_angular_speed_rad_s": 2.7405931949878894
+        }
+      },
+      "samples": 2164,
+      "measured_duration_s": 21.63,
+      "raw_sha256": "5dfff4990e075898a39f5f73c33c9921f6e1f3772bde931f7c963cb896775268",
+      "runtime_sha256": "d2d377e9863bb84ebb98e0fe4a172db0695547ae5f0bbe6b9ce695e63b048147",
+      "asset_sha256": "e38496678617d73e23ee5659d799a10a0e2b8e1485df2df6f6debbb5be0c8abf",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "61be22158261670ee5c87765879fa996dbe2089248a20a1675eb66b4e3fee720"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.32459906391410903,
+        "maximum_energy_growth_j": 0.00017774969485734315,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "anchor_0.060_0.10": {
+      "case": {
+        "id": "anchor_0.060_0.10",
+        "kind": "anchor",
+        "side_m": 0.06,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2420,
+            "sha256": "ec3233d136926fc8d63c736a19ed0e01437e8b23210af45aac4bb8de833a3d3d"
+          },
+          "summary.json": {
+            "bytes": 14008,
+            "sha256": "90fa321eb016e65fa79e2d643f50396c699557a80a4ffb62b3298f36c165bfe7"
+          },
+          "runtime-initial.json": {
+            "bytes": 13174,
+            "sha256": "abaee7123d74a22fdadd2935970a0db38909924eef0355500cb83372c49c7cf2"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24656019,
+            "sha256": "32fb6dbd5f0b1df3ad1458f55745e5ffcfef04c4d09596f587278d48028cc777"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.2948713457449042e-07,
+          "minimum_package_floor_m": 0.6184468587711965,
+          "max_speed_m_s": 0.15721273446049086,
+          "max_angular_speed_rad_s": 0.6380864381790161
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "c932100135c87e482c9ae4b3f91008e4564a2251c247a22a89e582b6a4cc0c94",
+      "runtime_sha256": "abaee7123d74a22fdadd2935970a0db38909924eef0355500cb83372c49c7cf2",
+      "asset_sha256": "2ea7a9e232ec0bc23e393a6aa789e33cacb3d4a1e9902e82f91a0bb75b5e53f9",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 3.3820993825947425e-05,
+        "positive_energy_fraction": 0.014177163537846437,
+        "minimum_energy_fraction_of_initial": 0.9865204279244777,
+        "measured_period_s": 1.1524626949357213,
+        "analytical_period_s": 1.1519900645052477,
+        "period_relative_error": 0.00041027300932201544,
+        "crossings": 104,
+        "terminal_energy_fraction_of_initial": 0.9868689245275832,
+        "maximum_energy_j": 3.4300479586430377e-05,
+        "minimum_energy_j": 3.336510130200477e-05,
+        "crossing_period_range_s": 0.003455507647235123
+      },
+      "failures": []
+    },
+    "large_0.060_0.10": {
+      "case": {
+        "id": "large_0.060_0.10",
+        "kind": "large_angle",
+        "side_m": 0.06,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2424,
+            "sha256": "76a3509a454461a42b60885c6c397940255a376e22f31ecdb308ef46b8f10b71"
+          },
+          "summary.json": {
+            "bytes": 14010,
+            "sha256": "01b53602bf8d05403eb32fef631209256d07cfef677d2f7954813ccc7095da69"
+          },
+          "runtime-initial.json": {
+            "bytes": 13178,
+            "sha256": "f1228dcc2620f5c82a61b8e50747a458ff83ddd635f6a6799bb9358e6bc663be"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6117369,
+            "sha256": "8601f5f5d8b6b4e6694b9ed2d1631c3ddfa81fe66cfb9308d0a16bcc4066b8c4"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.748275879188824e-07,
+          "minimum_package_floor_m": 0.6129203982055094,
+          "max_speed_m_s": 6.369026611425948,
+          "max_angular_speed_rad_s": 80.50846862792969
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "c4c4f813debdf5d38323901cddf39ab4dc83e04a4da10ef2024538681d898b4e",
+      "runtime_sha256": "f1228dcc2620f5c82a61b8e50747a458ff83ddd635f6a6799bb9358e6bc663be",
+      "asset_sha256": "2ea7a9e232ec0bc23e393a6aa789e33cacb3d4a1e9902e82f91a0bb75b5e53f9",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.008888015283940592,
+        "positive_energy_fraction": 5.307032495531854
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.060_0.10_0": {
+      "case": {
+        "id": "powered_0.060_0.10_0",
+        "kind": "powered",
+        "side_m": 0.06,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2267,
+            "sha256": "6819568f89c255fa52dd467d5037b1c25b771a9288e0210da260a88d02af0d70"
+          },
+          "summary.json": {
+            "bytes": 14434,
+            "sha256": "47bea7eb74171f8b0b2a5fd96b4d4061cc0755444f43eaa02e026827d0b12673"
+          },
+          "runtime-initial.json": {
+            "bytes": 13596,
+            "sha256": "92bb9ad6c308b2b2653e1ea9a2ac4882f4c09de9493e22254bee2cf918f253d9"
+          },
+          "samples.jsonl": {
+            "bytes": 47705055,
+            "sha256": "50f2f940a722d0332ff3070d4079cbf103817af73b2d80dea598442afa90d43c"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.458450313382656e-07,
+          "minimum_package_floor_m": 0.5572980778664615,
+          "max_speed_m_s": 5.171281191031494,
+          "max_angular_speed_rad_s": 4.343840309151626
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "32451aa36efe77a04c32db13fe83d29ed84bd3c6354f04c730815e0d689a3df7",
+      "runtime_sha256": "92bb9ad6c308b2b2653e1ea9a2ac4882f4c09de9493e22254bee2cf918f253d9",
+      "asset_sha256": "36ab2f53ec06f1f17627ba22c22f6f50d84a4059a14712530bb7ceb7335f347b",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "a2608a4f1fb047ad95cba30567418f65d8f3a744f1c611bd980e66fcabb4b477"
+      },
+      "powered_energy": {
+        "work_guard_j": 4.301217061619877,
+        "maximum_energy_growth_j": 0.6240702812964718,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "powered_0.060_0.10_10": {
+      "case": {
+        "id": "powered_0.060_0.10_10",
+        "kind": "powered",
+        "side_m": 0.06,
+        "mass_ratio": 0.1,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "2f94bb94e4e136d62c22184f6c70b2c0e9fc75af57f879285b06dfa2d7180a90"
+          },
+          "summary.json": {
+            "bytes": 14435,
+            "sha256": "e9c0704727d461d69950c1b5d3033500829a1a0e81593789b2204bfafb6a4cc8"
+          },
+          "runtime-initial.json": {
+            "bytes": 13598,
+            "sha256": "3f86006433eff8f999a488111aa91ec1b2950bd1e632983dfb0b98689e569772"
+          },
+          "samples.jsonl": {
+            "bytes": 50505821,
+            "sha256": "cddc4adac0ac572bd1f6b441a3c20d0c5d130a2828d807447a82179481b90c07"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.1960378516225916e-07,
+          "minimum_package_floor_m": 0.5574149154645641,
+          "max_speed_m_s": 5.170910244840626,
+          "max_angular_speed_rad_s": 4.1911419196681505
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "d303155abfd1a9db0ba94252df7d4ae13248da5580dc92ac5f83fd8ab4b53f5e",
+      "runtime_sha256": "3f86006433eff8f999a488111aa91ec1b2950bd1e632983dfb0b98689e569772",
+      "asset_sha256": "36ab2f53ec06f1f17627ba22c22f6f50d84a4059a14712530bb7ceb7335f347b",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "f398d21a474c7a6b6cb3ad81e30504a0747ad5f0592b3e2f53363dde87dad920"
+      },
+      "powered_energy": {
+        "work_guard_j": 4.304366706797725,
+        "maximum_energy_growth_j": 0.6239326531868321,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.060_0.20": {
+      "case": {
+        "id": "anchor_0.060_0.20",
+        "kind": "anchor",
+        "side_m": 0.06,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2420,
+            "sha256": "beca177b4704436403c5cbd7717300c44e1642b080b75fc1bf3a45efdac2bb9a"
+          },
+          "summary.json": {
+            "bytes": 14006,
+            "sha256": "59f183d53661cc41db2818fceeb453f0104e7e9e41e0e37af9c0535d610e4cba"
+          },
+          "runtime-initial.json": {
+            "bytes": 13173,
+            "sha256": "627f2e2cc5759954208694f60eb37eb916dfce113fc1490d5b040d1dbee37b5f"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24651341,
+            "sha256": "356a1245078ce09d6a810b078f57e02b1566c19debc274f10d909f1a5d66419e"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.2459569556509035e-07,
+          "minimum_package_floor_m": 0.6184640148686381,
+          "max_speed_m_s": 0.1569837913508447,
+          "max_angular_speed_rad_s": 0.6288290023803711
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "8ef11336b00fbe381a237ac75ff1dd25c66e633c4d67685595677ce958fd6b78",
+      "runtime_sha256": "627f2e2cc5759954208694f60eb37eb916dfce113fc1490d5b040d1dbee37b5f",
+      "asset_sha256": "1ca6bbbec731f3bbf2e409f1969ef5f78d002c262e17a076682750e82e9686e4",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 6.708201879233611e-05,
+        "positive_energy_fraction": 0.014276655898345337,
+        "minimum_energy_fraction_of_initial": 0.9864949950860314,
+        "measured_period_s": 1.1543721947178582,
+        "analytical_period_s": 1.1538559889412208,
+        "period_relative_error": 0.00044737452644427424,
+        "crossings": 104,
+        "terminal_energy_fraction_of_initial": 1.0084508392871787,
+        "maximum_energy_j": 6.803972569160063e-05,
+        "minimum_energy_j": 6.617607579890669e-05,
+        "crossing_period_range_s": 0.0035570490496894536
+      },
+      "failures": []
+    },
+    "large_0.060_0.20": {
+      "case": {
+        "id": "large_0.060_0.20",
+        "kind": "large_angle",
+        "side_m": 0.06,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2424,
+            "sha256": "e41703ebe1464ebdc3fdfbd818c19ff050bef0c1698f99d4fac583d6001d531b"
+          },
+          "summary.json": {
+            "bytes": 14009,
+            "sha256": "8d7546a06b63a58ffd67a5de89dae6ef8b2270aa4c5b27e162807e5523ea2558"
+          },
+          "runtime-initial.json": {
+            "bytes": 13177,
+            "sha256": "81fef0beb816fb8f5d7d914a08a9036209a88d5550452946b261bd92b3fa50cb"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6123280,
+            "sha256": "2b65645ef2d2df56cf7d4ed272d52d17e602502f0a28ad7e4a8b912e2d2e767a"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.671940080238532e-07,
+          "minimum_package_floor_m": 0.6131450689516684,
+          "max_speed_m_s": 6.13112475900068,
+          "max_angular_speed_rad_s": 73.84368133544922
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "db983729f2e3fe8182763b0c781632300f48fd3e6818a51e469991fa6a6e27a0",
+      "runtime_sha256": "81fef0beb816fb8f5d7d914a08a9036209a88d5550452946b261bd92b3fa50cb",
+      "asset_sha256": "1ca6bbbec731f3bbf2e409f1969ef5f78d002c262e17a076682750e82e9686e4",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.017628880533116512,
+        "positive_energy_fraction": 4.864794079375399
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.060_0.20_0": {
+      "case": {
+        "id": "powered_0.060_0.20_0",
+        "kind": "powered",
+        "side_m": 0.06,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2267,
+            "sha256": "8b1bc528f56124ba3b6aeae16894e1fb930b51f9140970e2d783f48da8bcd58e"
+          },
+          "summary.json": {
+            "bytes": 14435,
+            "sha256": "74141ad5ab6d9a1859564ecac72dc86824e40f3e8d9f84b2d3b77f2b808763c9"
+          },
+          "runtime-initial.json": {
+            "bytes": 13598,
+            "sha256": "e96b45cfdc26968f2bb929d2867e97e1da5a3a27f13154f20b0ca3ddc58ae04d"
+          },
+          "samples.jsonl": {
+            "bytes": 47777588,
+            "sha256": "837c6072dc399ad627d0056aec400fb14722069d596d460df36ea70d572b4218"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.6011904752951693e-07,
+          "minimum_package_floor_m": 0.35179304205950646,
+          "max_speed_m_s": 5.2408819815213095,
+          "max_angular_speed_rad_s": 4.055327796353956
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "6fc36f4279c6f50212a4225ae4d8067e49ac07ec2a836763779fbb122f8ca9bc",
+      "runtime_sha256": "e96b45cfdc26968f2bb929d2867e97e1da5a3a27f13154f20b0ca3ddc58ae04d",
+      "asset_sha256": "da5c8de1793ee2683d48ce53c96adfee864753e503c82fd00f9814dc31f2b5b4",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "43d35f0794b26b7c09d4a606269d559015d6eab48550fc13e56fed620deb69d4"
+      },
+      "powered_energy": {
+        "work_guard_j": 5.097392451432451,
+        "maximum_energy_growth_j": 0.6966252022534187,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "powered_0.060_0.20_10": {
+      "case": {
+        "id": "powered_0.060_0.20_10",
+        "kind": "powered",
+        "side_m": 0.06,
+        "mass_ratio": 0.2,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "7db6073e91ac510a96e9cb904529e38462c9a06e8ed44dae7923c4c99b218266"
+          },
+          "summary.json": {
+            "bytes": 14437,
+            "sha256": "7c55075f64bd120b4e9591ee9ccf9da3d1ca87d5f811dc048bc8e546bac440dc"
+          },
+          "runtime-initial.json": {
+            "bytes": 13600,
+            "sha256": "57b5655ba453805384e261eecc7a80d354642cd1300ecbaa63533130b2ff44c0"
+          },
+          "samples.jsonl": {
+            "bytes": 50342424,
+            "sha256": "ac6f2dd3f46102ab309fb1a2b616a1d6f2fde740c22e111749a44812c1d126cc"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.401752273230919e-07,
+          "minimum_package_floor_m": 0.3518046565167578,
+          "max_speed_m_s": 5.240648577398405,
+          "max_angular_speed_rad_s": 4.174536356467701
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "045263e1aa56ece2c3cdc9cd24923b90d006bc44ecbc6e788f827efcd11f8b79",
+      "runtime_sha256": "57b5655ba453805384e261eecc7a80d354642cd1300ecbaa63533130b2ff44c0",
+      "asset_sha256": "da5c8de1793ee2683d48ce53c96adfee864753e503c82fd00f9814dc31f2b5b4",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "42b1bcd2ee6e586f1a427c0d668c15c95b48efa6ad9c878e171237da2478e887"
+      },
+      "powered_energy": {
+        "work_guard_j": 5.105640648767825,
+        "maximum_energy_growth_j": 0.6963502382255025,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "anchor_0.060_0.30": {
+      "case": {
+        "id": "anchor_0.060_0.30",
+        "kind": "anchor",
+        "side_m": 0.06,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2420,
+            "sha256": "bc1a9a026649d7c6adcfdf2af21b758b6519d957d96bcc704a49f17aac08d3d2"
+          },
+          "summary.json": {
+            "bytes": 14003,
+            "sha256": "3e5efeb7f25337aa2812a41a579d65ab55a165b72da378586de05938c44410a7"
+          },
+          "runtime-initial.json": {
+            "bytes": 13170,
+            "sha256": "dc72962b9887c026b4530386912fabe4bc404c3031518d9f994b4b777aafbb50"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 24649316,
+            "sha256": "f8134c708669d33c3ad0274a32d730b2b2538e6a81e754dc4e5192dd4c3f1cf6"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 12001,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 1.1861806705302927e-07,
+          "minimum_package_floor_m": 0.6184696400993963,
+          "max_speed_m_s": 0.1569293375272306,
+          "max_angular_speed_rad_s": 0.6254147291183472
+        }
+      },
+      "samples": 12001,
+      "measured_duration_s": 120.0,
+      "raw_sha256": "4e07d4664a86434e76649a187a10594683c3be735919eba91beeaf6dc88b5bea",
+      "runtime_sha256": "dc72962b9887c026b4530386912fabe4bc404c3031518d9f994b4b777aafbb50",
+      "asset_sha256": "6629bd5afea05176f57a03d2fd9a19fb55495ba3a07b0f398e5409c7eac58bfd",
+      "zero_inertia_orientation_irrelevant": [],
+      "passive": {
+        "status": "PASSIVE_SCREEN_PASSED",
+        "physical_training_admitted": false,
+        "failure_codes": [],
+        "sample_count": 12001,
+        "energy_reference": "Lowest static hanging anchor: rod COM z=a-.15; cube COM z=a-.3-side/2",
+        "initial_energy_j": 0.00010034304662689101,
+        "positive_energy_fraction": 0.014800723767437678,
+        "minimum_energy_fraction_of_initial": 0.9866301520460125,
+        "measured_period_s": 1.1549676608687918,
+        "analytical_period_s": 1.1544844621214705,
+        "period_relative_error": 0.0004185407107457788,
+        "crossings": 104,
+        "terminal_energy_fraction_of_initial": 1.0142983883558103,
+        "maximum_energy_j": 0.00010182819634199875,
+        "minimum_energy_j": 9.90014753502496e-05,
+        "crossing_period_range_s": 0.003571082553406768
+      },
+      "failures": []
+    },
+    "large_0.060_0.30": {
+      "case": {
+        "id": "large_0.060_0.30",
+        "kind": "large_angle",
+        "side_m": 0.06,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 90,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2424,
+            "sha256": "a53c1e618871e9fb8c8672ffaf19ea6239e5714ae77a61578db6ac99764ab4e1"
+          },
+          "summary.json": {
+            "bytes": 14006,
+            "sha256": "612fb19ccc656144d4b2612c60c0d14e2f34c8296bdd6d15939515675ee80518"
+          },
+          "runtime-initial.json": {
+            "bytes": 13174,
+            "sha256": "5622b62d735810cbd84f338c90a3cc1e7428a32607b85165220b9b026af589ab"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6122228,
+            "sha256": "bc63eafc43fe3884599142346c3cc6f34d51cf680c7531db31fd00704bcc9ed7"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.22961595329344e-07,
+          "minimum_package_floor_m": 0.6132319446058571,
+          "max_speed_m_s": 6.268671715443645,
+          "max_angular_speed_rad_s": 79.73483276367188
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "75b2958b29d496c05459b714b3a5ab1427a21ad5809f000c1e8901f6a590733b",
+      "runtime_sha256": "5622b62d735810cbd84f338c90a3cc1e7428a32607b85165220b9b026af589ab",
+      "asset_sha256": "6629bd5afea05176f57a03d2fd9a19fb55495ba3a07b0f398e5409c7eac58bfd",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.02636974653603512,
+        "positive_energy_fraction": 5.152423636414523
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "powered_0.060_0.30_0": {
+      "case": {
+        "id": "powered_0.060_0.30_0",
+        "kind": "powered",
+        "side_m": 0.06,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 0,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2267,
+            "sha256": "48e4cc36a0bb18cb1b431f5d79152dfc8bf6138e540e1fdc099be916f9747279"
+          },
+          "summary.json": {
+            "bytes": 14455,
+            "sha256": "1a38f7e52f98c8953704da9ae9a18d9f8f6a3d42c9a13280d83fa70d97f06a9d"
+          },
+          "runtime-initial.json": {
+            "bytes": 13592,
+            "sha256": "c3443160fa9fba59bb827f894f378ae96eaecf6ef7f064f385552613eb72111f"
+          },
+          "samples.jsonl": {
+            "bytes": 13748114,
+            "sha256": "95dd30aec7cc3dcc60c0cfbf97afa1f4eb5d872eac083f75269d7097a7403fbc"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3863,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 4.244887271132036e-07,
+          "minimum_package_floor_m": 0.09889188258473805,
+          "max_speed_m_s": 5.504085342323419,
+          "max_angular_speed_rad_s": 4.221801047517467
+        }
+      },
+      "samples": 3863,
+      "measured_duration_s": 38.62,
+      "raw_sha256": "e1349bddcc316d07b3d2f93e73a7759ebc57f9e909548b537e99fed0c42aa084",
+      "runtime_sha256": "c3443160fa9fba59bb827f894f378ae96eaecf6ef7f064f385552613eb72111f",
+      "asset_sha256": "c325949b6b2e2d3fa75a0c52d3bb24b56d041fab4a4a772444fe9ca60aa64b97",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "b1c4da4584857aa9e2b140234453a189c25cb45a1b6c172d704fdce3313189d8"
+      },
+      "powered_energy": {
+        "work_guard_j": 1.8776501650015456,
+        "maximum_energy_growth_j": 0.7558952561459724,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "powered_0.060_0.30_10": {
+      "case": {
+        "id": "powered_0.060_0.30_10",
+        "kind": "powered",
+        "side_m": 0.06,
+        "mass_ratio": 0.3,
+        "duration_s": 120.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 300.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "c291c975fa0e60baa00b547b6109e68f7cc35270b399fe0e4ce652dec22585c6"
+          },
+          "summary.json": {
+            "bytes": 14457,
+            "sha256": "fd984941530a9450fd70f9118341487d040b077a19bfe2607d2d584b415cb569"
+          },
+          "runtime-initial.json": {
+            "bytes": 13594,
+            "sha256": "2c5e587e75e909185aff0485ae06d60ef3dbc0f59e64ac8ff712b2b46f9c99a2"
+          },
+          "samples.jsonl": {
+            "bytes": 16271996,
+            "sha256": "eed95a7d69c7630c9fb54df0cfefdc3e022b08d8c48c25db49ce160af7a88ea7"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3863,
+          "required_sample_count": 12001,
+          "required_duration_s": 120.0,
+          "max_constraint_residual_m": 3.953655592359162e-07,
+          "minimum_package_floor_m": 0.09873511382219999,
+          "max_speed_m_s": 5.503843299973999,
+          "max_angular_speed_rad_s": 4.13959564822382
+        }
+      },
+      "samples": 3863,
+      "measured_duration_s": 38.62,
+      "raw_sha256": "3c4e7fab130eaef8f85a41647bec8fd23f7b0edd8564434a67c0d712188836b0",
+      "runtime_sha256": "2c5e587e75e909185aff0485ae06d60ef3dbc0f59e64ac8ff712b2b46f9c99a2",
+      "asset_sha256": "c325949b6b2e2d3fa75a0c52d3bb24b56d041fab4a4a772444fe9ca60aa64b97",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "742ee6f37f56ea8d3317a67e5ded4431d14d1d9d9277850a55b87c7bdb17790b"
+      },
+      "powered_energy": {
+        "work_guard_j": 1.8938619510990253,
+        "maximum_energy_growth_j": 0.75532642489505,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "refine_0.060_0.10_2": {
+      "case": {
+        "id": "refine_0.060_0.10_2",
+        "kind": "refinement",
+        "side_m": 0.06,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "19b2fc5c0b72c55ee265a6e7147856d29841fc95233142fabd01a4c0e34472f3"
+          },
+          "summary.json": {
+            "bytes": 14433,
+            "sha256": "f1324fe7852ccb976a70c7c57c17fe0b55650afd1967765555826ed018e083ee"
+          },
+          "runtime-initial.json": {
+            "bytes": 13598,
+            "sha256": "d57b14df9c8317e089d0046d1dfb80e336cff2a5e8330bf2c9c203a1663f647f"
+          },
+          "samples.jsonl": {
+            "bytes": 12757624,
+            "sha256": "131527ac74f9a66399a2c830b8a6dab84b0267791d6ca7578bc101307db7d877"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.89241842924104e-07,
+          "minimum_package_floor_m": 0.6140069949131004,
+          "max_speed_m_s": 2.449140009335903,
+          "max_angular_speed_rad_s": 1.9346494430746275
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "070dc182e481bc8688e35f9170462b0d7bbb69423b1eb6f19b01b976b690ae47",
+      "runtime_sha256": "d57b14df9c8317e089d0046d1dfb80e336cff2a5e8330bf2c9c203a1663f647f",
+      "asset_sha256": "36ab2f53ec06f1f17627ba22c22f6f50d84a4059a14712530bb7ceb7335f347b",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "4dd84f0856b129f27922cc0381e458cada79ef674525a72a329b3f140a80206a"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.6674510595532916,
+        "maximum_energy_growth_j": 0.5825883640727663,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.060_0.10_4": {
+      "case": {
+        "id": "refine_0.060_0.10_4",
+        "kind": "refinement",
+        "side_m": 0.06,
+        "mass_ratio": 0.1,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 4,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "eada7b8fb349835aea714669fc4feaa783280d29ff5b025ef530a8166c3e0312"
+          },
+          "summary.json": {
+            "bytes": 14435,
+            "sha256": "92eea6dacde1bf7437cc87029446328d92f83150bf4c66e00f22246e0d09e8df"
+          },
+          "runtime-initial.json": {
+            "bytes": 13600,
+            "sha256": "4e66b86b4d5e5225f1383d90a9a24b8d5f81391409716ea53817ee91a1626c30"
+          },
+          "samples.jsonl": {
+            "bytes": 12766050,
+            "sha256": "aeb99214e3ab541ce24209d96226948982c847f746b1baa88641b603c8d13d53"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.941635708937241e-07,
+          "minimum_package_floor_m": 0.6127626369538394,
+          "max_speed_m_s": 2.4936080228130066,
+          "max_angular_speed_rad_s": 2.000404417727781
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "4731aeb7a19e71ccffb7897e4992a98763b6fa5b929a1f51a2add57f8968d0f7",
+      "runtime_sha256": "4e66b86b4d5e5225f1383d90a9a24b8d5f81391409716ea53817ee91a1626c30",
+      "asset_sha256": "36ab2f53ec06f1f17627ba22c22f6f50d84a4059a14712530bb7ceb7335f347b",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "bfec34857f82e4aefd935511aa2e138cc81328460088b97be5540b0c77599f66"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.6667297200757563,
+        "maximum_energy_growth_j": 0.58117971433246,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.060_0.30_2": {
+      "case": {
+        "id": "refine_0.060_0.30_2",
+        "kind": "refinement",
+        "side_m": 0.06,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "cbcdcf7d2ee8b0c83ad89494f232b8f1b0e166e3e87e476b38aa91af5bcdfd90"
+          },
+          "summary.json": {
+            "bytes": 14429,
+            "sha256": "acbb6a4352ae6bab468edd9a9eb6125212a2f6d39f2155ab79b62df0dcdac19d"
+          },
+          "runtime-initial.json": {
+            "bytes": 13594,
+            "sha256": "5106426c8ddbfbdf987e9cb9f6750214a58c562125c3db70ae569c8ed4af2f53"
+          },
+          "samples.jsonl": {
+            "bytes": 12736645,
+            "sha256": "a6ba3179b8a4fdd21edc713e96362b266c8590907eec6e2bc6737354e81162d0"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.953655592359162e-07,
+          "minimum_package_floor_m": 0.5971231782857691,
+          "max_speed_m_s": 2.533938697919514,
+          "max_angular_speed_rad_s": 1.6960545450709474
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "842053b49f5b18aab4433a44e0f3092bdb85851971017a71761adb760cdd8bb6",
+      "runtime_sha256": "5106426c8ddbfbdf987e9cb9f6750214a58c562125c3db70ae569c8ed4af2f53",
+      "asset_sha256": "c325949b6b2e2d3fa75a0c52d3bb24b56d041fab4a4a772444fe9ca60aa64b97",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "4a2dd288734cefd43bce1c698d2594d279045ce2edb1ab90a1ea990932c454cd"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.7674055617675493,
+        "maximum_energy_growth_j": 0.6602220286858702,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": []
+    },
+    "refine_0.060_0.30_4": {
+      "case": {
+        "id": "refine_0.060_0.30_4",
+        "kind": "refinement",
+        "side_m": 0.06,
+        "mass_ratio": 0.3,
+        "duration_s": 30.0,
+        "initial_swing_deg": 10,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 4,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "QUALIFICATION_BLOCKED",
+        "failure_codes": [
+          "INCOMPLETE_TRACE",
+          "PHYSICAL_FLOOR_FAILURE",
+          "RUNNER_REPORTED_FAILURE"
+        ],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2269,
+            "sha256": "30c5e8da2c94cef357261deb9bde6246caa16ff74d0d34f2a84b1125c5d6d051"
+          },
+          "summary.json": {
+            "bytes": 14459,
+            "sha256": "a3795eb689fc52efe8c9ee9080bd82da04c9024c232f21e39cd6f7557fa97987"
+          },
+          "runtime-initial.json": {
+            "bytes": 13596,
+            "sha256": "f6651bdd1415f981e7b0a3350160112f309c726076a30f530f02e4ad12f795f9"
+          },
+          "samples.jsonl": {
+            "bytes": 6907831,
+            "sha256": "45ed45798560a9ee18edbef5d7fa586b568f902891f7e34bf9c299747441c2bf"
+          }
+        },
+        "checks": {
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 1623,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 1.3527532971568945e-07,
+          "minimum_package_floor_m": 0.09766017969748453,
+          "max_speed_m_s": 1.7079806106495927,
+          "max_angular_speed_rad_s": 2.6885392666423984
+        }
+      },
+      "samples": 1623,
+      "measured_duration_s": 16.22,
+      "raw_sha256": "e3972c42753e60dbc8f1abc00145cf8e8b4a8b18b2aee0db36930c6b11322cbd",
+      "runtime_sha256": "f6651bdd1415f981e7b0a3350160112f309c726076a30f530f02e4ad12f795f9",
+      "asset_sha256": "c325949b6b2e2d3fa75a0c52d3bb24b56d041fab4a4a772444fe9ca60aa64b97",
+      "zero_inertia_orientation_irrelevant": [],
+      "source_justified_work_evidence": {
+        "established": true,
+        "failures": [],
+        "root_com_radius_bound_m": 0.5,
+        "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+        "raw_sha256": "9e781742d7caa337c68054ab82b9c744f656149c7142edd94b2336e03ba3d45c"
+      },
+      "powered_energy": {
+        "work_guard_j": 0.2688766960529051,
+        "maximum_energy_growth_j": 0.0001811428827812045,
+        "maximum_growth_above_guard_j": -0.02,
+        "guard_exceeded": false,
+        "first_guard_exceedance_index": null,
+        "conservative_substep_bound_established": true,
+        "source_work_bound_exceeded": false,
+        "classification": "SOURCE_JUSTIFIED_WORK_BOUND_SCREEN",
+        "interpretation": "Endpoint guard plus separately verified conservative substep path work; not an exact energy balance."
+      },
+      "failures": [
+        "ACTUAL_CASE_FAILED",
+        "RAW_PHYSICAL_SCREEN_FAILED"
+      ]
+    },
+    "sweep_5": {
+      "case": {
+        "id": "sweep_5",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 5,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2415,
+            "sha256": "545b8f6668dce270e7f48ff161773c8e5084c68e78f3d1a64685ae89fb692274"
+          },
+          "summary.json": {
+            "bytes": 13996,
+            "sha256": "0a22407e2ee3d496b9e9b29c5a3deb0b4bc24b6bde389e625fa007bf07069e1f"
+          },
+          "runtime-initial.json": {
+            "bytes": 13165,
+            "sha256": "edf4e921d172947939b8754707e6d83e61394f7c6c8acf6405eb4f2a12c914b6"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6159867,
+            "sha256": "07cccaa8d71ad809390d40d0df286f55fa5464b3f066ce436ad77f1d928934a7"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 1.352955388833621e-07,
+          "minimum_package_floor_m": 0.6341117617118042,
+          "max_speed_m_s": 0.15526032488925826,
+          "max_angular_speed_rad_s": 0.6167057156562805
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "cca783dbd35f1b693220e23ebaaa4a18f409605dc830ccf2b0d462319a77288d",
+      "runtime_sha256": "edf4e921d172947939b8754707e6d83e61394f7c6c8acf6405eb4f2a12c914b6",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 6.557232986175425e-05,
+        "positive_energy_fraction": 0.014159961845808021
+      },
+      "failures": []
+    },
+    "sweep_45": {
+      "case": {
+        "id": "sweep_45",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 45,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": true,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2417,
+            "sha256": "48cda23547a7ec926b4d08743374d689d3b22dcb286b49a15d3871db2bfde2b7"
+          },
+          "summary.json": {
+            "bytes": 13999,
+            "sha256": "e4f21600942dfc7f8bf715969aa0fa284bf30c6dfb14041b3957281e743d378c"
+          },
+          "runtime-initial.json": {
+            "bytes": 13167,
+            "sha256": "32dd17c6cd9c2d0f5427c79776301e03e5a880cbbe9507be402949d70fd3e4b7"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6125889,
+            "sha256": "f7df6663b61375eb2d8773d9c00acd530961ed5fe5db99b968f9c5cb342b5282"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 1.208779210060129e-07,
+          "minimum_package_floor_m": 0.6330046579388298,
+          "max_speed_m_s": 1.3740145652050477,
+          "max_angular_speed_rad_s": 6.729138374328613
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "5777ee18acae7c11ca51fe68bb2a7f02643803529028c2ad36ecf550d5f77885",
+      "runtime_sha256": "32dd17c6cd9c2d0f5427c79776301e03e5a880cbbe9507be402949d70fd3e4b7",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.005047012927071435,
+        "positive_energy_fraction": 0.03187341524260105
+      },
+      "failures": []
+    },
+    "sweep_80": {
+      "case": {
+        "id": "sweep_80",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 80,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2417,
+            "sha256": "507252a08c759ed05c2e1c5ce2afa30cebf93e6e8c3da37502c4caf982075956"
+          },
+          "summary.json": {
+            "bytes": 13999,
+            "sha256": "20385475f4f7c9769a6f74d9c35ee55d28c41ef513c31d48a3a1f756bc1d2ee2"
+          },
+          "runtime-initial.json": {
+            "bytes": 13167,
+            "sha256": "d010b3dbb3e29340007d9b55b1877fe7d8c8b4b712b402dbb21e11e8347afa91"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6115136,
+            "sha256": "2216ca6e70485598877ae3acb8049d245a0b3b95da75896ce998dc07c5ab5b3c"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.0752369734079353e-07,
+          "minimum_package_floor_m": 0.6301214170367958,
+          "max_speed_m_s": 2.7144230752538383,
+          "max_angular_speed_rad_s": 41.213443756103516
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "93e08d8b3e373b86bb3d4127afc91e7d45275d4318d03e88b972eef13866e5d9",
+      "runtime_sha256": "d010b3dbb3e29340007d9b55b1877fe7d8c8b4b712b402dbb21e11e8347afa91",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.014239337848130548,
+        "positive_energy_fraction": 0.510214866927497
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "sweep_89": {
+      "case": {
+        "id": "sweep_89",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 89,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2417,
+            "sha256": "8371857c822e8ea81fa41b184ef0d3f315a67707bdc14c8ae7ea5f1ff0951170"
+          },
+          "summary.json": {
+            "bytes": 13998,
+            "sha256": "e0fed6b5f0aae6b9d32de961df3b1e42a32de6b4ab76ca17a4693bff08c7bb81"
+          },
+          "runtime-initial.json": {
+            "bytes": 13167,
+            "sha256": "44ef254696a60ec118c52ec7d24fca7416da25df0763bc5243c73ee57aa02623"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6123555,
+            "sha256": "f631faa1af9618564ff9f09f83afb5142405f7fe05dbbab7b711cf4915f4c9cd"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.758299971323661e-07,
+          "minimum_package_floor_m": 0.6298077531553454,
+          "max_speed_m_s": 5.11312504148116,
+          "max_angular_speed_rad_s": 74.32826232910156
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "c4810fd16e9a68ae8ae11c04a2e12209686f3fc7957f82daebc19796141f2f38",
+      "runtime_sha256": "44ef254696a60ec118c52ec7d24fca7416da25df0763bc5243c73ee57aa02623",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.016930835843893197,
+        "positive_energy_fraction": 3.25841662606745
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "sweep_91": {
+      "case": {
+        "id": "sweep_91",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 91,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2417,
+            "sha256": "7935fd73d5ee49c94280711577eacc381fbc9b6bea433b8893a6cd97a61d6703"
+          },
+          "summary.json": {
+            "bytes": 13998,
+            "sha256": "04cda33e0640800ac1671bc42bcbfcf701d42b8c6f881404f59f76000c6714e0"
+          },
+          "runtime-initial.json": {
+            "bytes": 13167,
+            "sha256": "efa0e9e45b4f7bbd84f37a6be6891f18dd764f3c3368c491d06e2ce1ae8ad7ae"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6127651,
+            "sha256": "673a6359ac2baa3575b3586bdfef57b830a226364169595f5f06687ddb32b231"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.543964862877786e-07,
+          "minimum_package_floor_m": 0.6299121118601234,
+          "max_speed_m_s": 5.454268400033641,
+          "max_angular_speed_rad_s": 79.53622436523438
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "343976ad72423151267f5eb9b89bd279ec0be002590e0e09ed66d28ac2e008ab",
+      "runtime_sha256": "efa0e9e45b4f7bbd84f37a6be6891f18dd764f3c3368c491d06e2ce1ae8ad7ae",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.017532301115940858,
+        "positive_energy_fraction": 3.6415661979256457
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "sweep_120": {
+      "case": {
+        "id": "sweep_120",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 120,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2419,
+            "sha256": "f48c2f01ed4fd21e5e8887dc1eadd65637ff2642d543501d66c608e9afa42b32"
+          },
+          "summary.json": {
+            "bytes": 14001,
+            "sha256": "45c389c4f353fd89c71f5dae2ea68e3737f96043c15d75f9695c589b626f150c"
+          },
+          "runtime-initial.json": {
+            "bytes": 13169,
+            "sha256": "f30f2d5cc49a8b09048e31a142d16149e3be7f79d9c597c5e424a593a074743a"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6120676,
+            "sha256": "875ae052484a450922bd9bc15cb5f33c8b698af7e56e6b412834992515232ddc"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 2.609040032121031e-07,
+          "minimum_package_floor_m": 0.6305595708037139,
+          "max_speed_m_s": 4.7516379183444375,
+          "max_angular_speed_rad_s": 65.2510986328125
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "5b40972c8e87e9fd09b96c6357dc8daff48c151efd25c2f9d5f20abf0f198221",
+      "runtime_sha256": "f30f2d5cc49a8b09048e31a142d16149e3be7f79d9c597c5e424a593a074743a",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.025847351944201992,
+        "positive_energy_fraction": 1.4043490518448742
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    },
+    "sweep_170": {
+      "case": {
+        "id": "sweep_170",
+        "kind": "large_angle",
+        "side_m": 0.045,
+        "mass_ratio": 0.2,
+        "duration_s": 30.0,
+        "initial_swing_deg": 170,
+        "initial_direction_rad": 0.0,
+        "sample_dt_s": 0.01,
+        "substeps": 2,
+        "reset_during_run": false,
+        "timeout_wall_s": 180.0
+      },
+      "passed": false,
+      "independent_raw_state_screen": {
+        "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+        "failure_codes": [],
+        "missing_evidence": [],
+        "files": {
+          "declaration.json": {
+            "bytes": 2419,
+            "sha256": "b2b52815f933d111dc389c3bb0c5e50746ce43365116232ea3e90ecc2ebfea4f"
+          },
+          "summary.json": {
+            "bytes": 14000,
+            "sha256": "60374cc3ff8a9b20d7ec3e09babf02de93dfdb686a1da40c693aebc4e9b66e60"
+          },
+          "runtime-initial.json": {
+            "bytes": 13169,
+            "sha256": "7b681a853d2d2766847c6687b4668daa956212c8c6589de4060998bbac9b23a8"
+          },
+          "reference-free-runtime.json": {
+            "bytes": 10464,
+            "sha256": "15ad2e46a250a1ed13716d53831a5a9e2d72d9550c8e12886600ab853a23f5cd"
+          },
+          "samples.jsonl": {
+            "bytes": 6119122,
+            "sha256": "18b92b0b330195721229cc4b60587106c8a689c1794a96247ddb2c5695e2b4ff"
+          }
+        },
+        "checks": {
+          "fixture_original_mass_kg": 0.027000000700354576,
+          "free_audit_original_mass_kg": 0.02700047753751278,
+          "reference_mass_kg": 0.02700047753751278,
+          "sample_count": 3001,
+          "required_sample_count": 3001,
+          "required_duration_s": 30.0,
+          "max_constraint_residual_m": 3.0698406982928105e-07,
+          "minimum_package_floor_m": 0.6297544038166659,
+          "max_speed_m_s": 5.967503027487585,
+          "max_angular_speed_rad_s": 70.77302551269531
+        }
+      },
+      "samples": 3001,
+      "measured_duration_s": 30.0,
+      "raw_sha256": "8c559c3564a9c76102aad8c5598c60b899691e81e4d1c7c525fdf6f4f736f98e",
+      "runtime_sha256": "7b681a853d2d2766847c6687b4668daa956212c8c6589de4060998bbac9b23a8",
+      "asset_sha256": "71d141a976603532cccf090051d18c72f1bf25ad610ba7879bfed23113edee94",
+      "zero_inertia_orientation_irrelevant": [],
+      "large_angle_diagnostic": {
+        "initial_energy_j": 0.03420134909529588,
+        "positive_energy_fraction": 1.8564693165752781
+      },
+      "failures": [
+        "LARGE_ANGLE_PASSIVE_ENERGY_FAILURE"
+      ]
+    }
+  },
+  "refinement": {
+    "refine_0.030_0.10_2__refine_0.030_0.10_4": {
+      "passed": false,
+      "samples": 3001,
+      "maximum_position_difference_m": 0.026207653530458102,
+      "maximum_orientation_difference_deg": 3.1549528325058662,
+      "failures": [
+        "REFINEMENT_DIFFERENCE_EXCEEDED"
+      ]
+    },
+    "refine_0.030_0.30_2__refine_0.030_0.30_4": {
+      "passed": false,
+      "samples": 3001,
+      "maximum_position_difference_m": 0.5591276256883775,
+      "maximum_orientation_difference_deg": 65.3607008012054,
+      "failures": [
+        "REFINEMENT_DIFFERENCE_EXCEEDED"
+      ]
+    },
+    "refine_0.045_0.10_2__refine_0.045_0.10_4": {
+      "passed": false,
+      "samples": 3001,
+      "maximum_position_difference_m": 0.027604404412461158,
+      "maximum_orientation_difference_deg": 3.2977593136874757,
+      "failures": [
+        "REFINEMENT_DIFFERENCE_EXCEEDED"
+      ]
+    },
+    "refine_0.045_0.30_2__refine_0.045_0.30_4": {
+      "passed": false,
+      "samples": 2164,
+      "maximum_position_difference_m": 0.6335468219174386,
+      "maximum_orientation_difference_deg": 40.325040719434284,
+      "failures": [
+        "INCOMPLETE_30_SECOND_PAIR",
+        "REFINEMENT_DIFFERENCE_EXCEEDED"
+      ]
+    },
+    "refine_0.060_0.10_2__refine_0.060_0.10_4": {
+      "passed": false,
+      "samples": 3001,
+      "maximum_position_difference_m": 0.028955975803069325,
+      "maximum_orientation_difference_deg": 3.523413894274276,
+      "failures": [
+        "REFINEMENT_DIFFERENCE_EXCEEDED"
+      ]
+    },
+    "refine_0.060_0.30_2__refine_0.060_0.30_4": {
+      "passed": false,
+      "samples": 1623,
+      "maximum_position_difference_m": 0.6136292791656098,
+      "maximum_orientation_difference_deg": 39.966125563716844,
+      "failures": [
+        "INCOMPLETE_30_SECOND_PAIR",
+        "REFINEMENT_DIFFERENCE_EXCEEDED"
+      ]
+    }
+  },
+  "checker_sha256": "330825727f6567dc5710182489aa63f21050c1a1cefc7b5285126c04a1d931b9",
+  "selected_profile": "cf2x-two-native-ball-root-aligned-v3",
+  "inventory": {
+    "valid": true,
+    "kind_counts": {
+      "anchor": 9,
+      "large_angle": 16,
+      "powered": 18,
+      "refinement": 12
+    },
+    "refinement_pairs": [
+      [
+        "refine_0.030_0.10_2",
+        "refine_0.030_0.10_4"
+      ],
+      [
+        "refine_0.030_0.30_2",
+        "refine_0.030_0.30_4"
+      ],
+      [
+        "refine_0.045_0.10_2",
+        "refine_0.045_0.10_4"
+      ],
+      [
+        "refine_0.045_0.30_2",
+        "refine_0.045_0.30_4"
+      ],
+      [
+        "refine_0.060_0.10_2",
+        "refine_0.060_0.10_4"
+      ],
+      [
+        "refine_0.060_0.30_2",
+        "refine_0.060_0.30_4"
+      ]
+    ],
+    "required_cases": 55
+  },
+  "source_binding": {
+    "src/adaptive_drone_patrol/payload_ball_bank.py": "5517b52bca8bfda32fd77bc1d1a76051f77affc1d4b5fc7743543c1d49eaf967",
+    "src/adaptive_drone_patrol/payload_probe_controller.py": "6badf96b1b74751de8deac485496d19b93d5d099dbde6041e6a602d6c12c6943",
+    "configs/payload_retry_motor_audit.json": "f8b10a9a9e1fa5ab27db0b232168f4f5e769e69d0a7f37b65ce1c82ea3ca67d1",
+    "configs/payload_retry_probe_manifest.json": "fdc9cf58cd4cbee1e38afc6b8fb166d2a2f84e447974775226250edcbe9c9f0b",
+    "scripts/probe_payload_ball.py": "32906eb40c61eef3a7395e842c4ed539a49f33299eaa00c342c2424b031e1a46",
+    "scripts/probe_payload_ball_bank.py": "64a67c082191f7988731359bf859fc34a766b54a339083cfb51affe48fc8bf1e",
+    "src/adaptive_drone_patrol/payload_ball_asset.py": "74c9e4d6bf38392c7e2795a025286d0133b80b4bb116fd2169070f7579edcef2",
+    "src/adaptive_drone_patrol/payload_contract.py": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e",
+    "src/adaptive_drone_patrol/payload_qualification.py": "89ad7894267549b625b9f458780e210e7d61d0b3c35817446009cb7fd92296a4",
+    "src/adaptive_drone_patrol/payload_substep_probe.py": "b58c5d7c387c77c6362e30b0340b5a80df2dcd9673a9bcdd019e74d69d99a87a"
+  },
+  "settings": {
+    "genesis_version": "1.4.3",
+    "precision": "32",
+    "control_dt_s": 0.01,
+    "rigid_dt_s": 0.005,
+    "solver": "Newton",
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "joint_damping": 0.0,
+    "joint_frictionloss": 0.0,
+    "armature": 0.0,
+    "base_angular_damping_scale": 1e-05,
+    "rod_mass_kg": 0.0001,
+    "rod_radius_m": 0.001,
+    "link_length_m": 0.3,
+    "vehicle_asset": "genesis/assets/urdf/drones/cf2x.urdf",
+    "floor_m": 0.1,
+    "tilt_max_deg": 60.0,
+    "root_alignment_requested": true
+  },
+  "engine_source_binding": {
+    "utils/mjcf.py": "f6d4a068884251445e11ce2138f6ba2933de1bea4c5d6b39df66aba2ff00ea11",
+    "engine/entities/rigid_entity/__init__.py": "af3bdc683df56043cd16959364a25bbee32cf99b4bb34d70a36ee7f718157da9",
+    "engine/entities/rigid_entity/description.py": "9780ad1208894a406160f8add875f7356acc712a8e002f1bda6a99d642aa8c17",
+    "engine/entities/rigid_entity/drone_entity.py": "25ad539e0e3c4bfab967f7c1edf98ae3a8032bab5e84cf7008725634b16e49de",
+    "engine/entities/rigid_entity/inertial.py": "87f6a8208d187e1cca28b35ffc8c4be4d3e6acd975d597a4f1fb569a2f5b5b94",
+    "engine/entities/rigid_entity/rigid_entity.py": "3914d4270d86e271e9696cd6a9f160e5fcf4382f7237e9daaee56e0e0dae07ef",
+    "engine/entities/rigid_entity/rigid_equality.py": "f2e0b29518841419fdcfa3a61f71bc9ec689768de171aafb9a1c9a3673f5c032",
+    "engine/entities/rigid_entity/rigid_geom.py": "9380eef8300bec235be7241a6814e3c9fe43041eaed32c6d80c67ea8f9d0f244",
+    "engine/entities/rigid_entity/rigid_joint.py": "e992bb29102f99832b795188e45fea6cc95be738a82863c57b88c580bea6f29c",
+    "engine/entities/rigid_entity/rigid_link.py": "0c4fa57ce5d249ce493bb4ca226d8cc8bb5becc6a4a76a0bcb79ebf76bf09710",
+    "engine/entities/rigid_entity/terrain_entity.py": "78e4e8632d1c753fad2c160d9dcf7c1014c2ea67bd6bb3174e753001cc4c6543",
+    "engine/solvers/rigid/abd/__init__.py": "54a64f24959ab148714ebde751d600e976ace56efc8dd2770209d6889db9727e",
+    "engine/solvers/rigid/abd/accessor.py": "b81eca2402e50cc464ace204937ed37bc3890a3d2da5bde6db9a8834cf40f44c",
+    "engine/solvers/rigid/abd/diff.py": "8612aa00d63d06cf3ea5af3410373af93b011786f22359fc672819694ab32559",
+    "engine/solvers/rigid/abd/forward_dynamics.py": "5d3b63f2d5088c39e218898059f3ba31071794a1ac0507778daef479f93355bb",
+    "engine/solvers/rigid/abd/forward_kinematics.py": "3bd8c9c6ff79506bae1f3b43716766b51fb3047deccd15279bca0f5fa940021d",
+    "engine/solvers/rigid/abd/inverse_kinematics.py": "6b4f31a22661e7081b53407e4f742fdfe15339b16c25294b676abeb09e0de0a2",
+    "engine/solvers/rigid/abd/manual_bw.py": "d0edc183f221070bda1ff0ee0459dd41f317b6ac022d618dba6880effe193f33",
+    "engine/solvers/rigid/abd/misc.py": "dc25724ad54eb29286bed66149bb081d9f10c821b534b1cbfa080bac8be565b1",
+    "options/morphs.py": "a9bd5c7a2ed6dbea62cdf3e2c4c2f71c250328b69bb089f05991f83f546340fa",
+    "engine/solvers/rigid/rigid_solver.py": "f5536b0845e3265a1dc103bb039ee9ba153380845376c32fcc26ae31858cc7ea",
+    "engine/simulator.py": "9ebb036bcfc890dd386e8393dd9ff96eaaac9f34b56e8ea276c1842bc052fc53",
+    "engine/scene.py": "b8d39d0e2cb1e3f2ca200c2b57cb86534e397f6367f9813c26aecd0da4ae02ed"
+  },
+  "physical_signature_sha256": "a94f6f8e33762fa380d16ccd0b828c89b814f891c01b7e2018fd70d8d897ea8b",
+  "checker_bindings": {
+    "check_payload_ball.py": "61102c9efd8e7d3edd24f45b202aabed919bdf6df810725f82860e7bf96b20dd",
+    "check_payload_ball_bank.py": "ce8a072cf709ba19955a021d87653e9edfcacf72ed492180738af6b897bc9928",
+    "check_payload_motor_audit.py": "a75b120cb79b63a0af3115ea201f6748aa129be829c1a80f4e9d72578d8cb251",
+    "src/adaptive_drone_patrol/payload_passive_check.py": "84eb5e4e2e2d908bc041e4c43c8561d1ae3cb4b92e8e5ba1a10951df14175aba"
+  },
+  "interpretation_ja": "既存admission入口は変更しない。全実測条件とsourceを再構成。固定anchor/static幾何/短motorをpowered合格へ転用しない。energy guard超過と、guard内だがsubstep仕事上界の証拠不足を区別する。",
+  "full_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/qualification-final-v10.json",
+    "bytes": 6241586,
+    "sha256": "2ca4f9b3b0d52bafeca38c8fc723d160af21b228ef48e1d74260e0c7d1cf49ce",
+    "exit_code": 2
+  },
+  "status_ja": "QUALIFICATION_FAILED（checkerの機械状態はQUALIFICATION_BLOCKED）",
+  "independent_case_counts": {
+    "anchor": {
+      "passed": 9,
+      "required": 9
+    },
+    "large_angle": {
+      "passed": 2,
+      "required": 16
+    },
+    "powered": {
+      "passed": 12,
+      "required": 18
+    },
+    "refinement": {
+      "passed": 10,
+      "required": 12
+    }
+  },
+  "refinement_pair_passed": 0,
+  "independent_case_passed": 33,
+  "large_angle_maximum_positive_energy_fraction": 5.307032495531854,
+  "history_ja": "raw producerの47正常完了と独立33条件passを区別する。大角度14条件の受動energy違反はrunner正常終了でも不合格。source V10凍結時の物理証拠でありcurrent CPU修正へ流用しない。",
+  "raw_screen_shared_policy": {
+    "schema": "payload-ball-independent-check-v2",
+    "checker_sha256": "61102c9efd8e7d3edd24f45b202aabed919bdf6df810725f82860e7bf96b20dd",
+    "checker_policy_version": "native-ball-construction-screen-v1",
+    "checker_policy_limits": {
+      "constraint_residual_max_m": 2e-05,
+      "mass_relative_error": 1e-05,
+      "inertia_relative_error": 1e-05,
+      "collision_extent_error_m": 1e-05,
+      "speed_max_m_s": 20.0,
+      "angular_speed_max_rad_s": 200.0,
+      "quaternion_norm_error": 0.0001
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "initial_cases": 127,
+  "locations": 11,
+  "dynamic_clearance_certified": false,
+  "minimum_initial_package_floor_m": 0.6200248975374648,
+  "minimum_nominal_package_floor_m": 0.6199999999999999,
+  "failures": [],
+  "initial_cases_sha256": "f98e0632d96a4d7b40feda667bff6e9ca831fc7f67e1734f2438e3c527ecf01c",
+  "nominal_size_location_checks": 33
+}

@@ -1,0 +1,369 @@
+{
+  "schema": "payload-retry-passive-diagnostics-v1",
+  "status": "QUALIFICATION_BLOCKED",
+  "physical_training_admitted": false,
+  "policy_admitted": false,
+  "source_version": "preserved executed source-v2",
+  "cases": [
+    {
+      "case_id": "anchor_0.030_0.10",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.03,
+      "mass_ratio": 0.1,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 3.2309726119192455e-05,
+      "positive_energy_fraction": 0.014430911100821234,
+      "minimum_energy_fraction_of_initial": 0.986138752866223,
+      "terminal_energy_fraction_of_initial": 1.0064624821582435,
+      "measured_period_s": 1.1237560833074065,
+      "analytical_period_s": 1.1232117611231665,
+      "period_relative_error": 0.000484612254857226,
+      "crossings": 107,
+      "maximum_constraint_residual_m": 1.2894441958621883e-07,
+      "minimum_package_floor_m": 0.649587379662494,
+      "max_speed_m_s": 0.15377924781362448,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.030_0.10-v1.json",
+        "bytes": 3440,
+        "sha256": "0c3262856028bab25b431a5313185ddb50072a473d31a385ab25620cf14741da"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.030_0.10-v1.json",
+        "bytes": 1271,
+        "sha256": "f1a3394d8496267eb64055be00c8dfea4c3b15a917d735ef17455adfee66a0a5"
+      }
+    },
+    {
+      "case_id": "anchor_0.030_0.20",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.03,
+      "mass_ratio": 0.2,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 6.405948337882616e-05,
+      "positive_energy_fraction": 0.014687371981439084,
+      "minimum_energy_fraction_of_initial": 0.9862328489306835,
+      "terminal_energy_fraction_of_initial": 0.9867092491960824,
+      "measured_period_s": 1.1255260139221512,
+      "analytical_period_s": 1.124981097371447,
+      "period_relative_error": 0.00048437840598169714,
+      "crossings": 107,
+      "maximum_constraint_residual_m": 1.346245854794148e-07,
+      "minimum_package_floor_m": 0.6495937047658615,
+      "max_speed_m_s": 0.15355903185461814,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.030_0.20-v1.json",
+        "bytes": 3441,
+        "sha256": "9e2c6ed2cd7041f96e01b66aeeccc5dc6f840eb7c0589b62358dc0fbf3e805df"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.030_0.20-v1.json",
+        "bytes": 1272,
+        "sha256": "6b795986a15370ad1f471c23ffa4640cd728bff7351166f7ad63e08df8327723"
+      }
+    },
+    {
+      "case_id": "anchor_0.030_0.30",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.03,
+      "mass_ratio": 0.3,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 9.580924337630638e-05,
+      "positive_energy_fraction": 0.014338543162818284,
+      "minimum_energy_fraction_of_initial": 0.9857447829304152,
+      "terminal_energy_fraction_of_initial": 0.9898232109752826,
+      "measured_period_s": 1.126119446511865,
+      "analytical_period_s": 1.1255772557942625,
+      "period_relative_error": 0.000481700136362318,
+      "crossings": 107,
+      "maximum_constraint_residual_m": 1.2491140066739348e-07,
+      "minimum_package_floor_m": 0.6495960235393552,
+      "max_speed_m_s": 0.15344718042888136,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.030_0.30-v1.json",
+        "bytes": 3442,
+        "sha256": "842052e04b36c1b59371e7a876017019ec0261247dedd152d850102625d902ce"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.030_0.30-v1.json",
+        "bytes": 1271,
+        "sha256": "688583825f75b84da90517425a12b6ad92c7b423383cb8c837c3adba51b6b002"
+      }
+    },
+    {
+      "case_id": "anchor_0.045_0.10",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.045,
+      "mass_ratio": 0.1,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 3.306614936065649e-05,
+      "positive_energy_fraction": 0.014222712723039878,
+      "minimum_energy_fraction_of_initial": 0.9862409850411602,
+      "terminal_energy_fraction_of_initial": 1.0086815241158786,
+      "measured_period_s": 1.1380250395288982,
+      "analytical_period_s": 1.137487636454302,
+      "period_relative_error": 0.0004724473984361801,
+      "crossings": 106,
+      "maximum_constraint_residual_m": 1.3225485812062843e-07,
+      "minimum_package_floor_m": 0.6341006108797334,
+      "max_speed_m_s": 0.1555058683641036,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.045_0.10-v1.json",
+        "bytes": 3441,
+        "sha256": "04aaae72baaebb5634a6bae159612463397f21185f57d3b37a07d4ee066b4ede"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.045_0.10-v1.json",
+        "bytes": 1274,
+        "sha256": "36dba4c94693516f357fea955411d421a81018548a1876b1afe50ed6b8d8fc76"
+      }
+    },
+    {
+      "case_id": "anchor_0.045_0.20",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 6.557232986175425e-05,
+      "positive_energy_fraction": 0.014097630359676854,
+      "minimum_energy_fraction_of_initial": 0.9862572603178464,
+      "terminal_energy_fraction_of_initial": 1.0049763716143743,
+      "measured_period_s": 1.1398040547719197,
+      "analytical_period_s": 1.1393077034514973,
+      "period_relative_error": 0.0004356604619793936,
+      "crossings": 106,
+      "maximum_constraint_residual_m": 1.333623335098011e-07,
+      "minimum_package_floor_m": 0.6341111633054838,
+      "max_speed_m_s": 0.15525784491130035,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.045_0.20-v1.json",
+        "bytes": 3441,
+        "sha256": "cf72ffd24157d7e3b420e7542cdfdcd31642253cb3d2e66ab5ccffa3ab57b84e"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.045_0.20-v1.json",
+        "bytes": 1274,
+        "sha256": "33c45a524d3ba7ed18ef01218d859171f7bdf5ee363ff92afb70c9d82181ffe5"
+      }
+    },
+    {
+      "case_id": "anchor_0.045_0.30",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.045,
+      "mass_ratio": 0.3,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 9.807851316592642e-05,
+      "positive_energy_fraction": 0.014231547917759485,
+      "minimum_energy_fraction_of_initial": 0.9862584358805087,
+      "terminal_energy_fraction_of_initial": 0.9952350317720642,
+      "measured_period_s": 1.1404655697721804,
+      "analytical_period_s": 1.1399208380207686,
+      "period_relative_error": 0.0004778680529760278,
+      "crossings": 105,
+      "maximum_constraint_residual_m": 1.4193532316131297e-07,
+      "minimum_package_floor_m": 0.634115618576532,
+      "max_speed_m_s": 0.15519619894648642,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.045_0.30-v1.json",
+        "bytes": 3441,
+        "sha256": "e89cecf1c5c5b8de61feaf60eaa77ae322508738e26f7ceeae7343ea6af3e997"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.045_0.30-v1.json",
+        "bytes": 1273,
+        "sha256": "8421776670c4765c63439d2204f356f21865c12f5fcaf11f5e0b89d9c1ae87a6"
+      }
+    },
+    {
+      "case_id": "anchor_0.060_0.10",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.06,
+      "mass_ratio": 0.1,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 3.3820993825947425e-05,
+      "positive_energy_fraction": 0.014271334176897464,
+      "minimum_energy_fraction_of_initial": 0.9865845408945811,
+      "terminal_energy_fraction_of_initial": 0.9870175460102747,
+      "measured_period_s": 1.1524590641803059,
+      "analytical_period_s": 1.1519900645052477,
+      "period_relative_error": 0.00040712128473054647,
+      "crossings": 104,
+      "maximum_constraint_residual_m": 1.2452019080353707e-07,
+      "minimum_package_floor_m": 0.6184468358434955,
+      "max_speed_m_s": 0.15720800910756869,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.060_0.10-v1.json",
+        "bytes": 3442,
+        "sha256": "1b3505d520d4209a3f641b23aa7196c6f4fcd1084cfee9cd0d47b9ed859055b2"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.060_0.10-v1.json",
+        "bytes": 1277,
+        "sha256": "9e63123fb4f06ebe07f125a3b5a107ecf1fba7a668a92dec4b95740da0a17d5d"
+      }
+    },
+    {
+      "case_id": "anchor_0.060_0.20",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.06,
+      "mass_ratio": 0.2,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 6.708201879233611e-05,
+      "positive_energy_fraction": 0.01415408683335147,
+      "minimum_energy_fraction_of_initial": 0.9865992619145372,
+      "terminal_energy_fraction_of_initial": 1.0083188907718759,
+      "measured_period_s": 1.1543696347098802,
+      "analytical_period_s": 1.1538559889412208,
+      "period_relative_error": 0.0004451558717745554,
+      "crossings": 104,
+      "maximum_constraint_residual_m": 1.2639435548786118e-07,
+      "minimum_package_floor_m": 0.6184640024073315,
+      "max_speed_m_s": 0.1569656865954635,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.060_0.20-v1.json",
+        "bytes": 3441,
+        "sha256": "71bb9d7d31d2c455fedc1bc7c49f7b958fa504e23b9d819835a227f0f1cecc4b"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.060_0.20-v1.json",
+        "bytes": 1272,
+        "sha256": "f759c4185dcff3eaf9448480bb70addd8ab4d02f5f0a7213832aa6fb6cbcac64"
+      }
+    },
+    {
+      "case_id": "anchor_0.060_0.30",
+      "status": "QUALIFICATION_BLOCKED",
+      "physical_training_admitted": false,
+      "side_m": 0.06,
+      "mass_ratio": 0.3,
+      "samples": 12001,
+      "duration_s": 120.0,
+      "original_binding_failure_codes": [
+        "BINDING_MISMATCH",
+        "REFERENCE_MASS_DISCREPANCY"
+      ],
+      "source_binding_after_exact_reconstruction_matches": true,
+      "fixture_original_mass_kg": 0.027000000700354576,
+      "canonical_free_reference_mass_kg": 0.02700047753751278,
+      "raw_diagnostic_failure_codes": [],
+      "initial_energy_j": 0.00010034304662689101,
+      "positive_energy_fraction": 0.014288937122797846,
+      "minimum_energy_fraction_of_initial": 0.9865677124159992,
+      "terminal_energy_fraction_of_initial": 1.0137813851134367,
+      "measured_period_s": 1.154973222632222,
+      "analytical_period_s": 1.1544844621214705,
+      "period_relative_error": 0.0004233582406586808,
+      "crossings": 104,
+      "maximum_constraint_residual_m": 1.2501807048445007e-07,
+      "minimum_package_floor_m": 0.6184698272393183,
+      "max_speed_m_s": 0.15688739623031078,
+      "original_full_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/anchor_0.060_0.30-v1.json",
+        "bytes": 3442,
+        "sha256": "57dca267daa7e66fff747beaa9e563c3c0f7e072e68061a7796edf25cd65e287"
+      },
+      "raw_only_diagnostic_receipt": {
+        "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/raw-only-anchor_0.060_0.30-v1.json",
+        "bytes": 1275,
+        "sha256": "65eaee1ddd26826ee584afc47903be6bb6280cfb90db9551ecb300dfe9d20619"
+      }
+    }
+  ],
+  "case_count": 9,
+  "samples_total": 108009,
+  "duration_total_s": 1080.0,
+  "maximum_positive_energy_fraction": 0.014687371981439084,
+  "maximum_period_relative_error": 0.000484612254857226,
+  "maximum_constraint_residual_m": 1.4193532316131297e-07,
+  "minimum_package_floor_m": 0.6184468358434955,
+  "source_reconstruction_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/passive-checks-v1/source-v2-reconstruction.json",
+    "bytes": 872,
+    "sha256": "c9687ecf47a2f0b0c54ea8434763639d930a036888ce2e2b9908844f42220603"
+  },
+  "interpretation_ja": "実9条件は各120秒・12001sample。rawだけの独立energy/period切り分けは全件で5%/10%上限内だが、統合checkerは全件blocked。固定anchorのlink質量合計をfree referenceと誤標記したv2 metadataは未修正の歴史記録として保持。free4rotorにだけあるsolver epsilonが固定fixtureで0となる差で、実cube massはcanonical free reference×ratioを維持。source snapshot依存1件欠落は実在初期archiveの実行hash一致bytesのみ復元。失敗receiptを改変せず保存。",
+  "blockers_ja": [
+    "v2 runtime reference_mass_kgは固定fixture元link合計0.027000000700354576kg。free基準0.02700047753751278kgと異なる。",
+    "将来版はfixture_original_mass_kgとhash-bound実free監査のreference_mass_kgを分離し、9条件を新規実行する。",
+    "受動固定anchorだけではmotor一致・powered運用域・large angle・refinement・reset・床余裕全域を資格認定しない。"
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "schema": "suspended-retry-learning-readiness-v1",
+  "status": "CPU_SAFEGUARDS_ONLY_QUALIFICATION_FAILED",
+  "parent": {
+    "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/model_4296.pt",
+    "bytes": 475573,
+    "sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431"
+  },
+  "parent_config": {
+    "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/cfgs.pkl",
+    "sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55"
+  },
+  "initialization_comparison": {
+    "unchanged_kinematic_columns_equal": true,
+    "changed_history_columns_zero": true,
+    "payload_columns_zero": true,
+    "other_tensors_equal": true,
+    "parent_actor_tensor_sha256": "2a62985ff6c30a6852cd710dee98e584369ed1c29c5cc4123fa81cf91f335ff3",
+    "parent_critic_tensor_sha256": "0c61edfd9662189b67563399f0be2514ca720cbe7c61538c9e53f0237e875ce8",
+    "initial_actor_tensor_sha256": "0904beeb93f7f2ae3717daf11e76d635dfc56d9b59b5339d00cc33d2836fdcc2",
+    "initial_critic_tensor_sha256": "7b5df02238658811634f8bf3c5d641c9e688320534c275a9bce23b3ed9d9e240"
+  },
+  "methods": {
+    "randomized": {
+      "seed": 7,
+      "planned_environment_steps": 300000,
+      "actual_environment_steps": 0
+    },
+    "fixed": {
+      "seed": 7,
+      "planned_environment_steps": 300000,
+      "actual_environment_steps": 0
+    }
+  },
+  "gpu_training_executed": false,
+  "validation_cases_attempted": 0,
+  "validation_transitions_completed": 0,
+  "acceptance_attempted": 0,
+  "acceptance_required": 254,
+  "success_rate": null,
+  "wilson95": null,
+  "learned_payload_policy_adopted": false,
+  "legacy_failed_checkpoint_used": false,
+  "runtime_guard": {
+    "speed_max_m_s": 20,
+    "angular_speed_max_rad_s": 200,
+    "quaternion_norm_error": 1e-05,
+    "constraint_residual_m": 2e-05,
+    "pre_reward_raw": true,
+    "recent_raw_window": 128,
+    "every_step_trace": true,
+    "every_reset_property_audit": true
+  },
+  "properties_raw_replay": {
+    "schema": "retry-training-reset-guard-actual-raw-replay-v1",
+    "raw_sha256": "dcdc8402bd69040ca3c0f0036c981f29b31f362b1717d0a00072c4a42a4a15ae",
+    "guards_sha256": "fe483f7a52ed22b67e76dc76a37eae8c9f85ead751678517abf327bfab34dfc1",
+    "reset_samples": 30,
+    "all_physical_and_asset_predicates_passed": true,
+    "reader_gpu_integration_executed": false,
+    "asset_hashes": {
+      "bank/load_0.030/candidate.xml": "32a1ef4382f8f5178fbe7bcf41eb7b33ac2fd40cbb0ee365c417b4857af1106e",
+      "bank/load_0.045/candidate.xml": "748077451435b03a671284126d52acc08e027b308626afc022c26f0863091538",
+      "bank/load_0.060/candidate.xml": "da5c8de1793ee2683d48ce53c96adfee864753e503c82fd00f9814dc31f2b5b4"
+    },
+    "outcomes": [
+      {
+        "index": 0,
+        "failures": []
+      },
+      {
+        "index": 1,
+        "failures": []
+      },
+      {
+        "index": 2,
+        "failures": []
+      },
+      {
+        "index": 3,
+        "failures": []
+      },
+      {
+        "index": 4,
+        "failures": []
+      },
+      {
+        "index": 5,
+        "failures": []
+      },
+      {
+        "index": 6,
+        "failures": []
+      },
+      {
+        "index": 7,
+        "failures": []
+      },
+      {
+        "index": 8,
+        "failures": []
+      },
+      {
+        "index": 9,
+        "failures": []
+      },
+      {
+        "index": 10,
+        "failures": []
+      },
+      {
+        "index": 11,
+        "failures": []
+      },
+      {
+        "index": 12,
+        "failures": []
+      },
+      {
+        "index": 13,
+        "failures": []
+      },
+      {
+        "index": 14,
+        "failures": []
+      },
+      {
+        "index": 15,
+        "failures": []
+      },
+      {
+        "index": 16,
+        "failures": []
+      },
+      {
+        "index": 17,
+        "failures": []
+      },
+      {
+        "index": 18,
+        "failures": []
+      },
+      {
+        "index": 19,
+        "failures": []
+      },
+      {
+        "index": 20,
+        "failures": []
+      },
+      {
+        "index": 21,
+        "failures": []
+      },
+      {
+        "index": 22,
+        "failures": []
+      },
+      {
+        "index": 23,
+        "failures": []
+      },
+      {
+        "index": 24,
+        "failures": []
+      },
+      {
+        "index": 25,
+        "failures": []
+      },
+      {
+        "index": 26,
+        "failures": []
+      },
+      {
+        "index": 27,
+        "failures": []
+      },
+      {
+        "index": 28,
+        "failures": []
+      },
+      {
+        "index": 29,
+        "failures": []
+      }
+    ]
+  },
+  "gpu_runtime_property_reader_integration_verified": false,
+  "rsl_gpu_training_integration_verified": false,
+  "observation_contract": "payload29-ideal-world-current-action-v2",
+  "transfer": {
+    "copied_columns": [
+      0,
+      13
+    ],
+    "zeroed_history": [
+      13,
+      17
+    ],
+    "zeroed_payload": [
+      17,
+      29
+    ],
+    "fresh_optimizer": true,
+    "iteration": 0
+  },
+  "source_binding": {
+    "src/adaptive_drone_patrol/payload_retry_contract.py": "3cc00058754bd68f4916b843d4170af3b9fd52816888d9e130c5bbf53e091cf4",
+    "src/adaptive_drone_patrol/payload_retry_checkpoint.py": "1bac025a9041be497e2af3f389aec1cc514ef16aa7665646f66a32bb66078223",
+    "src/adaptive_drone_patrol/payload_retry_training.py": "e5d30c97c37cfc6fcff8326ce011735e051af5f7115570540973fa1686a32c59",
+    "src/adaptive_drone_patrol/payload_retry_properties.py": "fe483f7a52ed22b67e76dc76a37eae8c9f85ead751678517abf327bfab34dfc1",
+    "src/adaptive_drone_patrol/payload_retry_admission.py": "e5c707cddf8460abf944f554e945342ca397c21ef0c654453e2f71757d4f0ef6",
+    "scripts/train_payload_retry.py": "77ff0335adb2eed45759502208289144c39d330f64fb9a52da0c21089c80abe6"
+  }
+}

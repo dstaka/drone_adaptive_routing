@@ -28,6 +28,47 @@ def write(path, value):
     path.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
 
 
+def validate_probe_declaration(declaration):
+    """Keep legacy55 validation intact and explicitly dispatch recovery62."""
+    if declaration.get('schema') == 'payload-recovery-domain-v1':
+        from adaptive_drone_patrol.payload_recovery_qualification import validate_manifest
+
+        return validate_manifest(declaration)
+    return validate_declaration(declaration)
+
+
+def probe_duration(case, requested=None):
+    """Short cause diagnostics preserve the full qualification case declaration."""
+    if requested is None:
+        return case['duration_s']
+    if (type(requested) not in (float, int) or not math.isfinite(requested)
+            or requested <= 0 or requested > case['duration_s']
+            or not math.isclose(requested/.01, round(requested/.01), abs_tol=1e-8, rel_tol=0)):
+        raise ValueError('Diagnostic duration must be finite whole control intervals within the declared case')
+    return requested
+
+
+def require_probe_stage(declaration, case, fixture, passive_probe_root=None, *, source_root=None,
+                        engine_root=None):
+    """Recovery powered probes require actual independent passive raw replay."""
+    if declaration.get('schema') != 'payload-recovery-domain-v1' or case is None:
+        return True
+    passive = case['kind'] in ('anchor', 'large_angle')
+    if fixture != ('anchor' if passive else 'loaded'):
+        raise ValueError('Recovery case/physical fixture mismatch')
+    if passive:
+        return True
+    if passive_probe_root is None:
+        raise ValueError('All 32 passive raw traces are required before powered recovery diagnostics')
+    from adaptive_drone_patrol.payload_recovery_qualification import (
+        ROOT, passive_cases, require_passive_barrier,
+    )
+
+    root = ROOT if source_root is None else Path(source_root)
+    locations = {c['id']: Path(passive_probe_root)/c['id'] for c in passive_cases(declaration)}
+    return require_passive_barrier(declaration, locations, source_root=root, engine_root=engine_root)
+
+
 def initial_suspension_quaternion(angle_deg, direction_rad):
     """Rotate world down toward the declared XY azimuth without Euler angles."""
     half = math.radians(angle_deg) / 2
@@ -51,6 +92,9 @@ def main():
     parser.add_argument("--out", required=True)
     parser.add_argument("--fixture", choices=("original", "unloaded", "loaded", "anchor"), default="loaded")
     parser.add_argument("--case")
+    parser.add_argument('--diagnostic-duration-s', type=float,
+                        help='Explicit short cause diagnostic only; cannot satisfy full qualification')
+    parser.add_argument('--passive-probe-root', help='Complete32 raw passive case directories for powered recovery')
     parser.add_argument("--align-root", action="store_true")
     parser.add_argument("--rotor", type=int, choices=range(4))
     parser.add_argument("--reference-audit", default="outputs/construction-loaded-v1/runtime-initial.json")
@@ -59,10 +103,18 @@ def main():
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=False)
     declaration = json.loads(Path(args.manifest).read_text())
-    validate_declaration(declaration)
+    validate_probe_declaration(declaration)
     case = next((c for c in declaration["cases"] if c["id"] == args.case), None)
     if args.case and case is None:
         raise ValueError("Unknown predeclared case")
+    if args.diagnostic_duration_s is not None and case is None:
+        raise ValueError('Short diagnostics require a predeclared physical case')
+    if case:
+        probe_duration(case, args.diagnostic_duration_s)
+    engine_root = None
+    if declaration.get('schema') == 'payload-recovery-domain-v1' and case and case['kind'] in ('powered', 'refinement'):
+        engine_root = importlib.metadata.distribution('genesis-world').locate_file('genesis')
+    require_probe_stage(declaration, case, args.fixture, args.passive_probe_root, engine_root=engine_root)
     if case and ((args.fixture == "anchor") != (case["kind"] in ("anchor", "large_angle"))):
         raise ValueError("Case/fixture mismatch")
     settings = declaration["settings"]
@@ -74,6 +126,7 @@ def main():
         "physical_training_admitted": False,
         "fixture": args.fixture,
         "case": case,
+        'diagnostic_duration_s': args.diagnostic_duration_s,
         "manifest_sha256": sha256(args.manifest),
         "source_binding": {
             p: sha256(p)
@@ -97,6 +150,10 @@ def main():
                 "src/adaptive_drone_patrol/payload_substep_probe.py")
         },
     }
+    if declaration.get('schema') == 'payload-recovery-domain-v1':
+        from adaptive_drone_patrol.payload_recovery_qualification import SOURCE_FILES
+
+        result['source_binding'] = {source: sha256(source) for source in SOURCE_FILES}
     if args.fixture == "anchor":
         reference_path = Path(args.reference_audit)
         free = json.loads(reference_path.read_text())
@@ -139,10 +196,15 @@ def main():
                 result["engine_source"][str(source.relative_to(genesis_root))] = sha256(source)
         for name in ("engine/solvers/rigid/rigid_solver.py", "engine/simulator.py", "engine/scene.py"):
             result["engine_source"][name] = sha256(genesis_root / name)
+        if declaration.get('schema') == 'payload-recovery-domain-v1':
+            result['engine_source'] = {
+                str(source.relative_to(genesis_root)): sha256(source)
+                for source in genesis_root.rglob('*.py')
+            }
         write(out / "pre-init.json", result)
         gs.init(backend=gs.gpu, precision="32", logging_level="warning", seed=7)
         dt = 0.01
-        substeps = case["substeps"] if case else 2
+        substeps = case["substeps"] if case else declaration.get('base_substeps', 2)
         fixture = build_ball_fixture(
             out, payload, fixture=args.fixture, dt=dt, substeps=substeps, align_root=args.align_root
         )
@@ -214,9 +276,11 @@ def main():
             )
             entity.set_qpos(q, zero_velocity=True)
         write(out / "runtime-initial.json", result)
+        result['runtime_initial_sha256'] = sha256(out/'runtime-initial.json')
         indices = torch.tensor([p.idx for p in props], dtype=gs.tc_int, device=gs.device)
         spin = torch.tensor([-1, 1, -1, 1], dtype=gs.tc_float, device=gs.device)
-        duration = case["duration_s"] if case else (0.05 if args.rotor is not None else 1.0)
+        duration = probe_duration(case, args.diagnostic_duration_s) if case else (
+            0.05 if args.rotor is not None else 1.0)
         n = round(duration / dt)
         total_mass = sum(masses)
         work = 0.0
@@ -355,28 +419,29 @@ def main():
                         entity.set_propellers_rpm(tensor)
                     else:
                         entity.solver.set_drone_rpm(indices, 3.16e-10, 7.94e-12, tensor, spin, False)
-                if args.fixture != "anchor":
-                    from genesis.utils.misc import qd_to_torch
+                from genesis.utils.misc import qd_to_torch
 
-                    state = entity.solver.dyn_state.links
-                    motor_input = {
-                        "step": i,
-                        "time_s": i * dt,
-                        "rpm": rpm.tolist(),
-                        "rotor_indices": [p.idx for p in props],
-                        "negative_external_force_field": qd_to_torch(state.cfrc_applied_vel, copy=True)
-                        .cpu()
-                        .tolist(),
-                        "negative_external_torque_about_root_com_field": qd_to_torch(
-                            state.cfrc_applied_ang, copy=True
-                        )
-                        .cpu()
-                        .tolist(),
-                        "root_com_world_field": qd_to_torch(state.root_COM, copy=True).cpu().tolist(),
-                        "field_convention": "Global link index, environment index, xyz; source negative sign; actual solver external wrench before integration, not constraint force",
-                    }
-                    motor_stream.write(json.dumps(motor_input, allow_nan=True) + "\n")
-                    motor_stream.flush()
+                # Observe passive zero-input fields too; an expected zero RPM
+                # calculation is not evidence of zero actual held motor forces.
+                state = entity.solver.dyn_state.links
+                motor_input = {
+                    "step": i,
+                    "time_s": i * dt,
+                    "rpm": rpm.tolist(),
+                    "rotor_indices": [p.idx for p in props],
+                    "negative_external_force_field": qd_to_torch(state.cfrc_applied_vel, copy=True)
+                    .cpu()
+                    .tolist(),
+                    "negative_external_torque_about_root_com_field": qd_to_torch(
+                        state.cfrc_applied_ang, copy=True
+                    )
+                    .cpu()
+                    .tolist(),
+                    "root_com_world_field": qd_to_torch(state.root_COM, copy=True).cpu().tolist(),
+                    "field_convention": "Global link index, environment index, xyz; source negative sign; actual solver external wrench before integration, not constraint force",
+                }
+                motor_stream.write(json.dumps(motor_input, allow_nan=True) + "\n")
+                motor_stream.flush()
                 if work_recorder:
                     work_recorder.begin_control(i)
                 scene.step()

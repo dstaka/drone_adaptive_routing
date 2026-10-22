@@ -63,3 +63,7 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-21: 吊り荷飛行の再挑戦
 
 [長時間物理qualificationを先行する吊り荷再挑戦](2026-10-21-suspended-payload-flight-retry/spec.md)を作成しました。起点は前回の失敗を保存した `2d0e003`。旧PASSを無効のまま保持し、固定リンクモデル内で別の受動関節表現を調査して、120秒の固定anchor・連続モーター駆動、dt比較、reset隔離を学習前に検証します。荷物分布・同時安定1秒・127条件ずつの比較・全編3本の完成条件は維持します。[別Codexセッション向けの実行指示](../docs/suspended-payload-flight-retry-instructions_ja.md)を用意しました。作成時点では文書のみでした。2026-10-22の明示指示後、native ball版・独立checker・新観測/学習guardを実装し、新GPU環境で検証しました。powered診断で荷物床余裕違反が生じ、学習・validation・254受入・動画は開始していません。旧成功の流用や閾値緩和は行わず、失敗と残り診断を保持します。[再挑戦の引き継ぎ](../docs/suspended-payload-flight-retry-handoff.md)を参照してください。新spec・索引・公開指示は今回のコード・テストと同じローカルcommitへ含めます。
+
+## 2026-10-22: 物理修理・条件付き高度変更・並列学習
+
+[次回の吊り荷回復spec](2026-10-22-suspended-payload-flight-recovery/spec.md)を準備しました。起点は `e3c145a`、残GPUは17975.87211180746秒を基準に再照合します。大角度の受動energyをpowered前の独立barrierで検査し、実batch化と総sample/PPO更新の公平性を規定しました。高度変更は物理修理後に余裕不足が実証された場合だけ、Sと全地点の共通変換として両学習前に固定します。未完のruntime・validation・254評価・全編3本・新規人手確認まで対象です。[提案の評価と引き継ぎ](../docs/suspended-payload-flight-recovery-handoff.md)、[新セッションへの実行指示](../docs/suspended-payload-flight-recovery-instructions_ja.md)を参照してください。人による実行指示後に実装・新環境・6GPU診断を行いました。旧失敗rawを完全再現し、積分離散化の独立診断と128/256-substep受動3traceを取得しましたが、完全資格・学習・254受入・動画は未達です。数値品質未確定と実測による予算不足で依存GPU作業を停止し、CPU実装・全失敗・証拠を保存しました。

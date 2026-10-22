@@ -1,0 +1,110 @@
+{
+  "schema": "payload-recovery-verification-v1",
+  "cpu_only": true,
+  "physical_training_admitted": false,
+  "local": {
+    "python": "3.11.14",
+    "passed": 901,
+    "gpu_deselected": 1,
+    "warnings": 39,
+    "elapsed_s": 155.86,
+    "log": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-final-tests.log",
+      "bytes": 5334,
+      "sha256": "06e576a1574c91f3062370b868ab872b7591b4cb2134263e347115b89bf6e13d"
+    }
+  },
+  "linux_exact_lock": {
+    "python": "3.12.3",
+    "passed": 901,
+    "gpu_deselected": 1,
+    "warnings": 23,
+    "elapsed_s": 112.01,
+    "receipt": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/linux-cpu-v2/linux-cpu-receipt.json",
+      "bytes": 536,
+      "sha256": "bd879988c570e9594860574888ecec9a29a15063ae65fc4ef40d1ab39a2f7b5a"
+    },
+    "test_log": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/linux-cpu-v2/linux-tests.log",
+      "bytes": 2814,
+      "sha256": "09bb50660e4cdf4945314451b2fa6fdeb8abd5b6142cd48ee5d0e885e8e94c45"
+    },
+    "lint_log": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/linux-cpu-v2/linux-lint.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "source_manifest": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-source-final-v2-manifest.json",
+      "bytes": 31445,
+      "sha256": "a96d83aa3bd88db2f153bef090aa4af81f7c2395e0f86772002a6911120f789c"
+    },
+    "all_log_size_hashes_verified": true,
+    "gpu_initialized": false
+  },
+  "preserved_failed_verification": {
+    "receipt": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/linux-cpu/linux-cpu-receipt.json",
+      "bytes": 536,
+      "sha256": "d0ece2c8170f725dbcca314522bb7edc5855b2976c2e6f0ccf72cb637d77cb92"
+    },
+    "passed": 900,
+    "failed": 1,
+    "reason_ja": "CPU転送bundleから継承third_party/genesis_droneの3sourceを漏らしたため、source freeze testが正しくFileNotFoundで失敗。3sourceを追加して別bundleで再実行し、コード・テスト・基準は緩和していない。"
+  },
+  "final_local_lint_compile_diff_check_exit_code": 0,
+  "review": {
+    "path": "docs/evidence/suspended-recovery/review.json",
+    "bytes": 1283,
+    "sha256": "db80e1f17014cb399f3ad460a4692686b12c20208129119dea0ef9955d1a04fe"
+  },
+  "pdf": {
+    "source": {
+      "path": "docs/report_ja.md",
+      "bytes": 11246,
+      "sha256": "0d027d2e72b55700753e306be44945eaea7e2a06b502e845d0e8c3a6741c16fc"
+    },
+    "output": {
+      "path": "outputs/suspended_recovery_20261022_112649_abce93/report_ja_recovery_v1.pdf",
+      "bytes": 203447,
+      "sha256": "a604fadd3aab2ebaecd2b543cfad970e31df278355c20fd11890cb671aa883be"
+    },
+    "page_count": 6,
+    "all_pages_rendered_and_visually_inspected": true,
+    "inspection_ja": "全6ページを個別に目視。日本語文字・図・数値・改ページ・footerに欠落、文字化け、はみ出しがない。",
+    "pages": [
+      {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/report-page-1.png",
+        "bytes": 205519,
+        "sha256": "4d8934b481826b683808c8c7a62c7300410aec25c8fe86128e3ddb7ac6744d92"
+      },
+      {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/report-page-2.png",
+        "bytes": 197995,
+        "sha256": "7639aa2c3fae25721690ea89e812c6ca73292ca0feb98d9220ac7c4284fff2da"
+      },
+      {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/report-page-3.png",
+        "bytes": 218417,
+        "sha256": "614357a92fd88a2eb6b4fe959798bdad1fe65003dde2d3a64906277970604ea9"
+      },
+      {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/report-page-4.png",
+        "bytes": 252453,
+        "sha256": "2b6f9003d959aa9a235447b9eb0712766b9fe43da457b16293e2ed8f91c43154"
+      },
+      {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/report-page-5.png",
+        "bytes": 222228,
+        "sha256": "1eac99b4aaaad896013a6dde16cb57e7c58e266fb64115aab87dcf134e10e5db"
+      },
+      {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/report-page-6.png",
+        "bytes": 229645,
+        "sha256": "0084fbf752ffc2007fb881e3826e5b6aa165cbad629b07d1a45cf8082c566503"
+      }
+    ]
+  },
+  "limitations_ja": "CPUの論理・ソース束縛・報告描画の検証。実GPUの完全62/motor15/reset30/batch、学習・受入・動画を証明しない。"
+}

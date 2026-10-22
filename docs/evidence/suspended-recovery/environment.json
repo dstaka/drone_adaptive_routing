@@ -1,0 +1,46 @@
+{
+  "schema": "payload-recovery-environment-v1",
+  "environments": {
+    "flight": {
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "pinned_count": 169,
+      "installed_count": 169,
+      "mismatches": {},
+      "extra_packages": [],
+      "lock_sha256": "a6985bdf3307ab18cdf5a32b715093d6f607ee005ebdf8f3527030971fc0553c"
+    },
+    "routing": {
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "pinned_count": 33,
+      "installed_count": 33,
+      "mismatches": {},
+      "extra_packages": [],
+      "lock_sha256": "444ca81d097c906ec6b884ecd7086f6c759903a43dcc43141eaeb4889512a4fc"
+    }
+  },
+  "historical_engine_subset_mismatches": [],
+  "all_python_engine_files_bound_in_candidate": 264,
+  "engine_archive": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/final-delivery/engine-source.tar.gz",
+    "bytes": 1271659,
+    "sha256": "208f6db4c72bd3e1bdd3703d0ea739908b517ed27fc076671f4c3c4ae4b1cbbd"
+  },
+  "setup_attempts": [
+    {
+      "kind": "CPU_ENV_INSTALL",
+      "result": "FAILED_NO_SPACE",
+      "gpu_initialized": false
+    },
+    {
+      "kind": "CPU_ENV_CREATE_RETRY",
+      "result": "FAILED_VENV_ALREADY_EXISTS",
+      "gpu_initialized": false
+    },
+    {
+      "kind": "CPU_ENV_RESUME_HARDLINK",
+      "result": "SUCCEEDED_EXACT_LOCKS",
+      "gpu_initialized": false
+    }
+  ],
+  "isolation_ja": "今回作成した新workspaceとPython3.12 flight/routing環境。旧環境・旧絶対pathは流用せず、固定依存版を変更していない。接続情報はGit外。"
+}

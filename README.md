@@ -1,58 +1,39 @@
 # 適応型ドローン巡回点検
 
-2026-10-22追記：**native ballによる再挑戦も、現時点で運用域qualificationは不合格です。** [新spec](specs/2026-10-21-suspended-payload-flight-retry/spec.md) に基づき、受動2球関節、元4ローターと等価な推力・反トルク、実substepの仕事観測、独立checker、reset/観測/学習guardを実装しました。全15motor比較と30resetの独立検査は通りましたが、質量比0.30・一辺0.030 mのpowered診断で39.35秒に荷物最下点0.09824 mとなり、0.10 mの安全条件に違反しました。数値発散の確定診断や、固定リンク全般が不可能という結論ではありません。
+2026-10-22：吊り荷の回復実装を進めましたが、**物理資格・学習・受入・動画は未達**です。[回復spec](specs/2026-10-22-suspended-payload-flight-recovery/spec.md) に基づき、実GPUで旧失敗を再現し、積分離散化を独立CPUモデルで切り分け、細かいdtを調べました。高さ・荷物分布・床・settling・評価分母は変更していません。
 
-今回の学習・validation・受入254件・最終全編動画3本は未実行です。成功率・ランダム化の優位性・人手承認はありません。[新しい引き継ぎ](docs/suspended-payload-flight-retry-handoff.md)、[motor実測](docs/evidence/suspended-retry/motor-audit-v10.json)、[substep観測の同一入力検査](docs/evidence/suspended-retry/substep-observation.json)、[日本語レポート](docs/report_ja.md) を参照してください。宣言55条件は全件試行し、8条件が床余裕違反、大角度14/16条件が受動エネルギー上限違反、全6端点のdt/半dt比較も不合格でした。CPU回帰は両環境で547件成功ですが、物理修理の証拠ではありません。GPU累計10824.12788819254秒、残り17975.87211180746秒です。[最終qualification](docs/evidence/suspended-retry/qualification.json)と[全gate](docs/evidence/suspended-retry/acceptance.json)に未達を記録しました。以下の10月21日以前の記録は履歴です。
+旧V10代表rawは新規GPU再現とSHA-256まで一致し、motor0でもenergyが最大530.703%増加しました。128-substep候補の30秒受動3traceは正energy増加5%以内でしたが、170度では約13.0%のenergy損失、90度のdt/半dt間には最大0.642m・約180度の軌道差が残ります。受動比較をpoweredの合格判定へ読み替えず、残29受動・全powered・motor15・reset30・batchを未資格としています。
 
-2026-10-21追記：**吊り荷版は物理実現性ゲートで不合格、受入未達です。** [対象spec](specs/2026-10-17-suspended-payload-flight/spec.md) に沿って受動0.30 m固定リンク、実質量・慣性・collision、episode再抽選、29観測、同時1秒settlingと評価checkerを実装しました。短いprobe後のランダム化学習で数値破綻し、2/8/16 substepの診断でも再現したためGPU作業を停止しました。採用済み吊り荷モデル、固定比較、254受入試行、全編動画3本、人手確認はありません。成功率やランダム化の優位性を主張しません。
+native core、100区間の共有settlingを使うmission、3寸法×N環境のbatch backend、総遷移数/PPO予算・独立episode RNG、raw先行保存と異常rollout隔離をCPU実装しました。実trainingへの共通化、完全62 admission、validation/freeze、254件coordinator、camera/HUD・全frame1x検査は未完です。production入口は閉じたままです。
 
-[実装・失敗・hash・再実行の引き継ぎ](docs/suspended-payload-flight-handoff.md)、[実装計画と到達状況](docs/superpowers/plans/2026-10-21-suspended-payload-flight.md)、[独立raw検査](docs/evidence/suspended/failure-check.json)、[日本語レポート](docs/report_ja.md) を参照してください。GPU累計7,484.093172秒、残り21,315.906828秒。旧い短時間PASSで訓練を再開できないよう停止状態を記録しています。数値破綻の修理は未達です。
+記録込みの実測では、新規N1完全62資格だけで約18645.3秒を要する予測に対し、残GPUは17384.216263秒です。後段を含められないため、specの停止条件に従って依存GPU作業を停止しました。batchによる未測定の高速化や22%稼働率からの倍率を仮定していません。
 
-以下は**先行の無荷物・分散3D版**の成果と再実行記録です。吊り荷の成功や動画承認を表しません。
+- 両学習：各0/300000総遷移。旧model2000・pilotからの再開はありません。
+- validation：0/12条件・0/120実遷移。paired受入：0/254件。
+- 新しい全編raw/HUD動画：0/3本。新規人手確認は未依頼です。
+- 成功率・Wilson区間・randomizedの優位性は算出していません。
 
-A〜Jの実目的地を不規則な3次元配置へ変更し、同じ学習済みrouting方策と互換な飛行方策で巡回します。重要度は実値・表示とも1〜100整数で、大きいほど重要ですが訪問順そのものではありません。
+[今回の引き継ぎ](docs/suspended-payload-flight-recovery-handoff.md)、[全gate](docs/evidence/suspended-recovery/acceptance.json)、[実物理検査](docs/evidence/suspended-recovery/qualification.json)、[GPU集計と予測](docs/evidence/suspended-recovery/gpu-summary.json)、[日本語レポート](docs/report_ja.md) を参照してください。旧spec・旧handoff・失敗モデル・旧rawは履歴として保持しています。
 
-[今回の承認済みspec](specs/2026-10-17-dispersed-destination-layout/spec.md)、[実装計画](docs/superpowers/plans/2026-10-20-dispersed-destination-layout.md)、[モデル・測定・失敗・再実行手順](docs/dispersed-destination-layout-handoff.md)、[日本語レポート](docs/report_ja.md)を参照してください。[整数重要度](docs/integer-priorities-handoff.md)、[経路最適化](docs/scalable-routing-handoff.md)、[全地点飛行](docs/visible-flight-handoff.md)、[旧1倍速動画](docs/realtime-video-handoff.md)は歴史記録として保持しています。
+[全6ページ確認済みPDF](outputs/suspended_recovery_20261022_112649_abce93/report_ja_recovery_v1.pdf) と [検証receipt](docs/evidence/suspended-recovery/verification.json) は、未達を含む今回の結果です。PDF・raw・archiveはローカル成果物です。
 
-## 配置と固定契約
+## 再実行と成果物
 
-S=(0,0,1)、10地点の範囲はx±2.7 m、y±1.8 m、地面からの絶対高度z=1〜3 m。実spanは5.060577/3.410568/1.827545 m、最小3D間隔0.865248 m、高さ3帯の点数は5/2/3です。x/yの任意の閉区間0.10 m帯に3点が入らないことを、ソート後の連続3点で検査します。
-
-独立した配置乱数 `PCG64(SeedSequence([51000,300,attempt]))` の候補3353を採用し、全候補の棄却理由・hashを保存しました。ユーザーによる新旧空間プレビューの確認・配置承認を受領しています。全精度座標と承認範囲は [配置manifest](docs/evidence/dispersed/layout.json) にあります。公称水平領域の9倍と、実凸包面積12.274250 m²や飛行距離の比を混同しません。
-
-重要度seed40029とA81/B42/C43/D64/E23/F84/G6/H98/I22/J56を維持します。3シナリオ・全execution seedで同じ配置・初期値を使い、再抽選しません。目的コストは移動コスト＋0.05×Σ（整数重要度×名目完了時刻）。alpha=1、beta=0.05、名目速度1 m/s、サービス0.50秒、帰還なし、重要度観測の除数100。有向倍率1〜5は論理コストだけに適用します。緊急は未点検Cを43→100、コスト変更は新解析から宣言したF→Aのみ1→5です。
-
-## 新しい解析と飛行検証
-
-採用済み整数routing seed44を維持し、新3D分布で全3モデルをvalidation100・静的held-out100・動的50例に評価しました。450 learned episodes完走、無効行動0、全モデルが静的品質条件を満たしました。採用44の平均AI/厳密解比は1.078192、greedyとの差−24.744215、fixedとの差−243.810273です。最悪比1.397014、動的49適用中6変更・4改善も保存し、常時最適とは主張しません。
-
-新配置の30判断・225完全順序を標準ライブラリのみの独立checkerで再計算し、成分最大差1.819×10^-12で一致しました。Q*/J*、AIのsuffix、実飛行を区別し、先行の実績を新配置へ流用しません。
-
-旧飛行model_1300/cfgのhashは一致しましたが、旧範囲x/y±1 m・z=1 mは新配置を支持しません。追加学習の初回モデルはvalidationで地面条件に達して失敗し、モデル・sample・画像を保存しました。採用済みmodel_1300から4段階・3000更新の学習を行い、新model_4296を採用しました。validation11/12・held-out31/32/33の45遷移とマーカー有無比較が合格した後、座標・モデル対・カメラ・閾値を凍結しました。到達半径.20 m・速度<=.30 m/s・保持.20秒・点検.50秒・地面.10 m・傾斜60度を維持します。
-
-新規固定9試行は9/9成功・90/90点検で、独立物理checker・14,673元フレームのdecode/PTS照合・凍結入力照合がPASS。通常32.64秒、緊急33.45秒、コスト変化30.74秒です。最大傾斜49.614度、最低高度0.835222 m。最終動画5本・11,361フレームの独立照合と、画質修正後の全編3本・両イベント区間の人手確認も完了しました。全7受入条件を満たしました。詳細は [引き継ぎ](docs/dispersed-destination-layout-handoff.md) にあります。
-
-## 成果物と再実行
-
-一意な出力先は `outputs/dispersed_20261020_v1/`（Git管理外）。全モデル・元動画・大量ログ・接続情報をcommitへ含めません。飛行用環境とCPU routing用環境は `requirements/flight-linux.lock.txt` と `requirements/routing-scalable-linux.lock.txt` で分離します。新しい作業先・設定・出力名を使用し、過去のサーバ絶対パスを流用しません。
+本実装はルートのsrc/scripts/configs/testsが対象です。歴史コピーと個人ファイルは含めません。大容量成果物は一意な `outputs/suspended_recovery_20261022_112649_abce93/` に保存し、Gitにはコード・テスト・必要文書・compact evidenceだけを含めます。接続情報と機械固有pathはGit外です。
 
 ```bash
 export PYTHONPATH=src
-export MPLCONFIGDIR=outputs/dispersed_rerun_new/mpl
-.venv-routing311/bin/python scripts/select_dispersed_layout.py \
-  --config configs/dispersed_layout.yaml --out outputs/dispersed_rerun_new/demo
-.venv-routing311/bin/python scripts/preview_dispersed_layout.py \
-  --layout outputs/dispersed_rerun_new/demo/layout.json \
-  --out outputs/dispersed_rerun_new/layout-preview.png
-.venv-routing311/bin/python scripts/verify_dispersed_layout.py \
-  --layout outputs/dispersed_rerun_new/demo/layout.json \
-  --out outputs/dispersed_rerun_new/geometry-check.json
-.venv-routing311/bin/python -m pytest -m 'not gpu' -q
-.venv-routing311/bin/python -m ruff check src scripts tests
+.venv-routing/bin/python -m pytest -m 'not gpu' -q
+.venv-routing/bin/python -m ruff check src scripts tests
+.venv-routing/bin/python scripts/diagnose_payload_planar.py \
+  --probe outputs/suspended_retry_20261022_052336/delivery-final/outputs/qualification-v3-domain/large_0.060_0.10 \
+  --substeps 2 --out outputs/NEW_PLANAR_RECEIPT.json
 ```
 
-予算は累計8時間を継続し、開始3198.994308秒から全GPUジョブを加算しました。今回増分2580.479709秒、累計5779.474017秒、残り23020.525983秒です。同時1ジョブ・残予算内timeoutを守り、未確認・失敗を合格にしません。新しい自然尺3全編・統合・140.9秒提出用を生成し、全飛行を1倍速で保持しました。公開・push・PR作成・マージ・コース提出は行いません。継承元とライセンスは [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) を参照してください。
+GPU再開には現在有効な非公開接続先と、新規workspace・Python3.12の別flight/CPU routing環境を使います。既存の `requirements/flight-linux.lock.txt` と `requirements/routing-scalable-linux.lock.txt` を維持し、完全資格・実batch隔離・全後段の測定予算が成立するまでoptimizerを開始しません。再実行の具体的な順序と未達は引き継ぎに記載しています。
 
-新しい映像（全飛行区間を省略せず1倍速、1920×1080/30fps）：[通常全編](outputs/dispersed_20261020_v1/delivery_v2/full_normal.mp4)、[緊急全編](outputs/dispersed_20261020_v1/delivery_v2/full_emergency.mp4)、[コスト変化全編](outputs/dispersed_20261020_v1/delivery_v2/full_cost_shift.mp4)、[統合版](outputs/dispersed_20261020_v1/delivery_v2/demo_full.mp4)、[140.9秒提出用](outputs/dispersed_20261020_v1/delivery_v2/submission.mp4)。提出用は統合版と同じ内容でカットなし、飛行96.9秒＋独立説明カード44秒です。
+累積8時間は継続し、今回6jobの591.655849秒を含めて、使用11415.783737秒・残り17384.216263秒、全200job・active0です。初期化・失敗・再試行を消さず、push・PR作成・merge・動画公開・コース提出は行っていません。
 
-最終日本語PDF：[測定・受入レポート](outputs/dispersed_20261020_v1/delivery_v2/report/final-report.pdf)。成果物サイズ・SHA-256は [コンパクトmanifest](docs/evidence/dispersed/artifacts.json)、受入結果は [受入記録](docs/evidence/dispersed/acceptance.json) を参照してください。
+## 継承済みの無荷物結果
+
+分散3D配置と整数重要度では、採用model4296/seed44の固定9mission・90点検、全編1x動画の独立検査・人手確認が過去に成立しています。これは吊り荷の実績ではありません。[分散配置handoff](docs/dispersed-destination-layout-handoff.md)、[整数重要度handoff](docs/integer-priorities-handoff.md)、[第三者ライセンス](THIRD_PARTY_NOTICES.md) を参照してください。

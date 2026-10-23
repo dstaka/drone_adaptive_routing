@@ -1,0 +1,41 @@
+{
+  "schema": "payload-solver-closure-cpu-verification-v1",
+  "full_cpu": {
+    "passed": 1087,
+    "skipped": 18,
+    "gpu_deselected": 1,
+    "existing_warnings": 39,
+    "log_sha256": "a4a117d4ffded714ba44dc5f0a88db736573773974b681a726fca7948493632b"
+  },
+  "source_identity": {
+    "code_and_test_files_verified_unchanged_since_full_run": 245,
+    "isolated_source_index_sha256": "e9a7be5c7b4c99154b93001aa31334442973296b41707afc3fccf7e47b5fab1a"
+  },
+  "ruff": {
+    "passed": true,
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "linux_terminal_boundary": {
+    "passed": 40,
+    "source_copy": "isolated-next-source-v22",
+    "old_actual_v19_unchanged": true
+  },
+  "linux_acceptance_capture": {
+    "passed": 48,
+    "qualified_physics_and_actual_learning_unchanged": true
+  },
+  "independent_focused_review_tests": {
+    "passed": 6,
+    "deselected": 12
+  },
+  "unresolved_code_review": "final-code-review.json",
+  "all_flight_completion_gates_passed": false,
+  "fresh_closure_focused_cpu": {
+    "passed": 40,
+    "log_sha256": "d7a76b812297bd6653bd72393094e02f2724cb97d84effe346fb29818795b455"
+  },
+  "closure_document_review": {
+    "independent_review_completed": true,
+    "stale_fixed_status_corrected": true
+  }
+}

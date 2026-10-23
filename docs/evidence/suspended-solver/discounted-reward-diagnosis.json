@@ -1,0 +1,102 @@
+{
+  "schema": "payload-solver-discounted-reward-diagnostic-v1",
+  "gamma": 0.999,
+  "dt_s": 0.01,
+  "selected_complete_failure_episodes": 107,
+  "all_above_ideal_stationary_benchmark": true,
+  "spin_uncapped_same_path_all_above_benchmark": true,
+  "statistics_order": [
+    "min",
+    "mean",
+    "median",
+    "max"
+  ],
+  "statistics": {
+    "actual_discounted_reward_return": [
+      -201.81844051919325,
+      -201.47161032468074,
+      -201.45636540633416,
+      -201.17110208399527
+    ],
+    "actual_discounted_running_return": [
+      -10.814444154481356,
+      -10.011247544147471,
+      -10.030188782809843,
+      -8.991325766074285
+    ],
+    "actual_discounted_crash_penalty": [
+      -192.34638853569805,
+      -191.46036278053322,
+      -191.38657813440258,
+      -190.62217937597885
+    ],
+    "ideal_aligned_hover_infinite_return": [
+      -214.06934100576203,
+      -210.58702509863392,
+      -210.6120062739823,
+      -207.25191703947914
+    ],
+    "actual_minus_ideal_aligned_hover_infinite": [
+      6.079546816137594,
+      9.115414773953175,
+      9.088312517991966,
+      12.278485643908567
+    ],
+    "same_observed_path_uncapped_spin_minus_ideal_aligned_hover": [
+      5.840135450882968,
+      8.847595971372009,
+      8.755842111170011,
+      12.057088992023097
+    ],
+    "ideal_aligned_hover_12000_reward_only": [
+      -214.06803359160318,
+      -210.58573895248617,
+      -210.61071997526372,
+      -207.25065126228046
+    ]
+  },
+  "timeout_steps": 12000,
+  "timeout_continuation_discount_factor": 6.107433006052354e-06,
+  "actual_reward_formula_max_residual": 1.1102230246251565e-16,
+  "actual_training_source_sha256": "beb796666d29169ee46fd4832f67ca64ddc3292746bb5847c1c9448cb9ee02b0",
+  "actual_source_archive_sha256": "5dac14951fb089fd100f5474a57253dd530eaaa99995c2a606ab899f6f15908b",
+  "selected_raw_sha256": "d013ca6988115ec7b26b45c1361363b38ced1fb542b57be81800352343f7c351",
+  "root_reproduction": {
+    "schema": "payload-solver-discounted-benchmark-root-reproduction-v1",
+    "source_sha256": "fb98a88d3d7ef7f089994e31f2ffe6a387019e505e3c61875c166d8b7436d09c",
+    "raw_selection_sha256": "d013ca6988115ec7b26b45c1361363b38ced1fb542b57be81800352343f7c351",
+    "resets_selection_sha256": "6ac5e073ff32292388b0156ddbfc53b1e7505413d37169242abce6f12ba778b7",
+    "gamma": 0.999,
+    "physical_dt_s": 0.01,
+    "selected_complete_episodes": 107,
+    "actual_return": {
+      "min": -201.81844051919325,
+      "mean": -201.47161032468074,
+      "max": -201.17110208399527
+    },
+    "ideal_stationary_infinite_return": {
+      "min": -214.06934100576203,
+      "mean": -210.58702509863392,
+      "max": -207.25191703947914
+    },
+    "actual_minus_ideal": {
+      "min": 6.079546816137594,
+      "mean": 9.115414773953175,
+      "max": 12.278485643908567
+    },
+    "same_recorded_path_uncapped_minus_ideal": {
+      "min": 5.840135450882997,
+      "mean": 8.84759597137201,
+      "max": 12.057088992023125
+    },
+    "scope": "CPU arithmetic only. Benchmark fixes initial drone position and first target, makes vehicle level and payload vertical, and sets velocities/spin to zero. It is not a simulated or demonstrated feasible policy. Real training retargets at800steps; comparison is not its no-progress return or measured PPO advantage. No intention, global optimality, causal learning failure or proposed coefficient is inferred.",
+    "physical_acceptance": false
+  },
+  "scope": "Constructed fixed initial-position/first-target benchmark with level vehicle, vertical payload and zero velocities, not an executed policy. Actual curriculum retargets after800steps. No behavioral intention, global optimality, actual PPO advantage, learned-critic accuracy, or coefficient recommendation is inferred. Same-path uncapped arithmetic is not retraining.",
+  "private_report_sha256": "2c2923b8c3cd101efb8ff40c063f25693cec21a3f704f7fdb9ab83c99e686587",
+  "private_full_result_sha256": "5b1d54818519635de5af80ac286330f5c63a3c6ebb7d6993c038ac31a45496d2",
+  "private_script_sha256": "42a7fa7e35ea048b61a27dbb8de824e58dad4a5f2e210173763db3ed05579791",
+  "physical_execution": false,
+  "optimizer_execution": false,
+  "physical_acceptance": false
+}

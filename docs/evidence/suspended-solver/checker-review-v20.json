@@ -1,0 +1,35 @@
+{
+  "schema": "payload-solver-checker-review-v1",
+  "source_addition": {
+    "status": "UNBOUND_ACCEPTANCE_CHECKER_DEPLOYED_CPU_PASSED",
+    "source_archive_sha256": "a32289b27d85dc2d4e189c2eb25841b915781a40af156fb681d8dfffc83075f7",
+    "previous_six_sources_archive_sha256": "d9ba2cb32d8f03dfe95154f8f763f182ff7a0d465915058ba6ab779c9f27dbdf",
+    "files": {
+      "src/adaptive_drone_patrol/payload_solver_acceptance.py": "c6f71085eb9cac7fe2e0e2bf8385f8d9682c16021bfde42f0ca24f355a2cbfb5",
+      "src/adaptive_drone_patrol/payload_solver_capture.py": "1876f447693829db95cf042fd5e60b4271ba8a19e52608e0e590488ca7134a6e",
+      "src/adaptive_drone_patrol/payload_solver_trials.py": "3eeacd343ea5e12038d744243acbe8497f419e7794265a3c66145d13aede080c",
+      "scripts/capture_payload_recovery.py": "b3734cee086e8325831fc58d509a5a609691c7efd095cd9c45cba037e6e656c4",
+      "tests/test_payload_solver_acceptance.py": "e276cbf82f3015b862d248a27c7e24d3c9910bda694b8dd559705355cc5c13e8",
+      "tests/test_payload_solver_capture.py": "62185e1592b1457ea85600dd74ab4334c1377fec6b74bf7f03ef1c10ebab617f"
+    },
+    "v19_training_source_unchanged": true,
+    "qualified_physical_runtime_unchanged": true,
+    "before_any_development_evaluation": true,
+    "physical_acceptance": false,
+    "cpu_exit_code": 0
+  },
+  "remote_cpu": {
+    "passed": 48,
+    "duration_s": 27.52,
+    "physical_acceptance": false
+  },
+  "local_adversarial_regressions": {
+    "rehashed_event_fields_failed_before_fix": 14,
+    "saved_success_fixed_capture_failed_before_fix": true,
+    "next_video_geometry_failed_before_fix": true,
+    "snapshot_window_failed_before_fix": true,
+    "last_capture_trials_passed": 13
+  },
+  "review": "Independent CPU review found no remaining Important after complete event reconstruction and capture binding to original rechecked trial snapshots",
+  "scope": "Acceptance/capture/checker addition only; original actual v19 PPO source and qualified physical/runtime source unchanged; no final or heldout execution"
+}

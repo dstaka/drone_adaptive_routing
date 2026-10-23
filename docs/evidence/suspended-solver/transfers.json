@@ -1,0 +1,125 @@
+{
+  "scope": "Verified immutable local archives; raw remains outside Git",
+  "archives": [
+    {
+      "bytes": 6736281600,
+      "sha256": "a6d314dfeb684d1e8af2fba47ffbd6616ba3c82c7e8b3e6f102858450e4cbffe",
+      "members": 2347,
+      "verified_against_remote": true,
+      "archive": "rejected-physical-evidence-v1.tar"
+    },
+    {
+      "bytes": 7800832000,
+      "sha256": "b52775bdefadb58ad7af9202ec806a2862170080b062fbe597dec156bdc54c24",
+      "members": 2961,
+      "extracted": true,
+      "archive": "qualified-delivery-v1.tar"
+    },
+    {
+      "archive": "development-pilots-delivery-v2.tar",
+      "size": 1261342720,
+      "sha256": "0dfe89fad4fd6169791691b5d34f4b5646fa52074e028a7129acce9ac754d7cb",
+      "members": 229,
+      "verified": true,
+      "extracted": "development-pilots-delivery-v2"
+    },
+    {
+      "archive": "angular-delivery-v3.tar",
+      "bytes": 925941760,
+      "sha256": "89b2ea3f8f18a0c00ceaa2f32f0493feb95bc24f8e96892412200b0912d1e221",
+      "members": 1965,
+      "verified": true,
+      "extracted": true
+    },
+    {
+      "archive": "dense-delivery-v4.tar",
+      "size_bytes": 887152640,
+      "sha256": "45cd44e25b0c50ee5e2ac24dd31e2df164219c8e742186aa27e49abb34702b05",
+      "members": 71,
+      "verified": true,
+      "extracted": true
+    },
+    {
+      "archive": "metadata-delivery-v5.tar",
+      "bytes": 491520,
+      "sha256": "1a055932c5ff15ec4eb67e49a0a83182f474f5fa35c09f034f2ea779f9ccfd56",
+      "members": 10,
+      "verified": true,
+      "extracted": true
+    },
+    {
+      "archive": "metadata-delivery-v6.tar",
+      "bytes": 61440,
+      "sha256": "5bd0e36809c863dc50e27d21228f23e4428f7efab9349c8cef5103c9acb3756e",
+      "members": 9,
+      "verified": true,
+      "extracted": true
+    },
+    {
+      "archive": "long-credit-randomized-delivery-v1.tar",
+      "bytes": 8182179840,
+      "sha256": "c25ef7fbff9adda68ae8654304d79f28752e0690c7f839a488fd6b0f62b693d4",
+      "members": 29,
+      "verified": true,
+      "extracted": true,
+      "file_fsync": true,
+      "darwin_full_flush": true,
+      "parent_directory_fsync": true,
+      "all_extracted_members_size_sha256_verified": true
+    },
+    {
+      "archive": "metadata-delivery-v7.tar",
+      "bytes": 1505280,
+      "sha256": "90c9c05f102ccf23c17c4bc093a14be01b827630dd1f5891def6160ce7e7d148",
+      "members": 7,
+      "verified": true,
+      "extracted": true
+    },
+    {
+      "archive": "long-credit-fixed-delivery-v1.tar",
+      "bytes": 8168898560,
+      "sha256": "087155d84995ec6db204d807d8406ad1b969ea10b2461d1281825655525bfbb8",
+      "members": 29,
+      "verified": true,
+      "extracted": true,
+      "file_fsync": true,
+      "darwin_full_flush": true,
+      "parent_directory_fsync": true,
+      "all_extracted_members_size_sha256_verified": true
+    },
+    {
+      "archive": "long-credit-development-curve-delivery-v1.tar",
+      "bytes": 665937920,
+      "sha256": "2889bdeaf66fac4d0d702628533a28330671aa0326b94700857c0394e96bb486",
+      "members": 355,
+      "verified": true,
+      "extracted": true,
+      "file_fsync": true,
+      "darwin_full_flush": true,
+      "parent_directory_fsync": true,
+      "all_extracted_members_size_sha256_verified": true
+    },
+    {
+      "archive": "final-recovery-v1.tar",
+      "bytes": 195194880,
+      "sha256": "e49fad152ae4a1f90cf4ee0ecc27581f867ca8c7ff4bc2f4a07093e0e4ddac12",
+      "members": 1073,
+      "verified": true,
+      "extracted": true,
+      "file_fsync": true,
+      "darwin_full_flush": true,
+      "parent_directory_fsync": true,
+      "all_extracted_members_size_sha256_verified": true
+    }
+  ],
+  "final_coverage": {
+    "total_remote_owned_files": 5847,
+    "exact_matches_in_previously_verified_local_archives": 4775,
+    "additional_members": 1073,
+    "additional_payload_bytes": 191753039,
+    "coverage_manifest_sha256": "4cb2c294208664ea2c577550b8e2c5210d14a3eb079ef46eb6f2beaec3f31364",
+    "all_owned_files_reconciled": true,
+    "remote_originals_preserved": true,
+    "temporary_transfer_descriptors_released": true
+  }
+}

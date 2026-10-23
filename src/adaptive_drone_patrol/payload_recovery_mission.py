@@ -145,6 +145,22 @@ def _latest_sample(flight):
         return {'capture_error':type(exc).__name__}
 
 
+def require_solver_mission_admission(flight, evidence):
+    """Accept only a raw-reconstructed process capability on the solver adapter."""
+    from .payload_solver_flight import SolverAdmission, SolverFlight
+
+    capability = evidence.get("solver_admission")
+    if (
+        not isinstance(flight, SolverFlight)
+        or not isinstance(capability, SolverAdmission)
+        or getattr(flight, "admission", None) is not capability
+        or evidence.get("actual_binding") != capability.binding
+    ):
+        raise ValueError("Actual solver admission capability and matching flight are required")
+    capability.require_current()
+    return capability.proof
+
+
 def execute_payload_mission(flight, planner, scenario, output, metadata, *,
                             clock=time.monotonic, recorder=None, physical_evidence=None):
     """Run one explicit case, preserving failures and all ten shared completions.
@@ -159,8 +175,12 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
         raise ValueError('Explicit physical or cpu-fixture evidence provenance is required')
     if kind == 'physical':
         evidence = physical_evidence or {}
-        require_recovery_runtime_admission(evidence.get('receipt', {}), evidence.get('actual_binding', {}),
-                                          evidence.get('locations', {}))
+        from .payload_solver_flight import SolverFlight
+        if isinstance(flight, SolverFlight):
+            require_solver_mission_admission(flight, evidence)
+        else:
+            require_recovery_runtime_admission(evidence.get('receipt', {}), evidence.get('actual_binding', {}),
+                                              evidence.get('locations', {}))
     _validate_scenario(scenario)
     if flight.dt != DT or getattr(flight.runtime, 'step_count', None) != 0:
         raise ValueError('Start a fresh explicit case at the required 0.01-second interval')
@@ -387,6 +407,7 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
         predicates_sha256=sha256(root/'predicates.jsonl'),
         decisions_sha256=sha256(root/'decisions.jsonl'), explanations_sha256=sha256(root/'decision_explanations.jsonl'),
         scenario_sha256=sha256(root/'scenario.json'), metadata_sha256=sha256(root/'metadata.json'),
+        payload_sha256=sha256(root/'payload.json'), initial_state_sha256=sha256(root/'initial_state.json'),
         failure_sample_sha256=sha256(root/'failure-sample.json') if (root/'failure-sample.json').is_file() else None,
         source_sha256=sha256(__file__))
     _write_json(root/'mission_summary.json', summary)

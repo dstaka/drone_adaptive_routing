@@ -2,6 +2,8 @@
 
 各仕様書は、その変更を実装するコード・テストと同じPRに含めます。PR作成時に仕様書内へPR番号またはURLを追記し、PR本文から仕様書にリンクしてください。マージ済み仕様書は履歴として保持します。
 
+**最新の吊り荷方針：** [安定した輸送のためのハイブリッド制御とGenesis GPU並列学習](2026-10-23-suspended-payload-hybrid-genesis/spec.md)。制御器＋NN、GenesisのGPU並列を優先し、物理整合性を満たせない根拠がある場合だけMuJoCo主学習へ切り替えます。新仕様は文書作成済み・実装未開始です。[技術レビュー](../docs/suspended-payload-hybrid-genesis-review_ja.md)では方向性を妥当と判断し、最終計画前の2つの未確定分岐を記録しました。ユーザー指示で旧直接motor学習の追加実験を終了し、未達を含むデータを保存します。既存の実装・実験記録は[数値解法の修理と実測に基づく学習](2026-10-22-suspended-payload-solver-recovery/spec.md)を参照してください。GPU時間上限・使用時間trackingは引き続き不要です。以下の旧GPU予算記述は過去の実行記録です。
+
 ## 2026-10-14: 適応型Drone巡回デモの改善案
 
 以下は2026-10-14時点の分割計画です。最新の実装記録は末尾に記載します。
@@ -67,3 +69,9 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-22: 物理修理・条件付き高度変更・並列学習
 
 [次回の吊り荷回復spec](2026-10-22-suspended-payload-flight-recovery/spec.md)を準備しました。起点は `e3c145a`、残GPUは17975.87211180746秒を基準に再照合します。大角度の受動energyをpowered前の独立barrierで検査し、実batch化と総sample/PPO更新の公平性を規定しました。高度変更は物理修理後に余裕不足が実証された場合だけ、Sと全地点の共通変換として両学習前に固定します。未完のruntime・validation・254評価・全編3本・新規人手確認まで対象です。[提案の評価と引き継ぎ](../docs/suspended-payload-flight-recovery-handoff.md)、[新セッションへの実行指示](../docs/suspended-payload-flight-recovery-instructions_ja.md)を参照してください。人による実行指示後に実装・新環境・6GPU診断を行いました。旧失敗rawを完全再現し、積分離散化の独立診断と128/256-substep受動3traceを取得しましたが、完全資格・学習・254受入・動画は未達です。数値品質未確定と実測による予算不足で依存GPU作業を停止し、CPU実装・全失敗・証拠を保存しました。
+
+## 2026-10-22–23: 数値解法の修理と実測に基づく学習
+
+[新spec](2026-10-22-suspended-payload-solver-recovery/spec.md)、[引き継ぎ](../docs/suspended-payload-solver-recovery-handoff.md)、[実装計画](../docs/superpowers/plans/2026-10-22-suspended-payload-solver-recovery.md)、[貼り付け用実行指示](../docs/suspended-payload-solver-recovery-instructions_ja.md)を用意しました。想定起点は `e39cb098a9edc47007c5d427ae0d220939075dda`。準備後の実行指示により数値修理・実装・新規資格・7.02M遷移の学習と全3rung比較を実施しました。数値資格は通過しましたが共有settling0・全rung両方式0/6のため、2026-10-23のユーザー指示で未達として区切ります。
+
+ユーザーの新指示により、今後はGPU時間上限・使用時間tracking・旧残量による停止を撤廃します。同じ実物理を保つ設定/積分器/精度、対象限定engine patch、必要な版更新、別backendの検証を許容し、developmentの実測で共通の最終学習量を決めます。実N1での小さい飛行成立を早く確認し、並列化を待ち続けない計画です。物理・同時安定・254受入・3本の実測動画は維持し、制御方式や角度範囲・mission時間等の追加緩和は別承認にします。準備ファイル群を今回の実装・テスト・未達証拠と同じ新規local commitへ含めます。次のハイブリッドspecの実装は未開始です。

@@ -1,0 +1,15 @@
+{
+  "schema": "payload-solver-closed-execution-state-v1",
+  "physical_and_optimizer_jobs_active": 0,
+  "remaining_prefix_audits": 0,
+  "closed_jobs": 30,
+  "all_temporary_transfer_descriptors_released": true,
+  "qualification_raw_remains_regular": true,
+  "read_only_ram_storage_caretakers": 2,
+  "storage_scope": "Read-only copies of closed learning bytes; full durable local gold is verified. No optimizer, physics or future job launches.",
+  "storage_release_rule": "Exact regular-file restoration before stopping these two caretakers; do not kill while original paths depend on their descriptors.",
+  "all_needed_data_recovered": true,
+  "process_proof_sha256": "9ebefa53650ad44ccb66315279e5cb8e46cd9200e36e7c02995d78a2e6e48ec4",
+  "source_helper_sha256": "45a9582d4f0babd526ed5024fe45e38c7993e99490815dc36f8efcebc360a027",
+  "new_hybrid_spec_execution_started": false
+}

@@ -311,3 +311,29 @@ def test_offline_explanation_failure_has_matching_failed_terminal_event_and_raw(
     assert rows(out, 'events.jsonl')[-1]['type'] == 'MISSION_FAILED'
     assert result['failure_sample_sha256'] and (out/'failure-sample.json').is_file()
     assert json.loads((out/'failure-sample.json').read_text())['simulation_step'] == result['steps']
+
+
+def test_solver_mission_cannot_use_a_forged_status_capability(tmp_path):
+    from adaptive_drone_patrol.payload_solver_flight import SolverFlight
+    from adaptive_drone_patrol.payload_recovery_mission import execute_payload_mission
+    import pytest
+
+    flight = object.__new__(SolverFlight)
+    with pytest.raises(ValueError, match="admission"):
+        execute_payload_mission(
+            flight,
+            None,
+            None,
+            tmp_path / "never",
+            {"evidence_kind": "physical"},
+            physical_evidence={"solver_admission": {"status": "PASS"}},
+        )
+    assert not (tmp_path / "never").exists()
+
+
+def test_solver_mission_admission_helper_rejects_unverified_objects():
+    from adaptive_drone_patrol.payload_recovery_mission import require_solver_mission_admission
+    import pytest
+
+    with pytest.raises(ValueError, match="admission"):
+        require_solver_mission_admission(object(), {"solver_admission": {"status": "PASS"}})

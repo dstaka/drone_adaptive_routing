@@ -1,0 +1,22 @@
+{
+  "schema": "payload-solver-real-closed-storage-rehearsal-v1",
+  "original_run": "outputs/pilot-randomized-v1",
+  "original_verified_gold_archive_sha256": "b52775bdefadb58ad7af9202ec806a2862170080b062fbe597dec156bdc54c24",
+  "files": 21,
+  "bytes": 55983475,
+  "existing_valid_transitions_replayed": 20000,
+  "new_learning_transitions": 0,
+  "native_prefix_before_after_identical": true,
+  "all_original_paths_restored_regular": true,
+  "all_original_sizes_sha256_unchanged": true,
+  "keeper_exit_code": 0,
+  "shadowed_files": [
+    "environment/runtime-0.045/raw.jsonl.gz",
+    "environment/runtime-0.060/raw.jsonl.gz",
+    "environment/training.jsonl.gz"
+  ],
+  "actual_storage_source_archive_sha256": "22bf9907343b08713d6c3add883554771e700f75c2d3a271a44893b2737b537e",
+  "active_training_bound_sources_unchanged": true,
+  "physical_acceptance": false,
+  "scope": "CPU-only reversible read-path rehearsal, no optimizer or physics steps; qualified raw and active P6 untouched"
+}

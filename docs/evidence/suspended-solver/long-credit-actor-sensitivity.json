@@ -1,0 +1,114 @@
+{
+  "schema": "payload-solver-static-actor-diagnostic-v1",
+  "actual_source_sha256": "4345e3ca579d0f484668f646fe73d84a7c5193c9d1958a8e64bfc18b2b72e9fe",
+  "torch_version": "2.2.2",
+  "numpy_version": "1.26.4",
+  "observation_contract": "payload29-ideal-world-current-action-v2",
+  "synthetic_observation": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.12212949991226196,
+    0.12212949991226196,
+    0.12212949991226196,
+    0.12212949991226196,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rows": [
+    {
+      "checkpoint": "initialization.pt",
+      "checkpoint_sha256": "93b9015cf6d5fba6fdb1553407013d81818ff480a438d3bf284cb869ac44327b",
+      "payload_column_norm_rms": 0.0,
+      "payload_output_jacobian_frobenius": 0.0,
+      "history_output_jacobian_frobenius": 0.0,
+      "relative_velocity_jacobian_frobenius": 0.0,
+      "link_rate_jacobian_frobenius": 0.0,
+      "payload_motor_differential_jacobian_frobenius": 0.0,
+      "clipped_payload_jacobian_frobenius": 0.0,
+      "raw_motor_output": [
+        -0.31013134121894836,
+        -0.6385810971260071,
+        -0.5245586037635803,
+        -0.663679838180542
+      ],
+      "all16_new_columns_locally_nonzero": false
+    },
+    {
+      "checkpoint": "checkpoint_s300000.pt",
+      "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+      "payload_column_norm_rms": 0.10653916746377945,
+      "payload_output_jacobian_frobenius": 0.42994967103004456,
+      "history_output_jacobian_frobenius": 0.3095725178718567,
+      "relative_velocity_jacobian_frobenius": 0.23998768627643585,
+      "link_rate_jacobian_frobenius": 0.2121637463569641,
+      "payload_motor_differential_jacobian_frobenius": 0.36431536078453064,
+      "clipped_payload_jacobian_frobenius": 0.3934944272041321,
+      "raw_motor_output": [
+        -0.6309247016906738,
+        -0.280081570148468,
+        -0.4165114462375641,
+        1.0731807947158813
+      ],
+      "all16_new_columns_locally_nonzero": true
+    },
+    {
+      "checkpoint": "checkpoint_s1000000.pt",
+      "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+      "payload_column_norm_rms": 0.1648007482290268,
+      "payload_output_jacobian_frobenius": 0.6851454377174377,
+      "history_output_jacobian_frobenius": 0.33856257796287537,
+      "relative_velocity_jacobian_frobenius": 0.4495055079460144,
+      "link_rate_jacobian_frobenius": 0.38314124941825867,
+      "payload_motor_differential_jacobian_frobenius": 0.49998533725738525,
+      "clipped_payload_jacobian_frobenius": 0.6851454377174377,
+      "raw_motor_output": [
+        -0.4443473219871521,
+        -0.4406707286834717,
+        -0.2737565040588379,
+        0.44695019721984863
+      ],
+      "all16_new_columns_locally_nonzero": true
+    },
+    {
+      "checkpoint": "checkpoint_s3000000.pt",
+      "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+      "payload_column_norm_rms": 0.19592997431755066,
+      "payload_output_jacobian_frobenius": 0.8264896273612976,
+      "history_output_jacobian_frobenius": 0.4422887861728668,
+      "relative_velocity_jacobian_frobenius": 0.5955591201782227,
+      "link_rate_jacobian_frobenius": 0.43583428859710693,
+      "payload_motor_differential_jacobian_frobenius": 0.6859112977981567,
+      "clipped_payload_jacobian_frobenius": 0.6430696249008179,
+      "raw_motor_output": [
+        -0.2828066945075989,
+        -0.18562740087509155,
+        -0.2599753141403198,
+        1.2378075122833252
+      ],
+      "all16_new_columns_locally_nonzero": true
+    }
+  ],
+  "scope": "Independent-coordinate local sensitivity at a synthetic identity/zero-error static probe; not a trajectory. Coordinates have different units and geometric dependencies. No inference about damping sign, phase, closed-loop stability, actual saturation rate or physical acceptance.",
+  "physical_acceptance": false
+}

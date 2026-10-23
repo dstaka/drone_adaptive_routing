@@ -1,38 +1,29 @@
 # 適応型ドローン巡回点検
 
-2026-10-22：吊り荷の回復実装を進めましたが、**物理資格・学習・受入・動画は未達**です。[回復spec](specs/2026-10-22-suspended-payload-flight-recovery/spec.md) に基づき、実GPUで旧失敗を再現し、積分離散化を独立CPUモデルで切り分け、細かいdtを調べました。高さ・荷物分布・床・settling・評価分母は変更していません。
+2026-10-23：吊り荷solver recoveryの[新spec](specs/2026-10-22-suspended-payload-solver-recovery/spec.md)に基づく作業を、ユーザーの方針変更指示により未達を残して終了します。MuJoCo3.15.0・float64・RK4・control.01秒・16substepsのN1経路で、全62trace、motor15、実reset30、初期姿勢reset30を記録し、独立raw再構成を通過しました。元機体・motor・0.30m剛体リンク・荷物分布・床・settling・timeoutは維持しています。
 
-旧V10代表rawは新規GPU再現とSHA-256まで一致し、motor0でもenergyが最大530.703%増加しました。128-substep候補の30秒受動3traceは正energy増加5%以内でしたが、170度では約13.0%のenergy損失、90度のdt/半dt間には最大0.642m・約180度の軌道差が残ります。受動比較をpoweredの合格判定へ読み替えず、残29受動・全powered・motor15・reset30・batchを未資格としています。
+完全資格後、pilot5回の計1,020,000遷移と、fresh4296・fresh optimizerによる両方式各3,000,000遷移を実学習しました。計7,020,000遷移で共有settling完了は0でした。30万／100万／300万の全rungでrandomized・fixedとも0/6、全36飛行は最初のhover30秒timeoutでした。全36件のnative再検査と全raw配送・全memberのsize/SHA・永続化は通過しましたが、学習方策は採用していません。[比較結果](docs/evidence/suspended-solver/paired-development-curve.json)を保存しました。
 
-native core、100区間の共有settlingを使うmission、3寸法×N環境のbatch backend、総遷移数/PPO予算・独立episode RNG、raw先行保存と異常rollout隔離をCPU実装しました。実trainingへの共通化、完全62 admission、validation/freeze、254件coordinator、camera/HUD・全frame1x検査は未完です。production入口は閉じたままです。
+- 正式validation：0/12条件・0/120実遷移。paired受入：0/254件。
+- 合格方策の全編raw/HUD動画：0/3本。新しい人手確認はpending。
+- N8/32/128は診断入口を実装済みで、vector PPOの採用資格はありません。旧N1の物理資格は新backendやbatchの資格ではありません。
+- 成功率・randomizedの優位性・動画承認はまだ報告できません。
 
-記録込みの実測では、新規N1完全62資格だけで約18645.3秒を要する予測に対し、残GPUは17384.216263秒です。後段を含められないため、specの停止条件に従って依存GPU作業を停止しました。batchによる未測定の高速化や22%稼働率からの倍率を仮定していません。
+[実行handoff](docs/suspended-payload-solver-recovery-handoff.md)に、修正候補、不採用試行、raw/source/hash、未達gateを記録しています。旧spec・旧handoff・台帳・失敗checkpointは履歴として保存しています。GPU累積時間上限と使用量trackingは撤廃済みです。同時1job、通常missionのwall600秒とdeadlock停止は維持します。
 
-- 両学習：各0/300000総遷移。旧model2000・pilotからの再開はありません。
-- validation：0/12条件・0/120実遷移。paired受入：0/254件。
-- 新しい全編raw/HUD動画：0/3本。新規人手確認は未依頼です。
-- 成功率・Wilson区間・randomizedの優位性は算出していません。
+## 再実行と保存
 
-[今回の引き継ぎ](docs/suspended-payload-flight-recovery-handoff.md)、[全gate](docs/evidence/suspended-recovery/acceptance.json)、[実物理検査](docs/evidence/suspended-recovery/qualification.json)、[GPU集計と予測](docs/evidence/suspended-recovery/gpu-summary.json)、[日本語レポート](docs/report_ja.md) を参照してください。旧spec・旧handoff・失敗モデル・旧rawは履歴として保持しています。
-
-[全6ページ確認済みPDF](outputs/suspended_recovery_20261022_112649_abce93/report_ja_recovery_v1.pdf) と [検証receipt](docs/evidence/suspended-recovery/verification.json) は、未達を含む今回の結果です。PDF・raw・archiveはローカル成果物です。
-
-## 再実行と成果物
-
-本実装はルートのsrc/scripts/configs/testsが対象です。歴史コピーと個人ファイルは含めません。大容量成果物は一意な `outputs/suspended_recovery_20261022_112649_abce93/` に保存し、Gitにはコード・テスト・必要文書・compact evidenceだけを含めます。接続情報と機械固有pathはGit外です。
+今回の出力は `outputs/suspended_solver_20261022_e265f60d/`。大容量raw、checkpoint、動画、archiveはGit外に置き、転送時にsize/SHA-256を照合します。学習時の実source archiveと最終CPU sourceを区別します。コード・テスト・仕様・必要文書・compact evidenceは、今回の作業が揃った時点で1件の新規local commitにまとめます。
 
 ```bash
 export PYTHONPATH=src
-.venv-routing/bin/python -m pytest -m 'not gpu' -q
-.venv-routing/bin/python -m ruff check src scripts tests
-.venv-routing/bin/python scripts/diagnose_payload_planar.py \
-  --probe outputs/suspended_retry_20261022_052336/delivery-final/outputs/qualification-v3-domain/large_0.060_0.10 \
-  --substeps 2 --out outputs/NEW_PLANAR_RECEIPT.json
+.venv-routing311/bin/python -m pytest -m 'not gpu' -q
+.venv-routing311/bin/python -m ruff check --select E4,E7,E9,F src scripts tests
 ```
 
-GPU再開には現在有効な非公開接続先と、新規workspace・Python3.12の別flight/CPU routing環境を使います。既存の `requirements/flight-linux.lock.txt` と `requirements/routing-scalable-linux.lock.txt` を維持し、完全資格・実batch隔離・全後段の測定予算が成立するまでoptimizerを開始しません。再実行の具体的な順序と未達は引き継ぎに記載しています。
+実backendの各入口は、完全資格receiptだけでなく、全raw・実solver build・現在sourceを再構成してから実行します。旧PASSの差し替えや、statusのみのfinal計画・freezeでは解除しません。実行手順は[公開指示](docs/suspended-payload-solver-recovery-instructions_ja.md)と[計画](docs/superpowers/plans/2026-10-22-suspended-payload-solver-recovery.md)を参照してください。接続情報と機械固有pathは含めません。
 
-累積8時間は継続し、今回6jobの591.655849秒を含めて、使用11415.783737秒・残り17384.216263秒、全200job・active0です。初期化・失敗・再試行を消さず、push・PR作成・merge・動画公開・コース提出は行っていません。
+[日本語report](docs/report_ja.md)と[終了時handoff](docs/suspended-payload-solver-recovery-handoff.md)に、数値資格の達成と飛行未達を分けて記録しています。2026-10-23のユーザー指示により旧方針の追加学習を終了し、[ハイブリッド制御・Genesis優先の提案spec](specs/2026-10-23-suspended-payload-hybrid-genesis/spec.md)を精査しました。[レビュー](docs/suspended-payload-hybrid-genesis-review_ja.md)には最終計画前の未確定事項を記録しています。新specの実装・実験は開始していません。[終了時PDF](outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1.pdf)は全7ページを描画・目視確認しました。経過PDF v1〜v4も履歴として保持します。push、PR作成、merge、動画公開、コース提出は行いません。
 
 ## 継承済みの無荷物結果
 

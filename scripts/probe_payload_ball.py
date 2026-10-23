@@ -30,6 +30,10 @@ def write(path, value):
 
 def validate_probe_declaration(declaration):
     """Keep legacy55 validation intact and explicitly dispatch recovery62."""
+    if declaration.get('schema') == 'payload-solver-domain-v1':
+        from adaptive_drone_patrol.payload_solver_candidates import validate_manifest
+
+        return validate_manifest(declaration)
     if declaration.get('schema') == 'payload-recovery-domain-v1':
         from adaptive_drone_patrol.payload_recovery_qualification import validate_manifest
 
@@ -51,6 +55,12 @@ def probe_duration(case, requested=None):
 def require_probe_stage(declaration, case, fixture, passive_probe_root=None, *, source_root=None,
                         engine_root=None):
     """Recovery powered probes require actual independent passive raw replay."""
+    if declaration.get('schema') == 'payload-solver-domain-v1':
+        if case is None or case['kind'] not in ('anchor', 'large_angle'):
+            raise ValueError('All 32 passive solver traces must be independently qualified before powered probes')
+        if fixture != 'anchor':
+            raise ValueError('Solver passive case/fixture mismatch')
+        return True
     if declaration.get('schema') != 'payload-recovery-domain-v1' or case is None:
         return True
     passive = case['kind'] in ('anchor', 'large_angle')
@@ -150,6 +160,10 @@ def main():
                 "src/adaptive_drone_patrol/payload_substep_probe.py")
         },
     }
+    if declaration.get('schema') == 'payload-solver-domain-v1':
+        from adaptive_drone_patrol.payload_solver_candidates import SOURCE_FILES
+
+        result['source_binding'] = {source: sha256(source) for source in SOURCE_FILES}
     if declaration.get('schema') == 'payload-recovery-domain-v1':
         from adaptive_drone_patrol.payload_recovery_qualification import SOURCE_FILES
 
@@ -196,17 +210,19 @@ def main():
                 result["engine_source"][str(source.relative_to(genesis_root))] = sha256(source)
         for name in ("engine/solvers/rigid/rigid_solver.py", "engine/simulator.py", "engine/scene.py"):
             result["engine_source"][name] = sha256(genesis_root / name)
-        if declaration.get('schema') == 'payload-recovery-domain-v1':
+        if declaration.get('schema') in ('payload-recovery-domain-v1', 'payload-solver-domain-v1'):
             result['engine_source'] = {
                 str(source.relative_to(genesis_root)): sha256(source)
                 for source in genesis_root.rglob('*.py')
             }
         write(out / "pre-init.json", result)
-        gs.init(backend=gs.gpu, precision="32", logging_level="warning", seed=7)
+        gs.init(backend=getattr(gs, settings.get("execution_backend", "gpu")),
+                precision=settings.get("precision", "32"), logging_level="warning", seed=7)
         dt = 0.01
         substeps = case["substeps"] if case else declaration.get('base_substeps', 2)
         fixture = build_ball_fixture(
-            out, payload, fixture=args.fixture, dt=dt, substeps=substeps, align_root=args.align_root
+            out, payload, fixture=args.fixture, dt=dt, substeps=substeps, align_root=args.align_root,
+            integrator=settings.get("integrator", "approximate_implicitfast")
         )
         scene, entity, ground = fixture["scene"], fixture["entity"], fixture["ground"]
         result["asset"] = fixture["asset_manifest"]

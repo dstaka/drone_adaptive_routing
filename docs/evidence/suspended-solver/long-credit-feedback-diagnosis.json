@@ -1,0 +1,203 @@
+{
+  "schema": "payload-solver-common-development-feedback-diagnosis-v1",
+  "status": "DIAGNOSTIC_NOT_ADOPTION",
+  "source_archive_sha256": "5dac14951fb089fd100f5474a57253dd530eaaa99995c2a606ab899f6f15908b",
+  "actual_training_module_sha256": "beb796666d29169ee46fd4832f67ca64ddc3292746bb5847c1c9448cb9ee02b0",
+  "training_raw_sha256": "d1f53b2f09ee641c97315c6494877d7baa4865ddfc56f5045a80c987fff9e601",
+  "extracted_selected_steps": 44000,
+  "independent_metric_recomputation": {
+    "samples": 44000,
+    "max_absolute_metric_difference": {
+      "drone_error_m": 0.0,
+      "package_error_m": 0.0,
+      "drone_speed_m_s": 0.0,
+      "package_speed_m_s": 0.0,
+      "swing_angle_deg": 2.8781931699084495e-11,
+      "swing_rate_deg_s": 3.410605131648481e-13,
+      "package_spin_deg_s": 0.0
+    },
+    "method": "Direct NumPy native-field formulas; no checker imports, actor inference, or physics execution.",
+    "physical_acceptance": false,
+    "selected_window_bytes": 181871396,
+    "selected_window_sha256": "d013ca6988115ec7b26b45c1361363b38ced1fb542b57be81800352343f7c351"
+  },
+  "late_stage0": {
+    "step_range": [
+      290001,
+      300000
+    ],
+    "episode": 25,
+    "samples": 10000,
+    "payload": {
+      "reference_mass_kg": 0.02700047753751278,
+      "mass_ratio": 0.24094491973374774,
+      "side_m": 0.045
+    },
+    "metric_mean": {
+      "drone_error_m": 0.15379653847486457,
+      "drone_speed_m_s": 0.005859275362829841,
+      "package_error_m": 0.15375149693071638,
+      "package_speed_m_s": 0.009286823641193416,
+      "swing_angle_deg": 0.36996702449424385,
+      "swing_rate_deg_s": 7.866986784758061,
+      "package_spin_deg_s": 95.83264960740169
+    },
+    "predicate_pass_fraction": {
+      "drone_error_m": 1.0,
+      "drone_speed_m_s": 1.0,
+      "package_error_m": 1.0,
+      "package_speed_m_s": 1.0,
+      "swing_angle_deg": 1.0,
+      "swing_rate_deg_s": 0.8737,
+      "package_spin_deg_s": 0.0
+    },
+    "max_saved_dwell_s": 0.0,
+    "reward_integrals": {
+      "progress": -7.543407250614198e-06,
+      "hover": 27.66736029636607,
+      "position": -4.731587214646237,
+      "velocity": -0.0001231246950308435,
+      "altitude": -1.1220393128752346,
+      "angular": -0.5213546765381951,
+      "swing": -0.010146974340952946,
+      "swing_rate": -0.19871692644671368,
+      "package_velocity": -0.005263738258697195,
+      "package_spin": -9.994503937890167,
+      "shared_settling": 0.0,
+      "crash": 0.0
+    },
+    "spin_cost_cap_fraction": 0.9936,
+    "body_angular_rms_deg_s": [
+      68.01004359071082,
+      69.44081911795375,
+      5.146325407116588e-05
+    ],
+    "observed_fast_frequency_hz": 4.22,
+    "scope": "One actual closed episode; not a distribution-wide aggregate"
+  },
+  "root_reproduction": {
+    "schema": "payload-solver-feedback-summary-root-reproduction-v1",
+    "source_sha256": "0c8f26c7f0362ec748fcae871442a9fc32513640ed35c91fd08ed72c3ec6de11",
+    "extracted_raw_sha256": "d013ca6988115ec7b26b45c1361363b38ced1fb542b57be81800352343f7c351",
+    "window": {
+      "valid_step_first": 290001,
+      "valid_step_last": 300000,
+      "episode": 25,
+      "stage": 0,
+      "samples": 10000
+    },
+    "mean_spin_deg_s": 95.83264960740169,
+    "spin_predicate_pass_fraction": 0.0,
+    "spin_cost_cap_fraction": 0.9936,
+    "observed_reward_integral": 11.08361684726754,
+    "observed_capped_spin_integral": -9.994503937890068,
+    "same_recorded_path_uncapped_spin_integral": -28.77840597862758,
+    "same_recorded_path_uncapped_reward_integral": -7.70028519346997,
+    "scope": "CPU arithmetic only on one closed training episode. No physical execution, no policy response or retraining improvement claim, no final acceptance.",
+    "physical_acceptance": false
+  },
+  "stage4_selected_complete_episodes": {
+    "first_stage4": {
+      "full_episodes": 41,
+      "length_min_median_max": [
+        42,
+        44.0,
+        47
+      ],
+      "failure_reasons": {
+        "package_floor": 41,
+        "drone_floor": 0,
+        "roll": 0,
+        "pitch": 0,
+        "contact": 0,
+        "envelope": 0
+      },
+      "all_command_count_zero": true,
+      "first_target_values": [
+        [
+          -2.7,
+          -1.8,
+          1.0
+        ]
+      ],
+      "first_support_ratio_min_median_max": [
+        0.055860131198379945,
+        0.06923856384497087,
+        0.07699008077807146
+      ],
+      "first10_support_ratio_mean": 0.21642128226399152
+    },
+    "mid_stage4": {
+      "full_episodes": 23,
+      "length_min_median_max": [
+        40,
+        42.0,
+        44
+      ],
+      "failure_reasons": {
+        "package_floor": 23,
+        "drone_floor": 0,
+        "roll": 0,
+        "pitch": 0,
+        "contact": 0,
+        "envelope": 0
+      },
+      "all_command_count_zero": true,
+      "first_target_values": [
+        [
+          -2.7,
+          -1.8,
+          1.0
+        ]
+      ],
+      "first_support_ratio_min_median_max": [
+        0.06389876833154648,
+        0.07371556452882619,
+        0.08293257371507204
+      ],
+      "first10_support_ratio_mean": 0.22675831847818798
+    },
+    "late_stage4": {
+      "full_episodes": 43,
+      "length_min_median_max": [
+        44,
+        46.0,
+        49
+      ],
+      "failure_reasons": {
+        "package_floor": 43,
+        "drone_floor": 0,
+        "roll": 0,
+        "pitch": 0,
+        "contact": 0,
+        "envelope": 0
+      },
+      "all_command_count_zero": true,
+      "first_target_values": [
+        [
+          -2.7,
+          -1.8,
+          1.0
+        ]
+      ],
+      "first_support_ratio_min_median_max": [
+        0.13952739621877483,
+        0.16045021010464292,
+        0.18327229865947284
+      ],
+      "first10_support_ratio_mean": 0.4465421364312743
+    }
+  },
+  "conclusion": "Stage0 position support precedes missing fast transverse angular settling. Direct spin cost loses local amplitude resolution above1rad/s. Stage4 repeatedly falls below package floor at its first ordered corner with insufficient initial thrust. Forgetting and consistent feedback anti-damping are not established; unchanged-pair mean evaluations remain necessary.",
+  "next_hypothesis": "After existing paired3M and all declared rung evaluations, consider a common early-stage comparison changing only direct spin-cost cap shape. Mastery progression is a separate factor. No recipe adopted or implemented.",
+  "private_diagnostic_sha256": {
+    "report.md": "8bc7191148117111d62970544e92d74aa42ca9c20838af9eba37976a0d940127",
+    "extraction.json": "dc26af9eaf9506e8900b38242c4be290663da930c6133b829fac6f0fd368f173",
+    "phase-and-spin-cost.json": "e9250f9df060a14a5e2687d755b756020da953e864dac23ff6580599accd9b47",
+    "support-and-reset.json": "b08b62e5cbb1984d47c69b1d9953f2c3cd9776afee50b5e2e7dece7b82b4ecec",
+    "native-predicate-recomputation.json": "c838a7414c28f54e6afb56ab9142e464098d9fdadf58876691ab131aade14cff"
+  },
+  "physical_acceptance": false,
+  "physical_execution": false,
+  "optimizer_execution": false
+}

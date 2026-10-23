@@ -116,13 +116,16 @@ def _damping(entity, authored_mass, *, fixed=False):
     entity.set_dofs_damping(damping)
 
 
-def build_ball_fixture(output_dir, payload, *, fixture="loaded", dt=0.01, substeps=2, align_root=False):
+def build_ball_fixture(output_dir, payload, *, fixture="loaded", dt=0.01, substeps=2, align_root=False,
+                       integrator="approximate_implicitfast"):
     """Build the same pinned scene for both probes and episode geometry banks.
 
     Returns scene/entity/ground/asset_manifest/damping_before/original_mass_kg.
     This assumes the caller already initialized Genesis. It performs no steps.
     """
     _options(dt, substeps, fixture, align_root)
+    if integrator not in ("implicitfast", "approximate_implicitfast"):
+        raise ValueError("Unsupported solver integrator")
     if not isinstance(payload, Payload):
         raise ValueError("A validated payload draw is required")
     import genesis as gs
@@ -155,6 +158,7 @@ def build_ball_fixture(output_dir, payload, *, fixture="loaded", dt=0.01, subste
         sim_options=gs.options.SimOptions(dt=dt),
         rigid_options=gs.options.RigidOptions(
             dt=dt / substeps,
+            integrator=getattr(gs.integrator, integrator),
             enable_collision=True,
             enable_joint_limit=True,
             batch_links_info=True,

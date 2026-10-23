@@ -1,0 +1,62 @@
+{
+  "schema": "payload-solver-closure-pdf-verification-v1",
+  "pdf": {
+    "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1.pdf",
+    "bytes": 1088631,
+    "sha256": "956549d576165fdfd1cd607fd031d13fad2033d93cec85d15ab21cac25330ae4"
+  },
+  "source": {
+    "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1.md",
+    "sha256": "18b241a63f7a82fc8e294882473368bac5a1b68957ff2322c898bcbf92f6f988"
+  },
+  "builder": {
+    "path": "scripts/build_report.py",
+    "sha256": "f5a6c1e52ce116e6008545c3799e93b9f423baea97b24c78a2eb1c3ce4bbd21c"
+  },
+  "font": {
+    "path": "outputs/suspended_solver_20261022_e265f60d/NotoSansJP.ttf",
+    "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f"
+  },
+  "static_font_sha256": "cf4d12e856c74f12e746d84647ad13435de65b1ed84fbe635bab4eab6b000798",
+  "pages": 7,
+  "all_pages_rendered_and_individually_viewed": true,
+  "visual_result": "全7ページで日本語・数字・図・footerの欠け、重なり、切れを認めない。未達・新specの未実装・未修正P2を記載。",
+  "page_images": [
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-1.png",
+      "bytes": 325165,
+      "sha256": "06d8cbb6a0eb9f745931b93c332f0e1e04c3e221b47a893acb6f6508f250d8bc"
+    },
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-2.png",
+      "bytes": 265470,
+      "sha256": "4a082ebcf8e9063c342b3d33aec72d39203f26c29569c4dc80f2a98532d7d72c"
+    },
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-3.png",
+      "bytes": 580732,
+      "sha256": "b3d6ff31d2d6a5f5e7985c0203332b3fe49ad8fe282bdaa03bbe37ffc236db1c"
+    },
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-4.png",
+      "bytes": 286555,
+      "sha256": "6976d6c41818436cb196fafaf770e6a5bdaaa345376b206079f2cf381ebbddfb"
+    },
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-5.png",
+      "bytes": 315824,
+      "sha256": "b8dd04048b990db1b00552ef104d00bd9d3d9419971870db964e73f84bde004c"
+    },
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-6.png",
+      "bytes": 290407,
+      "sha256": "bfe0f2e72ef9191dd6c9fa51f7d44db7c2fda23673ebc32c417c8b70ee767a86"
+    },
+    {
+      "path": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_closure_v1-page-7.png",
+      "bytes": 462788,
+      "sha256": "596d2a6c8a9bfdd73458a48bbc5bfbc5de4f928a088628cd8be30824029c20cc"
+    }
+  ],
+  "physical_acceptance": false
+}

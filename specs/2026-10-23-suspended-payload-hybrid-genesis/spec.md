@@ -4,7 +4,6 @@
 - Status: New specification based on the user's stated direction. Implementation and new experiments under this specification had not started when it was written.
 - PR: Not created. Include this specification in the same PR as its implementation and tests, and link it from the PR description. Add the PR URL when available.
 - Goal: Prioritize practical success in transporting the payload stably to every destination over demonstrating purely neural direct motor control. Preserve physical consistency and reduce wall-clock time to success, with GPU-parallel simulation in Genesis as the first choice.
-- Preserved Japanese original: [spec_ja.md](spec_ja.md).
 
 ## 1. Scope and Relationship to Existing Specifications
 

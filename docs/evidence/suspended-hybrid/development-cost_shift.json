@@ -1,0 +1,26 @@
+{
+  "schema": "hybrid-development-scenario-v1",
+  "scenario": "cost_shift",
+  "status": "DEVELOPMENT_VIDEO_LOCAL_VERIFIED",
+  "controller": "C-local-lqr-v1",
+  "backend": "MuJoCo3.15.0/float64/RK4/substeps16/N1",
+  "profile": "payload-settling-video-v1",
+  "completed_targets": 10,
+  "simulated_s": 44.92,
+  "measured_distance_m": 18.538779291578894,
+  "full_spec_complete": false,
+  "human_review": "PENDING",
+  "learning_admitted": false,
+  "heldout_opened": false,
+  "videos": {
+    "raw.mp4": {
+      "bytes": 5339628,
+      "sha256": "fc4e426f18db3f47e1dac4bd78a2d85131cfbc620d66e059302c3c1abdd0f4cc"
+    },
+    "hud.mp4": {
+      "bytes": 10252990,
+      "sha256": "d527651400a664c57c6b2ebcec87267b7be514cc6ff6a9fae65473c916ec6043"
+    }
+  },
+  "every_native_pose_and_hud_recomposed": true
+}

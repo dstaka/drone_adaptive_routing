@@ -1,0 +1,11 @@
+{
+  "schema": "payload-mujoco-close-camera-v1",
+  "fps": 100,
+  "raw_width": 1280,
+  "raw_height": 720,
+  "hud_height": 270,
+  "main": {"width":1280,"height":720,"distance":0.85,"azimuth":125,"elevation":-12},
+  "overview": {"width":320,"height":200,"lookat":[0,0,1.5],"distance":11,"azimuth":125,"elevation":-65},
+  "inset_xy": [944,16],
+  "tracking": "instantaneous measured drone/package midpoint; constant distance and orientation"
+}

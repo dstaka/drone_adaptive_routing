@@ -1,0 +1,240 @@
+{
+  "schema": "hybrid-control-mode-diagnosis-v1",
+  "cases": 70,
+  "example_case": "C0-05",
+  "description": "Paired identical10degree starts; world x angular rate measured mode and descriptive log RMS slope. Feedback-off trace30s versus feedback-on4.78s. No plant causal-delay claim.",
+  "records": [
+    {
+      "substeps": 16,
+      "vibration_feedback": true,
+      "mode": {
+        "dominant_hz": 4.184100418410042,
+        "amplitude_envelope_rms": [
+          [
+            0.505,
+            2.2616224079323985
+          ],
+          [
+            1.505,
+            1.243706491954099
+          ],
+          [
+            2.505,
+            0.6215291710510927
+          ],
+          [
+            3.505000000000001,
+            0.36160018888489776
+          ]
+        ],
+        "envelope_log_decay_per_s": -0.6193564150502595,
+        "decay_identification": "DESCRIPTIVE_RMS_ENVELOPE_NOT_A_CAUSAL_DAMPING_FIT",
+        "envelope_log_fit_r2": 0.997990732032381
+      },
+      "phase": {
+        "identified": true,
+        "reason": "DESCRIPTIVE_CLOSED_LOOP_CROSS_SPECTRUM",
+        "causal_transport_delay": "UNIDENTIFIABLE_CLOSED_LOOP",
+        "frequency_hz": 4.0,
+        "coherence": 0.999996920207807,
+        "command_spectral_fraction": 0.44978283301513466,
+        "motion_spectral_fraction": 0.4843379620994216,
+        "overlapping_segments": 3,
+        "phase_rad": -3.137679230653933,
+        "phase_equivalent_lag_s": 0.12484428984883718,
+        "lag_ambiguity_s": 0.25
+      },
+      "motor_saturation_s": 0.0
+    },
+    {
+      "substeps": 16,
+      "vibration_feedback": false,
+      "mode": {
+        "dominant_hz": 4.166666666666667,
+        "amplitude_envelope_rms": [
+          [
+            0.505,
+            2.8896656044136693
+          ],
+          [
+            1.505,
+            2.883936633342775
+          ],
+          [
+            2.505,
+            2.707397446843898
+          ],
+          [
+            3.505000000000001,
+            2.6502462276342906
+          ],
+          [
+            4.505000000000001,
+            2.6624813904123688
+          ],
+          [
+            5.505000000000001,
+            2.5341449360884445
+          ],
+          [
+            6.505000000000001,
+            2.4972577123211726
+          ],
+          [
+            7.505000000000001,
+            2.5001724914944976
+          ],
+          [
+            8.505,
+            2.3828965247890315
+          ],
+          [
+            9.505,
+            2.3721359078819275
+          ],
+          [
+            10.505,
+            2.3609916371225927
+          ],
+          [
+            11.505,
+            2.251218104121687
+          ],
+          [
+            12.505,
+            2.2666051533844436
+          ],
+          [
+            13.505,
+            2.2314587014938314
+          ],
+          [
+            14.505,
+            2.140567932444026
+          ],
+          [
+            15.505,
+            2.173909339281166
+          ],
+          [
+            16.505,
+            2.1079000463187083
+          ],
+          [
+            17.505,
+            2.052887725299847
+          ],
+          [
+            18.505,
+            2.084080601748139
+          ],
+          [
+            19.505,
+            1.9940976891199542
+          ],
+          [
+            20.505,
+            1.9858879896519095
+          ],
+          [
+            21.505,
+            1.9881912230245042
+          ],
+          [
+            22.505,
+            1.899439488519958
+          ],
+          [
+            23.505,
+            1.9289777771234908
+          ],
+          [
+            24.505,
+            1.8854104373167682
+          ],
+          [
+            25.505,
+            1.8318203536114679
+          ],
+          [
+            26.504999999999995,
+            1.865918091163434
+          ],
+          [
+            27.504999999999995,
+            1.7871868369406452
+          ],
+          [
+            28.504999999999995,
+            1.7873099460722732
+          ],
+          [
+            29.505,
+            1.7857022164703389
+          ]
+        ],
+        "envelope_log_decay_per_s": -0.016536936449224195,
+        "decay_identification": "DESCRIPTIVE_RMS_ENVELOPE_NOT_A_CAUSAL_DAMPING_FIT",
+        "envelope_log_fit_r2": 0.9808833272843456
+      },
+      "phase": {
+        "identified": true,
+        "reason": "DESCRIPTIVE_CLOSED_LOOP_CROSS_SPECTRUM",
+        "causal_transport_delay": "UNIDENTIFIABLE_CLOSED_LOOP",
+        "frequency_hz": 4.0,
+        "coherence": 0.9999828051048748,
+        "command_spectral_fraction": 0.0740442490620838,
+        "motion_spectral_fraction": 0.5625082683823474,
+        "overlapping_segments": 29,
+        "phase_rad": 2.0789305138969785,
+        "phase_equivalent_lag_s": -0.08271801690781959,
+        "lag_ambiguity_s": 0.25
+      },
+      "motor_saturation_s": 0.0
+    },
+    {
+      "substeps": 32,
+      "vibration_feedback": true,
+      "mode": {
+        "dominant_hz": 4.184100418410042,
+        "amplitude_envelope_rms": [
+          [
+            0.505,
+            2.261622416632366
+          ],
+          [
+            1.505,
+            1.2437065167821335
+          ],
+          [
+            2.505,
+            0.6215291914768398
+          ],
+          [
+            3.505000000000001,
+            0.36160020466939125
+          ]
+        ],
+        "envelope_log_decay_per_s": -0.6193564018186828,
+        "decay_identification": "DESCRIPTIVE_RMS_ENVELOPE_NOT_A_CAUSAL_DAMPING_FIT",
+        "envelope_log_fit_r2": 0.997990732010463
+      },
+      "phase": {
+        "identified": true,
+        "reason": "DESCRIPTIVE_CLOSED_LOOP_CROSS_SPECTRUM",
+        "causal_transport_delay": "UNIDENTIFIABLE_CLOSED_LOOP",
+        "frequency_hz": 4.0,
+        "coherence": 0.9999969202091306,
+        "command_spectral_fraction": 0.4497828308263459,
+        "motion_spectral_fraction": 0.4843379607513085,
+        "overlapping_segments": 3,
+        "phase_rad": -3.137679230546385,
+        "phase_equivalent_lag_s": 0.12484428984455796,
+        "lag_ambiguity_s": 0.25
+      },
+      "motor_saturation_s": 0.0
+    }
+  ],
+  "history_root": "outputs/suspended_hybrid_20261024_r2a/control-mode-diagnosis-v1",
+  "learning_admitted": false
+}

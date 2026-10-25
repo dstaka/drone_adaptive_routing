@@ -48,7 +48,7 @@ def _objective_fields(value):
     return value
 
 
-def verify_mission(output, planner, *, native=None):
+def verify_mission(output, planner, *, native=None, revision2=False):
     """Derive routing commands/events and all100-interval stops from saved bodies."""
     root = Path(output)
     summary = json.loads((root / "mission_summary.json").read_text())
@@ -67,6 +67,14 @@ def verify_mission(output, planner, *, native=None):
             raise ValueError("Stale mission artifact binding")
     scenario = Scenario.from_dict(json.loads((root / "scenario.json").read_text()))
     metadata = json.loads((root / "metadata.json").read_text())
+    if revision2:
+        from .payload_hybrid_contract import VIDEO_PROFILE
+        if (metadata.get('schema')!='payload-hybrid-mission-v1' or
+            metadata.get('settling_profile')!=VIDEO_PROFILE.id or
+            metadata.get('settling_profile_sha256')!=VIDEO_PROFILE.sha256 or
+            metadata.get('aggregate_simulated_deadline_s') is not None or
+            metadata.get('leg_deadline_s')!=30. or metadata.get('mission_wall_deadline_s')!=600.):
+            raise ValueError('Explicit Revision 2 profile/clock binding required')
     payload = json.loads((root / "payload.json").read_text())
     side = payload["side_m"]
     samples = _rows(root / "samples.jsonl")
@@ -189,12 +197,12 @@ def verify_mission(output, planner, *, native=None):
             or sample["time_s"] != i * 0.01
             or not np.array_equal(sample["effective_target"], target)
             or row["sim_time_s"] != i * 0.01
-            or i > 12000
+            or (not revision2 and i > 12000)
             or i - leg_start > 3000
         ):
             raise ValueError("Mission time/command/reset mismatch")
         _continuous(previous, sample)
-        m = measured_predicates(sample, target, side)
+        m = measured_predicates(sample, target, side, revision2=revision2)
         unsafe = m["unsafe"]
         intervals = intervals + 1 if m["valid"] and previous_valid else 0
         previous_valid = m["valid"]
@@ -279,7 +287,7 @@ def verify_mission(output, planner, *, native=None):
     wall = summary["wall_residence_s"]
     if type(wall) not in (float, int) or not math.isfinite(wall) or wall < 0:
         raise ValueError("Invalid measured wall clock")
-    success = len(completed) == 10 and wall < 600 and len(step_rows) <= 12000
+    success = len(completed) == 10 and wall < 600 and (revision2 or len(step_rows) <= 12000)
     if (summary["status"] == "SUCCEEDED") != success:
         raise ValueError("Summary success differs from all ten measured stops")
     if success:
@@ -289,9 +297,12 @@ def verify_mission(output, planner, *, native=None):
             raise ValueError("Event stream differs from independent mission replay")
     proof = None
     if physical and success:
-        from .payload_solver_trace import verify_native_sequence
-
-        proof = verify_native_sequence(native_rows, **native)
+        if revision2:
+            from .payload_hybrid_native import verify_hybrid_native
+            proof = verify_hybrid_native(native_rows, **native)
+        else:
+            from .payload_solver_trace import verify_native_sequence
+            proof = verify_native_sequence(native_rows, **native)
     return dict(
         success=success,
         completed_count=len(completed),

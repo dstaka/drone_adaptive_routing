@@ -1,0 +1,101 @@
+{
+  "action_rng": "explicit Torch Generator per keyed development seed/env/episode; common across load methods",
+  "actual_reward_diagnostics": "REQUIRED_NOT_EXECUTED",
+  "actual_reward_receipt": null,
+  "aggregate_simulated_deadline": null,
+  "architecture": {
+    "activation": "tanh",
+    "actor": [
+      80,
+      64,
+      64,
+      3
+    ],
+    "critic": [
+      80,
+      64,
+      64,
+      1
+    ],
+    "distribution": "Gaussian-pre-tanh; world acceleration=0.5*tanh(raw)",
+    "initial_actor_output_gain": 0.001,
+    "initial_raw_std": 0.05
+  },
+  "baseline": "one frozen common C for both methods",
+  "checkpoints": [
+    100000,
+    300000
+  ],
+  "command_rng": "keyed seed/env/episode/stage, separate from physical draw",
+  "common_initial_artifact": null,
+  "declared_recipes": 1,
+  "entropy_coefficient": 0.0,
+  "epochs": 4,
+  "final_seed7_training": false,
+  "forgetting": {
+    "all_safe": true,
+    "minimum_successes": 9,
+    "window": 10
+  },
+  "gae_lambda": 0.995,
+  "gamma": 0.9995,
+  "hypothesis": "A near-zero measured-history correction compensates residual load-dependent transverse modes without changing nominal C or original motors.",
+  "initialization": "identical saved fresh tensors",
+  "initialization_artifact": "REQUIRED_BEFORE_EITHER_ARM; no favorable-pilot reuse",
+  "learning_admitted": false,
+  "leg_s": 30.0,
+  "mastery": {
+    "all_safe": true,
+    "distinct_recent_episodes": 20,
+    "minimum_successes": 18
+  },
+  "max_grad_norm": 0.5,
+  "max_recipes": 2,
+  "methods": [
+    "fixed",
+    "random"
+  ],
+  "minibatch_size": 250,
+  "mission_wall_s": 600.0,
+  "model4296_transfer": null,
+  "observation": "hybrid-measured20-history4-v1",
+  "optimizer": {
+    "eps": 1e-05,
+    "learning_rate": 0.0003,
+    "name": "Adam"
+  },
+  "optimizer_created": false,
+  "optimizer_initialization": "identical-fresh-empty-state",
+  "optimizer_steps_per_rollout": 16,
+  "ppo_clip": 0.2,
+  "pretraining": null,
+  "previous_task_mixture": 0.25,
+  "profile_sha256": "8c70968222bad279e8a4f7914978cf45edf9d01e6670c5865f218fe1c847834b",
+  "recipe_id": "H1-history4-bounded-acc-v1",
+  "rollout_updates_planned": 300,
+  "rollout_valid_transitions": 1000,
+  "rollout_vector_steps": 125,
+  "schema": "hybrid-finite-H-pilot-prospective-v1",
+  "seed": 82628017,
+  "source_binding": {
+    "scripts/check_payload_hybrid_reward_diagnostic.py": "6cfc3cfd669cb6dc2adda3af3f390ecbb735fba99a2240595c2fc4586b4be78b",
+    "scripts/declare_payload_hybrid_pilot.py": "5163070dcb8599442b97b00e217c6926df4a2b139ab8b588933d35a6634eb70f",
+    "src/adaptive_drone_patrol/payload_hybrid_learning.py": "10759758616e0fe4ed61177f57b24c41c77b2e466f281ab6a4eb690a05a49525",
+    "src/adaptive_drone_patrol/payload_hybrid_policy.py": "001278f57e2873d6c14ceb3edfa63b2faf55c4250a230ed6c677bf6e7e5ad2ea",
+    "src/adaptive_drone_patrol/payload_hybrid_reward.py": "fdd7ec95e1c36de5cfdef8181a74b7eeac9c33f45444bee0199adbf81afd4cdf"
+  },
+  "stages": [
+    "hover",
+    "small_move",
+    "continuous_retarget",
+    "ten_destinations"
+  ],
+  "stall_action": "STOP_BOTH_ARMS_AND_DECLARE_NEW_DIAGNOSED_PLAN",
+  "stall_valid_transitions": 75000,
+  "status": "PROSPECTIVE_PENDING_EXECUTED_REWARD_DIAGNOSTICS",
+  "teacher": null,
+  "valid_transitions_per_method": 300000,
+  "value_coefficient": 0.5,
+  "wall_scope": "physical reset through required recording and terminal IPC enqueue",
+  "workers": 8
+}

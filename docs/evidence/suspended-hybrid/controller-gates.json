@@ -1,0 +1,41 @@
+{
+  "schema": "hybrid-controller-gates-v1",
+  "backend": "rebound qualified MuJoCo reference",
+  "controller": "C-local-lqr-v1",
+  "results": {
+    "C-v1-C2": {
+      "executed": 30,
+      "successes": 30,
+      "safe": 30
+    },
+    "C-v1-C0-feedback-off": {
+      "executed": 10,
+      "successes": 0,
+      "safe": 10
+    },
+    "C-v1-C1": {
+      "executed": 10,
+      "successes": 10,
+      "safe": 10
+    },
+    "C-v1-C0-refined32": {
+      "executed": 10,
+      "successes": 10,
+      "safe": 10
+    },
+    "C-v1-C0": {
+      "executed": 10,
+      "successes": 10,
+      "safe": 10
+    }
+  },
+  "independent_raw_audits": true,
+  "raw_archive_recovery": {
+    "status": "LOCAL_SIZE_SHA256_VERIFIED",
+    "path": "outputs/suspended_hybrid_20261024_r2a/control-diagnostics-full-v1.tar.gz",
+    "bytes": 139096253,
+    "sha256": "0b278bfc09bcda872c693029685e04fa36d5f30924b55b44eff1a48f2f637827"
+  },
+  "learning_admitted": false,
+  "selected_primary_backend": "NOT_SELECTED"
+}

@@ -2,7 +2,11 @@
 
 各仕様書は、その変更を実装するコード・テストと同じPRに含めます。PR作成時に仕様書内へPR番号またはURLを追記し、PR本文から仕様書にリンクしてください。マージ済み仕様書は履歴として保持します。
 
-**最新の吊り荷方針：** [安定した輸送のためのハイブリッド制御とGenesis GPU並列学習](2026-10-23-suspended-payload-hybrid-genesis/spec.md)。制御器＋NN、GenesisのGPU並列を優先し、物理整合性を満たせない根拠がある場合だけMuJoCo主学習へ切り替えます。新仕様は文書作成済み・実装未開始です。[技術レビュー](../docs/suspended-payload-hybrid-genesis-review_ja.md)では方向性を妥当と判断し、最終計画前の2つの未確定分岐を記録しました。ユーザー指示で旧直接motor学習の追加実験を終了し、未達を含むデータを保存します。既存の実装・実験記録は[数値解法の修理と実測に基づく学習](2026-10-22-suspended-payload-solver-recovery/spec.md)を参照してください。GPU時間上限・使用時間trackingは引き続き不要です。以下の旧GPU予算記述は過去の実行記録です。
+**最新の吊り荷方針：** [MuJoCo制御器単独で完成させる吊り荷輸送](2026-10-23-suspended-payload-hybrid-genesis/spec.md)（Revision3、2026-10-25の利用者指示による変更・実行中）。3シナリオの開発10地点完走を根拠にMuJoCoを最終主系とし、Genesisの追加実験とNN学習・C/H比較を必須成果から外しました。Genesisの中断・限定資格・失敗・未確認事項は[保存記録](../docs/suspended-payload-genesis-interruption.md)に残し、不可能性や完了とは読み替えません。
+
+荷物速度0.15m/s・振れ角速度15度/s・箱全角速度30度/sと、位置・傾き・連続1秒の動画優先基準を維持します。合計120秒／12000step制限はなく、各leg30秒・wall600秒を維持。source一致による既存MuJoCo資格とC0/C1/C2を再利用し、開発頑健性15条件、公称＋6端点330秒、validation12条件／120指示leg、正式127条件（basic9/9・端点18/18・held-out95/100以上）、改善画角の最終3動画とfresh人手確認を完了条件とします。継承validation列の120legは96異座標変更と24保持を含み、120回の異座標移動とは呼びません。
+
+[実行記録](../docs/suspended-payload-hybrid-progress.md)、[結果報告](../docs/suspended-payload-mujoco-result-ja.md)、[現行計画](../docs/superpowers/plans/2026-10-25-suspended-mujoco-completion.md)を参照してください。開発動画と正式受入・人手確認の完了は区別します。旧直接motor学習は共有settling未達のまま保存済みです。以下のGenesis優先・旧GPU予算・静定条件・mission制限などは過去の記録です。
 
 ## 2026-10-14: 適応型Drone巡回デモの改善案
 

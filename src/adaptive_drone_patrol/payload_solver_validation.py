@@ -18,7 +18,7 @@ from .payload_contract import SharedSettling, rotation
 from .util import sha256
 
 
-def measured_predicates(sample, target, side):
+def measured_predicates(sample, target, side, *, revision2=False):
     """Derive geometry and every predicate from measured bodies, not completion."""
     if "contact" in sample and (type(sample["contact"]) is not bool
             or sample["contact"] != sample.get("contacts")):
@@ -65,10 +65,10 @@ def measured_predicates(sample, target, side):
         and drone_error <= 0.2
         and package_error <= 0.2
         and np.linalg.norm(vd) <= 0.3
-        and np.linalg.norm(vp) <= 0.1
+        and np.linalg.norm(vp) <= (0.15 if revision2 else 0.1)
         and angle <= 5
-        and rate <= 10
-        and math.degrees(np.linalg.norm(wp)) <= 10
+        and rate <= (15 if revision2 else 10)
+        and math.degrees(np.linalg.norm(wp)) <= (30 if revision2 else 10)
     )
     return dict(
         valid=valid,

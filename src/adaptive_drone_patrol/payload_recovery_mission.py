@@ -162,7 +162,7 @@ def require_solver_mission_admission(flight, evidence):
 
 
 def execute_payload_mission(flight, planner, scenario, output, metadata, *,
-                            clock=time.monotonic, recorder=None, physical_evidence=None):
+                            clock=time.monotonic, recorder=None, physical_evidence=None, revision2=False):
     """Run one explicit case, preserving failures and all ten shared completions.
 
     The caller resets its predeclared case exactly once before entry. This runner
@@ -176,7 +176,10 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
     if kind == 'physical':
         evidence = physical_evidence or {}
         from .payload_solver_flight import SolverFlight
-        if isinstance(flight, SolverFlight):
+        if revision2:
+            from .payload_hybrid_flight import require_development_flight
+            require_development_flight(flight, evidence)
+        elif isinstance(flight, SolverFlight):
             require_solver_mission_admission(flight, evidence)
         else:
             require_recovery_runtime_admission(evidence.get('receipt', {}), evidence.get('actual_binding', {}),
@@ -186,13 +189,19 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
         raise ValueError('Start a fresh explicit case at the required 0.01-second interval')
     if not isinstance(metadata.get('routing_model_hash'), str) or len(metadata['routing_model_hash']) != 64:
         raise ValueError('Actual routing-model hash is required')
-    started = float(clock())
+    started = float(flight.reset_wall_s if revision2 and kind == 'physical' else clock())
     if not np.isfinite(started):
         raise ValueError('A finite monotonic clock is required')
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
     _write_json(root/'scenario.json', scenario.to_dict())
-    _write_json(root/'metadata.json', dict(schema=MISSION_CONTRACT, **copy.deepcopy(metadata)))
+    contract = 'payload-hybrid-mission-v1' if revision2 else MISSION_CONTRACT
+    if revision2:
+        from .payload_hybrid_contract import VIDEO_PROFILE
+        metadata = dict(metadata,settling_profile=VIDEO_PROFILE.id,
+            settling_profile_sha256=VIDEO_PROFILE.sha256,aggregate_simulated_deadline_s=None,
+            leg_deadline_s=30.,mission_wall_deadline_s=600.)
+    _write_json(root/'metadata.json', dict(schema=contract, **copy.deepcopy(metadata)))
     state = RoutingState(scenario)
     run_id, step, seq, leg_start = root.name, 0, 0, 0
     completed, intended, decisions, legs = [], [], [], []
@@ -228,7 +237,7 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
         wall_elapsed = elapsed()
         if wall_elapsed >= WALL_SECONDS:
             raise MissionFailure('WALL_TIMEOUT')
-        if step*DT > MISSION_SECONDS or (before_step and step*DT >= MISSION_SECONDS):
+        if not revision2 and (step*DT > MISSION_SECONDS or (before_step and step*DT >= MISSION_SECONDS)):
             raise MissionFailure('MISSION_TIMEOUT')
         if (step-leg_start)*DT > LEG_SECONDS or (before_step and (step-leg_start)*DT >= LEG_SECONDS):
             raise MissionFailure('LEG_TIMEOUT')
@@ -297,7 +306,8 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
                 check_deadlines()
                 if unsafe:
                     raise MissionFailure('PHYSICAL_SAFETY_FAILURE')
-                complete = gate.update(step*DT, bool(settled(metrics)), target_id)
+                valid = VIDEO_PROFILE.valid(metrics) if revision2 else settled(metrics)
+                complete = gate.update(step*DT, bool(valid), target_id)
                 distance += float(np.linalg.norm(np.asarray(sample['drone_xyz'])-previous['drone_xyz']))
                 # Keep a distinct derived record, so offending raw never depends
                 # on successful metrics or a rewrite of prior evidence bytes.
@@ -371,6 +381,11 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
                         sim_time_s=step*DT, sample=_latest_sample(flight)))
         event('MISSION_FINISHED' if status == 'SUCCEEDED' else 'MISSION_FAILED',
               termination_code=failure_code, cause=cause, capture_errors=capture_errors)
+        if revision2:
+            wall_elapsed = elapsed()
+            if wall_elapsed >= WALL_SECONDS and status == 'SUCCEEDED':
+                status, failure_code, cause = 'FAILED', 'WALL_TIMEOUT', 'Terminal evidence enqueue exceeded wall deadline'
+                event('MISSION_FAILED', termination_code=failure_code, cause=cause)
         if old_handler is not None:
             signal.signal(signal.SIGTERM, old_handler)
         for stream in streams.values():
@@ -396,7 +411,7 @@ def execute_payload_mission(flight, planner, scenario, output, metadata, *,
                         physical_pose=copy.deepcopy(sample.get('drone_xyz')), evidence_kind=kind,
                         termination_code=failure_code, cause=cause, failure_stage='OFFLINE_EXPLANATION'))
                 break
-    summary = dict(schema=MISSION_CONTRACT, status=status, termination_code=failure_code, termination_cause=cause,
+    summary = dict(schema=contract, status=status, termination_code=failure_code, termination_cause=cause,
         run_id=run_id, scenario_id=scenario.scenario_id, evidence_kind=kind,
         operational_acceptance='NOT_ESTABLISHED_CPU_FIXTURE' if kind == 'cpu-fixture' else 'REQUIRES_INDEPENDENT_REPLAY',
         completed_order=completed, intended_order=intended, completed_count=len(completed), num_checkpoints=10,

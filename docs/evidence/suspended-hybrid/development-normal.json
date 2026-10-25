@@ -1,0 +1,48 @@
+{
+  "schema": "hybrid-first-development-normal-v1",
+  "status": "DEVELOPMENT_VIDEO_DELIVERABLE_LOCAL_VERIFIED",
+  "completed_targets": 10,
+  "simulated_s": 45.300000000000004,
+  "wall_s": 17.323994091013446,
+  "measured_distance_m": 17.24123251005676,
+  "route": [
+    "F",
+    "A",
+    "B",
+    "E",
+    "D",
+    "G",
+    "H",
+    "J",
+    "C",
+    "I"
+  ],
+  "controller": "C-local-lqr-v1",
+  "flight_nn": false,
+  "backend": "MuJoCo3.15.0 float64 RK4 substeps16 N1",
+  "settling_profile": "payload-settling-video-v1",
+  "source": "Working-tree Revision2, new run namespace",
+  "nominal_route_cost": 299.5717033333915,
+  "exact_initial_remaining_cost": 269.2123164403012,
+  "initial_policy_gap": 30.35938689309029,
+  "route_optimality": "SUBOPTIMAL_UNDER_INHERITED_OBJECTIVE",
+  "strict_shadow_completed": 0,
+  "strict_shadow_denominator": 10,
+  "raw_transfer_bytes": 14416478,
+  "raw_transfer_sha256": "6e9db147f1d5c443e36836710627e975cec74fab4a92f6e801ba3fcbfbd6c4c1",
+  "full_spec_complete": false,
+  "heldout_opened": false,
+  "human_review": "PENDING_FRESH_CONTINUOUS1X",
+  "video_frames": 4531,
+  "videos": {
+    "hud.mp4": {
+      "bytes": 10681957,
+      "sha256": "c8e7bfa1510493831dbb148df8d56c40d18b08b9f1cd3d6431e9f473419d54e6"
+    },
+    "raw.mp4": {
+      "bytes": 5684945,
+      "sha256": "ffbfb94272ab3f065c97675dbf375aa591783804a048c7e8ace83c8f03334f79"
+    }
+  },
+  "media_exact_every_native_pose_raw_caption_frame": true
+}

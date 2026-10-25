@@ -8,9 +8,16 @@ import copy
 import ctypes
 import json
 import os
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
+
+
+@lru_cache(maxsize=12)
+def _hud_font(path,size):
+    from PIL import ImageFont
+    return ImageFont.truetype(path,size)
 
 
 def native_frame_rows(records):
@@ -183,7 +190,7 @@ def goal_display_style(priority, *, visited=False, selected=False):
 
 def compose_hud(raw, state, native, payload, config, font_path, model_sha256):
     """Append legible Japanese telemetry without writing into either raw view."""
-    from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image, ImageDraw
     from .payload_contract import Payload, payload_metrics
     from .payload_solver_mujoco import FREE_MASS_KG
     from .payload_solver_trace import observation_sample
@@ -197,9 +204,9 @@ def compose_hud(raw, state, native, payload, config, font_path, model_sha256):
     canvas = Image.new("RGB", (w, h + config["hud_height"]), "#101d2d")
     canvas.paste(Image.fromarray(raw), (0, 0))
     draw = ImageDraw.Draw(canvas)
-    title = ImageFont.truetype(str(font_path), 28)
-    face = ImageFont.truetype(str(font_path), 23)
-    small = ImageFont.truetype(str(font_path), 20)
+    title = _hud_font(str(font_path), 28)
+    face = _hud_font(str(font_path), 23)
+    small = _hud_font(str(font_path), 20)
     names = dict(normal="通常巡回", emergency="緊急優先度変更", cost_shift="有向コスト変更")
 
     def text(x, y, value, font=face, fill="#e9f3fb"):

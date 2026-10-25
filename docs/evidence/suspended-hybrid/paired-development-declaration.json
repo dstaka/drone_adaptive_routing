@@ -1,0 +1,688 @@
+{
+  "schema": "hybrid-paired-development-predeclaration-v1",
+  "scope": "Prospective selection cases only; all twelve UNEXECUTED",
+  "cases": [
+    {
+      "case_id": "paired-development-00",
+      "suite": "paired-development",
+      "allocation": "nominal",
+      "scenario": "normal",
+      "seed": 82627000,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "initial": {
+        "drone_xyz": [
+          0.016887625914143136,
+          -0.019196837532457784,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9998971797899523,
+          -0.014059299839376444,
+          0.002822120042746111,
+          3.968111188394027e-05
+        ],
+        "package_xyz": [
+          0.019141140325090587,
+          -0.02650056289439133,
+          0.657593314279789
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 1.3646596733995608,
+        "swing_direction_rad": 5.049971761584635
+      }
+    },
+    {
+      "case_id": "paired-development-01",
+      "suite": "paired-development",
+      "allocation": "nominal",
+      "scenario": "normal",
+      "seed": 82627001,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "initial": {
+        "drone_xyz": [
+          -0.01413029593500957,
+          0.0011467846758528785,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9999983194199904,
+          -0.001738564822313244,
+          0.0005818492331459499,
+          1.0115843086858528e-06
+        ],
+        "package_xyz": [
+          -0.016080833568272588,
+          0.0006735908198474453,
+          0.6575065966492968
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 0.37606947379996813,
+        "swing_direction_rad": 3.3480510408720474
+      }
+    },
+    {
+      "case_id": "paired-development-02",
+      "suite": "paired-development",
+      "allocation": "nominal",
+      "scenario": "emergency",
+      "seed": 82627002,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "initial": {
+        "drone_xyz": [
+          0.00927236099419726,
+          0.005951828343468454,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9998568281468246,
+          -0.012713809232924365,
+          -0.011165218613537392,
+          -0.00014197278600328324
+        ],
+        "package_xyz": [
+          0.012389478179436508,
+          -0.0071357701588665706,
+          0.6577871871395675
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 2.4567232405045027,
+        "swing_direction_rad": 4.921591457264301
+      }
+    },
+    {
+      "case_id": "paired-development-03",
+      "suite": "paired-development",
+      "allocation": "nominal",
+      "scenario": "emergency",
+      "seed": 82627003,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "initial": {
+        "drone_xyz": [
+          0.01218925052918916,
+          -0.010047278421655715,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9998562998560352,
+          0.012225570427775183,
+          -0.011742846744037715,
+          0.00014358363288051947
+        ],
+        "package_xyz": [
+          0.03957609441516457,
+          0.005055056383641491,
+          0.6590790703047746
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 5.8597702374512215,
+        "swing_direction_rad": 0.49737381412985354
+      }
+    },
+    {
+      "case_id": "paired-development-04",
+      "suite": "paired-development",
+      "allocation": "nominal",
+      "scenario": "cost_shift",
+      "seed": 82627004,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "initial": {
+        "drone_xyz": [
+          0.0005296673893119622,
+          0.014050187086889699,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9998647498815355,
+          -0.015038370082966062,
+          -0.006657277516868874,
+          -0.00010012814538720872
+        ],
+        "package_xyz": [
+          -0.002805128906593842,
+          -0.009238116068465054,
+          0.6583915434650891
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 4.3914037564171515,
+        "swing_direction_rad": 4.554976057762069
+      }
+    },
+    {
+      "case_id": "paired-development-05",
+      "suite": "paired-development",
+      "allocation": "nominal",
+      "scenario": "cost_shift",
+      "seed": 82627005,
+      "side_m": 0.045,
+      "mass_ratio": 0.2,
+      "initial": {
+        "drone_xyz": [
+          -0.006758516800633437,
+          0.01908196356169534,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9997322011578377,
+          -0.01628531363139779,
+          0.016439063785451898,
+          0.0002677870226072379
+        ],
+        "package_xyz": [
+          -0.03860667386354106,
+          -0.016846431356795415,
+          0.6612400323604206
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 9.030612155688459,
+        "swing_direction_rad": 3.98838735071441
+      }
+    },
+    {
+      "case_id": "paired-development-06",
+      "suite": "paired-development",
+      "allocation": "endpoint",
+      "scenario": "normal",
+      "seed": 82627006,
+      "side_m": 0.03,
+      "mass_ratio": 0.1,
+      "initial": {
+        "drone_xyz": [
+          0.012237525323704469,
+          -0.0006430208484099302,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9998389205582495,
+          -0.007538744141016145,
+          0.016287577842281197,
+          0.0001228076638197725
+        ],
+        "package_xyz": [
+          0.00869600829528207,
+          -0.029472643332968645,
+          0.666386365698412
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 5.484716203781479,
+        "swing_direction_rad": 4.611424160069084
+      }
+    },
+    {
+      "case_id": "paired-development-07",
+      "suite": "paired-development",
+      "allocation": "endpoint",
+      "scenario": "normal",
+      "seed": 82627007,
+      "side_m": 0.03,
+      "mass_ratio": 0.3,
+      "initial": {
+        "drone_xyz": [
+          0.0039772372421403995,
+          0.018637933477437526,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9999019954543693,
+          -0.012596182048547448,
+          -0.006109808518077799,
+          -7.696780357009093e-05
+        ],
+        "package_xyz": [
+          0.010918316906636125,
+          0.009577526397229068,
+          0.6652046738152747
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 2.0756345476989466,
+        "swing_direction_rad": 5.376456018607862
+      }
+    },
+    {
+      "case_id": "paired-development-08",
+      "suite": "paired-development",
+      "allocation": "endpoint",
+      "scenario": "emergency",
+      "seed": 82627008,
+      "side_m": 0.045,
+      "mass_ratio": 0.1,
+      "initial": {
+        "drone_xyz": [
+          0.015836664220712292,
+          0.009978889047689156,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9999844620905304,
+          0.0007906183687600164,
+          -0.005518195454406381,
+          4.362854478299623e-06
+        ],
+        "package_xyz": [
+          0.011830217065230651,
+          -0.00901354499214019,
+          0.6581348852068675
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 3.724564629878434,
+        "swing_direction_rad": 4.493739936668326
+      }
+    },
+    {
+      "case_id": "paired-development-09",
+      "suite": "paired-development",
+      "allocation": "endpoint",
+      "scenario": "emergency",
+      "seed": 82627009,
+      "side_m": 0.045,
+      "mass_ratio": 0.3,
+      "initial": {
+        "drone_xyz": [
+          0.013059590888302084,
+          0.004966965589934855,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.999982634671352,
+          -0.0001249280960643159,
+          -0.00589192228143933,
+          -7.360794150400893e-07
+        ],
+        "package_xyz": [
+          0.054596865917354104,
+          0.027777859429246005,
+          0.6612352710560577
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 9.049170378297873,
+        "swing_direction_rad": 0.5047003895795772
+      }
+    },
+    {
+      "case_id": "paired-development-10",
+      "suite": "paired-development",
+      "allocation": "endpoint",
+      "scenario": "cost_shift",
+      "seed": 82627010,
+      "side_m": 0.06,
+      "mass_ratio": 0.1,
+      "initial": {
+        "drone_xyz": [
+          0.0009104381948954812,
+          0.014799569667193254,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9998685047822155,
+          0.016211068533050883,
+          -0.0004175592900485858,
+          6.769972486596216e-06
+        ],
+        "package_xyz": [
+          -0.030611575278093165,
+          -0.010989520019169393,
+          0.6528466395577495
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 7.884644000595541,
+        "swing_direction_rad": 3.839227875269304
+      }
+    },
+    {
+      "case_id": "paired-development-11",
+      "suite": "paired-development",
+      "allocation": "endpoint",
+      "scenario": "cost_shift",
+      "seed": 82627011,
+      "side_m": 0.06,
+      "mass_ratio": 0.3,
+      "initial": {
+        "drone_xyz": [
+          -0.006284159448831428,
+          -0.0066379231724004485,
+          1.0
+        ],
+        "drone_quaternion_wxyz": [
+          0.9997655768795698,
+          0.013172351034998052,
+          -0.01718223516837918,
+          0.0002263835027309035
+        ],
+        "package_xyz": [
+          0.005975365642817728,
+          -0.048616357753684114,
+          0.6532707568812064
+        ],
+        "package_quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "drone_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "package_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "swing_angle_deg": 8.44395388817468,
+        "swing_direction_rad": 4.978206198969746
+      }
+    }
+  ],
+  "profile_sha256": "8c70968222bad279e8a4f7914978cf45edf9d01e6670c5865f218fe1c847834b",
+  "checker_resolution": {
+    "minimum_floor_m": 1e-06,
+    "peak_absolute_roll_pitch_deg": 1e-06,
+    "maximum_settling_payload_spin_deg_s": 1e-06
+  },
+  "selector_source_sha256": "f57701f7e7d9bed102f7165b9f6ca63feb1da950be40e6aaa9cb49846b3e3c61",
+  "max_recipes": 2,
+  "valid_pilot_transitions_per_method": 300000,
+  "checkpoint_transitions": [
+    100000,
+    300000
+  ],
+  "methods": [
+    "fixed",
+    "random"
+  ],
+  "required_common_initial_tensors": true,
+  "required_fresh_identical_optimizer_state": true,
+  "formal_inputs_opened": false,
+  "learning_admitted": false,
+  "nn_recipe_status": "NOT_YET_DECLARED_DO_NOT_START_OPTIMIZER"
+}

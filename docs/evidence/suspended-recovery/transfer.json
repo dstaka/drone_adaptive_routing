@@ -1,0 +1,46 @@
+{
+  "schema": "payload-recovery-transfers-v1",
+  "transfers": [
+    {
+      "archive": {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/baseline-delivery.tar.gz",
+        "bytes": 2757206,
+        "sha256": "03ecd784d0c8f203dfbd6df3740b2596af8055fb34118032139e8931246974f8"
+      },
+      "receipt": {
+        "bytes": 2757206,
+        "sha256": "03ecd784d0c8f203dfbd6df3740b2596af8055fb34118032139e8931246974f8"
+      },
+      "all_members_size_and_sha256_verified": true
+    },
+    {
+      "archive": {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/diagnostics-delivery.tar.gz",
+        "bytes": 420033,
+        "sha256": "84c450328ca5c147f2424c3c08120133b59a7e2830d70e5f03db2201a6aaec52"
+      },
+      "receipt": {
+        "bytes": 420033,
+        "sha256": "84c450328ca5c147f2424c3c08120133b59a7e2830d70e5f03db2201a6aaec52"
+      },
+      "all_members_size_and_sha256_verified": true
+    },
+    {
+      "archive": {
+        "path": "outputs/suspended_recovery_20261022_112649_abce93/final-delivery.tar.gz",
+        "bytes": 7270159,
+        "sha256": "3910f05507ac572cb3febd76d232d391ef310ef05552388383d85d867ad5e3b2"
+      },
+      "receipt": {
+        "bytes": 7270159,
+        "sha256": "3910f05507ac572cb3febd76d232d391ef310ef05552388383d85d867ad5e3b2",
+        "members": 83
+      },
+      "all_members_size_and_sha256_verified": true
+    }
+  ],
+  "final_payload_members": 83,
+  "final_archive_regular_files_including_manifest": 84,
+  "external_artifacts_local": true,
+  "large_artifacts_ignored": true
+}

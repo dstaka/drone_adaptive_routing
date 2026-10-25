@@ -1,0 +1,14 @@
+{
+  "schema": "payload-solver-progress-pdf-v1",
+  "snapshot": "1.02M diagnostic pilot transitions completed; first common nonpilot3M randomized learning active; no final adoption",
+  "pages": 6,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "layout": "No overlap, clipping, missing Japanese glyphs or illegible chart labels on any page",
+  "pdf_sha256": "cfaa7180119b6cf293e88c512eb7f1afe3a47b3cadb51e971074f585d2701490",
+  "pdf_bytes": 724630,
+  "source_snapshot": "report_ja_solver_progress_v2.md",
+  "source_sha256": "fa753002bce87ce9bb2417fb16e964e076dfa3f529209052658ced115e936b72",
+  "font_sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+  "figure_sha256": "9a94aea0b9ef9757c0ab94802ba3412c6648614476cc18678ee5445c1688107d",
+  "physical_acceptance": false
+}

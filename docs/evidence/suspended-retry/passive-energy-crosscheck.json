@@ -1,0 +1,22 @@
+{
+  "schema": "passive-energy-central-difference-crosscheck-v1",
+  "case": "large_0.060_0.10",
+  "source_sample_sha256": "8601f5f5d8b6b4e6694b9ed2d1631c3ddfa81fe66cfb9308d0a16bcc4066b8c4",
+  "samples": 3001,
+  "method_ja": "dt=.01sのworld COM位置中心差分とRdot R^T反対称部から速度/角速度を独立近似。実COM慣性をworldへ変換し、最低静的垂下基準のenergyを再構成。端点2点を除外。差分は近似診断であり5%gateを置換しない。",
+  "initial_energy_j": 0.008888015283940592,
+  "maximum_position_difference_energy_j": 0.05539685036112624,
+  "positive_energy_fraction_central_difference": 5.2327582245746855,
+  "kinematic_readout_differences": {
+    "rod": {
+      "maximum_origin_to_COM_velocity_difference_fd_m_s": 0.26944444241590015,
+      "maximum_angular_velocity_difference_fd_rad_s": 1.7950707751558355
+    },
+    "package": {
+      "maximum_origin_to_COM_velocity_difference_fd_m_s": 0.3418780198139288,
+      "maximum_angular_velocity_difference_fd_rad_s": 16.18975586124259
+    }
+  },
+  "physical_training_admitted": false,
+  "interpretation_ja": "getterの速度を使わない近似でも大幅な受動energy増加が残る。根因や収束性の証明ではない。次は固定anchor大角度でdt/半dtの受動energyと実substepを比較し、motorのない不整合を先に切り分ける。"
+}

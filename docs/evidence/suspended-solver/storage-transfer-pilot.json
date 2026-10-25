@@ -1,0 +1,22 @@
+{
+  "schema": "payload-solver-storage-transfer-rehearsal-v1",
+  "archive_bytes": 56033280,
+  "archive_sha256": "efb22e2346a61ee0a73619380879a76ed90bed9db01e6e1a10fc398c650b2ecc",
+  "member_count": 22,
+  "all_archive_members_verified": true,
+  "all_extracted_member_sizes_sha256_verified": true,
+  "seals": 15,
+  "originals_remained_regular": true,
+  "temporary_transfer_descriptor_released_after_local_verification": true,
+  "physical_acceptance": false,
+  "scope": "Closed P1 existing evidence only; no physics steps or new optimizer transitions; gold archive retained",
+  "local_durable_archive_file_fsync": true,
+  "local_durable_archive_darwin_fullfsync": true,
+  "local_durable_archive_parent_directory_fsync": true,
+  "atomic_durable_gold_and_receipt_positive": true,
+  "injected_flush_failures_rejected_without_gold_or_receipt": [
+    "file_fsync",
+    "full_flush",
+    "directory_fsync"
+  ]
+}

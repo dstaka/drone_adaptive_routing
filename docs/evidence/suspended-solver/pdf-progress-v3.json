@@ -1,0 +1,42 @@
+{
+  "schema": "payload-solver-progress-pdf-v1",
+  "snapshot": "4.02M completed transitions including common randomized3M; matched fixed3M actually learning; randomized3M full raw audit pending at this preserved PDF snapshot; no final adoption",
+  "pages": 6,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "layout": "All six pages individually inspected: no overlap, clipping, missing Japanese glyphs or illegible chart labels",
+  "pdf_sha256": "496721e9b7923935b1a7a632cb49814ee02572756a0fb788f229625005eec72c",
+  "pdf_bytes": 725454,
+  "source_snapshot": "report_ja_solver_progress_v3.md",
+  "source_sha256": "65628f14f5928ddea76b2fb7eafbd15bbbc967f4fe6a873a65513f5544c63d6a",
+  "font_sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+  "figure_sha256": "9a94aea0b9ef9757c0ab94802ba3412c6648614476cc18678ee5445c1688107d",
+  "physical_acceptance": false,
+  "embedded_static_font_sha256": "aca1e79f1a80e231773fe93dbd2e20031d9f804e4860057887117ee04ae81544",
+  "report_builder_sha256": "f5a6c1e52ce116e6008545c3799e93b9f423baea97b24c78a2eb1c3ce4bbd21c",
+  "reviewed_pages": [
+    {
+      "page": 1,
+      "png_sha256": "a43432ea551510d6bbb613c80495fdebabe3f5801a320ead3b73fbff004a4579"
+    },
+    {
+      "page": 2,
+      "png_sha256": "6657d41a6752309b60aafe1a152e7ecd46f600a73e6d7e74a46c1dbb1e9a7333"
+    },
+    {
+      "page": 3,
+      "png_sha256": "7df5d3329fb1b9d5814eef742be224d9806150568bb38eb4a4e9c7229f843637"
+    },
+    {
+      "page": 4,
+      "png_sha256": "5b78fccfb61b87993763c56c8d0df19b345069acbd90c61c1e5632514855452e"
+    },
+    {
+      "page": 5,
+      "png_sha256": "0ea7704c258bb5f91e10b5e41d4335cfa9cbdcdc5c32dc088f59e0a9cffae06d"
+    },
+    {
+      "page": 6,
+      "png_sha256": "1c12b3d242149891cef4c580a41e3b10324b1d9de8df15ba1b1a50c43f7eb90b"
+    }
+  ]
+}

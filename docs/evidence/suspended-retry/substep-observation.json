@@ -1,0 +1,16 @@
+{
+  "established": true,
+  "failures": [],
+  "root_com_radius_bound_m": 0.5,
+  "method": "constant-world-cfrc+semiimplicit-root-path-v1",
+  "actual_qpos_identical": true,
+  "actual_controls": 100,
+  "actual_records": 200,
+  "raw_sha256": "23cf1e493b9a939f56617f794e8d28d35a20c41febe3fea83f11d63bd7250837",
+  "full_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/substep-smoke-check-v10.json",
+    "bytes": 2852,
+    "sha256": "b3706c9ed9039e69008f786d6b0ad17dbea15c400482055f76798e0817983a96"
+  },
+  "raw_source": "outputs/suspended_retry_20261022_052336/delivery-v5/outputs/substep-smoke-v10/observed-substeps.jsonl"
+}

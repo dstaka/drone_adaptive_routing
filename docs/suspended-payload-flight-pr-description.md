@@ -1,0 +1,7 @@
+# Add a suspended-payload prototype and preserve failed feasibility evidence
+
+Implements the [suspended-payload flight specification](../specs/2026-10-17-suspended-payload-flight/spec.md) with a passive 0.30 m rigid-link articulation, real cube mass/inertia/collision, episode-level load sampling, a versioned 29-input observation contract, shared one-second settling, and paired evaluation/checking tools. The inherited dispersed coordinates, integer priorities, routing model, safety limits, and unloaded execution remain unchanged.
+
+The current articulation **fails operating-domain feasibility**. Short passive probes and reset-property checks passed, but policy-driven dynamics diverged at 2, 8, and 16 physics substeps. Training was aborted; the old short-probe admission is invalidated and restart is blocked. No loaded policy is adopted. Matched baseline training, validation, all 254 acceptance missions, final videos, and operator review remain unfulfilled. No robustness or randomization advantage is claimed.
+
+Validation: 226 CPU tests passed (one GPU test excluded), lint and compilation passed; all 278 delivered artifact sizes/SHA-256 values matched locally. Raw-state replay independently confirms numerical divergence. The Japanese report/PDF, handoff, failure evidence, and cumulative GPU ledger are updated. GPU use is 7,484.093172 seconds total, with 21,315.906828 seconds remaining. This change records a failed prototype and is not a completed payload-flight delivery.

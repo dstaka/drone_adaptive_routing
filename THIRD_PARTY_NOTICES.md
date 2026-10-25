@@ -22,6 +22,14 @@
 - NumPy (BSD-3-Clause), Matplotlib (PSF-derived license), Pillow (HPND), PyYAML (MIT), ReportLab (BSD), FontTools (MIT), imageio-ffmpeg (BSD-2-Clause). Exact resolved distributions are in platform-specific locks.
 - FFmpeg: system/bundled build, LGPL/GPL terms depend on build configuration, with libx264 for H.264 encoding. Executables remain external, not committed.
 
+## MuJoCo solver recovery
+
+- Project: Google DeepMind MuJoCo, https://github.com/google-deepmind/mujoco . Version3.15.0, upstream commit `9ea3cdfcae93bf2cc4dc0e1a1627c5a39a1e06e5`.
+- License: Apache License2.0. The retained upstream LICENSE has SHA-256 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`; the upstream source archive has SHA-256 `1a4d9ab6135b63d07309e86d58931a71f8e55109409ad77e18579d07f96f62c1`.
+- The installed engine is unmodified. Actual library, installed-file inventory, package RECORD, upstream source and dependency locks are retained separately from project implementation. No engine source or binary is committed here.
+- The generated MJCF adapter preserves the inherited Crazyflie assets, motor mapping and articulated payload physics. It is project code, not copied MuJoCo engine implementation.
+- New isolated solver environments use PyTorch2.14.0+cpu for flight learning and PyTorch2.2.2 CPU for routing. Historical CUDA locks remain historical; current solver locks are separate files under `requirements/`.
+
 ## Japanese font
 
 Noto Sans JP from https://github.com/google/fonts/tree/main/ofl/notosansjp . `NotoSansJP[wght].ttf` and its `OFL.txt` were downloaded as retained assets. License: SIL Open Font License 1.1; both asset hashes are in the manifest. A static weight-400 instance is embedded/subset in the PDF. No restricted system font is copied or committed. Installed Hiragino can be an operator-local Pillow fallback but is not a redistributable project asset.

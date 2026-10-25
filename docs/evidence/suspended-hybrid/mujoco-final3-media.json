@@ -1,0 +1,209 @@
+{
+  "scenarios": [
+    "normal",
+    "emergency",
+    "cost_shift"
+  ],
+  "machine_acceptance": true,
+  "acceptance_record_sha256": "e18c40b81ee95b225606c5a7ef0da2be39e2329b799efbe94e7f098ca64d26f9",
+  "freeze_record_sha256": "6e5e331d8a59d5ebefdafd264eb77ebde8891e5c5d26d4fc37b87aba4645c4a2",
+  "new_physical_attempts": 0,
+  "case_success_counts_modified": false,
+  "all_three_complete_native1x": true,
+  "human_review": "PASSED_EXPLICIT_USER_CONFIRMATION_EXACT3_VIDEO_SHA256",
+  "source_binding": {
+    "scripts/capture_payload_mujoco_final.py": "140a6694a0af8229e567c282aea39d21eedfa013c75aa65377f8b1054295730c",
+    "src/adaptive_drone_patrol/analytical.py": "06c61de18f8d53450b8ae0207feed1b54784ceaf7308880497becf4777896c47",
+    "src/adaptive_drone_patrol/annotations.py": "99435ff7e5e99d07a88e21e05476cf06220a1a6f44a7afe96b63e8752a26dc2a",
+    "src/adaptive_drone_patrol/baselines.py": "ddcc02f33c755177bca60851556ebd8ce13d4d1fff7d2cea0f7e5f161e7d9ba1",
+    "src/adaptive_drone_patrol/evidence.py": "07cd06689e2fba1c92edafaade4a56ca76c5bb9f09b3d9b72eb2c595df1b8b11",
+    "src/adaptive_drone_patrol/jobs.py": "047a63bb0df16039c6ed58f3c95833493358817565542498e0bd55ce576ed0a3",
+    "src/adaptive_drone_patrol/objective.py": "85d7ede3919547e19cb2d87483bda67e4fced1c1eea08238f628e8c8ef8d4f8d",
+    "src/adaptive_drone_patrol/payload_ball_asset.py": "74c9e4d6bf38392c7e2795a025286d0133b80b4bb116fd2169070f7579edcef2",
+    "src/adaptive_drone_patrol/payload_ball_bank.py": "48142c81d5fbf647e2011eaea8e7d5bf8c0ef4204d44e189e5cdc93a059cad71",
+    "src/adaptive_drone_patrol/payload_cases.py": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b",
+    "src/adaptive_drone_patrol/payload_checkpoint.py": "1066e2dd08e99589619f09557cc0b2f9db358a75fb35addbc6c3fb3bd9b1f718",
+    "src/adaptive_drone_patrol/payload_contract.py": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e",
+    "src/adaptive_drone_patrol/payload_hybrid_audit.py": "f065ddf855aaeb2b9d9f0ff0f6bdc10181bb61520ff6d264708cc0eb60263ca3",
+    "src/adaptive_drone_patrol/payload_hybrid_contract.py": "f0feaac37513d9790dba695ec97fd3810055ce3c08e8700ed122b9858ab919db",
+    "src/adaptive_drone_patrol/payload_hybrid_controller.py": "37f56ecc178a3737473729f0cacfd4ae8a54a94031cf9bd8cbceefa24a35fafb",
+    "src/adaptive_drone_patrol/payload_hybrid_duration.py": "acf498cc63b35dc62b6d8d6da6f1f5f9642df752e830aac7b62af003e4b9a3c4",
+    "src/adaptive_drone_patrol/payload_hybrid_duration_audit.py": "207ce9bd7c0a8d38020a92e5e0a04b1f0fc3fd46849b7efa3f9d03e329edbc90",
+    "src/adaptive_drone_patrol/payload_hybrid_final.py": "fb24e2f7a1182f59c48a9aa91172a0b439f66d212430a0fe39d56b7d482d5dc1",
+    "src/adaptive_drone_patrol/payload_hybrid_final_audit.py": "a233ca7852866f9a27704239d348e941fa0a3293941d610b8b769d8a8d2c0dd5",
+    "src/adaptive_drone_patrol/payload_hybrid_flight.py": "8993d7158b50e60f36123fefeada8ad9b355387567f4fef14693813d5982a219",
+    "src/adaptive_drone_patrol/payload_hybrid_manifest.py": "94379c89f2a5da8c67a0a10cabeed7e49133190fb0a442c6f9e6f759eea44cef",
+    "src/adaptive_drone_patrol/payload_hybrid_media.py": "4dd46d39966c51b52f20bfdda4a5f12c1a2985c9772ebd9df8e92778109a5115",
+    "src/adaptive_drone_patrol/payload_hybrid_native.py": "c2424a879650a0b97aef087297c1b5e4552804bc4bfdec670e101711fb444224",
+    "src/adaptive_drone_patrol/payload_hybrid_runtime.py": "c3624dd4d6d4dc1b7ca3e01ca1be52ee1c96e82c5b501d0a3f157cc7f7f704a0",
+    "src/adaptive_drone_patrol/payload_mujoco_close_media.py": "0321d49c346babecc747f4af0abc24c0051f1bbae64b37d7e56f55e9cc54967d",
+    "src/adaptive_drone_patrol/payload_mujoco_final_media.py": "550a0886ed8698fa671fca6dd4c8a6036689c085b43df8e4c39cfad8ebdf8b1f",
+    "src/adaptive_drone_patrol/payload_mujoco_overview_media.py": "b1065898a6f8614e7bc8aa16968a14ef89e5018487e0ad386f4b0f5f135f65b1",
+    "src/adaptive_drone_patrol/payload_passive_check.py": "84eb5e4e2e2d908bc041e4c43c8561d1ae3cb4b92e8e5ba1a10951df14175aba",
+    "src/adaptive_drone_patrol/payload_qualification.py": "89ad7894267549b625b9f458780e210e7d61d0b3c35817446009cb7fd92296a4",
+    "src/adaptive_drone_patrol/payload_recovery_mission.py": "968d63d4fbf6a6f3f28de86182f1ff3ec115c58ea87d8dcb08df6ada723e89bf",
+    "src/adaptive_drone_patrol/payload_recovery_passive_binding.py": "3f0785a538236fdb812c603d9d1a801cfcfed2603e6151c4f25af2ae738722f5",
+    "src/adaptive_drone_patrol/payload_recovery_qualification.py": "e305cf59cab3ee33ff5a82a3662383e24d70aca44a5ae0047cf394a488bf03b0",
+    "src/adaptive_drone_patrol/payload_recovery_runtime.py": "57ae255aa1b61c81a760cee32467134f857d1f01b54016b85a4f26ad357f1d47",
+    "src/adaptive_drone_patrol/payload_retry_checkpoint.py": "1bac025a9041be497e2af3f389aec1cc514ef16aa7665646f66a32bb66078223",
+    "src/adaptive_drone_patrol/payload_retry_contract.py": "3cc00058754bd68f4916b843d4170af3b9fd52816888d9e130c5bbf53e091cf4",
+    "src/adaptive_drone_patrol/payload_retry_properties.py": "fe483f7a52ed22b67e76dc76a37eae8c9f85ead751678517abf327bfab34dfc1",
+    "src/adaptive_drone_patrol/payload_solver_acceptance.py": "0daf1c8bc87f0bf63f081c6f42f8a055ebad5c596efafa299d087b5cc6f52cef",
+    "src/adaptive_drone_patrol/payload_solver_audits.py": "b39c9237de8881232d5d8e9d46595405b9a870f740afd937a59ca3d621cadf6c",
+    "src/adaptive_drone_patrol/payload_solver_engine.py": "cc8eaf5ab2c8ee7d5db1f96409eeae9ec2aaa0d3598de8ae88703dc9fcdb3bc0",
+    "src/adaptive_drone_patrol/payload_solver_flight.py": "38f9a90d4939672f409eb897a6cb85faa91deff4f2ed84ddcaa789716ca3846d",
+    "src/adaptive_drone_patrol/payload_solver_initial_reset.py": "90307c3920649110f2b5fbe230c6130cd1e1883f552f3ba1a5cdefd8ae6d0d2d",
+    "src/adaptive_drone_patrol/payload_solver_media.py": "2ee00c26c121c61d1f1132c3c48038b77c40f51ec16f51dbec5b2e33a4fe1c06",
+    "src/adaptive_drone_patrol/payload_solver_motor.py": "cf92aa57e71a1f86b058eb72405b7141d58d0d21378db04e8ce93898feabbf8b",
+    "src/adaptive_drone_patrol/payload_solver_mujoco.py": "201b1b5cf926bcc33c6e7d87b2aebe7d035de3c182bbaf16356ef59f23492351",
+    "src/adaptive_drone_patrol/payload_solver_policy.py": "97dc11c0a53a1a5a677cef449d2ae76af60dc38acbfd0d204667bd9831852ace",
+    "src/adaptive_drone_patrol/payload_solver_qualification.py": "b2637b5c83d521e119c2bec83b257878d640485f227bdcd7bf9b15ff56073edd",
+    "src/adaptive_drone_patrol/payload_solver_reference.py": "cb3c75bb017cc33bc3ad19d09c75cc3f7f390d5b434b0162bcef1898c1d3493e",
+    "src/adaptive_drone_patrol/payload_solver_runtime.py": "183eea7b91bc4bf750ef158c99deb2092bfff787abaff445d9d2013a17ce2e0d",
+    "src/adaptive_drone_patrol/payload_solver_trace.py": "f191843a4230dd0057cb2d7490eb11273ce16ce3fcd9eb2fdfecf0b2f5de3bb7",
+    "src/adaptive_drone_patrol/payload_solver_validation.py": "ccf92e00ff580818fb9830f7168d1c695c86d499c1434fca496594ec6f583dde",
+    "src/adaptive_drone_patrol/payload_solver_video.py": "3c568a2b89acfaf2c2e2a93a86adf0af4fa849ec0457bc8f9ecd39428a6e7187",
+    "src/adaptive_drone_patrol/payload_solver_work.py": "a97c638d626acac85f153774c80a2f226a4e25efa360cf9bc13ef409433d2386",
+    "src/adaptive_drone_patrol/payload_solver_work_check.py": "e8ed2f9c5b6ff29e21651016419c461eab7498478bea9be5564355cd36434c12",
+    "src/adaptive_drone_patrol/physical_evidence.py": "e3f4d6808078c4b83e8a4dd3919c23b0e34547e8a05752bced6ca31dc72601a8",
+    "src/adaptive_drone_patrol/scenario.py": "027073fb293d59844548ceee2b00704a4781e8f5fe98e24f0c83e332d8a3870e",
+    "src/adaptive_drone_patrol/scene.py": "fbdd58f874d5faab54d588e12c5ceb79701f6056825bf2633645887ce2ced89d",
+    "src/adaptive_drone_patrol/util.py": "24f228460404f0a19b87a25f2a15f7f29fbb1743c39ee30eec0b8019b40301d4",
+    "src/adaptive_drone_patrol/video.py": "4c045a1602f2a89c622c54d19843d68e0f447301b2b35c78b822dcdf20d2a46a",
+    "src/adaptive_drone_patrol/video_delivery.py": "475329537fbdd1da59bef434a5290cd18c974fd8e858b85a22b187c5240641a4",
+    "src/adaptive_drone_patrol/video_render.py": "1eedf9886a6344faf5e304010bf111337668e215003ffd77b4fb72685365cf16",
+    "src/adaptive_drone_patrol/video_timing.py": "e9bc39bd7fac4d453b2634d69c8c8a677b2f73aa500283a6a31c83ba8e526cc6"
+  },
+  "schema": "mujoco-final3-media-summary-v1",
+  "group_proof_sha256": "e121899fba2872900bef1284f3b6a5779bc2c073d50703acab816ccbe2a3c428",
+  "recordings": [
+    {
+      "case_id": "basic-normal-1",
+      "frames": 4395,
+      "proof_sha256": "43e73d2e97ca1af9a936e199511bc75e216b4e049d8a2f9ca9ef54dfb2a8030b",
+      "videos": {
+        "hud.mkv": {
+          "bytes": 665217634,
+          "sha256": "77208a0bcba80f5ffc531d4cc82ca413f3137479b70dcf3e49361d1948c1e6cb"
+        },
+        "hud.mp4": {
+          "bytes": 11245806,
+          "sha256": "f52fd9f506e416719a51f081ce3640c88044848d0b6ab7f6685bca10f5576b9f"
+        },
+        "raw.mkv": {
+          "bytes": 115455843,
+          "sha256": "aee2092bb95361b01138c8027ad1945ffd03df8242eca280c9e39b7625d5777d"
+        },
+        "raw.mp4": {
+          "bytes": 6407003,
+          "sha256": "128b798e8d36e4ef3da890b5f8126d536d388ba4687d7d8687f22d681f8d8ca6"
+        }
+      },
+      "physical_last_frame_s": 43.94,
+      "displayed_duration_s": 43.95,
+      "framing": {
+        "all_ten_destinations_visible": true,
+        "complete_traversals": 2,
+        "detail_camera_unchanged": true,
+        "frames_per_traversal": 4395,
+        "overview_fixed": true,
+        "whole_drone_suspension_package_visible": true
+      },
+      "full_native_pose_and_hud_recomposed": true,
+      "decoded_hud_captions": {
+        "caption_regions_checked": 29,
+        "maximum_foreground_tile_luminance_mae": 2.686168421052631,
+        "maximum_region_luminance_mae": 1.9212352150537646
+      },
+      "relative_viewing_path": "outputs/suspended_mujoco_final_20261025_r3a/final-overview-media-v1/basic-normal-1/hud.mp4",
+      "local_viewing_size_sha_verified": true
+    },
+    {
+      "case_id": "basic-emergency-1",
+      "frames": 4453,
+      "proof_sha256": "13b0bd5b86bba730c0da1f46ae6e4865c97dd8ba45823fa02fe43b0f67e972fc",
+      "videos": {
+        "hud.mkv": {
+          "bytes": 672558083,
+          "sha256": "4ddf8875eadd503787c04df4446fcad987964d9973d0db642f7c1abf3152a743"
+        },
+        "hud.mp4": {
+          "bytes": 11459540,
+          "sha256": "4aae86a49d773d2828d0ba5a1852006d0c901fbf281afb27158b22f722784a99"
+        },
+        "raw.mkv": {
+          "bytes": 116611628,
+          "sha256": "7ca5445d5560c58f974cccbb70cf4f094a0c0890877db3d6c79b7b476e1bc0e2"
+        },
+        "raw.mp4": {
+          "bytes": 6281759,
+          "sha256": "04791946ecd1e7690a6483544ef9997a7bea797e0f7b7fcd8cdd0efe1a4cf4c7"
+        }
+      },
+      "physical_last_frame_s": 44.52,
+      "displayed_duration_s": 44.53,
+      "framing": {
+        "all_ten_destinations_visible": true,
+        "complete_traversals": 2,
+        "detail_camera_unchanged": true,
+        "frames_per_traversal": 4453,
+        "overview_fixed": true,
+        "whole_drone_suspension_package_visible": true
+      },
+      "full_native_pose_and_hud_recomposed": true,
+      "decoded_hud_captions": {
+        "caption_regions_checked": 29,
+        "maximum_foreground_tile_luminance_mae": 2.686168421052631,
+        "maximum_region_luminance_mae": 1.9212352150537646
+      },
+      "relative_viewing_path": "outputs/suspended_mujoco_final_20261025_r3a/final-overview-media-v1/basic-emergency-1/hud.mp4",
+      "local_viewing_size_sha_verified": true
+    },
+    {
+      "case_id": "basic-cost_shift-1",
+      "frames": 4496,
+      "proof_sha256": "c9ca6f66acdd43a20e81c5ec856176868eef510294ffde2ad58da63798dda22e",
+      "videos": {
+        "hud.mkv": {
+          "bytes": 657299367,
+          "sha256": "666ccc8d1fa5ee28128f230e51a2bf6efd8277e6e10e10d36802fbfd6a2e6ceb"
+        },
+        "hud.mp4": {
+          "bytes": 11194467,
+          "sha256": "a80f15427d0d36263ff6051e39aa3d950cca8c6b7d94457a5ae615ad153b1f95"
+        },
+        "raw.mkv": {
+          "bytes": 118988202,
+          "sha256": "e62a602d286b977e6f8edeec1c469711e74f994c4cfa3ef57518900287e614ce"
+        },
+        "raw.mp4": {
+          "bytes": 6285875,
+          "sha256": "c6cf736463c36465a9c342498f676686c76062e446c15021056e389575aee4da"
+        }
+      },
+      "physical_last_frame_s": 44.95,
+      "displayed_duration_s": 44.96,
+      "framing": {
+        "all_ten_destinations_visible": true,
+        "complete_traversals": 2,
+        "detail_camera_unchanged": true,
+        "frames_per_traversal": 4496,
+        "overview_fixed": true,
+        "whole_drone_suspension_package_visible": true
+      },
+      "full_native_pose_and_hud_recomposed": true,
+      "decoded_hud_captions": {
+        "caption_regions_checked": 29,
+        "maximum_foreground_tile_luminance_mae": 2.686168421052631,
+        "maximum_region_luminance_mae": 1.9212352150537646
+      },
+      "relative_viewing_path": "outputs/suspended_mujoco_final_20261025_r3a/final-overview-media-v1/basic-cost_shift-1/hud.mp4",
+      "local_viewing_size_sha_verified": true
+    }
+  ],
+  "complete_local_master_recovery": "PASSED_ALL12_VIDEOS_AND_ALL3608_SELECTED_FILE_SIZE_SHA256",
+  "complete": true,
+  "human_review_evidence": "mujoco-human-review.json",
+  "completion_scope": "This evidence stage; complete session also requires related local commit.",
+  "local_recovery_evidence": "mujoco-local-recovery.json"
+}

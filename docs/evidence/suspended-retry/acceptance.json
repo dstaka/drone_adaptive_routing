@@ -1,0 +1,131 @@
+{
+  "schema": "suspended-retry-acceptance-v1",
+  "status": "QUALIFICATION_FAILED",
+  "accepted": false,
+  "physical_training_admitted": false,
+  "gates": [
+    {
+      "id": 1,
+      "status": "FAILED",
+      "reason_ja": "55条件全件試行。独立33/55条件pass、大角度14/16に受動正energy増加5%超過、8床違反、6/6のdt/半dt比較が閾値超過。motor15/reset30の成功を運用域資格へ流用しない。"
+    },
+    {
+      "id": 2,
+      "status": "PARTIAL_NOT_ACCEPTED",
+      "reason_ja": "実30resetの物性/隔離とactor契約の負CPU試験を確認。学習時readerと毎episode全分布のGPU統合は未実行。"
+    },
+    {
+      "id": 3,
+      "status": "BLOCKED",
+      "reason_ja": "両学習0step、validation0/12条件・0/120遷移。新native評価統合も未完。"
+    },
+    {
+      "id": 4,
+      "status": "BLOCKED",
+      "reason_ja": "randomized0/127、fixed0/127、合計0/254。成功率/95%区間/優位性を算出しない。"
+    },
+    {
+      "id": 5,
+      "status": "BLOCKED",
+      "reason_ja": "新しいmissionの実完了・安全遷移・イベント・routing判断の証拠なし。"
+    },
+    {
+      "id": 6,
+      "status": "HUMAN_REVIEW_PENDING",
+      "reason_ja": "採用方策なし、最終動画0/3。全frame照合と新規人手1倍速視聴は未実施・未依頼。"
+    },
+    {
+      "id": 7,
+      "status": "FAILURE_HANDOFF_RECORDED_NOT_ACCEPTED",
+      "reason_ja": "実source/raw/hash/転送/GPU/CPU/日本語文書/PDFを失敗証拠として保存。未実行のvalidation/受入bindingは存在しない。"
+    },
+    {
+      "id": 8,
+      "status": "SINGLE_LOCAL_COMMIT_RECORDED",
+      "reason_ja": "このファイルを含むspec・公開指示・索引・実装・CPU試験・必要compact証拠を同一の新ローカルcommitへ収録する。commitIDと実author/committerは最終報告とGit履歴で確認。"
+    }
+  ],
+  "learning": {
+    "randomized": {
+      "actual_steps": 0,
+      "planned_steps": 300000
+    },
+    "fixed": {
+      "actual_steps": 0,
+      "planned_steps": 300000
+    }
+  },
+  "validation": {
+    "attempted_cases": 0,
+    "required_cases": 12,
+    "actual_transitions": 0,
+    "required_transitions": 120
+  },
+  "evaluation": {
+    "randomized": {
+      "basic": {
+        "attempted": 0,
+        "required": 9
+      },
+      "endpoints": {
+        "attempted": 0,
+        "required": 18
+      },
+      "held_out": {
+        "attempted": 0,
+        "required": 100
+      },
+      "total_attempted": 0,
+      "total_required": 127,
+      "success_rate": null,
+      "wilson95": null,
+      "subgroup_results": null
+    },
+    "fixed": {
+      "basic": {
+        "attempted": 0,
+        "required": 9
+      },
+      "endpoints": {
+        "attempted": 0,
+        "required": 18
+      },
+      "held_out": {
+        "attempted": 0,
+        "required": 100
+      },
+      "total_attempted": 0,
+      "total_required": 127,
+      "success_rate": null,
+      "wilson95": null,
+      "subgroup_results": null
+    }
+  },
+  "evaluation_total": {
+    "attempted": 0,
+    "required": 254
+  },
+  "held_out_frozen": false,
+  "held_out_opened": false,
+  "final_videos": {
+    "created": 0,
+    "required": 3,
+    "basic_seed": 1,
+    "nominal_ratio": 0.2,
+    "nominal_side_m": 0.045,
+    "all_frame_verified": false,
+    "fresh_human_review": "PENDING_NO_FINAL_MEDIA",
+    "requested": false,
+    "past_approval_reused": false
+  },
+  "compatibility": {
+    "legacy_source_inputs_unchanged": true,
+    "new_unloaded_motor_audit_cases_passed": 15,
+    "new_integrated_unloaded_predecessor_gates": "NOT_RUN_UNVERIFIED"
+  },
+  "legacy_failed_profile_still_blocked": true,
+  "failed_checkpoint_used": false,
+  "scope_ja": "固定リンクの物理的不可能性、旧Euler根因確定、native ball数値修理済みのいずれも主張しない。制御不足・積分依存性の切り分け未完了。",
+  "qualification_receipt_sha256": "2ca4f9b3b0d52bafeca38c8fc723d160af21b228ef48e1d74260e0c7d1cf49ce",
+  "physical_signature_sha256": "a94f6f8e33762fa380d16ccd0b828c89b814f891c01b7e2018fd70d8d897ea8b"
+}

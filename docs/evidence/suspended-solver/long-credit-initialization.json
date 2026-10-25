@@ -1,0 +1,46 @@
+{
+  "schema": "payload-solver-actual-initialization-check-v1",
+  "method": "randomized",
+  "split": "development",
+  "common": {
+    "seed": 71,
+    "N": 1,
+    "T": 100,
+    "S": 3000000,
+    "K": 30000,
+    "pilot": false,
+    "curriculum_steps": 1800000,
+    "optimizer": {
+      "class_name": "PPO",
+      "clip_param": 0.2,
+      "desired_kl": 0.01,
+      "entropy_coef": 0.0,
+      "gamma": 0.999,
+      "lam": 0.99,
+      "learning_rate": 3e-05,
+      "max_grad_norm": 0.3,
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "schedule": "fixed",
+      "use_clipped_value_loss": true,
+      "value_loss_coef": 1.0
+    }
+  },
+  "parent_sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+  "initialization_sha256": "93b9015cf6d5fba6fdb1553407013d81818ff480a438d3bf284cb869ac44327b",
+  "manifest_sha256": "6860551aa3ac25cdc9079b5cd9932a1799ebf0c223336dadfa03f8d7b03139a8",
+  "exact_parent_columns0_13": true,
+  "all_new_columns13_29_zero": true,
+  "other_tensors_equal": true,
+  "initial_iteration": 0,
+  "initial_optimizer_state_absent": true,
+  "initial_tensor_sha256": {
+    "actor": "0904beeb93f7f2ae3717daf11e76d635dfc56d9b59b5339d00cc33d2836fdcc2",
+    "critic": "7b5df02238658811634f8bf3c5d641c9e688320534c275a9bce23b3ed9d9e240"
+  },
+  "bound_training_sources_unchanged": true,
+  "torch_python_file_count": 2351,
+  "torch_python_inventory_sha256": "47a5d536891ba367cab94ac9edb3227cbaffad05ac08a183b4f94846fca0e049",
+  "physical_acceptance": false,
+  "scope": "Independent CPU read of actual fresh initialization; does not certify learned flight or past optimizer RNG"
+}

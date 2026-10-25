@@ -1,0 +1,177 @@
+{
+  "schema": "payload-solver-development-native-prefix-audits-v1",
+  "method": "fixed",
+  "split": "development",
+  "source_archive_sha256": "5dac14951fb089fd100f5474a57253dd530eaaa99995c2a606ab899f6f15908b",
+  "actual_audit_source_sha256": "d3eb6bbf5cf4fe7c2768e217cd11dd6655a5594383650969ca49e67295415364",
+  "all_three_raw_prefixes_replayed": true,
+  "delivery": {
+    "completed.json": {
+      "bytes": 75,
+      "sha256": "fbfd9e35d031d56f4511a2ccb524c17c4d9b6d766db9717d968f129ff71f1eb6"
+    },
+    "s1000000.json": {
+      "bytes": 1833,
+      "sha256": "79c423550be0fc5172bebe436a30e533ff9156f2dcffed7ccdde5e85a9066763"
+    },
+    "s300000.json": {
+      "bytes": 1801,
+      "sha256": "1ac2ada33d0d8108967becd299b24fd162ffa141dd586b97aba5b666f0c90ecc"
+    },
+    "s3000000.json": {
+      "bytes": 1853,
+      "sha256": "22fbd16463ab5bc6f665356c136bbcc86a1340e8a526f2aa7524557e6fc75e11"
+    }
+  },
+  "rungs": [
+    {
+      "S": 300000,
+      "method": "fixed",
+      "actual_prefix": {
+        "valid_transitions": 300000,
+        "stage_valid_transitions": [
+          300000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "stage_max_continuous_steps": [
+          12000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "full_stage_ten_target_episodes": [],
+        "destinations_bound": true,
+        "physical_acceptance": false,
+        "native_action_observation_reconciled": true,
+        "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+        "artifact_sha256": {
+          "environment/training.jsonl.gz": "33e29cd570ff4830759453e974eec1b7fad27805cd10b4ca29fedc587e57ec3e",
+          "environment/reset-properties.jsonl.gz": "29b176ba4a447b7e6a8f3e4ae1c49df1ce1d162efae26b7dd929ddfb761360cf",
+          "environment/terminal.jsonl.gz": "3aca4f71e603cc7084de81cf4e5e1f8036051b97ae53c644a3d68cd84da773ee",
+          "environment/runtime-0.030/raw.jsonl.gz": "44f8dc398a3d667a572f9d6807aec02cffa9bb2341a0f22bbadef566f685d4dd",
+          "environment/runtime-0.045/raw.jsonl.gz": "0f6e68efe393b8f9cc4e1085fb971c02cfaa11e499acb6e7a4135b5721d71753",
+          "environment/runtime-0.060/raw.jsonl.gz": "44f8dc398a3d667a572f9d6807aec02cffa9bb2341a0f22bbadef566f685d4dd",
+          "checkpoint_s300000.json": "18a5d9ee522414a399fb5c08d0e2b8f62c255d4a07346c4e3050612638b6a288",
+          "manifest.json": "a706bdf58f3c59074a4ee0ef39dcee9aff6d0aeb014409f978612300ec4b4c51"
+        },
+        "sample_counters": {
+          "valid": 300000,
+          "generated": 300000,
+          "invalid": 0,
+          "completed_training_stops": 0,
+          "failed_episodes": 0
+        },
+        "past_stochastic_actor_rng_replayed": false
+      },
+      "qualified_stage_exposure": false,
+      "ineligibility_reason": "Actual curriculum exposure is insufficient",
+      "physical_acceptance": false
+    },
+    {
+      "S": 1000000,
+      "method": "fixed",
+      "actual_prefix": {
+        "valid_transitions": 1000000,
+        "stage_valid_transitions": [
+          300000,
+          300000,
+          300095,
+          99905,
+          0,
+          0
+        ],
+        "stage_max_continuous_steps": [
+          12000,
+          12000,
+          12000,
+          5636,
+          0,
+          0
+        ],
+        "full_stage_ten_target_episodes": [],
+        "destinations_bound": true,
+        "physical_acceptance": false,
+        "native_action_observation_reconciled": true,
+        "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+        "artifact_sha256": {
+          "environment/training.jsonl.gz": "33e29cd570ff4830759453e974eec1b7fad27805cd10b4ca29fedc587e57ec3e",
+          "environment/reset-properties.jsonl.gz": "29b176ba4a447b7e6a8f3e4ae1c49df1ce1d162efae26b7dd929ddfb761360cf",
+          "environment/terminal.jsonl.gz": "3aca4f71e603cc7084de81cf4e5e1f8036051b97ae53c644a3d68cd84da773ee",
+          "environment/runtime-0.030/raw.jsonl.gz": "44f8dc398a3d667a572f9d6807aec02cffa9bb2341a0f22bbadef566f685d4dd",
+          "environment/runtime-0.045/raw.jsonl.gz": "0f6e68efe393b8f9cc4e1085fb971c02cfaa11e499acb6e7a4135b5721d71753",
+          "environment/runtime-0.060/raw.jsonl.gz": "44f8dc398a3d667a572f9d6807aec02cffa9bb2341a0f22bbadef566f685d4dd",
+          "checkpoint_s1000000.json": "06f47cd10acb48e5ff8fd7591b16ae136bb1a4fa3efc32e3665531596cab872c",
+          "manifest.json": "a706bdf58f3c59074a4ee0ef39dcee9aff6d0aeb014409f978612300ec4b4c51"
+        },
+        "sample_counters": {
+          "valid": 1000000,
+          "generated": 1000000,
+          "invalid": 0,
+          "completed_training_stops": 0,
+          "failed_episodes": 243
+        },
+        "past_stochastic_actor_rng_replayed": false
+      },
+      "qualified_stage_exposure": false,
+      "ineligibility_reason": "Actual curriculum exposure is insufficient",
+      "physical_acceptance": false
+    },
+    {
+      "S": 3000000,
+      "method": "fixed",
+      "actual_prefix": {
+        "valid_transitions": 3000000,
+        "stage_valid_transitions": [
+          300000,
+          300000,
+          300095,
+          300163,
+          299770,
+          1499972
+        ],
+        "stage_max_continuous_steps": [
+          12000,
+          12000,
+          12000,
+          6451,
+          1716,
+          12000
+        ],
+        "full_stage_ten_target_episodes": [],
+        "destinations_bound": true,
+        "physical_acceptance": false,
+        "native_action_observation_reconciled": true,
+        "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+        "artifact_sha256": {
+          "environment/training.jsonl.gz": "33e29cd570ff4830759453e974eec1b7fad27805cd10b4ca29fedc587e57ec3e",
+          "environment/reset-properties.jsonl.gz": "29b176ba4a447b7e6a8f3e4ae1c49df1ce1d162efae26b7dd929ddfb761360cf",
+          "environment/terminal.jsonl.gz": "3aca4f71e603cc7084de81cf4e5e1f8036051b97ae53c644a3d68cd84da773ee",
+          "environment/runtime-0.030/raw.jsonl.gz": "44f8dc398a3d667a572f9d6807aec02cffa9bb2341a0f22bbadef566f685d4dd",
+          "environment/runtime-0.045/raw.jsonl.gz": "0f6e68efe393b8f9cc4e1085fb971c02cfaa11e499acb6e7a4135b5721d71753",
+          "environment/runtime-0.060/raw.jsonl.gz": "44f8dc398a3d667a572f9d6807aec02cffa9bb2341a0f22bbadef566f685d4dd",
+          "checkpoint_s3000000.json": "22a4f7fff0ab83445b03316d2b4d998f605ee949a9b2aa9f0c4215d331b7fa13",
+          "manifest.json": "a706bdf58f3c59074a4ee0ef39dcee9aff6d0aeb014409f978612300ec4b4c51"
+        },
+        "sample_counters": {
+          "valid": 3000000,
+          "generated": 3000000,
+          "invalid": 0,
+          "completed_training_stops": 0,
+          "failed_episodes": 6736
+        },
+        "past_stochastic_actor_rng_replayed": false
+      },
+      "qualified_stage_exposure": false,
+      "ineligibility_reason": "Actual curriculum exposure is insufficient",
+      "physical_acceptance": false
+    }
+  ],
+  "known_checker_limitation": "final-code-review.json: command RNG/order not independently reconstructed",
+  "physical_acceptance": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ALL62_PASSED",
+  "passive32": "PASSED",
+  "powered18": 18,
+  "refinement12": 12,
+  "comparison": {
+    "passed": true,
+    "maximum_position_difference_m": [
+      0.011544483936100415,
+      0.011160336206287992,
+      0.011397322758473655,
+      0.010986415215670809,
+      0.011275351007075128,
+      0.010859368623548747
+    ],
+    "maximum_angle_difference_deg": [
+      0.0007670746417795715,
+      0.0006760917011385075,
+      0.0007386933266987595,
+      0.0006413357597279018,
+      0.0007024746626310503,
+      0.0006037236237089375
+    ],
+    "samples_per_pair": 3001,
+    "bodies_per_pair": 3
+  },
+  "base_receipt_sha256": "e5d39a91dc32dc689f1f1835951512227ccdaf2c2377cadd9779a778c94d9413",
+  "half_receipt_sha256": "a3ff975acbfcc13796bb50d5caacbf50f60799a4d31f5c784c58d1228a85bfde",
+  "learning_admitted": false,
+  "remaining": "motor15/reset30/batch isolation, selected runtime C0/C1/C2, real mission wall; finalfreeze duration7x330s",
+  "scope": "CPU Scene N32 base/N8 half only; not operational P8N1 admission",
+  "raw_local_recovery": {
+    "status": "ALL331_FILES_SIZE_SHA256_VERIFIED",
+    "files": 331,
+    "bytes": 23360504974,
+    "receipt": "CPU-powered-local-complete-verified-v1.json"
+  }
+}

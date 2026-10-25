@@ -1,0 +1,45 @@
+{
+  "schema": "hybrid-genesis-process-independent-motor15-v1",
+  "passed": true,
+  "motor_cases": 15,
+  "comparison": {
+    "passed": true,
+    "maximum_unloaded_position_m": 8.677851511149104e-20,
+    "maximum_unloaded_angle_deg": 1.7075472925031877e-06,
+    "maximum_unloaded_velocity_m_s": 3.3871558665088805e-18,
+    "maximum_unloaded_omega_rad_s": 2.6645352591003757e-15,
+    "loaded_single_rotor_velocity_difference_m_s": [
+      0.028210544517920738,
+      0.028210544517920794,
+      0.028210544517920738,
+      0.028210544517920738
+    ],
+    "loaded_single_rotor_omega_difference_rad_s": [
+      0.11681099970551928,
+      0.11681099970551678,
+      0.11681099970551995,
+      0.11681099970552164
+    ]
+  },
+  "overlap": {
+    "peak_concurrent_processes": 8,
+    "actual_scene_n_envs": 1,
+    "process_ids": [
+      18168,
+      18169,
+      18170,
+      18171,
+      18172,
+      18173,
+      18174,
+      18175
+    ],
+    "speedup_claimed": false
+  },
+  "worker_group_sha256": "6ba764d678505ba80da5f2b3bbfd700a9d041fc732d6a1564a4bd69e27280ff2",
+  "motor_plan_sha256": "16b94d950adf593199b88cbf4c5ad4d57cda39c435210338e4b34c1ad99358b0",
+  "receipt_sha256": "440ce3ddc7fd3969d5cc70cbe99272a6d4d88ae7639ef7b6c4de26bf749830ab",
+  "learning_admitted": false,
+  "scope": "Actual eight OS workers / CPU float64 implicitfast512 / Scene N1 only. Numerical all62 and persistent-bank/C gates are separate.",
+  "raw_local_recovery": "IN_PROGRESS_IN_P8_DIAGNOSTICS_ARCHIVE"
+}

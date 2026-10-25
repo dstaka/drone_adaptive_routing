@@ -1,0 +1,14 @@
+{
+  "schema": "actual-failed-admission-cli-check-v1",
+  "qualification_sha256": "2ca4f9b3b0d52bafeca38c8fc723d160af21b228ef48e1d74260e0c7d1cf49ce",
+  "exit_code": 1,
+  "expected_error": "Retry diagnostics-only: complete new qualification is required",
+  "output_created": false,
+  "optimizer_started": false,
+  "log": {
+    "path": "outputs/suspended_retry_20261022_052336/actual-failed-admission.log",
+    "bytes": 759,
+    "sha256": "cb139137ae981941eaa9e5956f99dfe72f7498fc56975b6abfb10b39dc0c24d9"
+  },
+  "scope_ja": "実際の最終不合格receiptをCLIへ渡し、学習出力作成より前に拒否。CUDA無効のCPU確認。"
+}

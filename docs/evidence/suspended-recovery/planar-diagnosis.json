@@ -1,0 +1,27 @@
+{
+  "schema": "payload-recovery-planar-diagnosis-v1",
+  "status": "DIAGNOSTICS_ONLY",
+  "physical_training_admitted": false,
+  "full_receipt": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/planar-public-replay.json",
+    "bytes": 78851,
+    "sha256": "c5400565c148e1dc2b14967ecb08b50a051bbe88c637c00fc0f8f871590c1e1e"
+  },
+  "source_assessment": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-forensics/planar-source-assessment.json",
+    "bytes": 6738,
+    "sha256": "5a4acf09ed215817e6c3b6eed306d84277aa6d54aa7607ab643ca2db425f768e"
+  },
+  "local_energy_increment_check": {
+    "method": "Restart exact 2DOF model from each actual .01s observation, advance two velocity-first .005s updates, compare energy increment with next actual sample. This is a consistency check, not a full engine rerun.",
+    "intervals": 3000,
+    "maximum_absolute_increment_error_J": 2.9966625209043585e-08,
+    "rms_increment_error_J": 4.155193965925137e-09,
+    "signed_accumulated_increment_error_J": -8.917667480672076e-08,
+    "observed_total_energy_change_J": 0.0469550072839709,
+    "predicted_summed_local_energy_change_J": 0.0469549181072961
+  },
+  "scope_ja": "固定anchor・worldXZ平面の1実traceに限る。独立Lagrangianのvelocity-first更新がenergy増分を説明する。3Dの一般欠陥や物理資格の証明ではない。",
+  "portable_command": "PYTHONPATH=src .venv-routing/bin/python scripts/diagnose_payload_planar.py --probe outputs/suspended_retry_20261022_052336/delivery-final/outputs/qualification-v3-domain/large_0.060_0.10 --substeps 2 --out outputs/NEW_PLANAR_RECEIPT.json",
+  "connect_limitation_ja": "pinned func_midpoint_eligibleはconnect/weld拘束やDOF子孫を持つ物体をstandalone midpointから除外する。CONNECT表現変更だけによるmidpoint化はsource根拠がない。"
+}

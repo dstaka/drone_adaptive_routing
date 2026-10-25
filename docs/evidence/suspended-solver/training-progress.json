@@ -1,0 +1,859 @@
+{
+  "schema": "payload-solver-public-development-progress-v1",
+  "status": "CLOSED_UNSUCCESSFUL_BY_USER_DIRECTION",
+  "completed_learning_transitions": 7020000,
+  "trials": [
+    {
+      "id": "initial20k",
+      "method": "randomized",
+      "split": "development",
+      "pilot": true,
+      "seed": 71,
+      "reward": {
+        "id": "loaded-shared-settling-spin-v2",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed": -0.01,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 20000,
+        "valid": 20000,
+        "invalid": 0,
+        "episodes": 2,
+        "failed_episodes": 0,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          20000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 200,
+        "optimizer_gradient_steps": 4000,
+        "consumed_transitions": 20000
+      },
+      "effective_valid_transitions_per_second": 180.93493121169297,
+      "checkpoint_sha256": "01fa85abccaaf8ac696d3f2eed378a57f28e6f904b03ed26133d7a3c7016b325",
+      "actual_manifest_sha256": "09bb5df5b2510c7a73c769e02ffc5ec50faa99813ab7f9674cd77904e36b0338",
+      "adopted": false,
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 1,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "completed_targets": 0
+        }
+      ]
+    },
+    {
+      "id": "lambda099",
+      "method": "randomized",
+      "split": "development",
+      "pilot": true,
+      "seed": 71,
+      "reward": {
+        "id": "loaded-shared-settling-spin-v2",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed": -0.01,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.99,
+        "lam": 0.99,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 200000,
+        "valid": 200000,
+        "invalid": 0,
+        "episodes": 52,
+        "failed_episodes": 38,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          200000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 2000,
+        "optimizer_gradient_steps": 40000,
+        "consumed_transitions": 200000
+      },
+      "effective_valid_transitions_per_second": 183.46469520057738,
+      "checkpoint_sha256": "1e2ed3db2c841d9765e871cccca36499da349a9c049539ca6e2deaa1aa19d82a",
+      "actual_manifest_sha256": "ae0689354799522975f96ab8eb4b31308dec0e02cbf479be31b423acf196a690",
+      "adopted": false,
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 51,
+          "failures": 38,
+          "max_continuous_steps": 12000,
+          "completed_targets": 0
+        }
+      ]
+    },
+    {
+      "id": "bounded-spin",
+      "method": "randomized",
+      "split": "development",
+      "pilot": true,
+      "seed": 71,
+      "reward": {
+        "id": "loaded-shared-settling-bounded-spin-v3",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed": -0.01,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "package_spin_cost_cap_rad_s": 1.0,
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 200000,
+        "valid": 200000,
+        "invalid": 0,
+        "episodes": 17,
+        "failed_episodes": 0,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          200000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 2000,
+        "optimizer_gradient_steps": 40000,
+        "consumed_transitions": 200000
+      },
+      "effective_valid_transitions_per_second": 185.1580438216556,
+      "checkpoint_sha256": "60f2cedb361310f1ea3171102f2d694e541b6c05aa8467f927a4cd0480fee6f4",
+      "actual_manifest_sha256": "cc83cc6b0a7c43f92a8f76dcd764bcfe5f4c00754ab4807ad90e47878429ab6e",
+      "adopted": false,
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 16,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "completed_targets": 0
+        }
+      ]
+    },
+    {
+      "id": "angular-cost-v4",
+      "method": "randomized",
+      "split": "development",
+      "pilot": true,
+      "seed": 71,
+      "reward": {
+        "id": "loaded-shared-settling-angular-cost-v4",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed_squared": -0.1,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "package_spin_cost_cap_rad_s": 1.0,
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 300000,
+        "valid": 300000,
+        "invalid": 0,
+        "episodes": 26,
+        "failed_episodes": 0,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          300000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 3000,
+        "optimizer_gradient_steps": 60000,
+        "consumed_transitions": 300000
+      },
+      "effective_valid_transitions_per_second": 183.54310824564843,
+      "checkpoint_sha256": "d30ec625a89b5e39ffb3be3ffaa2eaed38d32754be781e8b95e97d49ae91ad04",
+      "actual_manifest_sha256": "91c736c30928f99778ddaae264b584c3ef437cd04f442a331db34dee19ac4448",
+      "adopted": false,
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 25,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "completed_targets": 0
+        }
+      ]
+    },
+    {
+      "id": "dense-position300k",
+      "method": "randomized",
+      "split": "development",
+      "pilot": true,
+      "seed": 71,
+      "reward": {
+        "id": "loaded-shared-settling-dense-position-v5",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "position_error_squared": -2.0,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed_squared": -0.1,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "package_spin_cost_cap_rad_s": 1.0,
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 300000,
+        "valid": 300000,
+        "invalid": 0,
+        "episodes": 26,
+        "failed_episodes": 0,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          300000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 3000,
+        "optimizer_gradient_steps": 60000,
+        "consumed_transitions": 300000
+      },
+      "effective_valid_transitions_per_second": 184.30440008582184,
+      "checkpoint_sha256": "12b42e26738ed88e51f6f8cf1fc6be69d2458bcba9d72faace0b2635433cf6eb",
+      "actual_manifest_sha256": "8f85004915bd00fedb9c48625cffb84dc34ad9a78762562c4a035fa2951a3a31",
+      "adopted": false,
+      "matched_mean_diagnostics": [
+        {
+          "id": "dense-position-s20000",
+          "passed": false,
+          "execution": {
+            "status": "FAILED",
+            "error": "TimeoutError('Prescribed sequence deadline')",
+            "completed": [],
+            "steps": 3000,
+            "legs": [],
+            "wall_s": 13.790785396937281,
+            "samples_sha256": "a223d3aac441fbee4dc3802307481ad2b4ecd478f0fa3adb83d6aa96925f8729",
+            "declaration_sha256": "260d8c2d30e94aa4b11e2f6f84c4da6be13c4906c9736b26b92f7d44ad3a093d"
+          },
+          "replay_error": "Incomplete prescribed continuous target sequence",
+          "native_proof": {
+            "native_raw_sha256": "986a5598bf9eced5f03de47a5e580858cdcc3c2dbe4e5773f49a464bec49e1c9",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "b9e6b9f515c7b2e03331835e8fdc4b0e439c48bf002a137598670a7e6e9cef92",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "proof": null,
+          "physical_acceptance": false,
+          "last500_mean": {
+            "drone_error_m": 0.25082316371896435,
+            "drone_speed_m_s": 0.0025100790024449138,
+            "package_speed_m_s": 0.0025740046954718554,
+            "swing_angle_deg": 0.09379724428195228,
+            "swing_rate_deg_s": 4.2889562043950615,
+            "package_spin_deg_s": 31.500997967627068
+          }
+        },
+        {
+          "id": "dense-position-s100000",
+          "passed": false,
+          "execution": {
+            "status": "FAILED",
+            "error": "TimeoutError('Prescribed sequence deadline')",
+            "completed": [],
+            "steps": 3000,
+            "legs": [],
+            "wall_s": 13.812694121152163,
+            "samples_sha256": "11203106ba04c620232b9cf4fc9a9522cb0ea1d2abad6f03bcec7380285f4b28",
+            "declaration_sha256": "ee5144dca6d3aeb86aab4e86d4b374b59b0dcb6413add4c1a8931a16277d7579"
+          },
+          "replay_error": "Incomplete prescribed continuous target sequence",
+          "native_proof": {
+            "native_raw_sha256": "37cb82de47117d72dd52b8a1fdfafd3191594c5acda6061f0ada3baf87fffd1c",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "1b8c6505bac50dbfdca81e8e83dcbc57191d94bef4ddf17b70465ac96c68c037",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "proof": null,
+          "physical_acceptance": false,
+          "last500_mean": {
+            "drone_error_m": 0.24806869158771389,
+            "drone_speed_m_s": 0.0002299075070543985,
+            "package_speed_m_s": 0.0006952995524168328,
+            "swing_angle_deg": 0.10874612865398342,
+            "swing_rate_deg_s": 2.8780314628126336,
+            "package_spin_deg_s": 36.52010497461287
+          }
+        },
+        {
+          "id": "dense-position-s300000",
+          "passed": false,
+          "execution": {
+            "status": "FAILED",
+            "error": "TimeoutError('Prescribed sequence deadline')",
+            "completed": [],
+            "steps": 3000,
+            "legs": [],
+            "wall_s": 13.876861447002739,
+            "samples_sha256": "61405daa474827b945ae23f51cf352a0df871e16f2a03c17f5d3e5f30406be52",
+            "declaration_sha256": "dced443862acec168aa1d5d10577c69de5f08af1c66a96a04ef65204bad53f1d"
+          },
+          "replay_error": "Incomplete prescribed continuous target sequence",
+          "native_proof": {
+            "native_raw_sha256": "283c787188a2e54c2a8791fb258085a736a6917d3292fd40860f655fdeaa5b58",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "12b42e26738ed88e51f6f8cf1fc6be69d2458bcba9d72faace0b2635433cf6eb",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "proof": null,
+          "physical_acceptance": false,
+          "last500_mean": {
+            "drone_error_m": 0.2775500431997295,
+            "drone_speed_m_s": 0.001718248812952135,
+            "package_speed_m_s": 0.0216222532684969,
+            "swing_angle_deg": 0.7114711847356254,
+            "swing_rate_deg_s": 4.744400467519746,
+            "package_spin_deg_s": 38.3234787984687
+          }
+        }
+      ],
+      "source_archive_sha256": "1a3e240e0116caffd0bee7fef68fb2d89475e86ee243aaf0191740f84e0f3cf6",
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 25,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "completed_targets": 0
+        }
+      ]
+    },
+    {
+      "id": "long-credit-randomized-v1",
+      "method": "randomized",
+      "split": "development",
+      "pilot": false,
+      "seed": 71,
+      "N": 1,
+      "T": 100,
+      "S": 3000000,
+      "reward": {
+        "id": "loaded-shared-settling-dense-position-v5",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "position_error_squared": -2.0,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed_squared": -0.1,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "package_spin_cost_cap_rad_s": 1.0,
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.999,
+        "lam": 0.99,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 3000000,
+        "valid": 3000000,
+        "invalid": 0,
+        "episodes": 9632,
+        "failed_episodes": 9579,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          300000,
+          300000,
+          300260,
+          299842,
+          299903,
+          1499995
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 30000,
+        "optimizer_gradient_steps": 600000,
+        "consumed_transitions": 3000000
+      },
+      "effective_valid_transitions_per_second": 184.81629052151183,
+      "actual_manifest_sha256": "6860551aa3ac25cdc9079b5cd9932a1799ebf0c223336dadfa03f8d7b03139a8",
+      "actual_completed_sha256": "de53e9e7886e0bbcc0274a54cb5bc65562c7a0ff19f24cebd038bc999b8b8491",
+      "checkpoints": [
+        {
+          "S": 300000,
+          "sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3"
+        },
+        {
+          "S": 1000000,
+          "sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8"
+        },
+        {
+          "S": 3000000,
+          "sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f"
+        }
+      ],
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 25,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 25,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 25
+        },
+        {
+          "stage": 1,
+          "closed_episodes": 25,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 25,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 25
+        },
+        {
+          "stage": 2,
+          "closed_episodes": 95,
+          "failures": 93,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 83,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 83
+        },
+        {
+          "stage": 3,
+          "closed_episodes": 222,
+          "failures": 222,
+          "max_continuous_steps": 6471,
+          "episodes_with_at_least500steps": 149,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 149
+        },
+        {
+          "stage": 4,
+          "closed_episodes": 7008,
+          "failures": 7008,
+          "max_continuous_steps": 50,
+          "episodes_with_at_least500steps": 0,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 0
+        },
+        {
+          "stage": 5,
+          "closed_episodes": 2256,
+          "failures": 2256,
+          "max_continuous_steps": 6489,
+          "episodes_with_at_least500steps": 914,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 914
+        }
+      ],
+      "independent_full_native_prefix_audit": "ALL300K_1M_3M_REPLAY_PASSED_EXPOSURE_INELIGIBLE",
+      "source_archive_sha256": "5dac14951fb089fd100f5474a57253dd530eaaa99995c2a606ab899f6f15908b",
+      "adopted": false,
+      "independent_audit_evidence": "long-credit-randomized-prefix-audits.json"
+    },
+    {
+      "id": "long-credit-common-fixed-v1",
+      "method": "fixed",
+      "split": "development",
+      "pilot": false,
+      "seed": 71,
+      "N": 1,
+      "T": 100,
+      "S": 3000000,
+      "reward": {
+        "id": "loaded-shared-settling-dense-position-v5",
+        "running_dt_s": 0.01,
+        "weights": {
+          "progress_squared_distance": 2.0,
+          "hover": 0.5,
+          "position_error_squared": -2.0,
+          "vehicle_speed_squared": -0.03,
+          "altitude_error_squared": -0.5,
+          "vehicle_angular_speed_squared": -0.1,
+          "swing_radians_squared": -2.0,
+          "swing_rate_radians_squared": -0.1,
+          "package_speed_squared": -0.5,
+          "package_spin_radians_squared": -0.1,
+          "simultaneous_shared_valid": 2.0
+        },
+        "hover_exponents": {
+          "position_denominator_m2": 0.04,
+          "speed_denominator_m2_s2": 0.09
+        },
+        "package_spin_cost_cap_rad_s": 1.0,
+        "terminal_failure": -200.0,
+        "terminal_integration": "Discrete failure penalty; running reward multiplied by physical dt"
+      },
+      "optimizer_recipe": {
+        "class_name": "PPO",
+        "clip_param": 0.2,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.0,
+        "gamma": 0.999,
+        "lam": 0.99,
+        "learning_rate": 3e-05,
+        "max_grad_norm": 0.3,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "fixed",
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+      },
+      "counters": {
+        "generated": 3000000,
+        "valid": 3000000,
+        "invalid": 0,
+        "episodes": 6790,
+        "failed_episodes": 6736,
+        "completed_training_stops": 0,
+        "stage_valid_transitions": [
+          300000,
+          300000,
+          300095,
+          300163,
+          299770,
+          1499972
+        ]
+      },
+      "optimizer_counters": {
+        "rollout_updates": 30000,
+        "optimizer_gradient_steps": 600000,
+        "consumed_transitions": 3000000
+      },
+      "effective_valid_transitions_per_second": 182.41206462960514,
+      "actual_manifest_sha256": "a706bdf58f3c59074a4ee0ef39dcee9aff6d0aeb014409f978612300ec4b4c51",
+      "actual_completed_sha256": "f991bba1c550c31bbb49ff44ce9487e103efe469b477d4dad8981f7934265e28",
+      "initialization_sha256": "93b9015cf6d5fba6fdb1553407013d81818ff480a438d3bf284cb869ac44327b",
+      "initialization_identical_to_randomized": true,
+      "common_recipe_identical_to_randomized": true,
+      "checkpoints": [
+        {
+          "S": 300000,
+          "sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03"
+        },
+        {
+          "S": 1000000,
+          "sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea"
+        },
+        {
+          "S": 3000000,
+          "sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a"
+        }
+      ],
+      "recorded_closed_episode_summary": [
+        {
+          "stage": 0,
+          "closed_episodes": 25,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 25,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 25
+        },
+        {
+          "stage": 1,
+          "closed_episodes": 25,
+          "failures": 0,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 25,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 25
+        },
+        {
+          "stage": 2,
+          "closed_episodes": 139,
+          "failures": 138,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 100,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 100
+        },
+        {
+          "stage": 3,
+          "closed_episodes": 272,
+          "failures": 272,
+          "max_continuous_steps": 6451,
+          "episodes_with_at_least500steps": 160,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 160
+        },
+        {
+          "stage": 4,
+          "closed_episodes": 4822,
+          "failures": 4822,
+          "max_continuous_steps": 66,
+          "episodes_with_at_least500steps": 0,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 0
+        },
+        {
+          "stage": 5,
+          "closed_episodes": 1506,
+          "failures": 1504,
+          "max_continuous_steps": 12000,
+          "episodes_with_at_least500steps": 858,
+          "completed_targets": 0,
+          "attempted_at_least2targets": 858
+        }
+      ],
+      "independent_full_native_prefix_audit": "ALL_THREE_PREFIXES_REPLAYED_EXPOSURE_INELIGIBLE_COMMAND_STREAM_LIMITATION_RECORDED",
+      "source_archive_sha256": "5dac14951fb089fd100f5474a57253dd530eaaa99995c2a606ab899f6f15908b",
+      "adopted": false
+    }
+  ],
+  "active": null,
+  "nonpilot_common_ladder": "BOTH3M_CLOSED_AND_DURABLY_DELIVERED_ALL_THREE_PREFIXES_PER_METHOD_REPLAYED_ALL_EXPOSURE_INELIGIBLE_ALL36_DEVELOPMENT_CASES_FAILED",
+  "fresh_final_learning": "NOT_STARTED",
+  "validation_conditions": 0,
+  "validation_targets": 0,
+  "acceptance_trials": 0,
+  "accepted_full_videos": 0,
+  "human_review": "PENDING",
+  "heldout_opened": false,
+  "historical_pilot_dependency_binding_gap": "P1\u2013P5 bound RSL Python and Torch native build/version but omitted optimizer Python inventory. All are diagnostic and nonadopted. v19 binds all installed Torch .py including optimizer before and at each checkpoint; old evidence is not relabeled.",
+  "cpu_regression": {
+    "passed": 1087,
+    "skipped": 18,
+    "gpu_deselected": 1,
+    "existing_dependency_warnings": 39,
+    "duration_s": 332.01,
+    "scope": "Local next source after terminal bootstrap correction; live remote v19 pair unchanged and not relabeled"
+  },
+  "paired_development_so_far": {
+    "status": "ALL_THREE_RUNGS_CLOSED",
+    "rungs": [
+      {
+        "S": 300000,
+        "conditions": {
+          "randomized": 6,
+          "fixed": 6
+        },
+        "successes": {
+          "randomized": 0,
+          "fixed": 0
+        }
+      },
+      {
+        "S": 1000000,
+        "conditions": {
+          "randomized": 6,
+          "fixed": 6
+        },
+        "successes": {
+          "randomized": 0,
+          "fixed": 0
+        }
+      },
+      {
+        "S": 3000000,
+        "conditions": {
+          "randomized": 6,
+          "fixed": 6
+        },
+        "successes": {
+          "randomized": 0,
+          "fixed": 0
+        }
+      }
+    ],
+    "total_conditions": 36,
+    "all_native_replays_passed": true,
+    "completed_targets": 0,
+    "evidence": "paired-development-curve.json"
+  },
+  "closure_reason": "User requested review of hybrid/Genesis follow-up and closure of the previous direct-motor work; no next recipe was implemented or executed",
+  "known_checker_limitation": "final-code-review.json: declared curriculum command RNG/order not independently replayed; all exposure gates ineligible and no final adoption",
+  "remaining_cpu_prefix_audits": 0
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "payload-solver-archival-closure-code-review-v1",
+  "scope": "Unsuccessful old-work archival closure, not adopted-policy approval",
+  "new_confirmed_P0_P1": 0,
+  "unresolved_findings": [
+    {
+      "priority": "P2",
+      "file": "src/adaptive_drone_patrol/payload_solver_exposure.py",
+      "line": 324,
+      "summary": "宣言されたcommand RNG・target順序を独立に再構成していない。",
+      "reproduction": "実20k pilotの一時コピーでrawを変えずpilot=Falseとcheckpoint/sidecar metadataのみ整合更新するとnonpilot stage0として監査が通過した。",
+      "limits": "物理資格偽造・実P6の宣言違反・full final freeze成功を示す再現ではない。全final/adoptionは未発行。",
+      "disposition": "旧方針の未達終了として未修正制限を保存。新hybridのcurriculum auditorでtarget RNG・順序・RESET/RETARGET/STEP一貫性を独立再構成する必要がある。"
+    }
+  ],
+  "review_artifact": {
+    "path": "outputs/suspended_solver_20261022_e265f60d/final-code-review-v1.md",
+    "bytes": 8266,
+    "sha256": "2fb0538372143357ba439266d866de9dca595b119460d93055023fd6099abf9d"
+  },
+  "independent_focused_tests": {
+    "passed": 6,
+    "deselected": 12
+  },
+  "successful_flight_or_final_freeze_approved": false
+}

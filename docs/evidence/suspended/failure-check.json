@@ -1,0 +1,30 @@
+{
+  "status": "CONFIRMED_NUMERICAL_FAILURE",
+  "physical_training_admitted": false,
+  "verified_delivery_files": 278,
+  "delivery_manifest_sha256": "1b29e249479464d897dac690b97d3c05915bcc610067ffa79d16ba9f66a04205",
+  "checker_sha256": "47e0bfcf3839f603eacb178d0b7d6631324d9babe6bafa884d6f9b8e7b1e1e68",
+  "diagnostics": {
+    "diagnostic_v1": {
+      "samples": 2789,
+      "max_package_speed_m_s": 163772761.36982605,
+      "first_speed_above_1e4_index": 2788,
+      "checkpoint_sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+      "raw_state_sha256": "75a222b3fa77bb5358ec3e74320ead9b60f63be9b13254d9c58f9882d31ab30d"
+    },
+    "diagnostic_substeps8_v1": {
+      "samples": 914,
+      "max_package_speed_m_s": 544357008456.6984,
+      "first_speed_above_1e4_index": 913,
+      "checkpoint_sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+      "raw_state_sha256": "657551c335e4cacbcb9bf993793b6ca625b2b93ea9e437c6287b4cbe76a61737"
+    },
+    "diagnostic_substeps16_v1": {
+      "samples": 3714,
+      "max_package_speed_m_s": 8158574990269.932,
+      "first_speed_above_1e4_index": 3713,
+      "checkpoint_sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+      "raw_state_sha256": "93140af7e90d5b92b0e823a992141d6945723919cee2666afcb765f9df2c1420"
+    }
+  }
+}

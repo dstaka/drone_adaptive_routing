@@ -1,0 +1,215 @@
+{
+  "schema": "payload-recovery-partial-passive-v1",
+  "status": "QUALIFICATION_INCOMPLETE",
+  "physical_training_admitted": false,
+  "completed_passive_traces": 3,
+  "required_passive_traces": 32,
+  "required_domain_traces": 62,
+  "receipts": [
+    {
+      "status": "PASSIVE_SCREEN_PASSED",
+      "physical_training_admitted": false,
+      "failure_codes": [],
+      "sample_count": 3001,
+      "force_records": 3000,
+      "initial_energy_j": 0.008888015283940592,
+      "maximum_energy_j": 0.008953815210029237,
+      "positive_energy_fraction": 0.00740321927748441,
+      "minimum_energy_fraction_of_initial": 0.9510660650599893,
+      "terminal_energy_fraction_of_initial": 0.9563929549852245,
+      "maximum_constraint_residual_m": 9.750916191153536e-08,
+      "case_id": "large_0.060_0.10",
+      "samples_sha256": "070c2c4d3e831f30d696659eafd76880324f452e57ee69442fc47806470fb722",
+      "runtime_sha256": "de0f64c4c87a6991838115fc06775eceba93f4c6f074dce2f03148bb870fda14",
+      "probe_output": "outputs/suspended_recovery_20261022_112649_abce93/final-delivery/outputs/recovery-s128-full-large",
+      "source_archive_sha256": "c8dddaa2a807e743beaaee6f0afedf9e5d867ff0468832af89ef5271dbc9fcbf",
+      "probe_elapsed_s": 124.1261655529961,
+      "actual_settings": {
+        "dt": "0.01",
+        "substep_dt": "7.8125e-05",
+        "_substep_dt": "7.8125e-05",
+        "_integrator": "2"
+      },
+      "forces": 3000,
+      "raw_state_sha256": "016a0fddaaaea1182ae54004d3d677c7d3cbd74cf0750020e663142d18bbb464",
+      "engine_source_count": 264
+    },
+    {
+      "status": "PASSIVE_SCREEN_PASSED",
+      "physical_training_admitted": false,
+      "failure_codes": [],
+      "sample_count": 3001,
+      "force_records": 3000,
+      "initial_energy_j": 0.03420134909529588,
+      "maximum_energy_j": 0.034600920160747714,
+      "positive_energy_fraction": 0.01168290362869898,
+      "minimum_energy_fraction_of_initial": 0.8696676749023246,
+      "terminal_energy_fraction_of_initial": 0.8696779232809005,
+      "maximum_constraint_residual_m": 1.6961703774853731e-07,
+      "case_id": "sweep_170",
+      "samples_sha256": "4e07d0cd93de1f98adea7fdd96d05f18dfce84d440a7deeae2dbb7264a9d89e4",
+      "runtime_sha256": "b39afb8f0f3b68141f425f5a8c35432c6c7c89915f7df693cfe10721b4bf8e4f",
+      "probe_output": "outputs/suspended_recovery_20261022_112649_abce93/final-delivery/outputs/recovery-s128-full-170",
+      "source_archive_sha256": "c8dddaa2a807e743beaaee6f0afedf9e5d867ff0468832af89ef5271dbc9fcbf",
+      "probe_elapsed_s": 124.47756985528395,
+      "actual_settings": {
+        "dt": "0.01",
+        "substep_dt": "7.8125e-05",
+        "_substep_dt": "7.8125e-05",
+        "_integrator": "2"
+      },
+      "forces": 3000,
+      "raw_state_sha256": "3a00249237b9bdd89281b8c446af08067f3e560cd210da6e0de1f5613bd9cd2f",
+      "engine_source_count": 264
+    },
+    {
+      "status": "PASSIVE_SCREEN_PASSED",
+      "physical_training_admitted": false,
+      "failure_codes": [],
+      "sample_count": 3001,
+      "force_records": 3000,
+      "initial_energy_j": 0.008888015283940592,
+      "maximum_energy_j": 0.008949355737544526,
+      "positive_energy_fraction": 0.006901479311671258,
+      "minimum_energy_fraction_of_initial": 0.9797754575769344,
+      "terminal_energy_fraction_of_initial": 0.9803983265173174,
+      "maximum_constraint_residual_m": 1.0853857118631183e-07,
+      "case_id": "large_0.060_0.10_passive_half",
+      "samples_sha256": "3a54cf00df0884b75da44da04839edeec05f3f091550068d1671a37187a16877",
+      "runtime_sha256": "3b87fe9fd8594810996d330658ca0c525598644c89f274d0a4ab422b7dab0bf6",
+      "probe_output": "outputs/suspended_recovery_20261022_112649_abce93/final-delivery/outputs/recovery-s128-half-large",
+      "source_archive_sha256": "c8dddaa2a807e743beaaee6f0afedf9e5d867ff0468832af89ef5271dbc9fcbf",
+      "probe_elapsed_s": 235.94507990963757,
+      "actual_settings": {
+        "dt": "0.01",
+        "substep_dt": "3.90625e-05",
+        "_substep_dt": "3.90625e-05",
+        "_integrator": "2"
+      },
+      "forces": 3000,
+      "raw_state_sha256": "8c978f14be117543bc915b83761f46083e3214d88d22045e2fee1b4bed1281f4",
+      "engine_source_count": 264
+    }
+  ],
+  "comparison": {
+    "schema": "payload-recovery-passive-half-dt-comparison-v1",
+    "sample_pairs": 3001,
+    "base_dt_s": 7.8125e-05,
+    "half_dt_s": 3.90625e-05,
+    "duration_s": 30.0,
+    "maximum_energy_difference_j": 0.0004666018314409843,
+    "terminal_energy_fraction_base": 0.9563929549852245,
+    "terminal_energy_fraction_half": 0.9803983265173174,
+    "maximum_position_difference_m": 0.6422525205472283,
+    "maximum_orientation_difference_deg": 179.99261651759622,
+    "status": "DIAGNOSTICS_ONLY",
+    "powered_refinement_passed": false,
+    "drone": {
+      "maximum_position_difference_m": 0.0,
+      "maximum_orientation_difference_deg": 0.0
+    },
+    "rod": {
+      "maximum_position_difference_m": 0.0,
+      "maximum_orientation_difference_deg": 166.37020771348404
+    },
+    "package": {
+      "maximum_position_difference_m": 0.6422525205472283,
+      "maximum_orientation_difference_deg": 179.99261651759622
+    }
+  },
+  "baseline_repeat": {
+    "schema": "payload-recovery-baseline-independent-v1",
+    "status": "PASSIVE_ENERGY_FAILED",
+    "physical_training_admitted": false,
+    "case_id": "large_0.060_0.10",
+    "samples": 3001,
+    "initial_energy_j": 0.008888015283940592,
+    "maximum_energy_j": 0.0560570012165971,
+    "positive_energy_fraction": 5.307032495531854,
+    "first_5percent_growth_time_s": 1.07,
+    "terminal_energy_fraction": 6.282955856471681,
+    "samples_sha256": "8601f5f5d8b6b4e6694b9ed2d1631c3ddfa81fe66cfb9308d0a16bcc4066b8c4",
+    "observed_external_force_records": 0,
+    "interpretation_ja": "V10と同じ物理・修正norm guardで新規再現。正常終了は保存完了。受動energy不合格、学習不可。実ゼロ外力の追加観測は次候補sourceで行う。"
+  },
+  "short_diagnostics": [
+    {
+      "id": "large_0.060_0.10",
+      "samples": 301,
+      "measured_duration_s": 3.0,
+      "force_records": 300,
+      "physical_errors": [],
+      "initial_energy_j": 0.008888015283940592,
+      "positive_energy_fraction": 0.002639246552966134,
+      "minimum_energy_fraction_of_initial": 0.9998390787094029,
+      "terminal_energy_fraction_of_initial": 1.0019941213309673,
+      "actual_settings": {
+        "dt": "0.01",
+        "substep_dt": "7.8125e-05",
+        "_substep_dt": "7.8125e-05",
+        "_integrator": "2"
+      },
+      "probe_elapsed_s": 20.18078306177631,
+      "source_count": 11,
+      "engine_source_count": 264,
+      "status": "SHORT_DIAGNOSTIC_ONLY_NOT_QUALIFIED"
+    },
+    {
+      "id": "sweep_170",
+      "samples": 301,
+      "measured_duration_s": 3.0,
+      "force_records": 300,
+      "physical_errors": [],
+      "initial_energy_j": 0.03420134909529588,
+      "positive_energy_fraction": 0.004243492642584399,
+      "minimum_energy_fraction_of_initial": 0.9999235008845503,
+      "terminal_energy_fraction_of_initial": 1.0031542068248878,
+      "actual_settings": {
+        "dt": "0.01",
+        "substep_dt": "7.8125e-05",
+        "_substep_dt": "7.8125e-05",
+        "_integrator": "2"
+      },
+      "probe_elapsed_s": 20.23147555300966,
+      "source_count": 11,
+      "engine_source_count": 264,
+      "status": "SHORT_DIAGNOSTIC_ONLY_NOT_QUALIFIED"
+    }
+  ],
+  "declared_domain_cases": 62,
+  "declared_passive_cases": 32,
+  "new_case_counts": {
+    "anchor": {
+      "completed": 0,
+      "required": 9
+    },
+    "large_angle": {
+      "completed": 2,
+      "required": 16
+    },
+    "passive_half": {
+      "completed": 1,
+      "required": 7
+    },
+    "powered": {
+      "completed": 0,
+      "required": 18
+    },
+    "powered_refinement": {
+      "completed": 0,
+      "required": 12
+    },
+    "motor": {
+      "completed": 0,
+      "required": 15
+    },
+    "effective_partial_reset": {
+      "completed": 0,
+      "required_minimum": 30
+    }
+  },
+  "selected_batch": null,
+  "delta_z_m": 0,
+  "work_bound_requalified": false,
+  "interpretation_ja": "3受動traceは正energy・state・source等screenに通っただけ。170度で約13%の損失、dt間に大きい軌道差、残29受動と全powered/batch等は未達。受動比較にpowered2cm/2度gateを流用していない。全資格や修理済みとは扱わない。"
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "payload-environments-v1",
+  "python": "3.12",
+  "status": "PASS_EXACT_VERSIONS",
+  "flight_packages": 169,
+  "cpu_packages": 33,
+  "locks": [
+    {
+      "path": "requirements/flight-linux.lock.txt",
+      "bytes": 3270,
+      "sha256": "a6985bdf3307ab18cdf5a32b715093d6f607ee005ebdf8f3527030971fc0553c"
+    },
+    {
+      "path": "requirements/routing-scalable-linux.lock.txt",
+      "bytes": 696,
+      "sha256": "444ca81d097c906ec6b884ecd7086f6c759903a43dcc43141eaeb4889512a4fc"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "outputs/suspended_20261021_v1/remote-final/outputs/setup/flight-versions.json",
+      "bytes": 19851,
+      "sha256": "0af3af7e0d07b1f3d7a0017c8e6c7f040b36c6f77c6d02397db54d8340262691"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/remote-final/outputs/setup/cpu-versions.json",
+      "bytes": 3873,
+      "sha256": "703db6855cf70f06a844d4ee418f9fdeb874ba05426b20d4d95b3d6f37f69b84"
+    }
+  ],
+  "setup_failures_ja": [
+    "Python 3.11ではlock内avのPython要件を満たさない。",
+    "uv初回index選択でpackaging解決に失敗。Python 3.12とunsafe-best-matchで版を変更せず構築した。"
+  ]
+}

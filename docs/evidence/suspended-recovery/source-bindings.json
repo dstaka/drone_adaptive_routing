@@ -1,0 +1,38 @@
+{
+  "schema": "payload-recovery-source-bindings-v1",
+  "executed_baseline_archive": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/source-start.tar.gz",
+    "bytes": 236191,
+    "sha256": "3c36424ac756a216bd9891cdd248e346b2c45b0dfa47c14042682a47a1e2a22e"
+  },
+  "executed_candidate_archive": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/candidate-s128-source-v2.tar.gz",
+    "bytes": 39824,
+    "sha256": "c8dddaa2a807e743beaaee6f0afedf9e5d867ff0468832af89ef5271dbc9fcbf"
+  },
+  "candidate_declaration": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/candidate-s128-declaration-v2.json",
+    "bytes": 4493,
+    "sha256": "653932952883eba569a5542c758d9f58612c89a11464bebec4400d987f979a05"
+  },
+  "candidate_signature_sha256": "93794e24c9b1b688169bad71ba99bda73d27ca0d5de97b907c3b6ef6a21c47b7",
+  "cpu_final_archive": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-source-final-v2.tar.gz",
+    "bytes": 390343,
+    "sha256": "993773ca1f07fbd9fbd0beb8784dd1f8cf72a574c2c40e18fc6ab225e10645d5"
+  },
+  "cpu_final_manifest": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-source-final-v2-manifest.json",
+    "bytes": 31445,
+    "sha256": "a96d83aa3bd88db2f153bef090aa4af81f7c2395e0f86772002a6911120f789c"
+  },
+  "post_gpu_cpu_changes_ja": "最終probeのpowered前32raw再構成guard、runtime例外時raw保存、batch・mission・sample・portable planarはCPU検証。GPUのV2実行証拠を最終sourceの物理再資格へ差し替えない。",
+  "new_adopted_physical_signature": null,
+  "cpu_prior_incomplete_archive": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-source-final.tar.gz",
+    "bytes": 384149,
+    "sha256": "3fd80a72c612747f64a22f510b24e9ef29ca8f11f69392a829832a174c1c05f2"
+  },
+  "cpu_final_member_count": 212,
+  "all_final_python_source_matches_linux_tested_bundle": true
+}

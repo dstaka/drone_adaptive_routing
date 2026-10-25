@@ -1,0 +1,20 @@
+{
+  "schema": "hybrid-reward-hypothesis-v1",
+  "status": "PROSPECTIVE_NOT_ADOPTED",
+  "weights": {
+    "progress": 10.0,
+    "distance": -0.05,
+    "vibration": -0.02,
+    "saturation": -0.01,
+    "correction": -0.02,
+    "time": -0.002,
+    "leg_success": 5.0,
+    "mission_success": 50.0,
+    "failure": -100.0
+  },
+  "dt_s": 0.01,
+  "rate_scale_rad_s": 1.0,
+  "vibration": "log1p(square(box total angular rate)) + 0.5*log1p(square(link swing rate)); SI, no cap",
+  "discount_analysis": "Require actual matched raw with critic bootstrap, not constructed-state arithmetic",
+  "learning_admitted": false
+}

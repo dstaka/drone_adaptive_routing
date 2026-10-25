@@ -1,0 +1,28 @@
+{
+  "schema": "suspended-retry-environment-v1",
+  "python": "3.12.3",
+  "environments": {
+    "flight": {
+      "lock": "requirements/flight-linux.lock.txt",
+      "lock_sha256": "a6985bdf3307ab18cdf5a32b715093d6f607ee005ebdf8f3527030971fc0553c",
+      "version_report": "outputs/suspended_retry_20261022_052336/construction-delivery-v1/outputs/setup/flight-versions.json",
+      "version_report_sha256": "16caeb4304ebe92ff26f7264ee976931c1cadbad4f784089c1bf52744e93bc8a",
+      "declared_count": 169,
+      "reported_count": 169,
+      "actual_count": 169,
+      "mismatches": {},
+      "all_locked_versions_equal": true
+    },
+    "routing": {
+      "lock": "requirements/routing-scalable-linux.lock.txt",
+      "lock_sha256": "444ca81d097c906ec6b884ecd7086f6c759903a43dcc43141eaeb4889512a4fc",
+      "version_report": "outputs/suspended_retry_20261022_052336/construction-delivery-v1/outputs/setup/routing-versions.json",
+      "version_report_sha256": "a5ae2b7c34fa38cc7f043f4e020413a32473cc045b2bf28ca15fe44ec68dac0e",
+      "declared_count": 33,
+      "reported_count": 33,
+      "actual_count": 33,
+      "mismatches": {},
+      "all_locked_versions_equal": true
+    }
+  }
+}

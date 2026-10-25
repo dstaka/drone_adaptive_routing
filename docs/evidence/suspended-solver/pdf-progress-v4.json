@@ -1,0 +1,49 @@
+{
+  "schema": "payload-solver-progress-pdf-v1",
+  "snapshot": "4.02M completed transitions, matched fixed learning active, all randomized rung native-prefix audits passed but exposure ineligible; local next-source terminal correction1087CPU passed; no final adoption",
+  "pages": 7,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "layout": "All seven pages individually inspected, including both scientific figures and Japanese captions; no clipping, overlap or missing glyphs",
+  "pdf_sha256": "486634302a5f645f0f5141c33966b8d673247cb5ec71f6b326aabd06085241ab",
+  "pdf_bytes": 1083320,
+  "source_snapshot": "report_ja_solver_progress_v4.md",
+  "source_sha256": "5d653b05a94eebfe69d61532711426f7d5d7494abf22863708ce97caa2419be3",
+  "font_sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+  "embedded_static_font_sha256": "fab088cc249ef597a039761bdaf9268bf9de8dc9e743787374a57f8c95219a79",
+  "report_builder_sha256": "f5a6c1e52ce116e6008545c3799e93b9f423baea97b24c78a2eb1c3ce4bbd21c",
+  "figures_sha256": {
+    "pilot-matched-300k.png": "9a94aea0b9ef9757c0ab94802ba3412c6648614476cc18678ee5445c1688107d",
+    "long-credit-stage0-spin.png": "36d0c341afbf82e26d209a731324ed5f2aaff3ab8cabb366e1d816922bc4d7e1"
+  },
+  "reviewed_pages": [
+    {
+      "page": 1,
+      "png_sha256": "0baa7f015554dbb642d55a9323d5f099439c8f621a25da9ad55bd87dc7064871"
+    },
+    {
+      "page": 2,
+      "png_sha256": "2c8312cf0a2ea7972173da491ea8cec7b9f62656737cbe3d9949ab8ea47a4021"
+    },
+    {
+      "page": 3,
+      "png_sha256": "15f5f78d01d2fb270b6861e9a9da24447b5d00f8ed509ec58a9e1c7313b75a9c"
+    },
+    {
+      "page": 4,
+      "png_sha256": "5f30c3e698a641373a63c8fd09643b0a0dac03d4c6f9f9c341102b1978ac8cff"
+    },
+    {
+      "page": 5,
+      "png_sha256": "b373dfa6dc04744e76bda415d851f7dcdce8081ec0af9ac7f87bc4d61496cf38"
+    },
+    {
+      "page": 6,
+      "png_sha256": "514560fe569c9a847c22907d135a1d282276099eb4919a5fd2f8eb4fd8dffd9b"
+    },
+    {
+      "page": 7,
+      "png_sha256": "c8df2d8925763aa312bfa4bc9f376eef151ba943bc98ca02364dd6e3167f6021"
+    }
+  ],
+  "physical_acceptance": false
+}

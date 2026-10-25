@@ -1,0 +1,185 @@
+{
+  "schema": "payload-recovery-attempts-v1",
+  "setup_attempts": [
+    {
+      "kind": "CPU_ENV_INSTALL",
+      "result": "FAILED_NO_SPACE",
+      "gpu_initialized": false
+    },
+    {
+      "kind": "CPU_ENV_CREATE_RETRY",
+      "result": "FAILED_VENV_ALREADY_EXISTS",
+      "gpu_initialized": false
+    },
+    {
+      "kind": "CPU_ENV_RESUME_HARDLINK",
+      "result": "SUCCEEDED_EXACT_LOCKS",
+      "gpu_initialized": false
+    }
+  ],
+  "gpu_attempts": [
+    {
+      "run_id": "recovery-baseline-job",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_payload_ball.py",
+        "--out",
+        "outputs/recovery-baseline",
+        "--fixture",
+        "anchor",
+        "--case",
+        "large_0.060_0.10",
+        "--align-root",
+        "--reference-audit",
+        "inputs/reference-free-runtime.json"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792669034.3830414,
+      "timeout_s": 180.0,
+      "pid": 30820,
+      "exit_code": 0,
+      "elapsed_s": 60.01572778308764,
+      "finished_epoch": 1792669094.4014118
+    },
+    {
+      "run_id": "recovery-s128-large-job",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_payload_ball.py",
+        "--out",
+        "outputs/recovery-s128-large",
+        "--fixture",
+        "anchor",
+        "--case",
+        "large_0.060_0.10",
+        "--diagnostic-duration-s",
+        "3",
+        "--align-root",
+        "--reference-audit",
+        "inputs/reference-free-runtime.json",
+        "--manifest",
+        "configs/payload_recovery_probe_manifest.json"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792669570.0718791,
+      "timeout_s": 300.0,
+      "pid": 31059,
+      "exit_code": 0,
+      "elapsed_s": 21.564073221758008,
+      "finished_epoch": 1792669591.638655
+    },
+    {
+      "run_id": "recovery-s128-170-job",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_payload_ball.py",
+        "--out",
+        "outputs/recovery-s128-170",
+        "--fixture",
+        "anchor",
+        "--case",
+        "sweep_170",
+        "--diagnostic-duration-s",
+        "3",
+        "--align-root",
+        "--reference-audit",
+        "inputs/reference-free-runtime.json",
+        "--manifest",
+        "configs/payload_recovery_probe_manifest.json"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792669710.2961051,
+      "timeout_s": 300.0,
+      "pid": 31242,
+      "exit_code": 0,
+      "elapsed_s": 21.506850546691567,
+      "finished_epoch": 1792669731.8057644
+    },
+    {
+      "run_id": "recovery-s128-full-large-job",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_payload_ball.py",
+        "--out",
+        "outputs/recovery-s128-full-large",
+        "--fixture",
+        "anchor",
+        "--case",
+        "large_0.060_0.10",
+        "--align-root",
+        "--reference-audit",
+        "inputs/reference-free-runtime.json",
+        "--manifest",
+        "configs/payload_recovery_probe_manifest.json"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792669861.1666641,
+      "timeout_s": 300.0,
+      "pid": 31470,
+      "exit_code": 0,
+      "elapsed_s": 125.49237269209698,
+      "finished_epoch": 1792669986.6617775
+    },
+    {
+      "run_id": "recovery-s128-full-170-job",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_payload_ball.py",
+        "--out",
+        "outputs/recovery-s128-full-170",
+        "--case",
+        "sweep_170",
+        "--fixture",
+        "anchor",
+        "--align-root",
+        "--reference-audit",
+        "inputs/reference-free-runtime.json",
+        "--manifest",
+        "configs/payload_recovery_probe_manifest.json"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792670160.7750032,
+      "timeout_s": 300.0,
+      "pid": 31654,
+      "exit_code": 0,
+      "elapsed_s": 125.79076658701524,
+      "finished_epoch": 1792670286.5685546
+    },
+    {
+      "run_id": "recovery-s128-half-large-job",
+      "command": [
+        ".venv-flight/bin/python",
+        "-u",
+        "scripts/probe_payload_ball.py",
+        "--out",
+        "outputs/recovery-s128-half-large",
+        "--case",
+        "large_0.060_0.10_passive_half",
+        "--fixture",
+        "anchor",
+        "--align-root",
+        "--reference-audit",
+        "inputs/reference-free-runtime.json",
+        "--manifest",
+        "configs/payload_recovery_probe_manifest.json"
+      ],
+      "status": "SUCCEEDED",
+      "started_epoch": 1792670286.6154652,
+      "timeout_s": 300.0,
+      "pid": 31823,
+      "exit_code": 0,
+      "elapsed_s": 237.28605798678473,
+      "finished_epoch": 1792670523.9043152
+    }
+  ],
+  "all_gpu_processes_completed": true,
+  "process_success_is_not_physical_pass": true,
+  "no_optimizer_steps": true,
+  "no_acceptance_trials": true,
+  "all_prior_attempts_preserved": true
+}

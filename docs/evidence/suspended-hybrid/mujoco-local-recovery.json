@@ -1,0 +1,29 @@
+{
+  "schema": "mujoco-final-delivery-local-recovery-v1",
+  "all_expected_files_size_sha256_verified": true,
+  "files": 3608,
+  "bytes": 8641550668,
+  "inventory_bytes": 642564,
+  "inventory_sha256": "15ae1aa11505ddf73f20ad9ae913a8af64f2bcfbe86772d03b84307b6e8fd836",
+  "machine_accepted": true,
+  "all_final3_native1x": true,
+  "human_review": "PASSED_EXPLICIT_USER_CONFIRMATION_EXACT3_VIDEO_SHA256",
+  "human_review_receipt_sha256": "a775e52b74ac387aa3cef0bb3ba52d1b90e7585051c7b6f7a65e970842bbaa67",
+  "duration_files": 7519,
+  "duration_bytes": 5137376485,
+  "duration_separate_inventory_sha256": "cd74e46dcc51b0b3065a0c475b43a233984383cbe067a2758efcc2885643295a",
+  "new_run_plus_duration_files": 11127,
+  "new_run_plus_duration_bytes": 13778927153,
+  "scope": "Every remote-selected closed run file plus separately verified duration raw; original capture proofs unchanged; local human receipt is additional.",
+  "complete_artifact_recovery": true,
+  "frozen_prerequisite_artifacts": {
+    "schema": "all-final-prerequisite-artifacts-local-v1",
+    "all_frozen_prerequisite_artifact_sha256_verified": true,
+    "files": 8697,
+    "bytes": 6108205344,
+    "archived_controller_files": 705,
+    "archived_controller_prefix": "outputs/suspended_hybrid_20261024_r2a/control-diagnostics-full-v1/",
+    "freeze_file_sha256": "b464c322578519f9eb4367fcd70c65ffa6eb719994cb4f3212534ca5a1ec8d3b",
+    "old_original_locations_unchanged": true
+  }
+}

@@ -1,0 +1,862 @@
+{
+  "schema": "payload-solver-public-qualification-summary-v1",
+  "scope": "Compact report only; every consumer must reconstruct original full raw and current engine/source",
+  "profile": "cf2x-mujoco-rk4-f64-s16-v2",
+  "settings": {
+    "precision": "64",
+    "control_dt_s": 0.01,
+    "rigid_dt_s": 0.000625,
+    "solver": "Newton",
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "joint_damping": 0.0,
+    "joint_frictionloss": 0.0,
+    "armature": 0.0,
+    "base_angular_damping_scale": 1e-05,
+    "rod_mass_kg": 0.0001,
+    "rod_radius_m": 0.001,
+    "link_length_m": 0.3,
+    "vehicle_asset": "genesis/assets/urdf/drones/cf2x.urdf",
+    "floor_m": 0.1,
+    "tilt_max_deg": 60.0,
+    "root_alignment_requested": true,
+    "integrator": "RK4",
+    "backend": "mujoco",
+    "mujoco_version": "3.15.0",
+    "execution_backend": "cpu",
+    "base_angular_damping_mass_basis": "authored-urdf-0.027kg-plus-rod-and-payload"
+  },
+  "qualified_raw_manifest_sha256": "d40d67855b46d56658eab4c097b57270cbc13b7b4d0f504c099139ac3c1d2fd1",
+  "original_receipt_sha256": "ea39f291737210984488911e830460d0810cd629809912f2569cf58acd091cb7",
+  "original_asset_sha256": "5923a231efe0f052c31f7b5b4d3599c3b3a7e95fa2b2772b023798a68ecafc05",
+  "receipt_schema": "payload-solver-complete-qualification-v2",
+  "receipt_status": "INDEPENDENTLY_QUALIFIED",
+  "numerical": {
+    "passive32": {
+      "anchor_0.030_0.10": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 3.2309686677790426e-05,
+          "maximum_absolute_unexplained_fraction": 1.6929288156635986e-11,
+          "positive_growth_fraction": 4.496580005925118e-13,
+          "terminal_unexplained_fraction": -1.6544855733554795e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.0004950794091683277,
+        "measured_period_s": 1.1237678399875612,
+        "crossings": 107
+      },
+      "large_0.030_0.10": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.008490702566254511,
+          "maximum_absolute_unexplained_fraction": 4.441315442324757e-07,
+          "positive_growth_fraction": 4.232471905702119e-08,
+          "terminal_unexplained_fraction": -4.371287373434971e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "anchor_0.030_0.20": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 6.405942317978122e-05,
+          "maximum_absolute_unexplained_fraction": 1.528639817616753e-11,
+          "positive_growth_fraction": 4.2121955253961037e-13,
+          "terminal_unexplained_fraction": -1.5211716859218016e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.0004976350268569166,
+        "measured_period_s": 1.1255409272925363,
+        "crossings": 107
+      },
+      "large_0.030_0.20": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.01683425513250902,
+          "maximum_absolute_unexplained_fraction": 2.4138484804905026e-06,
+          "positive_growth_fraction": 2.644536254951884e-08,
+          "terminal_unexplained_fraction": -2.380966156671615e-06,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "anchor_0.030_0.30": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 9.580915968177201e-05,
+          "maximum_absolute_unexplained_fraction": 1.4834071972349996e-11,
+          "positive_growth_fraction": 3.977668365889652e-13,
+          "terminal_unexplained_fraction": -1.4097382895196607e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.0004918836228596837,
+        "measured_period_s": 1.1261309087728204,
+        "crossings": 107
+      },
+      "large_0.030_0.30": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.02517780769876353,
+          "maximum_absolute_unexplained_fraction": 4.898227711980201e-07,
+          "positive_growth_fraction": 3.950449925641754e-08,
+          "terminal_unexplained_fraction": -4.789220324532024e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "anchor_0.045_0.10": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 3.306563278497859e-05,
+          "maximum_absolute_unexplained_fraction": 1.5643411614994534e-11,
+          "positive_growth_fraction": 3.557649614016102e-13,
+          "terminal_unexplained_fraction": -1.4850318066247857e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 8.881784197001252e-16,
+        "period_relative_error": 0.0005203600915509483,
+        "measured_period_s": 1.1380795395147203,
+        "crossings": 106
+      },
+      "large_0.045_0.10": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.00868935857973676,
+          "maximum_absolute_unexplained_fraction": 1.0807618779913978e-06,
+          "positive_growth_fraction": 1.7470205428601662e-08,
+          "terminal_unexplained_fraction": -1.0785712396424492e-06,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16
+      },
+      "anchor_0.045_0.20": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 6.557131539415753e-05,
+          "maximum_absolute_unexplained_fraction": 1.4516848474655107e-11,
+          "positive_growth_fraction": 4.5325752388226504e-13,
+          "terminal_unexplained_fraction": -1.440833949150956e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 8.326672684688674e-16,
+        "period_relative_error": 0.00041037518401934895,
+        "measured_period_s": 1.1397752470250566,
+        "crossings": 106
+      },
+      "large_0.045_0.20": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.01723156715947352,
+          "maximum_absolute_unexplained_fraction": 3.5182899666914444e-07,
+          "positive_growth_fraction": 9.572031128234659e-08,
+          "terminal_unexplained_fraction": -3.421906877147347e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "anchor_0.045_0.30": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 9.807699800333648e-05,
+          "maximum_absolute_unexplained_fraction": 1.4241781862988038e-11,
+          "positive_growth_fraction": 4.3596586404431434e-13,
+          "terminal_unexplained_fraction": -1.3534149156246062e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.0004500617030814559,
+        "measured_period_s": 1.1404338727897443,
+        "crossings": 105
+      },
+      "large_0.045_0.30": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.025773775739210275,
+          "maximum_absolute_unexplained_fraction": 5.518394776495159e-07,
+          "positive_growth_fraction": 3.295125939037833e-08,
+          "terminal_unexplained_fraction": -5.15483884072495e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16
+      },
+      "anchor_0.060_0.10": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 3.382157889217262e-05,
+          "maximum_absolute_unexplained_fraction": 1.4875828823542508e-11,
+          "positive_growth_fraction": 4.996810296023463e-13,
+          "terminal_unexplained_fraction": -1.4137927768199507e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.00038472741828983063,
+        "measured_period_s": 1.1524332665041328,
+        "crossings": 104
+      },
+      "large_0.060_0.10": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.008888014593219012,
+          "maximum_absolute_unexplained_fraction": 2.0053656252250058e-07,
+          "positive_growth_fraction": 1.515456722192694e-08,
+          "terminal_unexplained_fraction": -1.959379498818926e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16
+      },
+      "anchor_0.060_0.20": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 6.708320760854561e-05,
+          "maximum_absolute_unexplained_fraction": 1.4030477850047282e-11,
+          "positive_growth_fraction": 4.4425435632268243e-13,
+          "terminal_unexplained_fraction": -1.3395915351998376e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.0004004854199299983,
+        "measured_period_s": 1.154318091354213,
+        "crossings": 104
+      },
+      "large_0.060_0.20": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.017628879186438025,
+          "maximum_absolute_unexplained_fraction": 6.594847755934426e-07,
+          "positive_growth_fraction": 5.324273396731912e-08,
+          "terminal_unexplained_fraction": -6.553841412453384e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "anchor_0.060_0.30": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 12001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.00010034483632491859,
+          "maximum_absolute_unexplained_fraction": 1.3636421234560753e-11,
+          "positive_growth_fraction": 5.068784431720233e-13,
+          "terminal_unexplained_fraction": -1.3636421234560753e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16,
+        "period_relative_error": 0.0003077748897292454,
+        "measured_period_s": 1.154839783537028,
+        "crossings": 104
+      },
+      "large_0.060_0.30": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.02636974377965703,
+          "maximum_absolute_unexplained_fraction": 5.23075267969207e-07,
+          "positive_growth_fraction": 1.6911702458292004e-08,
+          "terminal_unexplained_fraction": -5.049932290314576e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16
+      },
+      "sweep_5": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 6.557131539415753e-05,
+          "maximum_absolute_unexplained_fraction": 4.0390143783434675e-12,
+          "positive_growth_fraction": 4.5325752388226504e-13,
+          "terminal_unexplained_fraction": -3.3360828513377293e-12,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.771561172376096e-16
+      },
+      "sweep_45": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.00504700917053838,
+          "maximum_absolute_unexplained_fraction": 1.266136171449457e-11,
+          "positive_growth_fraction": 1.4064742551161002e-12,
+          "terminal_unexplained_fraction": -1.1034223609968759e-11,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "sweep_80": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.014239336923885623,
+          "maximum_absolute_unexplained_fraction": 1.2634821805968963e-07,
+          "positive_growth_fraction": 1.777319045406178e-08,
+          "terminal_unexplained_fraction": -1.2237816237728718e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "sweep_89": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.016930834845855048,
+          "maximum_absolute_unexplained_fraction": 6.128186135603398e-07,
+          "positive_growth_fraction": 1.9195664489847476e-08,
+          "terminal_unexplained_fraction": -6.10197317233134e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "sweep_91": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.017532299473092004,
+          "maximum_absolute_unexplained_fraction": 8.426214235023489e-07,
+          "positive_growth_fraction": 4.6786952686756697e-08,
+          "terminal_unexplained_fraction": -8.393839797755888e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "sweep_120": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.025847350739210285,
+          "maximum_absolute_unexplained_fraction": 3.831966587725066e-07,
+          "positive_growth_fraction": 4.7691733874683476e-08,
+          "terminal_unexplained_fraction": -3.817883081962107e-07,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "sweep_170": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.034201348094673595,
+          "maximum_absolute_unexplained_fraction": 2.8682785906395922e-06,
+          "positive_growth_fraction": 9.838165985272822e-09,
+          "terminal_unexplained_fraction": -2.8676159909395167e-06,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 9.43689570931383e-16
+      },
+      "large_0.030_0.10_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.008490702566254511,
+          "maximum_absolute_unexplained_fraction": 1.5953012165807697e-08,
+          "positive_growth_fraction": 4.323919797575096e-09,
+          "terminal_unexplained_fraction": -1.4973147347230177e-08,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "large_0.030_0.30_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.02517780769876353,
+          "maximum_absolute_unexplained_fraction": 1.6287743513292027e-08,
+          "positive_growth_fraction": 7.93683019126049e-09,
+          "terminal_unexplained_fraction": -1.5828999834252622e-08,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "large_0.045_0.10_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.00868935857973676,
+          "maximum_absolute_unexplained_fraction": 7.568639554547827e-09,
+          "positive_growth_fraction": 1.1773019890469302e-09,
+          "terminal_unexplained_fraction": -7.35474953003159e-09,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "large_0.045_0.30_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.025773775739210275,
+          "maximum_absolute_unexplained_fraction": 3.202311421868334e-08,
+          "positive_growth_fraction": 6.212168413390089e-09,
+          "terminal_unexplained_fraction": -3.170372296214887e-08,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "large_0.060_0.10_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.008888014593219012,
+          "maximum_absolute_unexplained_fraction": 8.566030747029433e-09,
+          "positive_growth_fraction": 3.11189324022029e-09,
+          "terminal_unexplained_fraction": -8.27777572567199e-09,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "large_0.060_0.30_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.02636974377965703,
+          "maximum_absolute_unexplained_fraction": 9.904966795171809e-09,
+          "positive_growth_fraction": 4.5172293516541606e-09,
+          "terminal_unexplained_fraction": -9.51486309964e-09,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 7.216449660063518e-16
+      },
+      "sweep_170_passive_half": {
+        "passed": true,
+        "failure_codes": [],
+        "physical_training_admitted": false,
+        "sample_count": 3001,
+        "energy_balance": {
+          "schema": "payload-solver-energy-balance-v1",
+          "initial_excitation_j": 0.034201348094673595,
+          "maximum_absolute_unexplained_fraction": 6.589535564984368e-08,
+          "positive_growth_fraction": 2.9283574988245946e-09,
+          "terminal_unexplained_fraction": -6.578157586852745e-08,
+          "passed": true,
+          "physical_training_admitted": false,
+          "work_convention": "Cumulative work into the system is positive; reference is E(0)."
+        },
+        "maximum_constraint_residual_m": 8.326672684688674e-16
+      }
+    },
+    "powered18": {
+      "powered_0.030_0.10_0": {
+        "passed": true,
+        "case_id": "powered_0.030_0.10_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.7538255103526415e-11,
+        "minimum_floor_m": 0.6268906502027087,
+        "maximum_tilt_deg": 22.949289944537252,
+        "maximum_constraint_residual_m": 1.1657341758564144e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.030_0.10_10": {
+        "passed": true,
+        "case_id": "powered_0.030_0.10_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.7316020164580664e-11,
+        "minimum_floor_m": 0.6269396018883785,
+        "maximum_tilt_deg": 22.949399829081777,
+        "maximum_constraint_residual_m": 1.27675647831893e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.030_0.20_0": {
+        "passed": true,
+        "case_id": "powered_0.030_0.20_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.1022583732707947e-11,
+        "minimum_floor_m": 0.5739420938685449,
+        "maximum_tilt_deg": 24.592037249396395,
+        "maximum_constraint_residual_m": 1.2212453270876722e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.030_0.20_10": {
+        "passed": true,
+        "case_id": "powered_0.030_0.20_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.052712159174802e-11,
+        "minimum_floor_m": 0.573967906174717,
+        "maximum_tilt_deg": 24.590363004254797,
+        "maximum_constraint_residual_m": 1.1657341758564144e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.030_0.30_0": {
+        "passed": true,
+        "case_id": "powered_0.030_0.30_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.782606395178719e-11,
+        "minimum_floor_m": 0.49590049294797084,
+        "maximum_tilt_deg": 25.96534083266567,
+        "maximum_constraint_residual_m": 1.2212453270876722e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.030_0.30_10": {
+        "passed": true,
+        "case_id": "powered_0.030_0.30_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.826368087012602e-11,
+        "minimum_floor_m": 0.4958069926206003,
+        "maximum_tilt_deg": 25.968253322307437,
+        "maximum_constraint_residual_m": 1.1657341758564144e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.045_0.10_0": {
+        "passed": true,
+        "case_id": "powered_0.045_0.10_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.9785383821404224e-11,
+        "minimum_floor_m": 0.6086666896213137,
+        "maximum_tilt_deg": 22.840254056898367,
+        "maximum_constraint_residual_m": 1.1657341758564144e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.045_0.10_10": {
+        "passed": true,
+        "case_id": "powered_0.045_0.10_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.0557832523179556e-11,
+        "minimum_floor_m": 0.6085808089705959,
+        "maximum_tilt_deg": 22.841678126571345,
+        "maximum_constraint_residual_m": 1.3877787807814457e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.045_0.20_0": {
+        "passed": true,
+        "case_id": "powered_0.045_0.20_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.1664490986940777e-11,
+        "minimum_floor_m": 0.5506270749901576,
+        "maximum_tilt_deg": 24.463431047742382,
+        "maximum_constraint_residual_m": 1.3322676295501878e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.045_0.20_10": {
+        "passed": true,
+        "case_id": "powered_0.045_0.20_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.12276380047054e-11,
+        "minimum_floor_m": 0.5506486278296338,
+        "maximum_tilt_deg": 24.462567567880587,
+        "maximum_constraint_residual_m": 1.2212453270876722e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.045_0.30_0": {
+        "passed": true,
+        "case_id": "powered_0.045_0.30_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.8633236740277274e-11,
+        "minimum_floor_m": 0.467189801304939,
+        "maximum_tilt_deg": 25.850900491859925,
+        "maximum_constraint_residual_m": 1.2212453270876722e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.045_0.30_10": {
+        "passed": true,
+        "case_id": "powered_0.045_0.30_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.756822318743379e-11,
+        "minimum_floor_m": 0.467091269475972,
+        "maximum_tilt_deg": 25.85138307084398,
+        "maximum_constraint_residual_m": 1.27675647831893e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.060_0.10_0": {
+        "passed": true,
+        "case_id": "powered_0.060_0.10_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.0096413956470626e-11,
+        "minimum_floor_m": 0.5906700894797925,
+        "maximum_tilt_deg": 22.73820506654372,
+        "maximum_constraint_residual_m": 1.3877787807814457e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.060_0.10_10": {
+        "passed": true,
+        "case_id": "powered_0.060_0.10_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.974021751955668e-11,
+        "minimum_floor_m": 0.5908339873916307,
+        "maximum_tilt_deg": 22.736206992225842,
+        "maximum_constraint_residual_m": 1.1657341758564144e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.060_0.20_0": {
+        "passed": true,
+        "case_id": "powered_0.060_0.20_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.202029460888436e-11,
+        "minimum_floor_m": 0.5261771280793932,
+        "maximum_tilt_deg": 24.323126613774345,
+        "maximum_constraint_residual_m": 1.27675647831893e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.060_0.20_10": {
+        "passed": true,
+        "case_id": "powered_0.060_0.20_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.088806518368081e-11,
+        "minimum_floor_m": 0.5260303487695499,
+        "maximum_tilt_deg": 24.318682207767164,
+        "maximum_constraint_residual_m": 1.27675647831893e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.060_0.30_0": {
+        "passed": true,
+        "case_id": "powered_0.060_0.30_0",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 4.9650682112090156e-11,
+        "minimum_floor_m": 0.4379353975581671,
+        "maximum_tilt_deg": 25.696328678796345,
+        "maximum_constraint_residual_m": 1.27675647831893e-15,
+        "physical_training_admitted": false
+      },
+      "powered_0.060_0.30_10": {
+        "passed": true,
+        "case_id": "powered_0.060_0.30_10",
+        "sample_count": 12001,
+        "actual_stage_count": 768000,
+        "maximum_absolute_energy_work_residual_j": 5.0185904380187846e-11,
+        "minimum_floor_m": 0.4379830640142376,
+        "maximum_tilt_deg": 25.69949609014872,
+        "maximum_constraint_residual_m": 1.3322676295501878e-15,
+        "physical_training_admitted": false
+      }
+    },
+    "refinement6pairs12traces": {
+      "refine_0.030_0.10_2": {
+        "passed": true,
+        "maximum_position_difference_m": 3.238710170321501e-07,
+        "maximum_angle_difference_deg": 2.4148365394514667e-06
+      },
+      "refine_0.030_0.30_2": {
+        "passed": true,
+        "maximum_position_difference_m": 3.697438159635676e-07,
+        "maximum_angle_difference_deg": 3.818191820832845e-06
+      },
+      "refine_0.045_0.10_2": {
+        "passed": true,
+        "maximum_position_difference_m": 2.3737586016746933e-07,
+        "maximum_angle_difference_deg": 2.4148365394514667e-06
+      },
+      "refine_0.045_0.30_2": {
+        "passed": true,
+        "maximum_position_difference_m": 5.449850151266467e-07,
+        "maximum_angle_difference_deg": 3.818191820832845e-06
+      },
+      "refine_0.060_0.10_2": {
+        "passed": true,
+        "maximum_position_difference_m": 5.402266576124784e-07,
+        "maximum_angle_difference_deg": 3.4150945850063755e-06
+      },
+      "refine_0.060_0.30_2": {
+        "passed": true,
+        "maximum_position_difference_m": 4.5416363570163957e-07,
+        "maximum_angle_difference_deg": 4.517745487845101e-06
+      }
+    },
+    "motor15": {
+      "passed": true,
+      "motor_cases": 15,
+      "physical_training_admitted": false
+    },
+    "reset30": {
+      "passed": true,
+      "actual_resets": 30,
+      "logical_batch_size": 1,
+      "physical_training_admitted": false
+    },
+    "initial_reset30": {
+      "passed": true,
+      "actual_initial_resets": 30,
+      "batch_size": 1,
+      "physical_training_admitted": false
+    }
+  },
+  "not_a_consumer_admission": true
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "payload-solver-closed-pilot-dynamics-diagnostic-v2",
+  "consecutive_interval_definition": "Adjacent valid native STEP samples; a single valid sample establishes zero full intervals. This diagnostic excludes INITIAL and is not shared-settling admission",
+  "scope": "Read-only P5 raw analysis; fixed-anchor small-angle frequencies are diagnostic, not numerical qualification or acceptance",
+  "physical_acceptance": false,
+  "actual_training_source_sha256": "5aab78c1063dc860ad4b5426877a2ea846ad2a864e309cf4d3974e8661a7bd1e",
+  "actual_source_archive_sha256": "1a3e240e0116caffd0bee7fef68fb2d89475e86ee243aaf0191740f84e0f3cf6",
+  "results": [
+    {
+      "checkpoint_steps": 20000,
+      "records": 3000,
+      "checkpoint_sha256": "b9e6b9f515c7b2e03331835e8fdc4b0e439c48bf002a137598670a7e6e9cef92",
+      "native_raw_sha256": "986a5598bf9eced5f03de47a5e580858cdcc3c2dbe4e5773f49a464bec49e1c9",
+      "samples_sha256": "a223d3aac441fbee4dc3802307481ad2b4ecd478f0fa3adb83d6aa96925f8729",
+      "maximum_recomputed_metric_error": 8.881784197001252e-16,
+      "last500_mean_drone_error_m": 0.25082316371896435,
+      "last500_mean_package_angular_speed_deg_s": 31.500997967627068,
+      "last500_predicate_pass_fraction": {
+        "drone_error_m": 0.0,
+        "drone_speed_m_s": 1.0,
+        "package_error_m": 0.0,
+        "package_speed_m_s": 1.0,
+        "swing_angle_deg": 1.0,
+        "swing_rate_deg_s": 1.0,
+        "package_spin_deg_s": 0.122
+      },
+      "maximum_consecutive_spin_valid_STEP_samples": 2,
+      "maximum_spin_valid_STEP_intervals": 1,
+      "maximum_consecutive_simultaneous_valid_STEP_samples": 1,
+      "maximum_simultaneous_valid_STEP_intervals": 0,
+      "last500_body_z_angular_speed_rms_deg_s": 4.631045120979508e-07,
+      "last500_transverse_angular_speed_rms_deg_s": 34.67905749120324,
+      "dominant_transverse_frequency_hz": 4.207461833803878
+    },
+    {
+      "checkpoint_steps": 100000,
+      "records": 3000,
+      "checkpoint_sha256": "1b8c6505bac50dbfdca81e8e83dcbc57191d94bef4ddf17b70465ac96c68c037",
+      "native_raw_sha256": "37cb82de47117d72dd52b8a1fdfafd3191594c5acda6061f0ada3baf87fffd1c",
+      "samples_sha256": "11203106ba04c620232b9cf4fc9a9522cb0ea1d2abad6f03bcec7380285f4b28",
+      "maximum_recomputed_metric_error": 1.7763568394002505e-15,
+      "last500_mean_drone_error_m": 0.24806869158771389,
+      "last500_mean_package_angular_speed_deg_s": 36.52010497461287,
+      "last500_predicate_pass_fraction": {
+        "drone_error_m": 0.0,
+        "drone_speed_m_s": 1.0,
+        "package_error_m": 0.0,
+        "package_speed_m_s": 1.0,
+        "swing_angle_deg": 1.0,
+        "swing_rate_deg_s": 1.0,
+        "package_spin_deg_s": 0.104
+      },
+      "maximum_consecutive_spin_valid_STEP_samples": 2,
+      "maximum_spin_valid_STEP_intervals": 1,
+      "maximum_consecutive_simultaneous_valid_STEP_samples": 0,
+      "maximum_simultaneous_valid_STEP_intervals": 0,
+      "last500_body_z_angular_speed_rms_deg_s": 5.868791471395967e-07,
+      "last500_transverse_angular_speed_rms_deg_s": 40.365041760590415,
+      "dominant_transverse_frequency_hz": 4.206533890828458
+    },
+    {
+      "checkpoint_steps": 300000,
+      "records": 3000,
+      "checkpoint_sha256": "12b42e26738ed88e51f6f8cf1fc6be69d2458bcba9d72faace0b2635433cf6eb",
+      "native_raw_sha256": "283c787188a2e54c2a8791fb258085a736a6917d3292fd40860f655fdeaa5b58",
+      "samples_sha256": "61405daa474827b945ae23f51cf352a0df871e16f2a03c17f5d3e5f30406be52",
+      "maximum_recomputed_metric_error": 1.7763568394002505e-15,
+      "last500_mean_drone_error_m": 0.2775500431997295,
+      "last500_mean_package_angular_speed_deg_s": 38.3234787984687,
+      "last500_predicate_pass_fraction": {
+        "drone_error_m": 0.0,
+        "drone_speed_m_s": 1.0,
+        "package_error_m": 0.0,
+        "package_speed_m_s": 1.0,
+        "swing_angle_deg": 1.0,
+        "swing_rate_deg_s": 0.976,
+        "package_spin_deg_s": 0.016
+      },
+      "maximum_consecutive_spin_valid_STEP_samples": 2,
+      "maximum_spin_valid_STEP_intervals": 1,
+      "maximum_consecutive_simultaneous_valid_STEP_samples": 0,
+      "maximum_simultaneous_valid_STEP_intervals": 0,
+      "last500_body_z_angular_speed_rms_deg_s": 1.2736778297006543e-05,
+      "last500_transverse_angular_speed_rms_deg_s": 41.40459008789934,
+      "dominant_transverse_frequency_hz": 4.207473727839789
+    }
+  ],
+  "reference": {
+    "model": "Uniform massive rod and solid cube, fixed top anchor, planar small angles, original dimensions/inertia; compare dominant frequency only",
+    "mass_matrix": [
+      [
+        0.00048900862067523,
+        3.6450644675642254e-05
+      ],
+      [
+        3.6450644675642254e-05,
+        4.556330584455282e-06
+      ]
+    ],
+    "stiffness_matrix": [
+      [
+        0.016039631078580023,
+        0.0
+      ],
+      [
+        0.0,
+        0.0011919360808935017
+      ]
+    ],
+    "natural_frequencies_hz": [
+      0.8777260058903757,
+      4.20745975554281
+    ]
+  }
+}

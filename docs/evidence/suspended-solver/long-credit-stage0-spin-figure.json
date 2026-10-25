@@ -1,0 +1,19 @@
+{
+  "schema": "payload-solver-recorded-training-figure-v1",
+  "figure_sha256": "36d0c341afbf82e26d209a731324ed5f2aaff3ab8cabb366e1d816922bc4d7e1",
+  "figure_bytes": 306467,
+  "source_script_sha256": "fa4529480fbe27758b12fa8673f62663db9bff73fd75eaceb1e09a160904e62e",
+  "derived_array_sha256": "0c91a2878086f750f7019e54fb44643de438d290eb525d622682b0d2d9814ad7",
+  "selected_raw_sha256": "d013ca6988115ec7b26b45c1361363b38ced1fb542b57be81800352343f7c351",
+  "font_static_sha256": "aca1e79f1a80e231773fe93dbd2e20031d9f804e4860057887117ee04ae81544",
+  "valid_step_range": [
+    299001,
+    300000
+  ],
+  "episode": 25,
+  "frames_or_samples": 1000,
+  "physical_dt_s": 0.01,
+  "scope": "One actual closed training episode; all100Hz points, no new physics or policy execution. Uncapped curve is arithmetic on the same recorded path, not a learned outcome.",
+  "physical_acceptance": false,
+  "visual_review": "All three panels, Japanese labels, legends, units and scope note inspected; no clipped text or missing glyphs"
+}

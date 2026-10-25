@@ -1,0 +1,58 @@
+{
+  "status": "RENDERED_AND_VISUALLY_CHECKED",
+  "pdf": {
+    "path": "outputs/suspended_20261021_v1/report/final-v2/report.pdf",
+    "bytes": 1154598,
+    "sha256": "03b689ef62d032282ec2502dd0637d20f9da6a71cc67183b1e111f286aec2ce1"
+  },
+  "markdown": {
+    "path": "docs/report_ja.md",
+    "sha256": "51cb3e522967e442ecb66d50c83b4234f4e341ca6e177699c6d69efea0170f68"
+  },
+  "generator": {
+    "path": "scripts/build_report.py",
+    "sha256": "f5a6c1e52ce116e6008545c3799e93b9f423baea97b24c78a2eb1c3ce4bbd21c"
+  },
+  "pages": 7,
+  "rendered_pages": [
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-1.png",
+      "sha256": "da02198b816e5410b7a4b1fbdccc55181575c8cbfaf0b922ad98553fcfbbabcb"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-2.png",
+      "sha256": "106c8aaf6204da8b3d54940f792a7805406c8b1e7ed35993ee8ac79e0253caaf"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-3.png",
+      "sha256": "7c82f9d07a1008f5a87437cc8cf494fb4d8a75e4143037b584b13a7b13dc5d59"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-4.png",
+      "sha256": "7f7b03087fdb2c5475add6958c3a0b0455cd6dbb83a6187a80b2cef9d496f31c"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-5.png",
+      "sha256": "30dc9f4fa406b82c63d2709ce381ec1985a2bdc3c15f650e93625fd996e568bf"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-6.png",
+      "sha256": "5ecfa8f5bef612334bd4a3bcf7989673722c88a97ca989989d6d34db197e7a5a"
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/report/final-v2/page-7.png",
+      "sha256": "814572e149e5baa3146b50e23a5a0792e872cee13da3e2b2f7ccee94f416813d"
+    }
+  ],
+  "visual_review_ja": "全7ページの描画を確認。新規本文の配置、図、文字欠け修正、歴史付録と停止表示を確認。",
+  "superseded_pdf": {
+    "path": "outputs/suspended_20261021_v1/report/final-report.pdf",
+    "reason_ja": "指数の上付き文字にfont欠落。保存して別出力へ修正。"
+  },
+  "artifact_attempts_ja": [
+    "bundled PythonにfontToolsがなく初回生成失敗。既存venvのReportLab/fontToolsを使用。",
+    "図生成のGUI backendがabort。Aggで再生成。"
+  ],
+  "font_missing_characters": 0,
+  "operator_review": "NOT_REQUESTED_NO_FINAL_FLIGHT_VIDEOS"
+}

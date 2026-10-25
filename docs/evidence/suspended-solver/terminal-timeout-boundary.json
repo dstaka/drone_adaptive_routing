@@ -1,0 +1,44 @@
+{
+  "schema": "payload-solver-terminal-timeout-boundary-fix-v1",
+  "status": "LOCAL_NEXT_SOURCE_ONLY_NOT_DEPLOYED_TO_LIVE_V19_PAIR",
+  "behavior": "Only time-limit truncation bootstraps. True failure or tenth shared completion excludes timeout bootstrap even at the same episode limit. Existing terminal timeout flag still reports that the limit was reached.",
+  "observed_current_run_impact": "Zero shared completions means this edge did not fire in randomized3M; not asserted as cause of the observed flight failure.",
+  "red": {
+    "failed": 1,
+    "passed": 3,
+    "case": "True tenth completion at step12000 incorrectly returned time_outs=True",
+    "log_sha256": "f6e8c7797bc31d05b0c4abf41bd9788b06cce26f88ee647a873d43ea0b43e701"
+  },
+  "related_green": {
+    "passed": 40,
+    "duration_s": 2.13,
+    "log_sha256": "94478bf69c5d9f6d5e9599205015b354b5586ed94c7ae9a1714dd4222d7534f8"
+  },
+  "source_sha256": {
+    "src/adaptive_drone_patrol/payload_solver_training.py": "17d8259b87ed6d50606b04b0f9f449d4a99825c2836374736aa6c940c0cc78e7",
+    "tests/test_payload_recovery_training.py": "9b4a8f6c070834229c941750dd580ad189d024979cdd58b9ee7254713ea41a05"
+  },
+  "full_cpu_regression": {
+    "passed": 1087,
+    "skipped": 18,
+    "gpu_deselected": 1,
+    "existing_dependency_warnings": 39,
+    "duration_s": 332.01,
+    "log_sha256": "a4a117d4ffded714ba44dc5f0a88db736573773974b681a726fca7948493632b"
+  },
+  "independent_review": "NO_REMAINING_CORRECTNESS_CONCERNS; complete-stream termination reconstruction preserves legacy terminal timeout semantics",
+  "physical_acceptance": false,
+  "linux_isolated_next_source": {
+    "passed": 40,
+    "duration_s": 1.55,
+    "actual_source_archive_sha256": "28d7f5a57b145bf592bd8a5a71f8541f6349d2dbdab9ac14f008078cd4547618",
+    "source_files_size_sha256_verified": 360,
+    "log_sha256": "a0af255839bf03be0ae2a23ce9249e1f894e965975f684c647d2dde0793cf910",
+    "proof_sha256": "c9b8ef206cf8f4496156194b87520cd1c236bb667a9fa3fc9a7c81db5bad7d47",
+    "original_v19_source_unchanged": true,
+    "qualified_static_physics_binding_unchanged": true,
+    "physical_execution": false,
+    "policy_learning_executed": false,
+    "selected_recipe": false
+  }
+}

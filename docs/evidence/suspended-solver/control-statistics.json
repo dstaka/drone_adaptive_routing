@@ -1,0 +1,85 @@
+{
+  "scope": "Closed stochastic training visits; not matched causal inference, no adoption",
+  "runs": [
+    {
+      "run": "outputs/pilot-bounded-spin-v1",
+      "transitions": 200000,
+      "bands": [
+        {
+          "from_transition": 1,
+          "through_transition": 20000,
+          "saturated_steps_fraction": 0.7047,
+          "raw_bound_squared_mean": 0.06795987731331508,
+          "vehicle_omega_norm_mean": 2.6090232690611983,
+          "pitch_lag1": -0.7859981177573164,
+          "mean_position_error_m": 0.2636347645857848,
+          "shared_valid_samples": 2,
+          "max_consecutive_shared_valid_samples": 1
+        },
+        {
+          "from_transition": 80001,
+          "through_transition": 100000,
+          "saturated_steps_fraction": 0.7787,
+          "raw_bound_squared_mean": 0.23407441462463893,
+          "vehicle_omega_norm_mean": 2.614590661119758,
+          "pitch_lag1": -0.8015637943722929,
+          "mean_position_error_m": 0.29711104044605435,
+          "shared_valid_samples": 1,
+          "max_consecutive_shared_valid_samples": 1
+        },
+        {
+          "from_transition": 180001,
+          "through_transition": 200000,
+          "saturated_steps_fraction": 0.88285,
+          "raw_bound_squared_mean": 0.33233053940686025,
+          "vehicle_omega_norm_mean": 2.9360497159414805,
+          "pitch_lag1": -0.8409631669835036,
+          "mean_position_error_m": 0.30232161549698716,
+          "shared_valid_samples": 0,
+          "max_consecutive_shared_valid_samples": 0
+        }
+      ],
+      "scope": "Observed stochastic visits; distributions/poses differ across episodes, not matched causal inference"
+    },
+    {
+      "run": "outputs/pilot-angular-cost-v1",
+      "transitions": 300000,
+      "bands": [
+        {
+          "from_transition": 1,
+          "through_transition": 20000,
+          "saturated_steps_fraction": 0.22525,
+          "raw_bound_squared_mean": 0.012025294009952949,
+          "vehicle_omega_norm_mean": 1.7419207604761286,
+          "pitch_lag1": -0.6406177718447195,
+          "mean_position_error_m": 0.2208498891159953,
+          "shared_valid_samples": 4,
+          "max_consecutive_shared_valid_samples": 2
+        },
+        {
+          "from_transition": 80001,
+          "through_transition": 100000,
+          "saturated_steps_fraction": 0.0,
+          "raw_bound_squared_mean": 0.0,
+          "vehicle_omega_norm_mean": 0.47646752421245564,
+          "pitch_lag1": 0.7433797305004494,
+          "mean_position_error_m": 0.2533065061264112,
+          "shared_valid_samples": 0,
+          "max_consecutive_shared_valid_samples": 0
+        },
+        {
+          "from_transition": 280001,
+          "through_transition": 300000,
+          "saturated_steps_fraction": 0.0004,
+          "raw_bound_squared_mean": 1.0654359472203722e-06,
+          "vehicle_omega_norm_mean": 0.3912403585921393,
+          "pitch_lag1": -0.8093872766862787,
+          "mean_position_error_m": 0.6648655241079041,
+          "shared_valid_samples": 0,
+          "max_consecutive_shared_valid_samples": 0
+        }
+      ],
+      "scope": "Observed stochastic visits; distributions/poses differ across episodes, not matched causal inference"
+    }
+  ]
+}

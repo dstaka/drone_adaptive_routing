@@ -2,6 +2,12 @@
 
 各仕様書は、その変更を実装するコード・テストと同じPRに含めます。PR作成時に仕様書内へPR番号またはURLを追記し、PR本文から仕様書にリンクしてください。マージ済み仕様書は履歴として保持します。
 
+**最新の吊り荷方針：** [MuJoCo制御器単独で完成させる吊り荷輸送](2026-10-23-suspended-payload-hybrid-genesis/spec.md)（Revision3、2026-10-25の利用者指示による変更・実行中）。3シナリオの開発10地点完走を根拠にMuJoCoを最終主系とし、Genesisの追加実験とNN学習・C/H比較を必須成果から外しました。Genesisの中断・限定資格・失敗・未確認事項は[保存記録](../docs/suspended-payload-genesis-interruption.md)に残し、不可能性や完了とは読み替えません。
+
+荷物速度0.15m/s・振れ角速度15度/s・箱全角速度30度/sと、位置・傾き・連続1秒の動画優先基準を維持します。合計120秒／12000step制限はなく、各leg30秒・wall600秒を維持。source一致による既存MuJoCo資格とC0/C1/C2を再利用し、開発頑健性15条件、公称＋6端点330秒、validation12条件／120指示leg、正式127条件（basic9/9・端点18/18・held-out95/100以上）、改善画角の最終3動画とfresh人手確認を完了条件とします。継承validation列の120legは96異座標変更と24保持を含み、120回の異座標移動とは呼びません。
+
+[実行記録](../docs/suspended-payload-hybrid-progress.md)、[結果報告](../docs/suspended-payload-mujoco-result-ja.md)、[現行計画](../docs/superpowers/plans/2026-10-25-suspended-mujoco-completion.md)を参照してください。開発動画と正式受入・人手確認の完了は区別します。旧直接motor学習は共有settling未達のまま保存済みです。以下のGenesis優先・旧GPU予算・静定条件・mission制限などは過去の記録です。
+
 ## 2026-10-14: 適応型Drone巡回デモの改善案
 
 以下は2026-10-14時点の分割計画です。最新の実装記録は末尾に記載します。
@@ -53,3 +59,23 @@ The approved [scalable adaptive routing specification](2026-10-14-scalable-adapt
 ## 2026-10-20 dispersed destination implementation session
 
 [分散3次元目的地配置](2026-10-17-dispersed-destination-layout/spec.md)を整数重要度PRのマージ後から実装しました。[実装計画](../docs/superpowers/plans/2026-10-20-dispersed-destination-layout.md)と[新規測定・失敗・再実行の引き継ぎ](../docs/dispersed-destination-layout-handoff.md)を参照してください。配置承認、追加学習、9物理試行90点検、全5動画11,361フレームの独立照合、最終動画の人手確認とPDF確認を完了し、全7受入条件を満たしました。他の未追跡specは今回のcommitへ含めません。
+
+## 2026-10-17: 吊り荷を運ぶ強化学習制御
+
+[吊り荷付き10地点巡回と荷重・寸法ランダム化](2026-10-17-suspended-payload-flight/spec.md)を、動画改善PRとは独立した仕様として作成しました。既存の小型機で荷物を吊り下げ、各地点で荷物も安定するまで待ちます。初版は固定長リンクによる近似から始め、3種類の箱サイズと連続的な質量をepisodeごとに抽選します。方策は荷物の動きを観測しますが、正確な質量・寸法は入力しません。投下とロープの弛みは対象外です。
+
+確認済みの受入は、機体・荷物の同時安定1秒、基本9/9成功、端点条件18/18成功、未学習ランダム100試行中95件以上成功です。固定荷物で学習した比較方策にも同じ127条件を使用します。動画成果物は1倍速rawと日本語HUD付き全編3本までとし、提出用再編集は別PRへ分離します。作成時点では最終レビュー待ち・実装未開始でした。2026-10-21の明示指示により実装・物理probe・一部学習を行い、数値破綻のため停止しました。固定比較・254受入・動画は未達です。[実装と失敗の引き継ぎ](../docs/suspended-payload-flight-handoff.md)を参照してください。
+
+## 2026-10-21: 吊り荷飛行の再挑戦
+
+[長時間物理qualificationを先行する吊り荷再挑戦](2026-10-21-suspended-payload-flight-retry/spec.md)を作成しました。起点は前回の失敗を保存した `2d0e003`。旧PASSを無効のまま保持し、固定リンクモデル内で別の受動関節表現を調査して、120秒の固定anchor・連続モーター駆動、dt比較、reset隔離を学習前に検証します。荷物分布・同時安定1秒・127条件ずつの比較・全編3本の完成条件は維持します。[別Codexセッション向けの実行指示](../docs/suspended-payload-flight-retry-instructions_ja.md)を用意しました。作成時点では文書のみでした。2026-10-22の明示指示後、native ball版・独立checker・新観測/学習guardを実装し、新GPU環境で検証しました。powered診断で荷物床余裕違反が生じ、学習・validation・254受入・動画は開始していません。旧成功の流用や閾値緩和は行わず、失敗と残り診断を保持します。[再挑戦の引き継ぎ](../docs/suspended-payload-flight-retry-handoff.md)を参照してください。新spec・索引・公開指示は今回のコード・テストと同じローカルcommitへ含めます。
+
+## 2026-10-22: 物理修理・条件付き高度変更・並列学習
+
+[次回の吊り荷回復spec](2026-10-22-suspended-payload-flight-recovery/spec.md)を準備しました。起点は `e3c145a`、残GPUは17975.87211180746秒を基準に再照合します。大角度の受動energyをpowered前の独立barrierで検査し、実batch化と総sample/PPO更新の公平性を規定しました。高度変更は物理修理後に余裕不足が実証された場合だけ、Sと全地点の共通変換として両学習前に固定します。未完のruntime・validation・254評価・全編3本・新規人手確認まで対象です。[提案の評価と引き継ぎ](../docs/suspended-payload-flight-recovery-handoff.md)、[新セッションへの実行指示](../docs/suspended-payload-flight-recovery-instructions_ja.md)を参照してください。人による実行指示後に実装・新環境・6GPU診断を行いました。旧失敗rawを完全再現し、積分離散化の独立診断と128/256-substep受動3traceを取得しましたが、完全資格・学習・254受入・動画は未達です。数値品質未確定と実測による予算不足で依存GPU作業を停止し、CPU実装・全失敗・証拠を保存しました。
+
+## 2026-10-22–23: 数値解法の修理と実測に基づく学習
+
+[新spec](2026-10-22-suspended-payload-solver-recovery/spec.md)、[引き継ぎ](../docs/suspended-payload-solver-recovery-handoff.md)、[実装計画](../docs/superpowers/plans/2026-10-22-suspended-payload-solver-recovery.md)、[貼り付け用実行指示](../docs/suspended-payload-solver-recovery-instructions_ja.md)を用意しました。想定起点は `e39cb098a9edc47007c5d427ae0d220939075dda`。準備後の実行指示により数値修理・実装・新規資格・7.02M遷移の学習と全3rung比較を実施しました。数値資格は通過しましたが共有settling0・全rung両方式0/6のため、2026-10-23のユーザー指示で未達として区切ります。
+
+ユーザーの新指示により、今後はGPU時間上限・使用時間tracking・旧残量による停止を撤廃します。同じ実物理を保つ設定/積分器/精度、対象限定engine patch、必要な版更新、別backendの検証を許容し、developmentの実測で共通の最終学習量を決めます。実N1での小さい飛行成立を早く確認し、並列化を待ち続けない計画です。物理・同時安定・254受入・3本の実測動画は維持し、制御方式や角度範囲・mission時間等の追加緩和は別承認にします。準備ファイル群を今回の実装・テスト・未達証拠と同じ新規local commitへ含めます。次のハイブリッドspecの実装は未開始です。

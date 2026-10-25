@@ -1,0 +1,79 @@
+{
+  "schema": "payload-recovery-acceptance-v1",
+  "accepted": false,
+  "status": "BLOCKED_NUMERICAL_UNCERTAINTY_AND_BUDGET_DEFICIT",
+  "gates": {
+    "physics": "INCOMPLETE_3_OF_62_DOMAIN_TRACES",
+    "batch_and_effective_isolation": "CPU_IMPLEMENTED_GPU_UNVERIFIED",
+    "layout": "UNCHANGED_DELTA_Z_0_NO_CONDITIONAL_STUDY",
+    "learning": {
+      "randomized": {
+        "transitions": 0,
+        "required": 300000
+      },
+      "fixed": {
+        "transitions": 0,
+        "required": 300000
+      }
+    },
+    "validation": {
+      "cases": 0,
+      "required_cases": 12,
+      "transitions": 0,
+      "required_transitions": 120
+    },
+    "acceptance": {
+      "randomized": {
+        "basic": {
+          "attempted": 0,
+          "required": 9
+        },
+        "endpoints": {
+          "attempted": 0,
+          "required": 18
+        },
+        "held_out": {
+          "attempted": 0,
+          "required": 100,
+          "required_successes": 95
+        }
+      },
+      "fixed_comparison": {
+        "attempted": 0,
+        "required": 127
+      },
+      "total_attempted": 0,
+      "total_required": 254
+    },
+    "new_final_videos": {
+      "completed": 0,
+      "required": 3
+    },
+    "human_review": "NOT_REQUESTED_NO_NEW_FINAL_VIDEOS"
+  },
+  "success_rates": null,
+  "wilson_intervals": null,
+  "superiority_claim": null,
+  "adopted_payload_policy": null,
+  "policy_initialization_changed": false,
+  "old_failed_checkpoints_used_for_learning": false,
+  "unmet_integration": [
+    "complete62 source/settings/batch final admission",
+    "training common-core migration and checkpoint physical metadata",
+    "actual per-environment geometry/properties/motor held reset and equivalence",
+    "N1/8/32/128 measured profiling and common final budget freeze",
+    "validation12/120 coordinator and frozen model selection",
+    "paired254 orchestrator and independent raw reconstruction",
+    "qualified camera construction, Japanese HUD and all-frame1x verification",
+    "fresh final-hash human review"
+  ],
+  "commit_reference": "The new local implementation commit containing this evidence; resolve git log -1 --format=%H",
+  "required_identity": "dstaka <22057509+dstaka@users.noreply.github.com>",
+  "remote_actions": {
+    "push": false,
+    "pull_request_created": false,
+    "merged": false,
+    "video_published": false,
+    "submitted": false
+  }
+}

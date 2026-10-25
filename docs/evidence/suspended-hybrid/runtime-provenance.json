@@ -1,0 +1,72 @@
+{
+  "schema": "hybrid-runtime-provenance-summary-v1",
+  "full_manifest_sha256": "0a22be23131367898b6644dc8d368cf2eeac7540bffc463603dd5d23ae12f470",
+  "python": "3.12.15 (main, Oct 13 2026, 16:52:04) [GCC 15.3.0]",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "genesis-world": {
+      "version": "1.4.5",
+      "metadata_sha256": "be0f6612222f7eb673c3d270250e12cada1f113e2c1905018bf4cef88791118d",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "1.4.5",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "quadrants": {
+      "version": "1.3.3",
+      "metadata_sha256": "b6cc7e74d61f067b4ce47cebdacbc11d048fb77ed185e48fcfa1ad5dd8dd7818",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "1.3.3",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "torch": {
+      "version": "2.14.1+cu132",
+      "metadata_sha256": "9bb5d2fd8513010ef72c21a24e87b217b9a4b91912b2dd603103985b339fdf25",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "2.14.1+cu132",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "mujoco": {
+      "version": "3.15.0",
+      "metadata_sha256": "ed75e601a51e1372123c1f3e95b2286c4ee6c94661886dbc19e43d2f8e9efad4",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "3.15.0",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "numpy": {
+      "version": "2.5.3",
+      "metadata_sha256": "451a9b8028000588e66b0b415587b6aef0bbc51a96d8e8a0cba0dc23acf64f99",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "2.5.3",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "scipy": {
+      "version": "1.18.1",
+      "metadata_sha256": "6d1ebfbce110009e25e8249fea05e21c0449735144e9bd8df1a52931f957c1ea",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "1.18.1",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "gymnasium": {
+      "version": "1.0.0",
+      "metadata_sha256": "2121ca89ee0106506fe2c34ebe914c91a556de646e15ff0f2b238fcef9ac745a",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "1.0.0",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "stable-baselines3": {
+      "version": "2.4.1",
+      "metadata_sha256": "c42724b7ef10d9e02c54c22abb73e345be8047d1b7183527a2c6082705953a1b",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "2.4.1",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    },
+    "sb3-contrib": {
+      "version": "2.4.0",
+      "metadata_sha256": "a1aef81f2fa501b30e060068714dab2cbec0db593cb75e5a56def8d8999bb7c6",
+      "wheel_record_mismatches": [],
+      "upstream_release_version": "2.4.0",
+      "upstream_git_commit": "NOT_EMBEDDED_IN_INSTALLED_WHEEL"
+    }
+  },
+  "scope": "All installed code/native file hashes retained in full local manifest; empty RECORD mismatches for all nine wheels. Wheels do not embed engine Git commits; release versions and exact installed file hashes bind the builds."
+}

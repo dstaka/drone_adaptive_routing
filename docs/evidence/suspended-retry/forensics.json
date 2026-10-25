@@ -1,0 +1,490 @@
+{
+  "schema": "payload-retry-cpu-forensics-v1",
+  "date": "2026-10-22",
+  "status": "CONFIRMED_HISTORICAL_NUMERICAL_FAILURE",
+  "training_admitted": false,
+  "audit_revision": "2d0e00324c63d96a9376aa4f23128ec4d9e2bde4",
+  "scope_ja": "ローカルCPU監査。GPU・SSH・学習・台帳更新なし。物理原因の確定または修理、新規運用域合格の証拠ではない。",
+  "historical_evidence": {
+    "docs/evidence/suspended/acceptance.json": {
+      "path": "docs/evidence/suspended/acceptance.json",
+      "exists": true,
+      "bytes": 4093,
+      "sha256": "520df2e7f0ac64d0390ac21be959ecaf4ca2f9b5f9cf0bbfda241612aa74d5ff"
+    },
+    "docs/evidence/suspended/environment.json": {
+      "path": "docs/evidence/suspended/environment.json",
+      "exists": true,
+      "bytes": 1174,
+      "sha256": "9713e185e1d6e1359838cd3258454897e6784d64917fa2ea33c3741c0f660e9c"
+    },
+    "docs/evidence/suspended/failure-check.json": {
+      "path": "docs/evidence/suspended/failure-check.json",
+      "exists": true,
+      "bytes": 1350,
+      "sha256": "a476418cec12d41f981853275137a143782f56bba92aec28f088a869725b95df"
+    },
+    "docs/evidence/suspended/feasibility.json": {
+      "path": "docs/evidence/suspended/feasibility.json",
+      "exists": true,
+      "bytes": 9232,
+      "sha256": "01458758eac0b753370d9936409eb94ec7f140da6a28f5ae672791ea7c1367b1"
+    },
+    "docs/evidence/suspended/geometric-clearance.json": {
+      "path": "docs/evidence/suspended/geometric-clearance.json",
+      "exists": true,
+      "bytes": 470,
+      "sha256": "87d7c4c044adb932077809db40c05228e3d2a5e80f79cf7dd44eecb89a1a4ddc"
+    },
+    "docs/evidence/suspended/gpu-summary.json": {
+      "path": "docs/evidence/suspended/gpu-summary.json",
+      "exists": true,
+      "bytes": 6042,
+      "sha256": "67692553767b5760aec627dad1cc01a34ce9c56a7719df304ac93861f4743b7e"
+    },
+    "docs/evidence/suspended/inputs.json": {
+      "path": "docs/evidence/suspended/inputs.json",
+      "exists": true,
+      "bytes": 1090,
+      "sha256": "cee31ed3c484c203530ec49b49eaea08bdd894160c9831d3e52a3dd4e0b5a8ca"
+    },
+    "docs/evidence/suspended/physical-audit.json": {
+      "path": "docs/evidence/suspended/physical-audit.json",
+      "exists": true,
+      "bytes": 4380,
+      "sha256": "433b1275b48e937087589bb0568a4a1086f5062430c47ab7b56ecdaed52ab77b"
+    },
+    "docs/evidence/suspended/report.json": {
+      "path": "docs/evidence/suspended/report.json",
+      "exists": true,
+      "bytes": 2378,
+      "sha256": "50c374afd27b079bb683c7c6fb41e332d7e8e92122ff3f19a5c2e04ec1023091"
+    },
+    "docs/evidence/suspended/short-probe-check.json": {
+      "path": "docs/evidence/suspended/short-probe-check.json",
+      "exists": true,
+      "bytes": 11400,
+      "sha256": "f8e4d5203c2c26b0a9f8bbb634dd8bf2ba95c4e1769e5d2219fa3260ceb1d2cf"
+    },
+    "docs/evidence/suspended/transfer.json": {
+      "path": "docs/evidence/suspended/transfer.json",
+      "exists": true,
+      "bytes": 615,
+      "sha256": "8d162385c17fbf64bc6ec1ca6d1d0246aaa8ca81688350eb06be34c51d3983a4"
+    },
+    "docs/evidence/suspended/verification.json": {
+      "path": "docs/evidence/suspended/verification.json",
+      "exists": true,
+      "bytes": 4520,
+      "sha256": "9836aeb815680ee3104dd73a515ab36c6b68799b8fa1537438e56032101ef30b"
+    }
+  },
+  "predecessor_adoption_failure_compatibility_acceptance": {
+    "docs/evidence/dispersed/inputs.json": {
+      "path": "docs/evidence/dispersed/inputs.json",
+      "exists": true,
+      "bytes": 3187,
+      "sha256": "ee38505369079cb680ae814f9d98f2462363a5ab2fe2b2b33d595fbc0d983659"
+    },
+    "docs/evidence/dispersed/artifacts.json": {
+      "path": "docs/evidence/dispersed/artifacts.json",
+      "exists": true,
+      "bytes": 3220,
+      "sha256": "3a3842a8a5aa0d067cefc7f4b31c51c3384fcb6c18d009e54c5edeb50582f11e"
+    },
+    "docs/evidence/dispersed/training-v2.json": {
+      "path": "docs/evidence/dispersed/training-v2.json",
+      "exists": true,
+      "bytes": 1768,
+      "sha256": "5457aea3a18f38feaaf9e04c742444d662a1b79c4296e17fb09bbeadac0ba0bd"
+    },
+    "docs/evidence/dispersed/failed-transition-v1.json": {
+      "path": "docs/evidence/dispersed/failed-transition-v1.json",
+      "exists": true,
+      "bytes": 501,
+      "sha256": "94fb3aeebe63599c474eeb908ddef2cc49cd72769a5ee6bf799b83d2c1143e09"
+    },
+    "docs/evidence/dispersed/model-selection-v2.json": {
+      "path": "docs/evidence/dispersed/model-selection-v2.json",
+      "exists": true,
+      "bytes": 723,
+      "sha256": "8f390e0bc6520e713e6c7ca1f8fa8548b1cfe2e5f654dfadaf7c711cdb2fd99f"
+    },
+    "docs/evidence/dispersed/transition-checks.json": {
+      "path": "docs/evidence/dispersed/transition-checks.json",
+      "exists": true,
+      "bytes": 8909,
+      "sha256": "7e8fb5a6e152a31080a42d29adf0f49f806d74c7381e2e5e08415bb9c3e215a1"
+    },
+    "docs/evidence/dispersed/acceptance.json": {
+      "path": "docs/evidence/dispersed/acceptance.json",
+      "exists": true,
+      "bytes": 3178,
+      "sha256": "55de31f020ea16fde84fe53ba335331cd6216f811a104909220902718065dc0c"
+    },
+    "docs/evidence/dispersed/physical-acceptance.json": {
+      "path": "docs/evidence/dispersed/physical-acceptance.json",
+      "exists": true,
+      "bytes": 606,
+      "sha256": "79abdf6b5298c5bd8474f18d64436500c75e1979256a06bcfe857af02a3ad3b8"
+    },
+    "docs/evidence/dispersed/frozen-binding-check.json": {
+      "path": "docs/evidence/dispersed/frozen-binding-check.json",
+      "exists": true,
+      "bytes": 839,
+      "sha256": "5125badad42c4f37ae58f8b7ef170946d4a2d7a16d1fa694e9bac1f013c77298"
+    },
+    "docs/evidence/dispersed/delivery-manifest-receipt.json": {
+      "path": "docs/evidence/dispersed/delivery-manifest-receipt.json",
+      "exists": true,
+      "bytes": 353,
+      "sha256": "1d2a98bb92a1135d0fba92b216041df26261a43471e1c3854497e631c96cc4d9"
+    },
+    "docs/evidence/dispersed/final-transfer-receipt.json": {
+      "path": "docs/evidence/dispersed/final-transfer-receipt.json",
+      "exists": true,
+      "bytes": 156,
+      "sha256": "433047a08fc7899ed4038fd95bdc0ed6f31d5669d95579d8167ed3e89a479706"
+    },
+    "docs/evidence/dispersed/manual-review-final.json": {
+      "path": "docs/evidence/dispersed/manual-review-final.json",
+      "exists": true,
+      "bytes": 1122,
+      "sha256": "9cc495a234bb1c0a843d1c192bdbe30630f4c729045b12e5b2c0ac6f26eb0695"
+    },
+    "docs/evidence/dispersed/layout.json": {
+      "path": "docs/evidence/dispersed/layout.json",
+      "exists": true,
+      "bytes": 3367,
+      "sha256": "37c4c434e5f4d2b3d295bfd30265491e7d2c300d1b61989a9c2c752e22f42a61"
+    },
+    "docs/evidence/dispersed/geometry-independent.json": {
+      "path": "docs/evidence/dispersed/geometry-independent.json",
+      "exists": true,
+      "bytes": 529,
+      "sha256": "bd12006c9f2a241b54ef270657268d4b9ca20181674693dc3401041b5e6e4716"
+    },
+    "docs/evidence/dispersed/review.json": {
+      "path": "docs/evidence/dispersed/review.json",
+      "exists": true,
+      "bytes": 958,
+      "sha256": "52ab5b2da24ae31dfbcf7c1f8f2b74c1b5f0eaa4f8b36bcf37b4ca6def2fba74"
+    }
+  },
+  "archive": {
+    "path": "outputs/suspended_20261021_v1/suspended-delivery-v1.tar.gz",
+    "exists": true,
+    "bytes": 14234257,
+    "sha256": "f859f5c87761e34cdc29750d5da32664c9e67042fc3339e2197b837cffc5a330",
+    "expected_bytes_sha256_match": true,
+    "regular_files": 279,
+    "manifest_entry_matches": true,
+    "manifest_bytes_match": true
+  },
+  "delivery": {
+    "manifest": {
+      "path": "outputs/suspended_20261021_v1/remote-final/delivery-files.json",
+      "exists": true,
+      "bytes": 48821,
+      "sha256": "1b29e249479464d897dac690b97d3c05915bcc610067ffa79d16ba9f66a04205"
+    },
+    "declared_files": 278,
+    "verified_files": 278,
+    "missing": [],
+    "mismatches": []
+  },
+  "executed_source_snapshot": {
+    "path": "outputs/suspended_20261021_v1/source-before-substeps.tar.gz",
+    "exists": true,
+    "bytes": 28074,
+    "sha256": "8de9045eb9fe4301ff87ba9d38f9fabc3a6e766ae5376687211dec81fc2c28b8",
+    "expected_bytes_sha256_match": true,
+    "training_manifest": {
+      "path": "outputs/suspended_20261021_v1/remote-final/outputs/train_randomized_v2/training_manifest.json",
+      "exists": true,
+      "bytes": 1529,
+      "sha256": "3333a0b377a15a288c48684a7dd5be0f0d720919cc3944c16541e217f66efb5c"
+    },
+    "training_hash_match": true,
+    "bank_hash_match": true
+  },
+  "source_versions": [
+    {
+      "path": "src/adaptive_drone_patrol/payload_runtime.py",
+      "executed_training_snapshot_sha256": "f978bc4677a032cc9b7992b6d5f238dba270edb2d81f47e0f5eb5eac62220a6a",
+      "postfailure_cpu_revision_sha256": "f978bc4677a032cc9b7992b6d5f238dba270edb2d81f47e0f5eb5eac62220a6a",
+      "delivery_plain_source_sha256": null
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_training.py",
+      "executed_training_snapshot_sha256": "c204c3110aecf71bf3a14e72c1b451c9fbdf10894f22c5e69ea00beb803a2a52",
+      "postfailure_cpu_revision_sha256": "c17189a416cb3867f2c461fe715afa414ed08ef4b8d2a79de136e2d98e09722d",
+      "delivery_plain_source_sha256": "c204c3110aecf71bf3a14e72c1b451c9fbdf10894f22c5e69ea00beb803a2a52"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_contract.py",
+      "executed_training_snapshot_sha256": "3637df7da7fe34c133dc7a599716304fd88eb14b58a5a04b65281421741adffd",
+      "postfailure_cpu_revision_sha256": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e",
+      "delivery_plain_source_sha256": "3637df7da7fe34c133dc7a599716304fd88eb14b58a5a04b65281421741adffd"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_bank.py",
+      "executed_training_snapshot_sha256": "55a9d0949ca0f651d57f6dbcef82612f7c9e4b6fad2eaedd9192aa3e95b8972a",
+      "postfailure_cpu_revision_sha256": "1bcd4c102af6ccf060a8c5e2c5ad3c9d2011e3633efd6d072e232a7f715b033b",
+      "delivery_plain_source_sha256": "1bcd4c102af6ccf060a8c5e2c5ad3c9d2011e3633efd6d072e232a7f715b033b"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_cases.py",
+      "executed_training_snapshot_sha256": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b",
+      "postfailure_cpu_revision_sha256": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b",
+      "delivery_plain_source_sha256": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_asset.py",
+      "executed_training_snapshot_sha256": "79a8360f90b2b512031faf87be2f55221cbe02577e96a9c6a127c07f16e3b33a",
+      "postfailure_cpu_revision_sha256": "79a8360f90b2b512031faf87be2f55221cbe02577e96a9c6a127c07f16e3b33a",
+      "delivery_plain_source_sha256": "79a8360f90b2b512031faf87be2f55221cbe02577e96a9c6a127c07f16e3b33a"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_checkpoint.py",
+      "executed_training_snapshot_sha256": "ef36c80c3993795a97df0fac2aa9542336a40a269c751ca32c3d2e9244bf8e85",
+      "postfailure_cpu_revision_sha256": "1066e2dd08e99589619f09557cc0b2f9db358a75fb35addbc6c3fb3bd9b1f718",
+      "delivery_plain_source_sha256": "b5aea4bc039a4c602c2aaa9be2fe7930cec366911b1a8adee73c11660c50662e"
+    },
+    {
+      "path": "scripts/verify_payload_probes.py",
+      "executed_training_snapshot_sha256": "133b49fc4e9c2b2fdfc47405de70598e1f63f63b0bd26cad6d7f4c3ff052a6e6",
+      "postfailure_cpu_revision_sha256": "133b49fc4e9c2b2fdfc47405de70598e1f63f63b0bd26cad6d7f4c3ff052a6e6",
+      "delivery_plain_source_sha256": "133b49fc4e9c2b2fdfc47405de70598e1f63f63b0bd26cad6d7f4c3ff052a6e6"
+    },
+    {
+      "path": "scripts/prepare_payload_models.py",
+      "executed_training_snapshot_sha256": "00f19697972d84e0ad6871507575dc41a86056c3771bc47cf72ff1452118a9e8",
+      "postfailure_cpu_revision_sha256": "c8d8d8ad72cecc0a6d36882658e82ca91d41b39191095c2a01819a1d285c2847",
+      "delivery_plain_source_sha256": null
+    },
+    {
+      "path": "scripts/probe_payload_physics.py",
+      "executed_training_snapshot_sha256": "950b0cd88f32d991ebbbba0851f610dfacb2a940bfb4f54aa1d4d2c774ca9599",
+      "postfailure_cpu_revision_sha256": "950b0cd88f32d991ebbbba0851f610dfacb2a940bfb4f54aa1d4d2c774ca9599",
+      "delivery_plain_source_sha256": "950b0cd88f32d991ebbbba0851f610dfacb2a940bfb4f54aa1d4d2c774ca9599"
+    },
+    {
+      "path": "scripts/probe_payload_bank.py",
+      "executed_training_snapshot_sha256": "3c7e726a1f57e8d8f0fe0e12e8943c5ad8e96bdf029d6b9301b4f42e79087e42",
+      "postfailure_cpu_revision_sha256": "3c7e726a1f57e8d8f0fe0e12e8943c5ad8e96bdf029d6b9301b4f42e79087e42",
+      "delivery_plain_source_sha256": "3c7e726a1f57e8d8f0fe0e12e8943c5ad8e96bdf029d6b9301b4f42e79087e42"
+    },
+    {
+      "path": "scripts/evaluate_payload_flight.py",
+      "executed_training_snapshot_sha256": "31e94277b874f3898552cb32294a1b4dd9e132191086140a29fd79a390317a21",
+      "postfailure_cpu_revision_sha256": "582c8bf4809dbd6e69b2d50f2a43f3c8db8da74c12a22888b6b35dcf03ec8d1d",
+      "delivery_plain_source_sha256": null
+    },
+    {
+      "path": "scripts/check_payload_trials.py",
+      "executed_training_snapshot_sha256": "f030b08ca9a2cb7d93d3ad9ff02f47b154cd2f101f6cb561a9d92850cf12118d",
+      "postfailure_cpu_revision_sha256": "46a11d9e178f848f772bb2c361527bf721e71169e46e853eaefc8f65ec72b0d9",
+      "delivery_plain_source_sha256": null
+    },
+    {
+      "path": "scripts/diagnose_payload_training.py",
+      "executed_training_snapshot_sha256": "1e58ccd80f1547ebc43391d9254abe98abd7dcc4a9ccf5f936700fe69479d322",
+      "postfailure_cpu_revision_sha256": "02f5b56a5892af0a9a1655469bfe7be33ff855f39ed030816e3caca58e6c649f",
+      "delivery_plain_source_sha256": "02f5b56a5892af0a9a1655469bfe7be33ff855f39ed030816e3caca58e6c649f"
+    },
+    {
+      "path": "scripts/train_payload_flight.py",
+      "executed_training_snapshot_sha256": "86b994caa29ab43f34a05d2c1f4f902e3997a8b92090c01e32ebfd26848922ad",
+      "postfailure_cpu_revision_sha256": "a6f33351bd76f19266b24b43b92b1deee4fb3dcf2b8170b0d26f8ba6bef6e8e5",
+      "delivery_plain_source_sha256": "86b994caa29ab43f34a05d2c1f4f902e3997a8b92090c01e32ebfd26848922ad"
+    },
+    {
+      "path": "scripts/qualify_payload_physics.py",
+      "executed_training_snapshot_sha256": "357600f32959408b2ce3b52aa18ad2789c42b5af692b49761105b208087a873f",
+      "postfailure_cpu_revision_sha256": "bf2e15cf9e13fe6c5c615071b27c7b432141611950b953c6f52b17d37733eb1e",
+      "delivery_plain_source_sha256": "357600f32959408b2ce3b52aa18ad2789c42b5af692b49761105b208087a873f"
+    },
+    {
+      "path": "scripts/prepare_payload_cases.py",
+      "executed_training_snapshot_sha256": "2d9843ea3d9e85bffad729101516543c27dcafb1512ce59e8d6a5f810bfb776b",
+      "postfailure_cpu_revision_sha256": "2d9843ea3d9e85bffad729101516543c27dcafb1512ce59e8d6a5f810bfb776b",
+      "delivery_plain_source_sha256": "2d9843ea3d9e85bffad729101516543c27dcafb1512ce59e8d6a5f810bfb776b"
+    }
+  ],
+  "exact_snapshot_to_postfailure_cpu_diffs": {
+    "src/adaptive_drone_patrol/payload_training.py": "--- executed-training-snapshot/src/adaptive_drone_patrol/payload_training.py\n+++ postfailure-cpu/src/adaptive_drone_patrol/payload_training.py\n@@ -1,10 +1,12 @@\n \"\"\"Single-environment payload PPO curriculum with complete episode resampling.\"\"\"\n \n import math\n+import json\n+from pathlib import Path\n import numpy as np\n from .payload_bank import PayloadSceneBank\n from .payload_contract import (PayloadSampler, SharedSettling, payload_metrics, settled,\n-                               actor_observation, rotation)\n+                               actor_observation, rotation, training_outside_envelope, numerical_excursion)\n from .payload_cases import initial_state\n \n \n@@ -12,6 +14,7 @@\n     def __init__(self, output, randomized, budget_steps, seed=7):\n         import torch\n         import genesis as gs\n+        self.output=Path(output).parent\n         self.num_envs, self.num_actions = 1, 4\n         self.device = gs.device\n         self.cfg = dict(profile='suspended-payload-v1',num_actions=4,observation_size=29,\n@@ -72,7 +75,15 @@\n         import torch\n         command = actions[0].detach().cpu().numpy().clip(-1,1)\n         before = np.array(self.sample['drone_xyz'])\n-        self.sample = self.bank.step(command)\n+        try:\n+            self.sample = self.bank.step(command)\n+        except Exception as exc:\n+            raw={'error':repr(exc),'step':self.total_steps,'target':self.target.tolist()}\n+            for name,body in [('drone',self.bank.drone),('package',self.bank.package)]:\n+                for key,method in [('xyz','get_pos'),('quaternion_wxyz','get_quat'),('velocity','get_vel'),('angular_velocity','get_ang')]:\n+                    raw[f'{name}_{key}']=getattr(body,method)()[0].detach().cpu().tolist()\n+            (self.output/'invalid-raw-state.json').write_text(json.dumps(raw,allow_nan=True)+'\\n')\n+            raise\n         self.total_steps += 1\n         self.episode_steps += 1\n         self.command_steps += 1\n@@ -82,7 +93,7 @@\n         contact = bool(contacts['valid_mask'].any().item())\n         failed = (m['drone_floor_m'] <= .1 or m['package_floor_m'] <= .1 or\n                   abs(m['drone_roll_deg'])>60 or abs(m['drone_pitch_deg'])>60 or\n-                  m['constraint_residual_m']>2e-5 or contact)\n+                  m['constraint_residual_m']>2e-5 or contact or training_outside_envelope(self.sample,self.target))\n         current = np.array(self.sample['drone_xyz'])\n         terms = dict(progress=2*(np.linalg.norm(before-self.target)**2-np.linalg.norm(current-self.target)**2),\n                      hover=.5*math.exp(-m['drone_error_m']**2/.04)*math.exp(-m['drone_speed_m_s']**2/.09),\n@@ -104,6 +115,16 @@\n         self.last_actions = command.copy()\n         extras = {'time_outs':torch.tensor([timeout],device=self.device)}\n         # Terminal reward and failure metrics exist before resetting any body.\n+        if done or numerical_excursion(self.sample,reward):\n+            record=dict(step=self.total_steps,episode=self.episode_count,episode_steps=self.episode_steps,\n+                        payload=dict(reference_mass_kg=self.payload.reference_mass_kg,mass_ratio=self.payload.mass_ratio,\n+                                     side_m=self.payload.side_m,draw_index=self.sampler.draw_indices[0]),\n+                        target=self.target.tolist(),sample=self.sample,metrics=m,reward=reward,reward_components=terms,\n+                        failed=bool(failed),timeout=bool(timeout))\n+            with (self.output/'terminal-states.jsonl').open('a') as stream:\n+                stream.write(json.dumps(record,allow_nan=True)+'\\n')\n+        if numerical_excursion(self.sample,reward):\n+            raise RuntimeError('Unusable physical numerics: terminal state saved before reset; training not admitted')\n         if done:\n             self.failures += int(failed)\n             extras['episode'] = {'failure':float(failed),'completed_stops':float(self.completed_stops)}\n",
+    "src/adaptive_drone_patrol/payload_contract.py": "--- executed-training-snapshot/src/adaptive_drone_patrol/payload_contract.py\n+++ postfailure-cpu/src/adaptive_drone_patrol/payload_contract.py\n@@ -197,3 +197,33 @@\n def require_checkpoint_contract(embedded, actual):\n     if embedded != OBSERVATION_CONTRACT or actual != OBSERVATION_CONTRACT:\n         raise ValueError('Payload checkpoint observation semantics mismatch')\n+\n+\n+def training_outside_envelope(sample,target):\n+    \"\"\"Retain the adopted parent's target-relative training termination envelope.\"\"\"\n+    delta=np.abs(_vector(sample['drone_xyz'])-_vector(target))\n+    return bool(np.any(delta>np.array([6.,4.,3.])))\n+\n+\n+def numerical_excursion(sample,reward):\n+    \"\"\"Abort development on unusable numerics; this is not an acceptance limit.\"\"\"\n+    if not math.isfinite(float(reward)) or abs(reward)>1e6:\n+        return True\n+    for body in ('drone','package'):\n+        for field in ('xyz','velocity','angular_velocity','quaternion_wxyz'):\n+            values=np.asarray(sample[f'{body}_{field}'],dtype=float)\n+            if not np.isfinite(values).all():\n+                return True\n+        if np.linalg.norm(sample[f'{body}_velocity'])>1e4:\n+            return True\n+    return False\n+\n+\n+def require_physical_admission(receipt, declaration, thresholds_sha256):\n+    \"\"\"Reject obsolete short probes after a known operating-domain failure.\"\"\"\n+    if declaration.get('operating_domain_admission') != 'admitted':\n+        raise ValueError('Payload operating-domain admission is blocked; new physical validation is required')\n+    if receipt.get('thresholds_sha256') != thresholds_sha256:\n+        raise ValueError('Physical thresholds differ from the measured receipt')\n+    if receipt.get('status') != 'PASS' or not receipt.get('physical_training_admitted'):\n+        raise ValueError('Physical preflight did not admit training')\n",
+    "src/adaptive_drone_patrol/payload_bank.py": "--- executed-training-snapshot/src/adaptive_drone_patrol/payload_bank.py\n+++ postfailure-cpu/src/adaptive_drone_patrol/payload_bank.py\n@@ -12,7 +12,7 @@\n \n \n class PayloadSceneBank:\n-    def __init__(self, output, dt=.01):\n+    def __init__(self, output, dt=.01, substeps=2):\n         import genesis as gs\n         import xml.etree.ElementTree as ET\n         self.output = Path(output)\n@@ -27,7 +27,7 @@\n             path = self.output/f'load_{size}.urdf'\n             write_payload_urdf(asset, path, Payload(authored_reference_mass, .2, size))\n             scene = gs.Scene(sim_options=gs.options.SimOptions(dt=dt),\n-                             rigid_options=gs.options.RigidOptions(dt=dt/2, enable_collision=True,\n+                             rigid_options=gs.options.RigidOptions(dt=dt/substeps, enable_collision=True,\n                                  enable_joint_limit=True, batch_links_info=True,\n                                  constraint_solver=gs.constraint_solver.Newton), show_viewer=False)\n             ground = scene.add_entity(gs.morphs.Plane())\n",
+    "src/adaptive_drone_patrol/payload_checkpoint.py": "--- executed-training-snapshot/src/adaptive_drone_patrol/payload_checkpoint.py\n+++ postfailure-cpu/src/adaptive_drone_patrol/payload_checkpoint.py\n@@ -52,3 +52,19 @@\n         h.update(json.dumps([name,str(tensor.dtype),list(tensor.shape)]).encode())\n         h.update(tensor.numpy().tobytes())\n     return h.hexdigest()\n+\n+\n+def validate_matched_manifests(randomized,fixed):\n+    \"\"\"Require identical declared learning procedures except the payload method.\"\"\"\n+    required={'seed','num_envs','environment_steps','parent_sha256','parent_config_sha256',\n+              'training_source_sha256','bank_source_sha256','training_script_sha256',\n+              'optimizer_config','architecture','curriculum','observation_contract','full_distribution_every_stage'}\n+    if not required.issubset(randomized) or not required.issubset(fixed):\n+        raise ValueError('Training manifests omit matched-procedure evidence')\n+    if randomized.get('method')!='randomized' or fixed.get('method')!='fixed':\n+        raise ValueError('Training method labels do not match')\n+    excluded={'method','initialization_sha256'}\n+    a={k:v for k,v in randomized.items() if k not in excluded}\n+    b={k:v for k,v in fixed.items() if k not in excluded}\n+    if a!=b:\n+        raise ValueError('Seed, reward, optimizer, curriculum or other shared training contract differs')\n",
+    "scripts/prepare_payload_models.py": "--- executed-training-snapshot/scripts/prepare_payload_models.py\n+++ postfailure-cpu/scripts/prepare_payload_models.py\n@@ -5,8 +5,9 @@\n import json\n from pathlib import Path\n import time\n-from adaptive_drone_patrol.util import sha256,json_write\n-from adaptive_drone_patrol.payload_checkpoint import actor_signature\n+from adaptive_drone_patrol.util import sha256,json_write,load_config\n+from adaptive_drone_patrol.payload_contract import require_physical_admission\n+from adaptive_drone_patrol.payload_checkpoint import actor_signature, validate_matched_manifests\n \n \n def main():\n@@ -16,15 +17,17 @@\n     p.add_argument('--preflight',required=True)\n     p.add_argument('--cases',required=True)\n     p.add_argument('--validation')\n+    p.add_argument('--validation-models')\n     p.add_argument('--out',required=True)\n     a=p.parse_args()\n     out=Path(a.out)\n     if out.exists():\n         raise FileExistsError(out)\n     preflight=json.loads(Path(a.preflight).read_text())\n-    if preflight['status']!='PASS' or not preflight['physical_training_admitted']:\n-        raise ValueError('Physical preflight is not ready')\n+    require_physical_admission(preflight,load_config('configs/payload_preflight.yaml'),\n+                               sha256('configs/payload_preflight.yaml'))\n     policies={}\n+    manifests=[]\n     steps=[]\n     initializations=[]\n     import torch\n@@ -32,6 +35,13 @@\n         path=Path(directory)\n         manifest=json.loads((path/'training_manifest.json').read_text())\n         completed=json.loads((path/'completed.json').read_text())\n+        manifests.append(manifest)\n+        for source_key,actual_path in [('training_source_sha256','src/adaptive_drone_patrol/payload_training.py'),\n+                                       ('bank_source_sha256','src/adaptive_drone_patrol/payload_bank.py'),\n+                                       ('training_script_sha256','scripts/train_payload_flight.py'),\n+                                       ('parent_config_sha256','inputs/cfgs.pkl'),('parent_sha256','inputs/model_4296.pt')]:\n+            if manifest.get(source_key)!=sha256(actual_path):\n+                raise ValueError('Training evidence differs from actual source or parent artifact')\n         if manifest['method']!=method or manifest['preflight_sha256']!=sha256(a.preflight):\n             raise ValueError('Training method/preflight does not match')\n         checkpoint=path/'final.pt'\n@@ -47,6 +57,7 @@\n                               training_manifest_sha256=sha256(path/'training_manifest.json'),\n                               training_completed=str(path/'completed.json'),\n                               training_completed_sha256=sha256(path/'completed.json'))\n+    validate_matched_manifests(*manifests)\n     if steps[0]!=steps[1]:\n         raise ValueError('Comparison environment-step budgets differ')\n     for kind in ('actor_state_dict','critic_state_dict'):\n@@ -54,12 +65,18 @@\n             if not torch.equal(value,initializations[1][kind][key]):\n                 raise ValueError('Comparison initialization parameters differ')\n     validation_binding=None\n+    validation_receipt=None\n     if a.validation:\n         validation=Path(a.validation)\n         completed=json.loads((validation/'completed.json').read_text())\n         if completed['trials']!=12 or completed['results_sha256']!=sha256(validation/'results.json'):\n             raise ValueError('Incomplete paired validation')\n+        if not a.validation_models:\n+            raise ValueError('The actual validation candidate manifest is required')\n+        from check_payload_trials import verify_validation\n+        validation_receipt=verify_validation(validation,policies,sha256('inputs/cfgs.pkl'),a.validation_models)\n         validation_binding={str(p):sha256(p) for p in sorted(validation.rglob('*')) if p.is_file()}\n+        validation_binding[a.validation_models]=sha256(a.validation_models)\n     sources={str(p):sha256(p) for p in sorted(Path('src/adaptive_drone_patrol').glob('payload*.py'))}\n     for name in ('scripts/evaluate_payload_flight.py','configs/payload_validation.yaml','configs/payload_preflight.yaml'):\n         sources[name]=sha256(name)\n@@ -67,6 +84,7 @@\n                matched_environment_steps=steps[0],initialization_parameters_equal=True,\n                selection_rule='Final matched-budget checkpoints, declared before validation; no held-out selection',\n                selection_frozen_before_heldout=bool(a.validation),validation_binding=validation_binding,\n+               validation_root=a.validation,validation_models=a.validation_models,validation_receipt=validation_receipt,\n                preflight=a.preflight,preflight_sha256=sha256(a.preflight),\n                preflight_probes='outputs/probes_v4',preflight_bank='outputs/bank_v4',\n                parent_cfg='inputs/cfgs.pkl',parent_cfg_sha256=sha256('inputs/cfgs.pkl'),\n",
+    "scripts/evaluate_payload_flight.py": "--- executed-training-snapshot/scripts/evaluate_payload_flight.py\n+++ postfailure-cpu/scripts/evaluate_payload_flight.py\n@@ -7,7 +7,7 @@\n from pathlib import Path\n import numpy as np\n from adaptive_drone_patrol.payload_runtime import PayloadFlight\n-from adaptive_drone_patrol.payload_contract import Payload, SharedSettling, payload_metrics, settled\n+from adaptive_drone_patrol.payload_contract import Payload, SharedSettling, payload_metrics, settled, require_physical_admission\n from adaptive_drone_patrol.payload_cases import initial_state, verify_case_manifest\n from adaptive_drone_patrol.scenario import Scenario\n from adaptive_drone_patrol.objective import RoutingState, schema_for\n@@ -109,6 +109,10 @@\n     out=Path(a.out)\n     out.mkdir(parents=True,exist_ok=False)\n     models=json.loads(Path(a.models).read_text())\n+    if sha256(models['preflight'])!=models['preflight_sha256']:\n+        raise ValueError('Physical preflight hash mismatch')\n+    require_physical_admission(json.loads(Path(models['preflight']).read_text()),\n+                               load_config('configs/payload_preflight.yaml'),sha256('configs/payload_preflight.yaml'))\n     manifest=verify_case_manifest(a.cases,a.cases_sha256,Path.cwd()) if a.mode=='acceptance' else None\n     if a.mode=='acceptance' and not models.get('selection_frozen_before_heldout'):\n         raise ValueError('Model selection must be frozen before acceptance')\n",
+    "scripts/check_payload_trials.py": "--- executed-training-snapshot/scripts/check_payload_trials.py\n+++ postfailure-cpu/scripts/check_payload_trials.py\n@@ -199,11 +199,54 @@\n     return [center-delta,center+delta]\n \n \n+def verify_validation(root,policies,parent_cfg_sha256,candidate_path):\n+    \"\"\"Reconstruct every declared pre-acceptance transition with actual actors.\"\"\"\n+    from adaptive_drone_patrol.util import load_config\n+    from adaptive_drone_patrol.payload_cases import initial_state\n+    root=Path(root)\n+    declaration=load_config('configs/payload_validation.yaml')\n+    binding=json.loads((root/'binding.json').read_text())\n+    check_hash(candidate_path,binding['models_sha256'])\n+    candidate=json.loads(Path(candidate_path).read_text())\n+    if candidate['policies']!=policies or binding['mode']!='validation':\n+        raise ValueError('Validation used another policy pair or execution mode')\n+    if candidate['created_epoch']>binding['started_epoch']:\n+        raise ValueError('Validation predates declared candidate checkpoints')\n+    check_hash('configs/payload_validation.yaml',binding['validation_declaration_sha256'])\n+    for name,expected in binding['sources'].items():\n+        check_hash(name,expected)\n+    completed=json.loads((root/'completed.json').read_text())\n+    if completed['trials']!=12:\n+        raise ValueError('Incomplete declared paired validation')\n+    check_hash(root/'binding.json',completed['binding_sha256'])\n+    check_hash(root/'results.json',completed['results_sha256'])\n+    receipt=[]\n+    for method in ('randomized','fixed'):\n+        expected_cases=[]\n+        for seed in declaration['initial_seeds']:\n+            for i,load in enumerate(declaration['loads']):\n+                rng=np.random.default_rng(np.random.SeedSequence([seed,720,i]))\n+                expected_cases.append(dict(case_id=f'validation-{seed}-{i}',suite='validation',**load,\n+                                           initial=initial_state(rng,load['side_m'])))\n+        actual={p.parent.name for p in (root/method).glob('*/summary.json')}\n+        if actual!={c['case_id'] for c in expected_cases}:\n+            raise ValueError('Validation cases differ from the declared transition suite')\n+        provenance=dict(checkpoint_sha256=policies[method]['sha256'],parent_cfg_sha256=parent_cfg_sha256,\n+                        actor_sha256=policies[method]['actor_sha256'],execution_binding_sha256=digest(root/'binding.json'))\n+        for case in expected_cases:\n+            targets={f'transition-{i}':t for i,t in enumerate(declaration['targets'])}\n+            result=verify_trial(root/method/case['case_id'],case,targets,expected_provenance=provenance)\n+            if not result['success']:\n+                raise ValueError('Loaded physical transition validation failed; held-out suite must remain closed')\n+            receipt.append(dict(method=method,case_id=case['case_id'],**result))\n+    return receipt\n+\n+\n def verify_execution(root,models_path,execution_root):\n     \"\"\"Recheck actual frozen artifacts and provenance instead of a status label.\"\"\"\n     import pickle\n     from adaptive_drone_patrol.payload_checkpoint import validate_parent_config, actor_signature\n-    from adaptive_drone_patrol.payload_contract import OBSERVATION_CONTRACT\n+    from adaptive_drone_patrol.payload_contract import OBSERVATION_CONTRACT, require_physical_admission\n     from adaptive_drone_patrol.util import load_config\n     import torch\n     root,execution_root=Path(root),Path(execution_root)\n@@ -225,6 +268,7 @@\n     check_hash('configs/payload_validation.yaml',binding['validation_declaration_sha256'])\n     check_hash(execution_root/models['parent_cfg'],models['parent_cfg_sha256'])\n     validate_parent_config(pickle.load(open(execution_root/models['parent_cfg'],'rb')))\n+    training_manifests=[]\n     for method in ('randomized','fixed'):\n         policy=models['policies'][method]\n         path=execution_root/policy['checkpoint']\n@@ -238,11 +282,26 @@\n             raise ValueError('Actual checkpoint observation contract mismatch')\n         check_hash(execution_root/policy['training_manifest'],policy['training_manifest_sha256'])\n         training=json.loads((execution_root/policy['training_manifest']).read_text())\n+        training_manifests.append(training)\n+        check_hash(execution_root/policy['training_completed'],policy['training_completed_sha256'])\n+        training_completed=json.loads((execution_root/policy['training_completed']).read_text())\n+        if training_completed['checkpoint_sha256']!=policy['sha256'] or training_completed['actual_environment_steps']!=models['matched_environment_steps']:\n+            raise ValueError('Training completion differs from actual model/budget')\n         if training['method']!=method or training['preflight_sha256']!=models['preflight_sha256']:\n             raise ValueError('Policy labels differ from actual training condition')\n+    from adaptive_drone_patrol.payload_checkpoint import validate_matched_manifests\n+    validate_matched_manifests(*training_manifests)\n+    for path,expected in models['validation_binding'].items():\n+        check_hash(execution_root/path,expected)\n+    fresh_validation=verify_validation(execution_root/models['validation_root'],models['policies'],\n+        models['parent_cfg_sha256'],execution_root/models['validation_models'])\n+    if fresh_validation!=models['validation_receipt']:\n+        raise ValueError('Stale pre-acceptance transition receipt')\n     preflight_path=execution_root/models['preflight']\n     check_hash(preflight_path,models['preflight_sha256'])\n     preflight=json.loads(preflight_path.read_text())\n+    require_physical_admission(preflight,load_config('configs/payload_preflight.yaml'),\n+                               digest('configs/payload_preflight.yaml'))\n     for path,expected in preflight['source_binding'].items():\n         check_hash(path,expected)\n     check_hash('configs/payload_preflight.yaml',preflight['thresholds_sha256'])\n",
+    "scripts/diagnose_payload_training.py": "--- executed-training-snapshot/scripts/diagnose_payload_training.py\n+++ postfailure-cpu/scripts/diagnose_payload_training.py\n@@ -15,6 +15,7 @@\n     p.add_argument('--checkpoint',required=True)\n     p.add_argument('--out',required=True)\n     p.add_argument('--steps',type=int,default=10000)\n+    p.add_argument('--substeps',type=int,choices=[2,4,8,16],default=2)\n     a=p.parse_args()\n     out=Path(a.out)\n     out.mkdir(parents=True,exist_ok=False)\n@@ -22,6 +23,9 @@\n     import torch\n     from rsl_rl.runners import OnPolicyRunner\n     gs.init(backend=gs.gpu,precision='32',logging_level='warning',seed=7)\n+    import adaptive_drone_patrol.payload_training as training_module\n+    from adaptive_drone_patrol.payload_bank import PayloadSceneBank\n+    training_module.PayloadSceneBank=lambda path: PayloadSceneBank(path,substeps=a.substeps)\n     env=PayloadTrainingEnv(out/'scenes',True,300000,seed=7)\n     env.total_steps=200000\n     env.target=env._target()\n@@ -58,7 +62,7 @@\n     except Exception as exc:\n         error=repr(exc)\n     json_write(out/'summary.json',dict(status='FAILED' if error else 'PROBE_RECORDED',error=error,\n-               checkpoint_sha256=sha256(a.checkpoint),source_sha256=sha256(__file__),samples=len(captured),\n+               checkpoint_sha256=sha256(a.checkpoint),substeps=a.substeps,control_dt_s=.01,physics_dt_s=.01/a.substeps,source_sha256=sha256(__file__),samples=len(captured),\n                raw_state_sha256=sha256(out/'raw-states.jsonl'),mission_success=False))\n     print(error,len(captured))\n \n",
+    "scripts/train_payload_flight.py": "--- executed-training-snapshot/scripts/train_payload_flight.py\n+++ postfailure-cpu/scripts/train_payload_flight.py\n@@ -7,8 +7,8 @@\n import pickle\n from pathlib import Path\n from adaptive_drone_patrol.payload_checkpoint import validate_parent_config, transfer_state\n-from adaptive_drone_patrol.payload_contract import OBSERVATION_CONTRACT\n-from adaptive_drone_patrol.util import sha256, json_write\n+from adaptive_drone_patrol.payload_contract import OBSERVATION_CONTRACT, require_physical_admission\n+from adaptive_drone_patrol.util import sha256, json_write, load_config\n \n \n def main():\n@@ -24,8 +24,8 @@\n     if sha256(a.preflight)!=a.preflight_sha256:\n         raise ValueError('Physical preflight receipt hash mismatch')\n     admission=json.loads(Path(a.preflight).read_text())\n-    if not admission.get('physical_training_admitted') or admission['status']!='PASS':\n-        raise ValueError('Physical preflight did not admit training')\n+    require_physical_admission(admission,load_config('configs/payload_preflight.yaml'),\n+                               sha256('configs/payload_preflight.yaml'))\n     for path,digest in admission['source_binding'].items():\n         if sha256(path)!=digest:\n             raise ValueError('Physical implementation differs from measured preflight')\n@@ -47,6 +47,7 @@\n     train['run_name'] = a.method\n     train['save_interval'] = 500\n     train['algorithm'].update(learning_rate=.00003,schedule='fixed',entropy_coef=0.,max_grad_norm=.3)\n+    effective_training=copy.deepcopy(train)\n     runner = OnPolicyRunner(env,train,str(out),device=gs.device)\n     initial = transfer_state(torch.load(a.parent,map_location='cpu',weights_only=False))\n     torch.save(initial,out/'initialization.pt')\n@@ -55,6 +56,8 @@\n                environment_steps=a.iterations*100,observation_contract=OBSERVATION_CONTRACT,\n                parent_sha256=sha256(a.parent),parent_config_sha256=sha256(a.config),\n                training_source_sha256=sha256('src/adaptive_drone_patrol/payload_training.py'),\n+               training_script_sha256=sha256(__file__),optimizer_config=effective_training['algorithm'],\n+               architecture={k:effective_training[k] for k in ('actor','critic','obs_groups')},\n                preflight_sha256=sha256(a.preflight),\n                bank_source_sha256=sha256('src/adaptive_drone_patrol/payload_bank.py'),\n                initialization_sha256=sha256(out/'initialization.pt'),\n",
+    "scripts/qualify_payload_physics.py": "--- executed-training-snapshot/scripts/qualify_payload_physics.py\n+++ postfailure-cpu/scripts/qualify_payload_physics.py\n@@ -22,6 +22,8 @@\n     thresholds = yaml.safe_load(Path('configs/payload_preflight.yaml').read_text())\n     result = verify(a.probes,thresholds)\n     failures = []\n+    if thresholds.get('operating_domain_admission') != 'admitted':\n+        failures.append('Operating-domain admission blocked: policy-driven numerical divergence requires new validation')\n     for row in result['checks']:\n         summary = json.loads((Path(a.probes)/row['probe']/'summary.json').read_text())\n         if summary['source_sha256']!=digest('scripts/probe_payload_physics.py'):\n"
+  },
+  "other_delivered_source_archives": [
+    {
+      "path": "outputs/suspended_20261021_v1/remote-final/source-training-v1.tar.gz",
+      "exists": true,
+      "bytes": 7316,
+      "sha256": "c1ef5de70af5a5780b39ba5394cf6d1b5b6daf7d2fb716a6821fa86f4e8af2df",
+      "selected_source_hashes": {
+        "src/adaptive_drone_patrol/payload_training.py": "e7cf08ae06268535bb9d7d34762d09cef8dbc34651aa8ee34daf003dfe7c8a54",
+        "src/adaptive_drone_patrol/payload_checkpoint.py": "b5aea4bc039a4c602c2aaa9be2fe7930cec366911b1a8adee73c11660c50662e"
+      }
+    },
+    {
+      "path": "outputs/suspended_20261021_v1/remote-final/source-v1.tar.gz",
+      "exists": true,
+      "bytes": 86734,
+      "sha256": "811c4398b9e6a9565396d10b80893c73e203cb4a56c778dde6822e0ec07c316a",
+      "selected_source_hashes": {}
+    }
+  ],
+  "source_interpretation_ja": [
+    "実訓練のtraining/bank sourceはsource-before-substeps.tar.gzとtraining_manifestが一致。source-training-v1.tar.gzの名前だけで実行版と判断しない。",
+    "delivery平文はsubsteps診断用bank/diagnose更新と旧training/contractが混在する。全CPU修正版と同一ではない。",
+    "postfailure_cpu_revisionは監査開始時HEADの固定記録。trainingのterminal保存・target相対envelope・即abortとcontractのadmission拒否は失敗後CPU修正であり、失敗したGPU訓練に適用されていない。",
+    "固定リンク方式全般の不可能性、特異性・微小慣性など特定原因の確定はこのrawから主張できない。"
+  ],
+  "failed_checkpoint": {
+    "path": "outputs/suspended_20261021_v1/remote-final/outputs/train_randomized_v2/model_2000.pt",
+    "exists": true,
+    "bytes": 512437,
+    "sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+    "purpose_ja": "失敗再現の証拠のみ。読込み・訓練初期化・採用をしない。"
+  },
+  "diagnostics": [
+    {
+      "name": "diagnostic_v1",
+      "raw": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_v1/raw-states.jsonl",
+        "exists": true,
+        "bytes": 2528411,
+        "sha256": "75a222b3fa77bb5358ec3e74320ead9b60f63be9b13254d9c58f9882d31ab30d"
+      },
+      "summary": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_v1/summary.json",
+        "exists": true,
+        "bytes": 414,
+        "sha256": "4b5eebb183989519cd37cfd0a7a5c429f3e4ae14843bf209c4f50517651ebc3f"
+      },
+      "samples": 2789,
+      "max_package_speed_m_s": 163772761.36982605,
+      "first_speed_above_1e4_index": 2788,
+      "checkpoint_sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+      "raw_state_sha256": "75a222b3fa77bb5358ec3e74320ead9b60f63be9b13254d9c58f9882d31ab30d",
+      "summary_status": "FAILED",
+      "mission_success": false
+    },
+    {
+      "name": "diagnostic_substeps8_v1",
+      "raw": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps8_v1/raw-states.jsonl",
+        "exists": true,
+        "bytes": 827943,
+        "sha256": "657551c335e4cacbcb9bf993793b6ca625b2b93ea9e437c6287b4cbe76a61737"
+      },
+      "summary": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps8_v1/summary.json",
+        "exists": true,
+        "bytes": 481,
+        "sha256": "f7090172fd2a41de64b4d1ffb0020dcf3c4c47556589fe1219b607667171751d"
+      },
+      "samples": 914,
+      "max_package_speed_m_s": 544357008456.6984,
+      "first_speed_above_1e4_index": 913,
+      "checkpoint_sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+      "raw_state_sha256": "657551c335e4cacbcb9bf993793b6ca625b2b93ea9e437c6287b4cbe76a61737",
+      "summary_status": "FAILED",
+      "mission_success": false
+    },
+    {
+      "name": "diagnostic_substeps16_v1",
+      "raw": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps16_v1/raw-states.jsonl",
+        "exists": true,
+        "bytes": 3363770,
+        "sha256": "93140af7e90d5b92b0e823a992141d6945723919cee2666afcb765f9df2c1420"
+      },
+      "summary": {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/diagnostic_substeps16_v1/summary.json",
+        "exists": true,
+        "bytes": 484,
+        "sha256": "ef31556c501f329fa0fded7b936ddeed7766d0bb746c490eb4aee797d75b5455"
+      },
+      "samples": 3714,
+      "max_package_speed_m_s": 8158574990269.932,
+      "first_speed_above_1e4_index": 3713,
+      "checkpoint_sha256": "dc4cc37f30f4fea70eb756b94aa3bf4c3cafcf06da9e614d843f6bff23c6b16d",
+      "raw_state_sha256": "93140af7e90d5b92b0e823a992141d6945723919cee2666afcb765f9df2c1420",
+      "summary_status": "FAILED",
+      "mission_success": false
+    }
+  ],
+  "cpu_replays": [
+    {
+      "command": ".venv-routing311/bin/python scripts/check_payload_failure.py --delivery outputs/suspended_20261021_v1/remote-final --out outputs/suspended_retry_20261022_cpu/failure-recheck.json",
+      "exit_code": 0,
+      "result": {
+        "path": "outputs/suspended_retry_20261022_cpu/failure-recheck.json",
+        "exists": true,
+        "bytes": 1350,
+        "sha256": "a476418cec12d41f981853275137a143782f56bba92aec28f088a869725b95df"
+      },
+      "status": "CONFIRMED_NUMERICAL_FAILURE"
+    },
+    {
+      "command": ".venv-routing311/bin/python scripts/verify_payload_probes.py --root outputs/suspended_20261021_v1/remote-final/outputs/probes_v4 --out outputs/suspended_retry_20261022_cpu/passive-recheck.json",
+      "exit_code": 0,
+      "result": {
+        "path": "outputs/suspended_retry_20261022_cpu/passive-recheck.json",
+        "exists": true,
+        "bytes": 11400,
+        "sha256": "f8e4d5203c2c26b0a9f8bbb634dd8bf2ba95c4e1769e5d2219fa3260ceb1d2cf"
+      },
+      "status": "DIAGNOSTICS_ONLY"
+    }
+  ],
+  "cpu_environment": {
+    "python": "3.11.14",
+    "torch": "2.2.2",
+    "meaning_ja": "既存CPU venv。Linux flight exact-lock環境の再構築・新規検証ではない。"
+  },
+  "gpu_accounting": {
+    "ledgers": [
+      {
+        "path": "docs/evidence/gpu_ledger.json",
+        "exists": true,
+        "bytes": 20428,
+        "sha256": "0290c9a1aec9ddc4094025542439aa3d4fcc7ee73b5ba710d59e5ce27950c200",
+        "jobs": 39,
+        "declared_used_s": 7484.093172315159,
+        "summed_elapsed_s": 7484.093172315159,
+        "active_jobs": [],
+        "duplicate_run_ids": false
+      },
+      {
+        "path": "outputs/suspended_20261021_v1/remote-final/outputs/gpu_ledger.json",
+        "exists": true,
+        "bytes": 20428,
+        "sha256": "0290c9a1aec9ddc4094025542439aa3d4fcc7ee73b5ba710d59e5ce27950c200",
+        "jobs": 39,
+        "declared_used_s": 7484.093172315159,
+        "summed_elapsed_s": 7484.093172315159,
+        "active_jobs": [],
+        "duplicate_run_ids": false
+      }
+    ],
+    "exact_content_equal": true,
+    "initial_used_s": 5779.474017477245,
+    "previous_session_s": 1704.6191548379138,
+    "total_used_s": 7484.093172315159,
+    "remaining_of_28800_s": 21315.90682768484,
+    "new_gpu_jobs": 0,
+    "modified": false
+  },
+  "completion_ja": "旧診断ジョブのexit 0/SUCCEEDEDは失敗証拠保存の成功。物理summary FAILED、mission_success=false、3 rawの破綻を独立再確認。旧短probe PASSは運用域入場証として無効。新規受入・動画・人手承認は存在しない。"
+}

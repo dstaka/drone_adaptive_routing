@@ -1,0 +1,156 @@
+{
+  "schema": "payload-solver-independent-ppo-integration-review-v1",
+  "scope": "CPU read-only preserved actualv19 sources/checkpoints/closed raw; source equality recorded before local next-source correction. No reproducible integration bug explaining shared0 found; not a learnability proof.",
+  "source_match_scope": "AT_REVIEW_BEFORE_LOCAL_NEXT_SOURCE_CHANGE",
+  "manifest_sha256": "6860551aa3ac25cdc9079b5cd9932a1799ebf0c223336dadfa03f8d7b03139a8",
+  "source_binding": {
+    "scripts/train_payload_recovery.py": "7b470bb8b10160ff3a96ec6afd76439cfc423934b5c467eb0be080ca24f80e5f",
+    "src/adaptive_drone_patrol/payload_solver_training.py": "beb796666d29169ee46fd4832f67ca64ddc3292746bb5847c1c9448cb9ee02b0",
+    "src/adaptive_drone_patrol/payload_solver_runtime.py": "183eea7b91bc4bf750ef158c99deb2092bfff787abaff445d9d2013a17ce2e0d",
+    "src/adaptive_drone_patrol/payload_solver_mujoco.py": "201b1b5cf926bcc33c6e7d87b2aebe7d035de3c182bbaf16356ef59f23492351",
+    "src/adaptive_drone_patrol/payload_retry_contract.py": "3cc00058754bd68f4916b843d4170af3b9fd52816888d9e130c5bbf53e091cf4",
+    "src/adaptive_drone_patrol/payload_retry_checkpoint.py": "1bac025a9041be497e2af3f389aec1cc514ef16aa7665646f66a32bb66078223",
+    "src/adaptive_drone_patrol/payload_solver_qualification.py": "b2637b5c83d521e119c2bec83b257878d640485f227bdcd7bf9b15ff56073edd",
+    "src/adaptive_drone_patrol/payload_solver_work_check.py": "e8ed2f9c5b6ff29e21651016419c461eab7498478bea9be5564355cd36434c12",
+    "src/adaptive_drone_patrol/payload_solver_exposure.py": "ba2ed28685b337a977b10f8ac6b622ee8f3f894f8cf5c73802cca1af1b6eeebb",
+    "src/adaptive_drone_patrol/payload_solver_training_plan.py": "29ab7a071b7bcce32d82960117e3cd93266bcfbc7f22e926075b60d89ebf0ffb",
+    "src/adaptive_drone_patrol/payload_solver_validation.py": "4baad16f0e06861b11cc41436201836307e487267cb591915c36d904170c46a8",
+    "src/adaptive_drone_patrol/payload_solver_trace.py": "f191843a4230dd0057cb2d7490eb11273ce16ce3fcd9eb2fdfecf0b2f5de3bb7",
+    "src/adaptive_drone_patrol/payload_solver_policy.py": "97dc11c0a53a1a5a677cef449d2ae76af60dc38acbfd0d204667bd9831852ace",
+    "src/adaptive_drone_patrol/payload_solver_models.py": "74428c50fccdedfdde31268c60dabf8e81b73fafa0317b01fbc91020a13df1de",
+    "src/adaptive_drone_patrol/payload_cases.py": "a8d1afc87705883d6be0d887589800164731dfb2f00bf0d62209bbaecd57156b",
+    "src/adaptive_drone_patrol/payload_contract.py": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e",
+    "configs/demo_scenarios_dispersed/normal.yaml": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa",
+    "requirements/payload-solver-flight-linux.lock.txt": "09611137a1308bb9b33d2cdc590473ade5bac3ba7852439a6f7b9e08f3df4a96"
+  },
+  "independent_reward_prefix": {
+    "valid_steps_checked": 20000,
+    "maximum_absolute_difference": {
+      "progress": 5.551115123125783e-17,
+      "hover": 1.1102230246251565e-16,
+      "position": 2.7755575615628914e-17,
+      "velocity": 4.336808689942018e-19,
+      "altitude": 6.938893903907228e-18,
+      "angular": 4.440892098500626e-16,
+      "swing": 4.163336342344337e-17,
+      "swing_rate": 5.551115123125783e-16,
+      "package_velocity": 1.3877787807814457e-17,
+      "package_spin": 4.163336342344337e-17,
+      "shared_settling": 0.0,
+      "crash": 0.0,
+      "reward": 1.0408340855860843e-17
+    }
+  },
+  "initialization": {
+    "parent_sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+    "parent_config_sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55",
+    "initialization_sha256": "93b9015cf6d5fba6fdb1553407013d81818ff480a438d3bf284cb869ac44327b",
+    "initialization_iteration": 0,
+    "optimizer_state_present": false,
+    "roles": {
+      "actor": {
+        "tensor_signature": "0904beeb93f7f2ae3717daf11e76d635dfc56d9b59b5339d00cc33d2836fdcc2",
+        "all_transferred_tensors_equal": true
+      },
+      "critic": {
+        "tensor_signature": "7b5df02238658811634f8bf3c5d641c9e688320534c275a9bce23b3ed9d9e240",
+        "all_transferred_tensors_equal": true
+      }
+    }
+  },
+  "adam": [
+    {
+      "S": 300000,
+      "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+      "actual_optimizer_state_count": 13,
+      "step_min": 60000.0,
+      "step_max": 60000.0,
+      "lr": [
+        3e-05
+      ],
+      "all_state_tensors_finite": true
+    },
+    {
+      "S": 1000000,
+      "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+      "actual_optimizer_state_count": 13,
+      "step_min": 200000.0,
+      "step_max": 200000.0,
+      "lr": [
+        3e-05
+      ],
+      "all_state_tensors_finite": true
+    },
+    {
+      "S": 3000000,
+      "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+      "actual_optimizer_state_count": 13,
+      "step_min": 600000.0,
+      "step_max": 600000.0,
+      "lr": [
+        3e-05
+      ],
+      "all_state_tensors_finite": true
+    }
+  ],
+  "terminal_counts_by_end_stage": [
+    {
+      "stage": 0,
+      "failed": false,
+      "timeout": true,
+      "count": 25
+    },
+    {
+      "stage": 1,
+      "failed": false,
+      "timeout": true,
+      "count": 25
+    },
+    {
+      "stage": 2,
+      "failed": false,
+      "timeout": true,
+      "count": 2
+    },
+    {
+      "stage": 2,
+      "failed": true,
+      "timeout": false,
+      "count": 92
+    },
+    {
+      "stage": 3,
+      "failed": true,
+      "timeout": false,
+      "count": 222
+    },
+    {
+      "stage": 4,
+      "failed": true,
+      "timeout": false,
+      "count": 7009
+    },
+    {
+      "stage": 5,
+      "failed": true,
+      "timeout": false,
+      "count": 2256
+    }
+  ],
+  "terminal_total": 9631,
+  "terminal_counts_note": "Terminal end-stage group differs from closed episode start-stage group at deferred boundaries; stage4 end-stage7009 versus start-stage7008.",
+  "latent_edge": {
+    "trigger": "Tenth completion at episode_step12000",
+    "done": true,
+    "time_outs": true,
+    "actual_3m_occurrences": 0
+  },
+  "diagnostic_sha256": {
+    "context-training-semantics-review-20261023-v1.json": "7fb30baaa67950764af4509498afa35100192f5383fc4e5cb0d3f747625c1e88",
+    "context-training-transfer-review-20261023-v1.json": "a16316f5195049eef6624391db4c4049e128d609e47e1086ce2249090c40ab42",
+    "context-adam-checkpoint-audit-20261023-v1.json": "008f6e0c82778f296943e7a90adecf7cada27c75a41e43ace48cbbeedd9df91c"
+  },
+  "physical_execution": false,
+  "optimizer_execution": false,
+  "physical_acceptance": false
+}

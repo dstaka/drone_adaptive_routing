@@ -1,0 +1,12 @@
+{
+  "figure": "docs/evidence/suspended-solver/pilot-matched-300k.png",
+  "figure_sha256": "9a94aea0b9ef9757c0ab94802ba3412c6648614476cc18678ee5445c1688107d",
+  "source_samples_sha256": {
+    "P4 angular cost": "5c201c0add9492e48dede4a034139f47588058aae6039750dd8c5911c6be7ebd",
+    "P5 + position cost": "61405daa474827b945ae23f51cf352a0df871e16f2a03c17f5d3e5f30406be52"
+  },
+  "case": "Same pilot83011 nominal load, initial state and hover target",
+  "checkpoint_steps": 300000,
+  "physical_acceptance": false,
+  "scope": "Actual closed development records only; two predicates shown, all shared predicates still required for100 intervals"
+}

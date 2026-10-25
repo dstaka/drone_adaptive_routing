@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "files": 278,
+  "archive": {
+    "path": "outputs/suspended_20261021_v1/suspended-delivery-v1.tar.gz",
+    "bytes": 14234257,
+    "sha256": "f859f5c87761e34cdc29750d5da32664c9e67042fc3339e2197b837cffc5a330"
+  },
+  "manifest": {
+    "path": "outputs/suspended_20261021_v1/remote-final/delivery-files.json",
+    "sha256": "1b29e249479464d897dac690b97d3c05915bcc610067ffa79d16ba9f66a04205"
+  },
+  "checks": [
+    "Archive bytes and SHA-256 matched before extraction",
+    "Every declared file bytes and SHA-256 matched locally",
+    "Both GPU ledgers synchronized from verified delivery"
+  ]
+}

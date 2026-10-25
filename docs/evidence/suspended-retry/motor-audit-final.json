@@ -1,0 +1,1929 @@
+{
+  "schema": "payload-retry-motor-audit-check-v1",
+  "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+  "motor_audit_passed": true,
+  "physical_training_admitted": false,
+  "operational_qualification": "NOT_RUN",
+  "failure_codes": [],
+  "unloaded_equivalence": {
+    "hover": {
+      "position_m": 0.0,
+      "angle_deg": 0.0,
+      "velocity_m_s": 0.0,
+      "angular_velocity_rad_s": 0.0
+    },
+    "rotor0": {
+      "position_m": 1.8189894035458565e-12,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 8.231806349783991e-11,
+      "angular_velocity_rad_s": 7.152557373046875e-07
+    },
+    "rotor1": {
+      "position_m": 2.1827872842550278e-11,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 1.4725502860585132e-09,
+      "angular_velocity_rad_s": 1.066240299940009e-06
+    },
+    "rotor2": {
+      "position_m": 1.4551915228366852e-11,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 1.862645149230957e-09,
+      "angular_velocity_rad_s": 2.384185791015625e-06
+    },
+    "rotor3": {
+      "position_m": 0.0,
+      "angle_deg": 2.4148365394514667e-06,
+      "velocity_m_s": 4.656612873077393e-10,
+      "angular_velocity_rad_s": 1.2839233415447482e-06
+    }
+  },
+  "coupling": {
+    "rotor0": {
+      "root_velocity_delta_m_s": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0002930611443048292,
+          3.296881914138794e-05,
+          -0.003758661448955536
+        ],
+        [
+          0.0005295741284498945,
+          0.00015133514534682035,
+          -0.007850155234336853
+        ],
+        [
+          0.0007391535909846425,
+          0.00036242057103663683,
+          -0.012672990560531616
+        ],
+        [
+          0.0009494456462562084,
+          0.0006769702304154634,
+          -0.018608510494232178
+        ],
+        [
+          0.0011839787475764751,
+          0.0011081635020673275,
+          -0.025983363389968872
+        ]
+      ],
+      "maximum_root_velocity_delta_m_s": 0.02603392027869029,
+      "maximum_package_relative_velocity_m_s": 0.04121586268744413,
+      "maximum_package_displacement_m": 0.010362493631962056,
+      "interpretation": "Measured paired interaction only; no constraint force or rope tension measured"
+    },
+    "rotor1": {
+      "root_velocity_delta_m_s": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0004257038164610094,
+          3.30507755279541e-05,
+          -0.004525430500507355
+        ],
+        [
+          0.0009568316017976031,
+          0.00015209510456770658,
+          -0.009343013167381287
+        ],
+        [
+          0.0016189105226658285,
+          0.0003645961405709386,
+          -0.014795556664466858
+        ],
+        [
+          0.0024319856893271208,
+          0.0006805157754570246,
+          -0.021195560693740845
+        ],
+        [
+          0.003405309747904539,
+          0.0011105467565357685,
+          -0.028786927461624146
+        ]
+      ],
+      "maximum_root_velocity_delta_m_s": 0.02900890624029862,
+      "maximum_package_relative_velocity_m_s": 0.059627891953610304,
+      "maximum_package_displacement_m": 0.00991826628380271,
+      "interpretation": "Measured paired interaction only; no constraint force or rope tension measured"
+    },
+    "rotor2": {
+      "root_velocity_delta_m_s": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0004257038164610094,
+          -3.30507755279541e-05,
+          -0.004525430500507355
+        ],
+        [
+          0.0009568316017976031,
+          -0.00015211000572890043,
+          -0.009343013167381287
+        ],
+        [
+          0.0016188956797122955,
+          -0.00036458164686337113,
+          -0.014795556664466858
+        ],
+        [
+          0.0024320457596331835,
+          -0.0006804869044572115,
+          -0.021195590496063232
+        ],
+        [
+          0.0034053102135658264,
+          -0.0011105476878583431,
+          -0.02878698706626892
+        ]
+      ],
+      "maximum_root_velocity_delta_m_s": 0.02900896547916105,
+      "maximum_package_relative_velocity_m_s": 0.059645883263528154,
+      "maximum_package_displacement_m": 0.009918359227513478,
+      "interpretation": "Measured paired interaction only; no constraint force or rope tension measured"
+    },
+    "rotor3": {
+      "root_velocity_delta_m_s": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0002930611443048292,
+          -3.296881914138794e-05,
+          -0.003758661448955536
+        ],
+        [
+          0.0005295741284498945,
+          -0.00015133514534682035,
+          -0.007850155234336853
+        ],
+        [
+          0.0007391833350993693,
+          -0.0003623758675530553,
+          -0.012672975659370422
+        ],
+        [
+          0.0009494156111031771,
+          -0.0006769394967705011,
+          -0.018608450889587402
+        ],
+        [
+          0.0011840094812214375,
+          -0.0011081923730671406,
+          -0.025983363389968872
+        ]
+      ],
+      "maximum_root_velocity_delta_m_s": 0.026033922905365627,
+      "maximum_package_relative_velocity_m_s": 0.04120324854321925,
+      "maximum_package_displacement_m": 0.01036249681637117,
+      "interpretation": "Measured paired interaction only; no constraint force or rope tension measured"
+    }
+  },
+  "missing_evidence": [],
+  "checker_sha256": "a75b120cb79b63a0af3115ea201f6748aa129be829c1a80f4e9d72578d8cb251",
+  "limitations": [
+    "Short motor evidence only; long qualification, resets, refinement and learned control remain unverified.",
+    "Recorded endpoint wrenches are independently reconstructed from RPM and COM frames; not force sensors.",
+    "Actual first-interval vehicle reactions are checked by direction, not a full discretized momentum proof.",
+    "Inertia tensors are reconstructed in authored link axes; missing nonzero-inertia frames block the audit.",
+    "Control-step work only; solver substep work and internal reaction forces are unobserved.",
+    "Coupled motion is evidence of interaction, not sufficient proof of correct constraint dynamics or rope tension."
+  ],
+  "source_binding": {
+    "scripts/probe_payload_ball.py": "43bc8f3d8ee45eead08dc3dac545445373a93ea72b2d7274f0d0d5a6ab011e54",
+    "src/adaptive_drone_patrol/payload_ball_asset.py": "74c9e4d6bf38392c7e2795a025286d0133b80b4bb116fd2169070f7579edcef2",
+    "src/adaptive_drone_patrol/payload_qualification.py": "89ad7894267549b625b9f458780e210e7d61d0b3c35817446009cb7fd92296a4",
+    "src/adaptive_drone_patrol/payload_contract.py": "41a256327c15158c9a301c9b2dbbbe43acbec8bf7775d338186251e63f6ae29e"
+  },
+  "controller_source_sha256": "6badf96b1b74751de8deac485496d19b93d5d099dbde6041e6a602d6c12c6943",
+  "manifest_sha256": "5e8689d7b1abe2e7df9c638c1c884da30f65bc05e6fc951bc38c77118ed865bc",
+  "motor_plan_sha256": "f8b10a9a9e1fa5ab27db0b232168f4f5e769e69d0a7f37b65ce1c82ea3ca67d1",
+  "backend_source_sha256": "5517b52bca8bfda32fd77bc1d1a76051f77affc1d4b5fc7743543c1d49eaf967",
+  "engine_source_recorded": {
+    "utils/mjcf.py": "f6d4a068884251445e11ce2138f6ba2933de1bea4c5d6b39df66aba2ff00ea11",
+    "engine/entities/rigid_entity/__init__.py": "af3bdc683df56043cd16959364a25bbee32cf99b4bb34d70a36ee7f718157da9",
+    "engine/entities/rigid_entity/description.py": "9780ad1208894a406160f8add875f7356acc712a8e002f1bda6a99d642aa8c17",
+    "engine/entities/rigid_entity/drone_entity.py": "25ad539e0e3c4bfab967f7c1edf98ae3a8032bab5e84cf7008725634b16e49de",
+    "engine/entities/rigid_entity/inertial.py": "87f6a8208d187e1cca28b35ffc8c4be4d3e6acd975d597a4f1fb569a2f5b5b94",
+    "engine/entities/rigid_entity/rigid_entity.py": "3914d4270d86e271e9696cd6a9f160e5fcf4382f7237e9daaee56e0e0dae07ef",
+    "engine/entities/rigid_entity/rigid_equality.py": "f2e0b29518841419fdcfa3a61f71bc9ec689768de171aafb9a1c9a3673f5c032",
+    "engine/entities/rigid_entity/rigid_geom.py": "9380eef8300bec235be7241a6814e3c9fe43041eaed32c6d80c67ea8f9d0f244",
+    "engine/entities/rigid_entity/rigid_joint.py": "e992bb29102f99832b795188e45fea6cc95be738a82863c57b88c580bea6f29c",
+    "engine/entities/rigid_entity/rigid_link.py": "0c4fa57ce5d249ce493bb4ca226d8cc8bb5becc6a4a76a0bcb79ebf76bf09710",
+    "engine/entities/rigid_entity/terrain_entity.py": "78e4e8632d1c753fad2c160d9dcf7c1014c2ea67bd6bb3174e753001cc4c6543",
+    "engine/solvers/rigid/abd/__init__.py": "54a64f24959ab148714ebde751d600e976ace56efc8dd2770209d6889db9727e",
+    "engine/solvers/rigid/abd/accessor.py": "b81eca2402e50cc464ace204937ed37bc3890a3d2da5bde6db9a8834cf40f44c",
+    "engine/solvers/rigid/abd/diff.py": "8612aa00d63d06cf3ea5af3410373af93b011786f22359fc672819694ab32559",
+    "engine/solvers/rigid/abd/forward_dynamics.py": "5d3b63f2d5088c39e218898059f3ba31071794a1ac0507778daef479f93355bb",
+    "engine/solvers/rigid/abd/forward_kinematics.py": "3bd8c9c6ff79506bae1f3b43716766b51fb3047deccd15279bca0f5fa940021d",
+    "engine/solvers/rigid/abd/inverse_kinematics.py": "6b4f31a22661e7081b53407e4f742fdfe15339b16c25294b676abeb09e0de0a2",
+    "engine/solvers/rigid/abd/manual_bw.py": "d0edc183f221070bda1ff0ee0459dd41f317b6ac022d618dba6880effe193f33",
+    "engine/solvers/rigid/abd/misc.py": "dc25724ad54eb29286bed66149bb081d9f10c821b534b1cbfa080bac8be565b1",
+    "options/morphs.py": "a9bd5c7a2ed6dbea62cdf3e2c4c2f71c250328b69bb089f05991f83f546340fa"
+  },
+  "actual_solver_wrench_observed": {
+    "motor-original-hover-v4": true,
+    "motor-original-rotor0-v4": true,
+    "motor-original-rotor1-v4": true,
+    "motor-original-rotor2-v4": true,
+    "motor-original-rotor3-v4": true,
+    "motor-unloaded-hover-v4": true,
+    "motor-unloaded-rotor0-v4": true,
+    "motor-unloaded-rotor1-v4": true,
+    "motor-unloaded-rotor2-v4": true,
+    "motor-unloaded-rotor3-v4": true,
+    "motor-loaded-hover-v4": true,
+    "motor-loaded-rotor0-v4": true,
+    "motor-loaded-rotor1-v4": true,
+    "motor-loaded-rotor2-v4": true,
+    "motor-loaded-rotor3-v4": true
+  },
+  "engine_source_recomputed": false,
+  "full_receipt": {
+    "path": "outputs/suspended_retry_20261022_052336/motor-audit-v9.json",
+    "bytes": 79289,
+    "sha256": "6f9d13b3b1c705bd65a67e95c6271c9db4342bde48dcc6f4a3c32a81597bc1fc"
+  },
+  "traces": {
+    "motor-original-hover-v4": {
+      "samples": 101,
+      "measured_duration_s": 1.0,
+      "samples_sha256": "09c29848d51cd6ecc8fcc3b9414afb3c83ed391a2bc2a98720fe3216a5cfb6b0",
+      "raw_state_sha256": "d810c2ab9c8f7c54589daaf0fced1a2a292047cb0c34c6d033f41208a59160b8",
+      "summary_sha256": "b170f21744bc4b53852170d0f091b62c5d123840f2ed64d3eb36737719a284ec",
+      "runtime_sha256": "f302ae5097e4ae20e6cde8e3d5aab738fe726ee23f778d40708dcc2872d800e3",
+      "declaration_sha256": "6ebe688f1ee0dc6b6658284f961c8a5fe835e7ee06bc56dc17c0bc6cc1514dae",
+      "motor_work_j": -0.0013596266584626866,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-original-rotor0-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "a3b467efce7226fd86906dc55318168d4804ebdc029b567c0854d211a86b26d8",
+      "raw_state_sha256": "69a9c4c36b3e81d7449da64cefc6a9a498e935483cddeb659ec5ed2be0e606d3",
+      "summary_sha256": "10c9fec1868822952233ed66c2d4c03ef55cda389b1ea0d3048bb06332f82084",
+      "runtime_sha256": "d76692e459451f56f8810e4b927854773f5cd6a1744c3c0dd0d6fb51635c2932",
+      "declaration_sha256": "cefb7e3895dbcdc5200261b365b78d1ce6835e722952d76da1afde5f228b22cf",
+      "motor_work_j": 0.00020563495197677741,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          -7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          -1.324510097503662,
+          -1.3210278749465942,
+          -0.7658687233924866
+        ],
+        "first_interval_input_moment_nm": [
+          -0.0018522,
+          -0.0018522,
+          -0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-original-rotor1-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "87f9ab3e32ba6263d824888746cf771e3d4488a2fa21845e7cade299587b9140",
+      "raw_state_sha256": "e1833a9f0b2d311bbc7f90dd2c00a2c99026e6d903ae2d35ae52f92f1f813a61",
+      "summary_sha256": "ca35b14549eeb0b103ac9f6f967660a19a7ac538c7fbfdef9c366772cb3cfd8f",
+      "runtime_sha256": "3345fea3f7a1b8bdc3cd516f0199a1875e26269b1364fb0425033836436d5fa6",
+      "declaration_sha256": "db8ad5ad8a46a8ea9e9d688ecaeb1e69eda92a333a9bccc30ca2abc6684452bf",
+      "motor_work_j": 0.00020563508014669982,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          -1.3245103359222412,
+          1.3210281133651733,
+          0.7658688426017761
+        ],
+        "first_interval_input_moment_nm": [
+          -0.0018522,
+          0.0018522,
+          0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-original-rotor2-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "407da821e88c4b8a2dd68fed48703d7cddf3390b396463682d2d3195c226663b",
+      "raw_state_sha256": "557e79f678d1a1eeccc8f301768709120409b662a25565b2f0a599dd4104a699",
+      "summary_sha256": "0ad50583d7162e4e77fe71490521627e364993c7aab7b440133c9f8ed79fc504",
+      "runtime_sha256": "a96a624c18dd06e17dcd2d8d3d4e9c9feaee6c029ca3205213938738955caf57",
+      "declaration_sha256": "5c1fd83f840d4d33c8224aa876570f6bf4d2548e69aa4b4b34b78e956e9c23d7",
+      "motor_work_j": 0.0002056348417421346,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          1.3245103359222412,
+          1.3210281133651733,
+          -0.7658687233924866
+        ],
+        "first_interval_input_moment_nm": [
+          0.0018522,
+          0.0018522,
+          -0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-original-rotor3-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "5db127baa2f63c0d0f9a2b6aa811a62ecdb474e91221fa10dc08b48b9c682485",
+      "raw_state_sha256": "96bdc23fff1fea208cfdb0d6b2414082e366f47bd0a99208eb278df9d899e1cf",
+      "summary_sha256": "decc112e04dd9975356e9276f9f3b8d8bbdfe8f146f5f0bc63517e3b0e3143e9",
+      "runtime_sha256": "df5fe3a0f357a15d977537173d9975cafd7921e50f47dbfe31acd6679b5431b7",
+      "declaration_sha256": "953e51678d43bad74a4f2099620e8178fe40df9aadb13744de195f1ee820f048",
+      "motor_work_j": 0.00020563496693358794,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          -7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          1.3245103359222412,
+          -1.3210281133651733,
+          0.7658687233924866
+        ],
+        "first_interval_input_moment_nm": [
+          0.0018522,
+          -0.0018522,
+          0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-unloaded-hover-v4": {
+      "samples": 101,
+      "measured_duration_s": 1.0,
+      "samples_sha256": "09c29848d51cd6ecc8fcc3b9414afb3c83ed391a2bc2a98720fe3216a5cfb6b0",
+      "raw_state_sha256": "d810c2ab9c8f7c54589daaf0fced1a2a292047cb0c34c6d033f41208a59160b8",
+      "summary_sha256": "df968acd91fd8678052f61df2442324392a726b1ed78821a978245d72104a810",
+      "runtime_sha256": "433c95965fbd21016bab45fa6407d89f9b6a3ecc901e7893d9e031fc600ed476",
+      "declaration_sha256": "ed4a666538a3bed7d200ddda2dd7119a1bea49fa81dba6c7d5018d2da3688f2a",
+      "motor_work_j": -0.0013596266584626866,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-unloaded-rotor0-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "e4d4753c93aa4f6bc836c64188f4f42272dbd8b20ecc2bb939f1a7a003ecf545",
+      "raw_state_sha256": "6eab46d6f055313571e16d0675fbbf76916a393515634e9c1bae3a0995df3050",
+      "summary_sha256": "98b976dd3fc8bcd410fe17d2543b49f6e54976fa9701f2c10797a5577137e347",
+      "runtime_sha256": "a1368cc621a70a4216cfdcf88f78b5efc5300624e9501d55048d4671d3c11c01",
+      "declaration_sha256": "c0a4d47b9353bed3dc2918a60146962319792f4ce631c228bd02acc756fa4c78",
+      "motor_work_j": 0.00020563501532455577,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          -7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          -1.3245103359222412,
+          -1.3210281133651733,
+          -0.7658688426017761
+        ],
+        "first_interval_input_moment_nm": [
+          -0.0018522,
+          -0.0018522,
+          -0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-unloaded-rotor1-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "c4a72d341c039b856b6e757fa041b8ab7683f8f39807054772869ba2b9dab512",
+      "raw_state_sha256": "2d1d7386b1e9994acd1ea62d9f40a47aea3f5e34a8cedf70301ea93eae6d4798",
+      "summary_sha256": "6d8f6cd780f23e351ad5a5e445ff7ee45f25375291b712b5bc17ba0cae1d6a09",
+      "runtime_sha256": "4acf952e19302bfb9f15630b36b57c0a2c7933c826d5a1e4bc006e5705b89e90",
+      "declaration_sha256": "3297a3a25f69c6611a2b53ebad5054cadd03d4299211156fc2eeab6fa788eaa8",
+      "motor_work_j": 0.00020563498622292082,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          -1.3245103359222412,
+          1.3210281133651733,
+          0.7658688426017761
+        ],
+        "first_interval_input_moment_nm": [
+          -0.0018522,
+          0.0018522,
+          0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-unloaded-rotor2-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "146d25468de4e048725c93e092bcfd1988148299d4f5a61399293ba24d347c58",
+      "raw_state_sha256": "9841b6dfbcef26a90a7b8378b5585663ba2d455f589b59a4268807d2247076ec",
+      "summary_sha256": "91e0d65bfd10fd5403c2e572aea7828867cc886b148f8d0fc914d2a0e058b5fe",
+      "runtime_sha256": "58d616c77ff4f934914efeb784973359ed68fe2730a44c12da11a93fc29f75d8",
+      "declaration_sha256": "9052162b795542dbc8d67ca50bbb337de5b62710c2e2c803bd29aef0128b9573",
+      "motor_work_j": 0.00020563496633578093,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          1.3245103359222412,
+          1.3210281133651733,
+          -0.7658688426017761
+        ],
+        "first_interval_input_moment_nm": [
+          0.0018522,
+          0.0018522,
+          -0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-unloaded-rotor3-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "148a79286cb3a0f5a3f700329f95a15fc56dea03c672775ae5749b81fed8b619",
+      "raw_state_sha256": "4fb94c394a7ee149870837dc601605fff834c13886a7b6a5d2fe8c50516d7446",
+      "summary_sha256": "b125ca81ac6cd5b6d36703f83bd3a82f8b190ed63e3cf10839dd44479eb9bd18",
+      "runtime_sha256": "3587ee8d1458725d011ba8859a5ff95aae126ad7dcf6e8b28917d5572c153cb0",
+      "declaration_sha256": "2725ac0e08cd13c98f7fe8e3f59d2084161a5f57d2008b789ce2a2d4c19b92c9",
+      "motor_work_j": 0.00020563498622292082,
+      "first_interval_reaction": {
+        "gravity_corrected_velocity_kick_m_s": [
+          -7.105427357601002e-12,
+          0.0,
+          0.024499573683738715
+        ],
+        "angular_velocity_change_rad_s": [
+          1.3245103359222412,
+          -1.3210281133651733,
+          0.7658688426017761
+        ],
+        "first_interval_input_moment_nm": [
+          0.0018522,
+          -0.0018522,
+          0.0016621234177215192
+        ],
+        "expected_rigid_linear_kick_m_s": [
+          0.0,
+          0.0,
+          0.02449956668658742
+        ]
+      },
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": true
+    },
+    "motor-loaded-hover-v4": {
+      "samples": 101,
+      "measured_duration_s": 1.0,
+      "samples_sha256": "82abd922feb7f52131733c939dae2c85ce86d45d72fe941713aff11797047002",
+      "raw_state_sha256": "1b83647abc4eb3a890e7be84e5c9578d231620a85ac8803f9f3c957a08a8531d",
+      "summary_sha256": "08fdd396e42a4e417b5e781cf19db1ffa6a224730068c3f8d28e2a092c021098",
+      "runtime_sha256": "ddce2ed1ffcec7274471e0a3ac96c3313a585edb10658f19bfc135db92d76a66",
+      "declaration_sha256": "9cbed9503c7479bdbfa78fa38fb56e16b6685a566e4ce5f8409152dcaf16a131",
+      "motor_work_j": -0.001669542750966013,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": false
+    },
+    "motor-loaded-rotor0-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "1634ae42117519763599b5ba2dfd1f4d42435ef466afc99aa8c4533c1ec4599d",
+      "raw_state_sha256": "cdbe7c7382c9e924743802a0d1da6dce2129c8d1bc94559b28fb53157f0da65e",
+      "summary_sha256": "f0e92171f008badfa1de108ab8321a21e115ef971a0491f8bcdec663a4361cfc",
+      "runtime_sha256": "18fe7a1b858ca8609dcc303bea107c9ba2cb69df1747ca897b3ef7a0fd9d5611",
+      "declaration_sha256": "d3e8b1a62a451429681fa384233a62f4016858e222e79093f9dc2b0504d16090",
+      "motor_work_j": 0.0001624240104279352,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": false
+    },
+    "motor-loaded-rotor1-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "b2f4d0c262e4ca931a15d100bfd5a55d02e113e90a65b71a7e1b4afe97881c28",
+      "raw_state_sha256": "85c8f5947f02d2aa7e85b93cc25695db97a2244cdb95da4b4678e3ea68147215",
+      "summary_sha256": "c88e78ef549a001814ec34de33168e93f72bc97321cc1398b1e16b5f8892d171",
+      "runtime_sha256": "d3f1feb4d0ac8281ce656eb054a8959ddaddff215db83002b36126afa25f23e8",
+      "declaration_sha256": "95fd3f5e254c76ee1dc43c63864ce15052870f244464182f70c22d00d4455898",
+      "motor_work_j": 0.00014736306882269436,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": false
+    },
+    "motor-loaded-rotor2-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "a46325420bf1db3cf122d3aaabe9c11e8a18d3601c2a6e00d809e69ac503fe85",
+      "raw_state_sha256": "67ef70f78d3ec1cf06a5d3ad6d7cab0b3d0e597c46addd047fc6cc31da8ca6e1",
+      "summary_sha256": "2e03d53dfe8c23a17a45f2543b83337bab087ed8776234a1fde77b482e65612f",
+      "runtime_sha256": "e542ee73020268c20fc4da2ce7f0c572ab961cfbfd7457b5d8624ff9a2433e52",
+      "declaration_sha256": "bb2018e7afae955ecd5bc68848744d63125cd979593a1bdfbaf9b06fb671dd42",
+      "motor_work_j": 0.0001473624448058697,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": false
+    },
+    "motor-loaded-rotor3-v4": {
+      "samples": 6,
+      "measured_duration_s": 0.05,
+      "samples_sha256": "f023e00079a2d7a384e4378626bf821d23e5e78fb17b16a019ae059b5dc683c9",
+      "raw_state_sha256": "9319b498efad59e2da87c9a4ab435092321e4e10bc918a1abd8a222f42b02298",
+      "summary_sha256": "751c403a70ac2f44917dd6c2040080f0241ed78f29ae46f77a87087728b76443",
+      "runtime_sha256": "559523e170aff10d046bb7538f75eda445bb811543da1408013d258086d14954",
+      "declaration_sha256": "18489bedfa7a03eb0e93a019c41e4927e75d49656b354021c122daee20914ac8",
+      "motor_work_j": 0.00016242603020978657,
+      "first_interval_reaction": null,
+      "vehicle_inertia_authored_kg_m2": {
+        "base_link": [
+          [
+            1.4000000192027073e-05,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.4000000192027073e-05,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.1699999706470408e-05
+          ]
+        ],
+        "prop0_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop1_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop2_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "prop3_link": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "zero_inertia_orientation_irrelevant": [],
+      "root_aligned": false
+    }
+  }
+}

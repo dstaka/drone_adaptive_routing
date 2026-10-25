@@ -1,0 +1,24 @@
+{
+  "schema": "payload-recovery-energy-figure-v1",
+  "inputs": {
+    "recovery-baseline": {
+      "samples.jsonl": "8601f5f5d8b6b4e6694b9ed2d1631c3ddfa81fe66cfb9308d0a16bcc4066b8c4",
+      "runtime-initial.json": "4de2f6f2e154202732853d4285a34456cfc8e656a75cb116c53e2c1c67097d10"
+    },
+    "recovery-s128-full-large": {
+      "samples.jsonl": "070c2c4d3e831f30d696659eafd76880324f452e57ee69442fc47806470fb722",
+      "runtime-initial.json": "de0f64c4c87a6991838115fc06775eceba93f4c6f074dce2f03148bb870fda14"
+    },
+    "recovery-s128-full-170": {
+      "samples.jsonl": "4e07d0cd93de1f98adea7fdd96d05f18dfce84d440a7deeae2dbb7264a9d89e4",
+      "runtime-initial.json": "b39afb8f0f3b68141f425f5a8c35432c6c7c89915f7df693cfe10721b4bf8e4f"
+    },
+    "recovery-s128-half-large": {
+      "samples.jsonl": "3a54cf00df0884b75da44da04839edeec05f3f091550068d1671a37187a16877",
+      "runtime-initial.json": "3b87fe9fd8594810996d330658ca0c525598644c89f274d0a4ab422b7dab0bf6"
+    }
+  },
+  "source_sha256": "f1715545d139ef1e4432023100c1c9b6f04aee084b3ff7c01bc71d1508f96f1c",
+  "figure_sha256": "0698a90d0e0b52899cf594cf943a56e28d03fc75cc9da66cc55ffc7768ee35d8",
+  "interpretation_ja": "受動診断だけを描画。右の正energyが小さくても損失・dt軌道差・未実行条件が残り、物理資格ではない。"
+}

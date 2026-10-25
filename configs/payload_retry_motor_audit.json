@@ -1,0 +1,59 @@
+{
+  "schema": "payload-retry-motor-audit-plan-v1",
+  "status": "EXPERIMENTAL_DIAGNOSTICS_ONLY",
+  "declared_before_execution": true,
+  "fixtures": [
+    "original",
+    "unloaded",
+    "loaded"
+  ],
+  "hover_duration_s": 1.0,
+  "single_rotor_duration_s": 0.05,
+  "single_rotors": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "single_rotor_rpm": 14468.429183500699,
+  "spin": [
+    -1,
+    1,
+    -1,
+    1
+  ],
+  "rotor_com_body_m": [
+    [
+      0.028,
+      -0.028,
+      0
+    ],
+    [
+      -0.028,
+      -0.028,
+      0
+    ],
+    [
+      -0.028,
+      0.028,
+      0
+    ],
+    [
+      0.028,
+      0.028,
+      0
+    ]
+  ],
+  "kf": 3.16e-10,
+  "km": 7.94e-12,
+  "unloaded_equivalence_position_max_m": 1e-05,
+  "unloaded_equivalence_angle_max_deg": 0.001,
+  "unloaded_equivalence_velocity_max_m_s": 0.001,
+  "unloaded_equivalence_angular_velocity_max_rad_s": 0.001,
+  "root": "Original authored base_link origin, not total articulated COM",
+  "coupling": "Compare paired identical single-rotor input, loaded vs unloaded; record changed root acceleration and passive package motion. No measured rope tension claim.",
+  "no_operational_admission": true,
+  "original_asset_sha256": "5923a231efe0f052c31f7b5b4d3599c3b3a7e95fa2b2772b023798a68ecafc05",
+  "coupled_velocity_delta_min_m_s": 1e-08,
+  "algebra_absolute_tolerance": 1e-07
+}

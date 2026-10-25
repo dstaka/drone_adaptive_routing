@@ -1,0 +1,102 @@
+{
+  "schema": "payload-recovery-forensics-v1",
+  "base_revision": "e3c145a096e9223804684b1e3510bba30f0f6676",
+  "historical_artifacts": [
+    {
+      "path": "outputs/suspended_retry_20261022_052336/delivery-final.tar.gz",
+      "exists": true,
+      "bytes": 817588972,
+      "sha256": "c95f0fd7913644e0482c9bfc78bff0ffa114db4b0125201e6e26e713419ba19e",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/candidate-source-v10.tar.gz",
+      "exists": true,
+      "bytes": 27339,
+      "sha256": "ca27fbdff020ef6a890ef98aeefb8af360803029ddea861c527ed4abae128a3f",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/qualification-final-v10.json",
+      "exists": true,
+      "bytes": 6241586,
+      "sha256": "2ca4f9b3b0d52bafeca38c8fc723d160af21b228ef48e1d74260e0c7d1cf49ce",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/cpu-linux-final-v4.tar.gz",
+      "exists": true,
+      "bytes": 10332,
+      "sha256": "247eac6b0cc84879aaacb490662ebb5bcbbb7efaf2920ecc3ab5eeb4443898dc",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/source-after-qualification-v11.tar.gz",
+      "exists": true,
+      "bytes": 27375,
+      "sha256": "c7687b5ebbd24f2c8ffbd5ce76552eb90b703429b64a53b7eb9a803faa6af2b3",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/suspended_retry_20261022_052336/gpu-ledger-remote-final-raw.json",
+      "exists": true,
+      "bytes": 117063,
+      "sha256": "2d8fe8b8dda8871412f077eebe4c30ae1db7154749b3548446772d4225834b77",
+      "expected_match": true
+    }
+  ],
+  "historical_manifest_payload_files": 1631,
+  "historical_archive_regular_files_including_manifest": 1632,
+  "missing_files": [],
+  "mismatched_files": [],
+  "verified_v10_domain_traces": 55,
+  "verified_v10_samples": 357176,
+  "starting_cpu_source_binding_files": 188,
+  "starting_cpu_source_binding_mismatches": [],
+  "historical_counts": {
+    "anchor_passed": 9,
+    "anchor_total": 9,
+    "large_passed": 2,
+    "large_total": 16,
+    "powered_passed": 12,
+    "powered_total": 18,
+    "refinement_individual_passed": 10,
+    "refinement_individual_total": 12,
+    "refinement_pairs_passed": 0,
+    "refinement_pairs_total": 6
+  },
+  "historical_physical_signature_sha256": "a94f6f8e33762fa380d16ccd0b828c89b814f891c01b7e2018fd70d8d897ea8b",
+  "historical_physical_training_admitted": false,
+  "parents": [
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/model_4296.pt",
+      "exists": true,
+      "bytes": 475573,
+      "sha256": "26658a31560f71c36fd9e9605b15d8e4f7b9cae8174c1465fd12dcd0d10b3431",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/dispersed_20261020_v1/remote-final/outputs/dispersed/finetune_v2/cfgs.pkl",
+      "exists": true,
+      "bytes": 1628,
+      "sha256": "35c6b0be8db90e4e799d453d447a484275317f85098a22cbdf04c19c84056e55",
+      "expected_match": true
+    },
+    {
+      "path": "outputs/integer_20261020_v1/training/seed_44.zip",
+      "exists": true,
+      "bytes": 297837,
+      "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef",
+      "expected_match": true
+    }
+  ],
+  "actual_cfg_sections_match": true,
+  "parent_iteration": 4296,
+  "routing_schema_matches": true,
+  "full_receipt": {
+    "path": "outputs/suspended_recovery_20261022_112649_abce93/cpu-forensics/receipt.json",
+    "bytes": 145145,
+    "sha256": "9c9b613e33db828c5e91846ad2a784fbc59bbf3a0706a31bb09e1f8ffdffc866"
+  },
+  "interpretation_ja": "currentという旧receiptラベルは開始時e3c145aのCPU修正版を指す。今回の最終sourceとGPU実行sourceは別途束縛する。旧Euler/model2000とV10は失敗履歴として保持する。"
+}

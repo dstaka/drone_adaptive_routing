@@ -1,0 +1,15 @@
+{
+  "schema": "payload-solver-camera-v1",
+  "fps": 100,
+  "raw_width": 1792,
+  "raw_height": 720,
+  "hud_height": 480,
+  "overview": {"width": 1280, "height": 720, "lookat": [0.0, 0.0, 1.5], "distance": 10.0, "azimuth": 125.0, "elevation": -42.0},
+  "detail": {"width": 512, "height": 720, "lookat_offset": [0.0, 0.0, -0.15], "distance": 1.25, "azimuth": 125.0, "elevation": -20.0},
+  "marker_radius_m": 0.065,
+  "frame_times": "One frame at every native control instant0..N inclusive; PTS=step/100. The final sample has one normal display period, with no extra physical step.",
+  "masters": {"container": "mkv", "codec": "ffv1", "pixel_format": "bgr0", "lossless": true},
+  "viewing": {"container": "mp4", "codec": "libx264", "pixel_format": "yuv420p", "crf": 0, "playback_rate": 1.0},
+  "caption_check": {"regions": 29, "maximum_region_luminance_mae": 4.0, "maximum_foreground_tile_luminance_mae": 4.0, "tile_pixels": 24, "foreground_luminance": 150.0},
+  "composition": "Overview and measured-pose detail are native renderings. Japanese HUD is appended below; raw pixels are copied unchanged into the lossless HUD master. No crop, time cut or duplicated event frame."
+}

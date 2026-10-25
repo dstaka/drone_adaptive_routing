@@ -1,0 +1,121 @@
+{
+  "schema": "payload-acceptance-status-v1",
+  "status": "BLOCKED_FEASIBILITY_FAILED",
+  "adopted_loaded_policy": null,
+  "physical_training_admitted": false,
+  "freeze_status": "NOT_FROZEN_FOR_ACCEPTANCE",
+  "camera_status": "NOT_FROZEN",
+  "criteria": [
+    {
+      "number": 1,
+      "status": "FAIL",
+      "reason_ja": "長時間方策駆動で数値破綻。短時間probeの旧PASSは運用域へ無効。"
+    },
+    {
+      "number": 2,
+      "status": "PARTIAL",
+      "reason_ja": "抽選・慣性・形状・reset隔離を実装検査。全学習episodeの成功は未実証。"
+    },
+    {
+      "number": 3,
+      "status": "NOT_MET",
+      "reason_ja": "29観測・移植規則を実装したが、採用済みの共通方策なし。"
+    },
+    {
+      "number": 4,
+      "status": "NOT_RUN",
+      "reason_ja": "同時1秒settlingをCPU実装検査。実10地点ミッション未実行。"
+    },
+    {
+      "number": 5,
+      "status": "NOT_RUN",
+      "reason_ja": "吊り荷実完了境界のイベント未測定。"
+    },
+    {
+      "number": 6,
+      "status": "NOT_RUN",
+      "reason_ja": "両方策の254試行が未実行。比較・CI・優位性の結論なし。"
+    },
+    {
+      "number": 7,
+      "status": "NOT_RUN",
+      "reason_ja": "完全raw/HUD3本・画素/字幕/時刻checker・新規人手視聴は未達。"
+    },
+    {
+      "number": 8,
+      "status": "PARTIAL",
+      "reason_ja": "入力と失敗成果物をhashで回収し文書/PDFを更新。成功モデル・動画は存在しない。"
+    }
+  ],
+  "randomized": {
+    "training": "ABORTED",
+    "validation": "NOT_RUN",
+    "basic": {
+      "planned": 9,
+      "executed": 0,
+      "gate": "NOT_RUN"
+    },
+    "endpoints": {
+      "planned": 18,
+      "executed": 0,
+      "gate": "NOT_RUN"
+    },
+    "heldout": {
+      "planned": 100,
+      "executed": 0,
+      "gate": "NOT_RUN"
+    }
+  },
+  "fixed": {
+    "training": "NOT_RUN",
+    "validation": "NOT_RUN",
+    "basic": {
+      "planned": 9,
+      "executed": 0
+    },
+    "endpoints": {
+      "planned": 18,
+      "executed": 0
+    },
+    "heldout": {
+      "planned": 100,
+      "executed": 0
+    }
+  },
+  "planned_trials": 254,
+  "executed_trials": 0,
+  "success_rate": null,
+  "confidence_interval": null,
+  "comparison": "NOT_ESTIMABLE",
+  "media": {
+    "raw": 0,
+    "hud": 0,
+    "operator_review": "NOT_REQUESTED_NO_FINAL_VIDEOS",
+    "previous_approval_reused": false
+  },
+  "freeze_unchanged": {
+    "distribution": true,
+    "coordinates": true,
+    "priorities": true,
+    "event_rules": true,
+    "settling_thresholds": true,
+    "timeouts": true
+  },
+  "evidence": {
+    "docs/evidence/suspended/feasibility.json": "01458758eac0b753370d9936409eb94ec7f140da6a28f5ae672791ea7c1367b1",
+    "docs/evidence/suspended/failure-check.json": "a476418cec12d41f981853275137a143782f56bba92aec28f088a869725b95df",
+    "docs/evidence/suspended/inputs.json": "cee31ed3c484c203530ec49b49eaea08bdd894160c9831d3e52a3dd4e0b5a8ca",
+    "docs/evidence/suspended/transfer.json": "8d162385c17fbf64bc6ec1ca6d1d0246aaa8ca81688350eb06be34c51d3983a4",
+    "docs/evidence/suspended/gpu-summary.json": "67692553767b5760aec627dad1cc01a34ce9c56a7719df304ac93861f4743b7e",
+    "docs/evidence/suspended/environment.json": "9713e185e1d6e1359838cd3258454897e6784d64917fa2ea33c3741c0f660e9c",
+    "docs/evidence/suspended/report.json": "50c374afd27b079bb683c7c6fb41e332d7e8e92122ff3f19a5c2e04ec1023091",
+    "docs/evidence/suspended/verification.json": "9836aeb815680ee3104dd73a515ab36c6b68799b8fa1537438e56032101ef30b",
+    "docs/evidence/suspended/geometric-clearance.json": "87d7c4c044adb932077809db40c05228e3d2a5e80f79cf7dd44eecb89a1a4ddc"
+  },
+  "remaining_ja": [
+    "受動球関節などの表現を調査し物理方式を修理する。未実装。",
+    "長時間モーター駆動を含む学習前probeを新規実行する。",
+    "両方策を同予算で新規学習しvalidation後に凍結する。",
+    "全254受入・判断分析・完全raw/HUD3本・映像checker・最終hashへの人手確認を行う。"
+  ]
+}

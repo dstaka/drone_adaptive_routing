@@ -1,0 +1,24 @@
+{
+  "schema": "payload-solver-progress-pdf-verification-v1",
+  "scope": "In-progress snapshot; not final acceptance report",
+  "source": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_progress_v1.md",
+  "source_sha256": "8e10c68482de52e0d66c8af7673e635e179f5b247d5236495796cfcf6500837e",
+  "pdf": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_progress_v1.pdf",
+  "pdf_sha256": "18e02613168e51c3fdc6e3f54c7f8927c9c5ee6b5dd991cbee52c1394dadd4bd",
+  "pages": 6,
+  "every_page_rendered_and_visually_inspected": true,
+  "readable_japanese": true,
+  "clipping_or_overlap_observed": false,
+  "rendered_pages": {
+    "page-1.png": "32039ff152f6ed06673ab18746bb87efbe44112978e4b4df736188fc88f6fbad",
+    "page-2.png": "41dbf7e0df332e2f13b2bfa827a04bef1b6369a5db1c101ddb2dfa6207318170",
+    "page-3.png": "347ac53cfc61ef441353a1c8959855ab933616fc13cd4ede8f8e107f7e1a1125",
+    "page-4.png": "992f09aad817a043053ff92b8a4b6f33218bdf987b37421d4455cf89fed39ed6",
+    "page-5.png": "49ef4b67512fec25ab8ed28c77a420fd8054b6b98e5c2ddd4eeb67096746b2ab",
+    "page-6.png": "e208dcadde38c99f1cfe3ac17a9f2aa580f1352c5ab8d2c66f8d8298e0b5f139"
+  },
+  "authoring_marker": "Succeeded exactly once before first create attempt",
+  "build": "Existing local Python3.11/reportlab/fontTools after bundled3.12 fontTools missing; no environment mutation",
+  "preserved_source_snapshot": "outputs/suspended_solver_20261022_e265f60d/report_ja_solver_progress_v1.md",
+  "original_source": "docs/report_ja.md"
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "hybrid-genesis-p8-bank-reset30-audit-v2",
+  "passed": true,
+  "tested_resets": 30,
+  "executed_steps": 2268,
+  "independent_advancing_peer_checks": 210,
+  "partial_reset_with_measured_peer_overlap": 30,
+  "simultaneous_all_eight_native_step_batches": 231,
+  "checker_sha256": "615e7b4aed282dc9b123f18eebba7edddf351ceb53526f003a82445d274c1de3",
+  "fresh_replays": {
+    "passed": true,
+    "bridge_replays": 8,
+    "continuing_peer_replays": 8,
+    "maximum_native_error": 0.0,
+    "maximum_stage_error": 0.0
+  },
+  "receipts_sha256": {
+    "independent-reset-isolation.json": "955c6a75a171c573a33ce375c9549263f61aa66bf7ada4aca2f73d276729e3bd",
+    "independent-fresh-replays.json": "a6d016bee247881974383ead910034f5eac65e3f567be119ba1c8b4cccb85c18"
+  },
+  "scope": "Actual source-v4 reset30 and same-input freshN1 bridge/peer replay only. New record-only flush source requires its own exercised qualification.",
+  "learning_admitted": false,
+  "raw_local_recovery": {
+    "status": "ALL848_FILES_SIZE_SHA256_VERIFIED",
+    "files": 848,
+    "bytes": 394783484,
+    "archive_bytes": 396513280,
+    "archive_sha256": "7d2cc220e46e898c4306579d841d11beaba2ac9151e8c2b37c168fc1e5cc676d"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "mujoco-final3-explicit-human-review-v1",
+  "recorded_utc": "2026-10-25T05:55:24.458299+00:00",
+  "reviewer": "human_user",
+  "scope": "All three final viewing MP4s, complete continuous1x, all10destinations/settling, fixed enlarged overview with unchanged individual detail, visible suspended payload dynamics/box rotation, HUD and no cuts",
+  "confirmation": "3本すべて連続1倍速で確認し、問題なし",
+  "passed": true,
+  "reviewed_videos": [
+    {
+      "case_id": "basic-normal-1",
+      "path": "outputs/suspended_mujoco_final_20261025_r3a/final-overview-media-v1/basic-normal-1/hud.mp4",
+      "bytes": 11245806,
+      "sha256": "f52fd9f506e416719a51f081ce3640c88044848d0b6ab7f6685bca10f5576b9f",
+      "proof_sha256": "43e73d2e97ca1af9a936e199511bc75e216b4e049d8a2f9ca9ef54dfb2a8030b",
+      "frames": 4395
+    },
+    {
+      "case_id": "basic-emergency-1",
+      "path": "outputs/suspended_mujoco_final_20261025_r3a/final-overview-media-v1/basic-emergency-1/hud.mp4",
+      "bytes": 11459540,
+      "sha256": "4aae86a49d773d2828d0ba5a1852006d0c901fbf281afb27158b22f722784a99",
+      "proof_sha256": "13b0bd5b86bba730c0da1f46ae6e4865c97dd8ba45823fa02fe43b0f67e972fc",
+      "frames": 4453
+    },
+    {
+      "case_id": "basic-cost_shift-1",
+      "path": "outputs/suspended_mujoco_final_20261025_r3a/final-overview-media-v1/basic-cost_shift-1/hud.mp4",
+      "bytes": 11194467,
+      "sha256": "a80f15427d0d36263ff6051e39aa3d950cca8c6b7d94457a5ae615ad153b1f95",
+      "proof_sha256": "c9ca6f66acdd43a20e81c5ec856176868eef510294ffde2ad58da63798dda22e",
+      "frames": 4496
+    }
+  ],
+  "group_proof_sha256": "e121899fba2872900bef1284f3b6a5779bc2c073d50703acab816ccbe2a3c428",
+  "freeze_record_sha256": "6e5e331d8a59d5ebefdafd264eb77ebde8891e5c5d26d4fc37b87aba4645c4a2",
+  "acceptance_record_sha256": "e18c40b81ee95b225606c5a7ef0da2be39e2329b799efbe94e7f098ca64d26f9",
+  "immutable_capture_proofs_preserved": true,
+  "capture_hud_status": "Machine accepted/human review pending is the historical status at capture; no footage or capture proof was rewritten after review"
+}

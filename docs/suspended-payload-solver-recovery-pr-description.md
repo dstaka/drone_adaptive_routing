@@ -1,0 +1,19 @@
+# Recover suspended-payload numerics and enforce evidence-bound learning
+
+The previous suspended-load backend failed passive energy and refinement checks, blocking valid policy training. This change adds a MuJoCo 3.15 float64 RK4 path that preserves the original vehicle, motor authority, massive rigid rod, passive joints and full payload distribution. Every optimizer and physical evaluation consumer independently reconstructs the complete qualification raw data and verifies the actual source, engine build and physical properties before admission.
+
+Specification: [Suspended-payload solver recovery](../specs/2026-10-22-suspended-payload-solver-recovery/spec.md).
+
+The implementation adds continuous 29-observation/4-motor runtime accounting, fresh model4296 transfer, matched development sample ladders, final-training provenance checks, fixed-denominator paired evaluation, canonical held-out claims, and complete native-record video verification with Japanese HUDs. New execution does not use cumulative GPU budgets or update historical ledgers. Physical jobs remain exclusive and have individual deadlock bounds.
+
+Validation so far: all 62 new numerical traces, 15 motor checks, 30 physical resets and 30 initial-state resets passed independent reconstruction. The local CPU suite passed 1,087 tests; 18 platform or actual-backend tests were skipped and one GPU test was deselected. Linux storage tests and real closed-evidence transfer/restore rehearsals passed separately. The updated acceptance/capture checker passed 48 focused Linux tests without changing the learning or qualified physical sources. A later terminal/bootstrap correction passed 40 focused Linux tests in a separate source copy, preserving the live v19 experiment. The seven-page Japanese closure PDF was rendered and visually checked on every page.
+
+The user closed this direct-motor investigation in favor of a separately specified hybrid/Genesis follow-up. Five diagnostic pilots and the matched fresh3M-per-method development pair consumed7,020,000 valid transitions without a shared-settling completion. Both methods scored0/6 at300K,1M and3M; all36 flights timed out on the initial hover and all36 native replays passed. Full raw/checkpoint deliveries were verified and stored durably. No development checkpoint was adopted. Fresh final training, validation12/120, all254 acceptance missions, three accepted full videos and fresh human review were not executed. This change preserves the qualified numerical path and the unsuccessful learning evidence; it does not claim task completion or policy superiority.
+
+The follow-up specification is reviewed planning material; no hybrid controller or new Genesis training is implemented in this closure. See the [Japanese review](suspended-payload-hybrid-genesis-review_ja.md) for unresolved final-plan branches. No PR has been created.
+
+Large raw data, checkpoints, archives, videos and private execution details stay outside Git; compact hash-linked evidence and the execution handoff record the results and failures.
+
+Known unresolved P2: the historical training exposure auditor does not independently regenerate the declared command RNG/target order. A metadata-only pilot-to-nonpilot relabeling of a temporary actual20K copy is accepted. This does not establish a forged physical qualification or successful final freeze; every actual exposure gate remained ineligible and no final policy was adopted. The [closure review](evidence/suspended-solver/final-code-review.json) records the reproduction and its limits.
+
+Final recovery reconciled5,847 owned remote files:4,775 matched previously verified local archives; the1,072 remaining files plus their coverage record were delivered as a195,194,880-byte archive with1,073 members. Every job and prefix audit is closed. Two read-only RAM caretakers remain solely to preserve original remote paths; all corresponding bytes already have verified durable local gold.

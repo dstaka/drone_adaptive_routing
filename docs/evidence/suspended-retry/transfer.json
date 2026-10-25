@@ -1,0 +1,25 @@
+{
+  "archive": {
+    "path": "outputs/suspended_retry_20261022_052336/delivery-final.tar.gz",
+    "bytes": 817588972,
+    "sha256": "c95f0fd7913644e0482c9bfc78bff0ffa114db4b0125201e6e26e713419ba19e"
+  },
+  "members": 1631,
+  "all_member_sizes_and_sha256_verified": true,
+  "used_s": 10824.12788819254,
+  "remaining_s": 17975.87211180746,
+  "jobs": 194,
+  "active_job": null,
+  "schema": "suspended-retry-transfer-v1",
+  "cpu_final_archive": {
+    "path": "outputs/suspended_retry_20261022_052336/cpu-linux-final-v4.tar.gz",
+    "bytes": 10332,
+    "sha256": "247eac6b0cc84879aaacb490662ebb5bcbbb7efaf2920ecc3ab5eeb4443898dc",
+    "members_verified": 3
+  },
+  "physical_source_archive": {
+    "path": "outputs/suspended_retry_20261022_052336/candidate-source-v10.tar.gz",
+    "bytes": 27339,
+    "sha256": "ca27fbdff020ef6a890ef98aeefb8af360803029ddea861c527ed4abae128a3f"
+  }
+}

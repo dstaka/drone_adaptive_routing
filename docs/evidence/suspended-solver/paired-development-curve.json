@@ -1,0 +1,1031 @@
+{
+  "schema": "payload-solver-closed-paired-development-v1",
+  "split": "development",
+  "source_archive_sha256": "5dac14951fb089fd100f5474a57253dd530eaaa99995c2a606ab899f6f15908b",
+  "all36_native_prefixes_replayed": true,
+  "all36_first_hover_timeout": true,
+  "total_conditions": 36,
+  "completed_targets": 0,
+  "heldout_opened": false,
+  "adopted": false,
+  "physical_acceptance": false,
+  "metric_scope": "Means over final500 complete recorded STEP samples of each failed30second mean-policy flight; not mission-wide extrema or acceptance rates",
+  "delivery": {
+    "archive": "long-credit-development-curve-delivery-v1.tar",
+    "archive_bytes": 665937920,
+    "archive_sha256": "2889bdeaf66fac4d0d702628533a28330671aa0326b94700857c0394e96bb486",
+    "members": 355,
+    "all_member_size_sha256_verified": true,
+    "durable_local_gold_verified": true
+  },
+  "rungs": [
+    {
+      "S": 300000,
+      "conditions": {
+        "randomized": 6,
+        "fixed": 6
+      },
+      "successes": {
+        "randomized": 0,
+        "fixed": 0
+      },
+      "independent_replay_sha256": "c635df90cba7d51f24755e79a36debc9952d5ad75d3cc51e50f3e9d77bd98899",
+      "models": {
+        "randomized": {
+          "checkpoint": "outputs/development-long-credit-v1/randomized/checkpoint_s300000.pt",
+          "sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3"
+        },
+        "fixed": {
+          "checkpoint": "outputs/development-long-credit-v1/fixed/checkpoint_s300000.pt",
+          "sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03"
+        }
+      },
+      "cases": [
+        {
+          "S": 300000,
+          "method": "randomized",
+          "case_id": "development-83021-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.1282019119128962,
+            "drone_speed_m_s": 0.0005967027491646093,
+            "package_error_m": 0.1281893285661981,
+            "package_speed_m_s": 0.00114552455395308,
+            "swing_angle_deg": 0.10018066902738551,
+            "swing_rate_deg_s": 3.0900301233090337,
+            "package_spin_deg_s": 59.510195038199875
+          },
+          "samples_sha256": "2c1abc31a6c64fa2778a573d50c4f25fd28849549699a258307c386e54e94f28",
+          "native_proof": {
+            "native_raw_sha256": "1b148d7c7376882d56e7d40a34e87b3244804b762d03738b6559dfe4f8d3c4d9",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "randomized",
+          "case_id": "development-83021-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.14488982842871306,
+            "drone_speed_m_s": 0.0007560420094739151,
+            "package_error_m": 0.14486913390461326,
+            "package_speed_m_s": 0.0013163321906058151,
+            "swing_angle_deg": 0.17827898019460373,
+            "swing_rate_deg_s": 4.712156405689535,
+            "package_spin_deg_s": 58.303589201491704
+          },
+          "samples_sha256": "1799fbd0fabbf182d8cafd5b950077e62e91cfed8eeb3798c77f64fe7746738b",
+          "native_proof": {
+            "native_raw_sha256": "19743835c70e97d106d0d00dec4c87c2cecd6a527a730e3d1333a57cbe68fce1",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "randomized",
+          "case_id": "development-83021-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.16351171334181877,
+            "drone_speed_m_s": 0.0016726715925434617,
+            "package_error_m": 0.16345072719344048,
+            "package_speed_m_s": 0.003174559534643331,
+            "swing_angle_deg": 0.3375533928443222,
+            "swing_rate_deg_s": 7.794907564133046,
+            "package_spin_deg_s": 72.47514540041578
+          },
+          "samples_sha256": "f10c583b08f4b99911c6146cb62d8a694ab6e9c69593258def1b9e4f25685686",
+          "native_proof": {
+            "native_raw_sha256": "f41b9834a8ec86da6e90ebc7bc6c615252761aa7a5031d581ba5136eff9bf7ec",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "randomized",
+          "case_id": "development-83022-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.12820246897021292,
+            "drone_speed_m_s": 0.0005103379184764426,
+            "package_error_m": 0.12818957340276801,
+            "package_speed_m_s": 0.0011409916737492576,
+            "swing_angle_deg": 0.10164719612785542,
+            "swing_rate_deg_s": 3.0946295488981104,
+            "package_spin_deg_s": 58.74957988456675
+          },
+          "samples_sha256": "012377698144ab18aa21297706b48d2bc6605ab11cf0053cb694b78d8b5777b3",
+          "native_proof": {
+            "native_raw_sha256": "c0a567aa7d624702eb5f4134e80c470203206dc90a815411313cbde71f512dab",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "randomized",
+          "case_id": "development-83022-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.1448809491314194,
+            "drone_speed_m_s": 0.0010720878041761712,
+            "package_error_m": 0.14484630121969422,
+            "package_speed_m_s": 0.0019942267135582476,
+            "swing_angle_deg": 0.22416787257869245,
+            "swing_rate_deg_s": 5.908102811399865,
+            "package_spin_deg_s": 75.11400341809858
+          },
+          "samples_sha256": "a8d7c323d261c5bd2cce9638d54e751ad34d68c271b67296e8d07d34393d2fc9",
+          "native_proof": {
+            "native_raw_sha256": "4ab813e4b21a085dde19b295d89fd3ea77e8e56f13634ee8d498cf8587494138",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "randomized",
+          "case_id": "development-83022-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.16351793356508035,
+            "drone_speed_m_s": 0.0016090191998254357,
+            "package_error_m": 0.16343364935045718,
+            "package_speed_m_s": 0.0036396337657521732,
+            "swing_angle_deg": 0.4075657946655279,
+            "swing_rate_deg_s": 9.436636082345366,
+            "package_spin_deg_s": 86.37935883525483
+          },
+          "samples_sha256": "4bcfa008b374536a99ee7a8d34f94c27c0bfb62c7bdb9e2890c9b83bd5e4bf79",
+          "native_proof": {
+            "native_raw_sha256": "360e8c974c97fa4f0e98f786f00c8b2025f291462a6cd5df14a230e7bc438364",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "8b3e8b37196e2c1026a2ce1bee5d20860fc4cf3352167e900478d729e1ec69a3",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "fixed",
+          "case_id": "development-83021-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.1883039616035562,
+            "drone_speed_m_s": 0.00036522955859520016,
+            "package_error_m": 0.18829852557918506,
+            "package_speed_m_s": 0.0005737754955527428,
+            "swing_angle_deg": 0.09224100624819159,
+            "swing_rate_deg_s": 2.928023243730319,
+            "package_spin_deg_s": 56.37864299977222
+          },
+          "samples_sha256": "d4d22b693f873bd47c4b16d93c82f11aaadfeec39fef89bddc94e18db442eb66",
+          "native_proof": {
+            "native_raw_sha256": "f0edcf558b0f060e4d2c7ea0c5220b28bcfdd48472fa9a5526914d317861e308",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "fixed",
+          "case_id": "development-83021-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.19888947036044147,
+            "drone_speed_m_s": 0.0009150815624699865,
+            "package_error_m": 0.19887485564406437,
+            "package_speed_m_s": 0.0013961890170940212,
+            "swing_angle_deg": 0.17333550199979417,
+            "swing_rate_deg_s": 4.578161756514655,
+            "package_spin_deg_s": 57.1061083261204
+          },
+          "samples_sha256": "ba38568b0ee87a3813c59fc6b208c69b5f2f5f34f5f52d79679e48f5472f82b4",
+          "native_proof": {
+            "native_raw_sha256": "53f0b2076d3e992f0ce9e78d58f151f7b0677878157c9e05b391417725d2fac3",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "fixed",
+          "case_id": "development-83021-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.21131452403746173,
+            "drone_speed_m_s": 0.000898484157867785,
+            "package_error_m": 0.21129610286973655,
+            "package_speed_m_s": 0.001663887228061626,
+            "swing_angle_deg": 0.22731272113021003,
+            "swing_rate_deg_s": 5.282749069058278,
+            "package_spin_deg_s": 47.934938165806145
+          },
+          "samples_sha256": "c933436c36bbf51d4eede5d4628a9534f6c9e4883bc427321a653a5a07c0430c",
+          "native_proof": {
+            "native_raw_sha256": "4ec39c865716bcde2780ce6080cfd9adae443cc051c138e6ed461340fc3ac0c3",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "fixed",
+          "case_id": "development-83022-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.18830332337312627,
+            "drone_speed_m_s": 0.0003538801265351238,
+            "package_error_m": 0.1882999204408407,
+            "package_speed_m_s": 0.00048164519149040963,
+            "swing_angle_deg": 0.07360049016559367,
+            "swing_rate_deg_s": 2.3476676159014267,
+            "package_spin_deg_s": 45.04237961301792
+          },
+          "samples_sha256": "4edf313564addb135faef29e1d4566c49a228c6413316afa06dda1567ff89c72",
+          "native_proof": {
+            "native_raw_sha256": "1ce749c6309e2d5853faf099af9ddcfeb2fab550b09bee11954fd8573f32e11f",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "fixed",
+          "case_id": "development-83022-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.19888881103066233,
+            "drone_speed_m_s": 0.0005279508543892308,
+            "package_error_m": 0.19887798977858645,
+            "package_speed_m_s": 0.0010130773404915512,
+            "swing_angle_deg": 0.15807365163005765,
+            "swing_rate_deg_s": 4.188264791061317,
+            "package_spin_deg_s": 51.908786290977496
+          },
+          "samples_sha256": "34dc78f665bcedc1e43811ef1889d89aa4727ac8f5f378b1627456a4a5f2e45e",
+          "native_proof": {
+            "native_raw_sha256": "c99c39cd60d96f36d5a71155516beb3e702541c6f0ad300224c49ef754e72802",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 300000,
+          "method": "fixed",
+          "case_id": "development-83022-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.2113183992498198,
+            "drone_speed_m_s": 0.001690084082468845,
+            "package_error_m": 0.21128056162858014,
+            "package_speed_m_s": 0.0027353538906021136,
+            "swing_angle_deg": 0.3104360066274555,
+            "swing_rate_deg_s": 7.210152324409945,
+            "package_spin_deg_s": 65.70218165414505
+          },
+          "samples_sha256": "cb2675e323fdcdcdcf54ecf25f20f52e2cba9b9699f2fe005ed08147f3df66b5",
+          "native_proof": {
+            "native_raw_sha256": "bbe83a7a806c69a4cb5ae201522e938f6323e21d33af4fe4e6c241d2d837780e",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "4478be344764db2374d2ff4a3879f2ae442505ebb9755c0a540093b8fe29bb03",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        }
+      ]
+    },
+    {
+      "S": 1000000,
+      "conditions": {
+        "randomized": 6,
+        "fixed": 6
+      },
+      "successes": {
+        "randomized": 0,
+        "fixed": 0
+      },
+      "independent_replay_sha256": "32dab7f61dd43fb528f7c18476d1713a3df8201c2cf4fd14799bc1b2e6a36886",
+      "models": {
+        "randomized": {
+          "checkpoint": "outputs/development-long-credit-v1/randomized/checkpoint_s1000000.pt",
+          "sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8"
+        },
+        "fixed": {
+          "checkpoint": "outputs/development-long-credit-v1/fixed/checkpoint_s1000000.pt",
+          "sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea"
+        }
+      },
+      "cases": [
+        {
+          "S": 1000000,
+          "method": "randomized",
+          "case_id": "development-83021-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.1576433572494478,
+            "drone_speed_m_s": 0.039866772978342256,
+            "package_error_m": 0.15874549686898615,
+            "package_speed_m_s": 0.21204826781921052,
+            "swing_angle_deg": 7.215162030652422,
+            "swing_rate_deg_s": 44.10339136724015,
+            "package_spin_deg_s": 94.86552183291343
+          },
+          "samples_sha256": "1fc647fd736a5110bb98ef54f3e2db0446696ee805f307b4b0c316e379da4894",
+          "native_proof": {
+            "native_raw_sha256": "bbe6b29cbfa7051d73e7edbec7fb0d86825170fdf163f009ffdb459b077b5ae7",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "randomized",
+          "case_id": "development-83021-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.1759778762286574,
+            "drone_speed_m_s": 0.007091819973808591,
+            "package_error_m": 0.17587353036352843,
+            "package_speed_m_s": 0.025160630208825394,
+            "swing_angle_deg": 0.9250069405596749,
+            "swing_rate_deg_s": 13.17914667342633,
+            "package_spin_deg_s": 160.4385650327942
+          },
+          "samples_sha256": "839bcbcd9f26bb277d20bdf18e8ee2941351549b731fd8874c1b23bef12dbca7",
+          "native_proof": {
+            "native_raw_sha256": "42d50bf06af16f862a077b61912fcda80647ce3ca751b6c8e8470ed7bced3549",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "randomized",
+          "case_id": "development-83021-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.19818588465114245,
+            "drone_speed_m_s": 0.005434177936301469,
+            "package_error_m": 0.19784837534140307,
+            "package_speed_m_s": 0.014955821128117672,
+            "swing_angle_deg": 0.8707993900949148,
+            "swing_rate_deg_s": 18.509453938780236,
+            "package_spin_deg_s": 174.71156931418236
+          },
+          "samples_sha256": "a294aa8274b8107e2089c8d62d1cc70949680d98b85647700dc0ee0d2da2c3a8",
+          "native_proof": {
+            "native_raw_sha256": "82776b421e972e4814f9303c003ff0296430e6f0bbdbf7f37a91e5c58732295e",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "randomized",
+          "case_id": "development-83022-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.15751594505845048,
+            "drone_speed_m_s": 0.03003677466327362,
+            "package_error_m": 0.15807973391073993,
+            "package_speed_m_s": 0.15774197098187934,
+            "swing_angle_deg": 5.34552528131648,
+            "swing_rate_deg_s": 32.900611698496576,
+            "package_spin_deg_s": 74.74222221385564
+          },
+          "samples_sha256": "ada238ede6a6af1185593300b2445ace65b2e8213b151d0cab35e216046cbf16",
+          "native_proof": {
+            "native_raw_sha256": "b1ae31038a7b7d0ff4c0588baedd078d6fcb4daceb6c40f550dc95682b286732",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "randomized",
+          "case_id": "development-83022-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.175923487419496,
+            "drone_speed_m_s": 0.014269792144812301,
+            "package_error_m": 0.17586727415302597,
+            "package_speed_m_s": 0.057120455648576644,
+            "swing_angle_deg": 2.0603080853672484,
+            "swing_rate_deg_s": 17.009784622360858,
+            "package_spin_deg_s": 179.44436108025556
+          },
+          "samples_sha256": "1cf7d0a0f7b19299606cae1585904e388a29a21337a01587fd6c92d308254012",
+          "native_proof": {
+            "native_raw_sha256": "37f9ea0c2f488448099313a45e310c85c6afddd616c2f7c2ce717c862e31c980",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "randomized",
+          "case_id": "development-83022-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.19816160175865843,
+            "drone_speed_m_s": 0.0036118567546015914,
+            "package_error_m": 0.1979406412087422,
+            "package_speed_m_s": 0.010315378189527925,
+            "swing_angle_deg": 0.7136794736609349,
+            "swing_rate_deg_s": 15.363214898218715,
+            "package_spin_deg_s": 143.12423802793532
+          },
+          "samples_sha256": "1b7025375ddde00ea2fdb555cf27521dcb68de9d1e3c3fffc79a3ab76fc5b502",
+          "native_proof": {
+            "native_raw_sha256": "32d97218fd20086e1ec70a04410693873f066f47a2ad65084c7a4f452f93864f",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "255d1c34aa09fab45803b9bd8e38e5cb2e35d73302fe97b10415497f8b6924e8",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "fixed",
+          "case_id": "development-83021-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.24660288112467108,
+            "drone_speed_m_s": 0.00011756162785184774,
+            "package_error_m": 0.24659924666405883,
+            "package_speed_m_s": 0.00041659300654432274,
+            "swing_angle_deg": 0.0769450444971325,
+            "swing_rate_deg_s": 2.4418708431739606,
+            "package_spin_deg_s": 47.747018373472216
+          },
+          "samples_sha256": "49b15f8a2939a479b13ce91aa70a8310576b14162df6c2e385163883f3ae76c8",
+          "native_proof": {
+            "native_raw_sha256": "cf9ba5e3fc5ea0a11c486c423ae06ecccb3e7dd035af7ba6261520ee387b56d5",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "fixed",
+          "case_id": "development-83021-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.2499731312795725,
+            "drone_speed_m_s": 0.00032866846299367585,
+            "package_error_m": 0.24995719684542572,
+            "package_speed_m_s": 0.0014437302386363703,
+            "swing_angle_deg": 0.1970739901513824,
+            "swing_rate_deg_s": 5.196313874898174,
+            "package_spin_deg_s": 65.97118114676948
+          },
+          "samples_sha256": "5185a4bbb3fd7e584cfc30dbd07c0ed51886ec9874f483aae1b75ada91073007",
+          "native_proof": {
+            "native_raw_sha256": "8327460bbaab6158d7a031abef7aa9f08f9b8cfbe05211d27b72dd8fbb19630e",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "fixed",
+          "case_id": "development-83021-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.25467249906047706,
+            "drone_speed_m_s": 0.00034286502409278525,
+            "package_error_m": 0.25467123162890903,
+            "package_speed_m_s": 0.0004981671829313276,
+            "swing_angle_deg": 0.06435131761257429,
+            "swing_rate_deg_s": 1.4948763630174917,
+            "package_spin_deg_s": 13.894296582545858
+          },
+          "samples_sha256": "a7e1c36168faf2807d04cf7a37f6e4e0807ae8a01dfdd1bf6de49f059da92460",
+          "native_proof": {
+            "native_raw_sha256": "a71263b009212d595c2b1f176e8eef3b96f4bb49f23525fd9f142a254b152a93",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "fixed",
+          "case_id": "development-83022-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.24660206953335004,
+            "drone_speed_m_s": 0.00010262686498434591,
+            "package_error_m": 0.24659922690514427,
+            "package_speed_m_s": 0.00036744659112830836,
+            "swing_angle_deg": 0.06913487910971,
+            "swing_rate_deg_s": 2.2007246648143215,
+            "package_spin_deg_s": 42.799225516313754
+          },
+          "samples_sha256": "65dae80508b98b9627aa7b84c79b0dd6615daab09c050d08f5d20de5a03cae53",
+          "native_proof": {
+            "native_raw_sha256": "d24071ad67e8212e5b618a2e84dcca304fd5efcc5fe42297f4b6de4574c24851",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "fixed",
+          "case_id": "development-83022-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.24997132886806075,
+            "drone_speed_m_s": 0.0002248809398936824,
+            "package_error_m": 0.24996926224814026,
+            "package_speed_m_s": 0.0004486554414503547,
+            "swing_angle_deg": 0.07230300378344912,
+            "swing_rate_deg_s": 1.914742115759427,
+            "package_spin_deg_s": 24.070484396797
+          },
+          "samples_sha256": "1cd3b0e532c5e4222e4eb1d822436a759b3965e23e4dba62ea75316ccb5167d9",
+          "native_proof": {
+            "native_raw_sha256": "5099d428546b18cbceefad7bfdcdfea8d6b58aa018ba7b41ded37658f7cf9b87",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 1000000,
+          "method": "fixed",
+          "case_id": "development-83022-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.2546780175858467,
+            "drone_speed_m_s": 0.000824984402629979,
+            "package_error_m": 0.2546405399917524,
+            "package_speed_m_s": 0.0028696106044117987,
+            "swing_angle_deg": 0.3357715931529925,
+            "swing_rate_deg_s": 7.7887484018605155,
+            "package_spin_deg_s": 72.60148106042139
+          },
+          "samples_sha256": "0244a04b6b57cf22ccb9b05c7a43889a75ba886aca5ef658e16a968645fa4291",
+          "native_proof": {
+            "native_raw_sha256": "dcc999e43240486252530817c9da33a823e1669f91bd213282478a54260430f1",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "bd66bd9eede45ac8d7deab9f9789f0b9bc3802769734b8b32993e0e3f4a729ea",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        }
+      ]
+    },
+    {
+      "S": 3000000,
+      "conditions": {
+        "randomized": 6,
+        "fixed": 6
+      },
+      "successes": {
+        "randomized": 0,
+        "fixed": 0
+      },
+      "independent_replay_sha256": "d913f0621cdfa96d7118e6218d8c2dbe3115f699b69b02842c078a87abb56545",
+      "models": {
+        "randomized": {
+          "checkpoint": "outputs/development-long-credit-v1/randomized/checkpoint_s3000000.pt",
+          "sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f"
+        },
+        "fixed": {
+          "checkpoint": "outputs/development-long-credit-v1/fixed/checkpoint_s3000000.pt",
+          "sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a"
+        }
+      },
+      "cases": [
+        {
+          "S": 3000000,
+          "method": "randomized",
+          "case_id": "development-83021-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.991244983726247,
+            "drone_speed_m_s": 0.20322759305755772,
+            "package_error_m": 1.0362744408572304,
+            "package_speed_m_s": 1.0141046691763755,
+            "swing_angle_deg": 34.23969395694929,
+            "swing_rate_deg_s": 210.40163685243792,
+            "package_spin_deg_s": 228.1562017489791
+          },
+          "samples_sha256": "b92a98d075ba689576bd51dc914d90b4ecff3ec554e348a1d881171257b3d0ee",
+          "native_proof": {
+            "native_raw_sha256": "b0d7604e5cbacfd509124ce7e93a2d31304d51cccec7e9ce92252c234c730d45",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "randomized",
+          "case_id": "development-83021-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.4233234687628658,
+            "drone_speed_m_s": 0.007319783665359957,
+            "package_error_m": 0.42337945202329524,
+            "package_speed_m_s": 0.010616842782149303,
+            "swing_angle_deg": 0.3775883280593985,
+            "swing_rate_deg_s": 8.11574641690611,
+            "package_spin_deg_s": 97.7627301510271
+          },
+          "samples_sha256": "0ae3029d4a490f9afc7fcdee46d519e1e1fe0e61dde26dde1fad0e5ff24b03f4",
+          "native_proof": {
+            "native_raw_sha256": "f345eb7f9b6b29805e7bd9b8ad4ada75c9dc09f31174e08d1a7ac4799eab1ff9",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "randomized",
+          "case_id": "development-83021-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.31178698686072737,
+            "drone_speed_m_s": 0.002235099655692835,
+            "package_error_m": 0.3117736176072052,
+            "package_speed_m_s": 0.006688502862413013,
+            "swing_angle_deg": 0.5462252558214593,
+            "swing_rate_deg_s": 11.952289743265085,
+            "package_spin_deg_s": 111.76143121618055
+          },
+          "samples_sha256": "ba4b83bef0686709cc7fe8e3cda1ffeb1fe0e11839275d705b42cace49a132af",
+          "native_proof": {
+            "native_raw_sha256": "6bb82afdae8e8fbe4d4c4a35b5b8541460f05da79be6d83c74029af20f87364e",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "randomized",
+          "case_id": "development-83022-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.989584241875255,
+            "drone_speed_m_s": 0.19393194254609433,
+            "package_error_m": 1.0307950704231479,
+            "package_speed_m_s": 0.9995154262034702,
+            "swing_angle_deg": 33.89807348617079,
+            "swing_rate_deg_s": 205.76433872852795,
+            "package_spin_deg_s": 223.1498105242972
+          },
+          "samples_sha256": "9a8d92f01cc12414c54688c4ad53966325c315b2c63e181fc8cdbfecff305757",
+          "native_proof": {
+            "native_raw_sha256": "f15f753c46945c524a08090cbb3284093dda88d5f6e5896cf7fc6d52fa91c8c4",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "randomized",
+          "case_id": "development-83022-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.4264265536101315,
+            "drone_speed_m_s": 0.009599915431776986,
+            "package_error_m": 0.4265697072047387,
+            "package_speed_m_s": 0.02546785211685039,
+            "swing_angle_deg": 0.8921571442191828,
+            "swing_rate_deg_s": 9.707136835630719,
+            "package_spin_deg_s": 103.84667853409114
+          },
+          "samples_sha256": "901a3cd90973d05fdc58812f1b8376667d22b970a01cc02a9db77ebc76de623c",
+          "native_proof": {
+            "native_raw_sha256": "cf3e281dba75488e80a5007ccad32c1ae91842244e08a3470420246effb3292a",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "randomized",
+          "case_id": "development-83022-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.3120738980676003,
+            "drone_speed_m_s": 0.0025047683498521946,
+            "package_error_m": 0.3120589232607123,
+            "package_speed_m_s": 0.005998317003128817,
+            "swing_angle_deg": 0.590088820160474,
+            "swing_rate_deg_s": 13.566622707562075,
+            "package_spin_deg_s": 127.05542486722912
+          },
+          "samples_sha256": "490caebb1be22ab7c63e6344fe734c0d5b14a3c18fe32642951780d66ab6cf4e",
+          "native_proof": {
+            "native_raw_sha256": "9c60b62da4e17e49b8ac62e01b6f0a38d2a22299867010dcd20ccb25306adbd0",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "66c3fcc258949c24cac0ad18c31030286655f00a2b437ede50397a0bf7f89a7f",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "fixed",
+          "case_id": "development-83021-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.19559787473866197,
+            "drone_speed_m_s": 0.0010372414659172826,
+            "package_error_m": 0.19559300038362587,
+            "package_speed_m_s": 0.0011404066363478568,
+            "swing_angle_deg": 0.09469129802371569,
+            "swing_rate_deg_s": 3.0127825302166125,
+            "package_spin_deg_s": 57.84285140419281
+          },
+          "samples_sha256": "8286d011459d2dc20f2d315f289d38b734cd6be9a5dd7449eac7344488d2d884",
+          "native_proof": {
+            "native_raw_sha256": "47ddfa582d46e20b283083325eba54b16b27d6defbc56f58defe546f68aa282f",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "fixed",
+          "case_id": "development-83021-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.20773248435904057,
+            "drone_speed_m_s": 0.001280580340811035,
+            "package_error_m": 0.20771823469676046,
+            "package_speed_m_s": 0.00178685664934261,
+            "swing_angle_deg": 0.17852091467174394,
+            "swing_rate_deg_s": 4.709052383345034,
+            "package_spin_deg_s": 59.45639748576624
+          },
+          "samples_sha256": "cabbc1f7a2dd82285cbae91e98183c785835f196bcd1d230961b7d3ec24efa83",
+          "native_proof": {
+            "native_raw_sha256": "a5b75178ad7a00a5e271be9b29679c9b8c0165526793ce98543f1bb0a359a272",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "fixed",
+          "case_id": "development-83021-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.22239713630559457,
+            "drone_speed_m_s": 0.0035529195982609836,
+            "package_error_m": 0.2223771639030566,
+            "package_speed_m_s": 0.003899834784557486,
+            "swing_angle_deg": 0.2438279667234306,
+            "swing_rate_deg_s": 5.6671371778314645,
+            "package_spin_deg_s": 50.96959581713709
+          },
+          "samples_sha256": "94df234fcdd6b97a8f06ef00dc53a6a598928e8ea296f5720494a5e6ba1f85cf",
+          "native_proof": {
+            "native_raw_sha256": "e37a70ca7054c927897cfe8933293fce24f69b82bef4e6339afdfa58e8bc2ddc",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "fixed",
+          "case_id": "development-83022-0",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.19559578493495644,
+            "drone_speed_m_s": 0.0003635603296842087,
+            "package_error_m": 0.19559334511776028,
+            "package_speed_m_s": 0.00048726343627706134,
+            "swing_angle_deg": 0.06513072282803577,
+            "swing_rate_deg_s": 2.0704564511651813,
+            "package_spin_deg_s": 40.12294049074389
+          },
+          "samples_sha256": "a9c249b628eda52c24846ea083c68d6a09f670e217c3dfd953de550ffb1b8da2",
+          "native_proof": {
+            "native_raw_sha256": "4ec75957b6ec3249532dcbf5cd3ad3ca041886efb3c2245b838a5805bb4ec7bc",
+            "actual_properties_sha256": "5d78bcd6483d609dea03f0645781b690e8938dc131ca2f4d7ddaac2ca72bad9b",
+            "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "fixed",
+          "case_id": "development-83022-1",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.2077357689457297,
+            "drone_speed_m_s": 0.002460214813837776,
+            "package_error_m": 0.2077251728167075,
+            "package_speed_m_s": 0.0026545619666327575,
+            "swing_angle_deg": 0.15796769750953274,
+            "swing_rate_deg_s": 4.1760550730446395,
+            "package_spin_deg_s": 51.30703020558189
+          },
+          "samples_sha256": "b735a4605196b32103872d97d26fa562d7a0057210b6a2b9096bc3594eec97f2",
+          "native_proof": {
+            "native_raw_sha256": "63f5698f2eb558c752b9637de8fec89f13b4ac9c16eb68fc83bd37480110aa19",
+            "actual_properties_sha256": "d2027c378c86bdcba6aeb568ccd284b5ed8419e2159c41daf6e6115af52906a7",
+            "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        },
+        {
+          "S": 3000000,
+          "method": "fixed",
+          "case_id": "development-83022-2",
+          "steps": 3000,
+          "completed": 0,
+          "error": "TimeoutError('Prescribed sequence deadline')",
+          "last500_mean": {
+            "drone_error_m": 0.22240570653055486,
+            "drone_speed_m_s": 0.00641674711335629,
+            "package_error_m": 0.2223604848595637,
+            "package_speed_m_s": 0.006750984860339268,
+            "swing_angle_deg": 0.37103527305566597,
+            "swing_rate_deg_s": 8.617000302271242,
+            "package_spin_deg_s": 76.74939458084953
+          },
+          "samples_sha256": "0e5b23d2e3810277ca48b5d1c1bb614e58ba0dc3103cf894cd8ccf2147a75244",
+          "native_proof": {
+            "native_raw_sha256": "4fa01e46544bfd2e04bc52998cc60024bad858f8c1e9c1f8f54c19a8f2258580",
+            "actual_properties_sha256": "ac10a4ed8ec73688914e67cea8a5f726b1cb5bb4740ee4b5cefd63b7524271b4",
+            "checkpoint_sha256": "e95101ba677461ea385843ca133cefdb2b9096ffc94725b31451e01359a98d8a",
+            "records": 3002,
+            "actor_outputs_reconstructed": true
+          },
+          "failure_verified": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "elevated-independent-source-review-v1",
+  "scope": "Joint freeze/formal single-pass/recovery/final media admission source boundaries; no remote or held-out experimental judgement",
+  "initial_findings": [
+    "formal campaign exposure had been scoped only to output",
+    "dangling RAM links could be omitted",
+    "final video admission did not bind all127 evidence",
+    "direct prerequisite receipt freshness"
+  ],
+  "fixed": [
+    "campaign-scoped exclusive physical claim before generation; no existing-trial mutation",
+    "missing roots/dangling links/traversal errors/nested declared case coverage rejected",
+    "all127 audit receipts and full input inventories verified before and after final capture",
+    "complete prerequisite input/source binding; exact controller values with separate serialized byte hashes"
+  ],
+  "final_targeted_tests": 9,
+  "remaining_concrete_blockers_in_reviewed_fixes": 0,
+  "experimental_acceptance": "SEPARATE",
+  "human_video_review": "PASSED_FRESH_CONTINUOUS1X_EXACT_HASH",
+  "post_freeze_supplement_review": {
+    "script": "verify-marker-bounds-v2.py",
+    "mathematics": "actual scene sqrt(3)r enclosure plus float conversion error",
+    "fixed": [
+      "full nonempty native frame count binding",
+      "development frozen input hashes",
+      "final video proof and input/source/freeze binding"
+    ],
+    "remaining_concrete_blockers": 0,
+    "scope": "source-only independent review; actual18-case execution separate"
+  }
+}

@@ -17,8 +17,11 @@ from .scenario import Scenario
 from .util import sha256, load_config
 
 
-def verify_case_scenario(scenario, case):
+def verify_case_scenario(scenario, case, *, elevated_binding=None):
     """Bind the complete mission configuration to the frozen physical case."""
+    if elevated_binding is not None:
+        from .elevated_binding import verify_binding_scenario
+        return verify_binding_scenario(scenario, case, elevated_binding)
     name = case["scenario"]
     if name not in {"normal", "emergency", "cost_shift"}:
         raise ValueError("Unknown frozen case scenario")
@@ -48,7 +51,7 @@ def _objective_fields(value):
     return value
 
 
-def verify_mission(output, planner, *, native=None, revision2=False):
+def verify_mission(output, planner, *, native=None, revision2=False, elevated_binding=None):
     """Derive routing commands/events and all100-interval stops from saved bodies."""
     root = Path(output)
     summary = json.loads((root / "mission_summary.json").read_text())
@@ -88,7 +91,12 @@ def verify_mission(output, planner, *, native=None, revision2=False):
     if physical:
         if native is None:
             raise ValueError("Actual native case/model binding required")
-        verify_case_scenario(scenario, native["case"])
+        verify_case_scenario(scenario, native["case"], elevated_binding=elevated_binding)
+        if elevated_binding is not None:
+            if (not revision2 or metadata.get("elevated_binding_sha256") != content_hash(elevated_binding)
+                or planner.hash != elevated_binding["routing_sha256"]
+                or metadata.get("routing_model_hash") != planner.hash):
+                raise ValueError("Elevated mission/profile/selected routing binding differs")
         if (payload['side_m'] != native['case']['side_m']
                 or payload['mass_ratio'] != native['case']['mass_ratio']
                 or metadata['case_id'] != native['case']['case_id']

@@ -1,0 +1,25 @@
+{
+  "schema": "elevated-recovery-summary-v1",
+  "remote_namespace_files": 59788,
+  "remote_namespace_bytes": 36851003632,
+  "remote_namespace_inventory_sha256": "c0a30302e065969f532d9cb8b31d2148177611820528e7986b664fcc0685463b",
+  "all_remote_sizes_and_sha256_verified": true,
+  "local_run": "outputs/suspended_mujoco_elevated_20261025T141122Z",
+  "formal": {
+    "files": 39104,
+    "bytes": 25899565860,
+    "all_verified": true
+  },
+  "local_derived_and_human_inventory": "outputs/suspended_mujoco_elevated_20261025T141122Z.delivery-inventory.json",
+  "local_delivery_inventory": {
+    "files": 60127,
+    "bytes": 36921663846,
+    "sha256": "992a42e7af89038546e7733301fc2a49fa47449613594bbf7879861169511515",
+    "all_remote_entries_identical": true,
+    "includes_local_derived_and_human_receipt": true,
+    "directory_symlinks": 0
+  },
+  "large_artifacts_in_git": false,
+  "transfer_retry_only": true,
+  "formal_case_retry_count": 0
+}

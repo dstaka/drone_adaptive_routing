@@ -1,0 +1,104 @@
+{
+  "schema": "elevated-joint-prerequisites-summary-v1",
+  "cases": 27,
+  "passed": 27,
+  "development": 15,
+  "vertical_cases": 12,
+  "vertical_distinct_transfers": 120,
+  "native_steps": 154633,
+  "rk_stages": 9896512,
+  "max_native_replay_error": 0.0,
+  "max_stage_replay_error": 0.0,
+  "maximum_work_residual_j": 2.105592584003073e-11,
+  "maximum_constraint_residual_m": 2.609024107869118e-15,
+  "minimum_clearances": {
+    "package": {
+      "case_id": "elevated-development-14",
+      "m": 0.6095703550222742,
+      "time_s": 0.15156249999999952,
+      "leg": "F",
+      "where": "RK_STAGE"
+    },
+    "drone": {
+      "case_id": "elevated-development-12",
+      "m": 0.9773328156245316,
+      "time_s": 0.2934374999999965,
+      "leg": "F",
+      "where": "RK_STAGE"
+    }
+  },
+  "maximum_held_reference_z_error_m": 0.03747669967116973,
+  "maximum_endpoint_envelope_z_overshoot_m": 0.0353560461647473,
+  "camera_cases": 15,
+  "camera_width_ratios": [
+    1.4150066398840178,
+    1.4150074501578513,
+    1.4150079920857228,
+    1.415006780818785,
+    1.4150068496765038,
+    1.4150076008515502,
+    1.4150076007106642,
+    1.415007876113946,
+    1.415007398447226,
+    1.4150069578156106,
+    1.4150067202605618,
+    1.4150074192848112,
+    1.4150072430169918,
+    1.4150083771738757,
+    1.4150078691005061
+  ],
+  "freeze_sha256": "f2fbe39ebf90d55507627d4a4d2d9178b1ef8800784cd08d5f6ecf7b4bc3e6f6",
+  "freeze_digest": "7e66add5b62826064d176d15d2d33af4bc3dff3a245a6fce8bcf3948864d8a56",
+  "independent_audits": {
+    "elevated-development-00.json": "ba490374e87c3ebd640fd15b62d82e2050fbe3cec1f0e94b919b70081ef65b1c",
+    "elevated-development-01.json": "8f12d821ddcd7983aba3cc5282cc200d3f94cd803165643aaa01ff234deec7df",
+    "elevated-development-02.json": "6a5496ae6830c5f3924dfc60b70d1c2d2acaf32c5679d9a9b5093e10de436b9d",
+    "elevated-development-03.json": "ff22b7e02b040dc70c111bcb66c2aec49146df2f7218bffb67fe145ece3b0361",
+    "elevated-development-04.json": "c6294514683a6362a3e1a440f7e6fb7b846fb18a1cd9eee2d8d6aebdf781c1ab",
+    "elevated-development-05.json": "6cf4805a553e6ff7c227f894a07319fe9b970b6f65088865111540db6c0ac036",
+    "elevated-development-06.json": "60c3207b70c61c9b64ed58d99c7604678d08372328f6d78033a3667abeac32a6",
+    "elevated-development-07.json": "6f0fc8dc882bf59c3bb6fb48f4fc2e8bc3c25d999c1a6d925f2983050ef8b00d",
+    "elevated-development-08.json": "9f8edd75c7ea8702e78cc5451a23e1652b11ccd1f7ef760f11603d582f078f49",
+    "elevated-development-09.json": "e1e9371ff092619e0736d89d6ebfc5f24f384f6530cd4916ed4a5738663e3e68",
+    "elevated-development-10.json": "14a92ac28999a0073e15e7659d0d04ece9233a88c84a6790353b2621fa939fc7",
+    "elevated-development-11.json": "b54d924118e808aaf42fc4dc2acecdf1997cd11cbb26389574627eb112c83e5a",
+    "elevated-development-12.json": "4a16743b4addcc894265688d3c5c2adb9e6e3458ad4c710b4d5ff9f915db36ae",
+    "elevated-development-13.json": "f5e45c4a56c8d88011d00db9d9a3e2297908782859ffecb5f62aa15dae8c7055",
+    "elevated-development-14.json": "7eb0bf2dbec81e1ebfdd26d50101ee803fde39ec46408b140db14da342cc994f",
+    "elevated-vertical-11-0.json": "72a298ed0fead87487a9c501741a9ca2df6bb5eaa23555b29856374488ff5ffb",
+    "elevated-vertical-11-1.json": "49bb3371622baa4ce8b58b963b7f41b48e53a65ed53391ff7220c6fc755750e6",
+    "elevated-vertical-11-2.json": "59d520dc6c4cdc435239c4d8809e16bf6ac34cf9a718b98194de404e46ee99ab",
+    "elevated-vertical-12-0.json": "fbde05ed77de886404d91f37bdfee18c09c6256d8e67dc0c27fb889cbb0e356d",
+    "elevated-vertical-12-1.json": "be81003b58dd9cdc34d98f9774b365d649d5870c80c357a9f4659a4aa72ffb7c",
+    "elevated-vertical-12-2.json": "948877545ed94546883b37cb28abd5772cfed26e0a4e02796579b9d589b30c59",
+    "elevated-vertical-13-0.json": "c9eabbecffff7b8627803d3b6f8235bdec11c7ce06ce096010de307544c605ec",
+    "elevated-vertical-13-1.json": "6d5654911299550860d134d7823e7c8a84f553adaaa6b0821a3f206449e7f0c8",
+    "elevated-vertical-13-2.json": "098a12a6431f778f5b7fe986059a3718eddf8408f896d668c6913f9ed99efef0",
+    "elevated-vertical-14-0.json": "7e368251fcc18481a83640f11ea3da30aa12cbbf9e21888650b3ba8ba656d07a",
+    "elevated-vertical-14-1.json": "52b6ea659e80f1143e306d04b01075e813cc7e144f05c3f87fefb6e42a03b1f0",
+    "elevated-vertical-14-2.json": "d2c7030d8866852237c72e15488894b18e0f49c74eda688f559075e92dcf5c99"
+  },
+  "camera_native_frames": 74701,
+  "camera_minimum_border_margins_px": {
+    "detail": [
+      83.9408557069402,
+      133.59290770036728,
+      84.16564282654906,
+      112.46407109975348
+    ],
+    "overview": [
+      236.40192196379923,
+      82.7533718718766,
+      288.6135613419374,
+      158.10593393081308
+    ],
+    "goals": [
+      244.5022293393348,
+      91.87689062428973,
+      299.29633225648956,
+      217.2787256661311
+    ]
+  },
+  "maximum_transient_swing_deg": 12.248971276493577,
+  "maximum_transient_box_spin_deg_s": 334.8344842696472
+}

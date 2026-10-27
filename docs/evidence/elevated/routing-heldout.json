@@ -1,0 +1,768 @@
+{
+  "schema": "elevated-routing-heldout-summary-v1",
+  "selected": "F43",
+  "absolute_heldout_gate": true,
+  "reselection": false,
+  "scores": {
+    "B": {
+      "complete": true,
+      "mean_cost": 355.5305422397736,
+      "static_mean_ratio": 1.064488752475846,
+      "static_worst_ratio": 1.2610566927085172,
+      "static_mean_cost": 350.4446988241563,
+      "greedy_static_mean": 384.99956120019453,
+      "fixed_static_mean": 584.6692783908934,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 350.4446988241563,
+          "p95_cost": 457.1978449226094,
+          "worst_cost": 524.3521942667039
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 377.9206320275778,
+          "p95_cost": 489.84428061206114,
+          "worst_cost": 557.8211735589543
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 338.22629586758654,
+          "p95_cost": 431.5061956376265,
+          "worst_cost": 487.7247315984313
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 20.852539597298524,
+      "p95_cost": 464.82493049360926,
+      "worst_cost": 557.8211735589543
+    },
+    "F42": {
+      "complete": true,
+      "mean_cost": 345.52186963625206,
+      "static_mean_ratio": 1.0320847686459886,
+      "static_worst_ratio": 1.1412093676304038,
+      "static_mean_cost": 340.3870492478998,
+      "greedy_static_mean": 384.99956120019453,
+      "fixed_static_mean": 584.6692783908934,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 340.3870492478998,
+          "p95_cost": 455.07239947907243,
+          "worst_cost": 522.5632908208411
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 368.94644888687924,
+          "p95_cost": 474.29703019924006,
+          "worst_cost": 509.7446679400465
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 327.2321107739772,
+          "p95_cost": 413.39195433146915,
+          "worst_cost": 467.9281275587074
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 10.79489002104202,
+      "p95_cost": 464.4966446648588,
+      "worst_cost": 522.5632908208411
+    },
+    "F43": {
+      "complete": true,
+      "mean_cost": 345.06133258034953,
+      "static_mean_ratio": 1.033253913012533,
+      "static_worst_ratio": 1.1724627265264946,
+      "static_mean_cost": 340.71114893816934,
+      "greedy_static_mean": 384.99956120019453,
+      "fixed_static_mean": 584.6692783908934,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 340.71114893816934,
+          "p95_cost": 454.89230800618907,
+          "worst_cost": 507.69280578719884
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 367.58372167417446,
+          "p95_cost": 485.7770974208986,
+          "worst_cost": 522.2981645534054
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 326.8891271287047,
+          "p95_cost": 415.7693238816293,
+          "worst_cost": 473.56502060144305
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 11.118989711311585,
+      "p95_cost": 457.75458131018036,
+      "worst_cost": 522.2981645534054
+    },
+    "F44": {
+      "complete": true,
+      "mean_cost": 345.58279872667026,
+      "static_mean_ratio": 1.0394352196169296,
+      "static_worst_ratio": 1.1731274570635297,
+      "static_mean_cost": 342.6848996629026,
+      "greedy_static_mean": 384.99956120019453,
+      "fixed_static_mean": 584.6692783908934,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 342.6848996629026,
+          "p95_cost": 449.9564738409748,
+          "worst_cost": 522.5632908208411
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 367.74274951176716,
+          "p95_cost": 480.4360733288771,
+          "worst_cost": 508.8845480753237
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 326.3207470053409,
+          "p95_cost": 413.63562484308085,
+          "worst_cost": 473.56502060144305
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 13.092740436044776,
+      "p95_cost": 455.47253721597343,
+      "worst_cost": 522.5632908208411
+    }
+  },
+  "input_manifest_sha256": "2780d6fd31e444c10f09e3be1c0e4c7f9c32aa30d1745d5a1551d1d138346fbf",
+  "exact_reference_sha256": "bf9dee9dd5446b5ed00ff5e7f390a93434f1bb0ef30b5471cc3c08a3eb3150dc",
+  "paired": {
+    "B": {
+      "all": {
+        "n": 300,
+        "mean_cost": 355.5305422397736,
+        "p95_cost": 464.82493049360926,
+        "worst_cost": 557.8211735589543,
+        "paired_mean_cost_minus_B": 0.0,
+        "paired_delta_p5_median_p95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 0,
+        "ties_vs_B": 300,
+        "route_applicable": 177,
+        "route_skipped": 23,
+        "beneficial": 42,
+        "harmful": 10,
+        "no_change": 125,
+        "first_decision_changes": 12,
+        "positive_dynamic_boundary_gaps": 343,
+        "maximum_dynamic_boundary_gap": 111.60508720792484,
+        "mean_weighted_travel_cost": 51.936831499799396,
+        "mean_weighted_completion_penalty": 303.59371073997414
+      },
+      "static": {
+        "n": 100,
+        "mean_cost": 350.4446988241563,
+        "p95_cost": 457.1978449226094,
+        "worst_cost": 524.3521942667039,
+        "paired_mean_cost_minus_B": 0.0,
+        "paired_delta_p5_median_p95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 0,
+        "ties_vs_B": 100,
+        "route_applicable": 0,
+        "route_skipped": 0,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 0,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 0,
+        "maximum_dynamic_boundary_gap": null,
+        "mean_weighted_travel_cost": 51.792568596388016,
+        "mean_weighted_completion_penalty": 298.6521302277683
+      },
+      "priority": {
+        "n": 100,
+        "mean_cost": 377.9206320275778,
+        "p95_cost": 489.84428061206114,
+        "worst_cost": 557.8211735589543,
+        "paired_mean_cost_minus_B": 0.0,
+        "paired_delta_p5_median_p95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 0,
+        "ties_vs_B": 100,
+        "route_applicable": 93,
+        "route_skipped": 7,
+        "beneficial": 41,
+        "harmful": 7,
+        "no_change": 45,
+        "first_decision_changes": 11,
+        "positive_dynamic_boundary_gaps": 168,
+        "maximum_dynamic_boundary_gap": 111.60508720792484,
+        "mean_weighted_travel_cost": 52.59107144087031,
+        "mean_weighted_completion_penalty": 325.3295605867075
+      },
+      "cost": {
+        "n": 100,
+        "mean_cost": 338.22629586758654,
+        "p95_cost": 431.5061956376265,
+        "worst_cost": 487.7247315984313,
+        "paired_mean_cost_minus_B": 0.0,
+        "paired_delta_p5_median_p95": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 0,
+        "ties_vs_B": 100,
+        "route_applicable": 84,
+        "route_skipped": 16,
+        "beneficial": 1,
+        "harmful": 3,
+        "no_change": 80,
+        "first_decision_changes": 1,
+        "positive_dynamic_boundary_gaps": 175,
+        "maximum_dynamic_boundary_gap": 79.02464283887679,
+        "mean_weighted_travel_cost": 51.42685446213987,
+        "mean_weighted_completion_penalty": 286.7994414054466
+      }
+    },
+    "F42": {
+      "all": {
+        "n": 300,
+        "mean_cost": 345.52186963625206,
+        "p95_cost": 464.4966446648588,
+        "worst_cost": 522.5632908208411,
+        "paired_mean_cost_minus_B": -10.00867260352145,
+        "paired_delta_p5_median_p95": [
+          -54.952378025740934,
+          -5.308119066717325,
+          20.95463381363891
+        ],
+        "wins_vs_B": 178,
+        "losses_vs_B": 94,
+        "ties_vs_B": 28,
+        "route_applicable": 176,
+        "route_skipped": 24,
+        "beneficial": 46,
+        "harmful": 17,
+        "no_change": 113,
+        "first_decision_changes": 17,
+        "positive_dynamic_boundary_gaps": 315,
+        "maximum_dynamic_boundary_gap": 48.26271679790909,
+        "mean_weighted_travel_cost": 59.03391530321187,
+        "mean_weighted_completion_penalty": 286.4879543330402
+      },
+      "static": {
+        "n": 100,
+        "mean_cost": 340.3870492478998,
+        "p95_cost": 455.07239947907243,
+        "worst_cost": 522.5632908208411,
+        "paired_mean_cost_minus_B": -10.057649576256505,
+        "paired_delta_p5_median_p95": [
+          -54.21240019946812,
+          -4.32835256089561,
+          19.756792016950563
+        ],
+        "wins_vs_B": 62,
+        "losses_vs_B": 27,
+        "ties_vs_B": 11,
+        "route_applicable": 0,
+        "route_skipped": 0,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 0,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 0,
+        "maximum_dynamic_boundary_gap": null,
+        "mean_weighted_travel_cost": 58.844594688984316,
+        "mean_weighted_completion_penalty": 281.54245455891555
+      },
+      "priority": {
+        "n": 100,
+        "mean_cost": 368.94644888687924,
+        "p95_cost": 474.29703019924006,
+        "worst_cost": 509.7446679400465,
+        "paired_mean_cost_minus_B": -8.974183140698543,
+        "paired_delta_p5_median_p95": [
+          -60.497799032486135,
+          -4.236203212890786,
+          23.769624214958377
+        ],
+        "wins_vs_B": 56,
+        "losses_vs_B": 39,
+        "ties_vs_B": 5,
+        "route_applicable": 93,
+        "route_skipped": 7,
+        "beneficial": 41,
+        "harmful": 17,
+        "no_change": 35,
+        "first_decision_changes": 17,
+        "positive_dynamic_boundary_gaps": 163,
+        "maximum_dynamic_boundary_gap": 48.26271679790909,
+        "mean_weighted_travel_cost": 60.47371973784243,
+        "mean_weighted_completion_penalty": 308.47272914903675
+      },
+      "cost": {
+        "n": 100,
+        "mean_cost": 327.2321107739772,
+        "p95_cost": 413.39195433146915,
+        "worst_cost": 467.9281275587074,
+        "paired_mean_cost_minus_B": -10.994185093609305,
+        "paired_delta_p5_median_p95": [
+          -49.89040847369585,
+          -8.09918412283568,
+          16.095979775075282
+        ],
+        "wins_vs_B": 60,
+        "losses_vs_B": 28,
+        "ties_vs_B": 12,
+        "route_applicable": 83,
+        "route_skipped": 17,
+        "beneficial": 5,
+        "harmful": 0,
+        "no_change": 78,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 152,
+        "maximum_dynamic_boundary_gap": 38.74871906537413,
+        "mean_weighted_travel_cost": 57.78343148280889,
+        "mean_weighted_completion_penalty": 269.4486792911683
+      }
+    },
+    "F43": {
+      "all": {
+        "n": 300,
+        "mean_cost": 345.06133258034953,
+        "p95_cost": 457.75458131018036,
+        "worst_cost": 522.2981645534054,
+        "paired_mean_cost_minus_B": -10.469209659424017,
+        "paired_delta_p5_median_p95": [
+          -53.87866943510832,
+          -3.2491873022378286,
+          13.394912476198808
+        ],
+        "wins_vs_B": 170,
+        "losses_vs_B": 71,
+        "ties_vs_B": 59,
+        "route_applicable": 175,
+        "route_skipped": 25,
+        "beneficial": 37,
+        "harmful": 19,
+        "no_change": 119,
+        "first_decision_changes": 20,
+        "positive_dynamic_boundary_gaps": 310,
+        "maximum_dynamic_boundary_gap": 80.56428255323851,
+        "mean_weighted_travel_cost": 56.468371624756266,
+        "mean_weighted_completion_penalty": 288.59296095559324
+      },
+      "static": {
+        "n": 100,
+        "mean_cost": 340.71114893816934,
+        "p95_cost": 454.89230800618907,
+        "worst_cost": 507.69280578719884,
+        "paired_mean_cost_minus_B": -9.733549885986934,
+        "paired_delta_p5_median_p95": [
+          -52.72552866018599,
+          -3.2491873022378286,
+          12.444579138163302
+        ],
+        "wins_vs_B": 59,
+        "losses_vs_B": 26,
+        "ties_vs_B": 15,
+        "route_applicable": 0,
+        "route_skipped": 0,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 0,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 0,
+        "maximum_dynamic_boundary_gap": null,
+        "mean_weighted_travel_cost": 56.77747932813983,
+        "mean_weighted_completion_penalty": 283.9336696100296
+      },
+      "priority": {
+        "n": 100,
+        "mean_cost": 367.58372167417446,
+        "p95_cost": 485.7770974208986,
+        "worst_cost": 522.2981645534054,
+        "paired_mean_cost_minus_B": -10.336910353403288,
+        "paired_delta_p5_median_p95": [
+          -54.586318704642075,
+          -2.9458849240724874,
+          18.550207843705667
+        ],
+        "wins_vs_B": 53,
+        "losses_vs_B": 28,
+        "ties_vs_B": 19,
+        "route_applicable": 91,
+        "route_skipped": 9,
+        "beneficial": 34,
+        "harmful": 18,
+        "no_change": 39,
+        "first_decision_changes": 20,
+        "positive_dynamic_boundary_gaps": 153,
+        "maximum_dynamic_boundary_gap": 80.56428255323851,
+        "mean_weighted_travel_cost": 57.244172285872466,
+        "mean_weighted_completion_penalty": 310.339549388302
+      },
+      "cost": {
+        "n": 100,
+        "mean_cost": 326.8891271287047,
+        "p95_cost": 415.7693238816293,
+        "worst_cost": 473.56502060144305,
+        "paired_mean_cost_minus_B": -11.337168738881825,
+        "paired_delta_p5_median_p95": [
+          -49.89040847369585,
+          -5.416541753944216,
+          10.278444584652698
+        ],
+        "wins_vs_B": 58,
+        "losses_vs_B": 17,
+        "ties_vs_B": 25,
+        "route_applicable": 84,
+        "route_skipped": 16,
+        "beneficial": 3,
+        "harmful": 1,
+        "no_change": 80,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 157,
+        "maximum_dynamic_boundary_gap": 43.477820105067394,
+        "mean_weighted_travel_cost": 55.38346326025649,
+        "mean_weighted_completion_penalty": 271.5056638684481
+      }
+    },
+    "F44": {
+      "all": {
+        "n": 300,
+        "mean_cost": 345.58279872667026,
+        "p95_cost": 455.47253721597343,
+        "worst_cost": 522.5632908208411,
+        "paired_mean_cost_minus_B": -9.947743513103305,
+        "paired_delta_p5_median_p95": [
+          -54.586318704642075,
+          -2.8860475773356598,
+          16.44844863835487
+        ],
+        "wins_vs_B": 164,
+        "losses_vs_B": 79,
+        "ties_vs_B": 57,
+        "route_applicable": 174,
+        "route_skipped": 26,
+        "beneficial": 39,
+        "harmful": 17,
+        "no_change": 118,
+        "first_decision_changes": 19,
+        "positive_dynamic_boundary_gaps": 316,
+        "maximum_dynamic_boundary_gap": 112.03523732693486,
+        "mean_weighted_travel_cost": 56.610562851501136,
+        "mean_weighted_completion_penalty": 288.9722358751691
+      },
+      "static": {
+        "n": 100,
+        "mean_cost": 342.6848996629026,
+        "p95_cost": 449.9564738409748,
+        "worst_cost": 522.5632908208411,
+        "paired_mean_cost_minus_B": -7.75979916125375,
+        "paired_delta_p5_median_p95": [
+          -52.72552866018599,
+          -0.15951376606437861,
+          21.21456485804621
+        ],
+        "wins_vs_B": 51,
+        "losses_vs_B": 27,
+        "ties_vs_B": 22,
+        "route_applicable": 0,
+        "route_skipped": 0,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 0,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 0,
+        "maximum_dynamic_boundary_gap": null,
+        "mean_weighted_travel_cost": 56.73293555448586,
+        "mean_weighted_completion_penalty": 285.9519641084167
+      },
+      "priority": {
+        "n": 100,
+        "mean_cost": 367.74274951176716,
+        "p95_cost": 480.4360733288771,
+        "worst_cost": 508.8845480753237,
+        "paired_mean_cost_minus_B": -10.177882515810554,
+        "paired_delta_p5_median_p95": [
+          -57.84048864432049,
+          -1.4518534753823786,
+          22.968136600352942
+        ],
+        "wins_vs_B": 52,
+        "losses_vs_B": 33,
+        "ties_vs_B": 15,
+        "route_applicable": 91,
+        "route_skipped": 9,
+        "beneficial": 37,
+        "harmful": 17,
+        "no_change": 37,
+        "first_decision_changes": 19,
+        "positive_dynamic_boundary_gaps": 154,
+        "maximum_dynamic_boundary_gap": 112.03523732693486,
+        "mean_weighted_travel_cost": 57.78781222012839,
+        "mean_weighted_completion_penalty": 309.9549372916388
+      },
+      "cost": {
+        "n": 100,
+        "mean_cost": 326.3207470053409,
+        "p95_cost": 413.63562484308085,
+        "worst_cost": 473.56502060144305,
+        "paired_mean_cost_minus_B": -11.905548862245611,
+        "paired_delta_p5_median_p95": [
+          -53.25421962396823,
+          -7.401211569147364,
+          10.33322486290253
+        ],
+        "wins_vs_B": 61,
+        "losses_vs_B": 19,
+        "ties_vs_B": 20,
+        "route_applicable": 83,
+        "route_skipped": 17,
+        "beneficial": 2,
+        "harmful": 0,
+        "no_change": 81,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 162,
+        "maximum_dynamic_boundary_gap": 36.89049045204479,
+        "mean_weighted_travel_cost": 55.31094077988915,
+        "mean_weighted_completion_penalty": 271.0098062254517
+      }
+    },
+    "greedy": {
+      "all": {
+        "n": 300,
+        "mean_cost": 385.67673344812147,
+        "p95_cost": 509.6596803944549,
+        "worst_cost": 623.3474983131673,
+        "paired_mean_cost_minus_B": 30.146191208347936,
+        "paired_delta_p5_median_p95": [
+          -24.90717680093339,
+          27.072952752235125,
+          94.32500513328031
+        ],
+        "wins_vs_B": 54,
+        "losses_vs_B": 244,
+        "ties_vs_B": 2,
+        "route_applicable": 177,
+        "route_skipped": 23,
+        "beneficial": 51,
+        "harmful": 20,
+        "no_change": 106,
+        "first_decision_changes": 23,
+        "positive_dynamic_boundary_gaps": 383,
+        "maximum_dynamic_boundary_gap": 134.8356048180181,
+        "mean_weighted_travel_cost": 59.95869534497591,
+        "mean_weighted_completion_penalty": 325.71803810314555
+      },
+      "static": {
+        "n": 100,
+        "mean_cost": 384.99956120019453,
+        "p95_cost": 501.6817290230809,
+        "worst_cost": 555.0853469139201,
+        "paired_mean_cost_minus_B": 34.55486237603816,
+        "paired_delta_p5_median_p95": [
+          -16.376393596375507,
+          33.58231136803951,
+          88.03178559777504
+        ],
+        "wins_vs_B": 11,
+        "losses_vs_B": 89,
+        "ties_vs_B": 0,
+        "route_applicable": 0,
+        "route_skipped": 0,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 0,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 0,
+        "maximum_dynamic_boundary_gap": null,
+        "mean_weighted_travel_cost": 60.73645353595286,
+        "mean_weighted_completion_penalty": 324.26310766424166
+      },
+      "priority": {
+        "n": 100,
+        "mean_cost": 408.557297419623,
+        "p95_cost": 542.5301946288126,
+        "worst_cost": 623.3474983131673,
+        "paired_mean_cost_minus_B": 30.636665392045185,
+        "paired_delta_p5_median_p95": [
+          -38.93846754106398,
+          28.725343630296692,
+          104.76891997344217
+        ],
+        "wins_vs_B": 19,
+        "losses_vs_B": 80,
+        "ties_vs_B": 1,
+        "route_applicable": 93,
+        "route_skipped": 7,
+        "beneficial": 48,
+        "harmful": 15,
+        "no_change": 30,
+        "first_decision_changes": 21,
+        "positive_dynamic_boundary_gaps": 191,
+        "maximum_dynamic_boundary_gap": 134.8356048180181,
+        "mean_weighted_travel_cost": 61.92840503821237,
+        "mean_weighted_completion_penalty": 346.62889238141054
+      },
+      "cost": {
+        "n": 100,
+        "mean_cost": 363.4733417245469,
+        "p95_cost": 469.05569069781046,
+        "worst_cost": 527.1208118946613,
+        "paired_mean_cost_minus_B": 25.247045856960458,
+        "paired_delta_p5_median_p95": [
+          -24.907176800933392,
+          16.972079858613114,
+          98.68500002986754
+        ],
+        "wins_vs_B": 24,
+        "losses_vs_B": 75,
+        "ties_vs_B": 1,
+        "route_applicable": 84,
+        "route_skipped": 16,
+        "beneficial": 3,
+        "harmful": 5,
+        "no_change": 76,
+        "first_decision_changes": 2,
+        "positive_dynamic_boundary_gaps": 192,
+        "maximum_dynamic_boundary_gap": 118.15130920397462,
+        "mean_weighted_travel_cost": 57.2112274607625,
+        "mean_weighted_completion_penalty": 306.26211426378444
+      }
+    },
+    "fixed": {
+      "all": {
+        "n": 300,
+        "mean_cost": 602.1554883795429,
+        "p95_cost": 818.1269978438911,
+        "worst_cost": 988.1057797373516,
+        "paired_mean_cost_minus_B": 246.6249461397694,
+        "paired_delta_p5_median_p95": [
+          103.71043758574808,
+          240.30665546622308,
+          409.2684125881038
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 300,
+        "ties_vs_B": 0,
+        "route_applicable": 173,
+        "route_skipped": 27,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 173,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 400,
+        "maximum_dynamic_boundary_gap": 517.4500437770073,
+        "mean_weighted_travel_cost": 94.36802032422258,
+        "mean_weighted_completion_penalty": 507.7874680553204
+      },
+      "static": {
+        "n": 100,
+        "mean_cost": 584.6692783908934,
+        "p95_cost": 778.1218850359363,
+        "worst_cost": 853.6038054554136,
+        "paired_mean_cost_minus_B": 234.22457956673708,
+        "paired_delta_p5_median_p95": [
+          102.86156497020306,
+          235.3517359320937,
+          381.8395170218482
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 100,
+        "ties_vs_B": 0,
+        "route_applicable": 0,
+        "route_skipped": 0,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 0,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 0,
+        "maximum_dynamic_boundary_gap": null,
+        "mean_weighted_travel_cost": 94.78768805688185,
+        "mean_weighted_completion_penalty": 489.88159033401155
+      },
+      "priority": {
+        "n": 100,
+        "mean_cost": 634.9135702492098,
+        "p95_cost": 842.3002579352235,
+        "worst_cost": 988.1057797373516,
+        "paired_mean_cost_minus_B": 256.99293822163196,
+        "paired_delta_p5_median_p95": [
+          110.37194585850347,
+          248.97330005532604,
+          424.5730637615139
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 100,
+        "ties_vs_B": 0,
+        "route_applicable": 88,
+        "route_skipped": 12,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 88,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 200,
+        "maximum_dynamic_boundary_gap": 517.4500437770073,
+        "mean_weighted_travel_cost": 94.05437991117896,
+        "mean_weighted_completion_penalty": 540.8591903380309
+      },
+      "cost": {
+        "n": 100,
+        "mean_cost": 586.8836164985255,
+        "p95_cost": 807.1441300948546,
+        "worst_cost": 950.7707040582379,
+        "paired_mean_cost_minus_B": 248.6573206309391,
+        "paired_delta_p5_median_p95": [
+          105.81812763672316,
+          240.6468628931806,
+          403.76487080961067
+        ],
+        "wins_vs_B": 0,
+        "losses_vs_B": 100,
+        "ties_vs_B": 0,
+        "route_applicable": 85,
+        "route_skipped": 15,
+        "beneficial": 0,
+        "harmful": 0,
+        "no_change": 85,
+        "first_decision_changes": 0,
+        "positive_dynamic_boundary_gaps": 200,
+        "maximum_dynamic_boundary_gap": 511.39662838101907,
+        "mean_weighted_travel_cost": 94.26199300460695,
+        "mean_weighted_completion_penalty": 492.6216234939186
+      }
+    }
+  }
+}

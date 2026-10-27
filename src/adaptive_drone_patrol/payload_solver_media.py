@@ -105,6 +105,9 @@ class NativeRenderer:
             raise ValueError("CPU-only preview received a hardware context")
         self.closed = False
 
+    def goal_label(self, index, goal, priority, style):
+        return f"{style['symbol']} {chr(65 + index)} {priority}"
+
     def close(self):
         for renderer in getattr(self, "renderers", {}).values():
             renderer.close()
@@ -157,7 +160,7 @@ class NativeRenderer:
                     np.eye(3).ravel(),
                     color,
                 )
-                geom.label = f"{style['symbol']} {label} {priority}"
+                geom.label = self.goal_label(index, goal, priority, style)
                 scene.ngeom += 1
             views.append(renderer.render().copy())
         result = np.concatenate(views, axis=1)

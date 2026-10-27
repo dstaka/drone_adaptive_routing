@@ -1,0 +1,19 @@
+{
+  "schema": "elevated-tests-v1",
+  "baseline": {
+    "passed": 1189,
+    "skipped": 20,
+    "deselected": 1
+  },
+  "frozen_source_v6": {
+    "passed": 1226,
+    "skipped": 20,
+    "deselected": 1,
+    "elapsed_s": 282.28,
+    "exit_code": 0
+  },
+  "focused": {
+    "passed": 37
+  },
+  "log": "outputs/suspended_mujoco_elevated_20261025T141122Z/cpu-regression-source-v6.log"
+}

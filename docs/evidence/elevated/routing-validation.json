@@ -1,0 +1,206 @@
+{
+  "selected": "F43",
+  "eligible": {
+    "B": true,
+    "F42": true,
+    "F43": true,
+    "F44": true
+  },
+  "rejections": {
+    "B": [],
+    "F42": [],
+    "F43": [],
+    "F44": []
+  },
+  "scores": {
+    "B": {
+      "complete": true,
+      "mean_cost": 357.0412433883965,
+      "static_mean_ratio": 1.0738098283138724,
+      "static_worst_ratio": 1.3015405684299892,
+      "static_mean_cost": 358.7871088065097,
+      "greedy_static_mean": 384.34509478796053,
+      "fixed_static_mean": 606.5537282326944,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 358.7871088065097,
+          "p95_cost": 459.55368075140854,
+          "worst_cost": 582.3895932688572
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 362.48572868675103,
+          "p95_cost": 463.14142755809354,
+          "worst_cost": 542.8718098253779
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 349.85089267192865,
+          "p95_cost": 453.780233912146,
+          "worst_cost": 543.1382425863897
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 24.26168045203548,
+      "p95_cost": 459.28766216516493,
+      "worst_cost": 582.3895932688572
+    },
+    "F42": {
+      "complete": true,
+      "mean_cost": 345.8849681749143,
+      "static_mean_ratio": 1.0388169452044047,
+      "static_worst_ratio": 1.1472730966861548,
+      "static_mean_cost": 347.4584689727783,
+      "greedy_static_mean": 384.34509478796053,
+      "fixed_static_mean": 606.5537282326944,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 347.4584689727783,
+          "p95_cost": 452.17691237704224,
+          "worst_cost": 550.6369963446182
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 350.48145242125275,
+          "p95_cost": 443.7616638205078,
+          "worst_cost": 579.663999411548
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 339.7149831307121,
+          "p95_cost": 448.2573906149395,
+          "worst_cost": 527.040809579029
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 12.933040618304064,
+      "p95_cost": 451.3163062557504,
+      "worst_cost": 579.663999411548
+    },
+    "F43": {
+      "complete": true,
+      "mean_cost": 344.40687442728154,
+      "static_mean_ratio": 1.0310465922507717,
+      "static_worst_ratio": 1.1176970661174295,
+      "static_mean_cost": 344.54519598795173,
+      "greedy_static_mean": 384.34509478796053,
+      "fixed_static_mean": 606.5537282326944,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 344.54519598795173,
+          "p95_cost": 453.60383430064473,
+          "worst_cost": 516.5727853232157
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 350.0451203130006,
+          "p95_cost": 444.5162520563755,
+          "worst_cost": 522.8342797514873
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 338.6303069808923,
+          "p95_cost": 447.0197326217939,
+          "worst_cost": 516.9682694826126
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 10.01976763347756,
+      "p95_cost": 451.32667087390695,
+      "worst_cost": 522.8342797514873
+    },
+    "F44": {
+      "complete": true,
+      "mean_cost": 345.9146776563522,
+      "static_mean_ratio": 1.03516851564067,
+      "static_worst_ratio": 1.2087142323298325,
+      "static_mean_cost": 346.00160184359,
+      "greedy_static_mean": 384.34509478796053,
+      "fixed_static_mean": 606.5537282326944,
+      "strata": {
+        "static": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 346.00160184359,
+          "p95_cost": 453.458442047311,
+          "worst_cost": 516.5727853232157
+        },
+        "priority": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 351.70398954555344,
+          "p95_cost": 446.1074552548648,
+          "worst_cost": 527.5753019222255
+        },
+        "cost": {
+          "cases": 100,
+          "complete": true,
+          "mean_cost": 340.0384415799133,
+          "p95_cost": 446.92287058400973,
+          "worst_cost": 516.9682694826126
+        }
+      },
+      "invalid_actions": 0,
+      "mean_static_gap": 11.47617348911581,
+      "p95_cost": 450.0455427397948,
+      "worst_cost": 527.5753019222255
+    }
+  },
+  "schema": "elevated-routing-validation-summary-v1",
+  "status": "VALIDATION_ONLY_HELDOUT_PENDING",
+  "models": {
+    "B": {
+      "sha256": "a28ac49e696c7439b69ce90979be5a919df489e00a12f077c100cb735b1debef"
+    },
+    "F42": {
+      "sha256": "5d9eb3438f4c881c3c5e5108c13f508bdcec0401f742f021020a410227596cf7"
+    },
+    "F43": {
+      "sha256": "ee966a2f761b513074c6df2e7de177b3d7bc76ac9d5ec3602d273e5210e84652"
+    },
+    "F44": {
+      "sha256": "3629793061ca4e8dda9bcc378f45453ac2e5ee0d9f25e4318ab38c578e087919"
+    }
+  },
+  "terminal_training": {
+    "F42": {
+      "static_requested": 50000,
+      "mixture_requested": 50000,
+      "static_actual": 50176,
+      "mixture_actual": 50176,
+      "total_actual": 100352,
+      "terminal_only": true,
+      "checkpoint_sha256": "5d9eb3438f4c881c3c5e5108c13f508bdcec0401f742f021020a410227596cf7"
+    },
+    "F43": {
+      "static_requested": 50000,
+      "mixture_requested": 50000,
+      "static_actual": 50176,
+      "mixture_actual": 50176,
+      "total_actual": 100352,
+      "terminal_only": true,
+      "checkpoint_sha256": "ee966a2f761b513074c6df2e7de177b3d7bc76ac9d5ec3602d273e5210e84652"
+    },
+    "F44": {
+      "static_requested": 50000,
+      "mixture_requested": 50000,
+      "static_actual": 50176,
+      "mixture_actual": 50176,
+      "total_actual": 100352,
+      "terminal_only": true,
+      "checkpoint_sha256": "3629793061ca4e8dda9bcc378f45453ac2e5ee0d9f25e4318ab38c578e087919"
+    }
+  }
+}

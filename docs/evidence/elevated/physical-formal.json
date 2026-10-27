@@ -1,0 +1,112 @@
+{
+  "schema": "elevated-physical127-measured-summary-v1",
+  "source_sha256": "b102d60ad5716658220141963887c669c6026697c68bfc79ef57f641936b8a5a",
+  "independent_statistics_sha256": "5d5563a06b1b7384159f66dbf97d1900954e5905385dba3ac4c33e25101c29c1",
+  "numerical": {
+    "native_steps": 627317,
+    "rk_stages": 40148288,
+    "maximum_native_replay_error": 0.0,
+    "maximum_stage_replay_error": 0.0,
+    "maximum_signed_work_residual_j": 1.9481891210419968e-11,
+    "maximum_constraint_residual_m": 2.7755575615628914e-15,
+    "minimum_clearances": {
+      "package": {
+        "case_id": "endpoint-emergency-2-1",
+        "m": 0.6087602254392372,
+        "time_s": 0.14968749999999956,
+        "leg": "F",
+        "where": "RK_STAGE"
+      },
+      "drone": {
+        "case_id": "endpoint-cost_shift-1-1",
+        "m": 0.9771170210847148,
+        "time_s": 0.29281249999999653,
+        "leg": "F",
+        "where": "RK_STAGE"
+      }
+    },
+    "maximum_swing_deg": 12.282441688618746,
+    "maximum_transient_box_spin_deg_s": 338.4763971132624,
+    "maximum_endpoint_envelope_z_overshoot_m": 0.035356863295704866,
+    "maximum_held_reference_z_error_m": 0.03748902124863385
+  },
+  "simulation_s": {
+    "minimum": 45.1,
+    "median": 49.96,
+    "maximum": 57.11
+  },
+  "maximum_wall_flush_s": 167.0187428854406,
+  "planning_coordinate_gaps": {
+    "boundaries": 1270,
+    "positive": 385,
+    "minimum": 0.0,
+    "maximum": 13.858428553482497
+  },
+  "measured_pose_gaps": {
+    "boundaries": 1270,
+    "positive": 385,
+    "minimum": 0.0,
+    "maximum": 14.269182748966955
+  },
+  "strict_shadow": {
+    "reconstructed_stops": 1270,
+    "passed": 0,
+    "scope": "Same actual video-first event trace; no counterfactual strict mission"
+  },
+  "groups": {
+    "basic": {
+      "successes": 9,
+      "total": 9,
+      "wilson95": [
+        0.7008549515804559,
+        1.0
+      ]
+    },
+    "endpoints": {
+      "successes": 18,
+      "total": 18,
+      "wilson95": [
+        0.8241207763533425,
+        1.0
+      ]
+    },
+    "heldout": {
+      "successes": 100,
+      "total": 100,
+      "wilson95": [
+        0.9630065017930143,
+        1.0
+      ]
+    }
+  },
+  "per_scenario": {
+    "normal": {
+      "successes": 43,
+      "total": 43,
+      "wilson95": [
+        0.9179901967742088,
+        1.0
+      ]
+    },
+    "emergency": {
+      "successes": 42,
+      "total": 42,
+      "wilson95": [
+        0.916201209134296,
+        0.9999999999999999
+      ]
+    },
+    "cost_shift": {
+      "successes": 42,
+      "total": 42,
+      "wilson95": [
+        0.916201209134296,
+        0.9999999999999999
+      ]
+    }
+  },
+  "passed": true,
+  "failures": [],
+  "routing_cases_in_denominator": 0,
+  "root": 10262501
+}

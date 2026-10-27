@@ -1,0 +1,397 @@
+{
+  "schema": "elevated-final-media-summary-v1",
+  "recordings": {
+    "normal": {
+      "schema": "elevated-final-media-v1",
+      "new_physical_success_count": 0,
+      "binding": {
+        "schema": "payload-elevated-binding-v1",
+        "profile": "payload-elevated-z-v1",
+        "layout_sha256": "295b298964fcd176b150783f1c61fe12402df5c2f1b443a2ba4b8c7a31726af5",
+        "scenarios": {
+          "normal": {
+            "baseline_sha256": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa",
+            "sha256": "6f0ae9e537b712a700eede68a213e3026d111931dff4316b8dd858b7162673a8"
+          },
+          "emergency": {
+            "baseline_sha256": "7f0629c872837ebf3f53afdd572d07e89832a8c13afd74325d89d3af28889c5d",
+            "sha256": "87e3aefc48e1ac5c7958325ac24df3c601f6832f8102f0bb93b372d6ddfba05b"
+          },
+          "cost_shift": {
+            "baseline_sha256": "3a408c294b308def450a953e763f9ecca1c50782a0feca0439826a28391128ff",
+            "sha256": "99b089e8588ee949dc272cdf90adf141ae14eca0eacf3441c8b51ab5111f31e6"
+          }
+        },
+        "camera_path": "configs/payload_mujoco_elevated_camera.json",
+        "camera_sha256": "41c65a06e25bf20619c2585ed6f99fe3acdf809cfd01ada6d75bd0aa3c8ff4a7",
+        "routing_path": "outputs/suspended_mujoco_elevated_20261025T141122Z/F43/terminal.zip",
+        "routing_sha256": "ee966a2f761b513074c6df2e7de177b3d7bc76ac9d5ec3602d273e5210e84652",
+        "routing_schema_sha256": "615987386a15eff6b47500e0b351c3f75d0d335c4177065a800599c2a8cec854",
+        "routing_model_name": "F43",
+        "selection_path": "outputs/suspended_mujoco_elevated_20261025T141122Z/routing-validation/selection.json",
+        "selection_sha256": "c227c80ac26f8bc9d435246e0d0420d26a4872d49e98b21ebaacded4b084f429",
+        "provisional": false,
+        "controller": "C-local-lqr-v1",
+        "flight_nn": "NOT_USED"
+      },
+      "framing": {
+        "frames": 4528,
+        "median_width_ratio": 1.4150068759557624,
+        "assembly_width_px": [
+          286.45913572013376,
+          288.2750753058165,
+          291.5428662286184,
+          294.7435860859619,
+          297.21562388312884
+        ],
+        "assembly_height_px": [
+          405.52257194966165,
+          412.93800322922004,
+          424.97742879601526,
+          434.50683519377293,
+          441.64417671232013
+        ],
+        "minimum_margins_px": [
+          91.87116684133474,
+          133.5948375065225,
+          91.4332353164873,
+          144.61150843530572
+        ],
+        "travel": {
+          "frames": 3422,
+          "median_width_ratio": 1.4150079866527245,
+          "assembly_width_px": [
+            286.45913572013376,
+            288.1060526087298,
+            291.537244959399,
+            295.13732478230145,
+            297.21562388312884
+          ],
+          "assembly_height_px": [
+            405.52257194966165,
+            412.10973368570535,
+            424.965847037918,
+            435.90104960270565,
+            441.64417671232013
+          ],
+          "minimum_margins_px": [
+            91.87116684133474,
+            133.5948375065225,
+            91.4332353164873,
+            144.61150843530572
+          ]
+        },
+        "settling": {
+          "frames": 1106,
+          "median_width_ratio": 1.4150061486516825,
+          "assembly_width_px": [
+            288.79143095191694,
+            289.62380323725245,
+            291.5792858348605,
+            293.78499218179127,
+            295.2792491191406
+          ],
+          "assembly_height_px": [
+            415.3041095761862,
+            418.1688842821077,
+            425.10009290336535,
+            432.04419617307434,
+            436.3516118346173
+          ],
+          "minimum_margins_px": [
+            99.34012146041508,
+            133.60693940896056,
+            97.89199395278297,
+            149.9180208802543
+          ]
+        }
+      },
+      "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+      "whole_recording_recomposed": true,
+      "human_review": "PENDING_FRESH_CONTINUOUS1X",
+      "freeze_sha256": "f2fbe39ebf90d55507627d4a4d2d9178b1ef8800784cd08d5f6ecf7b4bc3e6f6",
+      "formal_independent_statistics_sha256": "5d5563a06b1b7384159f66dbf97d1900954e5905385dba3ac4c33e25101c29c1",
+      "videos": {
+        "raw.mkv": {
+          "bytes": 162315912,
+          "sha256": "25fe7d77dc9b2e06d17aecc3bbd345be0e5e1d2a1c2a30ced933671cce4e2df8"
+        },
+        "hud.mkv": {
+          "bytes": 809836400,
+          "sha256": "767f28d4f1899fe3c8d2cc217dfa333077d359d72e5ba1be7597cdf6b63f3484"
+        },
+        "raw.mp4": {
+          "bytes": 8555756,
+          "sha256": "15dbf239d05e088e6e382de8444a251e02390a90429ea549dc90f4603a930c1c"
+        },
+        "hud.mp4": {
+          "bytes": 13617251,
+          "sha256": "115f3a34b5959dd3704a1906fec9bfd1c4194338f5b6b6125dc223168bd7273f"
+        }
+      },
+      "video_proof_sha256": "8c2bf1e676ae8e7d47ad652ab5fe65b2703e2755464f843e0615bfe21c5e3696"
+    },
+    "emergency": {
+      "schema": "elevated-final-media-v1",
+      "new_physical_success_count": 0,
+      "binding": {
+        "schema": "payload-elevated-binding-v1",
+        "profile": "payload-elevated-z-v1",
+        "layout_sha256": "295b298964fcd176b150783f1c61fe12402df5c2f1b443a2ba4b8c7a31726af5",
+        "scenarios": {
+          "normal": {
+            "baseline_sha256": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa",
+            "sha256": "6f0ae9e537b712a700eede68a213e3026d111931dff4316b8dd858b7162673a8"
+          },
+          "emergency": {
+            "baseline_sha256": "7f0629c872837ebf3f53afdd572d07e89832a8c13afd74325d89d3af28889c5d",
+            "sha256": "87e3aefc48e1ac5c7958325ac24df3c601f6832f8102f0bb93b372d6ddfba05b"
+          },
+          "cost_shift": {
+            "baseline_sha256": "3a408c294b308def450a953e763f9ecca1c50782a0feca0439826a28391128ff",
+            "sha256": "99b089e8588ee949dc272cdf90adf141ae14eca0eacf3441c8b51ab5111f31e6"
+          }
+        },
+        "camera_path": "configs/payload_mujoco_elevated_camera.json",
+        "camera_sha256": "41c65a06e25bf20619c2585ed6f99fe3acdf809cfd01ada6d75bd0aa3c8ff4a7",
+        "routing_path": "outputs/suspended_mujoco_elevated_20261025T141122Z/F43/terminal.zip",
+        "routing_sha256": "ee966a2f761b513074c6df2e7de177b3d7bc76ac9d5ec3602d273e5210e84652",
+        "routing_schema_sha256": "615987386a15eff6b47500e0b351c3f75d0d335c4177065a800599c2a8cec854",
+        "routing_model_name": "F43",
+        "selection_path": "outputs/suspended_mujoco_elevated_20261025T141122Z/routing-validation/selection.json",
+        "selection_sha256": "c227c80ac26f8bc9d435246e0d0420d26a4872d49e98b21ebaacded4b084f429",
+        "provisional": false,
+        "controller": "C-local-lqr-v1",
+        "flight_nn": "NOT_USED"
+      },
+      "framing": {
+        "frames": 5052,
+        "median_width_ratio": 1.4150077114668247,
+        "assembly_width_px": [
+          286.90904972533457,
+          288.547648191311,
+          291.48293721152515,
+          294.73346525325366,
+          296.98196043154144
+        ],
+        "assembly_height_px": [
+          407.1204816796988,
+          414.1559443561894,
+          424.8157865426946,
+          434.3288841698168,
+          441.64417671232013
+        ],
+        "minimum_margins_px": [
+          91.87116684133474,
+          133.59372374986313,
+          91.4332353164873,
+          144.61150843530572
+        ],
+        "travel": {
+          "frames": 3950,
+          "median_width_ratio": 1.4150072733661578,
+          "assembly_width_px": [
+            286.90904972533457,
+            288.23058544402215,
+            291.49095401643467,
+            294.9107221851808,
+            296.98196043154144
+          ],
+          "assembly_height_px": [
+            407.1204816796988,
+            412.69983379732446,
+            424.8208074356876,
+            434.8047790469314,
+            441.64417671232013
+          ],
+          "minimum_margins_px": [
+            91.87116684133474,
+            133.59372374986313,
+            91.4332353164873,
+            144.61150843530572
+          ]
+        },
+        "settling": {
+          "frames": 1102,
+          "median_width_ratio": 1.4150079297605693,
+          "assembly_width_px": [
+            289.26436662221124,
+            289.75087777827633,
+            291.46480121876004,
+            293.95212363729974,
+            295.2537517100929
+          ],
+          "assembly_height_px": [
+            416.2883493013102,
+            418.67558750882085,
+            424.8036926955157,
+            432.2254285220728,
+            436.2934356021285
+          ],
+          "minimum_margins_px": [
+            99.46693918306977,
+            133.62882410158713,
+            97.89779594208687,
+            149.97632754689766
+          ]
+        }
+      },
+      "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+      "whole_recording_recomposed": true,
+      "human_review": "PENDING_FRESH_CONTINUOUS1X",
+      "freeze_sha256": "f2fbe39ebf90d55507627d4a4d2d9178b1ef8800784cd08d5f6ecf7b4bc3e6f6",
+      "formal_independent_statistics_sha256": "5d5563a06b1b7384159f66dbf97d1900954e5905385dba3ac4c33e25101c29c1",
+      "videos": {
+        "raw.mkv": {
+          "bytes": 182072303,
+          "sha256": "2429bb471aa5c61164de16f1c84d79829bdfd67063b5526769859ac352df103e"
+        },
+        "hud.mkv": {
+          "bytes": 901825922,
+          "sha256": "22f02137da9ba382d4a5baa4c07f4a89114186ca94aa9d70ff980c043b81c7a5"
+        },
+        "raw.mp4": {
+          "bytes": 9186507,
+          "sha256": "363a0140deb3c1e36287170638ba60d7b2b82585e80405a7b0b8d5ffc10b87ac"
+        },
+        "hud.mp4": {
+          "bytes": 14830109,
+          "sha256": "25be856dc76fe3396569667312de5f633d0ef87af0c935120967cbd15cd2dbe2"
+        }
+      },
+      "video_proof_sha256": "2e24806710404b2569e74ff6d2f0e1ad72daf8a4866bef7ef3746629b8e5ebc5"
+    },
+    "cost_shift": {
+      "schema": "elevated-final-media-v1",
+      "new_physical_success_count": 0,
+      "binding": {
+        "schema": "payload-elevated-binding-v1",
+        "profile": "payload-elevated-z-v1",
+        "layout_sha256": "295b298964fcd176b150783f1c61fe12402df5c2f1b443a2ba4b8c7a31726af5",
+        "scenarios": {
+          "normal": {
+            "baseline_sha256": "dd5f8d7aeca20d9e238581098e91a6d7cc0e6d02dd42d6b55882e59ac833d3aa",
+            "sha256": "6f0ae9e537b712a700eede68a213e3026d111931dff4316b8dd858b7162673a8"
+          },
+          "emergency": {
+            "baseline_sha256": "7f0629c872837ebf3f53afdd572d07e89832a8c13afd74325d89d3af28889c5d",
+            "sha256": "87e3aefc48e1ac5c7958325ac24df3c601f6832f8102f0bb93b372d6ddfba05b"
+          },
+          "cost_shift": {
+            "baseline_sha256": "3a408c294b308def450a953e763f9ecca1c50782a0feca0439826a28391128ff",
+            "sha256": "99b089e8588ee949dc272cdf90adf141ae14eca0eacf3441c8b51ab5111f31e6"
+          }
+        },
+        "camera_path": "configs/payload_mujoco_elevated_camera.json",
+        "camera_sha256": "41c65a06e25bf20619c2585ed6f99fe3acdf809cfd01ada6d75bd0aa3c8ff4a7",
+        "routing_path": "outputs/suspended_mujoco_elevated_20261025T141122Z/F43/terminal.zip",
+        "routing_sha256": "ee966a2f761b513074c6df2e7de177b3d7bc76ac9d5ec3602d273e5210e84652",
+        "routing_schema_sha256": "615987386a15eff6b47500e0b351c3f75d0d335c4177065a800599c2a8cec854",
+        "routing_model_name": "F43",
+        "selection_path": "outputs/suspended_mujoco_elevated_20261025T141122Z/routing-validation/selection.json",
+        "selection_sha256": "c227c80ac26f8bc9d435246e0d0420d26a4872d49e98b21ebaacded4b084f429",
+        "provisional": false,
+        "controller": "C-local-lqr-v1",
+        "flight_nn": "NOT_USED"
+      },
+      "framing": {
+        "frames": 4946,
+        "median_width_ratio": 1.415008096505037,
+        "assembly_width_px": [
+          287.1276843011691,
+          288.60420442956627,
+          291.52565281117484,
+          294.5733923332604,
+          296.98196043154144
+        ],
+        "assembly_height_px": [
+          408.1543738215117,
+          414.08581369743894,
+          424.9200571753651,
+          434.0882665851676,
+          441.64417671232013
+        ],
+        "minimum_margins_px": [
+          91.87116684133474,
+          133.60787884111357,
+          91.4332353164873,
+          144.61150843530572
+        ],
+        "travel": {
+          "frames": 3889,
+          "median_width_ratio": 1.4150080206983713,
+          "assembly_width_px": [
+            287.1276843011691,
+            288.2676404426742,
+            291.5395961437947,
+            294.6328952567868,
+            296.98196043154144
+          ],
+          "assembly_height_px": [
+            408.1543738215117,
+            413.04006027595744,
+            424.935438453887,
+            434.30374915103107,
+            441.64417671232013
+          ],
+          "minimum_margins_px": [
+            91.87116684133474,
+            133.60787884111357,
+            91.4332353164873,
+            144.61150843530572
+          ]
+        },
+        "settling": {
+          "frames": 1057,
+          "median_width_ratio": 1.4150079988012065,
+          "assembly_width_px": [
+            288.85398107508826,
+            289.7130871913149,
+            291.4476328631529,
+            294.01407063554143,
+            295.27763062229894
+          ],
+          "assembly_height_px": [
+            415.87119419594126,
+            418.4904772514422,
+            424.747111574276,
+            432.80501574097286,
+            436.36239986066204
+          ],
+          "minimum_margins_px": [
+            99.53443621770265,
+            133.62636195589477,
+            97.33868521650493,
+            149.90729251566972
+          ]
+        }
+      },
+      "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+      "whole_recording_recomposed": true,
+      "human_review": "PENDING_FRESH_CONTINUOUS1X",
+      "freeze_sha256": "f2fbe39ebf90d55507627d4a4d2d9178b1ef8800784cd08d5f6ecf7b4bc3e6f6",
+      "formal_independent_statistics_sha256": "5d5563a06b1b7384159f66dbf97d1900954e5905385dba3ac4c33e25101c29c1",
+      "videos": {
+        "raw.mkv": {
+          "bytes": 178001447,
+          "sha256": "f78494196e2d08d6e8c01056e682725baacd530688f9e51b6a70516c4f087af1"
+        },
+        "hud.mkv": {
+          "bytes": 858311624,
+          "sha256": "c73daa3a4c61f4f1b512adbf3898d62d30a0fde9990e2416c5db8c598f359913"
+        },
+        "raw.mp4": {
+          "bytes": 8746401,
+          "sha256": "029299078111838d5953ce69efc80e30ce247b34e82efc88eefdfafd68c3984d"
+        },
+        "hud.mp4": {
+          "bytes": 14150941,
+          "sha256": "bd87c3636c65d328c98ed94d10515881a89639841fb7c1c009cfa3896292a367"
+        }
+      },
+      "video_proof_sha256": "3cac01f8637710c13e7ebd4e1db7e24012338bd5b43a690a831ed09b56fde9f0"
+    }
+  },
+  "human_review_receipt": "human-review.json",
+  "total_native_frames": 14526
+}

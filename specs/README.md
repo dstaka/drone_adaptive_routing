@@ -2,7 +2,9 @@
 
 各仕様書は、その変更を実装するコード・テストと同じPRに含めます。PR作成時に仕様書内へPR番号またはURLを追記し、PR本文から仕様書にリンクしてください。マージ済み仕様書は履歴として保持します。
 
-**最新の吊り荷方針：** [MuJoCo制御器単独で完成させる吊り荷輸送](2026-10-23-suspended-payload-hybrid-genesis/spec.md)（Revision3、2026-10-25の利用者指示による変更・実行中）。3シナリオの開発10地点完走を根拠にMuJoCoを最終主系とし、Genesisの追加実験とNN学習・C/H比較を必須成果から外しました。Genesisの中断・限定資格・失敗・未確認事項は[保存記録](../docs/suspended-payload-genesis-interruption.md)に残し、不可能性や完了とは読み替えません。
+**実装・評価・動画確認・回収照合済み：** [目的地の高度引き上げ・高低差拡大と右側詳細カメラのズーム](2026-10-25-elevated-payload-destinations-detail-zoom/spec.md)（Revision2）。新高度2.13〜4.87m、右detail距離0.90m、既存Masked PPOと3D追加学習3seedの有限比較を実装しました。固定300validationでF43を選定し、joint freeze後の未使用routing300でB比平均cost2.9447%改善・絶対gate合格。別の物理127件は全件独立監査合格、最終3動画14526frameの機械検証が完了しています。exact hashに結合した最終3本の新規全編1倍速人手確認も合格しました。必要成果物全体をローカルへ回収し、送信元59788files／36851003632bytesの全サイズ・SHA一致を確認しました。[日本語結果](../docs/elevated-payload-result-ja.md)、[handoff](../docs/elevated-payload-handoff-ja.md)、[英文PR description](../docs/elevated-payload-pr-description.md)を参照してください。旧成果物・マージ済みspecは保持し、今回もlocal commitのみです。
+
+**完了済みの基盤（PR #7、mainへマージ済み）：** [MuJoCo制御器単独で完成させる吊り荷輸送](2026-10-23-suspended-payload-hybrid-genesis/spec.md)（Revision3）。3シナリオの開発10地点完走を根拠にMuJoCoを最終主系とし、Genesisの追加実験とNN学習・C/H比較を必須成果から外しました。Genesisの中断・限定資格・失敗・未確認事項は[保存記録](../docs/suspended-payload-genesis-interruption.md)に残し、不可能性や完了とは読み替えません。以下はこの完了済み基盤の要件・履歴です。
 
 荷物速度0.15m/s・振れ角速度15度/s・箱全角速度30度/sと、位置・傾き・連続1秒の動画優先基準を維持します。合計120秒／12000step制限はなく、各leg30秒・wall600秒を維持。source一致による既存MuJoCo資格とC0/C1/C2を再利用し、開発頑健性15条件、公称＋6端点330秒、validation12条件／120指示leg、正式127条件（basic9/9・端点18/18・held-out95/100以上）、改善画角の最終3動画とfresh人手確認を完了条件とします。継承validation列の120legは96異座標変更と24保持を含み、120回の異座標移動とは呼びません。
 

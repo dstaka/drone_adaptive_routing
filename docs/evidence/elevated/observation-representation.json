@@ -1,0 +1,74 @@
+{
+  "schema": "elevated-observation-representation-audit-v1",
+  "counts": {
+    "train": 10000,
+    "validation": 300,
+    "heldout": 300
+  },
+  "measured_initial_state_ranges": {
+    "train": {
+      "goal_z_m": [
+        2.0000052725467614,
+        4.9999848758612355
+      ],
+      "goal_z_encoded": [
+        1.0000026362733807,
+        2.4999924379306178
+      ],
+      "distance_encoded": [
+        0.0,
+        1.7226114640589294
+      ],
+      "observation": [
+        -1.3499947786331177,
+        5.0
+      ]
+    },
+    "validation": {
+      "goal_z_m": [
+        2.00048906566899,
+        4.999996885486302
+      ],
+      "goal_z_encoded": [
+        1.000244532834495,
+        2.499998442743151
+      ],
+      "distance_encoded": [
+        0.0,
+        1.6796962217047862
+      ],
+      "observation": [
+        -1.349692702293396,
+        5.0
+      ]
+    },
+    "heldout": {
+      "goal_z_m": [
+        2.0001414260460204,
+        4.999255550432784
+      ],
+      "goal_z_encoded": [
+        1.0000707130230102,
+        2.499627775216392
+      ],
+      "distance_encoded": [
+        0.0,
+        1.6605923926347737
+      ],
+      "observation": [
+        -1.3498440980911255,
+        5.0
+      ]
+    }
+  },
+  "declared_space": "float32 Box(-inf,+inf), unchanged",
+  "encoding": "Existing coordinates/2, 3D distances/4, weighted edges/20, existing priorities/service/time normalization; no input clipping, z rescaling or VecNormalize added",
+  "network": "Unchanged CandidateNetwork relative3D coordinates and distances; internal tanh activations unchanged",
+  "empirical_shift": "Old routing training has goal z=1m (encoded0.5); all new goals are2\u20135m (encoded1\u20132.5), so these heights are outside the old empirical training support but within the declared unbounded finite observation representation",
+  "compatibility": "No schema/architecture/normalization amendment required; finite learning and independent held-out measure behavior rather than assume generalization",
+  "source_sha256": {
+    "src/adaptive_drone_patrol/objective.py": "85d7ede3919547e19cb2d87483bda67e4fced1c1eea08238f628e8c8ef8d4f8d",
+    "src/adaptive_drone_patrol/routing_env.py": "b4e101f40eae4699024a264d29743543d313248d4948b05fd058d66f07745fca",
+    "src/adaptive_drone_patrol/routing_policy.py": "dbaf0614ea7333ac7b660a7855d3c6fba336f6e0d6edf98da4d3e3bb3ce034a4"
+  }
+}

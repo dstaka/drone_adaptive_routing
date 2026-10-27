@@ -1,0 +1,15 @@
+{
+  "schema": "elevated-final-precommit-verification-v1",
+  "frozen_source_models_identical": 376,
+  "staged_frozen_files_identical": 39,
+  "physical_independent_successes": 127,
+  "routing_cases_in_physical_denominator": 0,
+  "final_native_frames": 14526,
+  "all_video_entries_match_fresh_local_inventory": true,
+  "exact_three_human_hashes_unchanged": true,
+  "remote_recovery_verified": true,
+  "marker_supplement_passed": true,
+  "full_cpu_test_log": "1226 passed,20 skipped,1 deselected",
+  "merged_specs_and_root_spec_unchanged": true,
+  "staged_public_connection_or_private_data": false
+}

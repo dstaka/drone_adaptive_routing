@@ -1,0 +1,246 @@
+{
+  "schema": "elevated-marker-geometry-supplement-v2",
+  "passed": true,
+  "freeze": {
+    "path": "outputs/suspended_mujoco_elevated_20261025T141122Z/joint-freeze-v1.json",
+    "bytes": 3577983,
+    "sha256": "f2fbe39ebf90d55507627d4a4d2d9178b1ef8800784cd08d5f6ecf7b4bc3e6f6"
+  },
+  "executed_supplement": {
+    "path": "/workspace/elevated_20261025T141122Z/repo/outputs/suspended_mujoco_elevated_20261025T141122Z/verify-marker-bounds-v2.py",
+    "bytes": 8782,
+    "sha256": "09e799abba05a2de8ceaf09d5616a86fe43a800f0206208219023c01551d236c"
+  },
+  "frozen_sources": [
+    {
+      "path": "src/adaptive_drone_patrol/elevated_media.py",
+      "bytes": 10612,
+      "sha256": "ea9c44f8d1de944008f8c724995c1f270bbd774dc6f89ec325bf84c7911f6f26"
+    },
+    {
+      "path": "src/adaptive_drone_patrol/payload_solver_media.py",
+      "bytes": 14063,
+      "sha256": "7e25d7657e369c08bdf254f7948673a91a54cfb04c86f272c75b9c8055123833"
+    }
+  ],
+  "camera": {
+    "path": "configs/payload_mujoco_elevated_camera.json",
+    "bytes": 1313,
+    "sha256": "41c65a06e25bf20619c2585ed6f99fe3acdf809cfd01ada6d75bd0aa3c8ff4a7"
+  },
+  "layout": {
+    "path": "configs/demo_scenarios_payload_elevated/layout.json",
+    "bytes": 2281,
+    "sha256": "295b298964fcd176b150783f1c61fe12402df5c2f1b443a2ba4b8c7a31726af5"
+  },
+  "new_physical_success_count": 0,
+  "criterion_px": 40,
+  "minimum_margins_left_top_right_bottom_px": [
+    235.72608735161953,
+    84.52952997323865,
+    292.77578814617823,
+    211.14719142292785
+  ],
+  "rationale": "All styles use size=[r,r,r] and fixed goal centers. Sphere radius r, cylinder radius sqrt(2)*r, and box radius sqrt(3)*r are enclosed by sqrt(3)*r. Frozen renderer recreates the same fixed overview camera every frame, independent of vehicle pose; retained complete-frame goal bounds confirm its invariance. This strengthens the original underestimated goal bound only; body bounds, camera, flight, acceptance thresholds and original evidence are unchanged. Text-label readability remains subject to human review.",
+  "cases": [
+    {
+      "case": "elevated-development-00",
+      "frames": 4623,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-01",
+      "frames": 5051,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-02",
+      "frames": 4943,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-03",
+      "frames": 4520,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-04",
+      "frames": 4519,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-05",
+      "frames": 5057,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-06",
+      "frames": 5049,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-07",
+      "frames": 4937,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-08",
+      "frames": 5178,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-09",
+      "frames": 5258,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-10",
+      "frames": 4623,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-11",
+      "frames": 5572,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-12",
+      "frames": 5010,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-13",
+      "frames": 5484,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "elevated-development-14",
+      "frames": 4877,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "basic-normal-1",
+      "frames": 4528,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "basic-emergency-1",
+      "frames": 5052,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    },
+    {
+      "case": "basic-cost_shift-1",
+      "frames": 4946,
+      "passed": true,
+      "margins": [
+        235.72608735161953,
+        84.52952997323865,
+        292.77578814617823,
+        211.14719142292785
+      ]
+    }
+  ],
+  "receipt_sha256": "973a1ca105b08e3dc2663f13a415fce0f37eb55fe8be8a7c7add55953d016200"
+}

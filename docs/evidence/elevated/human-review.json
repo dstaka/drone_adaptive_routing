@@ -1,0 +1,40 @@
+{
+  "schema": "elevated-fresh-human-video-review-v1",
+  "recorded_at_utc": "2026-10-26T22:47:28.648782+00:00",
+  "reviewer": "user",
+  "review_scope": [
+    "all three full recordings",
+    "continuous1x",
+    "visible ascent/descent",
+    "complete drone/suspension/package framing",
+    "zoom comfort",
+    "suspension/box motion",
+    "text readability"
+  ],
+  "question_sha256_values": {
+    "normal": "115f3a34b5959dd3704a1906fec9bfd1c4194338f5b6b6125dc223168bd7273f",
+    "emergency": "25be856dc76fe3396569667312de5f633d0ef87af0c935120967cbd15cd2dbe2",
+    "cost_shift": "bd87c3636c65d328c98ed94d10515881a89639841fb7c1c009cfa3896292a367"
+  },
+  "response_verbatim": "3本すべて全編1倍速で確認し、各項目に問題なし",
+  "videos": {
+    "normal": {
+      "path": "outputs/suspended_mujoco_elevated_20261025T141122Z/final-normal-media-v1/hud.mp4",
+      "bytes": 13617251,
+      "sha256": "115f3a34b5959dd3704a1906fec9bfd1c4194338f5b6b6125dc223168bd7273f"
+    },
+    "emergency": {
+      "path": "outputs/suspended_mujoco_elevated_20261025T141122Z/final-emergency-media-v1/hud.mp4",
+      "bytes": 14830109,
+      "sha256": "25be856dc76fe3396569667312de5f633d0ef87af0c935120967cbd15cd2dbe2"
+    },
+    "cost_shift": {
+      "path": "outputs/suspended_mujoco_elevated_20261025T141122Z/final-cost_shift-media-v1/hud.mp4",
+      "bytes": 14150941,
+      "sha256": "bd87c3636c65d328c98ed94d10515881a89639841fb7c1c009cfa3896292a367"
+    }
+  },
+  "passed": true,
+  "original_capture_proof_status_preserved": true,
+  "video_bytes_unchanged": true
+}

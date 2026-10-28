@@ -2,6 +2,10 @@
 
 各仕様書は、その変更を実装するコード・テストと同じPRに含めます。PR作成時に仕様書内へPR番号またはURLを追記し、PR本文から仕様書にリンクしてください。マージ済み仕様書は履歴として保持します。
 
+**2026-10-27・設計承認済み（実装・資格確認中）：** [吊り荷付き2機の協調判断をNNで学習する](2026-10-27-dual-drone-learned-coordination/spec.md)。中央のjoint policyが目的地・動的な担当変更・待機・交差時の優先機を選び、既存飛行制御器と安全監視を組み合わせます。主成果は実際の全体巡回時間の短縮と、担当変更／譲り合いの学習効果です。3seedの有限学習、固定validation300、joint freeze後のrouting held-out300と別の物理127、GPU/CPUの実測選択、最終3動画の新規人手確認と成果物回収を規定しました。数値・構成は今回のユーザー指示で採用済みです。学習・高速化・受入成功はまだ主張していません。以前のマージ済みspecと成果物は保持します。
+
+同spec §11.1–11.2に、次回セッションの工程・試行別wall-clock計測、実行／待機／停止の区別、並列時間の重複排除、最終振り返り、およびsidechatから読めるローカル進捗記録を追加しました。未計測時間は `not recorded` と明記し、過去の所要時間を推測で補完しません。
+
 **実装・評価・動画確認・回収照合済み：** [目的地の高度引き上げ・高低差拡大と右側詳細カメラのズーム](2026-10-25-elevated-payload-destinations-detail-zoom/spec.md)（Revision2）。新高度2.13〜4.87m、右detail距離0.90m、既存Masked PPOと3D追加学習3seedの有限比較を実装しました。固定300validationでF43を選定し、joint freeze後の未使用routing300でB比平均cost2.9447%改善・絶対gate合格。別の物理127件は全件独立監査合格、最終3動画14526frameの機械検証が完了しています。exact hashに結合した最終3本の新規全編1倍速人手確認も合格しました。必要成果物全体をローカルへ回収し、送信元59788files／36851003632bytesの全サイズ・SHA一致を確認しました。[日本語結果](../docs/elevated-payload-result-ja.md)、[handoff](../docs/elevated-payload-handoff-ja.md)、[英文PR description](../docs/elevated-payload-pr-description.md)を参照してください。旧成果物・マージ済みspecは保持し、今回もlocal commitのみです。
 
 **完了済みの基盤（PR #7、mainへマージ済み）：** [MuJoCo制御器単独で完成させる吊り荷輸送](2026-10-23-suspended-payload-hybrid-genesis/spec.md)（Revision3）。3シナリオの開発10地点完走を根拠にMuJoCoを最終主系とし、Genesisの追加実験とNN学習・C/H比較を必須成果から外しました。Genesisの中断・限定資格・失敗・未確認事項は[保存記録](../docs/suspended-payload-genesis-interruption.md)に残し、不可能性や完了とは読み替えません。以下はこの完了済み基盤の要件・履歴です。

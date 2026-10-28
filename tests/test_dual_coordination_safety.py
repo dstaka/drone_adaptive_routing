@@ -86,6 +86,36 @@ def test_supervisor_qualification_is_required_and_hold_remains_obstacle():
     assert result.held[0] or result.failure is not None
 
 
+def test_supervisor_global_horizon_covers_qualified_stop_when_currently_stationary():
+    from adaptive_drone_patrol.dual_coordination_safety import ReferenceSupervisor
+    from adaptive_drone_patrol.dual_coordination_reference import ContinuousReference, KinematicState
+
+    refs = [ContinuousReference([-3, -3, 2]), ContinuousReference([3, 3, 2])]
+    states = [KinematicState(r.sample(0)[0], [0, 0, 0]) for r in refs]
+    decision = ReferenceSupervisor().decide(refs, states, 0, priority=1)
+    # Development stopping extremes measured up to3.35s. Even a stationary
+    # instant must retain the predeclared4s floor, not just its short local brake.
+    assert decision.horizon_s >= 4.0
+    assert decision.horizon_s >= 3.35 + 0.20
+
+
+def test_supervisor_intervenes_for_conflict_beyond_old_two_second_window():
+    from adaptive_drone_patrol.dual_coordination_safety import ReferenceSupervisor
+    from adaptive_drone_patrol.dual_coordination_reference import ContinuousReference, KinematicState
+
+    states = [KinematicState([-3, 0, 2], [0, 0, 0]), KinematicState([3, 0, 2], [0, 0, 0])]
+    refs = [
+        ContinuousReference(s.position).retarget(goal, 0, actual_state=s)
+        for s, goal in zip(states, [[3, 0, 2], [-3, 0, 2]])
+    ]
+    supervisor = ReferenceSupervisor()
+    assert not supervisor.predict(refs, 0, 2, [.55, .55])[0]
+    assert supervisor.predict(refs, 0, 4, [.55, .55])[0]
+    decision = supervisor.decide(refs, states, 0, priority=1)
+    assert any(decision.held)
+    assert decision.reason != "clear"
+
+
 def test_batched_predictor_preserves_scalar_decisions_and_braking_trajectories():
     import math
     from adaptive_drone_patrol.dual_coordination_reference import ContinuousReference, KinematicState

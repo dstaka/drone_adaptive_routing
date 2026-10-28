@@ -24,11 +24,20 @@ GPUサーバは利用者が今回指定した接続先を使い、`/workspace/du
 
 最新の実行状態（必ずprogressの更新時刻を確認）：
 
+- **予測時間の修正後が現在の実行版。** spec §4.3が要求する最悪資格停止時間＋0.20秒に対し、旧ソースは現在の停止軌道だけから2秒などを選び得た。実測最悪3.35秒との不一致を確認し、global下限4.0秒と独立した実測比較gateを追加した。旧ソースで失敗する静止時／2秒より先の交差テストを保存した。関連26合格3skip、実MuJoCo事前47合格28.64秒。修正後の全体回帰は**1,735合格・48skip・1除外・失敗0／エラー0、523.09秒**。
+- 一時テストコピーが過去の回帰用入力4ファイルを欠いた先行試行は、1,717合格・5失敗・13fixtureエラー、543.66秒。入力455,723bytesだけをサイズ／SHA照合して添付し、コードを変えずに失敗18件が26.68秒で合格、その後の全体再実行も合格した。過去の2機物理評価として流用したものではなく、旧ソフトウェア回帰の入力である。両試行とsetup不備を保存した。
+- 現在の固定入力は `run/experiment-inputs-v3`、binding SHA `ae224409dbbd8a245393d0d189eaf78cf07df368060f1c2d44184933175a3595`、ソースは `source-production-018`。`qualification-batch-003` が新規81条件を実行する。`qualification-supplements-003` は新ソースの停止7条件等と開発pilot005／compiled replay006を実行し、停止集計は`qualification-stopping-reduction-003`、総合判定は`qualification-report-004`。その正式合格後にだけ`benchmark-pipeline-003`が実測へ進む。`storage-measurement-pipeline-002`は最初の完了benchmarkを待つ。
+- 旧`qualification-batch-002`は81件とも完走したが、global予測時間の不備があるv2ソースの診断結果として保存し、正式資格へ流用しない。`benchmark-pipeline-002`と`qualification-report-pipeline-003`は実測・判定前に停止した。旧v2に本番遷移やheld-out開封はない。
+- サーバの利用期限・費用上限は利用者が「期限・上限なし」と明示した。有限3seed・各1,048,576遷移、資格・選定・held-outの前提は維持する。今回の実装はlocal commit `55ef0bf` に保存済み。
+- 2026-10-28T13:51Z時点で資格batch002は61/81合格、7実行中、13未着手、失敗0。最初の330秒×7条件は全件完走。補足11コマンドは終了コード0だが、7停止条件の独立trace再構成と全81条件の総合判定は別工程である。資格全体の合格を推測しない。
+- `qualification-stopping-reduction-002` は実traceを再構成中。`qualification-report-pipeline-003` は81条件と停止再構成の合格を待って、固定入力v2に対する総合判定を行う。pipeline002はjournal引数誤りで起動失敗し、ログを保存した。失敗試行の計算時間はnot recorded。後継003は別ファイル・別出力であり、資格caseを再実行したものではない。
+- 開発B-dynamic 3件はnormal/priorityが各27.66秒で成功し、availability-delayが52.40秒で`leg_timeout:1`、担当完了数[3,5]。失敗も保存した。各wallは100.1270／100.5822／146.0790秒で、資格試験と同時実行した開発コスト類例であり、専有benchmarkや受入結果ではない。
+- `recovered/delivery-timing-snapshot-003` は13:47:08Z時点のサーバtimingコピーであり、最終journalではない。5files1,355,846bytes、開発3件32files6,766,023bytes、再現補足2files41,995bytesを送受信サイズ/SHA一致で回収済み。進行後のjournalも再回収する。
 - 最新765file固定コピーの全体回帰は1,732passed・48skip・1除外、532.10秒。C++ SDKのinclude環境を明示した。関連Ruffも成功。直前の5失敗／10fixtureエラーも保存し、修正理由を結果文書へ記録した。
 - `qualification-batch-001` は各330秒を実行後、lazy importの依存集合漏れにより7失敗・74未着手。3,825.29秒。失敗を合格へ変換しない。事前importと実1tick preflightを追加した新規 `qualification-batch-002` が進行中。必要結果39files437,028bytesは `recovered/delivery-qualification001-results` へ照合回収。最初の大きな回収はSSH切断により不完全なまま残るので、完全回収と数えない。
-- 実測用の正式な入力版はサーバ `run/experiment-inputs-v2`、実行ソースは `source-production-015` に015/016 overlayを適用したもの。binding SHAは `3d404dfc89b463add16eff0c6aa68b41578afa797e9b73eac6ac4ef5dd7c2cca`。学習許可receiptではない。v1は保存パスに拘束されたライブラリをコピー先から読み込もうとして失敗したsetup版であり、本番に使わない。
+- 保存済みの旧入力v2はサーバ `run/experiment-inputs-v2`、旧ソース`source-production-015`。binding SHAは `3d404dfc89b463add16eff0c6aa68b41578afa797e9b73eac6ac4ef5dd7c2cca`。予測時間修正前なので本番に使わない。v1も保存パスに拘束されたライブラリをコピー先から読み込もうとして失敗したsetup版であり、本番に使わない。
 - C++ libraryは元の `run/native-build-009/dual_native_audit.so` を使う。SHA `c24de2fe6829e2a3512ae1ba31d3f4fb370c3adc39e3dcbad5e0d5ac87ea0ada`。build receiptは元の絶対パス・headers・sourceを照合する。`delivery-build-009` は回収packetであり、そのまま実行パスに置換できない。
-- `benchmark-pipeline-002` は81条件完了と入力固定を待ち、quota内の1/2/4/7 workers × CPU/CUDAの有限計測を順次実行する。warm-up4096＋3×4096、各5epochで、本番遷移0。補助資格試験は `qualification-supplements-002`。途中状態や単独のcase合格から学習を許可しない。
+- `benchmark-pipeline-003` は総合資格004と入力v3を待ち、quota内の1/2/4/7 workers × CPU/CUDAの有限計測を順次実行する。warm-up4096＋3×4096、各5epochで、本番遷移0。途中状態や単独のcase合格から学習を許可しない。
 - 学習／validationのケースは最初に宣言したローカル `declaration-v1` のbytesを使う。サーバ再生成には5index・27初期quaternion scalarsで最大3.47e-18の差があり、元のtraining JSONL SHA `b19b3a92834ce96ae85171b511e0d33885aa14a0ebd94178cfeadc0620331f85` を `configs/dual_coordination_cases` に固定した。両生成版と差分を保存。validationは一致した。
 - 選定はN42/N43/N44と両baselineの300件ずつ、計1,500件。選定後に同じ300件×両ablationの600診断を実施する専用runnerを追加した。診断結果を再選定へ返さない。projectionはこの600件も含む。
 - 開発用B-static動画は `recovered/development-video-002/video/view.mp4`、SHA `13adbb23c1c0cfd4108ad2ebd98670414ac4a389b25bf12e5908f0c4058a282d`。25.66秒、各5地点、変更0、最小間隔3.38093252m、安全hold0。最終NN動画／人手確認とは別である。

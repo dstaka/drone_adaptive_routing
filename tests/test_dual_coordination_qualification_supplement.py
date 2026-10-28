@@ -78,6 +78,16 @@ def test_missing_stopping_extremes_or_unbound_replay_cannot_pass(tmp_path):
         m.reduce_measurements(dict(kind="deterministic-replay", verified=True), root=tmp_path)
 
 
+def test_qualified_stopping_time_must_fit_global_horizon_before_admission(tmp_path):
+    m = module()
+    cases = [dict(case=c, stopping_time_s=3.81) for c in m.stopping_cases()]
+    # A producer cannot grant qualification by comparing a horizon only with
+    # the same local-reference formula that generated it. The measured worst
+    # stop plus policy latency must fit the frozen global floor independently.
+    with pytest.raises(ValueError, match="qualified stopping"):
+        m.reduce_measurements(dict(kind="stopping", cases=cases), root=tmp_path)
+
+
 def test_assembly_radius_uses_oriented_surface_not_sum_of_bounding_spheres():
     import numpy as np
 

@@ -174,6 +174,13 @@ class ReferenceSupervisor:
     tracking receipt; this class intentionally makes no formal safety claim.
     """
 
+    # Frozen before production. Qualification must independently establish that
+    # the worst measured stop (including settling) plus policy latency fits.
+    # Local brakes may require still longer prediction; never shorten this floor
+    # merely because the vehicle happens to be stationary at this instant.
+    minimum_horizon_s = 4.0
+    policy_latency_s = 0.20
+
     def __init__(self, *, tracking_inflation=0.15):
         if not math.isfinite(tracking_inflation) or tracking_inflation < 0:
             raise ValueError("Finite nonnegative tracking envelope required")
@@ -219,7 +226,7 @@ class ReferenceSupervisor:
         if len(references) != 2 or len(states) != 2 or priority not in (1, 2):
             raise ValueError("Two references and measured states, priority1/2 required")
         brakes = tuple(r.brake(time_s, actual_state=s) for r, s in zip(references, states))
-        horizon = max(2.0, max(b.duration for b in brakes) + 0.20)
+        horizon = max(self.minimum_horizon_s, max(b.duration for b in brakes) + self.policy_latency_s)
         radii = [
             self.assembly_radius
             + self.tracking_inflation
@@ -234,7 +241,7 @@ class ReferenceSupervisor:
         candidate[yielding] = brakes[yielding]
         # Include a terminal hover for the yielding assembly while the other
         # follows its remaining finite path. No global detour or reassignment.
-        terminal_horizon = max(horizon, max(r.end_time - time_s for r in candidate) + 0.20)
+        terminal_horizon = max(horizon, max(r.end_time - time_s for r in candidate) + self.policy_latency_s)
         conflict, minimum = self.predict(candidate, time_s, terminal_horizon, radii)
         if not conflict:
             held = [False, False]

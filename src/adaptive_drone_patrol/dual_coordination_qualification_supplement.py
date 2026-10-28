@@ -333,7 +333,10 @@ def check_decision(row):
     states = [KinematicState(**s) for s in row["states"]]
     now = row["time_s"]
     brakes = [r.brake(now, actual_state=s) for r, s in zip(refs, states, strict=True)]
-    expected = max(2.0, max(r.duration for r in brakes) + 0.20)
+    expected = max(
+        ReferenceSupervisor.minimum_horizon_s,
+        max(r.duration for r in brakes) + ReferenceSupervisor.policy_latency_s,
+    )
     _require(row["horizon_s"] == expected, "Horizon does not cover measured-state C2 braking +0.20s latency")
     decision = ReferenceSupervisor().decide(refs, states, now, priority=row["priority"])
     _require(
@@ -492,6 +495,15 @@ def _stopping(data, root):
     _require(
         len(cases) == 7 and {r["case"]["case_id"] for r in cases} == {r["case_id"] for r in stopping_cases()},
         "All six paired endpoint stops plus nominal required",
+    )
+    _require(
+        all(_finite(row.get("stopping_time_s"), lower=1.0, upper=30.0) for row in cases),
+        "Finite qualified stopping times required",
+    )
+    _require(
+        max(row["stopping_time_s"] for row in cases) + ReferenceSupervisor.policy_latency_s
+        <= ReferenceSupervisor.minimum_horizon_s,
+        "Global supervisor horizon does not cover worst qualified stopping time plus policy latency",
     )
     reasons = set()
     for row in cases:

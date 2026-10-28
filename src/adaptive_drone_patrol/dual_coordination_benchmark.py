@@ -1018,6 +1018,7 @@ def reduce_benchmarks(
     qualification_path=None,
     execution_profile_path=None,
     cost_measurements_path=None,
+    backend_restriction_path=None,
 ):
     """Reduce retained measurements; incomplete evidence yields no admission schema.
 
@@ -1056,6 +1057,20 @@ def reduce_benchmarks(
                 "Complete configuration runs, experiment binding, qualification, execution profile and cost measurements required"
             )
         binding = _load_experiment_binding(experiment_binding)
+        restriction = None
+        if backend_restriction_path is not None:
+            restriction = read(backend_restriction_path)
+            if (
+                restriction.get("schema") != "dual-backend-restriction-v1"
+                or restriction.get("decision") != "cpu-only"
+                or restriction.get("source") != "user"
+                or not isinstance(restriction.get("authorization"), str)
+                or not restriction["authorization"].strip()
+                or restriction.get("experiment_binding_sha256") != sha256(experiment_binding)
+            ):
+                raise ValueError("Explicit user CPU-only restriction bound to this experiment required")
+            result["backend_restriction"] = restriction
+            result["reducer_identity"] = _file_record(__file__)
         result["evidence"].append(_file_record(experiment_binding))
         qualification, profile = read(qualification_path), read(execution_profile_path)
         from .dual_coordination_campaign import _qualification
@@ -1136,7 +1151,11 @@ def reduce_benchmarks(
                 _positive(host["disk"]["free_bytes"], "measured free disk")
                 _positive(host["memory"]["physical_bytes"], "measured physical RAM")
             key = (row["workers"], device)
-            if key in seen or row["workers"] not in candidates or device not in available_devices:
+            if (
+                key in seen
+                or row["workers"] not in candidates
+                or device not in (("cpu",) if restriction else available_devices)
+            ):
                 raise ValueError("Duplicate or undeclared worker/device configuration")
             seen.add(key)
             if len(row.get("checkpoint_measurements", [])) != 3:
@@ -1185,7 +1204,11 @@ def reduce_benchmarks(
             ):
                 _positive(row[key], key)
             configurations.append(row)
-        if seen != {(workers, device) for workers in candidates for device in available_devices}:
+        if seen != {
+            (workers, device)
+            for workers in candidates
+            for device in (("cpu",) if restriction else available_devices)
+        }:
             raise ValueError(
                 "Full three-repetition CPU/CUDA results for every quota-capped worker candidate required"
             )
@@ -1380,6 +1403,10 @@ def reduce_benchmarks(
             if chosen["backend"] == "native-cuda"
             else "CUDA unavailable on measured machine",
         )
+        if restriction is not None:
+            result["gpu_selection_note"] = (
+                "CPU-only continuation requested by user; GPU physics speedup unmeasured"
+            )
         binding.verify()
         for record in result["evidence"]:
             if _file_record(record["path"]) != record:
@@ -1408,6 +1435,7 @@ def main(argv=None):
         parser.add_argument("--qualification")
         parser.add_argument("--execution-profile")
         parser.add_argument("--cost-measurements")
+        parser.add_argument("--backend-restriction")
         parser.add_argument("--output", required=True)
         args = parser.parse_args(argv[1:])
         return reduce_benchmarks(
@@ -1417,6 +1445,7 @@ def main(argv=None):
             qualification_path=args.qualification,
             execution_profile_path=args.execution_profile,
             cost_measurements_path=args.cost_measurements,
+            backend_restriction_path=args.backend_restriction,
         )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--original", required=True, help="Original MuJoCo source XML path")

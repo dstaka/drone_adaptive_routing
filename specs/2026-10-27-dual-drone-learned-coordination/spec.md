@@ -174,6 +174,12 @@ Requalify the two-assembly native scene before any production learning: isolated
 
 No old GPU-hour balance is inherited. Finite sample budgets still apply. Estimate time and storage before execution and report resource infeasibility rather than change physics, omit mandatory seeds, or consume validation as development data.
 
+### 6.3 User-directed CPU-only continuation (2026-10-29 local time)
+
+The user directed the remaining campaign to proceed with CPU only after the measured native-physics/GPU-policy gain was small. Apply this explicit execution-scope amendment: stop additional GPU implementation, qualification and benchmarks; preserve completed and interrupted GPU attempts, with interrupted trials marked user-cancelled/incomplete rather than passing or demonstrating a physics failure. The native1-worker measured medians are2270.5790677 s with CPU policy and2232.9887854 s with GPU policy (about1.66% improvement). This does not establish that GPU physics cannot accelerate a future implementation; that route remains unqualified and its complete throughput is unmeasured.
+
+Complete native CPU-policy measurements for all quota-capped workers1/2/4/7, three4096-transition/five-epoch repetitions after warmup each, and select the lowest projected whole-campaign CPU configuration with measured storage headroom. Retain the actual available GPU hardware inventory. An explicitly hashed `dual-backend-restriction-v1` user-direction receipt bound to the existing experiment binding permits the administrative benchmark reducer to require CPU-policy candidates only; absence of this receipt retains the original CPU/CUDA comparison requirement. Do not manufacture missing GPU results or infer a GPU-physics speedup from the NN-only measurement. Preserve the already qualified source018 native physics, all native qualification gates, fixed controllers, finite three-seed budgets, selection/freeze/held-out rules, safety thresholds and final human video review.
+
 ## 7. Baselines and attribution experiments
 
 All methods run in the same two-drone world, with identical controller, reference limits, structural locks, supervisor, events, load samples and deadlines. All are causal and receive only observed events.

@@ -794,3 +794,68 @@ def test_reducer_requires_exact_validation_diagnostic_count(tmp_path, count):
     result = module().reduce_benchmarks(**args)
     assert result["schema"] == "dual-benchmark-diagnostic-v1"
     assert any("validation_diagnostic_missions" in reason for reason in result["missing_evidence"])
+
+
+def cpu_only_restriction(args):
+    import json
+    from adaptive_drone_patrol.util import sha256
+
+    path = args["output"].parent / "cpu-only-direction.json"
+    path.write_text(
+        json.dumps(
+            dict(
+                schema="dual-backend-restriction-v1",
+                decision="cpu-only",
+                source="user",
+                authorization="Proceed with remaining training using CPU only",
+                experiment_binding_sha256=sha256(args["experiment_binding"]),
+            )
+        )
+    )
+    args["backend_restriction_path"] = path
+    args["configuration_paths"] = [
+        p for p in args["configuration_paths"] if json.loads(p.read_text())["policy_device"] == "cpu"
+    ]
+    return path
+
+
+def test_explicit_cpu_only_direction_keeps_gpu_inventory_and_admits_all_cpu_candidates(tmp_path):
+    import json
+
+    args = reducer_fixture(tmp_path)
+    restriction = cpu_only_restriction(args)
+    result = module().reduce_benchmarks(**args)
+    assert result["schema"] == "dual-benchmark-v1", result["missing_evidence"]
+    assert result["selected_backend"] == "native-cpu" and result["selected_workers"] == 7
+    assert result["backend_restriction"]["decision"] == "cpu-only"
+    assert (
+        result["gpu_selection_note"]
+        == "CPU-only continuation requested by user; GPU physics speedup unmeasured"
+    )
+    assert all(
+        json.loads(p.read_text())["machine_before"]["gpu_devices"] for p in args["configuration_paths"]
+    )
+    assert any(x["path"] == str(restriction.resolve()) for x in result["evidence"])
+
+
+@pytest.mark.parametrize(
+    "damage", ["binding", "source", "decision", "authorization", "missing_worker", "gpu_candidate"]
+)
+def test_cpu_only_direction_cannot_bypass_binding_or_complete_cpu_measurements(tmp_path, damage):
+    import json
+
+    args = reducer_fixture(tmp_path)
+    gpu = args["configuration_paths"][-1]
+    restriction = cpu_only_restriction(args)
+    if damage == "missing_worker":
+        args["configuration_paths"] = args["configuration_paths"][:-1]
+    elif damage == "gpu_candidate":
+        args["configuration_paths"].append(gpu)
+    else:
+        d = json.loads(restriction.read_text())
+        key = {"binding": "experiment_binding_sha256"}.get(damage, damage)
+        d[key] = {"source": "model", "decision": "gpu", "authorization": ""}.get(damage, "0" * 64)
+        restriction.write_text(json.dumps(d))
+    result = module().reduce_benchmarks(**args)
+    assert result["schema"] == "dual-benchmark-diagnostic-v1"
+    assert result["selected_backend"] is None and result["missing_evidence"]

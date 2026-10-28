@@ -15,3 +15,5 @@ Outstanding work includes backend/storage/time selection, all three finite produ
 This is a draft for local delivery. No push, pull request, merge, or publication is authorized.
 
 The user directed CPU-only continuation after the native1-worker CPU/GPU-policy medians measured2270.579/2232.989s (1.66% improvement). Complete all quota-capped native CPU-policy benchmarks; preserve actual GPU inventory and interrupted GPU results. GPU physics remains unqualified and its full-pipeline speedup is unmeasured. A binding-linked user restriction authorizes the CPU-only administrative reducer; without it, full CPU/CUDA coverage is still required. Affected benchmark/campaign regression:114 passed in148.60s. Production learning and final acceptance remain pending.
+
+The user clarified the resource policy: native physics and NN inference/training remain on CPU; GPU OpenGL/EGL graphics rendering is permitted for videos. New render receipts must record the actual GL vendor/renderer. Earlier videos did not retain that identifier. Rendering does not overlap learning.

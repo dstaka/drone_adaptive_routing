@@ -247,3 +247,85 @@ def test_compiled_reference_never_falls_back_to_python_trials_only(tmp_path):
             execution_profile_path="execution.json",
         )
     assert not (tmp_path / "qualification/replay-reference.json").exists()
+
+
+def test_declared_passive_half_step_counts_survive_complete_report_reduction(tmp_path):
+    """Synthetic full-shape evidence detects the real seven-case reducer bug."""
+    import gzip
+
+    m = module()
+    expected = next(c for c in m.qualification_cases() if c["group"] == "passive" and c["substeps"] == 32)
+    p = tmp_path / "case"
+    (p / "fixture").mkdir(parents=True)
+    (p / "fixture/anchored-probe.xml").write_text("synthetic model identity only")
+    (tmp_path / "controller.json").write_text("{}")
+    (tmp_path / "source.py").write_text("# synthetic binding only")
+    source = m.file_record(tmp_path, "source.py")
+    bound = dict(source=[source], assets=[source], controller=[m.file_record(tmp_path, "controller.json")])
+    model = m.file_record(tmp_path, "case/fixture/anchored-probe.xml")
+
+    def numbers(ticks):
+        return dict(
+            rk_states=ticks * 32 * 4,
+            native_states=ticks * 32,
+            failures=[],
+            maximum_constraint_residual_m=0.0,
+            maximum_signed_energy_work_residual_j=0.0,
+            motor_work_j=0.0,
+            passive_work_j=0.0,
+        )
+
+    trace = p / "compact-replay.jsonl.gz"
+    with gzip.open(trace, "wt") as stream:
+        stream.write(json.dumps(dict(kind="RESET", actual=dict(world_time=0.0))) + "\n")
+        for tick in range(1, 3001):
+            stream.write(
+                json.dumps(
+                    dict(kind="STEP", tick=tick, actual=dict(world_time=tick * 0.01), numerical=numbers(tick))
+                )
+                + "\n"
+            )
+    numerical = numbers(3000)
+    numerical["passive"] = [dict(maximum_absolute_energy_fraction=0.01)] * 2
+    documents = {
+        "result.json": dict(
+            schema="dual-qualification-case-v1",
+            case=expected,
+            pilot=False,
+            passed=True,
+            completed_declared_duration=True,
+            failure=None,
+            completed_control_steps=3000,
+            numerical=numerical,
+            final_references=[],
+            compact_bytes=trace.stat().st_size,
+            compact_sha256=m.sha256(trace),
+        ),
+        "inputs.json": dict(
+            case=expected,
+            pilot=False,
+            requested_duration_s=30.0,
+            source_hashes={"source.py": source["sha256"]},
+            original_sha256=source["sha256"],
+            design={},
+        ),
+        "properties.json": dict(
+            runtime=dict(
+                version="3.15.0",
+                substeps=32,
+                timestep_s=0.01 / 32,
+                precision="float64",
+                integrator="RK4",
+                profile="dual-anchored-passive-probe-v1",
+            )
+        ),
+        "initial-state.json": dict(base=dict(model_sha256=model["sha256"])),
+    }
+    for name, value in documents.items():
+        (p / name).write_text(json.dumps(value))
+    assert m.inspect_case(tmp_path, "case", expected, bound)["ticks"] == 3000
+    # A declared half-step case with an ordinary16-step runtime must fail.
+    documents["properties.json"]["runtime"].update(substeps=16, timestep_s=0.01 / 16)
+    (p / "properties.json").write_text(json.dumps(documents["properties.json"]))
+    with pytest.raises(ValueError, match="stepping profile"):
+        m.inspect_case(tmp_path, "case", expected, bound)

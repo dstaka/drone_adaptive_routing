@@ -153,7 +153,8 @@ def inspect_case(root, directory, expected, experiment_inputs):
     runtime = properties["runtime"]
     _require(runtime.get("mujoco_version", runtime.get("version")) == "3.15.0", "Wrong native version")
     _require(
-        runtime.get("substeps") == 16 and runtime.get("timestep_s") == 0.01 / 16,
+        runtime.get("substeps") == expected["substeps"]
+        and runtime.get("timestep_s") == 0.01 / expected["substeps"],
         "Wrong native stepping profile",
     )
     _require(
@@ -164,7 +165,7 @@ def inspect_case(root, directory, expected, experiment_inputs):
     model_name = "fixture/anchored-probe.xml" if expected["group"] == "passive" else "fixture/model.xml"
     model = file_record(root, str(prefix / model_name))
     _require(initial["base"]["model_sha256"] == model["sha256"], "Initial state model identity differs")
-    check_numerics(result["numerical"], ticks=ticks, substeps=16)
+    check_numerics(result["numerical"], ticks=ticks, substeps=expected["substeps"])
     if expected["group"] in ("duration", "mixed"):
         check_online(result["online_audit"], ticks)
     if expected["group"] != "passive":
@@ -238,7 +239,7 @@ def inspect_case(root, directory, expected, experiment_inputs):
                 and abs(row["actual"]["world_time"] - count * 0.01) < 5e-8,
                 "Missing or reordered replay controls",
             )
-            check_numerics(row["numerical"], ticks=count, substeps=16)
+            check_numerics(row["numerical"], ticks=count, substeps=expected["substeps"])
             if expected["group"] != "passive":
                 _require(len(targets) == 2, "Missing final reference targets")
                 valid = _settled(row["actual"]["drones"], payloads, targets)
@@ -350,7 +351,7 @@ def inspect_supplement(root, relative, experiment_inputs):
             "Replay observation/source profile differs",
         )
     return dict(
-        checks=checks,
+        checks=sorted(checks),
         files=[file_record(root, relative), value["measurements"]],
         details=measurements.get("kind"),
         measured_summary=summary,

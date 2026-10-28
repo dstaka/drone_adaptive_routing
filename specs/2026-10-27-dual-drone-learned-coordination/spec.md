@@ -335,3 +335,5 @@ This changes the availability of retrospective forensic raw inspection: it requi
 - [ ] Japanese results/handoff and English PR description accurately distinguish passes and misses.
 
 At authoring time every implementation/experiment checkbox remains open. Do not mark this research implementation complete solely because the spec is written or a safety-supervised pair can fly.
+
+Implementation ruling 2026-10-28 (administrative reduction): verify each prospective qualification case at its declared substep count, including inherited32-step passive-half probes, rather than applying the ordinary16-step profile to every diagnostic. Preserve all original model/data/source hashes and numeric criteria. An externally hashed reducer may correct report serialization and this declaration-consistency bug without rerunning unchanged physics; record its executable identity in the qualification receipt and retain failed reductions. This grants no learned/held-out acceptance and changes no physical or safety condition.

@@ -1,0 +1,6 @@
+{
+  "schema": "dual-evidence-profile-v1",
+  "replays_per_mission": 0,
+  "replay_stride_ticks": 20,
+  "online_internal_audit": true
+}

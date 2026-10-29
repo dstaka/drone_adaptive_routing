@@ -1,0 +1,13 @@
+{
+  "schema": "dual-execution-profile-v1",
+  "replays_per_mission": 0,
+  "training_updates": 768,
+  "validation_missions": 1500,
+  "validation_diagnostic_missions": 600,
+  "heldout_missions": 1500,
+  "physical_missions": 127,
+  "checkpoint_rounds": 64,
+  "checkpoint_writes": 50697,
+  "media_items": 3,
+  "recovery_attempts": 3
+}

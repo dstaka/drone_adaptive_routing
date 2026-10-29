@@ -234,3 +234,6 @@ artifacts/delivery_receipt.json
 *.tar.gz
 
 .venv-routing311/
+
+# Isolated environment for dual-drone development
+.venv-dual311/

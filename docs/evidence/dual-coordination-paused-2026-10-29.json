@@ -1,0 +1,31 @@
+{
+  "schema": "dual-paused-handoff-index-v1",
+  "status": "paused-incomplete",
+  "run": "outputs/dual_payload_coordination_20261027T144754Z",
+  "spec": "specs/2026-10-27-dual-drone-learned-coordination/spec.md",
+  "stop_at": "2026-10-29T13:33:55.401784+00:00",
+  "checkpoint": {
+    "path": "/workspace/dual_payload_coordination_20261027T144754Z/run/production-training-001/seed-42/current-recovery.pt",
+    "bytes": 16458209,
+    "sha256": "ceae64f79756bf91e60ae8deeb7f29a4194e87c546e534327655ba28954e175e",
+    "local_path": "outputs/dual_payload_coordination_20261027T144754Z/recovered/delivery-paused-campaign-001/root/run/production-training-001/seed-42/current-recovery.pt"
+  },
+  "completed_updates": 107,
+  "completed_transitions": 438272,
+  "partial_rollout_rows": 2814,
+  "collected_transitions": 441086,
+  "selectable": false,
+  "loader_accepted": true,
+  "post_stop_physical_replay": false,
+  "verified_packet": {
+    "local_path": "outputs/dual_payload_coordination_20261027T144754Z/recovered/delivery-paused-campaign-001",
+    "file_count": 42,
+    "total_bytes": 43755252,
+    "verification_receipt": "outputs/dual_payload_coordination_20261027T144754Z/receipts/recovery-batch-delivery-paused-campaign-001.json"
+  },
+  "fixed_inputs": "outputs/dual_payload_coordination_20261027T144754Z/recovered/delivery-frozen-inputs-001",
+  "timing_report": "outputs/dual_payload_coordination_20261027T144754Z/timing/paused-report-001/per-attempt.json",
+  "automatic_restart": false,
+  "goal_achieved": false,
+  "server_instance_itself_stopped": false
+}

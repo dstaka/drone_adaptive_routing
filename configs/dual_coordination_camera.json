@@ -1,0 +1,36 @@
+{
+  "schema": "dual-camera-v1",
+  "fps": 100,
+  "border_fraction": 0.05,
+  "terminal_display_ticks": 1,
+  "collision_proxies": "hidden-in-display-still-in-projection-checks",
+  "hud_height": 300,
+  "views": {
+    "overview": {
+      "width": 1280,
+      "height": 720,
+      "distance": 12.0,
+      "azimuth": 135.0,
+      "elevation": -35.0,
+      "lookat": [
+        0.0,
+        0.0,
+        2.5
+      ]
+    },
+    "drone-1": {
+      "width": 512,
+      "height": 720,
+      "distance": 1.2,
+      "azimuth": 135.0,
+      "elevation": -10.0
+    },
+    "drone-2": {
+      "width": 512,
+      "height": 720,
+      "distance": 1.2,
+      "azimuth": 135.0,
+      "elevation": -10.0
+    }
+  }
+}

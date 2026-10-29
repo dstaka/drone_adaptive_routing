@@ -1,5 +1,9 @@
 # 2機NN協調：実装中の結果
 
+2026-10-29 19:53 SGT時点: seed42は第1段階64更新を終え、第2段階92／256更新・376,832遷移に到達。同じCPU学習PID38003/start143252549を確認。更新92・部分rollout0の再開用checkpointを含む3files／10,454,200bytesを `run/recovered/delivery-seed42-stage2-recovery-001/` に回収・送受信サイズSHA照合した。モデル10,411,873bytesのSHAは `81987dabf97fc6241c31d7c16f7cc7ca3fd0a7532e61b5065bf3ced427805be5`、selectable=falseで受入には使わない。seed42出力ディレクトリのfilesystem birth=2026-10-29T01:48:55.641282971Zも保存した。seed別の時間表はこの記録された作成時刻からterminal receiptのmtimeまでという境界を明記し、直接の関数entry/returnや未計測内訳をnot recordedとする。
+
+利用者のPPO/GPU質問への補足: PPO更新単体は実測でCPU18.326696秒→GPU0.649631秒、約28.2倍に高速化していた。一方で物理1worker＋NN推論/更新をGPUへ置いた全体短縮は1.66%。現在のCPU7workerは全体407.591166秒中の更新中央値16.932337秒（4.15%）で、PPOだけをゼロ秒にしても全体の短縮上限は約4.15%。CPU7＋GPU更新だけは未測定で、0.65秒を流用した3seed全体約3.5時間短縮は参考推定に留まる。更新の加速効果と、MuJoCo／制御／安全監査を含む全体の効果を区別する。現在のCPU固定学習は変更せず継続。
+
 2026-10-29 15:15 SGT追記: 元のCPU学習PID38003・監視PID43940の継続を確認。15:14 SGTの確定値はseed42更新48／256、196,608遷移以上、stage1。seed43／44は未開始、held-out未生成。固定入力185files／51,921,409bytesを `run/recovered/delivery-frozen-inputs-001/` に回収し、独立した送受信inventoryを照合した。さらにLearningLockの全176個の固定ファイルとdevelopment replay参照のサイズ・SHAをローカルで照合、元のlockのroot・内容は変更していない。復元先の構造・固定ソース・物理asset・制御器・学習／validation宣言・native library・依存version情報を保持した。これは再現入力の整合性確認であり、新しい物理飛行、terminal認証、最終受入を意味しない。サイズ計測用tensorや内部rawの追加回収は不要。最初の回収はinventory取得時のSSH切断で失敗し、ログを保持して別試行で回収した。packet準備の個別時間は記録APIの指定誤りでnot recorded、回収・照合時間は別試行として記録している。
 
 2026-10-29 12:42 SGT追記: CPU1／2／4／7の測定反復中央値は2270.579068／1259.379690／687.722418／407.591166秒（各4096遷移＋5epoch、warm-up除外）。実測により7ワーカー・native-cpuを選定し、LearningLockを2026-10-29T01:48:48.649348Zに固定、本番学習PID38003を開始した。lock SHA-256は `eccdd3f24346c0745c2ea054ca206b8297519ab74f6baa8b8a58415ac803fa92`。CPU環境のCUDA_VISIBLE_DEVICESは空、未使用held-outは未生成。全工程の概算739,507.187秒（約8.56日）、うち学習313,030.016秒（約3.62日）、保存17,540,424,422bytes・1.25倍headroomを実測空き22,827,016,192bytesに対して判定した。評価コストは3本の開発ミッションの類似実測、動画25.66秒の実績などからの推定で、受入ミッションの実測や完了日時ではない。

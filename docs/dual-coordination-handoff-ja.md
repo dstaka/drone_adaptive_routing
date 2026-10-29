@@ -1,5 +1,9 @@
 # 2機NN協調：作業継続用handoff
 
+2026-10-29 19:53 SGT確認: seed42更新92／256・376,832遷移・stage2、元のPID38003/start143252549が稼働。第2段階の再開用checkpointは `run/recovered/delivery-seed42-stage2-recovery-001/`、3files／10,454,200bytes送受信照合済み、checkpointSHA `81987dabf97fc6241c31d7c16f7cc7ca3fd0a7532e61b5065bf3ced427805be5`。terminalではない。`run/timing/seed-trials.json` にseed42ディレクトリbirth=01:48:55.641282971Zを保存した。最終seed別時間表ではfilesystem birth→terminal.json mtimeの境界と測定源を明記し、entry/returnや未計測区分を創作しない。seed43/44のbirthとterminalのメタデータも生成後に回収する。
+
+GPU解釈: 更新単体はCPU18.326696→GPU0.649631秒（28.2倍）という実測がある。全体1.66%だけを見てPPO単体の加速なしと説明しない。現CPU7workerは更新16.932337／全体407.591166秒（4.15%）。7worker＋GPU更新のみは未測定、3seed約3.5時間の短縮は推定であり実測ではない。利用者の質問だけでCPU方向・LearningLockを変更しない。
+
 2026-10-29 15:15 SGT追記: 学習PID38003と監視PID43940の実cmdlineを再確認。15:14 SGT時点seed42=48／256更新、196,608遷移以上・stage1、他seed0。親pipelineはtraining、heldout-cohorts-001は存在しない。新たに `run/recovered/delivery-frozen-inputs-001/` を回収（185files／51,921,409bytes、送受信サイズ・SHA一致）。`root/` 以下に全176個のLearningLock固定ファイルとreplay参照・補助情報がある。`manifest.json` のrestoration_rootへ同じ相対構造で復元する情報であり、lockを書き換えたローカル実験を作ったわけではない。整合性receiptは `run/receipts/frozen-input-closure-verification-001.json`。最終terminal3本・joint freeze・評価結果・動画は引き続き必要。回収1回目のSSH失敗、2回目成功を別試行として保存。準備時間だけはtimer API指定誤りによりnot recorded。
 
 2026-10-29 12:42 SGT追記: 全CPU構成完了、中央値1／2／4／7=2270.579068／1259.379690／687.722418／407.591166秒。7ワーカーで本番学習PID38003が稼働中。LearningLockは `run/cpu-production-pipeline-004/learning-lock.json`、SHA `eccdd3f24346c0745c2ea054ca206b8297519ab74f6baa8b8a58415ac803fa92`、固定日時2026-10-29T01:48:48.649348Z。概算全工程8.56日、学習3.62日、保存17.54GB（類似実測からの推定、ETA保証なし）。最新確認はseed42更新24／256・98,304遷移以上、seed43／44は0。学習を再起動しない。親pipelineのproduction_transitions=0は全seed終了時に更新される欄なので、途中カウントには使用しない。

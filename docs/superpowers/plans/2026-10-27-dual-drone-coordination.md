@@ -1,3 +1,5 @@
+**2026-10-29: ユーザー指示により一時停止。受入未達。自動再開しない。[停止報告と再開条件](../../dual-coordination-pause-ja.md)を参照。以下は元の承認済み実行計画であり、完了checklistではない。**
+
 # Dual drone learned coordination implementation plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

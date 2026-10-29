@@ -1,4 +1,8 @@
-# 2機NN協調：作業継続用handoff
+# 吊り荷付き2機NN協調：一時停止handoff
+
+**2026-10-29、ユーザー指示により一時停止。学習と自動後続処理は停止済み。再開には新しい明示指示が必要です。**
+
+停止時点の成果・未達、最新checkpoint／SHA、回収照合、時間表、振り返りと再開手順は[一時停止報告](dual-coordination-pause-ja.md)を参照してください。以下は停止前の時系列記録で、「継続中」という記述は当時の状態です。
 
 2026-10-29 21:19 SGT時点の利用者依頼による学習中診断: seed42更新105/256・430,080遷移以上（曲線snapshot13:17:34Z、元PID38003/start143252549）。同じstage2内で更新65–80→直近96–105を比較すると、価値損失平均1390.18→666.35、固定4096遷移当たり報酬−22527.38→−22691.17、masked entropy0.06157→0.02226。損失低下は巡回成功や十分な収束を意味しない。保存済みstage2 terminal933件では成功22件、各worker直近20terminalずつ計140件では成功2件、leg timeout104件、実行可能な参照曲線の探索失敗34件。直近成功率1.43%、平均完了2.486/10目標で、十分な学習を示す実績ではない。training中の確率的方策の観測であり、greedy評価・validation・held-out・正式受入とは区別する。stage2累計にはwall_timeout1件も保持されている。stage1成功30/1551、stage境界の非terminal close7件は分母から区別した。全14archiveの読取prefixに不完全gzip tailは0bytes、実行／close例外0。別時刻のsnapshotであり、曲線の105更新境界との完全同期はしていない。現在の予算や学習は変更せず、別評価も開いていない。曲線／集計／図はrun/receipts/live-curves-{seed42,summary}-001.json、live-training-outcomes-001.json、analysis/live-convergence-001/に保存。取得・集計全体の開始／終了と実行待機内訳はnot recorded、図生成は別のtiming試行として記録。
 

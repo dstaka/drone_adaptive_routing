@@ -1,5 +1,13 @@
 # 2機NN協調：作業継続用handoff
 
+2026-10-29 12:42 SGT追記: 全CPU構成完了、中央値1／2／4／7=2270.579068／1259.379690／687.722418／407.591166秒。7ワーカーで本番学習PID38003が稼働中。LearningLockは `run/cpu-production-pipeline-004/learning-lock.json`、SHA `eccdd3f24346c0745c2ea054ca206b8297519ab74f6baa8b8a58415ac803fa92`、固定日時2026-10-29T01:48:48.649348Z。概算全工程8.56日、学習3.62日、保存17.54GB（類似実測からの推定、ETA保証なし）。最新確認はseed42更新24／256・98,304遷移以上、seed43／44は0。学習を再起動しない。親pipelineのproduction_transitions=0は全seed終了時に更新される欄なので、途中カウントには使用しない。
+
+学習カウントはローカル `run/remote-progress.json` の `snapshot.jobs` 内 `production-training-observer-001`（server PID43940、60秒更新）を読む。`progress.json` の `remote_snapshot_path` から辿れる。source timestampとheartbeatを必ず確認し、部分rolloutはnot recorded。監視だけの失敗は学習停止を意味しない。固定source018を変更せず、外部script `run/observe_dual_training_001.py` SHA `1bbf4e675260fda2c7248bb2f0551f1b7663524f1089316b1beeb8bdd9902eea` を起動した。関連67テスト成功。初回launchはPopen後のreceipt保存先不足でCLI失敗したが、既存PIDを確認してreceiptのみ修復し、二重起動していない。
+
+初回再開用状態・LearningLock・全CPU比較metadataはローカル `run/recovered/delivery-production-start-001/`、41files／12,390,496bytes送受信サイズ・SHA照合済み、送信元保持。モデルは更新6・部分rollout476時点、selectable=falseなのでvalidationには使わない。最終的に必要な固定ソース／設定／受入結果／terminal3本の回収inventoryは引き続き照合する。途中時間表は `run/timing/report-001/per-attempt-ja.md`（723試行、完了主張なし）。観測の中断・通信切断の未計測内訳を実行時間へ埋めない。評価待機34139、履歴圧縮34074、ローカルmirror48044を実PIDで再確認してから状態を扱う。
+
+最終時間表の必須追加: `run/timing/clock-audit-001.json` のローカル10試行はUTC spanとmonotonicが不一致。元の値を保存したままappend-only注記でunclassified spanに分類した。暫定表001はこの分類前のsnapshotなので最終unionに再利用しない。最終時は新しい両ホストjournalから再集計し、UTC span／monotonic計測／差を別欄にし、未計測の中断内訳をnot recordedとする。学習・サーバ側の計算はこの観測中断中も継続していた。差の原因はnot recorded。
+
 2026-10-29 08:36 SGT追記: CPU2完了、中央値1259.379690秒、構成全体5032.897539秒。測定反復は1..3（1259.379690／1260.999822／1258.687686）、0はwarm-up1248.556209秒なので中央値から除外。完了記録9files／180,903bytesを `run/recovered/delivery-cpu2-benchmark-001/` に独立サイズ・SHA照合して回収、元データ保持。CPU4の実PID35326、親32398を確認。CPU7未開始、学習待機34138／評価待機34139を維持。本番学習0、未使用held-out未開封。残る実測後のcost reduction／LearningLock／固定3seedは既存pipeline004、動画は既存成功手順のpostpipeline002に従う。
 
 2026-10-29 07:58 SGT追記: 最新指示により動画は実績のある既存手順を再利用し、CPU/GPU描画の追加実験・GL識別調査は中止。予定した描画probeとラッパーは未実行のまま外した。物理計算・NN推論/学習はCPUを維持する。CPU2の測定1回目4096遷移+5epochは1259.379690秒、warmupは1248.556209秒。CPU4/7を含む残り計測後に固定3seedへ進む。学習待機004、学習後待機002が稼働中。本番学習は未開始。

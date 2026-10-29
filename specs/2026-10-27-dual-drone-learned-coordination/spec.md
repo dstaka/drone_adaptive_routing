@@ -334,6 +334,8 @@ This changes the availability of retrospective forensic raw inspection: it requi
 
 ## 12. Completion checklist
 
+Scheduling ruling 2026-10-29 (user request to finish faster): after all three terminal seeds, independent validation methods may execute in at most five CPU processes, the two diagnostic methods in at most two, and the five routing methods in at most five. Preserve case order within each method, every finite slot, original native execution/audits, deadlines, selection and freeze gates. Physical127 and final media retain the existing serial procedure. An externally hashed administrative coordinator must wait for the first atomic declaration before launching other methods, defer child global reductions (never physical/audit checks), and invoke the original complete canonical reducer after all children succeed. Child completion is not acceptance. No child may select a model; diagnostics cannot change selection. Preserve failures and stop without automatic retries. Bound concurrency by effective CPU quota and keep this scheduling code outside the immutable LearningLock source. Test declaration races, bounded concurrency, exact method coverage, failure propagation and final reduction ordering; do not repeat unrelated broad regressions or qualification for this scheduling-only change. Parallel duration projections are estimates until measured.
+
 - [ ] Proposed design accepted for implementation; source base and server resources reconciled.
 - [ ] New case/action/physical contracts and finite campaign declared before data exposure.
 - [ ] Both-load shared-world physics and stopping/collision checks qualified.

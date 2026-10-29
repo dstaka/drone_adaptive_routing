@@ -1,5 +1,9 @@
 # 2機NN協調：作業継続用handoff
 
+2026-10-29 21:10 SGT追記: 学習PID38003/start143252549を維持したまま、未実行の後続評価だけを方法別CPU並列へ変更した。validation最大5、診断2、routing最大5（CPU quota7.68）、physical127と既存mediaは逐次。全試行のnative物理・online安全監査・期限・必要件数は変更せず、子processの全体集計だけを延期し、全方法終了後に元のcanonical reducerを一度実行する。選定／joint freeze／held-out順序は不変。局所テスト19件成功、ruff成功。待機旧PID34139を停止し、新PID64922/start147339656のwaiting-for-trainingを確認。最初の置換はtiming APIがstatus=supersededを拒否して中断したが、失敗を保存し、学習には触れず、旧待機終了の記録と新待機の起動を別試行で完了した。変更／起動receipt6files・25,532bytesを独立サイズSHA照合して回収。科学的試行の再実行はない。
+
+利用者の1seed見積り依頼は**未適用のwhat-if**。13:04:11Zのseed42更新103/256、421,888遷移以上を基準に、残り153更新×407.591秒≒17.3時間。1seed＋baseline2のvalidation900を3方法並列、診断600を2方法並列、routing1500を5方法並列と仮定すると各約8.53時間、physical127約3.61時間。既存25.66sim秒動画の実測を25.66〜300sim秒へ単純比例すると3本生成約0.34〜3.95時間。今から確認用動画約18〜22時間、評価済み最終動画約47〜51時間、3seedからの学習短縮約58時間という推定。並列評価／最終動画の実測ではなく、1seed対応の仕様・実装変更、失敗、再実行、人手確認待ちは含まない。元APIは3seedを要求するため単に2seedを省いて動くわけではない。全gateを通る保証はなく、ユーザーの今回の依頼は見積りだけなので3seed予算・LearningLockは変更していない。詳細はrun/receipts/single-seed-estimate-001.json。
+
 2026-10-29 19:53 SGT確認: seed42更新92／256・376,832遷移・stage2、元のPID38003/start143252549が稼働。第2段階の再開用checkpointは `run/recovered/delivery-seed42-stage2-recovery-001/`、3files／10,454,200bytes送受信照合済み、checkpointSHA `81987dabf97fc6241c31d7c16f7cc7ca3fd0a7532e61b5065bf3ced427805be5`。terminalではない。`run/timing/seed-trials.json` にseed42ディレクトリbirth=01:48:55.641282971Zを保存した。最終seed別時間表ではfilesystem birth→terminal.json mtimeの境界と測定源を明記し、entry/returnや未計測区分を創作しない。seed43/44のbirthとterminalのメタデータも生成後に回収する。
 
 GPU解釈: 更新単体はCPU18.326696→GPU0.649631秒（28.2倍）という実測がある。全体1.66%だけを見てPPO単体の加速なしと説明しない。現CPU7workerは更新16.932337／全体407.591166秒（4.15%）。7worker＋GPU更新のみは未測定、3seed約3.5時間の短縮は推定であり実測ではない。利用者の質問だけでCPU方向・LearningLockを変更しない。

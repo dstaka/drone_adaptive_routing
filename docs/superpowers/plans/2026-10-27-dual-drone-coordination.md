@@ -114,6 +114,8 @@
 
 ## Initial rulings and execution conditions
 
+Scheduling amendment 2026-10-29: implement and narrowly test an external CPU method coordinator; validation5, diagnostics2, routing5 processes maximum, quota capped. Defer only global child summaries/selection, aggregate canonically after all methods join, and keep all mission execution/audits unchanged. Deploy outside source018 and replace only the still-waiting post-training002 process, never the learner. Preserve superseded waiting metadata and record scheduler identity/times. Do not rerun unrelated audits/tests, qualification or GPU/render experiments. Physical127 and media remain serial. The saved102.32s/mission analogue suggests evaluation4.41days sequential versus1.22days ideal method-parallel; this is an unmeasured estimate, not a deadline or acceptance result.
+
 - The spec's “proposed” numerical defaults are approved by the user's current instruction, not experimental measurements. Do not use the old wording to reopen approval or weaken a gate.
 - Work in the existing dedicated feature branch and use explicit staging to avoid unrelated work. This follows the user's direction to proceed without generic confirmations.
 - Current local Python3.11 environment supports Torch2.2.2 CPU; MuJoCo is absent. Install an isolated pinned native test environment. GPU data collection waits for the requested current connection details.

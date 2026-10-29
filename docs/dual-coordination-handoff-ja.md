@@ -1,5 +1,7 @@
 # 2機NN協調：作業継続用handoff
 
+2026-10-29 15:15 SGT追記: 学習PID38003と監視PID43940の実cmdlineを再確認。15:14 SGT時点seed42=48／256更新、196,608遷移以上・stage1、他seed0。親pipelineはtraining、heldout-cohorts-001は存在しない。新たに `run/recovered/delivery-frozen-inputs-001/` を回収（185files／51,921,409bytes、送受信サイズ・SHA一致）。`root/` 以下に全176個のLearningLock固定ファイルとreplay参照・補助情報がある。`manifest.json` のrestoration_rootへ同じ相対構造で復元する情報であり、lockを書き換えたローカル実験を作ったわけではない。整合性receiptは `run/receipts/frozen-input-closure-verification-001.json`。最終terminal3本・joint freeze・評価結果・動画は引き続き必要。回収1回目のSSH失敗、2回目成功を別試行として保存。準備時間だけはtimer API指定誤りによりnot recorded。
+
 2026-10-29 12:42 SGT追記: 全CPU構成完了、中央値1／2／4／7=2270.579068／1259.379690／687.722418／407.591166秒。7ワーカーで本番学習PID38003が稼働中。LearningLockは `run/cpu-production-pipeline-004/learning-lock.json`、SHA `eccdd3f24346c0745c2ea054ca206b8297519ab74f6baa8b8a58415ac803fa92`、固定日時2026-10-29T01:48:48.649348Z。概算全工程8.56日、学習3.62日、保存17.54GB（類似実測からの推定、ETA保証なし）。最新確認はseed42更新24／256・98,304遷移以上、seed43／44は0。学習を再起動しない。親pipelineのproduction_transitions=0は全seed終了時に更新される欄なので、途中カウントには使用しない。
 
 学習カウントはローカル `run/remote-progress.json` の `snapshot.jobs` 内 `production-training-observer-001`（server PID43940、60秒更新）を読む。`progress.json` の `remote_snapshot_path` から辿れる。source timestampとheartbeatを必ず確認し、部分rolloutはnot recorded。監視だけの失敗は学習停止を意味しない。固定source018を変更せず、外部script `run/observe_dual_training_001.py` SHA `1bbf4e675260fda2c7248bb2f0551f1b7663524f1089316b1beeb8bdd9902eea` を起動した。関連67テスト成功。初回launchはPopen後のreceipt保存先不足でCLI失敗したが、既存PIDを確認してreceiptのみ修復し、二重起動していない。
